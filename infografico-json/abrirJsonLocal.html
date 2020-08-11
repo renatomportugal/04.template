@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir Json Local</title>
+</head>
+<body>
+    <script src='js/jquery-3.1.0.min.js'></script>
+    <script type="application/json">
+
+        [
+            {
+                "casa":"1",
+                "titulo":"Fully Responsive",
+                "texto":"Lorem <span class='bmd-modalButton linkModal' data-toggle='modal' data-bmdSrc='https://player.vimeo.com/video/18539129' data-bmdWidth='500' data-bmdHeight='281' data-target='#myModal'>ipsum</span> dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus."
+            },
+            {
+                "casa":"2",
+                "titulo":"Using Bootstrap",
+                "texto":"Lorem <span class='bmd-modalButton linkModal' data-toggle='modal' data-bmdSrc='https://player.vimeo.com/video/18539129' data-bmdWidth='500' data-bmdHeight='281' data-target='#myModal'>ipsum</span> dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus."
+            }
+        ]
+    
+    </script>
+    
+    <script>
+        var casas = JSON.parse( $('script[type="application/json"]').text() );
+        console.log(casas)
+    </script>
+</body>
+</html>
