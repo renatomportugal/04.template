@@ -1,0 +1,16 @@
+#fixed {
+  height: 100%;
+  overflow: auto;
+  height: 250px;
+}
+#fixed li {
+  height: 250px;
+  background: #c6c6c6;
+  width: 18%;
+  margin: 1%;
+  position: relative;
+  float: left;
+  line-height: 250px;
+  text-align: center;
+  font-size: 2em;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    margin: 0px;
+}
+
+</style>
+</head>
+<body onload="inicio()">
+
+<script>
+    function inicio(){
+    var gg;
+    img = '[{"src": "image_7150_2e-Hubble-Legacy-Field.jpg","width": "1280px","height": "959px","quadros":["http://example.com 691px 70px 5px solid #0000ff 180px 178px", "http://example.com 692px 307px 3px solid #ff0000 182px 179px", "http://google.com 692px 545px 3px solid #ff00b6 182px 179px", "http://google.com 408px 307px 4px solid #00ff00 182px 179px", "http://google.com 127px 782px 5px solid #668833 182px 177px", "http://google.com 129px 310px 5px solid #ffff00 178px 179px"]}]';
+    try {
+        if (img != null) {
+            var imagens = JSON.parse(img);
+
+            for (let i = 0; i < imagens.length; i++) {
+                let imagem = imagens[i];
+                //Extrair o array quadros
+                for (let j = 0; j < imagem.quadros.length; j++) {
+                    const quadro = imagem.quadros[j];
+                    var quadroarray = quadro.split(" ");
+                    console.log(quadroarray);
+                    
+                    //Cria a div
+                    var quadrodiv = document.createElement("div");
+                    var id_div = "quadrodiv_" + j;
+                    quadrodiv.setAttribute("id", id_div);
+                    //quadrodiv.setAttribute("onclick", "window.location='" + quadroarray[0] + "'");
+                    quadrodiv.setAttribute("onclick", "window.open('" + quadroarray[0] + "','_blank')" );
+                    quadrodiv.setAttribute("onmouseover", "this.style.cursor='pointer';");
+                    quadrodiv.setAttribute("style", "position: absolute;z-index: 30;top: " + quadroarray[1] + ";left: " + quadroarray[2] + ";border: " + quadroarray[3] + " " + quadroarray[4] + " " + quadroarray[5] + ";");
+                    //Cria o Canvas
+                    var quadrocanvas = document.createElement("canvas");
+                    var quadrocanvastexto = document.createTextNode("Use o Google Chrome.");
+                    quadrocanvas.appendChild(quadrocanvastexto);
+                    var id_canvas = "quadrocanvas_" + j;
+                    quadrocanvas.setAttribute("id", id_canvas);
+                    quadrocanvas.setAttribute("style", "width: " + quadroarray[6] + ";height: " + quadroarray[7] + ";");
+                    //Adiciona div na div image_wrapper
+                    document.getElementById("image_wrapper").appendChild(quadrodiv);
+                    document.getElementById(id_div).appendChild(quadrocanvas);
+                }
+
+                //Prepara o espaço
+                var imagemdiv = document.getElementById("imagemdiv");
+                imagemdiv.style="display: contents; width: " + imagem.width + "; height: " + imagem.height + ";";
+
+                //Carrega a imagem
+                var img = document.getElementById("img");
+                img.src = imagem.src;
+            }    
+        }else{
+            console.log("Nada foi recebido.");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+</script>
+
+   <div id="image_wrapper">
+        <div id="imagemdiv">
+            <img id="img" />
+        </div>
+    </div>
+
+</body>
+</html>

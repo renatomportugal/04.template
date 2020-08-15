@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    
+    function getPos(e){
+        x=e.clientX;
+        y=e.clientY;
+        cursor="Your Mouse Position Is : " + x + " and " + y ;
+        document.getElementById("displayArea").innerHTML=cursor
+    }
+
+    function stopTracking(){
+        document.getElementById("displayArea").innerHTML="";
+    }
+
+    </script>
+</head>
+
+<body>
+    <div id="focusArea" onmousemove="getPos(event)" onmouseout="stopTracking()"><p>Mouse Over This Text And Get The Cursor Position!</p></div>
+    
+    <p id="displayArea"></p>
+</body>
+</html>

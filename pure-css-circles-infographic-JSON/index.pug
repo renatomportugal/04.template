@@ -1,0 +1,8 @@
+- var c = ['#fce013', '#23b590', '#25a6dd', '#273e8c', '#8d489b', '#ec4b99'];
+- var n = c.length;
+
+.assembly
+	- for(var i = 0; i < n; i++)
+		article(style=`--k: ${i/n}; color: ${c[i]}`)
+			h3 step #{i + 1}
+			p Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin.

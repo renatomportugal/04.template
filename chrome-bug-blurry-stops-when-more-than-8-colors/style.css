@@ -1,0 +1,74 @@
+/*
+	The examples combines transition hints + zero stop positions
+
+	- https://twitter.com/argyleink/status/1280955470073655297
+	- https://bugs.chromium.org/p/chromium/issues/detail?id=1103863
+
+	//	color stops (the 'common' way)
+	background: linear-gradient(
+		to right,
+		#5461c8 0, 
+		#5461c8 25%,
+		#c724b1 0, 
+		#c724b1 50%,		
+		#e4002b 0, 
+		#e4002b 75%,		
+		#ff6900 0
+	);
+
+    vs.
+
+	//	transition hints (the 'dry' way)
+	background: linear-gradient(
+		to right,
+		#5461c8 0, 
+		25%,
+		#c724b1 0, 
+		50%,		
+		#e4002b 0, 
+		75%,		
+		#ff6900 0
+	)
+*/
+.four {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #5461c8), color-stop(25%), color-stop(0, #c724b1), color-stop(50%), color-stop(0, #e4002b), color-stop(75%), color-stop(0, #ff6900));
+  background: linear-gradient(to right, #5461c8 0, 25%, #c724b1 0, 50%, #e4002b 0, 75%, #ff6900 0);
+}
+
+.five {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #5461c8), color-stop(20%), color-stop(0, #c724b1), color-stop(40%), color-stop(0, #e4002b), color-stop(60%), color-stop(0, #ff6900), color-stop(80%), color-stop(0, #f6be00));
+  background: linear-gradient(to right, #5461c8 0, 20%, #c724b1 0, 40%, #e4002b 0, 60%, #ff6900 0, 80%, #f6be00 0);
+}
+
+.eight {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #5461c8), color-stop(12.5%), color-stop(0, #c724b1), color-stop(25%), color-stop(0, #e4002b), color-stop(37.5%), color-stop(0, #ff6900), color-stop(50%), color-stop(0, #f6be00), color-stop(62.5%), color-stop(0, #97d700), color-stop(75%), color-stop(0, #00ab84), color-stop(87.5%), color-stop(0, #00a3e0));
+  background: linear-gradient(to right, #5461c8 0, 12.5%, #c724b1 0, 25%, #e4002b 0, 37.5%, #ff6900 0, 50%, #f6be00 0, 62.5%, #97d700 0, 75%, #00ab84 0, 87.5%, #00a3e0 0);
+}
+
+.eight {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #5461c8), color-stop(12.5%), color-stop(0, #c724b1), color-stop(25%), color-stop(0, #e4002b), color-stop(37.5%), color-stop(0, #ff6900), color-stop(50%), color-stop(0, #f6be00), color-stop(62.5%), color-stop(0, #97d700), color-stop(75%), color-stop(0, #00ab84), color-stop(87.5%), color-stop(0, #00a3e0));
+  background: linear-gradient(to right, #5461c8 0, 12.5%, #c724b1 0, 25%, #e4002b 0, 37.5%, #ff6900 0, 50%, #f6be00 0, 62.5%, #97d700 0, 75%, #00ab84 0, 87.5%, #00a3e0 0);
+}
+
+.nine {
+  outline: 4px dashed orangered;
+  outline-offset: 2px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #5461c8), color-stop(11.1%), color-stop(0, #c724b1), color-stop(22.2%), color-stop(0, #e4002b), color-stop(33.3%), color-stop(0, #ff6900), color-stop(44.4%), color-stop(0, #f6be00), color-stop(55.5%), color-stop(0, #97d700), color-stop(66.6%), color-stop(0, #00ab84), color-stop(77.7%), color-stop(0, #00a3e0), color-stop(88.8%), color-stop(0, magenta));
+  background: linear-gradient(to right, #5461c8 0, 11.1%, #c724b1 0, 22.2%, #e4002b 0, 33.3%, #ff6900 0, 44.4%, #f6be00 0, 55.5%, #97d700 0, 66.6%, #00ab84 0, 77.7%, #00a3e0 0, 88.8%, magenta 0);
+}
+
+.workarround {
+  outline: 4px dashed yellowgreen;
+  outline-offset: 2px;
+  background: linear-gradient(to right, #5461c8 -0.0000000001px, 11.1%, #c724b1 0, 22.2%, #e4002b 0, 33.3%, #ff6900 0, 44.4%, #f6be00 0, 55.5%, #97d700 0, 66.6%, #00ab84 0, 77.7%, #00a3e0 0, 88.8%, magenta 0);
+}
+
+a {
+  padding: 2vh;
+}
+
+div {
+  height: 10vh;
+  margin: 20px;
+  padding: 2vh;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.background{
+   width:100%; /* largura da imagem máscara */
+   height:100%; /* altura da imagem máscara */
+   position:absolute;
+   background:url(placa.jpg) no-repeat; /* imagem máscara */
+   /* background:url(https://d26lpennugtm8s.cloudfront.net/stores/038/427/products/ebr6417490431-b405ba1cd7e7a71f7415586962599785-1024-1024.jpg) no-repeat; */
+}
+
+.imagem-mascara {
+   width: 300px;
+   height: 300px;
+   position:absolute;
+   /* top:15%; */
+   /* left:15%; */
+   background:url(aguia2.gif) 0 0 no-repeat; /* imagem máscara */
+   /* background:url(https://lh4.ggpht.com/Auroranovaterra/SP4jZYTIl7I/AAAAAAAAAZ8/xm22Om0-jWM/s400/aguia2.png) 0 0 no-repeat; */
+   /* background-size: 5%; */
+   z-index: 5;
+   left: 500px;
+   margin-left: 50px;
+}
+.borboleta{
+   width:100%; /* largura da imagem máscara */
+   height:100%; /* altura da imagem máscara */
+   position:absolute;
+   top:15%;
+   left:15%;
+   background:url(borboleta.gif) 0 0 no-repeat; /* imagem máscara */
+   /* background:url(https://66.media.tumblr.com/fb888fc5f2be00ee435befbfc99aded9/tumblr_n37pxo6red1rrhwrjo1_250.gif) 0 0 no-repeat; */
+   background-size: 5%;
+   z-index: 10;
+}
+.passaro2{
+  height: 500px;
+  width: 600px;
+  position:absolute;
+  background:url(passaro2.gif) no-repeat; /* imagem máscara */
+  /* background:url(https://i.pinimg.com/originals/d4/f7/24/d4f72472d5c02716eb71b912dde23059.gif) no-repeat; */
+  z-index: 3;
+}
+#divlink{
+  height: 100px;
+  width: 100px;
+  position:absolute;
+  z-index: 30;
+  top: 210px;
+  left: 710px;
+}
+.capacitor{
+  width: 100px;
+  height: 58px;
+  border: 2px solid #0000ff;
+}
+</style>
+</head>
+<body>
+<a href="https://www.w3schools.com/html/default.asp">HTML tutorial</a>
+
+  <div class="background">
+      <div id="divlink" onclick="window.location='http://example.com';">
+        
+          <canvas id="myCanvas" class="capacitor">
+          Use o Google Chrome.
+          </canvas>
+        
+      </div>
+  </div>
+   <div class="imagem-mascara"></div>
+   <div class="borboleta"></div>
+   <div class="passaro2"></div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+[
+    {
+        "icon": "📊",
+        "style": [
+            {
+                "color":"#00aab7",
+                "caminho": ["#00a9b6","#168fae","#366aa3","#50448e"]
+            }
+        ],
+        "titulo": "gingerbread",
+        "texto": "Cake muffin donut chocolate cake jelly sesame snaps wafer tart pie sweet roll muffin chupa chups."
+    },
+    {
+        "icon": "🙎",
+        "style": [
+            {
+                "color":"#6c4296",
+                "caminho": ["#366aa3","#50448e","#764094","#90388e"]
+            }
+        ],
+        "titulo": "brownie",
+        "texto": "Cake cookie lemon drops muffin sugar plum. Liquorice pudding sugar plum topping macaroon pie chocolate."
+    },
+    {
+        "icon": "📍",
+        "style": [
+            {
+                "color":"#b53292",
+                "caminho": ["#764094","#90388e","#b53292","#be3c68"]
+            }
+        ],
+        "titulo": "ice cream",
+        "texto": "Cake muffin donut chocolate cake jelly sesame snaps wafer tart pie sweet roll muffin chupa chups."
+    },
+    {
+        "icon": "💬",
+        "style": [
+            {
+                "color":"#e35638",
+                "caminho": ["#b53292","#be3c68","#dc4f45","#e15822"]
+            }
+        ],
+        "titulo": "lava cake",
+        "texto": "Cake cookie lemon drops muffin sugar plum. Liquorice pudding sugar plum topping macaroon pie chocolate."
+    },
+    {
+        "icon": "⚙️",
+        "style": [
+            {
+                "color":"#f8d602",
+                "caminho": ["#dc4f45","#e15822","#f48b15","#fad700"]
+            }
+        ],
+        "titulo": "macaroon",
+        "texto": "Cake muffin donut chocolate cake jelly sesame snaps wafer tart pie sweet roll muffin chupa chups."
+    }
+]

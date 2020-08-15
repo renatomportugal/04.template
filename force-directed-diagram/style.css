@@ -1,0 +1,27 @@
+body{
+  font-family: arial;
+  margin: auto;
+}
+h3,h1{
+  text-align: center;
+}
+svg{
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+}
+
+.link{
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.tooltip{
+  padding: 2px 5px;
+  background-color:
+    #FFFF99;
+  position: absolute;
+  border-radius: 3px;
+  font-family: arial;
+  text-align: center;
+}

@@ -1,0 +1,133 @@
+{
+    "LinhasExternas": [
+        {
+            "Texto": "",
+            "Classe": "row-ext linhaExternaDiretoria",
+            "legenda": "",
+            "LinhasInternas": [
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "",
+                            "Classe":"col-12-ext dashed colunaDiretoria",
+                            "legenda": "Diretoria",
+                            "Linhas":[
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-12-ext presidente",
+                                            "Texto": "Presidente"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-2 titulo nivel1",
+                                            "Texto": "Administradores"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel1",
+                                            "Texto": "Departamento de Recursos Humanos"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel1",
+                                            "Texto": "Departamento de Informações"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel1",
+                                            "Texto": "Departamento de Operações"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel1",
+                                            "Texto": "Departamento de Recursos Materiais"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel1",
+                                            "Texto": "Departamento de Comunicação"
+                                        }                                        
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Texto": "",
+            "Classe": "row-ext",
+            "legenda": "",
+            "LinhasInternas": [
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "",
+                            "Classe":"col-12-ext dashed niveis1e2",
+                            "legenda": "",
+                            "Linhas":[
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-2 titulo nivel2",
+                                            "Texto": "Coordenadores"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel2",
+                                            "Texto": "Departamento de Recursos Humanos"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel2",
+                                            "Texto": "Departamento de Informações"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel2",
+                                            "Texto": "Departamento de Operações"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel2",
+                                            "Texto": "Departamento de Recursos Materiais"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel2",
+                                            "Texto": "Departamento de Comunicação"
+                                        }                                        
+                                    ]
+                                },
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-2 titulo nivel3",
+                                            "Texto": "Colaboradores"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel3",
+                                            "Texto": "Departamento de Recursos Humanos"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel3",
+                                            "Texto": "Departamento de Informações"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel3",
+                                            "Texto": "Departamento de Operações"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel3",
+                                            "Texto": "Departamento de Recursos Materiais"
+                                        },
+                                        {
+                                            "Classe": "col-2 nivel3",
+                                            "Texto": "Departamento de Comunicação"
+                                        }                                        
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        
+    ]
+}

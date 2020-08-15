@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Infinity Scroll with AngularJs</title>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.7/angular.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body ng-app="scroll">
+  <div class="container" ng-controller="Main">
+    <div id="fixed" when-scrolled="loadMore()">
+      <ul>
+        <li ng-repeat="i in items">{{i.id}}</li>
+      </ul>
+    </div>
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

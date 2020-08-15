@@ -1,0 +1,195 @@
+{
+    "LinhasExternas": [
+        {
+            "Texto": "",
+            "Classe": "row-ext",
+            "legenda": "",
+            "LinhasInternas": [
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "",
+                            "Classe":"col-6-ext dashed",
+                            "legenda": "Governance Committee",
+                            "Linhas":[
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-6",
+                                            "Texto": "Nomination and Remuneration Committee"
+                                        },
+                                        {
+                                            "Classe": "col-6",
+                                            "Texto": "Risk and Compliance Committee"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Texto": "",
+                            "Classe":"col-6-ext dashed",
+                            "legenda": "",
+                            "Linhas":[
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-4",
+                                            "Texto": "Supervisory Board"
+                                        },
+                                        {
+                                            "Classe": "col-4",
+                                            "Texto": "Board of Directors"
+                                        },
+                                        {
+                                            "Classe": "col-4",
+                                            "Texto": "Company Secretary"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Texto": "",
+            "Classe": "row-ext",
+            "legenda": "",
+            "LinhasInternas": [
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "",
+                            "Classe":"col-6-ext dashed",
+                            "legenda": "Functional Committee",
+                            "Linhas":[
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-4",
+                                            "Texto":"Asset and Liability and Risk Management Committee"
+                                        },
+                                        {
+                                            "Classe": "col-4 card-danger",
+                                            "Texto":"Planning and Control Committee"
+                                        },
+                                        {
+                                            "Classe": "col-4 card-ok",
+                                            "Texto":"Compliance Committee"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-6",
+                                            "Texto": "Depositary Bank Function Committee"
+                                        },
+                                        {
+                                            "Classe": "col-6",
+                                            "Texto": "Commercial Committee"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Colunas": [
+                                        {
+                                            "Classe": "col-6",
+                                            "Texto": "Wealth Management Committee"
+                                        },
+                                        {
+                                            "Classe": "col-6",
+                                            "Texto": "Projects and Quality Committee"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Texto": "Executive Committee",
+                            "Classe": "col-6-ext dashed",
+                            "legenda": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Texto": "",
+            "Classe": "row-ext dashed",
+            "legenda": "Departments",
+            "LinhasInternas": [
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "Executive Board Office (EBO)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Internal Audit Department (IAD)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Legal Departments (LED)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Accounting &amp; Planning Department (APD)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Compliance Department (COD)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Investment Banking Department (IBD)",
+                            "Classe":"col-2"
+                        }
+                    ]
+                },
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "Clients Management Department (CMD)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Risk Department (RID)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "IT Department (ITD)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Sales &amp; Trading Department (STD)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Treasury Department (TED)",
+                            "Classe":"col-2"
+                        },
+                        {
+                            "Texto": "Wealth Management Department (WMD)",
+                            "Classe":"col-2"
+                        }
+                    ]
+                },
+                {
+                    "Colunas": [
+                        {
+                            "Texto": "Operations Department (OPD)",
+                            "Classe":"col-10"
+                        },
+                        {
+                            "Texto": "Human Resources Department (HRD)",
+                            "Classe":"col-2"
+                        }
+                    ]
+                }  
+            ]
+        }
+    ]
+}
