@@ -1,0 +1,35 @@
+/* @media screen and (max-width: 1199px) {
+  html {
+    width: fit-content;
+  }
+} */
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  body {
+    background-color: blue;
+  }
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    background-color: green;
+  }
+  p.tag {
+    margin: 0;
+    padding: 0 10px 0 10px;
+    position: absolute;
+    top: -0.8em;
+    border: solid;
+    left: 0.5em;
+    background-color: #f8f9fa;
+    text-transform: uppercase;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  body {
+    background-color: red;
+  }
+}
