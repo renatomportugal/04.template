@@ -26,7 +26,7 @@ var svg = d3.select('.chart')
   var node = svg.selectAll(".node");
 
 
-d3.json("https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json",function(error,countries){
+d3.json("countries.json",function(error,countries){
  
   if(error) throw error;
 
