@@ -1,0 +1,34 @@
+new3 e new6
+
+PRECISAMOS CHEGAR NESSES VALORES
+{
+	"link": "http://example.com",
+	"top": "121.688px",
+	"left": "539.5px",
+	"border": "5px solid #ffff00",
+	"width": "188px",
+	"height": "182.12753px"
+}
+	
+COLETADOS
+	Data: {"x":543.5,"y":124.6875,"width":185.72415625830456,"height":182.08587643216617,"rotate":0,"scaleX":1,"scaleY":1}
+
+Crop Box Data: {"left":607,"top":124.6875,"width":192,"height":189.99999999999997}
+
+
+
+
+
+
+
+"left": "539.5px",
+"x":543.5
+
+"121.688px",
+"y":124.6875
+
+"width": "188px",
+"width":185.72415625830456,
+
+"height": "182.12753px"
+"height":182.08587643216617,

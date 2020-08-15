@@ -1,0 +1,66 @@
+[
+    {
+        "src": "image_7150_2e-Hubble-Legacy-Field.jpg",
+        "width": "1280px",
+        "height": "959px",
+        "quadros":
+        [
+            {
+                "link": "http://example.com",
+                "top": "691px",
+                "left": "70px",
+                "border": "5px solid #0000ff",
+                "width": "180px",
+                "height": "178px"
+            },
+            {
+                "link": "http://example.com",
+                "top": "692px",
+                "left": "307px",
+                "border": "3px solid #ff0000",
+                "width": "182px",
+                "height": "179px"
+            },
+            {
+                "link": "http://example.com",
+                "top": "692px",
+                "left": "545px",
+                "border": "3px solid #ff00b6",
+                "width": "182px",
+                "height": "179px"
+            },
+            {
+                "link": "http://example.com",
+                "top": "408px",
+                "left": "307px",
+                "border": "4px solid #00ff00",
+                "width": "182px",
+                "height": "179px"
+            },
+            {
+                "link": "http://example.com",
+                "top": "127px",
+                "left": "782px",
+                "border": "5px solid #668833",
+                "width": "182px",
+                "height": "177px"
+            },
+            {
+                "link": "http://example.com",
+                "top": "129px",
+                "left": "310px",
+                "border": "5px solid #ffff00",
+                "width": "178px",
+                "height": "179px"
+            },
+            {
+                "link": "http://example.com",
+                "top": "121.688px",
+                "left": "539.5px",
+                "border": "5px solid #ffff00",
+                "width": "188px",
+                "height": "182.12753px"
+            }
+        ]
+    }
+]
