@@ -1,0 +1,10 @@
+<area shape="rect" coords="1018, 411, 1209, 598" />
+<area shape="rect" coords="782, 408, 974, 600" />
+<area shape="rect" coords="543, 407, 736, 600" />
+<area shape="rect" coords="306, 408, 500, 599" />
+<area shape="rect" coords="70, 408, 261, 600" />
+<area shape="rect" coords="1018, 126, 1209, 318" />
+<area shape="rect" coords="779, 125, 975, 319" />
+<area shape="rect" coords="542, 125, 737, 317" />
+<area shape="rect" coords="305, 125, 500, 318" />
+<area shape="rect" coords="72, 125, 260, 316" />
