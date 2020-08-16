@@ -149,15 +149,15 @@ window.addEventListener("mousemove", coord);
             previewImage.style.marginLeft = -data2.x / imageScaledRatio + 'px';
             previewImage.style.marginTop = -data2.y / imageScaledRatio + 'px';
           });
-          var getcropperdata = cropper.getData()
-          //Corrigir o width e o height
-          
-          getcropperdata.width = getcropperdata.width * 0.9673133138453362;
-          getcropperdata.height = getcropperdata.height * 0.9583467180640326;
-          data.textContent = JSON.stringify(getcropperdata);
-        //   console.log(getcropperdata)
-        //   data.textContent = JSON.stringify(cropper.getData());
-          cropBoxData.textContent = JSON.stringify(cropper.getCropBoxData());
+
+          // CORREÇÕES NAS MEDIDAS (Deu tudo errado...)
+          // var getcropperdata = cropper.getData()
+          // getcropperdata.x = getcropperdata.x * 0.991740;
+          // getcropperdata.y = getcropperdata.y * 0.961205;
+          // getcropperdata.width = getcropperdata.width * 0.987526;
+          // getcropperdata.height = getcropperdata.height * 0.9662282674282361;
+          // data.textContent = JSON.stringify(getcropperdata);
+          // cropBoxData.textContent = JSON.stringify(cropper.getCropBoxData());
         },
 
         // zoom: function (event) {

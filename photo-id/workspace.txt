@@ -22,13 +22,42 @@ Crop Box Data: {"left":607,"top":124.6875,"width":192,"height":189.9999999999999
 
 
 "left": "539.5px",
-"x":543.5
 
-"121.688px",
-"y":124.6875
-
+"top": "121.688px",
 "width": "188px",
-"width":185.72415625830456,
-
 "height": "182.12753px"
-"height":182.08587643216617,
+
+_______________________________________
+var getcropperdata = cropper.getData()
+console.log(getcropperdata)
+
+x: 543.4138926630435
+y: 128.98223305626598
+width: 193.1722646259591
+height: 185.18659886508954
+
+getcropperdata.x = getcropperdata.x * 0.9927975844639099;
+
+getcropperdata.y = getcropperdata.y * 0,9582714031420802;
+getcropperdata.width = getcropperdata.width * 0,9816263469550464;
+getcropperdata.height = getcropperdata.height * 0,9662282674282361;
+
+height: 183.72505584636784
+rotate: 0
+scaleX: 1
+scaleY: 1
+width: 184.75403108437249
+x: 541.1414545660251
+y: 121.688
+
+var getcropperdata = cropper.getData()
+getcropperdata.x = getcropperdata.x * 0.991740;
+getcropperdata.y = getcropperdata.y * 0.961205;
+getcropperdata.width = getcropperdata.width * 0.987526;
+getcropperdata.height = getcropperdata.height * 0.9662282674282361;
+data.textContent = JSON.stringify(getcropperdata);
+cropBoxData.textContent = JSON.stringify(cropper.getCropBoxData());
+
+
+Data: {"x":1009.59132,"y":393.709568,"width":187.62994,"height":181.45766862302276,"rotate":0,"scaleX":1,"scaleY":1}
+Crop Box Data: {"left":1081.5,"top":409.6,"width":190,"height":187.8}

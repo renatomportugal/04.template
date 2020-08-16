@@ -60,6 +60,14 @@
                 "border": "5px solid #ffff00",
                 "width": "188px",
                 "height": "182.12753px"
+            },
+            {  
+                "link": "http://example.com",
+                "top": "392.3968314318067px",
+                "left": "1008.9479722004173px",
+                "border": "5px solid #ff0000",
+                "width": "189.9194281393035px",
+                "height": "183.5645544257732px"
             }
         ]
     }
