@@ -1,0 +1,18 @@
+[
+    {
+        "src": "image_7150_2e-Hubble-Legacy-Field.jpg",
+        "width": "1280px",
+        "height": "959px",
+        "quadros":
+        [
+            {
+                "link": "",
+                "top": "691px",
+                "left": "70px",
+                "border": "5px solid #0000ff",
+                "width": "180px",
+                "height": "178px"
+            }
+        ]
+    }
+]

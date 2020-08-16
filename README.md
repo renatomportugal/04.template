@@ -1,4 +1,15 @@
 # Demo
+## Coordenadas
+https://renatomportugal.github.io/template/mouse-xy-position/<br>
+https://renatomportugal.github.io/template/einstein-relativity-codepen-stellar-scientists/<br>
+https://renatomportugal.github.io/template/web-animations-sound-and-custom-cursor-mix/<br>
+https://renatomportugal.github.io/template/animation-project/<br>
+https://renatomportugal.github.io/template/CodePen_Export_mapsv/<br>
+https://renatomportugal.github.io/template/crop-image-with-focus-point-cropper/<br>
+https://renatomportugal.github.io/template/image-cropper-2012-07-04/<br>
+https://renatomportugal.github.io/template/linear-interp/<br>
+https://renatomportugal.github.io/template/mouse-coord/<br>
+
 ## Infográfico
 https://renatomportugal.github.io/template/infografico-json/<br>
 https://renatomportugal.github.io/template/pure-css-circles-infographic-JSON/<br>
@@ -30,17 +41,6 @@ https://renatomportugal.github.io/template/it-system-interface-explorer/<br>
 
 ## Scroll Infinito
 https://renatomportugal.github.io/template/infinity-scroll-with-angularjs/<br>
-
-## Coordenadas
-https://renatomportugal.github.io/template/mouse-xy-position/<br>
-https://renatomportugal.github.io/template/einstein-relativity-codepen-stellar-scientists/<br>
-https://renatomportugal.github.io/template/web-animations-sound-and-custom-cursor-mix/<br>
-https://renatomportugal.github.io/template/animation-project/<br>
-https://renatomportugal.github.io/template/CodePen_Export_mapsv/<br>
-https://renatomportugal.github.io/template/crop-image-with-focus-point-cropper/<br>
-https://renatomportugal.github.io/template/image-cropper-2012-07-04/<br>
-https://renatomportugal.github.io/template/linear-interp/<br>
-https://renatomportugal.github.io/template/mouse-coord/<br>
 
 ## Mapeamento de Imagem
 https://renatomportugal.github.io/template/imgmap_2.2_108/<br>
