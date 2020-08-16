@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - responsive image map demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+  <div class="pyramid">
+    <img src="https://res.cloudinary.com/positionrelativ/image/upload/v1492379605/pyramid_1_fu4idd.png" usemap="#Map" />
+
+    <map name="Map" id="Map">
+        <area href="#" shape="poly" class="brick 1" coords="669,0,405,268,931,265" />
+        <area href="#" shape="poly" class="brick 2" coords="399,269,681,268,673,468,227,455" />
+        <area href="#" shape="poly" class="brick 3" coords="685,267,934,267,1134,473,676,468" />
+        <area href="#" shape="poly" class="brick 4" coords="220,458,33,641,378,640,540,465,224,458" />
+        <area href="#" shape="poly" class="brick 5" coords="542,467,380,643,975,641,802,471,547,467" />
+        <area href="#" shape="poly" class="brick 6" coords="809,473,1137,476,1315,645,980,642,811,472" />
+
+    </map>
+  </div>
+  
+</div>
+
+<div class="selection">
+  <p>click a brick</p>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://res.cloudinary.com/positionrelativ/raw/upload/v1492377595/jquery.rwdImageMaps_lq5sye.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

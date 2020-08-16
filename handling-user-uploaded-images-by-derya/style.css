@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #e4eef4;
+  font-family: "Coming Soon", cursive;
+}
+
+.lightning--anim {
+  animation: lightning 1s 2 ease-out;
+}
+
+@keyframes lightning {
+  from {
+    backdrop-filter: transparent;
+  }
+  to {
+    backdrop-filter: invert(70%);
+  }
+}
+p {
+  font-size: 40px;
+  text-align: center;
+  color: #0d1655;
+  font-weight: 300;
+  padding: 20px;
+}
+
+.weather {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  animation: move 60s infinite alternate linear;
+}
+
+.cloud {
+  width: 300px;
+  height: 200px;
+}
+
+.thunder {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  z-index: -1;
+  opacity: 0;
+}
+
+.spark--anim {
+  animation: spark 1s 2 ease-out;
+}
+
+@keyframes spark {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes move {
+  0% {
+    transform: translate(-100px);
+  }
+  100% {
+    transform: translate(1100px);
+  }
+}
+svg {
+  position: absolute;
+  bottom: -2rem;
+  z-index: -99;
+  animation: waves 2s infinite alternate ease-out;
+  transform: scale(3);
+}
+
+@keyframes waves {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorAnim {
+  animation: color 1s 2 ease-out;
+}
+
+@keyframes color {
+  from {
+    filter: transparent;
+  }
+  to {
+    filter: hue-rotate(90deg);
+  }
+}
+.wrapper {
+  height: 220px;
+  width: 180px;
+  margin: 10px;
+}
+
+.image {
+  perspective: 1500px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.image__side {
+  width: 100%;
+  height: 100%;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding-top: 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.image:hover .image__side--front {
+  transform: rotateY(-180deg);
+}
+
+.image__side--back {
+  transform: rotateY(180deg);
+}
+
+.image:hover .image__side--back {
+  transform: rotateY(0deg);
+}
+
+.bottom {
+  background-color: #64c3eb;
+}

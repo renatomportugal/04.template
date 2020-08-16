@@ -1,0 +1,67 @@
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * Canvas Events class extends canvas object to help to attach mouse events 
+ * to different shapes with minimal javascript code modifications.
+ * Canvas context methods that perform actual drawing like
+ * stroke, fill, strokeRect, fillRect, drawImage
+ * return a shape object to which you can attach events
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Emulate-events-on-canvas-objects
+**************************************************************/
+-->
+<html>
+<head>
+</head>
+<body>
+<p id='debug'></p>
+<canvas id='canvas' width='800' height='600'></canvas>
+<script src="./canvas_events.packed.js" type="text/javascript"></script>
+<script>
+var ctx = new canvas_events("canvas");
+ctx.fillStyle = "black";
+var rect = ctx.fillRect(50, 50, 100, 100);
+//stroke on mouse over
+rect.addEvent("mouseover", function(e,args){
+	this.strokeStyle = "red"; 
+	this.recreate(args);
+	this.stroke();
+});
+//return to default state on mouseout
+rect.addEvent("mouseout", function(e,args){
+	this.clearRect(0,0,800,600); 
+	this.recreate(args);
+	this.fill();
+});
+//fill blue on mouse down
+rect.addEvent("mousedown", function(e,args){
+	this.fillStyle = "blue"; 
+	this.recreate(args);
+	this.fill();
+});
+//fill red on mouse up
+rect.addEvent("mouseup", function(e,args){
+	this.fillStyle = "red"; 
+	this.recreate(args);this.fill();
+});
+//display click coordinates on click
+rect.addEvent("click", function(e){
+	var d = document.getElementById("debug"); 
+	d.innerHTML = "<p>Clicked: " + e.elemX + " x " + e.elemY + "</p>";
+});
+//display all 4 points of a rectangle on double click
+rect.addEvent("dblclick", function(e,a){
+	alert("("+a[0].data[0]+";"+a[0].data[1]+"), ("
+	+a[1].data[0]+";"+a[1].data[1]+"), ("
+	+a[2].data[0]+";"+a[2].data[1]+"), ("
+	+a[3].data[0]+";"+a[3].data[1]+")");
+});
+//display coordinates on mouse move
+rect.addEvent("mousemove", function(e, args){
+	var d = document.getElementById("debug"); 
+	d.innerHTML = "<p>" + e.elemX + " x " + e.elemY + "</p>";
+});
+</script>

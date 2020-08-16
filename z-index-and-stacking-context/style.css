@@ -1,0 +1,42 @@
+body {
+  font: 22px Arial;
+  background-color: #5E412F;
+}
+
+.container {
+  border: 3px solid #DE593A;
+  position: relative;
+  margin: .5em auto;
+}
+
+div {
+  color: #FCEBB6;
+  padding: 1em;
+  width: 10em;
+  opacity: .7;
+}
+
+.z-2 {
+  background-color: #78C0A8;
+  position: absolute;
+  z-index: 2;
+  margin: 6em 0 0 8em;
+}
+
+.no-z {
+  background-color: #F07818;
+}
+
+.z-3 {
+  background-color: #F0A830;
+  position: fixed;
+  z-index: 3;
+}
+
+.no-z-2 {
+  background-color: #DE4D4E;
+}
+
+.child-of-no-z {
+  background-color: #6E9ECF;
+}

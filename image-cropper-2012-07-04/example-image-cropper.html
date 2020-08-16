@@ -1,0 +1,76 @@
+<!--
+  Autor:        Daniel Martinez Castillo 
+                <danimartcas@hotmail.com> 
+                www.webofilia.com
+                
+  Example of ImageCropper 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example of using Image Cropper </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" media="all" href="styles/cropper.css"/>
+        <script type="text/javascript" src="ImageCropper.js" ></script>
+        <style type="text/css">
+            #image-wrapper {
+                text-align: center
+            }   
+        </style>
+    </head>
+    <body>
+        <div>Your image here:</div> <br />
+        <div id="image-wrapper" style="float:left"></div>
+        <div style="float:left;margin-left:20px;">
+        	<h4>Values in pixels</h4>
+        	<label>Width:</label><br />
+        	<input type="text" id="iwidth" /><br />
+        	
+        	<label>Height:</label><br />
+        	<input type="text" id="iheight" /><br />
+        	
+        	<label>Top:</label><br />
+        	<input type="text" id="itop" /><br />
+        	
+        	<label>Left:</label><br />
+        	<input type="text" id="ileft" /><br />
+        	
+        	<label>Values in JSON:</label><br />
+        	<textarea id="ijson" cols="50"/></textarea>
+        	
+        	<br />
+        	<input type="button" id="getVal" value="get values"/>
+        </div>
+        
+        <script type="text/javascript">
+			
+        var iwidth = document.getElementById('iwidth'),
+    	   	iheight = document.getElementById('iheight'),
+        	itop = document.getElementById('itop'),
+    	   	ileft = document.getElementById('ileft'),
+    	   	ijson= document.getElementById('ijson');;
+    
+        var cropper = new ImageCropper({
+			                id: 'image-wrapper',
+			                src:'src/horse.jpg',
+			                maxWidth:'90%',
+			                onload : function() {
+			                    //console.log(this.getValues()); // Equivalent 
+			                },
+			                onScaling : function(width,height) {
+			                    iwidth.value = width;
+			                    iheight.value = height;
+			                },
+			                onMoving : function(left,top) {
+			                	ileft.value = left;
+			                    itop.value = top;
+			                }
+            			});
+            
+           document.getElementById('getVal').onclick = function() {
+        	   ijson.value = cropper.getValues(true);
+           } 
+           
+        </script>
+    </body>
+</html>

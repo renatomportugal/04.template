@@ -1,0 +1,13 @@
+#example-text{
+  padding: 10px;
+  border: 1px solid #222;
+  background: white;
+  display: inline-block;
+}
+
+#example{
+  border: 1px solid #222;
+  background: grey;
+  width: 400px;
+  height: 200px;
+}

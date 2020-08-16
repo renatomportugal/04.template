@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * xLayers provides a way to manipulate multiple layers one on another 
+ * to create interesting effects as x-rays, peeling, etc.
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Manipulate-layers-to-create-X-ray-effect
+**************************************************************/
+-->
+<html>
+<head>
+</head>
+<body>
+<div id='text' style='width: 340px; height: 700px;'>
+<img src='1.jpg'/>
+<img src='0.jpg'/>
+</div>
+<script type="text/javascript" src="./xLayers.packed.js" ></script>
+<script type="text/javascript">
+var x = new xLayers("text", {
+	//width of layer
+	width: "auto",
+	//height of layer
+	height: "auto",
+	//minimal width
+	minWidth: 10,
+	//minimal height
+	minHeight: 10,
+	//animation interval
+	interval: 100,
+	//animation steps
+	steps: 10,
+	//enable mouse interaction
+	enableMouse: true,
+	//px to offset for mouse resizing cursor
+	offset: 10,
+	//allow to edit directions using mouse
+	//East, West, North, South
+	allowedActions: ["move"],
+	//do not allow to edit these layers using mouse
+	disallowLayers: []
+});
+x.resize(2, "up", -200);
+x.resize(2, "down", -400);
+x.resize(2, "left", -120);
+x.resize(2, "right", -120);
+</script>
+</body>
+</html>

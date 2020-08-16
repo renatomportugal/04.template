@@ -1,0 +1,36 @@
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * Canvas Events class extends canvas object to help to attach mouse events 
+ * to different shapes with minimal javascript code modifications.
+ * Canvas context methods that perform actual drawing like
+ * stroke, fill, strokeRect, fillRect, drawImage
+ * return a shape object to which you can attach events
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Emulate-events-on-canvas-objects
+**************************************************************/
+-->
+<html>
+<head>
+</head>
+<body>
+<canvas id='canvas' width='800' height='600'></canvas>
+<script src="./canvas_events.packed.js" type="text/javascript"></script>
+<script>
+var ctx = new canvas_events("canvas");
+ctx.fillStyle = "black";
+var rect = ctx.fillRect(50, 50, 100, 100);
+rect.addEvent("mouseover", function(e,args){this.strokeStyle = "red"; this.recreate(args);this.closePath();this.stroke();});
+rect.addEvent("mouseout", function(e,args){this.clearRect(45,45,110,110); this.recreate(args);this.fill();});
+ctx.translate(200,0);
+ctx.scale(2,2);
+ctx.rotate(6);
+var rect = ctx.strokeRect(10, 200, 100, 100);
+rect.addEvent("mouseover", function(e,args){this.fillStyle = "green"; this.recreate(args);this.fill();});
+rect.addEvent("mouseout", function(e,args){this.fillStyle = "white"; this.recreate(args);this.fill();this.recreate(args);this.stroke();});
+</script>
+</body>
+</html>

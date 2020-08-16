@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * xLayers provides a way to manipulate multiple layers one on another 
+ * to create interesting effects as x-rays, peeling, etc.
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Manipulate-layers-to-create-X-ray-effect
+**************************************************************/
+-->
+<html>
+<head>
+</head>
+<body>
+<div id='text' style='width: 582px; height: 525px;'>
+<img src='apple_core.png'/>
+<img src='bitten_apple.png'/>
+<img src='full_apple.png'/>
+</div>
+<p>Top Layer: <input type='button' value='Animate' onclick='x.animate(3, "right", -582);'/></p>
+<p>Second Layer: <input type='button' value='Animate' onclick='x.animate(2, "left", -582);'/></p>
+<p>Bottom Layer: <input type='button' value='Animate' onclick='x.animate(1, "up", -525);'/></p>
+<script type="text/javascript" src="./xLayers.packed.js" ></script>
+<script type="text/javascript">
+var x = new xLayers("text", {
+	//width of layer
+	width: "auto",
+	//height of layer
+	height: "auto",
+	//minimal width
+	minWidth: 10,
+	//minimal height
+	minHeight: 10,
+	//animation interval
+	interval: 100,
+	//animation steps
+	steps: 10,
+	//enable mouse interaction
+	enableMouse: true,
+	//px to offset for mouse resizing cursor
+	offset: 10,
+	//allow to edit directions using mouse
+	//East, West, North, South
+	allowedActions: ["up", "down", "left", "right", "move"],
+	//do not allow to edit these layers using mouse
+	disallowLayers: []
+});
+</script>
+</body>
+</html>

@@ -31,10 +31,50 @@ https://renatomportugal.github.io/template/it-system-interface-explorer/<br>
 ## Scroll Infinito
 https://renatomportugal.github.io/template/infinity-scroll-with-angularjs/<br>
 
-## Camadas
-https://renatomportugal.github.io/template/photo-id/<br>
-
 ## Coordenadas
+https://renatomportugal.github.io/template/mouse-xy-position/<br>
 https://renatomportugal.github.io/template/einstein-relativity-codepen-stellar-scientists/<br>
 https://renatomportugal.github.io/template/web-animations-sound-and-custom-cursor-mix/<br>
+https://renatomportugal.github.io/template/animation-project/<br>
+https://renatomportugal.github.io/template/CodePen_Export_mapsv/<br>
+https://renatomportugal.github.io/template/crop-image-with-focus-point-cropper/<br>
+https://renatomportugal.github.io/template/image-cropper-2012-07-04/<br>
+https://renatomportugal.github.io/template/linear-interp/<br>
+https://renatomportugal.github.io/template/mouse-coord/<br>
 
+## Mapeamento de Imagem
+https://renatomportugal.github.io/template/imgmap_2.2_108/<br>
+https://renatomportugal.github.io/template/impact-summary-map-template-js-master/<br>
+
+## Crop
+https://renatomportugal.github.io/template/image-cropper-prototype/<br>
+https://renatomportugal.github.io/template/vue_image-crop/<br>
+https://renatomportugal.github.io/template/crop-image (2)/<br>
+
+## Upload ,Crop and save
+https://renatomportugal.github.io/template/practice-003crop-image/<br>
+
+
+## Crop Com Máscara
+https://renatomportugal.github.io/template/crop-image-using-svg/<br>
+
+## Crop Base64
+https://renatomportugal.github.io/template/browser-image-crop/<br>
+https://renatomportugal.github.io/template/cropper-try/<br>
+https://renatomportugal.github.io/template/croppie-modal-error/<br>
+
+## Camadas
+https://renatomportugal.github.io/template/photo-id/<br>
+https://renatomportugal.github.io/template/handling-user-uploaded-images-by-derya/<br>
+https://renatomportugal.github.io/template/xlayers-2013-08-02/<br>
+https://renatomportugal.github.io/template/z-index-and-stacking-context/<br>
+https://renatomportugal.github.io/template/z-index-sass-management/<br>
+
+## Canvas
+https://renatomportugal.github.io/template/canvas-events-2011-08-22/<br>
+
+## Editor
+https://renatomportugal.github.io/template/map-creator/<br>
+
+## Click Select
+https://renatomportugal.github.io/template/responsive-image-map-demo/<br>

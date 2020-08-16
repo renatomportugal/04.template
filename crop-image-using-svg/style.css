@@ -1,0 +1,63 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background: linear-gradient(-30deg, black, gray);
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+/* The SVG which contains the cropped image */
+#croppedImage {
+	width: 60%;
+	max-height: 60%;
+	margin-top: 5%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+/* The Instructions */
+h2 {
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: calc(1.25vw + 1.25vh);
+	text-align: center;
+	color: white;
+}
+
+.outerFlex {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.innerFlex {
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+	max-width: 60vh;
+	padding: 0 20%;
+	height: 5vw;
+	max-height: 5vh;
+}
+
+/* The Icons for changing the crop shape */
+.icon {
+	width: 5vw;
+	max-height: 5vh;
+	fill: white;
+	opacity: 0.7;
+	cursor: pointer;
+	transition: 0.7s;
+}
+
+.icon:hover {
+	opacity: 1;
+}
+
+/* The currently selected icon */
+.current {
+	fill: #FF6961;
+	opacity: 1;
+}

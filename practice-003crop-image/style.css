@@ -1,0 +1,82 @@
+/*Import: https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css*/
+* {
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin: 0;
+}
+.page {
+  background: -webkit-linear-gradient(left top, #0099F7, #F11712);
+  background: linear-gradient(to bottom right, #0099F7, #F11712);
+  height: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.title {
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+.title *{
+  color: white;
+  font-size: 56px;
+}
+.title .label {
+  display: flex;
+  justify-content: center;
+}
+.title .label .first {
+  font-weight: 300;
+  margin-right: 8px;
+}
+.title .label .second {
+  font-weight: 500;
+}
+.title .number {
+  text-align: center;
+  font-weight: 200;
+  font-size: 28px;
+}
+.main {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 768px;
+  max-height: 100%;
+}
+.box {
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+.box-2{
+  padding: 0.5em;
+  width: calc(100%/2 - 1em);
+}
+.options label {
+  color: white;
+}
+.options label, .options input {
+  width: 4em;
+  padding: 0.5em 1em;
+}
+.btn {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  margin: 0.8em 0.3em;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+}
+.hide{
+  display: none;
+}
+img {
+  max-width: 100%;
+}

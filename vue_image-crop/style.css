@@ -1,0 +1,173 @@
+.crop-container {
+  position: relative;
+  display: inline-block;
+  max-width: 768px;
+}
+
+.crop-image-bg {
+  opacity: 0.2;
+  width: 100%;
+}
+
+.crop-image-bg, .crop-frame-img {
+  display: block;
+}
+
+.crop-frame-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 0;
+  max-width: 768px;
+}
+
+.crop-button {
+  background: #0055ff;
+  color: white;
+  font-family: Arial, sans-serif;
+  border: none;
+  font-size: 1.1em;
+  padding: 7px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px #333;
+}
+
+.crop-frame {
+  width: 500px;
+  height: 500px;
+  max-height: 100%;
+  max-width: 100%;
+  border: 1px solid #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  cursor: move;
+  z-index: 10;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */
+}
+
+.crop-frame-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 10;
+}
+
+.crop-frame-lines.vertical {
+  flex-direction: column;
+}
+
+.crop-frame-lines.vertical > .crop-line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #333;
+}
+
+.crop-frame-lines.horizontal > .crop-line {
+  height: 100%;
+  width: 1px;
+  border-left: 1px dashed #333;
+}
+
+.crop-frame-handle {
+  position: absolute;
+  z-index: 20;
+}
+
+.crop-frame-handle.corner {
+  width: 50px;
+  height: 50px;
+}
+
+.crop-frame-handle.corner.nw {
+  top: -2px;
+  left: -2px;
+  border-top: 3px solid #333;
+  border-left: 3px solid #333;
+  cursor: nw-resize;
+}
+
+.crop-frame-handle.corner.ne {
+  top: -2px;
+  right: -2px;
+  border-top: 3px solid #333;
+  border-right: 3px solid #333;
+  cursor: ne-resize;
+}
+
+.crop-frame-handle.corner.se {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 3px solid #333;
+  border-right: 3px solid #333;
+  cursor: se-resize;
+}
+
+.crop-frame-handle.corner.sw {
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 3px solid #333;
+  border-left: 3px solid #333;
+  cursor: sw-resize;
+}
+
+.crop-frame-handle.s {
+  bottom: -2px;
+  left: 50%;
+  width: 75px;
+  height: 10px;
+  transform: translateX(-50%);
+  border-bottom: 3px solid #333;
+  cursor: ns-resize;
+}
+
+.crop-frame-handle.n {
+  top: -2px;
+  left: 50%;
+  width: 75px;
+  height: 10px;
+  transform: translateX(-50%);
+  border-top: 3px solid #333;
+  cursor: ns-resize;
+}
+
+.crop-frame-handle.w {
+  left: -2px;
+  top: 50%;
+  height: 75px;
+  width: 10px;
+  transform: translateY(-50%);
+  border-left: 3px solid #333;
+  cursor: ew-resize;
+}
+
+.crop-frame-handle.e {
+  right: -2px;
+  top: 50%;
+  height: 75px;
+  width: 10px;
+  transform: translateY(-50%);
+  border-right: 3px solid #333;
+  cursor: ew-resize;
+}

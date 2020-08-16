@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+.content {
+  z-index: 10;
+}
+
+.img-1 {
+  z-index: 12;
+}
+
+.img-2 {
+  z-index: 11;
+}
+
+.top-nav {
+  z-index: 20;
+}
+
+.mkt-flash {
+  z-index: 19;
+}
+
+.left-nav {
+  z-index: 40;
+}
+
+.footer {
+  z-index: 30;
+}
+
+.cookies-info {
+  z-index: 50;
+}
+
+.up-btn {
+  z-index: 60;
+}
+
+body {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #232526, #414345);
+  background: linear-gradient(to right, #232526, #414345);
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+}
+
+h1 {
+  margin: 40px 0;
+}
+
+p {
+  margin-bottom: 2px;
+}
+p.z {
+  text-decoration: underline;
+}
+p.z span {
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+  padding: 0;
+  height: 400px;
+}
+.container .top-nav {
+  background: rgba(255, 210, 90, 0.8);
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 0;
+}
+.container .left-nav {
+  background: rgba(255, 131, 123, 0.8);
+  height: 400px;
+  width: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 150px;
+}
+.container .mkt-flash {
+  background: rgba(87, 177, 150, 0.8);
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  padding: 30px 5px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.container .content {
+  background: rgba(123, 82, 171, 0.8);
+  height: 250px;
+  width: 88%;
+  position: absolute;
+  top: 90px;
+  right: 0px;
+}
+.container .content .img-1 {
+  background: rgba(255, 210, 90, 0.8);
+  width: 200px;
+  height: 150px;
+  margin-left: 30%;
+  position: relative;
+}
+.container .content .img-2 {
+  background: rgba(87, 177, 150, 0.8);
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin-top: -75px;
+  margin-left: 20%;
+}
+.container .footer {
+  background: rgba(119, 196, 211, 0.8);
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 350px;
+}
+.container .cookies-info {
+  background: rgba(119, 196, 211, 0.8);
+  height: 140px;
+  width: 140px;
+  padding: 50px 5px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.container .up-btn {
+  background: rgba(255, 131, 123, 0.8);
+  height: 90px;
+  width: 100px;
+  position: fixed;
+  bottom: 50px;
+  right: 150px;
+}

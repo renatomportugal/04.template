@@ -1,0 +1,18 @@
+/* Limit image width to avoid overflow the container */
+img {
+  max-width: 100%;
+}
+
+/* focus point styles */
+.cropper-face {
+  opacity: 0;
+}
+
+.cropper-crop-box, .cropper-view-box {
+    border-radius: 50%;
+}
+
+.cropper-view-box {
+    box-shadow: 0 0 0 2px white;
+    outline: 0;
+}

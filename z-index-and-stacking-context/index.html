@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Z-index and Stacking Context</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  In container...
+  <div class="z-2">Z-index 2, sibling of text above</div>
+  <div class="no-z">No Z-index  defined, sibling of Z-2
+    <div class="child-of-no-z">Child element of no-z</div>
+  </div>
+  <div class="z-3">Z-index 3 sibling of Z-2
+    <div class="no-z-2">Z-index 4 descendant of 3 no effect</div>
+  </div>
+</div> 
+<!-- <div class="stack4">Stack 4</div>
+<div class="stack5">Stack 5</div> -->
+<!-- partial -->
+  
+</body>
+</html>

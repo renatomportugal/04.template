@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * xLayers provides a way to manipulate multiple layers one on another 
+ * to create interesting effects as x-rays, peeling, etc.
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Manipulate-layers-to-create-X-ray-effect
+**************************************************************/
+-->
+<html>
+<head>
+<style>
+#text div
+{
+	background-color: white;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div id='text' style='width: 800px; height: 300px;'>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu diam elit. Duis sollicitudin, tellus eu porttitor fermentum, dolor libero malesuada eros, accumsan tempor dolor libero quis leo. Phasellus interdum vehicula dignissim. Cras iaculis cursus neque id pretium. Aliquam feugiat suscipit condimentum. Maecenas non sollicitudin enim. Mauris neque nisl, consectetur et aliquet non, mollis quis urna. Nunc condimentum faucibus massa, in tempus leo eleifend sit amet. Ut ultrices quam lacus. Integer id tellus in quam commodo porttitor ut nec tortor.</p>
+<p>Praesent et justo neque, non tincidunt neque. Duis molestie mauris ut velit cursus eget imperdiet turpis viverra. In dapibus ipsum diam, sed gravida erat. Nunc vulputate venenatis magna, non faucibus nisi tincidunt at. Pellentesque eu eleifend leo. Vivamus eros enim, elementum nec laoreet sed, tempus semper lacus. Morbi imperdiet dolor a ligula suscipit adipiscing. Morbi sed sapien et mauris commodo tempus et vitae velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc turpis ipsum, eleifend in tristique nec, adipiscing non tellus. Etiam non scelerisque diam. Maecenas tristique posuere dictum.</p>
+<p>Etiam adipiscing libero nec ligula suscipit bibendum. Phasellus in augue quis mauris pulvinar varius et id neque. Pellentesque risus justo, cursus sed tristique ac, gravida et felis. Cras et augue sed lectus ullamcorper sollicitudin vel eget magna. Praesent et turpis quam, nec sollicitudin purus. Quisque porta, metus a egestas condimentum, nibh dolor varius nisi, sit amet feugiat lorem nunc a tortor. Curabitur viverra rutrum dolor. Mauris eget nibh non lacus elementum commodo id vel quam. Praesent eget nisi eu mi porttitor fermentum.</p> 
+<p>Fusce quis leo sagittis quam scelerisque tempor. Praesent posuere pretium tempus. Donec mattis condimentum dolor non pellentesque. Nullam a egestas nisi. Quisque nec nibh quis sem vulputate posuere. Maecenas est leo, pellentesque sed cursus et, dignissim a magna. Sed commodo augue dapibus sem placerat ac accumsan urna convallis. Nulla augue orci, auctor et tempor a, fringilla eu leo. Donec ut leo nec augue adipiscing dignissim.</p>
+<p>Sed ac nibh risus, non malesuada nisl. Maecenas id justo neque. Vivamus tincidunt quam ac nisl sollicitudin a auctor enim convallis. Nam eget lorem eget turpis aliquet varius at eu nunc. Sed ut ante dui. Sed elementum vulputate tellus vitae laoreet. Nullam sodales ornare arcu, vitae tempor leo placerat quis.</p>
+<p>Vivamus posuere luctus dignissim. Donec iaculis ultricies magna non sagittis. Duis semper felis ac neque suscipit a porta lorem tempor. Nunc lacinia vestibulum ligula eu varius. In volutpat ipsum at felis lobortis mattis volutpat dui ultricies. Etiam nec elit ut odio feugiat pulvinar sed id metus. Nullam suscipit feugiat nunc a tempor. Vestibulum posuere, eros in sollicitudin dapibus, leo urna gravida odio, eu vestibulum arcu leo in urna. Ut sit amet iaculis mi. Sed hendrerit ullamcorper turpis, ac sodales dolor consequat eu. Nunc ut turpis turpis, ut condimentum justo. Quisque imperdiet urna non leo luctus et aliquet nulla iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vitae ultrices nunc.</p>
+</div>
+<p>Right: <input type='button' value='-' onclick='x.resize(6, "right", -10);'/><input type='button' value='+' onclick='x.resize(6, "right", +10);'/></p>
+<p>Left: <input type='button' value='-' onclick='x.resize(6, "left", -10);'/><input type='button' value='+' onclick='x.resize(6, "left", +10);'/></p>
+<p>Up: <input type='button' value='-' onclick='x.resize(6, "up", -10);'/><input type='button' value='+' onclick='x.resize(6, "up", +10);'/></p>
+<p>Down: <input type='button' value='-' onclick='x.resize(6, "down", -10);'/><input type='button' value='+' onclick='x.resize(6, "down", 10);'/></p>
+<script type="text/javascript" src="./xLayers.packed.js" ></script>
+<script type="text/javascript">
+var x = new xLayers("text", {
+	//width of layer
+	width: "auto",
+	//height of layer
+	height: "auto",
+	//minimal width
+	minWidth: 10,
+	//minimal height
+	minHeight: 10,
+	//animation interval
+	interval: 100,
+	//animation steps
+	steps: 10,
+	//enable mouse interaction
+	enableMouse: true,
+	//px to offset for mouse resizing cursor
+	offset: 10,
+	//allow to edit directions using mouse
+	//East, West, North, South
+	allowedActions: ["up", "down", "left", "right", "move"],
+	//do not allow to edit these layers using mouse
+	disallowLayers: []
+});
+</script>
+</body>
+</html>
