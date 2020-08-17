@@ -30,6 +30,7 @@ $(document).ready(function(){
 
         function minhaFuncao(codigo) {
             console.log(codigo)
+            // _WIDTH_____________________________________________________________________
             // Tecla e aumenta 1 px no width.
             if (codigo == 69) {
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
@@ -48,6 +49,7 @@ $(document).ready(function(){
                 quadroCanvas.style["width"] = valor_width + "px";
             }
 
+            // _HEIGTH_____________________________________________________________________
             // Tecla f aumenta 1 px no height.
             if (codigo == 70) {
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
@@ -64,6 +66,106 @@ $(document).ready(function(){
                 var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
                 valor_height = valor_height - 1;
                 quadroCanvas.style["height"] = valor_height + "px";
+            }
+
+            // _DIRECIONAL_________________________________________________________________
+            // Cima
+            if (codigo == 87) {
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strtop = quadroCanvas.style["top"]
+                var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
+                valor_top = valor_top - 1;
+                quadroCanvas.style["top"] = valor_top + "px";
+            }
+
+            // Baixo
+            if (codigo == 83) {
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strtop = quadroCanvas.style["top"]
+                var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
+                valor_top = valor_top + 1;
+                quadroCanvas.style["top"] = valor_top + "px";
+            }
+
+            // Esquerda
+            if (codigo == 65) {
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strleft = quadroCanvas.style["left"]
+                var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
+                valor_left = valor_left - 1;
+                quadroCanvas.style["left"] = valor_left + "px";
+            }
+
+            // Direita
+            if (codigo == 68) {
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strleft = quadroCanvas.style["left"]
+                var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
+                valor_left = valor_left + 1;
+                quadroCanvas.style["left"] = valor_left + "px";
+            }
+
+            // _BORDER_____________________________________________________________________
+            // Diminuir Tecla z
+            if (codigo == 90) {
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strborder = quadroCanvas.style["border"]
+                //Separa os dois primeiros itens: espessura e tipo da borda
+                var arrayborder = strborder.split(" ",2);
+                var valor_border = parseInt(arrayborder[0].substr(0, arrayborder[0].length - 2));
+                valor_border = valor_border - 1;
+
+                // Identifica as cores, mesmo quando insere no formato iniciado com #.
+                var rgbposini = strborder.indexOf("rgb");
+                var strRgb = strborder.substr(rgbposini);
+                // Montar o border
+                quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
+                console.log(quadroCanvas.style["border"]) 
+            }
+            // Aumentar Tecla x
+            if (codigo == 88) {
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strborder = quadroCanvas.style["border"]
+                //Separa os dois primeiros itens: espessura e tipo da borda
+                var arrayborder = strborder.split(" ",2);
+                var valor_border = parseInt(arrayborder[0].substr(0, arrayborder[0].length - 2));
+                valor_border = valor_border + 1;
+
+                // Identifica as cores, mesmo quando insere no formato iniciado com #.
+                var rgbposini = strborder.indexOf("rgb");
+                var strRgb = strborder.substr(rgbposini);
+                // Montar o border
+                quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
+                console.log(quadroCanvas.style["border"]) 
+            }
+
+            // Pegar resultados Tecla v
+            if (codigo == 86) {
+                // WIDTH
+                var quadroCanvas = document.getElementById("quadrocanvas_0")
+                var strwidth = quadroCanvas.style["width"]
+                var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
+
+                // HEIGTH
+                var quadroCanvas = document.getElementById("quadrocanvas_0")
+                var strheight = quadroCanvas.style["height"]
+                var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
+
+                // TOP
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strtop = quadroCanvas.style["top"]
+                var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
+
+                // LEFT
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strleft = quadroCanvas.style["left"]
+                var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
+
+                // BORDER
+                var quadroCanvas = document.getElementById("quadrodiv_0")
+                var strborder = quadroCanvas.style["border"]
+
+                console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
             }
 
             

@@ -12,6 +12,14 @@
                 "border": "5px solid #0000ff",
                 "width": "180px",
                 "height": "178px"
+            },
+            {
+                "link": "",
+                "top": "690px",
+                "left": "304px",
+                "border": "1px solid rgb(255, 0, 0)",
+                "width": "192px",
+                "height": "186px"
             }
         ]
     }
