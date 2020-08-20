@@ -28,11 +28,11 @@ $(document).ready(function(){
 <script>
     function inicio(){
 
-        function minhaFuncao(codigo) {
-            console.log(codigo)
+        function teclas(tecla) {
+            console.log(tecla)
             // _WIDTH_____________________________________________________________________
             // Tecla e aumenta 1 px no width.
-            if (codigo == 69) {
+            if (tecla == 69) {
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
                 var strwidth = quadroCanvas.style["width"]
                 var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
@@ -41,7 +41,7 @@ $(document).ready(function(){
             }
 
             // Tecla Q diminui 1 px no width.
-            if (codigo == 81) {
+            if (tecla == 81) {
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
                 var strwidth = quadroCanvas.style["width"]
                 var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
             // _HEIGTH_____________________________________________________________________
             // Tecla f aumenta 1 px no height.
-            if (codigo == 70) {
+            if (tecla == 70) {
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
                 var strheight = quadroCanvas.style["height"]
                 var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
@@ -60,7 +60,7 @@ $(document).ready(function(){
             }
 
             // Tecla r diminui 1 px no height.
-            if (codigo == 82) {
+            if (tecla == 82) {
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
                 var strheight = quadroCanvas.style["height"]
                 var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
@@ -70,7 +70,7 @@ $(document).ready(function(){
 
             // _DIRECIONAL_________________________________________________________________
             // Cima
-            if (codigo == 87) {
+            if (tecla == 87) {
                 var quadroCanvas = document.getElementById("quadrodiv_0")
                 var strtop = quadroCanvas.style["top"]
                 var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
@@ -79,7 +79,7 @@ $(document).ready(function(){
             }
 
             // Baixo
-            if (codigo == 83) {
+            if (tecla == 83) {
                 var quadroCanvas = document.getElementById("quadrodiv_0")
                 var strtop = quadroCanvas.style["top"]
                 var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
@@ -88,7 +88,7 @@ $(document).ready(function(){
             }
 
             // Esquerda
-            if (codigo == 65) {
+            if (tecla == 65) {
                 var quadroCanvas = document.getElementById("quadrodiv_0")
                 var strleft = quadroCanvas.style["left"]
                 var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
@@ -97,7 +97,7 @@ $(document).ready(function(){
             }
 
             // Direita
-            if (codigo == 68) {
+            if (tecla == 68) {
                 var quadroCanvas = document.getElementById("quadrodiv_0")
                 var strleft = quadroCanvas.style["left"]
                 var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
@@ -107,7 +107,7 @@ $(document).ready(function(){
 
             // _BORDER_____________________________________________________________________
             // Diminuir Tecla z
-            if (codigo == 90) {
+            if (tecla == 90) {
                 var quadroCanvas = document.getElementById("quadrodiv_0")
                 var strborder = quadroCanvas.style["border"]
                 //Separa os dois primeiros itens: espessura e tipo da borda
@@ -123,7 +123,7 @@ $(document).ready(function(){
                 console.log(quadroCanvas.style["border"]) 
             }
             // Aumentar Tecla x
-            if (codigo == 88) {
+            if (tecla == 88) {
                 var quadroCanvas = document.getElementById("quadrodiv_0")
                 var strborder = quadroCanvas.style["border"]
                 //Separa os dois primeiros itens: espessura e tipo da borda
@@ -140,7 +140,7 @@ $(document).ready(function(){
             }
 
             // Pegar resultados Tecla v
-            if (codigo == 86) {
+            if (tecla == 86) {
                 // WIDTH
                 var quadroCanvas = document.getElementById("quadrocanvas_0")
                 var strwidth = quadroCanvas.style["width"]
@@ -168,12 +168,15 @@ $(document).ready(function(){
                 console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
             }
 
+            if (tecla == 78){
+                
+            }
             
         }
         document.addEventListener('keydown', function(e) {
             e = e || window.event;
-            var code = e.which || e.keyCode;
-            minhaFuncao(code);
+            var tecla = e.which || e.keyCode;
+            teclas(tecla);
         });
 
 
