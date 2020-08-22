@@ -26,6 +26,7 @@ body{
     var red = 0;
     var green = 0;
     var blue = 255;
+    var cores = ["#ff0000","#00ff00","#0000ff","#ffff00"];
 
         function blink(id) {
             $("#"+id).fadeOut(150);
@@ -349,8 +350,20 @@ body{
             }
             
             // Muda de cor com a tecla t
-            if (tecla == 78){
+            if (tecla == 84){
+                var quadroCanvas = document.getElementById(div_atual)
+                var strborder = quadroCanvas.style["border"]
+                //Separa os dois primeiros itens: espessura e tipo da borda
+                var arrayborder = strborder.split(" ",2);
+                var valor_border = parseInt(arrayborder[0].substr(0, arrayborder[0].length - 2));
+
+                // Identifica as cores, mesmo quando insere no formato iniciado com #.
+                var rgbposini = strborder.indexOf("rgb");
+                var strRgb = strborder.substr(rgbposini);
                 
+                // Montar o border
+                quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
+                console.log(quadroCanvas.style["border"])
             }
         }
      
