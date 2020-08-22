@@ -27,6 +27,7 @@ body{
     var green = 0;
     var blue = 255;
     var cores = ["#ff0000","#00ff00","#0000ff","#ffff00"];
+    var ind_cores;
 
         function blink(id) {
             $("#"+id).fadeOut(150);
@@ -37,6 +38,7 @@ body{
             // console.log(id)
             setTimeout(blink(id), 150)
             div_atual = id;
+            ind_cores = 0;
             console.log(div_atual)
         }
 
@@ -351,6 +353,7 @@ body{
             
             // Muda de cor com a tecla t
             if (tecla == 84){
+                let rgb = cores[ind_cores];
                 var quadroCanvas = document.getElementById(div_atual)
                 var strborder = quadroCanvas.style["border"]
                 //Separa os dois primeiros itens: espessura e tipo da borda
@@ -358,12 +361,50 @@ body{
                 var valor_border = parseInt(arrayborder[0].substr(0, arrayborder[0].length - 2));
 
                 // Identifica as cores, mesmo quando insere no formato iniciado com #.
-                var rgbposini = strborder.indexOf("rgb");
-                var strRgb = strborder.substr(rgbposini);
+                // var rgbposini = strborder.indexOf("rgb");
+                // var strRgb = strborder.substr(rgbposini);
+
+                // ind_cores
                 
                 // Montar o border
-                quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
+                quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + rgb;
                 console.log(quadroCanvas.style["border"])
+
+                if (ind_cores < cores.length - 1) {
+                    ind_cores++;    
+                }else{
+                    ind_cores = 0;
+                }
+                
+            }
+
+            // Muda de cor com a tecla g
+            if (tecla == 71){
+                let rgb = cores[ind_cores];
+                var quadroCanvas = document.getElementById(div_atual)
+                var strborder = quadroCanvas.style["border"]
+                //Separa os dois primeiros itens: espessura e tipo da borda
+                var arrayborder = strborder.split(" ",2);
+                var valor_border = parseInt(arrayborder[0].substr(0, arrayborder[0].length - 2));
+
+                // Identifica as cores, mesmo quando insere no formato iniciado com #.
+                // var rgbposini = strborder.indexOf("rgb");
+                // var strRgb = strborder.substr(rgbposini);
+
+                // ind_cores
+                
+                // Montar o border
+                quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + rgb;
+                console.log(quadroCanvas.style["border"])
+
+                // console.log(ind_cores)
+
+                if (ind_cores < 1) {
+                    // console.log(cores.length)
+                    ind_cores = cores.length - 1;
+                }else{
+                    ind_cores--;
+                }
             }
         }
      
