@@ -39,7 +39,7 @@ body{
             setTimeout(blink(id), 150)
             div_atual = id;
             ind_cores = 0;
-            console.log(div_atual)
+            // console.log(div_atual)
         }
 
     function montarTela(data) {
@@ -105,7 +105,7 @@ body{
         }
    
         function teclas(tecla) {
-            console.log(tecla)
+            // console.log(tecla)
             // Retirar a a substring quadrodiv_ da string div_atual
             let strDivAtual = div_atual.toString();
             let ini = "quadrodiv_".length;
@@ -206,7 +206,7 @@ body{
                 var strRgb = strborder.substr(rgbposini);
                 // Montar o border
                 quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
-                console.log(quadroCanvas.style["border"]) 
+                // console.log(quadroCanvas.style["border"]) 
             }
             // Aumentar Tecla x
             if (tecla == 88) {
@@ -222,7 +222,7 @@ body{
                 var strRgb = strborder.substr(rgbposini);
                 // Montar o border
                 quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
-                console.log(quadroCanvas.style["border"]) 
+                // console.log(quadroCanvas.style["border"]) 
             }
 
             // Pegar resultados Tecla v
@@ -268,7 +268,7 @@ body{
                             green = 255;
                             blue = 0;
                             changecolor = 0;
-                            console.log("green")
+                            // console.log("green")
                         }
                     }
                         
@@ -278,7 +278,7 @@ body{
                             green = 0;
                             blue = 0;
                             changecolor = 0;
-                            console.log("red")
+                            // console.log("red")
                         }
                     }
 
@@ -288,7 +288,7 @@ body{
                             green = 0;
                             blue = 255;
                             changecolor = 0;
-                            console.log("blue")
+                            // console.log("blue")
                         }
                     }
                     
@@ -338,7 +338,7 @@ body{
                         posYini = 100;
                     }
                     
-                    console.log(qtd_canvas)
+                    // console.log(qtd_canvas)
                 } else {
                     alert("Não é possível incluir. Número máximo atingido.")
                 }
@@ -348,7 +348,7 @@ body{
             if (tecla == 75){
                 $("#"+div_atual).remove();
                 qtd_canvas--;
-                console.log(qtd_canvas)
+                // console.log(qtd_canvas)
             }
             
             // Muda de cor com a tecla t
@@ -368,7 +368,7 @@ body{
                 
                 // Montar o border
                 quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + rgb;
-                console.log(quadroCanvas.style["border"])
+                // console.log(quadroCanvas.style["border"])
 
                 if (ind_cores < cores.length - 1) {
                     ind_cores++;    
@@ -395,7 +395,7 @@ body{
                 
                 // Montar o border
                 quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + rgb;
-                console.log(quadroCanvas.style["border"])
+                // console.log(quadroCanvas.style["border"])
 
                 // console.log(ind_cores)
 
