@@ -228,35 +228,46 @@ body{
             // Pegar resultados Tecla v
             if (tecla == 86) {
 
+                // Pegar a quantidade de Canvas
                 console.log(qtd_canvas)
 
-                // Pegar a quantidade de Canvas
+               
 
-                // // WIDTH
-                // var quadroCanvas = document.getElementById(canvas_atual)
-                // var strwidth = quadroCanvas.style["width"]
-                // var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
+                for (let i = 0; i < qtd_canvas; i++) {
+                    const div = "quadrodiv_" + i;
+                    const canvas = "quadrocanvas_" + i;
 
-                // // HEIGTH
-                // var quadroCanvas = document.getElementById(canvas_atual)
-                // var strheight = quadroCanvas.style["height"]
-                // var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
+                    // WIDTH
+                    var quadroCanvas = document.getElementById(canvas)
+                    var strwidth = quadroCanvas.style["width"]
+                    var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
 
-                // // TOP
-                // var quadroCanvas = document.getElementById(div_atual)
-                // var strtop = quadroCanvas.style["top"]
-                // var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
+                    // HEIGTH
+                    var quadroCanvas = document.getElementById(canvas)
+                    var strheight = quadroCanvas.style["height"]
+                    var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
 
-                // // LEFT
-                // var quadroCanvas = document.getElementById(div_atual)
-                // var strleft = quadroCanvas.style["left"]
-                // var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
+                    // TOP
+                    var quadroCanvas = document.getElementById(div)
+                    var strtop = quadroCanvas.style["top"]
+                    var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
 
-                // // BORDER
-                // var quadroCanvas = document.getElementById(div_atual)
-                // var strborder = quadroCanvas.style["border"]
+                    // LEFT
+                    var quadroCanvas = document.getElementById(div)
+                    var strleft = quadroCanvas.style["left"]
+                    var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
 
-                // console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
+                    // BORDER
+                    var quadroCanvas = document.getElementById(div)
+                    var strborder = quadroCanvas.style["border"]
+
+                    // console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
+                    var obj = { top: valor_top+"px", left: valor_left+"px", border: strborder, width: valor_width+"px", height: valor_height+"px" };
+                    
+                    var myJSON = JSON.stringify(obj);
+                    console.log(myJSON)
+
+                }
 
             }
 
