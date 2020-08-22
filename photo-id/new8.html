@@ -192,7 +192,7 @@ body{
             }
 
             // _BORDER_____________________________________________________________________
-            // Diminuir Tecla z
+            // Diminuir Borda Tecla z
             if (tecla == 90) {
                 var quadroCanvas = document.getElementById(div_atual)
                 var strborder = quadroCanvas.style["border"]
@@ -208,7 +208,7 @@ body{
                 quadroCanvas.style["border"] = valor_border + "px " + arrayborder[1] + " " + strRgb;
                 // console.log(quadroCanvas.style["border"]) 
             }
-            // Aumentar Tecla x
+            // Aumentar Borda Tecla x
             if (tecla == 88) {
                 var quadroCanvas = document.getElementById(div_atual)
                 var strborder = quadroCanvas.style["border"]
@@ -227,31 +227,37 @@ body{
 
             // Pegar resultados Tecla v
             if (tecla == 86) {
-                // WIDTH
-                var quadroCanvas = document.getElementById(canvas_atual)
-                var strwidth = quadroCanvas.style["width"]
-                var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
 
-                // HEIGTH
-                var quadroCanvas = document.getElementById(canvas_atual)
-                var strheight = quadroCanvas.style["height"]
-                var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
+                console.log(qtd_canvas)
 
-                // TOP
-                var quadroCanvas = document.getElementById(div_atual)
-                var strtop = quadroCanvas.style["top"]
-                var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
+                // Pegar a quantidade de Canvas
 
-                // LEFT
-                var quadroCanvas = document.getElementById(div_atual)
-                var strleft = quadroCanvas.style["left"]
-                var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
+                // // WIDTH
+                // var quadroCanvas = document.getElementById(canvas_atual)
+                // var strwidth = quadroCanvas.style["width"]
+                // var valor_width = parseInt(strwidth.substr(0, strwidth.length - 2));
 
-                // BORDER
-                var quadroCanvas = document.getElementById(div_atual)
-                var strborder = quadroCanvas.style["border"]
+                // // HEIGTH
+                // var quadroCanvas = document.getElementById(canvas_atual)
+                // var strheight = quadroCanvas.style["height"]
+                // var valor_height = parseInt(strheight.substr(0, strheight.length - 2));
 
-                console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
+                // // TOP
+                // var quadroCanvas = document.getElementById(div_atual)
+                // var strtop = quadroCanvas.style["top"]
+                // var valor_top = parseInt(strtop.substr(0, strtop.length - 2));
+
+                // // LEFT
+                // var quadroCanvas = document.getElementById(div_atual)
+                // var strleft = quadroCanvas.style["left"]
+                // var valor_left = parseInt(strleft.substr(0, strleft.length - 2));
+
+                // // BORDER
+                // var quadroCanvas = document.getElementById(div_atual)
+                // var strborder = quadroCanvas.style["border"]
+
+                // console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
+
             }
 
             // Insere um novo Canvas Tecla n
