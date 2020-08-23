@@ -1,8 +1,1 @@
-[
-    {
-        "src": "image_7150_2e-Hubble-Legacy-Field.jpg",
-        "width": "1280px",
-        "height": "959px",
-        "quadros": []
-    }
-]
+[{"src": "img/p_placas-eletronicas-para-elevadores-1.jpg", "width": "1280px", "height": "959px", "quadros": [{"link": "http://www.google.com","top": "64px","left": "278px","border": "1px solid rgb(255, 0, 0)","width": "80px","height": "27px"},{"link": "","top": "80px","left": "177px","border": "2px solid rgb(0, 255, 0)","width": "65px","height": "22px"},{"link": "","top": "63px","left": "391px","border": "1px solid rgb(255, 0, 0)","width": "78px","height": "26px"},{"link": "","top": "149px","left": "172px","border": "2px solid rgb(255, 255, 0)","width": "56px","height": "65px"}]}]
