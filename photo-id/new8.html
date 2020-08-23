@@ -237,6 +237,10 @@ body{
                     const div = "quadrodiv_" + i;
                     const canvas = "quadrocanvas_" + i;
 
+                    // LINK
+                    var quadroCanvas = document.getElementById(div)
+                    var link = quadroCanvas.attributes["link"].value
+
                     // WIDTH
                     var quadroCanvas = document.getElementById(canvas)
                     var strwidth = quadroCanvas.style["width"]
@@ -262,7 +266,7 @@ body{
                     var strborder = quadroCanvas.style["border"]
 
                     // console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
-                    let strResult =  '{"link": "","top": "'+valor_top+'px","left": "'+valor_left+'px","border": "'+strborder+'","width": "'+valor_width+'px","height": "'+valor_height+'px"},';
+                    let strResult =  '{"link": "'+link+'","top": "'+valor_top+'px","left": "'+valor_left+'px","border": "'+strborder+'","width": "'+valor_width+'px","height": "'+valor_height+'px"},';
                     
                     obj = { top: valor_top+"px", left: valor_left+"px", border: strborder, width: valor_width+"px", height: valor_height+"px" };
                     //quadros = quadros + obj + ",";
@@ -443,7 +447,11 @@ body{
             
             // Adiciona link com a tecla L
             if (tecla == 76) {
-                
+                //  link
+                var quadroDiv = document.getElementById(div_atual)
+                var link = prompt("Digite o link")
+                quadroDiv.setAttribute("link", link);
+                //console.log(quadroDiv)
             }
         
         }
