@@ -105,7 +105,7 @@ body{
         }
    
         function teclas(tecla) {
-            // console.log(tecla)
+            console.log(tecla)
             // Retirar a a substring quadrodiv_ da string div_atual
             let strDivAtual = div_atual.toString();
             let ini = "quadrodiv_".length;
@@ -230,8 +230,8 @@ body{
 
                 // Pegar a quantidade de Canvas
                 console.log(qtd_canvas)
-
-               
+                var obj;
+                var quadros = "";
 
                 for (let i = 0; i < qtd_canvas; i++) {
                     const div = "quadrodiv_" + i;
@@ -262,12 +262,29 @@ body{
                     var strborder = quadroCanvas.style["border"]
 
                     // console.log("Width: "+valor_width+", Height: "+valor_height+", Top: "+valor_top+", Left: "+valor_left + ", Border: "+strborder)
-                    var obj = { top: valor_top+"px", left: valor_left+"px", border: strborder, width: valor_width+"px", height: valor_height+"px" };
+                    let strResult =  '{"link": "","top": "'+valor_top+'px","left": "'+valor_left+'px","border": "'+strborder+'","width": "'+valor_width+'px","height": "'+valor_height+'px"},';
                     
-                    var myJSON = JSON.stringify(obj);
-                    console.log(myJSON)
+                    obj = { top: valor_top+"px", left: valor_left+"px", border: strborder, width: valor_width+"px", height: valor_height+"px" };
+                    //quadros = quadros + obj + ",";
 
+                    quadros = quadros + strResult;
+
+                    // console.log(strResult)
                 }
+
+                // Retira a vírgula (último caractere)
+                quadros = quadros.substr(0 , quadros.length -1)
+
+                // Fecha o objeto json
+
+                var obj2 = '[{"src": "image_7150_2e-Hubble-Legacy-Field.jpg", "width": "1280px", "height": "959px", "quadros": ['+quadros+']}]';
+
+
+                // "quadros": []
+
+                // var myJSON = JSON.stringify(obj);
+                // console.log(myJSON)
+                console.log(obj2)
 
             }
 
@@ -423,6 +440,12 @@ body{
                     ind_cores--;
                 }
             }
+            
+            // Adiciona link com a tecla L
+            if (tecla == 76) {
+                
+            }
+        
         }
      
 
