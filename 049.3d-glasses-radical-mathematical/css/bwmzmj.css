@@ -1,0 +1,23 @@
+form label {
+  padding: .6em 1em .5em 2em;
+  transform: translateX(-2rem);
+  border-radius: .8em;
+  border: .2em solid transparent;
+  transition: border-color 175ms linear, background-color 175ms linear;
+}
+form input:checked + label {
+  border-color: var(--form-color, #56abcd);
+  background-color: var(--form-color-alpha, rgba(86, 171, 200, .15));
+  position: relative;
+}
+form div {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.flexed body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

@@ -143,6 +143,8 @@
 |---          |---          |
 | [046.Blender.jpg](https://renatomportugal.github.io/template/046.Blender/) |<img src="images/046.Blender.jpg"/> |
 | [047.layered-parallax-effect](https://renatomportugal.github.io/template/047.layered-parallax-effect/) |<img src="images/047.layered-parallax-effect.jpg"/> |
+| [048.3d-glasses-comedy-tragedy](https://renatomportugal.github.io/template/048.3d-glasses-comedy-tragedy/) |<img src="images/048.3d-glasses-comedy-tragedy.jpg"/> |
+| [049.3d-glasses-radical-mathematical](https://renatomportugal.github.io/template/049.3d-glasses-radical-mathematical/) |<img src="images/049.3d-glasses-radical-mathematical.jpg"/> |
 
 ## Novo
 
