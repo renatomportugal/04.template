@@ -154,6 +154,7 @@
 | [054.fake-3d-effect-with-depth-map](https://renatomportugal.github.io/template/054.fake-3d-effect-with-depth-map/) |<img src="images/054.fake-3d-effect-with-depth-map.jpg"/> |
 | [055.three-js-earth](https://renatomportugal.github.io/template/055.three-js-earth/) |<img src="images/055.three-js-earth.jpg"/> |
 | [056.WebGLRobot](https://renatomportugal.github.io/template/056.WebGLRobot/) |<img src="images/056.WebGLRobot.jpg"/> |
+| [057.dog-selector](https://renatomportugal.github.io/template/057.dog-selector/) |<img src="images/057.dog-selector.jpg"/> |
 
 ## Novo
 
