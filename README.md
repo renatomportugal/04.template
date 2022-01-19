@@ -142,6 +142,7 @@
 |Links        |Telas        |
 |---          |---          |
 | [046.Blender.jpg](https://renatomportugal.github.io/template/046.Blender/) |<img src="images/046.Blender.jpg"/> |
+| [047.layered-parallax-effect](https://renatomportugal.github.io/template/047.layered-parallax-effect/) |<img src="images/047.layered-parallax-effect.jpg"/> |
 
 ## Novo
 

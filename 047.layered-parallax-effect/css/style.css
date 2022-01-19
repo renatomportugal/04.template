@@ -1,0 +1,32 @@
+.container {
+  width: 50%;
+  margin: 150px auto;
+}
+
+.moving-zone {
+  position: relative;
+  width: 85%;
+  height: 985%;
+  margin: auto;
+  perspective: 800px;
+}
+
+.layer {
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.layer-2 {
+  position: absolute;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  left: 20%;
+  top: 14% !important;
+  transform: translateZ(100px) !important;
+}
+
+.layer-2 img { overflow: hidden; }
