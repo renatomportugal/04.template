@@ -45,7 +45,6 @@
 * [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/template/022.infinity-scroll-with-angularjs/)
 
 ## Mapeamento de Imagem
-* [020.imgmap_2.2_108](https://renatomportugal.github.io/template/020.imgmap_2.2_108/)
 * [021.impact-summary-map-template-js-master](https://renatomportugal.github.io/template/021.impact-summary-map-template-js-master/)
 
 ## Crop
