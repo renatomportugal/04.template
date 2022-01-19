@@ -2,20 +2,19 @@
 
 ## Coordenadas
 
-|1            |2            |
+|Coordenadas  |Telas        |
 |---          |---          |
 | [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) | <img src="https://placekitten.com/300/150" alt="drawing" max-width="100px" max-height="100px" alt="030.mouse-xy-position"/> |
-
-* [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/)
-* [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/)
-* [013.einstein-relativity-codepen-stellar-scientists](https://renatomportugal.github.io/template/013.einstein-relativity-codepen-stellar-scientists/)
-* [042.web-animations-sound-and-custom-cursor-mix](https://renatomportugal.github.io/template/042.web-animations-sound-and-custom-cursor-mix/)
-* [002.animation-project](https://renatomportugal.github.io/template/002.animation-project/)
-* [006.CodePen_Export_mapsv](https://renatomportugal.github.io/template/006.CodePen_Export_mapsv/)
-* [009.crop-image-with-focus-point-cropper](https://renatomportugal.github.io/template/009.crop-image-with-focus-point-cropper/)
-* [017.image-cropper-2012-07-04](https://renatomportugal.github.io/template/017.image-cropper-2012-07-04/)
-* [027.linear-interp](https://renatomportugal.github.io/template/027.linear-interp/)
-* [029.mouse-coord](https://renatomportugal.github.io/template/029.mouse-coord/)
+| [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) ||
+| [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) ||
+| [013.einstein-relativity-codepen-stellar-scientists](https://renatomportugal.github.io/template/013.einstein-relativity-codepen-stellar-scientists/) ||
+| [042.web-animations-sound-and-custom-cursor-mix](https://renatomportugal.github.io/template/042.web-animations-sound-and-custom-cursor-mix/) ||
+| [002.animation-project](https://renatomportugal.github.io/template/002.animation-project/) ||
+| [006.CodePen_Export_mapsv](https://renatomportugal.github.io/template/006.CodePen_Export_mapsv/) ||
+| [009.crop-image-with-focus-point-cropper](https://renatomportugal.github.io/template/009.crop-image-with-focus-point-cropper/) ||
+| [017.image-cropper-2012-07-04](https://renatomportugal.github.io/template/017.image-cropper-2012-07-04/) ||
+| [027.linear-interp](https://renatomportugal.github.io/template/027.linear-interp/) ||
+| [029.mouse-coord](https://renatomportugal.github.io/template/029.mouse-coord/) ||
 
 ## Infográfico
 
