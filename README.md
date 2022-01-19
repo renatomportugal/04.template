@@ -149,6 +149,9 @@
 | [050.animated-details-element-week-11-52](https://renatomportugal.github.io/template/050.animated-details-element-week-11-52/) |<img src="images/050.animated-details-element-week-11-52.jpg"/> |
 |ANIMAÇÃO     |             |
 | [051.3d-city-animation-pure-css](https://renatomportugal.github.io/template/051.3d-city-animation-pure-css/) |<img src="images/051.3d-city-animation-pure-css.gif"/> |
+| [052.3d-web](https://renatomportugal.github.io/template/052.3d-web/) |<img src="images/052.3d-web.gif"/> |
+| [053.11-z-noise-threejs](https://renatomportugal.github.io/template/053.11-z-noise-threejs/) |<img src="images/053.11-z-noise-threejs.jpg"/> |
+| [054.fake-3d-effect-with-depth-map](https://renatomportugal.github.io/template/054.fake-3d-effect-with-depth-map/) |<img src="images/054.fake-3d-effect-with-depth-map.jpg"/> |
 
 ## Novo
 

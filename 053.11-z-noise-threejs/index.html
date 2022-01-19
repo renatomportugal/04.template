@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>11. z noise - ThreeJS</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<script id="vertex" type="x-shader/x-fragment">
+      #define PI 3.14159265358979323846
+  varying vec2 uv2;
+  uniform float u_time;
+  void main(){
+    uv2 = position.xy / 16.;
+    float offset = uv.x + uv.y;
+    vec3 target = -position;
+    // vec3 res =  mix(position,target, ease);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.);
+  }
+</script>
+<script id="fragment" type="x-shader/x-fragment">
+      #define PI 3.14159265358979323846
+  varying vec2 uv2;
+  uniform float u_time;
+  uniform sampler2D t0;
+  uniform sampler2D t1;
+  void main(){
+    vec2 st = uv2 + 0.5;
+    gl_FragColor = vec4(texture2D(t1,st).xyz,1.);
+  }
+</script>
+
+<script id="dev-fragment" type="x-shader/x-fragment">
+      #define PI 3.14159265358979323846
+  varying vec2 uv2;
+  uniform float u_time;
+  uniform sampler2D t0;
+  uniform sampler2D t1;
+  void main(){
+    vec2 st = uv2 + 0.5;
+    gl_FragColor = vec4(texture2D(t1,st).xyz,1.);
+  }
+</script>
+<script id="z-noise-vertex" type="x-shader/x-fragment">
+      #define PI 3.14159265358979323846
+  varying vec2 uv2;
+  uniform float u_time;
+  uniform float u_freq;
+  uniform float u_speed;
+  void main(){
+    uv2 = position.xy / 16.;
+    float offset = uv.x + uv.y;
+    vec3 target = -position;
+    float max_depth = 5.;
+    // same as wave
+    float z = smoothstep(0.2,0.8,sin(PI * u_time + snoise(vec3(uv2 + 0.5,1.)) * u_freq ) * 0.5 +0.5) * max_depth;
+    // vec3 res =  mix(position,target, ease);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position.x,position.y,z,1.);
+  }
+</script>
+<script id="z-noise-fragment" type="x-shader/x-fragment">
+  precision highp float;
+      #define PI 3.14159265358979323846
+  varying vec2 uv2;
+  uniform float u_time;
+  uniform sampler2D t0;
+  uniform sampler2D t1;
+  uniform float u_freq;
+  uniform float u_speed;
+  void main(){
+    
+    vec2 st = uv2 + 0.5;
+    vec2 stTarget = 1.-st;
+    
+    // EXPLICATION
+    // clipEase runs at frecuency 1
+    // waveEase runs at frecuency 10(roc)
+    // for them to move at the same speed we divide clipEase PI by frequency 10 PI / 
+    // It works!. But we want clipEase to have higher frequency, but it goes out of sync :/
+    // We need some tweeking
+    // clipEase frequency =  2
+    // waveEase frequency = 10
+    // Like before we divide PI by waveEase amplitude to move at the same speed = PI/10.
+    // And after we multiply by clipEase's own frequency = (PI/10)*2.
+    
+    
+    // AA is based on amplitude so both eases smooth in the same place
+    float clipAA = 0.03 * u_speed;
+    float clipEase = smoothstep(0.5 - clipAA,0.5 + clipAA ,
+                       sin(snoise(vec3(st,1.)) * u_speed  + (u_time * PI/u_freq * u_speed )  )  * 0.5 + 0.5
+                      );
+    // AA is based on amplitude so both eases smooth in the same place
+    float waveAA = 0.03 * u_freq;
+    float waveEase = smoothstep(0.5 - waveAA,0.5 + waveAA,
+                             sin(PI * u_time + snoise(vec3(st,1.)) * u_freq ) * 0.5 +0.5
+                            );
+    
+    vec3 color = texture2D(t0,mix(st, stTarget, waveEase)).xyz;
+    vec3 colorTarget = texture2D(t1,mix(stTarget,st, waveEase)).xyz;
+    vec3 res = mix(color,colorTarget,clipEase);
+    gl_FragColor = vec4(res,1.);
+  }
+</script>
+
+<script id="noise-zoom-in-fragment" type="x-shader/x-fragment">
+      #define PI 3.14159265358979323846
+  varying vec2 uv2;
+  uniform float u_time;
+  uniform sampler2D t0;
+  uniform sampler2D t1;
+  void main(){
+    
+    vec2 st = uv2 + 0.5;
+    vec2 stTarget = 1.-st;
+    float ease1 = smoothstep(0.2,0.8,sin(PI * u_time ) * 0.5 +0.5);
+    float ease0 = smoothstep(0.2,0.8,sin(PI * u_time + snoise(vec3(st,1.)) ) * 0.5 +0.5);
+    
+    vec3 color = texture2D(t0,mix(st, stTarget, ease0)).xyz;
+    vec3 colorTarget = texture2D(t1,mix(stTarget,st, ease0)).xyz;
+    vec3 res = mix(color,colorTarget,ease1);
+    gl_FragColor = vec4(res,1.);
+  }
+</script>
+
+
+
+<script id="noise" type="x-shader/x-fragment">
+  
+//
+// Description : Array and textureless GLSL 2D/3D/4D simplex
+//               noise functions.
+//      Author : Ian McEwan, Ashima Arts.
+//  Maintainer : ijm
+//     Lastmod : 20110822 (ijm)
+//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
+//               Distributed under the MIT License. See LICENSE file.
+//               https://github.com/ashima/webgl-noise
+//
+
+vec3 mod289(vec3 x) {
+  return x - floor(x * (1.0 / 289.0)) * 289.0;
+}
+
+vec4 mod289(vec4 x) {
+  return x - floor(x * (1.0 / 289.0)) * 289.0;
+}
+
+vec4 permute(vec4 x) {
+  return mod289(((x*34.0)+1.0)*x);
+}
+
+vec4 taylorInvSqrt(vec4 r){
+  return 1.79284291400159 - 0.85373472095314 * r;
+}
+
+float snoise(vec3 v) {
+
+  const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+  const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
+
+  // First corner
+  vec3 i  = floor(v + dot(v, C.yyy) );
+  vec3 x0 =   v - i + dot(i, C.xxx) ;
+
+  // Other corners
+  vec3 g = step(x0.yzx, x0.xyz);
+  vec3 l = 1.0 - g;
+  vec3 i1 = min( g.xyz, l.zxy );
+  vec3 i2 = max( g.xyz, l.zxy );
+
+  //   x0 = x0 - 0.0 + 0.0 * C.xxx;
+  //   x1 = x0 - i1  + 1.0 * C.xxx;
+  //   x2 = x0 - i2  + 2.0 * C.xxx;
+  //   x3 = x0 - 1.0 + 3.0 * C.xxx;
+  vec3 x1 = x0 - i1 + C.xxx;
+  vec3 x2 = x0 - i2 + C.yyy; // 2.0*C.x = 1/3 = C.y
+  vec3 x3 = x0 - D.yyy;      // -1.0+3.0*C.x = -0.5 = -D.y
+
+  // Permutations
+  i = mod289(i);
+  vec4 p = permute( permute( permute(
+      i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+    + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
+    + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
+
+  // Gradients: 7x7 points over a square, mapped onto an octahedron.
+  // The ring size 17*17 = 289 is close to a multiple of 49 (49*6 = 294)
+  float n_ = 0.142857142857; // 1.0/7.0
+  vec3  ns = n_ * D.wyz - D.xzx;
+
+  vec4 j = p - 49.0 * floor(p * ns.z * ns.z);  //  mod(p,7*7)
+
+  vec4 x_ = floor(j * ns.z);
+  vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)
+
+  vec4 x = x_ *ns.x + ns.yyyy;
+  vec4 y = y_ *ns.x + ns.yyyy;
+  vec4 h = 1.0 - abs(x) - abs(y);
+
+  vec4 b0 = vec4( x.xy, y.xy );
+  vec4 b1 = vec4( x.zw, y.zw );
+
+  //vec4 s0 = vec4(lessThan(b0,0.0))*2.0 - 1.0;
+  //vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;
+  vec4 s0 = floor(b0)*2.0 + 1.0;
+  vec4 s1 = floor(b1)*2.0 + 1.0;
+  vec4 sh = -step(h, vec4(0.0));
+
+  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+
+  vec3 p0 = vec3(a0.xy,h.x);
+  vec3 p1 = vec3(a0.zw,h.y);
+  vec3 p2 = vec3(a1.xy,h.z);
+  vec3 p3 = vec3(a1.zw,h.w);
+
+  //Normalise gradients
+  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+  p0 *= norm.x;
+  p1 *= norm.y;
+  p2 *= norm.z;
+  p3 *= norm.w;
+
+  // Mix final noise value
+  vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+  m = m * m;
+  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) );
+
+}
+  
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/593507/OrbitControls.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
