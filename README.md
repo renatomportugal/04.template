@@ -14,6 +14,11 @@
 | [027.linear-interp](https://renatomportugal.github.io/template/027.linear-interp/) ||
 | [029.mouse-coord](https://renatomportugal.github.io/template/029.mouse-coord/) ||
 
+
+|IHM - Interface Homem Máquina  |Telas        |
+|---          					|---          |
+| [020.self-destruct-button](https://renatomportugal.github.io/template/020.self-destruct-button/) | <img src="images/020.self-destruct-button.jpg"/> |
+
 ## Infográfico
 
 * [023.infografico-json](https://renatomportugal.github.io/template/023.infografico-json/)
