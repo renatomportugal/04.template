@@ -2,8 +2,9 @@
 
 ## Coordenadas
 
-* [] (<img src="https://placekitten.com/300/150" alt="drawing" max-width="100px" max-height="100px"/>)
+<img src="https://placekitten.com/300/150" alt="drawing" max-width="100px" max-height="100px"/>
 
+* [<img src="https://placekitten.com/300/150" alt="drawing" max-width="100px" max-height="100px"/>](https://renatomportugal.github.io/template/030.mouse-xy-position/)
 * [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/)
 * [013.einstein-relativity-codepen-stellar-scientists](https://renatomportugal.github.io/template/013.einstein-relativity-codepen-stellar-scientists/)
 * [042.web-animations-sound-and-custom-cursor-mix](https://renatomportugal.github.io/template/042.web-animations-sound-and-custom-cursor-mix/)
