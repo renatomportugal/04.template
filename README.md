@@ -2,7 +2,7 @@
 
 |Coordenadas  |Telas        |
 |---          |---          |
-| [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) | <img src="images/030.mouse-xy-position.png" alt="drawing" max-width="100px" max-height="100px"/> |
+| [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) | <img src="images/030.mouse-xy-position.png" max-width="100px" max-height="100px"/> |
 | [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) ||
 | [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) ||
 | [013.einstein-relativity-codepen-stellar-scientists](https://renatomportugal.github.io/template/013.einstein-relativity-codepen-stellar-scientists/) ||
