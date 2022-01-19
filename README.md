@@ -1,6 +1,6 @@
 # Demo
 
-|Coordenadas  |Telas        |
+|Links        |Telas        |
 |---          |---          |
 | [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) | <img src="images/030.mouse-xy-position.png"/> |
 | [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/) ||
@@ -14,8 +14,9 @@
 | [027.linear-interp](https://renatomportugal.github.io/template/027.linear-interp/) ||
 | [029.mouse-coord](https://renatomportugal.github.io/template/029.mouse-coord/) ||
 
+## IHM - Interface Homem Máquina
 
-|IHM - Interface Homem Máquina  |Telas        |
+|Links                          |Telas        |
 |---          					|---          |
 | [020.self-destruct-button](https://renatomportugal.github.io/template/020.self-destruct-button/) | <img src="images/020.self-destruct-button.jpg"/> |
 
