@@ -2,7 +2,9 @@
 
 ## Coordenadas
 
-![Alternate text](https://placekitten.com/300/150)
+![Alternate text](https://placekitten.com/300/150 =20x20)
+
+<img src="https://placekitten.com/300/150" alt="drawing" width="20"/>
 
 * [030.mouse-xy-position](https://renatomportugal.github.io/template/030.mouse-xy-position/)
 * [013.einstein-relativity-codepen-stellar-scientists](https://renatomportugal.github.io/template/013.einstein-relativity-codepen-stellar-scientists/)
