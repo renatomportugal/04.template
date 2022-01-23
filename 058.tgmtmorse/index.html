@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - TGMT -  Morse</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TGMT</title>
+	<link rel="stylesheet" type="text/css" href="MT.css">
+</head>
+<body id="bos">
+<center>
+	<br>
+<font class=hea>The Great Morse Translator</font><br><br><br>
+<div id="enc" onclick="enc()"><span>ENCODE</span></div>
+<div id="dec" onclick="dec()"><span>DECODE</span></div>
+<div id="cop" onclick="copyToClipboard('#out')"><span id="scop">COPY CODE</span></div>
+ 
+<input autocomplete="off" spellcheck="false" id='text' type="text" name="" height="100px" oninput='encode()' width=600px placeholder='Enter your text' id='box'>
+<br><br>
+<p id="out"></p>
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src='MT.js'></script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
