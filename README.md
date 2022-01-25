@@ -1,5 +1,11 @@
 # Demo
 
+## Astronomia
+
+|Links        |Telas        |
+|---          |---          |
+| [062.daylight-cycles-of-earth](https://renatomportugal.github.io/template/062.daylight-cycles-of-earth) |<img src="images/062.daylight-cycles-of-earth.png"/> |
+
 ## Busca
 
 |Links        |Telas        |
@@ -22,11 +28,68 @@
 | [027.linear-interp](https://renatomportugal.github.io/template/027.linear-interp/) ||
 | [029.mouse-coord](https://renatomportugal.github.io/template/029.mouse-coord/) ||
 
+## Diagrama de Força
+
+|Links        |Telas        |
+|---          |---          |
+| [015.force-directed-diagram](https://renatomportugal.github.io/template/015.force-directed-diagram/) ||
+| [024.it-system-interface-explorer](https://renatomportugal.github.io/template/024.it-system-interface-explorer/) ||
+
+## E-Commerce
+
+|Links        |Telas        |
+|---          |---          |
+| [060.CodePen_Export_Nqwbmg](https://renatomportugal.github.io/template/060.CodePen_Export_Nqwbmg) |<img src="images/060.CodePen_Export_Nqwbmg.png"/> |
+
 ## IHM - Interface Homem Máquina
 
 |Links        |Telas        |
 |---          |---          |
 | [020.self-destruct-button](https://renatomportugal.github.io/template/020.self-destruct-button/) | <img src="images/020.self-destruct-button.jpg"/> |
+
+## Imagem_Camadas
+
+|Links        |Telas        |
+|---          |---          |
+| [032.photo-id](https://renatomportugal.github.io/template/032.photo-id/) ||
+| [016.handling-user-uploaded-images-by-derya](https://renatomportugal.github.io/template/016.handling-user-uploaded-images-by-derya/) ||
+| [043.xlayers-2013-08-02](https://renatomportugal.github.io/template/043.xlayers-2013-08-02/) ||
+| [044.z-index-and-stacking-context](https://renatomportugal.github.io/template/044.z-index-and-stacking-context/) ||
+| [045.z-index-sass-management](https://renatomportugal.github.io/template/045.z-index-sass-management/) ||
+
+## Imagem_Cortar_Subir_Salvar
+
+|Links        |Telas        |
+|---          |---          |
+| [034.practice-003crop-image](https://renatomportugal.github.io/template/034.practice-003crop-image/) ||
+
+## Imagem_Corte
+
+|Links        |Telas        |
+|---          |---          |
+| [018.image-cropper-prototype](https://renatomportugal.github.io/template/018.image-cropper-prototype/) ||
+| [040.vue_image-crop](https://renatomportugal.github.io/template/040.vue_image-crop/) ||
+| [007.crop-image](https://renatomportugal.github.io/template/007.crop-image/) ||
+
+## Imagem_Corte_Base64
+
+|Links        |Telas        |
+|---          |---          |
+| [003.browser-image-crop](https://renatomportugal.github.io/template/003.browser-image-crop/) ||
+| [010.cropper-try](https://renatomportugal.github.io/template/010.cropper-try/) ||
+| [011.croppie-modal-error](https://renatomportugal.github.io/template/011.croppie-modal-error/) ||
+
+## Imagem_Corte_Com_Mascara
+
+|Links        |Telas        |
+|---          |---          |
+| [008.crop-image-using-svg](https://renatomportugal.github.io/template/008.crop-image-using-svg/) ||
+
+## Imagem_Mapeamento
+
+|Links        |Telas        |
+|---          |---          |
+| [021.impact-summary-map-template-js-master](https://renatomportugal.github.io/template/021.impact-summary-map-template-js-master/) ||
 
 ## Infográfico
 
@@ -35,6 +98,12 @@
 | [023.infografico-json](https://renatomportugal.github.io/template/023.infografico-json/) | |
 | [035.pure-css-circles-infographic-JSON](https://renatomportugal.github.io/template/035.pure-css-circles-infographic-JSON/) | |
 | [037.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/template/037.responsive-infographic-css-variables-grid.JSON/) | |
+
+## Lanfing_Page
+
+|Links        |Telas        |
+|---          |---          |
+| [061.codepenchallenge-typeset-this-post](https://renatomportugal.github.io/template/061.codepenchallenge-typeset-this-post) |<img src="images/061.codepenchallenge-typeset-this-post.png"/> |
 
 ## Lista de Pessoas
 
@@ -45,13 +114,6 @@
 | [033.police-academy-characters](https://renatomportugal.github.io/template/033.police-academy-characters/) ||
 | [038.tabs-navigation-ui](https://renatomportugal.github.io/template/038.tabs-navigation-ui/) ||
 | [041.vuetify-avatars-group](https://renatomportugal.github.io/template/041.vuetify-avatars-group/) ||
-
-## Responsivo
-
-|Links        |Telas        |
-|---          |---          |
-| [005.chrome-bug-blurry-stops-when-more-than-8-colors](https://renatomportugal.github.io/template/005.chrome-bug-blurry-stops-when-more-than-8-colors/) ||
-| [031.padding-versus-margin-in-the-real-world](https://renatomportugal.github.io/template/031.padding-versus-margin-in-the-real-world/) ||
 
 ## Organograma
 
@@ -68,62 +130,18 @@
 | [025.jquery-image-upload-preview](https://renatomportugal.github.io/template/025.jquery-image-upload-preview/) ||
 | [026.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop](https://renatomportugal.github.io/template/026.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop/) ||
 
-## Diagrama de Força
+## Responsivo
 
 |Links        |Telas        |
 |---          |---          |
-| [015.force-directed-diagram](https://renatomportugal.github.io/template/015.force-directed-diagram/) ||
-| [024.it-system-interface-explorer](https://renatomportugal.github.io/template/024.it-system-interface-explorer/) ||
+| [005.chrome-bug-blurry-stops-when-more-than-8-colors](https://renatomportugal.github.io/template/005.chrome-bug-blurry-stops-when-more-than-8-colors/) ||
+| [031.padding-versus-margin-in-the-real-world](https://renatomportugal.github.io/template/031.padding-versus-margin-in-the-real-world/) ||
 
 ## Scroll Infinito
 
 |Links        |Telas        |
 |---          |---          |
 | [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/template/022.infinity-scroll-with-angularjs/) ||
-
-## Mapeamento de Imagem
-
-|Links        |Telas        |
-|---          |---          |
-| [021.impact-summary-map-template-js-master](https://renatomportugal.github.io/template/021.impact-summary-map-template-js-master/) ||
-
-## Crop
-
-|Links        |Telas        |
-|---          |---          |
-| [018.image-cropper-prototype](https://renatomportugal.github.io/template/018.image-cropper-prototype/) ||
-| [040.vue_image-crop](https://renatomportugal.github.io/template/040.vue_image-crop/) ||
-| [007.crop-image](https://renatomportugal.github.io/template/007.crop-image/) ||
-
-## Upload ,Crop and save
-
-|Links        |Telas        |
-|---          |---          |
-| [034.practice-003crop-image](https://renatomportugal.github.io/template/034.practice-003crop-image/) ||
-
-## Crop Com Máscara
-
-|Links        |Telas        |
-|---          |---          |
-| [008.crop-image-using-svg](https://renatomportugal.github.io/template/008.crop-image-using-svg/) ||
-
-## Crop Base64
-
-|Links        |Telas        |
-|---          |---          |
-| [003.browser-image-crop](https://renatomportugal.github.io/template/003.browser-image-crop/) ||
-| [010.cropper-try](https://renatomportugal.github.io/template/010.cropper-try/) ||
-| [011.croppie-modal-error](https://renatomportugal.github.io/template/011.croppie-modal-error/) ||
-
-## Camadas
-
-|Links        |Telas        |
-|---          |---          |
-| [032.photo-id](https://renatomportugal.github.io/template/032.photo-id/) ||
-| [016.handling-user-uploaded-images-by-derya](https://renatomportugal.github.io/template/016.handling-user-uploaded-images-by-derya/) ||
-| [043.xlayers-2013-08-02](https://renatomportugal.github.io/template/043.xlayers-2013-08-02/) ||
-| [044.z-index-and-stacking-context](https://renatomportugal.github.io/template/044.z-index-and-stacking-context/) ||
-| [045.z-index-sass-management](https://renatomportugal.github.io/template/045.z-index-sass-management/) ||
 
 ## Canvas
 
@@ -172,4 +190,4 @@
 
 |Links        |Telas        |
 |---          |---          |
-| [046.Blender.jpg](https://renatomportugal.github.io/template/) |<img src="images/030.mouse-xy-position.png"/> |
+| [046.Blender](https://renatomportugal.github.io/template/) |<img src="images/030.mouse-xy-position.png"/> |
