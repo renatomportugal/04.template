@@ -1,0 +1,154 @@
+@import url('./css.css?family=Oleo+Script:400,700|Special+Elite|Averia+Serif+Libre|Limelight');
+
+html {
+  background:white;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
+
+/*
+Blog
+*/
+body {
+  -moz-columns:3;
+       columns:3;
+  -moz-column-fill:balance-all;
+       column-fill:balance-all;
+  -moz-column-gap:1.5em;
+       column-gap:1.5em;
+  padding:2em 4em;
+  font:1em/1.2 "special elite", serif;
+  -webkit-hyphens:auto;
+      -ms-hyphens:auto;
+          hyphens:auto;
+  text-align:center;
+}
+
+/* 
+Cover image 
+*/
+img {
+  width:6em;
+  height:6em;
+  -o-object-fit:cover;
+     object-fit:cover;
+  float:left;
+  margin-right:1em;
+  margin-bottom:1em;
+  transition:all 0.3s;
+}
+img:hover{
+  transform-origin:top left;
+  transform:scale(2);
+}
+
+/* 
+Mainhead 
+*/
+h1 {
+  font:2em/0.9 "Limelight",serif;
+  font-variant:small-caps;
+  -webkit-hyphens:none;
+      -ms-hyphens:none;
+          hyphens:none;
+}
+h1 + p {
+  font-size:0.77em;
+  position:relative;
+  top:-0.5em; text-align:center;
+}
+
+/*
+Supporting 
+*/
+h2 {
+  font:1.5em/1 "oleo script", serif;
+  margin-top:2em;
+  margin-bottom:2em;
+}
+h2:after {
+  content:"⚚";
+  display:block;
+  width:20%;
+  margin-top:0.4em;
+  border-top:thin solid black;
+  position:relative; left:50%; transform:translateX(-50%);
+}
+
+/*
+Bloackquote
+*/
+blockquote {
+  font:italic 1em/1 serif;
+  margin:1em;
+  -webkit-hyphens:none;
+      -ms-hyphens:none;
+          hyphens:none;
+}
+blockquote p {
+  quotes:'“' '”';
+  display:inline;
+}
+blockquote p:before {
+  content:open-quote;
+  font-weight:bold;
+}
+blockquote p:after {
+  content:close-quote;
+  font-weight:bold;
+}
+
+/*
+Regular Sections
+*/
+h3 {
+  font:1em/1 "Averia Serif Libre", serif;
+  letter-spacing:-0.2ch;
+  word-spacing:0.5ch;
+  -webkit-hyphens:none;
+      -ms-hyphens:none;
+          hyphens:none;
+  margin:1em 0;
+  border-top:thin solid black;
+  border-bottom:thin solid black;
+  padding:0.2em; box-sizing:border-box;
+  -moz-column-break-inside:avoid;
+       break-inside:avoid-column;/*chrm edge*/
+  page-break-inside:avoid;/*ff*/
+}
+
+/*
+Para
+*/
+p {
+  margin:1em 0;
+  text-align:justify;
+}
+
+/* 
+Tones
+*/
+strong {
+  font-weight:bolder;
+}
+em {
+  font-style:italic;
+}
+
+/* 
+List 
+*/
+ul {
+  list-style:disc inside;
+  margin-left:2ch;
+}
+ol {
+  list-style:roman inside;
+  margin-left:2ch;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+}
+li {
+  text-align:left;
+}

@@ -6,11 +6,29 @@
 |---          |---          |
 | [062.daylight-cycles-of-earth](https://renatomportugal.github.io/template/062.daylight-cycles-of-earth) |<img src="images/062.daylight-cycles-of-earth.png"/> |
 
+## Botões
+
+|Links        |Telas        |
+|---          |---          |
+| [063.draggable-skeuomorph-switchtoggle](https://renatomportugal.github.io/template/063.draggable-skeuomorph-switchtoggle) |<img src="images/063.draggable-skeuomorph-switchtoggle.png"/> |
+
 ## Busca
 
 |Links        |Telas        |
 |---          |---          |
 | [059.searching-rod](https://renatomportugal.github.io/template/059.searching-rod) |<img src="images/059.searching-rod.png"/> |
+
+## Cards
+
+|Categoria        |Telas        |
+|---              |---          |
+| [066.product-sorter](https://renatomportugal.github.io/template/066.product-sorter/) | <img src="images/066.product-sorter.png"/> |
+
+## Console
+
+|Links        |Telas        |
+|---          |---          |
+| [068.responsive-retro-crt-screen-with-border-image-and-gradient](https://renatomportugal.github.io/template/068.responsive-retro-crt-screen-with-border-image-and-gradient) |<img src="images/068.responsive-retro-crt-screen-with-border-image-and-gradient.png"/> |
 
 ## Coordenadas
 
@@ -28,7 +46,13 @@
 | [027.linear-interp](https://renatomportugal.github.io/template/027.linear-interp/) ||
 | [029.mouse-coord](https://renatomportugal.github.io/template/029.mouse-coord/) ||
 
-## Diagrama de Força
+## CSS
+
+|Links        |Telas        |
+|---          |---          |
+| [065.only-css-showcase-car](https://renatomportugal.github.io/template/065.only-css-showcase-car/) | <img src="images/065.only-css-showcase-car.png"/> |
+
+## Diagrama_De_Força
 
 |Links        |Telas        |
 |---          |---          |
@@ -40,6 +64,12 @@
 |Links        |Telas        |
 |---          |---          |
 | [060.CodePen_Export_Nqwbmg](https://renatomportugal.github.io/template/060.CodePen_Export_Nqwbmg) |<img src="images/060.CodePen_Export_Nqwbmg.png"/> |
+
+## Fonts
+
+|Links        |Telas        |
+|---          |---          |
+| [064.old-paper](https://renatomportugal.github.io/template/064.old-paper) |<img src="images/064.old-paper.png"/> |
 
 ## IHM - Interface Homem Máquina
 
@@ -99,7 +129,13 @@
 | [035.pure-css-circles-infographic-JSON](https://renatomportugal.github.io/template/035.pure-css-circles-infographic-JSON/) | |
 | [037.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/template/037.responsive-infographic-css-variables-grid.JSON/) | |
 
-## Lanfing_Page
+## Layout
+
+|Links        |Telas        |
+|---          |---          |
+| [067.pyramid-layout](https://renatomportugal.github.io/template/067.pyramid-layout) |<img src="images/067.pyramid-layout.png"/> |
+
+## Landing_Page
 
 |Links        |Telas        |
 |---          |---          |

@@ -1,0 +1,14 @@
+.crt {
+  margin: 100px auto;
+  width: clamp(100px, 45%, 70ch);
+  padding: 10px;
+  color: #8f8;
+  white-space: pre-wrap;
+  font-family: monospace;
+  border-image: radial-gradient(#333, #000 10%,#666 10.5% 12%,#0000 12.5%) 45.5% fill / 150px / 150px;
+  box-shadow: #888 0 0 0 50px, #aaa -1px -1px 0 50px;
+}
+
+body { background: #000 }
+
+:focus-visible { outline: none }
