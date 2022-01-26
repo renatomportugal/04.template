@@ -24,6 +24,13 @@
 |---              |---          |
 | [066.product-sorter](https://renatomportugal.github.io/template/066.product-sorter/) | <img src="images/066.product-sorter.png"/> |
 
+## Código_Morse
+
+|Links        |Telas        |
+|---          |---          |
+| [058.tgmtmorse](https://renatomportugal.github.io/template/058.tgmtmorse) |<img src="images/058.tgmtmorse.png"/> |
+| [069.morse-code-alphabet](https://renatomportugal.github.io/template/069.morse-code-alphabet) |<img src="images/069.morse-code-alphabet.png"/> |
+
 ## Console
 
 |Links        |Telas        |
@@ -215,12 +222,6 @@
 | [055.three-js-earth](https://renatomportugal.github.io/template/055.three-js-earth/) |<img src="images/055.three-js-earth.jpg"/> |
 | [056.WebGLRobot](https://renatomportugal.github.io/template/056.WebGLRobot/) |<img src="images/056.WebGLRobot.jpg"/> |
 | [057.dog-selector](https://renatomportugal.github.io/template/057.dog-selector/) |<img src="images/057.dog-selector.jpg"/> |
-
-## Código_Morse
-
-|Links        |Telas        |
-|---          |---          |
-| [058.tgmtmorse](https://renatomportugal.github.io/template/058.tgmtmorse) |<img src="images/058.tgmtmorse.png"/> |
 
 ## Novo
 
