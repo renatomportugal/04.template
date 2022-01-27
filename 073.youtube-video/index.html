@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube-video</title>
+</head>
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/tcnct_cursos.css">
+    
+    	
+		
+    <div class="divVideo">
+        <section id="secVideo" class="video">
+          <div id="player1"></div>
+        </section>
+      </div>
+
+      <div class = "conteudo">
+        <aside class="sidebarYoutube">
+          <!-- <h4 class="more">Videos</h4> -->
+          <ul>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',150,190)" data-time="3:10">
+                      <h4>O que é, Objetivos, Opiniões, regras</h4>
+                      <div style="text-align: justify;">asd asd asd asas asd asd asd asd asd asd asd adas asd asd asd as asd as asd asd asd asd asdd asd as d</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',345,531)" data-time="8:51"> 
+                      <h4>Fundamentos da MC - Racionalidade e Objetividade</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',877,147)" data-time="2:27">
+                      <h4>Como pensar metodologicamente</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',1030,162)" data-time="2:42">
+                      <h4>O que é a pesquisa científica</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',1193,718)" data-time="11:58"> 
+                      <h4>Elementos necessários para a pesquisa ciêntífica</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',1912,160)" data-time="2:40">
+                      <h4>Por que elaborar um projeto de pesquisa?</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('WoGBWQafNAc',2073,381)" data-time="6:21">
+                      <h4>Quais são os elementos que compõem um projeto?</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',138,320)" data-time="3:02">
+                      <h4>Introdução</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',459,480)" data-time="8:00">
+                      <h4>Escolha do tema</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',940,168)" data-time="2:48">
+                      <h4>Escolha um tema de seu interesse</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',1108,123)" data-time="2:03">
+                      <h4>Escolha tema menos conhecidos, mais originais</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',1232,62)" data-time="1:02">
+                      <h4>Escolha um tema relevante, com interesse acadêmico e científico</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',1295,394)" data-time="6:34">
+                      <h4>Escolha tema que tem fontes de pesquisa</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',1690,71)" data-time="1:11">
+                      <h4>Apresentação do tema</h4>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="mudar('u_ecSovA5us',1762,789)" data-time="13:09">
+                      <h4>Delimitação do Tema</h4>
+                    </a>
+                  </li>
+                </ul>
+        </aside>
+      </div>
+
+
+<script>
+
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player1;
+function onYouTubeIframeAPIReady() {
+  player1 = new YT.Player('player1', {
+    height: '195',
+    width: '320',
+    videoId: 'WoGBWQafNAc',
+    events: {
+      'onReady': function volumeMax(){ player1.setVolume(100);},
+      'onStateChange': function onPlayerStateChange(event) {},
+    }
+  });
+}
+function mudar(id,timeIni,duracao){
+  player1.loadPlaylist(id,'', timeIni);
+  timeFim = timeIni + duracao;
+  myTimer = window.setInterval(function finalizar(){
+    var tempoCorrente = player1.getCurrentTime();
+    if (tempoCorrente > timeFim){
+      window.clearTimeout(myTimer);
+      player1.pauseVideo();
+    }
+  }, 500);
+}
+
+
+function onPlayerStateChange(event) {
+  switch (event.data)
+  {
+    //-1 (unstarted)
+    case - 1:
+      //console.log('Não Iniciado');
+      //document.getElementById('status').innerHTML = 'Não Iniciado';
+      break;
+    //0 (ended)
+    case 0:
+      //console.log('FIM');
+      //player1.loadVideoById({'videoId': 'dnPPoetX0uw', 'suggestedQuality': 'highres'});
+      //player1.playVideo();
+      //player1.pauseVideo();
+      //player1.seekTo(0);
+      //player1.cueVideoById('dnPPoetX0uw');
+      //document.getElementById('status').innerHTML = 'FIM';
+        break;
+    //1 (playing)
+    case 1:
+      //console.log('Rodando');
+      //document.getElementById('status').innerHTML = 'Rodando';
+      break;
+    //2 (paused)
+    case 2:
+      //console.log('Pausado');
+      //document.getElementById('status').innerHTML = 'Pausado';
+      break;
+    //3 (buffering)
+    case 3:
+      //console.log('Carregando');
+      //document.getElementById('status').innerHTML = 'Carregando';
+      break;
+    //5 (video cued)
+    case 5:
+      //console.log('Sincronizado');
+      //document.getElementById('status').innerHTML = 'Sincronizado';
+      break;
+    default:
+      //console.log('Sem estado');
+      //document.getElementById('status').innerHTML = 'SEM ESTADO';
+  }
+}
+
+
+var btnUploadWidth = 420;
+
+var win = $(window),
+classe1 = $('.content-wrap');
+classe2 = $('.sidebar');
+classe3 = $('.conteudo');
+classe4 = $('.details');
+
+// if (screen.width > 880){
+//   win.on('scroll', function() {
+//     if (screen.width > 400){
+//       if (win.scrollTop() > 0) {
+//         //$('.video').width(btnUploadWidth);
+//         classe1.addClass('PiP');
+//         classe2.addClass('PiP');
+//         classe3.addClass('PiP');
+//         classe4.addClass('PiP');
+//         // $('.sidebar').hide(300);
+//       }else{
+//         // $('.video').width('100%');
+//         classe1.removeClass('PiP');
+//         classe2.removeClass('PiP');
+//         classe3.removeClass('PiP');
+//         classe4.removeClass('PiP');
+//         // $('.sidebar').show(300);
+//       }
+//     }
+//   });
+// }else{
+//   $('.video').width(btnUploadWidth);
+//         classe1.addClass('PiP');
+//         classe2.addClass('PiP');
+//         classe3.addClass('PiP');
+//         classe4.addClass('PiP');
+//         // $('.sidebar').hide(300);
+// }
+
+if (screen.width < 400) {
+  //$('.video').width(360);
+
+  // classe1.addClass('PiP');
+  // classe2.addClass('PiP');
+  // classe3.addClass('PiP');
+  // classe4.addClass('PiP');
+
+  // $('#player1').attr('style', 'width:360px;');
+  // $('.sidebar').hide(300);  
+}
+
+
+$( "#btnUpload" ).click(function() {
+  console.log(screen.width);
+  console.log($('.video').width());
+  if (screen.width > btnUploadWidth) {
+    btnUploadWidth += 50;
+    let width = $('.PiP .video').width();
+    let height = $('.PiP .video').height();
+    $('.PiP .video').width($('.PiP .video').width() + 50);  
+    $('.PiP .video').height($('.PiP .video').height() + 50);
+  }
+  
+
+});
+
+$( "#btnNotification" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+$( "#btnUser" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+
+$('a').on('click', function(e) {
+  e.preventDefault()
+});
+
+$('.vid-thumb').each(function() {
+  var self = $(this),
+      src = self.prop('src');
+  
+  self.css('background-image', 'url(' + src + ')').prop('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+});
+
+// BOTOES DE CONTROLE
+$( "#btnPequeno" ).click(function() {
+  // $( "#player1" ).addClass("janelaPequena");
+  // $( "#player1" ).removeClass("janelaMedia");
+  // $( "#player1" ).removeClass("janelaGrande");
+  let w = screen.width * 0.25;
+  let h = w / 1.78;
+  let s = "width: " + w + "px !important;height: " + h + "px !important;";
+  let p = h + 20;
+  let pa = "padding-top: " + p + "px;";
+  $("#player1").attr("style", s);
+  $(".content-wrap").attr("style", pa);
+  $("#secVideo").attr("style", "background:none;");
+});
+
+$( "#btnMedio" ).click(function() {
+  // $( "#player1" ).addClass("janelaMedia");
+  // $( "#player1" ).removeClass("janelaPequena");
+  // $( "#player1" ).removeClass("janelaGrande");
+  // $(".content-wrap").attr("style","padding-top: 468px;");
+  let w = screen.width * 0.5;
+  let h = w / 1.78;
+  let mr = (screen.width - w) / 2;
+  let s = "width: " + w + "px !important;height: " + h + "px !important; margin-right: " + mr + "px;";
+  let p = h + 20;
+  let pa = "padding-top: " + p + "px;";
+
+  $("#player1").attr("style", s);
+  $(".content-wrap").attr("style", pa);
+  $("#secVideo").attr("style", "width: 100% !important;");
+});
+
+$( "#btnGrande" ).click(function() {
+  // $( "#player1" ).addClass("janelaGrande");
+  // $( "#player1" ).removeClass("janelaPequena");
+  // $( "#player1" ).removeClass("janelaMedia");
+  // $(".content-wrap").attr("style","padding-top: 578px;");
+  let w = screen.width * 0.75;
+  let h = w / 1.78;
+  let mr = (screen.width - w) / 2;
+  let s = "width: " + w + "px !important;height: " + h + "px !important; margin-right: " + mr + "px;";
+  let p = h + 20;
+  let pa = "padding-top: " + p + "px;";
+  $("#player1").attr("style", s);
+  $(".content-wrap").attr("style", pa);
+  $("#secVideo").attr("style", "width: 100% !important;");
+});
+
+</script>
+
+</body>
+</html>

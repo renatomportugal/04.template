@@ -223,6 +223,16 @@
 | [056.WebGLRobot](https://renatomportugal.github.io/template/056.WebGLRobot/) |<img src="images/056.WebGLRobot.jpg"/> |
 | [057.dog-selector](https://renatomportugal.github.io/template/057.dog-selector/) |<img src="images/057.dog-selector.jpg"/> |
 
+## Videos
+
+|YouTube      |Telas        |
+|---          |---          |
+| [070.ng-youtube-embed-demo](https://renatomportugal.github.io/template/070.ng-youtube-embed-demo) |<img src="images/070.ng-youtube-embed-demo.jpg"/> |
+| [071.youtube-embeds-optimized-jquery-edition](https://renatomportugal.github.io/template/071.youtube-embeds-optimized-jquery-edition) |<img src="images/071.youtube-embeds-optimized-jquery-edition.jpg"/> |
+| [072.youtube-picture-in-picture-demo-for-desktop](https://renatomportugal.github.io/template/072.youtube-picture-in-picture-demo-for-desktop) |<img src="images/072.youtube-picture-in-picture-demo-for-desktop.jpg"/> |
+| [073.youtube-video](https://renatomportugal.github.io/template/073.youtube-video) |<img src="images/073.youtube-video.jpg"/> |
+
+
 ## Novo
 
 |Links        |Telas        |
