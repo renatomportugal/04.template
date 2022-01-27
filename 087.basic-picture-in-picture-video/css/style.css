@@ -1,0 +1,22 @@
+.intro {
+  color: #111;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 20px auto;
+}
+.caniuse,
+.caniuse a {
+  color: #ca3333;
+  font-style: italic;
+}
+.video-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 800px;
+}
+.btn {
+  display: block;
+  font-size: 20px;
+  margin: 20px auto 0;
+  text-align: center;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<p>Press play and wait for the audio to end.</p>
+
+<audio id="myAudio" controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+var aud = document.getElementById("myAudio");
+aud.onended = function() {
+    alert("The audio has ended");
+};
+</script>
+
+</body> 
+</html>

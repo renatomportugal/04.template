@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<p>In this example, we use the HTML DOM to assign an "onratechange" event to a video element. The playbackRate property is used to change the playing speed of the video.</p>
+
+<video id="myVideo" width="320" height="176" autoplay controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+<br>
+
+<button onclick="setPlaySpeed()" type="button">Set video to be play in slow motion</button>
+
+<script>
+// Get the video element with id="myVideo"
+var vid = document.getElementById("myVideo");
+
+// Set the current playback speed of the video to 0.3 (slow motion)
+function setPlaySpeed() { 
+    vid.playbackRate = 0.3;
+} 
+
+// Assign an onratechange event to the video element, and execute a function if the playing speed of the video is changed
+vid.onratechange = function() {myFunction()};
+
+function myFunction() {
+    alert("onratechange event occured - The playing speed of the video was changed");
+}
+</script> 
+
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+</body> 
+</html>

@@ -226,12 +226,35 @@
 ## Videos
 
 |YouTube      |Telas        |
-|---          |---          |
 | [070.ng-youtube-embed-demo](https://renatomportugal.github.io/template/070.ng-youtube-embed-demo) |<img src="images/070.ng-youtube-embed-demo.jpg"/> |
 | [071.youtube-embeds-optimized-jquery-edition](https://renatomportugal.github.io/template/071.youtube-embeds-optimized-jquery-edition) |<img src="images/071.youtube-embeds-optimized-jquery-edition.jpg"/> |
 | [072.youtube-picture-in-picture-demo-for-desktop](https://renatomportugal.github.io/template/072.youtube-picture-in-picture-demo-for-desktop) |<img src="images/072.youtube-picture-in-picture-demo-for-desktop.jpg"/> |
 | [073.youtube-video](https://renatomportugal.github.io/template/073.youtube-video) |<img src="images/073.youtube-video.jpg"/> |
-
+|Background   |Telas        |
+| [074.background-video](https://renatomportugal.github.io/template/074.background-video) |<img src="images/074.background-video.jpg"/> |
+| [075.background-video-random-playlist](https://renatomportugal.github.io/template/075.background-video-random-playlist) |<img src="images/075.background-video-random-playlist.jpg"/> |
+| [076.blurred-video-effect-w-css-filter](https://renatomportugal.github.io/template/076.blurred-video-effect-w-css-filter) |<img src="images/076.blurred-video-effect-w-css-filter.jpg"/> |
+| [077.fullscreen-background-video-with-mix-blend-mode-overlay-text](https://renatomportugal.github.io/template/077.fullscreen-background-video-with-mix-blend-mode-overlay-text) |<img src="images/077.fullscreen-background-video-with-mix-blend-mode-overlay-text.jpg"/> |
+| [078.fullscreen-html5-page-background-video](https://renatomportugal.github.io/template/078.fullscreen-html5-page-background-video) |<img src="images/078.fullscreen-html5-page-background-video.jpg"/> |
+| [079.maintenance-status-page-with-video-background](https://renatomportugal.github.io/template/079.maintenance-status-page-with-video-background) |<img src="images/079.maintenance-status-page-with-video-background.jpg"/> |
+| [080.video-button-animation](https://renatomportugal.github.io/template/080.video-button-animation) |<img src="images/080.video-button-animation.jpg"/> |
+|Catálogo     |Telas        |
+| [081.movieCard](https://renatomportugal.github.io/template/081.movieCard) |<img src="images/081.movieCard.jpg"/> |
+|Filtros      |Telas        |
+| [082.gradient-map-filters-on-video](https://renatomportugal.github.io/template/082.gradient-map-filters-on-video) |<img src="images/082.gradient-map-filters-on-video.jpg"/> |
+|Local        |Telas        |
+| [083.video_local](https://renatomportugal.github.io/template/083.video_local) |<img src="images/083.video_local.jpg"/> |
+| [084.videoHtml5](https://renatomportugal.github.io/template/084.videoHtml5) |<img src="images/084.videoHtml5.jpg"/> |
+|Scroll       |Telas        |
+| [085.popout-video](https://renatomportugal.github.io/template/085.popout-video) |<img src="images/085.popout-video.jpg"/> |
+|Timeline     |Telas        |
+| [086.mcu-timeline-carousel](https://renatomportugal.github.io/template/086.mcu-timeline-carousel) |<img src="images/086.mcu-timeline-carousel.jpg"/> |
+|Outros       |Telas        |
+| [087.basic-picture-in-picture-video](https://renatomportugal.github.io/template/087.basic-picture-in-picture-video) |<img src="images/087.basic-picture-in-picture-video.jpg"/> |
+| [088.easy-html5-video-custom-controls](https://renatomportugal.github.io/template/088.easy-html5-video-custom-controls) |<img src="images/088.easy-html5-video-custom-controls.jpg"/> |
+| [089.html5-video-webvtt-example-master](https://renatomportugal.github.io/template/089.html5-video-webvtt-example-master) |<img src="images/089.html5-video-webvtt-example-master.jpg"/> |
+| [090.picture-in-picture-video-player-new-on-chrome-70](https://renatomportugal.github.io/template/090.picture-in-picture-video-player-new-on-chrome-70) |<img src="images/090.picture-in-picture-video-player-new-on-chrome-70.jpg"/> |
+| [091.picture-in-picture-web-api](https://renatomportugal.github.io/template/091.picture-in-picture-web-api) |<img src="images/091.picture-in-picture-web-api.jpg"/> |
 
 ## Novo
 

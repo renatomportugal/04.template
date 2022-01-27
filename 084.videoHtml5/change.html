@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="myFunction()" type="button">Change Video</button><br>
+<button onclick="Intervalo1()" type="button">Intervalo1</button><br>
+ 
+<video id="myVideo" controls autoplay>
+  <source id="mp4_src" src="mov_bbb.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<script> 
+function myFunction() { 
+    document.getElementById("myVideo").src = "movie.mp4";
+    document.getElementById("myVideo").load();
+} 
+
+function Intervalo1() { 
+    document.getElementById("myVideo").src = "mov_bbb.mp4#t=3,5"
+    document.getElementById("myVideo").load();
+} 
+</script> 
+
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+</body> 
+</html>

@@ -1,0 +1,65 @@
+$blue: #2F58FC;
+$green: #3DD94A;
+$gray: rgba(0, 0, 0, 0.7);
+
+@import url('https://rsms.me/inter/inter-ui.css');
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  padding: 2rem;
+  font-family: 'Inter UI', sans-serif;
+  text-align: center;
+  
+  position: relative;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+video {
+  margin-bottom: 32px;
+}
+
+.button {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 2rem;
+  border-radius: 4px;
+  background: #2B8DFF;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  
+  &-full {
+    width: 100%;
+  }
+}

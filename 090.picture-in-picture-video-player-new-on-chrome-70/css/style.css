@@ -1,0 +1,21 @@
+.pedestal {
+  width: 300px;
+  height: 200px;
+}
+video {
+  width: 300px;
+  border-radius: 4px;
+}
+button {
+  background: #fff;
+  padding: 10px 20px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  width:300px;
+  border-radius: 4px;
+  background: #fff url('https://raw.githubusercontent.com/google/material-design-icons/master/action/2x_web/ic_picture_in_picture_alt_black_48dp.png') no-repeat right 10px center;
+  background-size: 24px;
+  cursor: pointer;
+}

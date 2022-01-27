@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="enableLoop()" type="button">Enable loop</button>
+<button onclick="disableLoop()" type="button">Disable loop</button>
+<button onclick="checkLoop()" type="button">Check loop status</button><br> 
+
+<video id="myVideo" width="320" height="176" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<script>
+var vid = document.getElementById("myVideo");
+
+function enableLoop() { 
+  vid.loop = true;
+  vid.load();
+} 
+
+function disableLoop() { 
+  vid.loop = false;
+  vid.load();
+} 
+
+function checkLoop() { 
+    alert(vid.loop);
+} 
+</script> 
+
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+</body> 
+</html>

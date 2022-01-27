@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="getVolume()" type="button">What is the volume?</button>
+<button onclick="setHalfVolume()" type="button">Set volume to 0.2</button>
+<button onclick="setFullVolume()" type="button">Set volume to 1.0</button><br> 
+
+<video id="myVideo" width="320" height="176" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<script>
+var vid = document.getElementById("myVideo");
+
+function getVolume() { 
+    alert(vid.volume);
+} 
+  
+function setHalfVolume() { 
+    vid.volume = 0.2;
+} 
+  
+function setFullVolume() { 
+    vid.volume = 1.0;
+} 
+</script> 
+
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+</body> 
+</html>

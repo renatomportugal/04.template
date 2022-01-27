@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html>
+<body>
+
+<video id="myVideo" controls onseeking="myFunction()" onseeked="myFunction()">
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<p>Try seeking in the video: <span id="mySpan"></span></p>
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+<script>
+function myFunction() { 
+    var vid = document.getElementById("myVideo");
+    document.getElementById("mySpan").innerHTML = "Seeking: " + vid.seeking;
+} 
+</script>
+
+</body> 
+</html>

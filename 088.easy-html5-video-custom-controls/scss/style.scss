@@ -1,0 +1,29 @@
+body { background: #222; }
+#customcontrols {
+	font-size: 0;
+  width: 80%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+#customcontrols video {
+  width: 100%;
+  height: auto;
+}
+#customcontrols figcaption { 
+	background: rgba(0,0,0,0.6); 
+	display: none;
+  padding: .5em; 
+	color: #fff;
+	position: relative; 
+  top: -2.3rem;
+	text-align: right; 
+  font-size: 1.2rem;
+}
+#customcontrols figcaption a { 
+	text-decoration: none; font-size: 1rem; 
+	margin-right: .5rem;
+	color: #fff;
+	border-bottom: none;
+}
+#customcontrols a:hover { color: red; }
+#customcontrols a:visited { color: #770; }

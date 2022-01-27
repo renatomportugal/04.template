@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+video:nth-of-type(1) {
+  -webkit-filter: blur(20px) grayscale(0.75);
+          filter: blur(20px) grayscale(0.75);
+}
+video:nth-of-type(2) {
+  height: 300px;
+  width: 300px;
+}
