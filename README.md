@@ -128,6 +128,11 @@
 | [058.tgmtmorse](https://renatomportugal.github.io/template/058.tgmtmorse) |<img src="images/058.tgmtmorse.png"/> |
 | [069.morse-code-alphabet](https://renatomportugal.github.io/template/069.morse-code-alphabet) |<img src="images/069.morse-code-alphabet.png"/> |
 
+## Color
+
+|Picker       |Telas        |
+| [133.isometric-color-picker](https://renatomportugal.github.io/template/133.isometric-color-picker/) | <img src="images/133.isometric-color-picker.jpg"/> |
+
 ## Console
 
 |Links        |Telas        |
@@ -195,6 +200,12 @@
 |Links        |Telas        |
 |---          |---          |
 | [064.old-paper](https://renatomportugal.github.io/template/064.old-paper) |<img src="images/064.old-paper.png"/> |
+
+## Forms
+
+|Links        |Telas        |
+| [131.bootstrap-3-contact-form-with-validation](https://renatomportugal.github.io/template/131.bootstrap-3-contact-form-with-validation/) | <img src="images/131.bootstrap-3-contact-form-with-validation.jpg"/> |
+| [132.elegant-contact-form](https://renatomportugal.github.io/template/132.elegant-contact-form/) | <img src="images/132.elegant-contact-form.jpg"/> |
 
 ## Hover
 
@@ -350,6 +361,7 @@
 | [078.fullscreen-html5-page-background-video](https://renatomportugal.github.io/template/078.fullscreen-html5-page-background-video) |<img src="images/078.fullscreen-html5-page-background-video.jpg"/> |
 | [079.maintenance-status-page-with-video-background](https://renatomportugal.github.io/template/079.maintenance-status-page-with-video-background) |<img src="images/079.maintenance-status-page-with-video-background.jpg"/> |
 | [080.video-button-animation](https://renatomportugal.github.io/template/080.video-button-animation) |<img src="images/080.video-button-animation.jpg"/> |
+| [134.rick-roll-knockout-text](https://renatomportugal.github.io/template/134.rick-roll-knockout-text) |<img src="images/134.rick-roll-knockout-text.jpg"/> |
 |Catálogo     |Telas        |
 | [081.movieCard](https://renatomportugal.github.io/template/081.movieCard) |<img src="images/081.movieCard.jpg"/> |
 |Filtros      |Telas        |
