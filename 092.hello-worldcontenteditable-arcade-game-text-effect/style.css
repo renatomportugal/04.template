@@ -1,0 +1,103 @@
+:root {
+  --bg: black;
+  --shadow: #bfdb00;
+}
+
+body {
+  background: var(--bg);
+}
+
+.App {
+  display: -webkit-box;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.bg {
+  margin: auto;
+  -webkit-animation: bgposition infinite 2s steps(1);
+          animation: bgposition infinite 2s steps(1);
+  text-transform: uppercase;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 5rem;
+  line-height: 1.5;
+  color: #222;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(5px 5px 0 var(--bg)) drop-shadow(5px 5px 0 var(--shadow));
+          filter: drop-shadow(5px 5px 0 var(--bg)) drop-shadow(5px 5px 0 var(--shadow));
+  padding: 20px;
+  border: 2px dashed #339900;
+  max-width: 100%;
+}
+
+.bg:focus {
+  outline: none;
+  border-style: solid;
+}
+
+@-webkit-keyframes bgposition {
+  10% {
+    background-position: 10px 10px;
+  }
+  20% {
+    background-position: 20px 30px;
+  }
+  30% {
+    background-position: 130px 40px;
+  }
+  40% {
+    background-position: 70px 30px;
+  }
+  50% {
+    background-position: 50px 60px;
+  }
+  60% {
+    background-position: 60px 40px;
+  }
+  70% {
+    background-position: 40px 100px;
+  }
+  80% {
+    background-position: 10px 60px;
+  }
+  90% {
+    background-position: 90px 70px;
+  }
+}
+
+@keyframes bgposition {
+  10% {
+    background-position: 10px 10px;
+  }
+  20% {
+    background-position: 20px 30px;
+  }
+  30% {
+    background-position: 130px 40px;
+  }
+  40% {
+    background-position: 70px 30px;
+  }
+  50% {
+    background-position: 50px 60px;
+  }
+  60% {
+    background-position: 60px 40px;
+  }
+  70% {
+    background-position: 40px 100px;
+  }
+  80% {
+    background-position: 10px 60px;
+  }
+  90% {
+    background-position: 90px 70px;
+  }
+}
+@media screen and (min-width: 60em) {
+  .bg {
+    font-size: 10rem;
+  }
+}

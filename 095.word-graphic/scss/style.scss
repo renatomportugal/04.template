@@ -1,0 +1,22 @@
+body {
+  padding: 20px;
+}
+
+
+path.line {
+  fill: none;
+  stroke-width: 1px;
+  stroke: teal;
+  opacity: 0.025;
+}
+
+circle.letterbox {
+  cursor: pointer;
+}
+
+text.letter {
+  text-transform: uppercase;
+  text-anchor: middle;
+  font-size: 11px;
+  pointer-events: none;
+}

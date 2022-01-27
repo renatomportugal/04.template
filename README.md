@@ -1,10 +1,16 @@
 # Demo
 
+## 360°
+
+|Links        |Telas        |
+|---          |---          |
+| [093.threesixtyjs-master](https://renatomportugal.github.io/template/093.threesixtyjs-master/) |<img src="images/093.threesixtyjs-master.jpg"/> |
+
 ## 3D
 
 |Links        |Telas        |
 |---          |---          |
-| [046.Blender.jpg](https://renatomportugal.github.io/template/046.Blender/) |<img src="images/046.Blender.jpg"/> |
+| [046.Blender](https://renatomportugal.github.io/template/046.Blender/) |<img src="images/046.Blender.jpg"/> |
 | [047.layered-parallax-effect](https://renatomportugal.github.io/template/047.layered-parallax-effect/) |<img src="images/047.layered-parallax-effect.jpg"/> |
 |ÓCULOS       |             |
 | [048.3d-glasses-comedy-tragedy](https://renatomportugal.github.io/template/048.3d-glasses-comedy-tragedy/) |<img src="images/048.3d-glasses-comedy-tragedy.jpg"/> |
@@ -19,11 +25,41 @@
 | [056.WebGLRobot](https://renatomportugal.github.io/template/056.WebGLRobot/) |<img src="images/056.WebGLRobot.jpg"/> |
 | [057.dog-selector](https://renatomportugal.github.io/template/057.dog-selector/) |<img src="images/057.dog-selector.jpg"/> |
 
+## 8_bits
+
+|Links        |Telas        |
+|---          |---          |
+| [092.hello-worldcontenteditable-arcade-game-text-effect](https://renatomportugal.github.io/template/092.hello-worldcontenteditable-arcade-game-text-effect/) |<img src="images/092.hello-worldcontenteditable-arcade-game-text-effect"/> |
+
+## Alfabeto
+
+|Links        |Telas        |
+|---          |---          |
+| [094.alphabet](https://renatomportugal.github.io/template/094.alphabet/) |<img src="images/094.alphabet.jpg"/> |
+
+## AnaliseDePalavra
+
+|Links        |Telas        |
+|---          |---          |
+| [095.word-graphic](https://renatomportugal.github.io/template/095.word-graphic/) |<img src="images/095.word-graphic.jpg"/> |
+
+## Aparelhos
+
+|Calculadora  |Telas        |
+|---          |---          |
+| [096.Calculadora](https://renatomportugal.github.io/template/096.Calculadora/) |<img src="images/096.Calculadora.jpg"/> |
+
 ## Astronomia
 
 |Links        |Telas        |
 |---          |---          |
 | [062.daylight-cycles-of-earth](https://renatomportugal.github.io/template/062.daylight-cycles-of-earth) |<img src="images/062.daylight-cycles-of-earth.png"/> |
+
+## Audio
+
+|Click        |Telas        |
+|---          |---          |
+| [098.air-horns](https://renatomportugal.github.io/template/098.air-horns) |<img src="images/098.air-horns.jpg"/> |
 
 ## Botões
 
@@ -173,6 +209,12 @@
 | [035.pure-css-circles-infographic-JSON](https://renatomportugal.github.io/template/035.pure-css-circles-infographic-JSON/) | |
 | [037.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/template/037.responsive-infographic-css-variables-grid.JSON/) | |
 
+## KeyGen
+
+|Links        |Telas        |
+|---          |---          |
+| [097.KeyGen](https://renatomportugal.github.io/template/097.KeyGen) |<img src="images/097.KeyGen.jpg"/> |
+
 ## Layout
 
 |Links        |Telas        |
@@ -222,6 +264,11 @@
 |Links        |Telas        |
 |---          |---          |
 | [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/template/022.infinity-scroll-with-angularjs/) ||
+
+## Texto
+
+|Autocomplete |Telas        |
+| [099.autocomplete](https://renatomportugal.github.io/template/099.autocomplete) |<img src="images/099.autocomplete.jpg"/> |
 
 ## Videos
 
