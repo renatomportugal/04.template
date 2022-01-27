@@ -1,0 +1,67 @@
+:root {
+    --color_1: #020014;
+    --color_3: #ffcc00;
+    --color_2: #101010;
+    --color_4: #292929;
+  }
+.main {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;  
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 0%;
+    padding: 0%;
+    background-color: var(--color_1);
+    
+}
+.firefly {
+    box-sizing: border-box;
+    display: block;
+    height: 0pt;
+    width: 0pt;
+    border-style: none;
+    position: absolute;
+    background-color: var(--color_3);
+    -moz-box-shadow: 0 0 4pt 4pt var(--color_3);
+    -webkit-box-shadow: 0 0 4pt 4pt var(--color_3);
+    box-shadow: 0 0 4pt 4pt var(--color_3);
+    border-radius: 4pt;
+}
+.button {
+  box-sizing: border-box;
+  display: flex;
+  height: auto;
+  width: auto;
+  margin: 10pt;
+  padding: 5pt;
+  position: relative;
+  background-color: var(--color_2);
+  color: var(--color_4);
+  z-index: 1;
+  transition: color 1s;
+  transition-delay: 1.5s;
+  font-family: 'Architects Daughter', cursive;
+  font-weight: 400;
+  font-size: 2em;
+  outline: 0;
+  border-color: var(--color_4);
+  border-width: 3pt;
+  border-style: none solid solid none;
+}
+.button:hover{
+    color: var(--color_3);
+}
+
+
+
+@media only screen and (max-width: 450px) {
+    .main {
+      flex-direction: column;
+    }
+}

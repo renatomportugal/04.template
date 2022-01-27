@@ -60,12 +60,30 @@
 |Click        |Telas        |
 |---          |---          |
 | [098.air-horns](https://renatomportugal.github.io/template/098.air-horns) |<img src="images/098.air-horns.jpg"/> |
+| [120.sound-links-menu](https://renatomportugal.github.io/template/120.sound-links-menu) |<img src="images/120.sound-links-menu.jpg"/> |
 
-## Botões
+## Background
+|Click        |Telas        |
+| [116.carnaval](https://renatomportugal.github.io/template/116.carnaval) |<img src="images/116.carnaval.jpg"/> |
+|Click        |Telas        |
+| [103.Lua](https://renatomportugal.github.io/template/103.Lua) |<img src="images/103.Lua.jpg"/> |
+|Outros       |Telas        |
+| [104.crossing-walls](https://renatomportugal.github.io/template/104.crossing-walls) |<img src="images/104.crossing-walls.jpg"/> |
+| [105.perticle-rotation-05](https://renatomportugal.github.io/template/105.perticle-rotation-05) |<img src="images/105.perticle-rotation-05.jpg"/> |
+| [106.tunnel-ride-ii](https://renatomportugal.github.io/template/106.tunnel-ride-ii) |<img src="images/106.tunnel-ride-ii.jpg"/> |
 
-|Links        |Telas        |
+
+## Bordados
+
+|Click        |Telas        |
 |---          |---          |
-| [063.draggable-skeuomorph-switchtoggle](https://renatomportugal.github.io/template/063.draggable-skeuomorph-switchtoggle) |<img src="images/063.draggable-skeuomorph-switchtoggle.png"/> |
+| [108.single-div-css-cross-stitch](https://renatomportugal.github.io/template/108.single-div-css-cross-stitch) |<img src="images/108.single-div-css-cross-stitch.jpg"/> |
+
+## Bordas
+
+|Click        |Telas        |
+|---          |---          |
+| [109.dashed-border-generator](https://renatomportugal.github.io/template/109.dashed-border-generator) |<img src="images/109.dashed-border-generator.jpg"/> |
 
 ## Busca
 
@@ -82,8 +100,20 @@
 ## Cards
 
 |Categoria        |Telas        |
-|---              |---          |
 | [066.product-sorter](https://renatomportugal.github.io/template/066.product-sorter/) | <img src="images/066.product-sorter.png"/> |
+|Hover            |Telas        |
+| [113.services_tabs](https://renatomportugal.github.io/template/113.services_tabs/) | <img src="images/113.services_tabs.jpg"/> |
+|Outros           |Telas        |
+| [114.card_styles](https://renatomportugal.github.io/template/114.card_styles/) | <img src="images/114.card_styles.jpg"/> |
+| [115.information_cards](https://renatomportugal.github.io/template/115.information_cards/) | <img src="images/115.information_cards.jpg"/> |
+
+## Cards
+
+|Não Resposivos   |Telas        |
+| [117.chatroom-project](https://renatomportugal.github.io/template/117.chatroom-project/) | <img src="images/117.chatroom-project.jpg"/> |
+| [118.chat-widget](https://renatomportugal.github.io/template/118.chat-widget/) | <img src="images/118.chat-widget.jpg"/> |
+|Resposivos       |Telas        |
+| [119.elegant_bootstrap_4_message_chat_box_template](https://renatomportugal.github.io/template/119.elegant_bootstrap_4_message_chat_box_template/) | <img src="images/119.elegant_bootstrap_4_message_chat_box_template.jpg"/> |
 
 ## Click Select
 
@@ -103,6 +133,21 @@
 |Links        |Telas        |
 |---          |---          |
 | [068.responsive-retro-crt-screen-with-border-image-and-gradient](https://renatomportugal.github.io/template/068.responsive-retro-crt-screen-with-border-image-and-gradient) |<img src="images/068.responsive-retro-crt-screen-with-border-image-and-gradient.png"/> |
+
+## Controles
+
+|Botões       |Telas        |
+| [127.buttonFuturistic](https://renatomportugal.github.io/template/127.buttonFuturistic) |<img src="images/127.buttonFuturistic.jpg"/> |
+| [129.jqueryswitch-2014-01-28](https://renatomportugal.github.io/template/129.jqueryswitch-2014-01-28) |<img src="images/129.jqueryswitch-2014-01-28.jpg"/> |
+| [130.social-app-menu](https://renatomportugal.github.io/template/130.social-app-menu) |<img src="images/130.social-app-menu.jpg"/> |
+|DropDown     |Telas        |
+| [128.single-selectiondevextreme-jquery-drop-down-box](https://renatomportugal.github.io/template/128.single-selectiondevextreme-jquery-drop-down-box) |<img src="images/128.single-selectiondevextreme-jquery-drop-down-box.jpg"/> |
+
+## Conversões
+
+|Base64       |Telas        |
+|---          |---          |
+| [107.visualization-of-base64-encoding](https://renatomportugal.github.io/template/107.visualization-of-base64-encoding) |<img src="images/107.visualization-of-base64-encoding.jpg"/> |
 
 ## Coordenadas
 
@@ -151,11 +196,28 @@
 |---          |---          |
 | [064.old-paper](https://renatomportugal.github.io/template/064.old-paper) |<img src="images/064.old-paper.png"/> |
 
+## Hover
+
+|Botões       |Telas        |
+| [110.fireflies](https://renatomportugal.github.io/template/110.fireflies/) | <img src="images/110.fireflies.jpg"/> |
+
 ## IHM - Interface Homem Máquina
 
-|Links        |Telas        |
-|---          |---          |
+|Botões       |Telas        |
 | [020.self-destruct-button](https://renatomportugal.github.io/template/020.self-destruct-button/) | <img src="images/020.self-destruct-button.jpg"/> |
+| [063.draggable-skeuomorph-switchtoggle](https://renatomportugal.github.io/template/063.draggable-skeuomorph-switchtoggle) |<img src="images/063.draggable-skeuomorph-switchtoggle.png"/> |
+| [100.realistic-red-switch-pure-css](https://renatomportugal.github.io/template/100.realistic-red-switch-pure-css) |<img src="images/100.realistic-red-switch-pure-css.png"/> |
+|Gauges       |Telas        |
+| [121.barraHorizontal](https://renatomportugal.github.io/template/121.barraHorizontal/) | <img src="images/121.barraHorizontal.jpg"/> |
+| [122.circular1](https://renatomportugal.github.io/template/122.circular1/) | <img src="images/122.circular1.jpg"/> |
+| [123.circular2](https://renatomportugal.github.io/template/123.circular2/) | <img src="images/123.circular2.jpg"/> |
+| [124.circular3](https://renatomportugal.github.io/template/124.circular3/) | <img src="images/124.circular3.jpg"/> |
+| [125.Gauge](https://renatomportugal.github.io/template/125.Gauge/) | <img src="images/125.Gauge.jpg"/> |
+| [126.ponteiro](https://renatomportugal.github.io/template/126.ponteiro/) | <img src="images/126.ponteiro.jpg"/> |
+|Painéis      |Telas        |
+| [102.apollo-agc-apollo-guidance-computer](https://renatomportugal.github.io/template/102.apollo-agc-apollo-guidance-computer/) | <img src="images/102.apollo-agc-apollo-guidance-computer.jpg"/> |
+|Mostrador Mecânico |Telas        |
+| [101.mechincal-number-counter](https://renatomportugal.github.io/template/101.mechincal-number-counter/) | <img src="images/101.mechincal-number-counter.jpg"/> |
 
 ## Imagem_Camadas
 
@@ -243,6 +305,9 @@
 |---          |---          |
 | [012.Cursos](https://renatomportugal.github.io/template/012.Cursos/) ||
 
+## Paint_Brush
+|Links        |Telas        |
+| [112.native-js-day-8-drawing-canvas](https://renatomportugal.github.io/template/112.native-js-day-8-drawing-canvas) |<img src="images/112.native-js-day-8-drawing-canvas.jpg"/> |
 ## Preview de Upload
 
 |Links        |Telas        |

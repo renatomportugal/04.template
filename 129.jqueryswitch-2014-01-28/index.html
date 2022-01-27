@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />    
+    <meta name="author" content="Sandro Alves Peres" />	
+    <title>JQuery Switch</title>
+    <link rel="stylesheet" href="jquery.switch.style.css" type="text/css" media="all" />       
+    <script type="text/javascript" src="jquery-1.8.3.js"></script>     
+	<script type="text/javascript" src="jquery.switch.style.js"></script>   
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+		
+			$('#switch1').switchStyle({
+                label_on: 'ON',
+                label_off: 'OFF',
+                label_size: 12,
+                width: 80,
+                height: 30 
+            });	
+            
+			$('#switch2').switchStyle({
+                label_on: 'Active',
+                label_off: 'Inactive',
+                label_size: 12,
+                width: 150,
+                height: 30 
+            });	            
+			
+		});
+	</script>
+	<style media="all">
+		body {
+			margin: 50px;
+			font-family: verdana, tahoma, sans-serif;
+			font-size: 12px;
+			color: #111222;
+		}
+		
+		.title {
+			font-size: 14px;
+			font-weight: bold;
+			color: #184E76;
+		}
+		
+		.code {
+			margin-left: 30px;
+			color: #606060;
+			margin-bottom: 20px;
+		}
+		
+		.title-rule {
+			font-size: 16px;
+			font-weight: bold;
+			color: orangered;
+		}
+		
+		.rule {
+			margin-left: 30px;
+			color: #069;
+			margin-bottom: 20px;
+		}		
+		
+        .comments {
+            font-style: italic;
+            color: #808080;
+        }
+        
+		label {
+			color: #202020;
+			vertical-align: middle;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #03f;
+		}
+		
+		a:hover {
+			color: orangered;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>JQuery Switch</h1>
+	<h2>Apply a switch style for checkboxes</h2>
+	<hr size="1" color="#c0c0c0" />
+	<p>&nbsp;</p>
+	
+	<p><input type="checkbox" name="switch1" id="switch1" value="1" /></p>
+	<p>
+		<a href="javascript:void(0);" onclick="$('#switch1').switchStyle('enable');">Enable</a> - 
+		<a href="javascript:void(0);" onclick="$('#switch1').switchStyle('disable');">Disable</a> -
+		<a href="javascript:void(0);" onclick="$('#switch1').switchStyle('on');">Check</a> -
+		<a href="javascript:void(0);" onclick="$('#switch1').switchStyle('off');">Uncheck</a>
+	</p>
+
+	<p>&nbsp;</p>
+	
+    <p><input type="checkbox" name="switch2" id="switch2" value="2" checked="checked" disabled="disabled" /></p>
+	<p>
+		<a href="javascript:void(0);" onclick="$('#switch2').switchStyle('enable');">Enable</a> - 
+		<a href="javascript:void(0);" onclick="$('#switch2').switchStyle('disable');">Disable</a> -
+		<a href="javascript:void(0);" onclick="$('#switch2').switchStyle('on');">Check</a> -
+		<a href="javascript:void(0);" onclick="$('#switch2').switchStyle('off');">Uncheck</a>
+	</p>
+
+	<p>&nbsp;</p>    
+    
+	<p class="title">Using selector jquery for all checkboxes</p>
+	<p>
+		<a href="javascript:void(0);" onclick="$('input:checkbox').switchStyle('enable');">Enable</a> - 
+		<a href="javascript:void(0);" onclick="$('input:checkbox').switchStyle('disable');">Disable</a> -
+		<a href="javascript:void(0);" onclick="$('input:checkbox').switchStyle('on');">Check</a> -
+		<a href="javascript:void(0);" onclick="$('input:checkbox').switchStyle('off');">Uncheck</a>
+	</p>    
+    
+    <p>&nbsp;</p>
+    
+	<p class="title">Create</p>
+	<p class="code">
+		$('input:checkbox').switchStyle();	
+	</p>
+	<p class="code">
+        <span class="comments">// with options</span><br />	
+        $('input:checkbox').switchStyle({
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;label_on: 'ON',
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;label_off: 'OFF',
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;label_size: 12,
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;width: 80,
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;height: 30         
+        <br />}); 
+	</p>    
+	
+	<p class="title">Enable</p>
+	<p class="code">
+		$('input:checkbox').switchStyle('enable');	
+	</p>
+
+	<p class="title">Disable</p>
+	<p class="code">
+		$('input:checkbox').switchStyle('disable');
+	</p>
+
+	<p class="title">Check</p>
+	<p class="code">
+		$('input:checkbox').switchStyle('on');	
+	</p>	
+	
+	<p class="title">Uncheck</p>
+	<p class="code">
+		$('input:checkbox').switchStyle('off');	
+	</p>
+
+	<p>&nbsp;</p>
+	
+	<p class="title-rule">Rules</p>
+	<p class="rule">
+		- Do not include a "label" element for the checkbox. Use the plugin functions instead<br />
+        - If you want more then one Switch Button inline, change the CSS property display in ".switch-wrapper" class to inline-block
+	</p>
+	
+</body>
+</html>

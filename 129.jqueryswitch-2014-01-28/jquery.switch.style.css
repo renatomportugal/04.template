@@ -1,0 +1,132 @@
+/*
+*  Copyright (c) 2013, Sandro Alves Peres
+*  All rights reserved.
+*
+*  Date: 21/11/2013
+*  http://www.zend.com/en/yellow-pages#show-ClientCandidateID=ZEND022656
+*/ 
+
+.switch-style-wrapper, 
+.switch-style-slide {
+    position: relative;    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-left: -51%;
+}
+
+.switch-style-wrapper {
+    border: 1px solid #a2a2a2;
+    background-color: #f7f7f7;
+    overflow: hidden !important;
+    vertical-align: middle;
+    cursor: pointer;      
+    margin: 2px;
+    white-space: nowrap;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+    
+/*    display: inline-block;    
+    *display: inline;
+    *zoom: 1;  */
+}
+
+.switch-style-slide {
+    width: 156%;
+    height: 100%;
+    left: -6%;
+}
+
+.switch-style-button, 
+.switch-style-off, 
+.switch-style-on {
+    position: absolute !important;
+    top: 0 !important;
+    height: 100%;
+    text-align: center; 
+    z-index: 1;
+    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;     
+}
+
+.switch-style-button {
+    width: 33% !important;;
+    left: 35.5%;
+    border: 1px solid #a2a2a2;
+    border-bottom: none;
+    border-top: none;    
+    z-index: 2;
+    height: 100%;
+    
+    background-color: #D7D7D7;
+    background-image: -moz-linear-gradient(center top, #D7D7D7, #FCFCFC);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#D7D7D7), to(#FCFCFC));
+    background-image: -webkit-linear-gradient(center top, #D7D7D7, #FCFCFC);
+    background-image: -o-linear-gradient(center top, #D7D7D7, #FCFCFC);
+    background-image: linear-gradient(to bottom, #D7D7D7, #FCFCFC);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FCFCFC', endColorstr='#D7D7D7'); /* IE6 & IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FCFCFC', endColorstr='#D7D7D7')"; /* IE8 */     
+    background-repeat: repeat-x;   
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+    
+    box-shadow: 0 0 2px #FFFFFF inset;
+    -webkit-box-shadow: 0 0 2px #FFFFFF inset;
+    -moz-box-shadow:    0 0 2px #FFFFFF inset;  
+}
+
+.switch-style-on {
+    width: 39% !important;
+    left: 0;
+    text-indent: 2% !important;    
+    font-family: verdana, tahoma, sans-serif, arial;
+    font-weight: bold; 
+    background-color: #82b5e4;  
+    background-image: -moz-linear-gradient(top, #86B6F4, #2F63A0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#86B6F4), to(#2F63A0));
+    background-image: -webkit-linear-gradient(top, #86B6F4, #2F63A0);
+    background-image: -o-linear-gradient(top, #86B6F4, #2F63A0);
+    background-image: linear-gradient(to bottom, #86B6F4, #2F63A0);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#86B6F4', endColorstr='#2F63A0'); /* IE6 & IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#86B6F4', endColorstr='#2F63A0')"; /* IE8 */    
+    background-repeat: repeat-x; 
+    color: #fff; 
+    padding-right: 4%;    
+}
+
+.switch-style-off {
+    width: 35% !important;    
+    left: 66%;
+    text-align: center;
+    text-indent: 6% !important;
+    font-family: verdana, tahoma, sans-serif, arial;
+    font-weight: bold;
+    background-color: #ebebeb;
+    background-image: -moz-linear-gradient(center top, #C5C4C5 25%, #E2E2E2 50%, #EFEFEF 75%, #F8F8F8 100%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C5C4C5), to(#E2E2E2));
+    background-image: -webkit-linear-gradient(center top, #C5C4C5, #E2E2E2);
+    background-image: -o-linear-gradient(center top, #C5C4C5, #E2E2E2);
+    background-image: linear-gradient(to bottom, #C5C4C5, #E2E2E2);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#E2E2E2', endColorstr='#C5C4C5'); /* IE6 & IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#E2E2E2', endColorstr='#C5C4C5')"; /* IE8 */     
+    background-repeat: repeat-x; 
+    color: #888;
+    padding-right: 6%;
+}
+
+.switch-style-disabled,
+.switch-style-disabled .switch-style-on,
+.switch-style-disabled .switch-style-off {
+    cursor: default;
+    filter: alpha(opacity=50);
+    -ms-filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    -khtml-opacity: .5;     
+}

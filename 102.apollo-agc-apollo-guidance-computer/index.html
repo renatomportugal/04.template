@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Apollo AGC (Apollo Guidance Computer)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="scotch_two noisy">
+<div class="cont_module scotch_one noisy">
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<screw_lf></screw_lf>
+<div class="left_part">
+<div class="sep"></div>
+<div class="btop"></div>
+<div class="square"></div>
+<div class="bbot"></div>
+<div class="sep"></div>
+<div class="btop"></div>
+<div class="square"></div>
+<div class="bbot"></div>
+<div class="sep"></div>
+<div class="btop"></div>
+<div class="square"></div>
+<div class="bbot"></div>
+<div class="sep"></div>
+<div class="btop"></div>
+<div class="square"></div>
+<div class="bbot"></div>
+<div class="sep"></div>
+</div>
+<div class="right_part">
+<div class="sep1"></div>
+<div class="btop1"></div>
+<div class="square1"></div>
+<div class="bbot1"></div>
+<div class="sep1"></div>
+<div class="btop1"></div>
+<div class="square1"></div>
+<div class="bbot1"></div>
+<div class="sep1"></div>
+<div class="btop1"></div>
+<div class="square1"></div>
+<div class="bbot1"></div>
+<div class="sep1"></div>
+<div class="btop1"></div>
+<div class="square1"></div>
+<div class="bbot1"></div>
+<div class="sep1"></div>
+</div>
+</div>
+<div class="computer__engines">
+</div>
+<div class="check">
+<div id="resu">___</div>
+<div id="debug">___</div>
+</div>
+<div class="computer__engines__status ">
+<div class="cont_panel_engines">
+<div class="cont_status">
+<div class="cont_abort">
+<div id="btn_abort" class="abort_button">ABORT</div>
+</div>
+<div class="cont_tal">
+<div class="label_tal">
+<span>MIN</span>
+<spacer></spacer>
+<span>SEC</span>
+</div>
+<div id="tal" class="display_tal">
+<span id="talmin">00</span>
+<spacer></spacer>
+<span id="talsec">00</span>
+</div>
+</div>
+<div class="lv_indicators">
+<span class="status stdby">L/V<br>RATE</span>
+<span class="status stdby">SII<br>SEP</span>
+<span class="status stdby">L/V<br>GUID</span>
+</div>
+<div class="lv_title">
+<h1>LV ENGINES</h1>
+</div>
+</div>
+<div class="cont_engines">
+<div class="engines_status">
+<div class="column">
+<span class="engine stdby">4</span>
+<span class="engine stdby">3</span>
+</div>
+<div class="column">
+<span class="engine stdby">5</span>
+</div>
+<div class="column">
+<span class="engine stdby">1</span>
+<span class="engine stdby">2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="computer noisy">
+<div class="computer__top noisy">
+<screw></screw>
+<screw></screw>
+<screw></screw>
+<screw></screw>
+<screw></screw>
+<screw></screw>
+<screw></screw>
+<screw></screw>
+<div class="computer__screw computer__screw--top-left"></div>
+<div class="computer__screw computer__screw--top-center"></div>
+<div class="computer__screw computer__screw--top-right"></div>
+<div class="computer__screw computer__screw--middle-left"></div>
+<div class="computer__screw computer__screw--middle-center"></div>
+<div class="computer__screw computer__screw--middle-right"></div>
+<div class="computer__screw computer__screw--bottom-left"></div>
+<div class="computer__screw computer__screw--bottom-right"></div>
+<div class="computer__left">
+<div id="uplink_acty" class="computer__indicator">UPLINK ACTY</div>
+<div id="temp"        class="computer__indicator">TEMP</div>
+<div id="no_att"      class="computer__indicator">NO ATT</div>
+<div id="gimbal_lock" class="computer__indicator">GIMBAL LOCK</div>
+<div id="stby"        class="computer__indicator">STBY</div>
+<div id="prog"        class="computer__indicator">PROG</div>
+<div id="key_rel"     class="computer__indicator">KEY REL</div>
+<div id="restart"     class="computer__indicator">RESTART</div>
+<div id="opr_err"     class="computer__indicator">OPR ERR</div>
+<div id="tracker"     class="computer__indicator">TRACKER</div>
+<div class="computer__indicator"></div>
+<div id="alt"         class="computer__indicator">ALT</div>
+<div class="computer__indicator"></div>
+<div id="vel"         class="computer__indicator">VEL</div>
+</div>
+<div class="computer__right">
+<div id="comp_acty"        class="computer__display computer__display--status">COMP ACTY</div>
+<div class="computer__display" input="PRO">
+<div id="prog_label"  class="label">PROG</div>
+<div id="prog00"  class="input">00</div>
+</div>
+<div class="computer__display" input="VERB">
+<div id="verb_label"  class="label">VERB</div>
+<div id="verb00"  class="input">00</div>
+</div>
+<div class="computer__display" input="NOUN">
+<div id="noun_label"  class="label">NOUN</div>
+<div id="noun00"      class="input">00</div>
+</div>
+<div id="R1"  class="computer__display computer__display--long">0000000</div>
+<div id="R2"  class="computer__display computer__display--long">0000000</div>
+<div id="R3"  class="computer__display computer__display--long" input="KEY REL">0000000</div>
+<div class="computer__display"></div>
+<div class="computer__display"></div>
+</div>
+</div>
+<div class="computer__bottom noisy">
+<div id="17" class="computer__key">VERB</div>
+<div id="31" class="computer__key">NOUN</div>
+<div id="26" class="computer__key">+</div>
+<div id="27" class="computer__key">-</div>
+<div id="0" class="computer__key">0</div>
+<div id="7"  class="computer__key">7</div>
+<div id="4"  class="computer__key">4</div>
+<div id="1"  class="computer__key">1</div>
+<div id="8"  class="computer__key">8</div>
+<div id="5"  class="computer__key">5</div>
+<div id="2"  class="computer__key">2</div>
+<div id="9"  class="computer__key">9</div>
+<div id="6"  class="computer__key">6</div>
+<div id="3"  class="computer__key">3</div>
+<div id="30" class="computer__key">CLR</div>
+<div id="29" class="computer__key">PRO</div>
+<div id="25" class="computer__key">KEY REL</div>
+<div id="28" class="computer__key">ENTR</div>
+<div id="18" class="computer__key">RSET</div>
+</div>
+</div>
+<div class="computer__flight__infos noisy">
+<div class="row">
+<div class="chk_container">
+<span class="description-text">IMU</span>
+<label class="switch_radio">
+<input id="chk_imu" type="checkbox">
+<span class="label-text"></span>
+</label>
+</div>
+<div class="led-box">
+<div id="imu_status" class="led-off"></div>
+</div>
+</div>
+<div class="row">
+<div class="display__label">ST </div>
+<div id="st"  class="display--small">00:00:00</div>
+</div>
+<div class="row">
+<div class="display__label">MET </div>
+<div id="met"  class="display--small">00:00:00</div>
+</div>
+<div class="row">
+<div class="display__label">OGA </div>
+<div id="oga"  class="display--small">000.00</div>
+</div>
+<div class="row">
+<div class="display__label">IGA </div>
+<div id="iga"  class="display--small">000.00</div>
+</div>
+<div class="row">
+<div class="display__label">MGA </div>
+<div id="mga"  class="display--small">000.00</div>
+</div>
+<div class="row">
+<div class="display__label">Yaw </div>
+<div id="yaw"  class="display--small">0000000</div>
+</div>
+<div class="row">
+<div class="display__label">Pitch </div>
+<div id="pitch"  class="display--small">0000000</div>
+</div>
+<div class="row">
+<div class="display__label">Roll </div>
+<div id="roll"  class="display--small">0000000</div>
+</div>
+</div>
+<div class="computer__flight__commands noisy">
+<div class="button-row">
+<div class="warn_container_double_button">
+<button class="btn-black">DIRECT<br>ULLAGE</button>
+<button class="btn-black">THRUST<br>ON</button>
+</div>
+<div class="button-row">
+<div id="ags_opr_err" class="ags__indicator">OPR ERR</div>
+<div id="ags_mem_loc" class="ags__mem_loc">000</div>
+<div id="ags_value_display" class="ags__val_display">+00000</div>
+</div>
+</>
+<section class="ags__keyboard">
+<div id="110" class="key-1">+</div>
+<div id="107" class="key-2">7</div>
+<div id="108" class="key-3">8</div>
+<div id="109" class="key-4">9</div>
+<div id="111" class="key-5">CLR</div>
+<div id="112" class="key-6">-</div>
+<div id="104" class="key-7">4</div>
+<div id="105" class="key-8">5</div>
+<div id="106" class="key-9">6</div>
+<div id="113" class="key-10">READ OUT</div>
+<div id="100" class="key-11">0</div>
+<div id="101" class="key-12">1</div>
+<div id="102" class="key-13">2</div>
+<div id="103" class="key-14">3</div>
+<div id="114" class="key-15">ENTR</div>
+<div class="space"></div>
+<div class="space"></div>
+<div id="115" class="key-16">HOLD</div>
+</section>
+<canvas id="fdai" class="fdai" width="200" height="200" style="position: absolute; left: 120px; top: 350px;"></canvas>
+</div>
+</div>
+</div>
+<div class="agc_screen_commands">
+<div class="screen">
+<terminal id="terminal"></terminal>
+</div>
+<div class="screen_keys">
+<div id="verbs" class="computer__key__small">VERBS</div>
+<div id="nouns" class="computer__key__small">NOUNS</div>
+<div id="commands" class="computer__key__small">COMMANDS</div>
+</div>
+</div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'></script>
+<script src='https://svtsim.com/moonjs/agc11.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

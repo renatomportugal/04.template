@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Visualization of Base64 Encoding</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="encode-form">
+        <div class="encode-form-input">
+            <input id="ascii-input" class="input" placeholder="Input ASCII string" type="text"> 
+            <input id="encode-button" type="button" value="Encode">
+        </div>
+        <div class="scroll-div">
+<svg id="encoding-diagram" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+    <style>
+<![CDATA[
+      .mono-text {
+         font-family: monospace;
+      }
+      .bold {
+         font-weight: bold;
+      }
+      .cell-label {
+         fill: black;
+         text-align: center;
+         font-family: monospace;
+      }
+      .pad-cell {
+          opacity: 0.25;
+      }
+]]>
+    </style>
+    <defs>
+        <g id="char-cell" stroke="black" fill="white">
+            <rect x="0" y="0" width="192" height="50"
+            stroke-width="2" />
+            <text class="cell-label" x="96" y="32"
+            text-anchor="middle" font-size="32"></text>
+        </g>
+        <g id="bit-cell" stroke="black" fill="white">
+            <rect x="0" y="0" width="24" height="24"
+            stroke-width="2" />
+            <text class="cell-label" x="12" y="16"
+            text-anchor="middle" font-size="12"></text>
+        </g>
+        <g id="base64-num-cell" stroke="black" fill="white">
+            <rect x="0" y="0" width="144" height="50"
+            stroke-width="2" />
+            <text class="cell-label" x="72" y="32"
+            text-anchor="middle" font-size="22" opacity="0"></text>
+        </g>
+        <g id="base64-encoding-cell" stroke="black" fill="white">
+            <rect x="0" y="0" width="144" height="50"
+            stroke-width="2" />
+            <text class="cell-label" x="72" y="32"
+            text-anchor="middle" font-size="22" opacity="0"></text>
+        </g>
+    </defs>
+    <g transform="translate(0, 0)">
+        <g transform="translate(170, 0)">
+            <g id="char-tape" transform="translate(0, 0)"></g>
+            <g id="bit-tape" transform="translate(0, 50)"></g>
+            <g id="twenty-four-bit-span"
+            transform="translate(0, 84)" opacity="0.35">
+                <line x1="0" y1="0" x2="0" y2="13" stroke="black"
+                stroke-width="2" />
+                <line x1="576" y1="0" x2="576" y2="13"
+                stroke="black" stroke-width="2"
+                stroke-dasharray="5,5" />
+                <path d="M0 7 L240 7 M335 7 L576 7" stroke="black"
+                stroke-dasharray="5,5" stroke-width="2" />
+                <text class="mono-text" text-anchor="middle"
+                font-size="20" transform="translate(288, 13)">
+                24-bits</text>
+            </g>
+            <g id="six-bit-cursor" transform="translate(0, 84)">
+                <line x1="0" y1="0" x2="0" y2="13" stroke="black"
+                stroke-width="2" />
+                <line x1="144" y1="0" x2="144" y2="13"
+                stroke="black" stroke-width="2" />
+                <path d="M0 7 L40 7 M102 7 L144 7"
+                stroke="black" />
+                <text class="bold mono-text" text-anchor="middle"
+                transform="translate(72, 11)">6-bits</text>
+            </g>
+            <g id="base64-num-tape" transform="translate(0, 110)">
+            </g>
+            <g id="base64-encoding-tape"
+            transform="translate(0, 160)"></g>
+        </g>
+        <g>
+            <rect x="0" y="0" width="156" height="211" fill="white"
+            opacity="0.85" />
+            <g class="mono-text" text-anchor="end"
+            transform="translate(150, 33)">
+                <text font-size="20">input:</text>
+            </g>
+            <g class="mono-text" text-anchor="end"
+            transform="translate(150, 68)">
+                <text font-size="20">bits:</text>
+            </g>
+            <g class="mono-text" text-anchor="end"
+            transform="translate(150, 140)">
+                <text font-size="20">x:</text>
+            </g>
+            <g class="mono-text" text-anchor="end"
+            transform="translate(150, 190)">
+                <text font-size="20">alphabet[x]:</text>
+            </g>
+        </g>
+    </g>
+</svg>
+</div>
+   <input id="base64-output" class="input" type="text" readonly>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.9.1/polyfill.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

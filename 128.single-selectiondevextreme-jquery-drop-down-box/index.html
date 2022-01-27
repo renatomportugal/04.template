@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Single Selection - DevExtreme jQuery Drop Down Box</title>
+  <link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/17.1.5/css/dx.spa.css'>
+<link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/17.1.5/css/dx.common.css'>
+<link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/17.1.5/css/dx.light.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="dx-viewport demo-container">
+  <div style="padding: 10px;">
+  <div id="widget"></div>
+</div>
+    <div id="form">
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">DropDownBox with embedded TreeView</div>
+                <div class="dx-field-value">
+                    <div id="treeBox"></div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<!-- partial -->
+  <script src='./jquery.v.2.1.3.min.js'></script>
+<script src='https://cdn3.devexpress.com/jslib/17.1.5/js/dx.all.js'></script>
+<script>
+DevExpress.viz.currentTheme("generic.light");
+$(function(){
+     var treeView, dataGrid;
+    
+    var syncTreeViewSelection = function(treeView, value){
+        if (!value) {
+            treeView.unselectAll();
+        } else {
+            treeView.selectItem(value);
+        }
+    };
+    
+  var products = [
+  {
+    "ID": "1",
+    "name": "Stores",
+    "expanded": true
+  },
+  {
+    "ID": "1_1",
+    "categoryId": 1,
+    "name": "Super Mart of the West",
+    "expanded": true
+  },
+  {
+    "ID": "1_1_1",
+    "categoryId": "1_1",
+    "name": "Video Players"
+  },
+  {
+    "ID": "1_1_1_1",
+    "categoryId": "1_1_1",
+    "name": "HD Video Player",
+    "price": 220
+  },
+  {
+    "ID": "1_1_1_2",
+    "categoryId": "1_1_1",
+    "name": "SuperHD Video Player",
+    "price": 270
+  },
+  {
+    "ID": "1_1_2",
+    "categoryId": "1_1",
+    "name": "Televisions",
+    "expanded": true
+  },
+  {
+    "ID": "1_1_2_1",
+    "categoryId": "1_1_2",
+    "name": "SuperLCD 42",
+    "price": 1200
+  },
+  {
+    "ID": "1_1_2_2",
+    "categoryId": "1_1_2",
+    "name": "SuperLED 42",
+    "price": 1450
+  },
+  {
+    "ID": "1_1_2_3",
+    "categoryId": "1_1_2",
+    "name": "SuperLED 50",
+    "price": 1600
+  },
+  {
+    "ID": "1_1_2_4",
+    "categoryId": "1_1_2",
+    "name": "SuperLCD 55",
+    "price": 1750
+  },
+  {
+    "ID": "1_1_2_5",
+    "categoryId": "1_1_2",
+    "name": "SuperLCD 70",
+    "price": 4000
+  },
+  {
+    "ID": "1_1_3",
+    "categoryId": "1_1",
+    "name": "Monitors"
+  },
+  {
+    "ID": "1_1_3_1",
+    "categoryId": "1_1_3",
+    "name": "19\""
+  },
+  {
+    "ID": "1_1_3_1_1",
+    "categoryId": "1_1_3_1",
+    "name": "DesktopLCD 19",
+    "price": 160
+  },
+  {
+    "ID": "1_1_4",
+    "categoryId": "1_1",
+    "name": "Projectors"
+  },
+  {
+    "ID": "1_1_4_1",
+    "categoryId": "1_1_4",
+    "name": "Projector Plus",
+    "price": 550
+  },
+  {
+    "ID": "1_1_4_2",
+    "categoryId": "1_1_4",
+    "name": "Projector PlusHD",
+    "price": 750
+  }
+];
+    
+ var species = [
+    { "ID":"1", "name": "Species", "expanded": true },
+    { "ID":"2", "categoryId":"1", "name": "Cat" },
+    { "ID":"3", "categoryId":"1", "name": "Dog" },
+    { "ID":"4", "categoryId":"1", "name": "Cow" },
+    { "ID":"5", "categoryId":"2", "name": "Abyssinian" },
+    { "ID":"6", "categoryId":"2", "name": "Aegean cat" },
+    { "ID":"7", "categoryId":"2", "name": "Australian Mist" },
+    { "ID":"8", "categoryId":"3", "name": "Affenpinscher" },
+    { "ID":"9", "categoryId":"3", "name": "Afghan Hound" },
+    { "ID":"10", "categoryId":"3", "name": "Airedale Terrier" },
+    { "ID":"11", "categoryId":"3", "name": "Akita Inu" },
+    { "ID":"12", "categoryId":"0", "name": "Birds" },
+    { "ID":"13", "categoryId":"12", "name": "Akekee" },
+    { "ID":"14", "categoryId":"12", "name": "Arizona Woodpecker" },
+    { "ID":"15", "categoryId":"12", "name": "Black-chinned Sparrow" }
+];
+    
+    $("#treeBox").dxDropDownBox({
+        valueExpr: "ID",
+        displayExpr: "name",
+        placeholder: "Select a value...",
+        showClearButton: true,
+        dataSource: products,
+        contentTemplate: function(e){
+            var value = e.component.option("value"),
+                $treeView = $("<div>").dxTreeView({
+                    dataSource: e.component.option("dataSource"),
+                    dataStructure: "plain",
+                    keyExpr: "ID",
+                    parentIdExpr: "categoryId",
+                    selectionMode: "single",
+                    displayExpr: "name",
+                    selectByClick: true,
+                    onContentReady: function(args){
+                        syncTreeViewSelection(args.component, value);
+                    },
+                    selectNodesRecursive: false,
+                    onItemSelectionChanged: function(args){
+                        var value = args.component.getSelectedNodesKeys();
+                        
+                        e.component.option("value", value);
+                    }
+                });
+            
+            treeView = $treeView.dxTreeView("instance");
+            
+            e.component.on("valueChanged", function(args){
+                syncTreeViewSelection(treeView, args.value);
+            });
+            
+            return $treeView;
+        }
+    });
+    
+     var dropDownBxInstance =  $("#treeBox").dxDropDownBox("instance");
+  
+  
+    $("#widget").dxButton({
+      "icon": "favorites",
+      "text": "Click to change datasource of DropDownBox",
+      onClick: function() {
+         dropDownBxInstance.option('dataSource',species);
+         treeView.option('dataSource',species);
+         console.log( dropDownBxInstance.option('dataSource') );
+      }  
+  });
+  
+
+});
+</script>
+
+</body>
+</html>
