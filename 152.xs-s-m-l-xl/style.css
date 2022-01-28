@@ -1,0 +1,45 @@
+.App {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.rect {
+  fill: none;
+  stroke: #000;
+  stroke-width: 5;
+}
+
+.small {
+  fill: #fff;
+}
+
+.xs {
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.s {
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.m {
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.l {
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.xl {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}

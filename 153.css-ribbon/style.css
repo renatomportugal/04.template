@@ -1,0 +1,73 @@
+.box {
+  margin: 50px;
+  width: 220px;
+  height: 220px;
+  background: #7b2929;
+  position: relative;
+}
+.sale {
+  position: absolute;
+  left: -40px;
+  top: 21px;
+  width: 150px;
+
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.box *:before,
+.box *:after {
+  content: "";
+  position: absolute;
+}
+
+.sale:after,
+.sale:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+  width: 8px;
+  height: 21px;
+  background: #999;
+  left: 5px;
+  top: 14px;
+}
+.sale:after {
+  width: 17px;
+  height: 7px;
+  right: 0px;
+  top: 23px;
+  left: auto;
+}
+
+.sale div {
+  position: relative;
+  text-align: center;
+  background: #ccc;
+  font-size: 1.4em;
+
+  -webkit-box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+.sale div:before,
+.sale div:after {
+  -webkit-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+
+  left: -28px;
+  top: -24px;
+  border: 23px solid transparent; border-top: 23px solid white;
+}
+.sale div:after {
+  -webkit-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+
+  top: -23px;
+  left: auto;
+  right: -27px;
+}

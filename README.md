@@ -111,9 +111,12 @@
 
 |Não Resposivos   |Telas        |
 | [117.chatroom-project](https://renatomportugal.github.io/template/117.chatroom-project/) | <img src="images/117.chatroom-project.jpg"/> |
+| [151.shopping-ui](https://renatomportugal.github.io/template/151.shopping-ui/) | <img src="images/151.shopping-ui.jpg"/> |
 | [118.chat-widget](https://renatomportugal.github.io/template/118.chat-widget/) | <img src="images/118.chat-widget.jpg"/> |
 |Resposivos       |Telas        |
 | [119.elegant_bootstrap_4_message_chat_box_template](https://renatomportugal.github.io/template/119.elegant_bootstrap_4_message_chat_box_template/) | <img src="images/119.elegant_bootstrap_4_message_chat_box_template.jpg"/> |
+|Prices           |Não Resposivos        |
+| [150.pricing-table-design](https://renatomportugal.github.io/template/150.pricing-table-design/) | <img src="images/150.pricing-table-design.jpg"/> |
 
 ## Click Select
 
@@ -203,6 +206,16 @@
 |Links        |Telas        |
 |---          |---          |
 | [060.CodePen_Export_Nqwbmg](https://renatomportugal.github.io/template/060.CodePen_Export_Nqwbmg) |<img src="images/060.CodePen_Export_Nqwbmg.png"/> |
+|Produtos | Não Responsível |
+| [145.css-big-box-pc-games](https://renatomportugal.github.io/template/145.css-big-box-pc-games) |<img src="images/145.css-big-box-pc-games.png"/> |
+| [146.css-trapper-keeper-effect](https://renatomportugal.github.io/template/146.css-trapper-keeper-effect) |<img src="images/146.css-trapper-keeper-effect.jpg"/> |
+| [147.pricingpure-css16](https://renatomportugal.github.io/template/147.pricingpure-css16) |<img src="images/147.pricingpure-css16.jpg"/> |
+|Tamanho      |Não Responsível  |
+| [152.xs-s-m-l-xl](https://renatomportugal.github.io/template/152.xs-s-m-l-xl) |<img src="images/152.xs-s-m-l-xl.jpg"/> |
+|Tickets      |Responsível      |
+| [148.choose-ticketpure-css08](https://renatomportugal.github.io/template/148.choose-ticketpure-css08) |<img src="images/148.choose-ticketpure-css08.png"/> |
+|Tickets      |Não Responsível  |
+| [149.folding-ticket-detail](https://renatomportugal.github.io/template/149.folding-ticket-detail) |<img src="images/149.folding-ticket-detail.jpg"/> |
 
 ## Editor
 
@@ -334,6 +347,7 @@
 ## Paint_Brush
 |Links        |Telas        |
 | [112.native-js-day-8-drawing-canvas](https://renatomportugal.github.io/template/112.native-js-day-8-drawing-canvas) |<img src="images/112.native-js-day-8-drawing-canvas.jpg"/> |
+
 ## Preview de Upload
 
 |Links        |Telas        |
@@ -349,6 +363,11 @@
 |---          |---          |
 | [005.chrome-bug-blurry-stops-when-more-than-8-colors](https://renatomportugal.github.io/template/005.chrome-bug-blurry-stops-when-more-than-8-colors/) ||
 | [031.padding-versus-margin-in-the-real-world](https://renatomportugal.github.io/template/031.padding-versus-margin-in-the-real-world/) ||
+
+## Ribbon
+
+|Links        |Telas        |
+| [153.css-ribbon](https://renatomportugal.github.io/template/153.css-ribbon) |<img src="images/153.css-ribbon.jpg"/> |
 
 ## Scroll Infinito
 

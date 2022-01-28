@@ -1,0 +1,64 @@
+.trapper-keeper {
+  width: 290px;
+  padding: 0.3em 0;
+  position: relative;
+}
+.trapper-keeper img {
+  width: 100%;
+  display: block;
+  border-radius: 0.3em;
+  -webkit-filter: hue-rotate(330deg) contrast(130%) saturate(110%);
+          filter: hue-rotate(330deg) contrast(130%) saturate(110%);
+  box-shadow: -0.4em 0.3em 0.5em rgba(0,0,0,0.45), -0.7em 0.6em 1em rgba(0,0,0,0.1), 0.7em -0.6em 1em rgba(0,0,0,0.1);
+  z-index: 1;
+}
+.trapper-keeper:before,
+.trapper-keeper:after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.trapper-keeper:before {
+  width: 68.5%;
+  height: calc(100% - 0.6em);
+  top: 0.3em;
+  background-image: linear-gradient(30deg, rgba(255,255,255,0.6), rgba(255,255,255,0.6)), linear-gradient(40deg, #ff1493, #639 30%, rgba(102,51,153,0) 30.5%, rgba(255,20,147,0) 33.5%, #ff1493 34%, #ff1493 38%, rgba(255,20,147,0) 38.5%), repeating-linear-gradient(to right, transparent, transparent 0.5em, rgba(255,255,255,0.2) 0.5em, rgba(255,255,255,0.2) 0.55em, transparent 0.55em), repeating-linear-gradient(to bottom, transparent, transparent 0.5em, rgba(255,255,255,0.2) 0.5em, rgba(255,255,255,0.2) 0.55em, transparent 0.55em);
+  background-size: 1% 50%, 60% 50%, 95% 100%, 95% 100%;
+  background-position: 3% 50%, left bottom, left top, left top;
+  border-radius: 0.3em 0 0 0.3em;
+  box-shadow: inset 0.3em 0.3em 0 #ff1493, inset 0.3em -0.3em 0 #ff1493, inset 0.4em 0.45em rgba(0,0,128,0.5), inset 0.3em 0.65em rgba(255,255,255,0.7);
+  z-index: 2;
+}
+.trapper-keeper:after {
+  width: 30%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-left: 0.3em solid #ff1493;
+  border-right: 1em solid transparent;
+  background-clip: border-box;
+  background-image: linear-gradient(to left, rgba(0,0,0,0.35), transparent), repeating-linear-gradient(to bottom, transparent, transparent 0.3em, rgba(0,0,0,0.1) 0.3em, rgba(0,0,0,0.1) 0.5em, rgba(255,255,255,0.2) 0.5em, rgba(255,255,255,0.2) 0.6em), repeating-linear-gradient(to bottom, transparent, transparent 0.1em, rgba(255,255,255,0.6) 0.1em, rgba(255,255,255,0.6) 0.4em, transparent 0.4em, transparent 0.6em), linear-gradient(#ff1493, #ff1493), linear-gradient(30deg, rgba(255,255,255,0.7), rgba(255,255,255,0.7)), repeating-linear-gradient(to right, transparent, transparent 0.5em, rgba(255,255,255,0.2) 0.5em, rgba(255,255,255,0.2) 0.55em, transparent 0.55em), repeating-linear-gradient(to bottom, transparent, transparent 0.5em, rgba(255,255,255,0.2) 0.5em, rgba(255,255,255,0.2) 0.55em, transparent 0.55em);
+  background-size: 0.5em 100%, 0.8em 100%, 0.4em 50%, 1em 100%, 2% 80%, 100% 100%, 100% 100%;
+  background-position: top right -1em, top right -1em, top 8.3em right -0.6em, top right -1em, bottom 0.6em right 0.15em, top left, top left;
+  border-radius: 2em 0.3em 0.3em 2em;
+  box-shadow: inset 0 0.3em #ff1493, inset 0 -0.3em #ff1493, inset 0.1em 0.45em rgba(0,0,128,0.5), inset 0 0.65em rgba(255,255,255,0.7), -0.8em 0 0.5em -0.5em rgba(0,0,0,0.6), -0.3em 0.5em 0.5em rgba(0,0,0,0.25);
+  z-index: 3;
+}
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff1493), color-stop(#ffd700), color-stop(#32cd32), to(#00ced1));
+  background-image: linear-gradient(to right, #ff1493, #ffd700, #32cd32, #00ced1);
+  padding: 60px 20px;
+}
+.container {
+  width: 650px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+          align-items: center;
+  justify-items: center;
+  gap: 60px 30px;
+  margin: 0 auto;
+}
+.container > img {
+  width: 250px;
+}
