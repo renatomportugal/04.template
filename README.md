@@ -176,6 +176,21 @@
 |---          |---          |
 | [065.only-css-showcase-car](https://renatomportugal.github.io/template/065.only-css-showcase-car/) | <img src="images/065.only-css-showcase-car.png"/> |
 
+## Data-Table
+
+|Links          |Telas        |
+|Não Responsivo |---          |
+| [135.panel_tables_with_filter](https://renatomportugal.github.io/template/135.panel_tables_with_filter/) | <img src="images/135.panel_tables_with_filter.jpg"/> |
+| [138.dashboard-with-webdatarocks-and-fusioncharts-dark-theme](https://renatomportugal.github.io/template/138.dashboard-with-webdatarocks-and-fusioncharts-dark-theme/) | <img src="images/138.dashboard-with-webdatarocks-and-fusioncharts-dark-theme.jpg"/> |
+| [141.material-sortable-datatable](https://renatomportugal.github.io/template/141.material-sortable-datatable/) | <img src="images/141.material-sortable-datatable.jpg"/> |
+| [143.responsive-table-with-datatables](https://renatomportugal.github.io/template/143.responsive-table-with-datatables/) | <img src="images/143.responsive-table-with-datatables.jpg"/> |
+|Responsivo     |---          |
+| [136.billionaires-responsive-table034-of-100days100projects](https://renatomportugal.github.io/template/136.billionaires-responsive-table034-of-100days100projects/) | <img src="images/136.billionaires-responsive-table034-of-100days100projects.jpg"/> |
+| [137.codepen_aLVXGO](https://renatomportugal.github.io/template/137.codepen_aLVXGO/) | <img src="images/137.codepen_aLVXGO.jpg"/> |
+| [140.mantenimiento-simple-con-angular-material-y-lodash](https://renatomportugal.github.io/template/140.mantenimiento-simple-con-angular-material-y-lodash/) | <img src="images/140.mantenimiento-simple-con-angular-material-y-lodash.jpg"/> |
+| [142.responsive-product-comparison-table](https://renatomportugal.github.io/template/142.responsive-product-comparison-table/) | <img src="images/142.responsive-product-comparison-table.jpg"/> |
+| [144.table2](https://renatomportugal.github.io/template/144.table2/) | <img src="images/144.table2.jpg"/> |
+
 ## Diagrama_De_Força
 
 |Links        |Telas        |

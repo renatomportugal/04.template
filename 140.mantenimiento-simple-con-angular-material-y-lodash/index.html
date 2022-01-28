@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mantenimiento simple con Angular-Material y lodash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.css'>
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      .full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px);
+    height: calc(100% - 64px);
+}
+
+.dialog-95 {
+    width: 95%;
+    height: auto;
+}
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <span ng-app="simpleCRUD" ng-controller="SimpleCRUDController">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            Simple CRUD Angular Material
+            <span flex></span>
+            <md-menu>
+                <md-button class="md-icon-button" aria-label="Orden" ng-click="abrirMenu($mdOpenMenu, $event)">
+                    <md-icon md-svg-icon="white_order"></md-icon>
+                    <md-tooltip md-delay="1500" md-autohide="true">Orden</md-tooltip>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button class="md-button" ng-click="ordenarPor('+')">Ascendente</md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button class="md-button" ng-click="ordenarPor('-')">Descendente</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu>
+                <md-button class="md-icon-button" aria-label="Clasificar" ng-click="abrirMenu($mdOpenMenu, $event)">
+                    <md-icon md-svg-icon="white_classification"></md-icon>
+                    <md-tooltip md-delay="1500" md-autohide="true">Clasificar</md-tooltip>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button class="md-button" ng-click="clasificarPor('name')">Name</md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button class="md-button" ng-click="clasificarPor('lastname')">Last name</md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button class="md-button" ng-click="clasificarPor('email')">Email</md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button class="md-button" ng-click="clasificarPor('direction')">Direction</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </md-toolbar>
+    <md-content class="full-heigth">
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="element in view.dataTable | orderBy:view.order.orderby + view.order.classification" ng-click="mostrarDialogo('R', element, $event)">
+                <div class="md-list-item-text">
+                    <h3>{{element.lastname + ", " + element.name}}</h3>
+                    <h4>{{element.email}}</h4>
+                    <p>{{element.direction}}</p>
+                </div>
+                <md-icon aria-label="Editar" class="md-secondary" md-svg-icon="white_edit" ng-click="mostrarDialogo('UD', element, $event)"></md-icon>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Nuevo">
+        <md-icon md-svg-icon="white_person_add" ng-click="mostrarDialogo('C', undefined, $event)"></md-icon>
+    </md-button>
+    <script type="text/ng-template" id="editor.html">
+        <md-dialog aria-label="Editar" class="dialog-95">
+            <form name="inputForm" novalidate>
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        <md-button class="md-icon-button" ng-click="regresar()">
+                            <md-icon md-svg-icon="white_back" aria-label="Regresar"></md-icon>
+                            <md-tooltip md-delay="1500" md-autohide="true">Regresar</md-tooltip>
+                        </md-button>
+                        <h2>{{view.operacion}}</h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" ng-click="borrar()" ng-show="view.operacion === 'Modificar'">
+                            <md-icon md-svg-icon="white_delete" aria-label="Borrar"></md-icon>
+                            <md-tooltip md-delay="1500" md-autohide="true">Borrar</md-tooltip>
+                        </md-button>
+                        <md-button class="md-icon-button" ng-click="guardar()" ng-show="view.operacion === 'Agregar' || view.operacion === 'Modificar'" ng-disabled="inputForm.$invalid">
+                            <md-icon md-svg-icon="white_save" aria-label="Guardar"></md-icon>
+                            <md-tooltip md-delay="1500" md-autohide="true">Guardar</md-tooltip>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-dialog-content>
+                    <md-content layout-padding ng-cloak>
+                        <md-input-container>
+                            <label>ID (solo lectura)</label>
+                            <input type="text" readonly name="id" ng-model="view.selectedItem.id" />
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Name</label>
+                            <input type="text" name="name" required md-maxlength="50" ng-model="view.selectedItem.name" />
+                            <ng-messages for="inputForm.name.$error">
+                                <ng-message when="required">El nombre es obligatorio</ng-message>
+                                <ng-message when="md-maxlength">Use 50 caracteres o menos para el nombre</ng-message>
+                            </ng-messages>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Last name</label>
+                            <input type="text" name="lastname" md-maxlength="50" ng-model="view.selectedItem.lastname" />
+                            <ng-messages for="inputForm.lastname.$error">
+                                <ng-message when="md-maxlength">Use 50 caracteres o menos para el nombre</ng-message>
+                            </ng-messages>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Email</label>
+                            <input type="text" name="email" required ng-model="view.selectedItem.email" ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i">
+                            <ng-messages for="inputForm.email.$error">
+                                <ng-message when="required">El correo es obligatorio</ng-message>
+                                <ng-message when="pattern">Email inválido</ng-message>
+                            </ng-messages>
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Direction</label>
+                            <textarea rows="2" name="direccion" md-maxlength="100" ng-model="view.selectedItem.direction"></textarea>
+                            <ng-messages for="inputForm.direccion.$error">
+                                <ng-message when="md-maxlength">Use 100 caracteres o menos para la dirección</ng-message>
+                            </ng-messages>
+                        </md-input-container>
+                    </md-content>
+                </md-dialog-content>
+            </form>
+        </md-dialog>
+    </script>
+    <script type="text/ng-template" id="icons_24x24.svg">
+    <svg 
+         width="24"
+         height="24" 
+         viewBox="0 0 24 24" 
+         xmlns="http://www.w3.org/2000/svg">
+        <g id="white_person_add">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        </g>
+        <g id="white_delete">
+            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </g>
+        <g id="white_edit">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </g>
+        <g id="white_save">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" />
+        </g>
+        <g id="white_back">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+        </g>
+        <g id="white_classification">
+            <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </g>
+        <g id="white_order">
+            <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </g>
+    </svg>
+    </script>
+</span>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-aria.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-messages.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+* { 
+	margin: 0; 
+	padding: 0; 
+}
+body { 
+	font: 18px  'Open Sans', sans-serif; 
+}
+
+table img {
+  border: 1px solid #ccc;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer {
+  background: #aaa;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+  border-top: 6px solid #777;
+}
+
+
+.group {
+      margin-top: 60px; 
+      padding: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+      border: 2px solid #aaa;
+      -webkit-box-shadow: 0px 0px 30px #888888;
+      moz-box-shadow: 0px 0px 30px #888888;
+      box-shadow: 0px 0px 30px #888888;
+}
+
+.group h3 {
+      position:relative;
+      top: -40px;
+      left: 10px;
+      background: white;
+      padding: 5px 20px;
+      width: 120px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      -webkit-box-shadow: 0px 0px 20px #888888;
+      moz-box-shadow: 0px 0px 20px #888888;
+      box-shadow: 0px 0px 20px #888888;
+}
+
+
+#page-wrap {
+  margin: 20px;
+}
+p {
+	margin: 20px 0; 
+}
+
+	table { 
+		width: 100%; 
+		border-collapse: collapse; 
+	}
+
+	tr:nth-of-type(odd) td{ 
+		background: #eee; 
+	}
+	th { 
+		background: #333; 
+		color: white; 
+		font-weight: bold; 
+	}
+	td, th { 
+		padding: 6px; 
+		border: 1px solid #ccc; 
+		text-align:center; 
+	}
+td:nth-of-type(1) {
+ width: 300px; 
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) 
+and (orientation : portrait), screen and (max-width: 600px) {
+  
+  
+    h1 {font-size: 20px;}
+
+    .group {
+      width: 250px;
+      box-shadow: none;
+    }
+  
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    #page-wrap {
+     width: 300px;
+	   margin: 10px auto;
+    }
+  
+    thead tr {
+      display: none;
+    }
+    
+    tr:not(:first-child){
+      margin-top: 50px;
+    }
+   
+    td { 
+      font-size: 24px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      margin: 5px 0;
+    } 
+  
+      td:nth-of-type(1) {
+      width: auto; 
+      font-weight: bold;
+    }
+  
+    td:not(:nth-of-type(-n+2)){
+      text-align:right; 
+      padding-left: 20px;
+      padding-right: 70px;
+    }
+
+    td:before {
+      padding-right: 10px;
+      font-size: 16px;
+    }
+
+    td:nth-of-type(3):before { content: "Points: "; }
+    td:nth-of-type(4):before { content: "Matches Won: "; }      
+    td:nth-of-type(5):before { content: "Matches Drawn: "; } 
+    td:nth-of-type(6):before { content: "Matches Lose: "; } 
+    td:nth-of-type(7):before { content: "Goals For: "; }   
+    td:nth-of-type(8):before { content: "Goals Against: "; }     
+  
+}

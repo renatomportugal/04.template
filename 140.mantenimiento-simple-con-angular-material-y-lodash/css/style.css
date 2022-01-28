@@ -1,0 +1,10 @@
+.full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px);
+    height: calc(100% - 64px);
+}
+
+.dialog-95 {
+    width: 95%;
+    height: auto;
+}

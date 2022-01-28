@@ -1,0 +1,22 @@
+body {
+  background-color: #1d1f20;
+  color: #999;
+  padding-top: 2rem;
+}
+
+h1 span {
+  color: #4682B4;
+}
+
+p span {
+  color: #96b38a;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid gray;
+  padding: 5px;
+}
