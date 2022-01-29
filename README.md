@@ -64,6 +64,7 @@
 
 ## Background
 |Click        |Telas        |
+|---          |---          |
 | [116.carnaval](https://renatomportugal.github.io/template/116.carnaval) |<img src="images/116.carnaval.jpg"/> |
 |Click        |Telas        |
 | [103.Lua](https://renatomportugal.github.io/template/103.Lua) |<img src="images/103.Lua.jpg"/> |
@@ -100,6 +101,7 @@
 ## Cards
 
 |Categoria        |Telas        |
+|---          |---          |
 | [066.product-sorter](https://renatomportugal.github.io/template/066.product-sorter/) | <img src="images/066.product-sorter.png"/> |
 |Hover            |Telas        |
 | [113.services_tabs](https://renatomportugal.github.io/template/113.services_tabs/) | <img src="images/113.services_tabs.jpg"/> |
@@ -110,6 +112,7 @@
 ## Cards
 
 |Não Resposivos   |Telas        |
+|---          |---          |
 | [117.chatroom-project](https://renatomportugal.github.io/template/117.chatroom-project/) | <img src="images/117.chatroom-project.jpg"/> |
 | [151.shopping-ui](https://renatomportugal.github.io/template/151.shopping-ui/) | <img src="images/151.shopping-ui.jpg"/> |
 | [118.chat-widget](https://renatomportugal.github.io/template/118.chat-widget/) | <img src="images/118.chat-widget.jpg"/> |
@@ -134,6 +137,7 @@
 ## Color
 
 |Picker       |Telas        |
+|---          |---          |
 | [133.isometric-color-picker](https://renatomportugal.github.io/template/133.isometric-color-picker/) | <img src="images/133.isometric-color-picker.jpg"/> |
 
 ## Console
@@ -149,6 +153,7 @@
 ## Controles
 
 |Botões       |Telas        |
+|---          |---          |
 | [127.buttonFuturistic](https://renatomportugal.github.io/template/127.buttonFuturistic) |<img src="images/127.buttonFuturistic.jpg"/> |
 | [129.jqueryswitch-2014-01-28](https://renatomportugal.github.io/template/129.jqueryswitch-2014-01-28) |<img src="images/129.jqueryswitch-2014-01-28.jpg"/> |
 | [130.social-app-menu](https://renatomportugal.github.io/template/130.social-app-menu) |<img src="images/130.social-app-menu.jpg"/> |
@@ -186,6 +191,7 @@
 ## Data-Table
 
 |Links          |Telas        |
+|---            |---          |
 |Não Responsivo |---          |
 | [135.panel_tables_with_filter](https://renatomportugal.github.io/template/135.panel_tables_with_filter/) | <img src="images/135.panel_tables_with_filter.jpg"/> |
 | [138.dashboard-with-webdatarocks-and-fusioncharts-dark-theme](https://renatomportugal.github.io/template/138.dashboard-with-webdatarocks-and-fusioncharts-dark-theme/) | <img src="images/138.dashboard-with-webdatarocks-and-fusioncharts-dark-theme.jpg"/> |
@@ -236,17 +242,20 @@
 ## Forms
 
 |Links        |Telas        |
+|---          |---          |
 | [131.bootstrap-3-contact-form-with-validation](https://renatomportugal.github.io/template/131.bootstrap-3-contact-form-with-validation/) | <img src="images/131.bootstrap-3-contact-form-with-validation.jpg"/> |
 | [132.elegant-contact-form](https://renatomportugal.github.io/template/132.elegant-contact-form/) | <img src="images/132.elegant-contact-form.jpg"/> |
 
 ## Hover
 
 |Botões       |Telas        |
+|---          |---          |
 | [110.fireflies](https://renatomportugal.github.io/template/110.fireflies/) | <img src="images/110.fireflies.jpg"/> |
 
 ## IHM - Interface Homem Máquina
 
 |Botões       |Telas        |
+|---          |---          |
 | [020.self-destruct-button](https://renatomportugal.github.io/template/020.self-destruct-button/) | <img src="images/020.self-destruct-button.jpg"/> |
 | [063.draggable-skeuomorph-switchtoggle](https://renatomportugal.github.io/template/063.draggable-skeuomorph-switchtoggle) |<img src="images/063.draggable-skeuomorph-switchtoggle.png"/> |
 | [100.realistic-red-switch-pure-css](https://renatomportugal.github.io/template/100.realistic-red-switch-pure-css) |<img src="images/100.realistic-red-switch-pure-css.png"/> |
@@ -350,6 +359,7 @@
 
 ## Paint_Brush
 |Links        |Telas        |
+|---          |---          |
 | [112.native-js-day-8-drawing-canvas](https://renatomportugal.github.io/template/112.native-js-day-8-drawing-canvas) |<img src="images/112.native-js-day-8-drawing-canvas.jpg"/> |
 
 ## Preview de Upload
@@ -371,6 +381,7 @@
 ## Ribbon
 
 |Links        |Telas        |
+|---          |---          |
 | [153.css-ribbon](https://renatomportugal.github.io/template/153.css-ribbon) |<img src="images/153.css-ribbon.jpg"/> |
 
 ## Scroll Infinito
@@ -382,11 +393,13 @@
 ## Texto
 
 |Autocomplete |Telas        |
+|---          |---          |
 | [099.autocomplete](https://renatomportugal.github.io/template/099.autocomplete) |<img src="images/099.autocomplete.jpg"/> |
 
 ## Videos
 
 |YouTube      |Telas        |
+|---          |---          |
 | [070.ng-youtube-embed-demo](https://renatomportugal.github.io/template/070.ng-youtube-embed-demo) |<img src="images/070.ng-youtube-embed-demo.jpg"/> |
 | [071.youtube-embeds-optimized-jquery-edition](https://renatomportugal.github.io/template/071.youtube-embeds-optimized-jquery-edition) |<img src="images/071.youtube-embeds-optimized-jquery-edition.jpg"/> |
 | [072.youtube-picture-in-picture-demo-for-desktop](https://renatomportugal.github.io/template/072.youtube-picture-in-picture-demo-for-desktop) |<img src="images/072.youtube-picture-in-picture-demo-for-desktop.jpg"/> |
