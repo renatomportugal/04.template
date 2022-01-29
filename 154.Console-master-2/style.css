@@ -1,0 +1,115 @@
+body {
+	font-family: monospace;
+	background: url('http://www.stefanledin.se/wp-content/themes/tema/img/background.png') #387dc2;
+	font-size: 1em;
+}
+
+/*
+Layout
+ */
+#wrapper {
+	margin: 0 auto;
+	width: 50%;
+	background: #f8f8f8;
+	border: 1px solid #fff;
+	-webkit-box-shadow: 0 0 10px #000;
+	-moz-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+}
+input {
+	width: 95%;
+	padding: 0 0 0 5%;
+	border-left: 0;
+	border-right: 0;
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	background: #f8f8f8;
+}
+	input:focus {
+		outline: none;
+	}
+
+/*
+Console styles
+ */
+#console {
+	width: 95%;
+	padding: 0 0 0 5%;
+}
+#console li {
+	padding: 5px 0;
+	border-bottom: 1px solid #ccc;
+	list-style-image: url(img/command_arrow.png);
+}
+
+.command {
+	color: #487ffb;
+}
+.array,
+.value {
+	color: #b24620;
+}
+.properties {
+	margin-left: 25px;
+	color: #771a8d;
+}
+
+.object-icon {
+	margin: 0 3px 0 0;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	background: url(img/icon_object.png) no-repeat 0 2px;
+	cursor: pointer;
+}
+.icon-object-closed {
+	background-position: 0 0;
+}
+.icon-object-open {
+	background-position: -10px 1px;
+}
+.object-content {
+	display: none;
+}
+
+
+#console .error {
+	color: #ff0000;
+	list-style-image: url(img/icon_error.png);
+}
+
+/*
+Autocomplete
+ */
+#autocomplete {
+	margin: 0;
+	padding: 0 0 0 5%;
+	width: 95%;
+}
+#autocomplete li {
+	padding: 3px 0;
+	display: block;
+}
+#autocomplete li:hover,
+.active-autocomplete {
+	background: #d4d4d4;
+}
+
+/*
+Mediaqueries
+ */
+@media only screen and (max-width: 900px) {
+
+	#wrapper {
+		width: 75%;
+	}
+
+}
+
+@media only screen and (max-width: 650px) {
+
+	#wrapper {
+		width: 90%;
+	}
+
+}

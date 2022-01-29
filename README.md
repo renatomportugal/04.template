@@ -141,6 +141,10 @@
 |Links        |Telas        |
 |---          |---          |
 | [068.responsive-retro-crt-screen-with-border-image-and-gradient](https://renatomportugal.github.io/template/068.responsive-retro-crt-screen-with-border-image-and-gradient) |<img src="images/068.responsive-retro-crt-screen-with-border-image-and-gradient.png"/> |
+| [154.Console-master-2](https://renatomportugal.github.io/template/154.Console-master-2) |<img src="images/154.Console-master-2.jpg"/> |
+| [155.cssConsole-master](https://renatomportugal.github.io/template/155.cssConsole-master/examples) |<img src="images/155.cssConsole-master.jpg"/> |
+| [156.javascript-sandbox-console-master](https://renatomportugal.github.io/template/156.javascript-sandbox-console-master) |<img src="images/156.javascript-sandbox-console-master.jpg"/> |
+
 
 ## Controles
 

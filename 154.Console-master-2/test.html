@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#autocomplete {
+				display: none;
+			}
+			.active {
+				background: #ff0000;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" placeholder="console.log" autofocus="autofocus">
+		<ul id="autocomplete">
+			<li>Punkt1</li>
+			<li>Punkt2</li>
+			<li>Punkt3</li>
+		</ul>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function  () {
+
+				var i = 0;
+				var suggestions = $('ul#autocomplete').find('li');
+
+				$('input').on('keyup', function  (e) {
+					
+					var value = $(this).val();
+
+					if (value.length > 0) {
+						$('ul#autocomplete').show();
+					} else {
+						$('ul#autocomplete').hide()
+					}
+					
+					if (e.keyCode === 40) {
+						controllAutoComplete(e);
+					} else if (e.keyCode === 38) {
+						controllAutoComplete(e);
+					} else {
+						i = 0;
+						$('.active').removeClass('active');
+					}
+
+				});
+
+				function controllAutoComplete (e) {
+
+					$('.active').removeClass('active');
+					if (e.keyCode === 40) {
+						
+						i = i+1;	
+					
+						$(suggestions[i-1]).addClass('active');
+
+						if (i === suggestions.length) {
+							i = 0;
+						}
+						
+					} // keycode 40
+					
+					if (e.keyCode === 38) {
+						// i = 1 från början
+						if (i === 1) {
+							i = suggestions.length;
+						} else {
+							i = i-1;	
+						}
+						
+						$(suggestions[i-1]).addClass('active');
+						
+					}
+
+				} // controllAutoComplete()
+			});
+		</script>
+	</body>
+</html>
