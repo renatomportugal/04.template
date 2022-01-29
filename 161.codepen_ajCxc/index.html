@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Tom Mclean</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!--
+  I wanted an easy way to see what past papers I have completed for my revision, so I decided to create this table web app to keep track of the papers you have completed
+-->
+<div class="hiddenmenu">
+  <ul>
+    <li><a href="https://codepen.io/mclean_tom_/full/ajCxc/">Home</a></li>
+    <li>Revision Planner</li>
+    <li><a href="https://codepen.io/mclean_tom_/full/lcgds">Past Paper Tracker</a></li>
+    <li>Flash Cards</li>
+  </ul>
+</div>
+<div class="header">
+  <i class="fa fa-bars" style="font-size:20px; color:#808080; padding:0px 5px 0px 0px; cursor:pointer;" onclick="menu()"></i>
+  <span class="logo">BlueLinkRevision</span>
+  <span class="intro">Home</span>
+  <ul class="user">
+    <li>
+      <span class="title"><i class="fa fa-caret-right" style="font-size:15px;"></i></span>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/101821/profile/profile-80_1.jpg"/>
+      <ul>
+        <li><span class="subtle">Settings</span></li>
+        <li><span class="subtle">Log Out</span></li>
+      </ul>
+    </li>
+  </div>
+</div>
+<div class="main">
+    <div id="container">
+      <div class="item w2 h2">
+        <div class="profileCardBackground">
+          Tom Mclean
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/101821/profile/profile-80_1.jpg" class="profileCardImage"/>
+        </div>
+      </div>
+      <div class="item w2 h2 padding">
+        <span class="title">Revision Planner</span>
+        <hr>
+        <span class="intro">You have not yet made a revision plan</span><br/><br/>
+        <span class="subtle">Making a revison plan is probably the most important part of revising!</span>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Make A Revision Plan</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-sitemap"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Mind Map</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-comment-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Flash Card</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-file-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Past Papers</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-calendar-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Exam Timetable</a>
+        </div>
+      </div>
+      <div class="item w2 h2 padding center flip">
+        <div class="card"> 
+          <div class="face front center"> 
+            <span class="subtle">Random Flash Card - Click To Flip</span><br/><br/><br/><br/>
+            <span class="title">Define<br/>Half-Duplex Transmission</span>
+          </div> 
+          <div class="face back"> 
+            <span class="subtle">Remove Mouse To Flip The Card</span><br/><br/>
+            <span class="title">Data can be sent in both directions, but only one direction at a time</span>
+          </div> 
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-sitemap"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Mind Map</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-comment-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Flash Card</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-file-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Past Papers</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-calendar-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Exam Timetable</a>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="item w2 h2 padding">
+        <span class="title">Revision Planner</span>
+        <hr>
+        <table class="revisionTable">
+          <tr>
+            <td>10am</td>
+            <td>Physics</td>
+          </tr>
+          <tr>
+            <td>11am</td>
+            <td>Physics</td>
+          </tr>
+          <tr>
+            <td>12am</td>
+            <td>Physics</td>
+          </tr>
+          <tr>
+            <td>1pm</td>
+            <td>Physics</td>
+          </tr>
+          <tr>
+            <td>2pm</td>
+            <td>Physics</td>
+          </tr>
+          <tr>
+            <td>3pm</td>
+            <td>Physics</td>
+          </tr>
+          <tr>
+            <td>4pm</td>
+            <td>Physics</td>
+          </tr>
+        </table>
+        <div class="callForAction">
+          <hr>
+          <a href="#">View Revision Planner</a>
+        </div>
+      </div>
+      <div class="item w2 h2 padding">
+        <span class="title">Past Paper Tracker</span>
+        <hr>
+        <span class="intro">
+          <span class="subtle">Latest past paper scores</span><br/><br/>
+          Physics: 50%<br/>
+          Chemistry: 80%<br/>
+          Mathematics: 95%<br/>
+          Computing: 70%<br/>
+        <div class="callForAction">
+          <hr>
+          <a href="#">View Your Past Paper Tracker</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-sitemap"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Mind Map</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-comment-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Flash Card</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-file-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Past Papers</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-calendar-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Exam Timetable</a>
+        </div>
+      </div>
+      <div class="item w2 h2 padding center flip">
+        <div class="card"> 
+          <div class="face front center"> 
+            <span class="subtle">Random Flash Card - Click To Flip</span><br/><br/><br/><br/>
+            <span class="title">Explain<br/>Advantages of magnetic storage</span>
+          </div> 
+          <div class="face back"> 
+            <span class="subtle">Remove Mouse To Flip The Card</span><br/><br/>
+            <span class="title">Can store a lot of data and is relatively cheap </span>
+          </div> 
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-sitemap"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Mind Map</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-comment-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Flash Card</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-file-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Past Papers</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-calendar-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Exam Timetable</a>
+        </div>
+      </div>
+      <div class="item w2 h2 padding">
+        <span class="title">Quick Quiz</span>
+        <hr/>
+        <div class="quiz">
+          <span class="intro">What type of medium would be used for transfering files?</span><br/><br/>
+            <span class="intro">
+              <input type="radio" name="quiz" value="A"/>Magnetic<br/>
+              <input type="radio" name="quiz" value="B"/>Solid State<br/>
+              <input type="radio" name="quiz" value="C"/>Email<br/>
+              <input type="radio" name="quiz" value="D"/>Letter
+            </span>
+          </form>
+        </div>
+        <div class="callForAction">
+          <hr/>
+          <a href="#">More Quizes</a>
+        </div>
+      </div>
+      <div class="item w2 h2 padding">
+        <span class="title">Revision Planner</span>
+        <hr>
+        <span class="intro">You have not yet made a revision plan</span><br/><br/>
+        <span class="subtle">Making a revison plan is probably the most important part of revising!</span>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Make A Revision Plan</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-sitemap"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Mind Map</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-comment-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Flash Card</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-file-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Past Papers</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-calendar-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Exam Timetable</a>
+        </div>
+      </div>
+      <div class="item w2 h2 padding center flip">
+        <div class="card"> 
+          <div class="face front center"> 
+            <span class="subtle">Random Flash Card - Click To Flip</span><br/><br/><br/><br/>
+            <span class="title">Define<br/>Half-Duplex Transmission</span>
+          </div> 
+          <div class="face back"> 
+            <span class="subtle">Remove Mouse To Flip The Card</span><br/><br/>
+            <span class="title">Data can be sent in both directions, but only one direction at a time</span>
+          </div> 
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-sitemap"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Mind Map</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-comment-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Add Flash Card</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-file-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Past Papers</a>
+        </div>
+      </div>
+      <div class="item w1 h1 iconFa">
+        <i class="fa fa-calendar-o"></i>
+        <div class="callForAction">
+          <hr>
+          <a href="#">Exam Timetable</a>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://masonry.desandro.com/masonry.pkgd.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

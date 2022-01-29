@@ -1,0 +1,263 @@
+:root {
+  --color-primary: #0071c4;
+  --color-heading: #fff;
+  --font-size-larger: 2rem;
+  --font-size-large: 1.5rem;
+  --font-size-base: 1rem;
+  --font-size-small: 0.8rem;
+  --font-size-smaller: 0.6rem;
+  --easing: cubic-bezier(0.5, 0, 0.5, 1);
+  --viewBoxW: 400;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  -webkit-animation-timing-function: var(--easing);
+          animation-timing-function: var(--easing);
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0d0d27;
+  margin: 0;
+  padding: 0;
+  background: #181818;
+}
+
+/* ---------------------------------- */
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------- */
+#app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 0.5rem));
+  grid-auto-rows: 10rem;
+  grid-gap: 1rem;
+}
+@media (min-width: 800px) {
+  .layer {
+    grid-template-columns: repeat(3, calc(33% - 0.33rem));
+    grid-auto-rows: 13rem;
+  }
+}
+
+/* ---------------------------------- */
+.stagger {
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+[data-active] .stagger {
+  opacity: 1;
+  transition-delay: calc(var(--i, 1) * var(--delay, 50ms));
+}
+
+/* ---------------------------------- */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--bg);
+  border-radius: inherit;
+  box-shadow: 0 0.25rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+.box {
+  --bg: #363636;
+  padding: 1.75rem;
+  border-radius: 0.4rem;
+  display: grid;
+  grid-template-rows: 2rem calc(100% - 2rem);
+}
+.box .title {
+  font-weight: 100;
+  margin: 0;
+  grid-row: 1/2;
+  color: var(--color-heading);
+  font-size: var(--font-size-small);
+}
+@media (min-width: 800px) {
+  .box .title {
+    font-size: var(--font-size-base);
+  }
+}
+.box svg {
+  transition: all 0.3s var(--easing);
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.box svg * {
+  transition: inherit;
+}
+.box svg.pie-chart {
+  background: gray;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}
+.box svg.pie-chart .pie {
+  fill: transparent;
+  stroke-width: 50;
+  opacity: 1;
+}
+.box svg text {
+  fill: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+}
+.box svg text {
+  opacity: 0;
+  -webkit-transform: none;
+          transform: none;
+}
+.box .total-card {
+  color: gray;
+  display: grid;
+  grid-template: 70% auto;
+}
+.box .total-card .total {
+  align-self: flex-end;
+  font-size: 10vmin;
+}
+@media (max-width: 800px) {
+  .box .total-card .total {
+    font-size: 7vmin;
+  }
+}
+.box:not([data-active]) svg .rect-bg {
+  fill: none;
+}
+.box:not([data-active]) svg.line-graph polyline,
+.box:not([data-active]) svg.line-graph path {
+  stroke: grey;
+  stroke-width: 5;
+  fill: rgba(128, 128, 128, 0.479);
+}
+.box:not([data-active]) svg.line-graph circle {
+  fill: none;
+}
+.box[data-active] .title {
+  font-size: 1.2rem;
+}
+.box[data-active] svg text {
+  transition: opacity 0.3s linear, -webkit-transform 0.3s var(--easing);
+  transition: transform 0.3s var(--easing), opacity 0.3s linear;
+  transition: transform 0.3s var(--easing), opacity 0.3s linear, -webkit-transform 0.3s var(--easing);
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+  font-size: var(--font-size-small);
+  pointer-events: none;
+}
+.box[data-active] .total-card {
+  color: var(--color-primary);
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.box[data-active] .total-card .total {
+  align-self: flex-end;
+  font-size: 24vmin;
+}
+.box[data-active] .total-card .label {
+  color: white;
+}
+.box[data-active] svg .data-count {
+  fill: white;
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+.box[data-active] svg .rect {
+  fill: var(--color-primary);
+  transition-delay: 0.1s;
+}
+.box[data-active] svg .rect:hover + text {
+  opacity: 0;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+}
+.box[data-active] svg .rect:hover ~ .data-count {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+.box[data-active] svg .rect-bg {
+  transition: opacity 0.1s linear 0s;
+  width: var(--viewBoxW);
+  fill: grey;
+}
+.box[data-active] svg.line-graph polyline,
+.box[data-active] svg.line-graph path {
+  stroke: var(--color-primary);
+  fill: rgba(128, 128, 128, 0.479);
+}
+.box[data-active] svg.line-graph circle {
+  fill: var(--color-primary);
+}
+.box[data-active] svg.line-graph .data-count-linegraph {
+  font-size: 10;
+  text-align: center;
+  opacity: 0;
+}
+.box[data-active] svg.line-graph circle:hover {
+  r: 10;
+}
+.box[data-active] svg.line-graph circle:hover ~ .data-count-linegraph {
+  opacity: 1;
+}
+.box[data-active] svg .pie:hover {
+  stroke: var(--color-primary);
+  opacity: 1;
+}
+.box[data-active] svg .increment-line {
+  stroke: none;
+}
+
+/* ---------------------------------- */
+.box[data-active] {
+  grid-row: 1 / 3;
+  grid-column: span 2;
+}
+.box[data-active].-top-left {
+  grid-column: 1/ -1;
+}
+
+/* ---------------------------------- */

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Technical Page</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<body id="body">
+  <main id="main-doc">
+    <nav class="navbar" id="navbar">
+      <header id="nav-header">
+        <p>Computer Vision</p>
+      </header>
+      <div id="nav-div">
+        <ul id="nav-u">
+          <li class="nav-list"><a href="#Introduction_to_OpenCV" class="nav-link">Introduction to OpenCV</a></li>
+          <li class="nav-list"><a href="#More_than_just_RGB" class="nav-link">More than just RGB</a></li>
+          <li class="nav-list"><a href="#Drawing_on_images" class="nav-link">Drawing on images</a></li>
+          <li class="nav-list"><a href="#More_than_images" class="nav-link">More than images</a></li>
+          <li class="nav-list"><a href="#From_image_classification_to_object_detection" class="nav-link">From image classification to object detection</a></li>
+          <li class="nav-list"><a href="#R_CNN" class="nav-link">R CNN</a></li>
+          <li class="nav-list"><a href="#Fast_R_CNN" class="nav-link">Fast R CNN</a></li>
+          <li class="nav-list"><a href="#Faster_R_CNN" class="nav-link">Faster R CNN</a></li>
+          <li class="nav-list"><a href="#SSD" class="nav-link">SSD</a></li>
+          <li class="nav-list"><a href="#YOLO" class="nav-link">YOLO</a></li>
+          <li class="nav-list"><a href="#FPN" class="nav-link">FPN</a></li>
+          <li class="nav-list"><a href="#RetinaNet" class="nav-link">RetinaNet</a></li>
+          <li class="nav-list"><a href="#Reference" class="nav-link">Reference</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="main-div">
+      <br><br>
+
+
+      <section class="main-section" id="Introduction_to_OpenCV">
+        <header >
+          <h1>Introduction to OpenCV</h1>
+        </header>
+        <div class="">
+          <p><a href="https://en.wikipedia.org/wiki/Digital_image_processing"
+             class="links-section" target="_blank">Image processing</a> is performing some
+            operations on images to get an
+          intended manipulation. Think about what we do when we start a new data
+            analysis. We do some data preprocessing and feature engineering. It’s
+            the same with image processing. We do image processing to manipulate
+            the pictures for extracting some useful information from them. We can
+            reduce noises, control the brightness and color contrast. To learn
+            detailed image processing fundamentals, visit <a href="https://www.youtube.com/watch?v=QMLbTEQJCaI" class="links-section" target="_blank">this video</a>.
+          </p>
+          <p>OpenCV stands for Open Source Computer Vision library and it’s
+            invented by Intel in 1999. It’s first written in C/C++ so you may see
+            tutorials more in C languages than Python. But now it’s also getting
+            commonly used in Python for computer vision as well. First things
+             first, let’s set up a proper environment for using OpenCV. The
+             installation can be processed as follows but you can also find the
+             detailed description <a href="https://pypi.org/project/opencv-python/" class="links-section" target="_blank">here</a>.
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+pip install opencv-python==3.4.2
+pip install opencv-contrib-python==3.3.1
+              </pre>
+            </code>
+          </div>
+
+          <p>After you finish the installation, try importing the package to see if it works well. If you get the return without any errors, then you’re now ready to go!</p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+import cv2
+cv2.__version__
+              </pre>
+            </code>
+          </div>
+          <p>The first step we’re going to do with OpenCV is importing an image and it can be done as follows.</p>
+          <div class="code-div">
+          <code class="code">
+              <pre>
+
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# Import the image
+img = cv2.imread('burano.jpg')
+plt.imshow(img)
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/571/1*Oe3JzhYDb3I6wovNZ-488w.png" alt="buranoBefore" class="imgART">
+          <p>
+            This image is from Burano. It’s a little bit different from the pictures we usually see from Burano. It should be more delightful than this!
+          </p>
+          <p>
+            This is because the default setting of the color mode in OpenCV comes in the order of BGR, which is different from that of Matplotlib. Therefore to see the image in RGB mode, we need to convert it from BGR to RGB as follows.
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Convert the image into RGB
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+plt.imshow(img_rgb)
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/568/1*dIUzwVFYunVzBtRdOb7BSA.png" alt="buranoAfter" class="imgART">
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="More_than_just_RGB">
+        <header >
+          <h1>More than just RGB</h1>
+        </header>
+
+        <div class="">
+          <p>A color model is a system for creating a full range of colors using the primary colors. There are two different color models here: additive color models and subtractive color models. Additive models use light to represent colors in computer screens while subtractive models use inks to print those digital images on papers. The primary colors are red, green and blue (RGB) for the first one and cyan, magenta, yellow and black (CMYK) for the latter one. All the other colors we see on images are made by combining or mixing these primary colors. So the pictures can be depicted a little bit differently when they are represented in RGB and CMYK.
+          </p>
+
+          <img src="https://miro.medium.com/max/1000/1*CSmlQDizc03csCaSgMgMIw.png" alt="colorModel" class="imgART">
+          <p>
+            You would be pretty accustomed to these two kinds of models. In the world of color models, however, there are more than two kinds of models. Among them, grayscale, HSV and HLS are the ones you’re going to see quite often in computer vision.
+
+          </p>
+          <p>
+            A grayscale is simple. It represents images and morphologies by the intensity of black and white, which means it has only one channel. To see images in grayscale, we need to convert the color mode into gray just as what we did with the BGR image earlier.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Convert the image into gray scale
+img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+plt.imshow(img_gray, cmap = 'gray')
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/1000/1*E1cRhyj4ByJ_qrTev3hTlA.png" alt="grayscale" class="imgART">
+
+          <p>
+            Actually, RGB images are made up by stacking three channels: R, G, and B. So if we take each channel and depict them one by one, we can comprehend how the color channels are structured.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Plot the three channels of the image
+fig, axs = plt.subplots(nrows = 1, ncols = 3, figsize = (20, 20))
+for i in range(0, 3):
+    ax = axs[i]
+    ax.imshow(img_rgb[:, :, i], cmap = 'gray')
+plt.show()
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/1000/1*zeVGeXCBFE4FLSbv_bUaLw.png" alt="rgb" class="imgART">
+          <p>
+            Take a look at the images above. The three images show you how each channel is composed of. In the R channel picture, the part with the high saturation of red colors looks white. Why is that? This is because the values in the red color parts will be near 255. And in grayscale mode, the higher the value is, the whiter the color becomes. You can also check this with G or B channels and compare how certain parts differ one from another.
+
+          </p>
+          <img src="https://miro.medium.com/max/700/1*t6gJMcMAu8EUXcgbhhGy5Q.png" alt="HSVHSL" class="imgART">
+          <p>
+            HSV and HLS take a bit different aspect. As you can see above, they have a three-dimensional representation, and it’s more similar to the way of human perception. HSV stands for hue, saturation and value. HSL stands for hue, saturation and lightness. The center axis for HSV is the value of colors while that for HSL is the amount of light. Along the angles from the center axis, there is hue, the actual colors. And the distance from the center axis belongs to saturation. Transforming the color mode can be done as follows.
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Transform the image into HSV and HLS models
+img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+img_hls = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
+
+# Plot the converted images
+fig, (ax1, ax2) = plt.subplots(nrows = 1, ncols = 2, figsize = (20, 20))
+ax1.imshow(img_hsv)
+ax2.imshow(img_hls)
+plt.show()
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/1000/1*f3pRIVbutpa9KBwuqsl43w.png" alt="HSV" class="imgART">
+          <p>
+            But why do we have to transform the colors? What are these for? One example that can give the answer is lane detection. Please take a look at the picture below. See how the lanes are detected in different color modes. During the computer vision task, we do multiple color mode transformation along with masking.
+          </p>
+          <img src="https://miro.medium.com/max/1000/1*Gs_f7aWJQktSkIWLy2m70g.png" alt="RGBGray" class="imgART">
+          <h4 class="imgDescription">RGB vs Grayscale (darkened) vs HSV vs HSL</h4>
+
+          <p>
+            Image processing is ‘data preprocessing.’ It’s reducing noises and extracting useful patterns to make classification and detection tasks easier. Therefore all these techniques including the ones we’ll discuss later, are for helping the model to detect the patterns easier.
+
+          </p>
+
+
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="Drawing_on_images">
+        <header >
+          <h1>Drawing on images</h1>
+        </header>
+        <div class="">
+          <p>
+            Have you ever heard of the wall of love? It’s a wall which is filled with the words “I love you” in all kinds of international languages. What we’re going to do is finding the words in our language and marking them with a rectangle.
+            I’ll look up for ‘I love you’ in Korean.
+            First, I’ll make a copy of the original image and then draw a rectangle with cv2.rectangle().
+            We need to give the coordinates values for the upper left point and the lower right point.
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+#Copy the image
+img_copy = img.copy()
+
+# Draw a rectangle
+cv2.rectangle(img_copy, pt1 = (800, 470), pt2 = (980, 530),
+              color = (255, 0, 0), thickness = 5)
+plt.imshow(img_copy)
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/568/1*6elxrI90FEiDhWplc74mYg.png" alt="rectangleImg" class="imgART">
+          <p>
+            Great! I think I caught the right position. Let’s try again. I can see one more Korean word from the image so I’ll make a circle this time.
+            With cv2.circle() , we need to specify the point of its center and the length of its radius.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Draw a circle
+cv2.circle(img_copy, center = (950, 50), radius = 50,
+           color = (0, 0, 255), thickness = 5)
+plt.imshow(img_copy)
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/571/1*fMZjDpFbVwTncrQAvOazdg.png" alt="circleIMG" class="imgART">
+          <p>
+            We can also put text data on the image. Why don’t we write the name of this wall this time?
+            With cv2.putText() , we can designate the position and the font style and size of the text.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Add text
+cv2.putText(img_copy, text = "the Wall of Love",
+            org = (250, 250),
+            fontFace = cv2.FONT_HERSHEY_DUPLEX,
+            fontScale = 2,
+            color = (0, 255, 0),
+            thickness = 2,
+            lineType = cv2.LINE_AA)
+plt.imshow(img_copy)
+              </pre>
+            </code>
+          </div>
+          <img src="https://miro.medium.com/max/568/1*ZnWzOppbxJoHp6Gb2R3OZA.png" alt="textIMG" class="imgART">
+
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="More_than_images">
+        <header >
+          <h1>More than images</h1>
+        </header>
+        <div class="">
+          <p>
+            We’re going to create a window and draw figures not by designating the points but by clicking directly on the window. Let’s try a circle first. We first create a function which will draw a circle with the data for the position and clicking of the mouse.
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Step 1. Define callback function
+def draw_circle(event, x, y, flags, param):
+
+    if event == cv2.EVENT_LBUTTONDOWN:
+            cv2.circle(img, center = (x, y), radius = 5,
+                       color = (87, 184, 237), thickness = -1)
+
+    elif event == cv2.EVENT_RBUTTONDOWN:
+            cv2.circle(img, center = (x, y), radius = 10,
+                       color = (87, 184, 237), thickness = 1)
+              </pre>
+            </code>
+          </div>
+          <p>
+            With <code>cv2.EVENT_LBUTTONDOWN</code> or <code>cv2.EVENT_RBUTTONDOWN</code> , we can bring the data for the position when we press the buttons of the mouse. The position of the mouse will be (x, y) and we’ll draw a circle whose center is at that point.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Step 2. Call the window
+img = cv2.imread('map.png')
+
+cv2.namedWindow(winname = 'my_drawing')
+cv2.setMouseCallback('my_drawing', draw_circle)
+              </pre>
+            </code>
+          </div>
+          <p>
+            We’ll set a map as the background of the window and name the window as my_drawing. The name of the window can be anything, but it should be the same because this acts like the id of the window. Using the cv2.setMouseCallback() , we make a connection between the window and the function draw_circle we made at step 1.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Step 3. Execution
+while True:
+    cv2.imshow('my_drawing',img)
+    if cv2.waitKey(10) & 0xFF == 27:
+        break
+
+cv2.destroyAllWindows()
+              </pre>
+            </code>
+          </div>
+          <p>
+            Now we execute the window using while loop. Don’t forget to set the break unless you are making an infinite loop. The condition of the if clause is setting the window to be shut down when we press ESC on the keyboard. Save this as a file and import it on your terminal.
+
+          </p>
+          <img src="https://miro.medium.com/max/700/1*Q3GfBHxWFS_ziXb1CGQkMg.gif" alt="gifDraw" class="imgART">
+          <p>
+            Let’s try a rectangle. As a rectangle requires two points for pt1 and pt2 in cv2.rectangle() , we need an additional step to set the first click point as pt1 and the last point as pt2. And we’re going to detect the movement of the mouse with cv2.EVENT_MOUSEMOVE and cv2.EVENT_LBUTTONUP .
+
+          </p>
+          <p>
+            We first define drawing = False as a default. When the left button is pressed, drawing becomes true and we give that first position as pt1. If drawing is on, it’ll take the current point as pt2 and keep drawing rectangles while we move the mouse. It’s like overlapping the figures. When the left button is up, drawing becomes false and it takes the last position of the mouse as its final point of pt2.
+
+          </p>
+          <div class="code-div">
+            <code class="code">
+              <pre>
+
+# Initialization
+drawing = False
+ix = -1
+iy = -1
+
+# create a drawing function
+def draw_rectangle(event, x, y, flags, params):
+
+    global ix, iy, drawing
+
+    if event == cv2.EVENT_LBUTTONDOWN:
+        drawing = True
+        ix, iy = x, y
+
+    elif event == cv2.EVENT_MOUSEMOVE:
+        if drawing == True:
+            cv2.rectangle(img, pt1=(ix, iy), pt2=(x, y),
+                          color = (87, 184, 237), thickness = -1)
+
+    elif event == cv2.EVENT_LBUTTONUP:
+        drawing = False
+        cv2.rectangle(img, pt1=(ix, iy), pt2=(x, y),
+                     color = (87, 184, 237), thickness = -1)
+              </pre>
+            </code>
+          </div>
+          <p>
+            Replace draw_circle function to draw_rectangle in step 1. Please don’t forget to make a change inside the callback function, cv2.setMouseCallback() as well. So the whole code script will be as follows. Save this script file and run it on the terminal.
+
+          </p>
+
+
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="From_image_classification_to_object_detection">
+        <header >
+          <h1>From image classification to object detection</h1>
+        </header>
+        <div class="">
+          <p>
+            Before we jump right into the R-CNN “family,” let’s briefly check the basic idea of image classification and image detection. What’s the difference between them? What additional work do we need to do for detecting objects in an image?
+
+          </p>
+          <p>
+            First, whatever the number of classes we have, there is going to be an additional class- the background. An object detector is required to answer the question, “is there an object?”, which is not the case for image classification. Second, when there is an object, it’s still not sufficient with “yes, there is!” (Quite ridiculous to imagine..😅) It should also tell us, “where is the object located?” We need the position of the detected objects. This may sound simple but the implementation isn’t. And when we take speed and efficiency challenges into account, things get even more complicated.
+          </p>
+          <p>
+            Therefore object detection would be like.. looking for the regions of an object, localizing it and classifying what it is. Having this basic concept in mind, we’re now ready to start the second topic from R-CNN.
+
+          </p>
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="R_CNN">
+        <header >
+          <h1>R CNN</h1>
+        </header>
+        <div class="">
+          <p>
+            R-CNN answers the question, “to what extent can the CNN classification results on ImageNet generalize to object detection results?” So this network can be said to be the beginning of object detection family tree, which has great importance in the application of a neural network. The basic structure is composed of three steps-extracting region proposals, computing CNN, and classification.
+
+          </p>
+          <p>
+            First, we extract some regions that seem promising to have an object from an input image. R-CNN used selective search for getting those regions of interest (ROI). Selective search is a region proposal algorithm that segments an image based on the intensity of the pixels. If you’d like to get an in-depth understanding of Selective Search, here is the original paper. The basic idea is shown below. It first starts with the overly segmented picture and draws a bounding box around each segment. And based on their similarities in color, texture, size and shape compatibility, it keeps grouping adjacent ones and forming larger segments. R-CNN extracts around 2000 region proposals by this method and feeds them to the CNN. And this is the reason it is named R-CNN, Regions with CNN features.
+
+          </p>
+          <img src="https://miro.medium.com/max/700/1*6UfdQmJE78IdEs6q41zdXg.png" alt="r-cnn" class="imgART">
+          <h4 class="imgDescription">Selective Search for Object Recognition</h4>
+          <p>
+            After getting the candidates, the second step is entering a large convolutional neural network. Each proposal is resized into a fixed size and is input into the CNN separately. R-CNN used AlexNet (It was 2014, there weren’t ResNet or InceptionNet at that time) and we get 4096-dimensional feature vector from each proposal.
+
+          </p>
+          <img src="https://miro.medium.com/max/700/1*1zG21rqVp-0Sg6U-uSE4bQ.png" alt="descrip-rcnn" class="imgART">
+          <p>
+            And at the last step, the output extracted from the CNN is fed into a set of class-specific linear SVM models. We optimize one linear SVM per each class, and we get the output image with the bounding boxes whose score is higher than a threshold value. In case of having overlapping boxes, it only takes one by applying non-maximum suppression.
+
+          </p>
+          <p>
+            One interesting part worth mentioning is how it overcame the data scarcity issue. The researchers had the challenge to train such a large network with only a small quantity of labeled data. And the solution was pre-training the CNN on a different data with labels (which is supervised learning), and then do fine-tuning with the original dataset.
+
+          </p>
+          <img src="https://miro.medium.com/max/700/1*p_pmv_WO2y_m97BPVgEZfA.png" alt="cnnFeatures" class="imgART">
+          <h4 class="imgDescription">R-CNN architecture</h4>
+          <p>
+            You may have noticed some inefficient parts that could be enhanced. The selective search is computation intensive. And processing the CNN for each ROI was repetitive work, which requires a huge amount of computation cost again. The need for the pre-training process and the separate classifiers were unattractive. And the storage for these models is too big. Although R-CNN was a milestone achievement, it had several drawbacks to be improved.
+          </p>
+        </div>
+
+
+      </section>
+
+      <section class="main-section" id="Fast_R_CNN">
+        <header>
+          <h1>Fast R CNN</h1>
+        </header>
+        <div class="">
+          <p>
+            Fast R-CNN is the next version of the previous work. What changes had been made here? Processing convolutional mapping repetitively was improved. The first change occurred at the repetitive convolution layers.
+
+          </p>
+          <p>
+            Let’s assume it takes N seconds to compute one single convolutional network. As R-CNN input 2000 RoI to the network separately, the total processing time will be 2000*N seconds. Instead of processing the CNN individually, now we do it only once by sharing the convolution with the proposals altogether.
+
+          </p>
+          <img src="https://miro.medium.com/max/700/1*uaNOCXYBcN2uD451BpZK_g.png" alt="fastRCNN" class="imgART">
+          <p>
+            As you can see above, this network takes two data input, an original image and a set of the region proposals as input. The whole image feeds forward through the network to produce a feature map. With this feature map, each region proposal passes a pooling layer and fully connected layers to create a feature vector. Therefore, the convolutional computation is done once, not for each proposal.
+
+          </p>
+          <p>
+            And the multiple classifiers are replaced with two sibling layers. One is a softmax function for classifying the object with the possibility estimates for each class, and the other is a bounding-box regressor returning the coordinates of the detected object. So the resulting feature vector is fed into these two layers and we get the outcome from the two layers.
+
+          </p>
+
+
+          <img src="https://miro.medium.com/max/685/1*AzkmdVnpfXfhoHKXAUviBA.png" alt="fastRCNN" class="imgART">
+          <h4 class="imgDescription">Fast R-CNN architecture</h4>
+          <p>
+            Now, this model made changes to share convolutions and to detach the additional classifiers. By merging “multiple bodies” into one and taking off the “heavy tail,” we could achieve less computation and storage. This architecture allows us to train all the weights together, including even that of the softmax classifier and the multiple regressors. And this means the propagation will flow back and forth updating all the weights. Awesome progress! However, we still have a chance to get better performance.
+          </p>
+
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="Faster_R_CNN">
+        <header >
+          <h1>Faster R CNN</h1>
+        </header>
+        <div class="">
+          <p>
+            Still, Fast R-CNN was hard to be used in real time detection. And the major reason for such time delay stemmed from selective search. It had computation bottleneck and it needed to be replaced with a more efficient way. But how? How could we get region proposals without Selective Search? What about maximizing the usage of the ConvNet? Researchers found that the feature maps in Fast R-CNN also can be used for generating region proposals. Therefore by being free from Selective Search, much efficient network could be developed.
+          </p>
+          <img src="https://miro.medium.com/max/700/1*rP2RwzHNROX8vwVBbMEt9Q.png" alt="fasterRCNN" class="imgART">
+          <p>
+            Faster R-CNN is composed of two modules, Region Proposal Network (RPN) and Fast R-CNN. We first input an image to a “mini-network” and it will output the feature maps. By sliding a small window over the feature maps, we extract region proposals. And each proposal is fed into two sibling layers, a softmax classifier and a bounding-box regressor.
+
+          </p>
+          <p>
+            These two layers may seem similar to the last layers of Fast R-CNN, but they are derived for a different purpose. For each proposal, the classifier estimates the probability of the presence of an object in an image. And the regressor returns the coordinates of the bounding box. So they are for generating candidates, not predicting the actual objects.
+
+          </p>
+          <p>
+            We only take the proposals whose scores are higher than a threshold and input them with the feature map together to Fast R-CNN. The following steps are the same. They are input into a convolutional network and RoI pooling layers. And then the last layers will be a classifier and a regressor that finally predicts the real objects in images.
+
+          </p>
+
+          <img src="https://miro.medium.com/max/633/1*lVE5BICv4IvRERUptLj3DA.png" alt="FRCNNvsRPN" class="imgART">
+          <h4 class="imgDescription">Faster R-CNN architecture (left) and Region Proposal Network (right)</h4>
+
+          <p>
+            One important property of this network is translation invariant, which is achieved by anchors and the way it computes proposals relative to the anchors. What is translation invariant? Simply put, it means we can detect an object regardless of its rotation, relocation, size change and what not. An object in an image can be at the center or the upper left. The same object can be at wide or long scale depending on the perspective. To prevent a model from failing to locate an object because of translation, we make anchor boxes of multiple scales and aspect ratios as in the picture shown above. These boxes are put at the center of the sliding window. So if there’s K number of the boxes at a certain position, we get 2K scores and 4K coordinates of K boxes.
+
+          </p>
+          <p>
+            In conclusion, at the Region Proposal Network, we slide a window with multiple anchor boxes over the feature map and evaluate each box by the classifier and the regressor. The proposals below the threshold are rejected, hence, feeding only the promising one to the next steps.
+
+          </p>
+          <p>
+            More than that, this model optimized in 4 steps of alternative training by fine-tuning the layers unique to RPN and Fast R-CNN separately while fixing the shared layers. This allows the model to share weights forming a unified network and brought higher performance both in efficiency and accuracy. To compare the performance, The time for proposals of Faster R-CNN was 10 milliseconds per image (5 frames per second for the whole process), while 2 seconds for Selective Search using CPU.
+
+          </p>
+
+
+
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="SSD">
+        <header >
+          <h1>SSD</h1>
+        </header>
+        <div class="">
+          <p>
+            SSD stands for Single Shot Detector, and there are three main points in its architecture. First, this network can detect in multiple scales. With the layers coming after the base network, it yields several feature maps with different resolutions, which enables the network to work at multi-scales.
+
+          </p>
+          <p>
+            Second, these predictions are made in a convolutional way. A set of convolutional filters make the predictions for the location of the objects and the class score. This is where the name of “Single Shot” comes from. Instead of having additional classifiers and regressors, now the detections are made in a single shot!
+
+          </p>
+          <p>
+            And lastly, there are a fixed number of default boxes associated with these feature maps. Similar to the anchors of Faster R-CNN, the default boxes are applied at each feature map cell.
+
+          </p>
+
+          <img src="https://miro.medium.com/max/1000/0*RNNGiFeFK5qldRiX" alt="" class="imgART">
+          <h4 class="imgDescription">The architecture of SSD</h4>
+          <p>
+            The entire architecture of the network is as shown above. It uses VGG-16 as its base network, and there are additional feature layers which decrease in size progressively. This can be considered to be quite complicated at first glance, so let’s split it into two parts.
+
+          </p>
+          <img src="https://miro.medium.com/max/437/1*CRboa2GcQt63kXAEy6txEw.png" alt="" class="imgART">
+          <p>
+            In the picture on the left, the feature layer from the base network produces a detection by the convolutional filters. When the dimensional size of the feature layer is N x N with P channels, the filter size here is 3x3xP. Now, as I said above, there are a set of default bounding boxes at each cell. So if we have K number of the boxes and C number of classes (including the “background” class), we compute the four offset values against the original default box, and the class scores for each box. Therefore the total number of filters becomes (NxN)K(4+C).
+
+          </p>
+          <img src="https://miro.medium.com/max/1000/1*pOcgszypno4cZzTU-4jPwg.png" alt="" class="imgART">
+
+          <p>
+            SSD makes all the predictions for the bounding box location and the class scores at once with the convolutional filters. It doesn’t require a region proposal network anymore. And the same process is done at the extra feature layers in different scales, which improves accuracy significantly. Recall that the feature maps in different resolutions, see the different sizes of figures or objects in an image (I explained this with Inception Network). Therefore, the prediction across scales becomes critical in detection tasks.
+          </p>
+          <p>
+            After we get the outcome from all these layers, we match them with the ground truth box and choose the best one. As most of the boxes are going to be overlapped heavily, we can use Non-Maximum Suppression to choose one. But still, there is quite a challenging problem, the class imbalance. When we use the regional proposals, they are reasonable candidates for having an object. But here, the network starts from a set of default boxes at each location with multiple scales and shapes. As a result, most of the boxes are going to be negative in the outcome. This creates an imbalance in classes. For example, the “Background” class becomes an easy example and the real “object” classes become hard examples. The easy negative examples can overwhelm the distribution of the classes and degenerate the model. (Note that this issue is going to be dealt with again in RetinaNet)
+
+          </p>
+          <p>
+            To remedy this, SSD takes only some of the negative matches so that the ratio between positive and negative matches could be 3:1. This is called hard negative mining. Hard negative mining is a classic problem in object detection, which means a negative class is hard to tell as negative. A model should classify it as negative, but it gives high confidence as the negative cases become way more than the positive cases. We input only the positive matches into the objective function so that it calculates the loss between the ground truth and the predicted bounding box.
+
+          </p>
+          <img src="https://miro.medium.com/max/1000/1*W-KaUenxIZduPcgVBJql3g.png" alt="" class="imgART">
+          <h4 class="imgDescription">The Experiment Results of SSD</h4>
+          <p>
+            One interesting thing is that about 80% of the forward time is spent on the base network, which indicates that a faster base network could even further improve the speed. And data augmentation also plays an important role for higher accuracy. Compared to Faster R-CNN using only an original image and horizontally flipping, variations in input sizes, shapes, and random sampling improve the performance. Also, it is observed that various default box shapes are better for accuracy as well.
+
+          </p>
+        </div>
+
+      </section>
+
+      <section class="main-section" id="YOLO">
+        <header >
+          <h1>YOLO</h1>
+        </header>
+        <div class="">
+
+          <p>
+            YOLO is an acronym of You Only Look Once. Similar to SSD, YOLO doesn’t use regional proposals and works in a “single-shot” way. There are 3 main variations of YOLO. Rather than covering all the transformation process, I’m going to wrap all and explore the final version. If you’d like to know all the detailed process, check out this excellent article by Jonathan Hui. (Literally, this is the best YOLO tutorial I’ve ever seen).
+
+          </p>
+          <img src="https://miro.medium.com/max/1000/1*BIIbBb48dFxFBgCsCBDvsA.png" alt="" class="imgART">
+          <h4 class="imgDescription">The architecture of YOLO Ver.3.</h4>
+          <p>
+            The whole network architecture is as shown above. The numbers in the circles are the layer numbers. It uses Darknet-53 as its base network, and there are additional layers for detecting objects. Let’s first put our attention at the tail where the predictions are made. YOLO is also a fully convolutional network, so it predicts the detection by convolution. After passing through several layers, the detection is made by 1x1 convolution from the feature maps in three different scales.
+
+          </p>
+
+          <img src="https://miro.medium.com/max/700/1*VxEA3CGy4XY7nOmLp_OOkA.png" alt="" class="imgART">
+          <h4 class="imgDescription">Figures from Ver.1 (on the left) and Ver.3 (on the right)</h4>
+
+          <p>
+            When the size of the feature map is N x N with P channels, 1x1xP size of filters is applied. YOLO also has the default bounding boxes (They are called anchors in the original paper). For each box at each cell, the 4 bounding box offset values, the objectness score and the class scores are predicted. The objectness score reflects how confident it is that the box contains an object. So now the number of predictions for each grid becomes 5+C. So if the number of boxes is K, the total number of filters is (NxN)K(5+C) for each scale.
+          </p>
+          <img src="https://miro.medium.com/max/1000/1*ldgX_i-lL4VwbQUG0s5POw.png" alt="" class="imgART">
+          <h4 class="imgDescription">Now let’s see the main branch line. YOLO also operates in multi-scales like SSD, yet in a way a little bit different.</h4>
+          <p>
+            As I said, the resolution of the feature maps gets smaller as it goes deeper, and this gives an impact on the scales when the feature maps see the objects. So to achieve multiple scales, YOLO brings higher resolution features from a previous layer simply by a passthrough layer. This is the same with the shortcut connection of ResNet.
+
+          </p>
+          <p>
+            So at the 84th layer, we take the feature map from the two previous layers and upsample it by 2. And then we bring a feature map from the 36th layer and concatenate it with the upsampled features. The same process is repeated one more time at the 96th layer for the final scale. By doing so, we can add finer and more meaningful features into the prediction.
+
+          </p>
+          <img src="https://miro.medium.com/max/713/1*U-KxyXPIlnEhHM3NDn1LoA.png" alt="" class="imgART">
+          <h4 class="imgDescription">Figures from Ver.3 (on the left) and Ver. 2 (on the right)</h4>
+          <p>
+            The base network was AlexNet at ver.1 and Darknet was first used at ver.2 with 19 convolutional layers. This became 53 layers at ver.3 as you can see above. Another important thing worth mentioning is that the default boxes are extracted from K-means clustering, rather than being selected by hand. The network learns to adjust the boxes during training but having better priors from the start helps the network for sure. So YOLO ver.3 extracts the 9 default boxes by clustering. By concatenating the higher resolution features from the previous layer and a passthrough layer, YOLO gets better detection with small objects compared to SSD.
+
+          </p>
+
+
+        </div>
+
+      </section>
+
+      <section class="main-section" id="FPN">
+        <header >
+          <h1>FPN</h1>
+        </header>
+        <div class="">
+          <p>
+            FPN stands for Feature Pyramid Network. A network with a pyramid structure has been studied and used before this. And SSD is also a pyramid-like structure (try rotating it vertically). But it can’t be said it’s a pyramidal feature hierarchy strictly as shown in figure ©. Because it starts to form a pyramid from a higher level, not from the low level. (Remember VGG Conv5_3 was the first layer for detection)
+
+          </p>
+          <img src="https://miro.medium.com/max/732/1*dlJltaGZlyh57xT1Oa2SSw.png" alt="" class="imgART">
+          <h4 class="imgDescription">Figures from FPN</h4>
+
+          <p>
+            What’s the point having this kind of architecture? The information for the precise location of an object can be detected in the deeper level of the network. On the contrary, the semantics gets stronger in the lower level. (we’re going to talk about this in the next series). When a network has one way of just going more in-depth, there aren’t many semantic data we can use to classify objects at a pixel level. Therefore by implementing a feature pyramid network, we can produce multi-scale feature maps from all levels, and the features from all these levels are semantically strong.
+
+          </p>
+          <img src="https://miro.medium.com/max/1000/1*4v71S9xe4p-mV8kEM-SIZg.png" alt="" class="imgART">
+          <h4 class="imgDescription">The architecture of FPN</h4>
+          <p>
+            So the architecture of FPN is as shown above. There are three directions, bottom-up, top-down and lateral directions. The bottom-up pathway is the feedforward computation of the backbone ConvNet and ResNet as used in the original paper. There are 5 stages and the size of the feature map at each stage has a scaling step of 2. They are differentiated by their dimensions, and we call them as C1, C2, C3, C4 and C5. The higher the layer goes, the smaller the size of the feature maps gets along the bottom-up pathway.
+          </p>
+
+          <p>
+            Now at the level C5, we move to the top-down pathway. Upsampling is applied to the output maps at each level. And the corresponding map that has the same spatial size from the bottom-up pathway, is merged via a lateral connection. A 1x1 convolution is applied before the addition to match the depth size. Then, we apply a 3x3 convolution on the merged map to reduce aliasing effect of upsampling. By doing so, we can combine the low resolution and semantically strong features (from top-down pathway) with high resolution and semantically weak features (from bottom-up pathway). This implies we can have rich semantics at all scales. And as shown in the picture, The same process is iterated and produces P2, P3 P4 and P5.
+
+          </p>
+          <p>
+            Now the last part of the network is an actual classification. Actually, FPN isn’t an object detector in itself. A detector isn’t built-in so we need to plug in a detector from this stage. RPN and Fast R-CNN are used in the original paper, and only FPN with RPN case is depicted in the above picture. In the RPN, there are two sibling layers for an object classifier and bounding box regressor. So in FPN, this part is attached to the tail of each level of P2, P3, P4 and P5. I won’t cover much about this here, because the reason I picked FPN was to explain RetinaNet.
+
+          </p>
+        </div>
+
+      </section>
+
+      <section class="main-section" id="RetinaNet">
+        <header >
+          <h1>RetinaNet</h1>
+        </header>
+
+        <div class="">
+
+          <p>
+            RetinaNet is more about proposing a new loss function to handle class imbalance, rather than publishing a novel new network. Let’s bring the class imbalance back again. One-stage detectors such as SSD and YOLO are apparently faster but still fall behind in accuracy compared to two-stage detectors. And the class imbalance issue is one of the reasons for this drawback.
+          </p>
+
+          <img src="https://miro.medium.com/max/700/1*shphqtA1fvNIpB3rNXN69A.png" alt="" class="imgART">
+          <h4 class="imgDescription">Focal Loss</h4>
+          <p>
+            So the authors proposed a new loss function called focal loss by putting a weight on easy examples. The mathematical expression is as shown above. It’s a cross-entropy loss multiplied with a modulating factor. The modulating factor reduces the impact of easy examples on the loss.
+
+          </p>
+          <p>
+            For example, compare the loss when Pₜ= 0.9 and γ = 2. If we say the cross-entropy loss as CE, then the focal loss becomes -0.01CE. The loss becomes 100 times lower. And if the Pₜ gets bigger, say 0.968, with the constant γ, the focal loss becomes -0.001CE (as (1–0.968)² = (0.032)² ≈ 0.001). So it puts down the easy examples even harder and adjusting the imbalance in return. And when γ increases, as you can see the graph on the right, the loss gets smaller as the weight increases when Pₜ is constant.
+          </p>
+          <img src="https://miro.medium.com/max/1000/0*MN3eMmUZniOsLSux" alt="" class="imgART">
+          <h4 class="imgDescription">The architecture of RetinaNet</h4>
+
+
+          <p>
+            The architecture of RetinaNet is as shown above. As we now know ResNet, RPN of Faster R-CNN and FPN, there is nothing new here. The network can be divided into two parts, a backbone with (a) and (b), and two subnets for classification and box regression. The backbone network is composed of ResNet and FPN and the pyramid has levels P3 to P7.
+
+          </p>
+
+          <p>
+            As with RPN, there are prior anchor boxes as well. The size of anchors changes according to its level. At the level P3, the anchor area is 32*32 and at P7, it’s 512*512. The anchors have three different ratios and three different sizes, so the number of anchors A for each level is 9. Therefore, the dimension of output from a box regression subnet is (N x N) x 4A. And when the number of classes in the dataset is K, the output from a classification subnet becomes (N x N) x KA.
+
+          </p>
+          <img src="https://miro.medium.com/max/500/1*8WVVQrl29Rpnsa0U2i0giA.png" alt="" class="imgART">
+          <h4 class="imgDescription">Speed vs Accuracy on COCO dataset</h4>
+          <p>
+            The result was quite eye-catching. RetinaNet outperformed all the previous networks in both accuracy and speed. RetinaNet-101–500 indicates the network with ResNet-101 and a 500-pixel image scale. Using larger scales gives higher accuracy than all two-stage approaches, while still being fast enough as well.
+
+          </p>
+
+        </div>
+
+
+
+  <!--
+  sadasdasdassssssssssssssssssssssssssssssssss
+
+   -->
+      </section>
+
+      <section class="main-section" id="Reference">
+        <header>
+          <h1>Reference</h1>
+        </header>
+        <p>All the documentation in this page is taken from:</p>
+        <p>
+          <ul id="ref-ul">
+          <li><a href="https://towardsdatascience.com/computer-vision-for-beginners-part-1-7cca775f58ef">Computer Vision for Beginners: Part 1</a></li>
+          <li><a href="https://towardsdatascience.com/deep-dive-into-the-computer-vision-world-f35cd7349e16">Deep Dive into the Computer Vision World: Part 1</a></li>
+          <li><a href="https://towardsdatascience.com/deep-dive-into-the-computer-vision-world-part-2-7a24efdb1a14">Deep Dive into the Computer Vision World: Part 2</a></li>
+          <li><a href="https://towardsdatascience.com/deep-dive-into-the-computer-vision-world-part-3-abd7fd2c64ef">Deep Dive into the Computer Vision World: Part 3</a></li>
+          <li>You can see more about this topic on <a href="https://towardsdatascience.com/@jiwon.jeong"><b>Jiwon Jeong's </b></a>Towards Data Science page!</li>
+        </ul>
+        </p>
+
+
+      </section>
+    </div>
+  </main>
+
+
+
+
+
+</body>
+<!-- partial -->
+  
+</body>
+</html>

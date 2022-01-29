@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Snap It Like Thanos</title>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display:400,900|Bangers" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="overlay"></div>
+<main class="main-content showall">
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/antman.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Ant-Man</h5>
+      <p class="alter-ego">Scott Lang</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/blackp.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Black Panther</h5>
+      <p class="alter-ego">T'Challa</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/blackwidow2.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Black Widow</h5>
+      <p class="alter-ego">Natasha Romanoff</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/cap.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Captain America</h5>
+      <p class="alter-ego">Steve Rogers</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/marvel.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Captain Marvel</h5>
+      <p class="alter-ego">Carol Danvers</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/strange.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Doctor Strange</h5>
+      <p class="alter-ego">Stephen Strange</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/drax.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Drax</h5>
+      <p class="alter-ego">Arthur Douglas</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/falcon.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Falcon</h5>
+      <p class="alter-ego">Sam Wilson</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/fury.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Nick Fury</h5>
+      <p class="alter-ego"></p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/groot.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Groot</h5>
+      <p class="alter-ego">Flora Colossus</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/hawkeye.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Hawkeye</h5>
+      <p class="alter-ego">Clint Barton</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/hulk.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Hulk</h5>
+      <p class="alter-ego">Bruce Banner</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/ironman.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Iron Man</h5>
+      <p class="alter-ego">Tony Stark</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/mantis.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Mantis</h5>
+      <p class="alter-ego">Brandt</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/maria.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Maria Hill</h5>
+      <p class="alter-ego"></p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/nebula.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Nebula</h5>
+      <p class="alter-ego">Luphomoid</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/okoye.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Okoye</h5>
+      <p class="alter-ego"></p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/rockt.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Rocket Raccoon</h5>
+      <p class="alter-ego"></p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/scarlet.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Scarlet Witch</h5>
+      <p class="alter-ego">Wanda Maximoff</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/shuri.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Shuri</h5>
+      <p class="alter-ego"></p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/spidey.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Spider-Man</h5>
+      <p class="alter-ego">Peter Parker</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/starlord.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Star-Lord</h5>
+      <p class="alter-ego">Peter Quill</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/thor.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Thor</h5>
+      <p class="alter-ego">Thor Odinson</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/valkyrie.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Valkyrie</h5>
+      <p class="alter-ego">Brunnhilde</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/rhodes.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">War Machine</h5>
+      <p class="alter-ego">James Rhodes</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/wasp.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Wasp</h5>
+      <p class="alter-ego">	Janet Van Dyne</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="true">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/bucky.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Winter Soldier</h5>
+      <p class="alter-ego">Bucky Barnes</p>
+    </div>
+  </div>
+  <div class="profile" data-snap="false">
+    <div class="profile__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/wong.png"/></div>
+    <div class="profile__name"> 
+      <h5 class="main">Wong</h5>
+      <p class="alter-ego"></p>
+    </div>
+  </div>
+</main>
+<aside class="snap-area">
+  <div class="snap-area__controls">
+    <div class="snap-area__controls__radio"><span>Unsnap</span>
+      <input class="toggle" id="snap" type="checkbox"/>
+      <label class="toggle" for="snap"></label><span>Snap</span>
+    </div>
+    <div class="snap-area__controls__check">
+      <input class="show-all" id="show" type="checkbox" checked="checked"/>
+      <label class="show-all" for="show">Show All Characters</label>
+    </div>
+  </div>
+  <div class="snap-area__image"><img src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/thanos.png" alt="Thanos"/></div>
+</aside>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

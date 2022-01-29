@@ -1,0 +1,61 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: hsl(51, 100%, 5%);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.tile-wrap {
+  display: inline-block;
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+  border: solid 9px hsl(51, 100%, 35%);
+}
+.tile-image {
+  display: block;
+  width: 280px;
+  height: 280px;
+  transition: .7s;
+}
+.tile-wrap:hover .tile-image {
+  transform: scale(1.15);
+  -webkit-filter: grayscale(.7);
+  filter: grayscale(.7);
+}
+.tile-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 .8em;
+  background: hsl(51, 100%, 92%);
+  /* color: #BB3E92; */
+  color: hsl(51, 100%, 35%);
+  transition: transform .5s;
+  transform: translateY(110%);
+  box-shadow: 0 -4px 33px rgba(0,0,0,.7);
+}
+.tile-wrap:hover .tile-text {
+  transform: translateY(0);
+}
+.tile-title {
+  font-size: 1.3em;
+  transform: translateY(100%);
+  transition: transform .5s .15s ease-out;
+}
+.tile-wrap:hover .tile-title {
+  transform: none;
+}
+.tile-description {
+  transform: translateY(100%);
+  transition: transform .5s .3s ease-out;
+}
+.tile-wrap:hover .tile-description {
+  transform: none;
+}

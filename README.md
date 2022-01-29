@@ -108,11 +108,7 @@
 |Outros           |Telas        |
 | [114.card_styles](https://renatomportugal.github.io/template/114.card_styles/) | <img src="images/114.card_styles.jpg"/> |
 | [115.information_cards](https://renatomportugal.github.io/template/115.information_cards/) | <img src="images/115.information_cards.jpg"/> |
-
-## Cards
-
 |Não Resposivos   |Telas        |
-|---          |---          |
 | [117.chatroom-project](https://renatomportugal.github.io/template/117.chatroom-project/) | <img src="images/117.chatroom-project.jpg"/> |
 | [151.shopping-ui](https://renatomportugal.github.io/template/151.shopping-ui/) | <img src="images/151.shopping-ui.jpg"/> |
 | [118.chat-widget](https://renatomportugal.github.io/template/118.chat-widget/) | <img src="images/118.chat-widget.jpg"/> |
@@ -120,6 +116,12 @@
 | [119.elegant_bootstrap_4_message_chat_box_template](https://renatomportugal.github.io/template/119.elegant_bootstrap_4_message_chat_box_template/) | <img src="images/119.elegant_bootstrap_4_message_chat_box_template.jpg"/> |
 |Prices           |Não Resposivos        |
 | [150.pricing-table-design](https://renatomportugal.github.io/template/150.pricing-table-design/) | <img src="images/150.pricing-table-design.jpg"/> |
+
+## Catalogo
+
+|Música       |Responsivo   |
+|---          |---          |
+| [163.the-great-ones](https://renatomportugal.github.io/template/163.the-great-ones/) | <img src="images/163.the-great-ones.jpg"/> |
 
 ## Click Select
 
@@ -188,6 +190,22 @@
 |---          |---          |
 | [065.only-css-showcase-car](https://renatomportugal.github.io/template/065.only-css-showcase-car/) | <img src="images/065.only-css-showcase-car.png"/> |
 
+## CV
+
+|Responsivo   |Telas        |
+|---          |---          |
+| [157.a-minimalist-resume](https://renatomportugal.github.io/template/157.a-minimalist-resume/) | <img src="images/157.a-minimalist-resume.jpg"/> |
+| [158.resume](https://renatomportugal.github.io/template/158.resume/) | <img src="images/158.resume.jpg"/> |
+
+## Dashboard
+
+|Responsivo   |Telas                   |
+|---          |---                     |
+| [159.animating-charts-grid](https://renatomportugal.github.io/template/159.animating-charts-grid/) | <img src="images/159.animating-charts-grid.jpg"/> |
+| [160.windows-8-metro-ui](https://renatomportugal.github.io/template/160.windows-8-metro-ui/) | <img src="images/160.windows-8-metro-ui.jpg"/> |
+|Local não    |Funciona só em Servidor |
+| [161.codepen_ajCxc](https://renatomportugal.github.io/template/161.codepen_ajCxc/) | <img src="images/161.codepen_ajCxc.jpg"/> |
+
 ## Data-Table
 
 |Links          |Telas        |
@@ -232,6 +250,19 @@
 |Links        |Telas        |
 |---          |---          |
 | [028.map-creator](https://renatomportugal.github.io/template/028.map-creator/) ||
+
+## Equipes
+
+|Responsivo   |Telas        |
+|---          |---          |
+| [164.material-design-responsive-card](https://renatomportugal.github.io/template/164.material-design-responsive-card) |<img src="images/164.material-design-responsive-card.jpg"/> |
+| [165.snap-it-like-thanos](https://renatomportugal.github.io/template/165.snap-it-like-thanos) |<img src="images/165.snap-it-like-thanos.jpg"/> |
+
+## Fluxograma
+
+|Responsivo   |Telas        |
+|---          |---          |
+| [166.flowchart-gojs](https://renatomportugal.github.io/template/166.flowchart-gojs) |<img src="images/166.flowchart-gojs.jpg"/> |
 
 ## Fonts
 
@@ -389,6 +420,12 @@
 |Links        |Telas        |
 |---          |---          |
 | [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/template/022.infinity-scroll-with-angularjs/) ||
+
+## Testes
+
+|Links        |Telas        |
+|---          |---          |
+| [162.technical-page](https://renatomportugal.github.io/template/162.technical-page) |<img src="images/162.technical-page.jpg"/> |
 
 ## Texto
 

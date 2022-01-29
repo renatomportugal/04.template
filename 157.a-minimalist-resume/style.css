@@ -1,0 +1,186 @@
+body {
+  background: #009688;
+  font-family: "Roboto", serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+}
+
+em {
+  font-style: italic;
+}
+
+.resume-wrapper {
+  background: #fff;
+  max-width: 950px;
+  margin: 5em auto 2em;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font: 700 28px/1 "Roboto", sans-serif;
+  margin: 30px 0 0;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  margin: 5px 0;
+  font: 700 18px "Roboto", sans-serif;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font: 700 16px "Roboto", sans-serif;
+  text-transform: uppercase;
+  margin: 0px 0 4px;
+  letter-spacing: -0.5px;
+}
+h3 + p {
+  margin: 4px 0;
+}
+h3 small {
+  font-weight: 400;
+  text-transform: none;
+  float: right;
+}
+
+section {
+  padding: 20px 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+.two-columns {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.two-columns .column:first-child {
+  flex: 2;
+  border-right: 1px solid #ddd;
+}
+.two-columns .column:last-child {
+  flex: 1;
+}
+.two-columns .column section:last-of-type {
+  border-bottom: none;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 20px;
+}
+.timeline .line {
+  position: absolute;
+  background: #000;
+  height: 100%;
+  width: 1.5px;
+  top: 15px;
+  left: 8.5px;
+}
+.timeline.condensed .line {
+  top: 7px;
+}
+
+.timeline-item {
+  padding: 0px 15px 0px 30px;
+  position: relative;
+  margin-bottom: 15px;
+}
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border: 1.5px solid #000;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 5px;
+  left: 4px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-item ul {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+ul li {
+  padding: 2px 0 0 20px;
+  position: relative;
+}
+ul li:before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+}
+
+.even-columns {
+  display: flex;
+  margin: 0 -15px;
+}
+.even-columns .even-columns-child {
+  flex: 1;
+  padding: 10px 15px 15px;
+}
+.even-columns.center {
+  text-align: center;
+}
+
+.interest-icon {
+  width: 70px;
+  height: 70px;
+  margin: 5px auto;
+  border: 1.5px solid #000;
+  border-radius: 50%;
+}
+.interest-icon + p {
+  margin: 10px 0 -10px;
+}
+.interest-icon img {
+  width: 60%;
+  margin: 15px 0 0;
+}
+
+.credit {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.credit a {
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  margin: 3em auto;
+}
+footer a {
+  text-decoration: none;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #111;
+  color: #f8f8f8;
+  margin: 5px;
+}
+footer a:hover {
+  background: #222;
+}
+footer a .icons {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 20px;
+}

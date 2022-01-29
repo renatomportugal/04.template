@@ -1,0 +1,172 @@
+<style>
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+
+  #body {
+    background-color: gray;
+  }
+
+  #main-doc {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  #navbar{
+    height: 100%; /* 100% Full-height */
+    width: 300px;
+    display: block;
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s;
+  }
+  .navbar a {
+    padding: 8px 8px 8px 0px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  @media screen and (max-height: 450px) {
+    .navbar {
+      padding-top: 15px;
+      width: 100%;
+    }
+    .navbar a {
+      font-size: 18px;
+    }
+  }
+
+  #nav-header {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+    color: #5F9EA0;
+  }
+  #nav-u {
+    list-style-type: none;
+
+  }
+  .nav-list {
+
+  }
+  .nav-link {
+
+  }
+  .main-div {
+    margin-left: 300px;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  a:hover {
+    color: green;
+  }
+  .main-section{
+
+  }
+  .main-section h1 {
+    text-indent: 40px;
+    font-size: 35px;
+  }
+  .main-section h1:hover {
+    color: green;
+    text-decoration: underline;
+
+  }
+
+
+  .main-div p {
+    text-indent: 40px;
+    font-size: 20px;
+    text-align: justify;
+  }
+  #Introduction_to_OpenCV {
+
+  }
+  #More_than_just_RGB {
+
+  }
+  #Drawing_on_images {
+
+  }
+  #More_than_images {
+
+  }
+  #From_image_classification_to_object_detection {
+
+  }
+  #R_CNN {
+
+  }
+  #Fast_R_CNN {
+
+  }
+  #Faster_R_CNN {
+
+  }
+  #SSD {
+
+  }
+  #YOLO {
+
+  }
+  #FPN {
+
+  }
+  #RetinaNet {
+
+  }
+  #Reference {
+
+  }
+  .code {
+
+    color: white;
+
+  }
+  .code-div {
+    background-color: #2F4F4F;
+    text-align: justify;
+    padding-left: 40px;
+    padding-right:25px;
+    margin:auto;
+    width: 40%;
+    table-layout: fixed;
+  }
+  @media only screen and (max-width: 1000px) {
+    .code-div {
+      width: 80%;
+    }
+
+  }
+  .links-section {
+
+  }
+  .imgART {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px groove #40E0D0;
+    border-radius: 5%;
+  }
+  .imgDescription {
+    display: block;
+    text-align: center;
+    color: #40E0D0;
+    text-decoration: underline;
+  }
+  #ref-ul {
+    padding-left: 100px;
+  }
+
+
+
+</style>

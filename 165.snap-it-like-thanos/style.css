@@ -1,0 +1,201 @@
+@charset "UTF-8";
+body {
+  background: #222;
+  font-family: 'Comfortaa', sans-serif;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main.main-content {
+  margin-top: 80px;
+  padding: 40px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #000;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+.profile {
+  position: relative;
+  overflow: hidden;
+}
+.profile__image {
+  background: url("https://meowlivia.s3.us-east-2.amazonaws.com/codepen/avengers/background.png") no-repeat left top/cover;
+  padding-top: 20px;
+  height: 325px;
+}
+.profile__image img {
+  height: 90%;
+  width: 100%;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+}
+.profile__name {
+  position: absolute;
+  width: 90%;
+  bottom: 20px;
+  left: 20px;
+}
+.profile__name .main {
+  font: 900 30px/1.1 'Playfair Display', serif;
+}
+.profile__name .alter-ego {
+  margin-top: 5px;
+  font: 400 18px/1 'Playfair Display', serif;
+}
+
+.snap-area {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.snap-area__controls {
+  display: flex;
+  font: 24px "Bangers";
+  letter-spacing: 1px;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+  position: relative;
+}
+.snap-area__controls__radio {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+.snap-area__image {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  user-select: none;
+}
+.snap-area img {
+  opacity: 0.4;
+  max-width: 250px;
+}
+
+input.toggle {
+  display: none;
+}
+
+label.toggle {
+  outline: 0;
+  display: block;
+  width: 1.6em;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  cursor: pointer;
+  border-radius: 2em;
+  padding: 2px;
+  transition: all .4s ease;
+  margin: .8em;
+}
+label.toggle:after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: all .2s ease;
+  border: 1px solid #0f0c29;
+  left: -2px;
+  top: -8px;
+}
+
+input.toggle:checked + label.toggle {
+  background: rgba(255, 255, 255, 0.9);
+}
+input.toggle:checked + label.toggle:after {
+  left: 52%;
+}
+
+input.show-all {
+  display: none;
+}
+
+label.show-all {
+  padding-left: 30px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+label.show-all:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: #fff;
+  transition: all .2s ease;
+  border: 1px solid #0f0c29;
+  background: rgba(255, 255, 255, 0.6);
+}
+label.show-all:after {
+  content: "";
+  position: absolute;
+  color: #0f0c29;
+  font-size: 18px;
+  transition: all .2s ease;
+  left: 4px;
+  top: 0px;
+  text-shadow: none;
+}
+
+input.show-all:checked + label.show-all:after {
+  content: "✔";
+}
+
+.snapped .profile[data-snap="true"] {
+  display: none;
+}
+.snapped.showall .profile[data-snap="true"] {
+  display: block;
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+    z-index: 20;
+  }
+  5%, 40% {
+    opacity: 1;
+    z-index: 20;
+  }
+}
+.overlay.flash {
+  animation: 1s flash;
+}
