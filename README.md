@@ -74,6 +74,11 @@
 | [106.tunnel-ride-ii](https://renatomportugal.github.io/template/106.tunnel-ride-ii) |<img src="images/106.tunnel-ride-ii.jpg"/> |
 
 
+## Banner
+|Click        |Telas        |
+|---          |---          |
+| [171.single-element-css-banner](https://renatomportugal.github.io/template/171.single-element-css-banner) |<img src="images/171.single-element-css-banner.jpg"/> |
+
 ## Bordados
 
 |Click        |Telas        |
@@ -414,6 +419,11 @@
 |Links        |Telas        |
 |---          |---          |
 | [153.css-ribbon](https://renatomportugal.github.io/template/153.css-ribbon) |<img src="images/153.css-ribbon.jpg"/> |
+| [167.corner-ribbons](https://renatomportugal.github.io/template/167.corner-ribbons) |<img src="images/167.corner-ribbons.jpg"/> |
+| [168.css-clip-path-ribbons](https://renatomportugal.github.io/template/168.css-clip-path-ribbons) |<img src="images/168.css-clip-path-ribbons.jpg"/> |
+| [169.demo-pure-css-corner-ribbon](https://renatomportugal.github.io/template/169.demo-pure-css-corner-ribbon) |<img src="images/169.demo-pure-css-corner-ribbon.jpg"/> |
+| [170.pure-css-corner-ribbon](https://renatomportugal.github.io/template/170.pure-css-corner-ribbon) |<img src="images/170.pure-css-corner-ribbon.jpg"/> |
+
 
 ## Scroll Infinito
 
