@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>5-Way Gradient Generator</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="gradient-map">
+  <div class="input-holder">
+    <div class="close-handler" @click="closeBoxes" @mousemove="doDrag"></div>
+
+    <div class="picker" v-bind:id="'picker-'+col.key" v-for="col in colors">
+      <button class="picker-button" @click="toggle(col.key)" v-bind:style="{background: colors[col.key].colorInfo.hex,  opacity:colors[col.key].colorInfo.rgba.a}" @mousedown="setDrag(col.key)" @mouseup="removeDrag(col.key)"></button>
+      <chrome-picker v-if="colors[col.key].isOpen" v-model="colors[col.key].colorInfo"></chrome-picker>
+    </div>
+  </div>
+  <div class="display-gradient" v-show="hasUsed">
+    <p>Click or drag the toggles to adjust the gradient :)</p>
+  </div>
+
+  <div class="get-code" v-show="showCode" @click="copyToClip">
+    <textarea type="text" v-model="gradText" spellcheck="false" id="gradCode"></textarea>
+    <span class="copyMessage" v-show="showCopied">Copied to Clipboard!</span>
+  </div>
+
+  <a class="code-toggle" @click="toggleCode"><i class="fas fa-code"></i><br>{{togMessage}}</a>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-color/2.2.3/vue-color.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

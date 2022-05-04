@@ -249,6 +249,7 @@
 | [145.css-big-box-pc-games](https://renatomportugal.github.io/template/145.css-big-box-pc-games) |<img src="images/145.css-big-box-pc-games.png"/> |
 | [146.css-trapper-keeper-effect](https://renatomportugal.github.io/template/146.css-trapper-keeper-effect) |<img src="images/146.css-trapper-keeper-effect.jpg"/> |
 | [147.pricingpure-css16](https://renatomportugal.github.io/template/147.pricingpure-css16) |<img src="images/147.pricingpure-css16.jpg"/> |
+| [173.ui-to-code-1-juuce-app](https://renatomportugal.github.io/template/173.ui-to-code-1-juuce-app) |<img src="images/173.ui-to-code-1-juuce-app.jpg"/> |
 |Tamanho      |Não Responsível  |
 | [152.xs-s-m-l-xl](https://renatomportugal.github.io/template/152.xs-s-m-l-xl) |<img src="images/152.xs-s-m-l-xl.jpg"/> |
 |Tickets      |Responsível      |
@@ -287,6 +288,12 @@
 |---          |---          |
 | [131.bootstrap-3-contact-form-with-validation](https://renatomportugal.github.io/template/131.bootstrap-3-contact-form-with-validation/) | <img src="images/131.bootstrap-3-contact-form-with-validation.jpg"/> |
 | [132.elegant-contact-form](https://renatomportugal.github.io/template/132.elegant-contact-form/) | <img src="images/132.elegant-contact-form.jpg"/> |
+
+## Gradient_Generator
+
+|Links        |Telas        |
+|---          |---          |
+| [174.5-way-gradient-generator](https://renatomportugal.github.io/template/174.5-way-gradient-generator/) | <img src="images/174.5-way-gradient-generator.jpg"/> |
 
 ## Hover
 
