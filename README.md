@@ -658,7 +658,7 @@
 |---          |---          |
 | [176.neon404-page-not-found](https://renatomportugal.github.io/04.template/176.neon404-page-not-found/) |<img src="images/176.neon404-page-not-found"/> |
 |Arco-íris    |Telas        |
-| [262.configurable-glowing-rainbow-react-component](https://renatomportugal.github.io/04.template/262.configurable-glowing-rainbow-react-component/) |<img src="images/262.configurable-glowing-rainbow-react-component"/> |
+| [262.configurable-glowing-rainbow-react-component](https://renatomportugal.github.io/04.template/262.configurable-glowing-rainbow-react-component/) |<img src="images/262.configurable-glowing-rainbow-react-component.jpg"/> |
 
 ## Organograma
 
