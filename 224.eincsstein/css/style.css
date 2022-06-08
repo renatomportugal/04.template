@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css?family=Sigmar+One");
+:root {
+  --color-beige: #ffeaa7;
+  --color-black: #2d3436;
+  --color-gray: #bdc3c7;
+  --color-green: #556b2f;
+  --color-red: #e74c3c;
+  --color-river: #3498db;
+  --color-white: #f8f8ff;
+  --color-yellow: #f1c40f;
+}
+
+.visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-river);
+  font-family: 'Sigmar One', sans-serif;
+}
+
+h1 {
+  font-size: 6.125vh;
+  color: var(--color-yellow);
+}
+h1 .char {
+  display: inline-block;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+h1 .word:last-child {
+  display: block;
+  font-size: 10vh;
+}
+
+label {
+  position: relative;
+}
+
+.head {
+  --size: 20vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  background-color: var(--color-beige);
+  z-index: 1;
+  box-shadow: inset rgba(255, 255, 255, 0.25) 1vh 0.5vh 0, inset rgba(0, 0, 0, 0.05) -1vh -1vh 0;
+}
+
+.hair {
+  --size: 22vh;
+  align-self: center;
+  position: absolute;
+  top: -4vh;
+  left: -1vh;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-gray);
+  border-radius: 100%;
+  z-index: 1;
+  box-shadow: inset rgba(255, 255, 255, 0.15) 2vh 0.25vh 0, inset rgba(0, 0, 0, 0.05) -1.5vh -0.5vh 0;
+}
+.hair:before, .hair:after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  width: calc(100% - 2vh);
+  height: 60%;
+  background-color: inherit;
+  border-radius: inherit;
+}
+.hair:before {
+  left: -2vh;
+  box-shadow: inset rgba(255, 255, 255, 0.15) 2vh -0.5vh 0;
+}
+.hair:after {
+  right: -2vh;
+  box-shadow: inset rgba(0, 0, 0, 0.05) -1vh -1vh 0;
+}
+
+.face {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.eyes:before, .eyes:after {
+  --size: 2vh;
+  content: '';
+  width: var(--size);
+  height: calc(var(--size) / 1.5);
+  background-color: var(--color-black);
+  border-radius: 10vh 10vh 0 0;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 0.25vh 0;
+}
+
+.nose {
+  --size: 4vh;
+  align-self: center;
+  margin: -2vh 0 -2.5vh;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-beige);
+  border-radius: 2vh 2vh 100% 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0.5vh 1vh 0 -0.5vh;
+  z-index: 3;
+}
+
+.stache {
+  --size: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 2vh;
+  width: var(--size);
+  height: calc(var(--size) / 2.5);
+  background-color: var(--color-gray);
+  border-radius: 4vh 4vh 100% 100%;
+  box-shadow: inset rgba(255, 255, 255, 0.15) 1vh 0.25vh 0, inset rgba(0, 0, 0, 0.05) -1vh -0.25vh 0, rgba(0, 0, 0, 0.05) 0.25vh 0.25vh 0;
+  z-index: 2;
+}
+
+.mouth {
+  --size: 4vh;
+  position: relative;
+  align-self: center;
+  margin-top: -1vh;
+  width: var(--size);
+  height: calc(var(--size) / 2);
+  border-radius: 1vh 1vh 100% 100%;
+  background-color: var(--color-black);
+  box-shadow: rgba(0, 0, 0, 0.1) 0.25vh 0.25vh 0;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+}
+
+.tongue {
+  --size: 3vh;
+  align-self: center;
+  position: relative;
+  margin-top: -2vh;
+  width: var(--size);
+  height: calc(var(--size) / 1.2);
+  border-radius: 1vh 1vh 100% 100%;
+  background-color: var(--color-red);
+  box-shadow: rgba(0, 0, 0, 0.1) 0.25vh 0.25vh 0;
+  -webkit-transform: translateY(-100%) scaleY(0.5);
+          transform: translateY(-100%) scaleY(0.5);
+}
+.tongue:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  background-color: var(--color-black);
+  width: 0.25vh;
+  height: calc(100% - 0.5vh);
+  border-radius: 1vh;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0.05;
+}
+
+.bod {
+  --size: 20vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -4vh;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100% 100% 10% 10%;
+  background-color: var(--color-white);
+  box-shadow: inset rgba(0, 0, 0, 0.035) -2vh -0.5vh 0;
+  z-index: -1;
+}
+
+label {
+  will-change: transform;
+  opacity: 0.6;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input:checked + label {
+  --speed: 2s;
+  opacity: 1;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+input:checked + label .head,
+input:checked + label .hair {
+  -webkit-animation: move-head var(--speed) ease forwards 2, laughing calc(var(--speed) / 12) calc(var(--speed) * 2) linear forwards 6;
+          animation: move-head var(--speed) ease forwards 2, laughing calc(var(--speed) / 12) calc(var(--speed) * 2) linear forwards 6;
+}
+input:checked + label .face,
+input:checked + label .nose,
+input:checked + label .stache {
+  -webkit-animation: move-face-down var(--speed) ease forwards 2, move-face-up calc(var(--speed) / 2) calc(var(--speed) * 2) ease forwards;
+          animation: move-face-down var(--speed) ease forwards 2, move-face-up calc(var(--speed) / 2) calc(var(--speed) * 2) ease forwards;
+}
+input:checked + label .eyes:before,
+input:checked + label .eyes:after {
+  -webkit-animation: widen-eyes var(--speed) var(--speed) ease forwards, squint-eyes calc(var(--speed) / 2) calc(var(--speed) * 2) ease forwards;
+          animation: widen-eyes var(--speed) var(--speed) ease forwards, squint-eyes calc(var(--speed) / 2) calc(var(--speed) * 2) ease forwards;
+}
+input:checked + label .mouth {
+  -webkit-animation: open-mouth var(--speed) ease forwards;
+          animation: open-mouth var(--speed) ease forwards;
+}
+input:checked + label .tongue {
+  -webkit-animation: stick-out-tongue var(--speed) var(--speed) ease forwards;
+          animation: stick-out-tongue var(--speed) var(--speed) ease forwards;
+}
+
+@-webkit-keyframes move-face-down {
+  20%, 60% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+
+@keyframes move-face-down {
+  20%, 60% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@-webkit-keyframes move-face-up {
+  20%, 80% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
+@keyframes move-face-up {
+  20%, 80% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
+@-webkit-keyframes move-head {
+  20%, 60% {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@keyframes move-head {
+  20%, 60% {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@-webkit-keyframes widen-eyes {
+  20%, 60% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+}
+@keyframes widen-eyes {
+  20%, 60% {
+    -webkit-transform: scaleY(1.5);
+            transform: scaleY(1.5);
+  }
+}
+@-webkit-keyframes squint-eyes {
+  20%, 80% {
+    -webkit-transform: scaleY(0.25);
+            transform: scaleY(0.25);
+  }
+}
+@keyframes squint-eyes {
+  20%, 80% {
+    -webkit-transform: scaleY(0.25);
+            transform: scaleY(0.25);
+  }
+}
+@-webkit-keyframes laughing {
+  50% {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@keyframes laughing {
+  50% {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@-webkit-keyframes stick-out-tongue {
+  10%, 60% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@keyframes stick-out-tongue {
+  10%, 60% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@-webkit-keyframes open-mouth {
+  20%, 70% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  90%, 100% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+}
+@keyframes open-mouth {
+  20%, 70% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  90%, 100% {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+  }
+}

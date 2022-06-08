@@ -1,0 +1,90 @@
+html,
+body {
+  background: #2c3e50;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html .puppy,
+body .puppy {
+  position: relative;
+  width: 30em;
+  height: 28em;
+  background: #fff;
+  transform: rotate(-5deg);
+  border-radius: 90% 90% 100% 100%;
+  box-shadow: 0px 0em 1em 0em #222f3e;
+}
+html .puppy:after, html .puppy:before,
+body .puppy:after,
+body .puppy:before {
+  content: "";
+  position: absolute;
+  width: 11em;
+  height: 17em;
+  left: -3.2em;
+  top: 2em;
+  transform: rotate(10deg);
+  border-radius: 100% 40% 50% 20% / 100% 50% 40% 40%;
+  background: #636e72;
+}
+html .puppy:before,
+body .puppy:before {
+  left: 23em;
+  z-index: 1;
+  transform: rotate(-5deg);
+  border-radius: 40% 100% 20% 50% / 50% 100% 40% 40%;
+}
+html .puppy .face,
+body .puppy .face {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  left: 8.5em;
+  top: 12em;
+  box-shadow: 10em -0.5em 0px 0px #222f3e, 11.5em -4em 2px 6em #b2bec3, 5em 5em 0px -0.2em #000, 5.5em 5em 0px -0.2em #000, 5.25em 5.5em 0px -0.2em #000, 3em 6.5em 0px 0.5em #fff, 3.5em 7em 0px 0.5em #000, 7.5em 6.5em 0px 0.5em #fff, 7em 7em 0px 0.5em #000, 5em 18em 0px 0.5em #fdcb6e, 5em 18em 5px 0.5em #f9ca24, 5em 10em 0px 6em #fff, 5em 12em 0px 5em #000;
+  border-radius: 100%;
+  background: #222f3e;
+}
+html .puppy .face:after,
+body .puppy .face:after {
+  content: "";
+  position: absolute;
+  width: 31em;
+  height: 28em;
+  left: -12em;
+  top: 16em;
+  z-index: -1;
+  transform: rotate(5deg);
+  border-radius: 100% 40% 50% 100% / 100% 100% 40% 100%;
+  background: #fff;
+  box-shadow: 0px 0px 0.8em 0px #b2bec3;
+}
+html .puppy .face:before,
+body .puppy .face:before {
+  content: "";
+  position: absolute;
+  height: 25em;
+  top: 23em;
+  left: 10em;
+  transform: rotate(5deg);
+  border-radius: 100% 100% 50% 50%/ 100% 100% 40% 40%;
+  width: 8em;
+  background: #fff;
+  box-shadow: -9em 0em 0px 0px #fff, -9em 0.25em 0.25em -0.081em #636e72, 0px 0.25em 0.25em -0.081em #636e72;
+}
+html .puppy .tail,
+body .puppy .tail {
+  position: relative;
+  width: 5em;
+  height: 15em;
+  top: 40em;
+  left: -10em;
+  z-index: -3;
+  background: #636e72;
+  transform: rotate(80deg);
+  border-radius: 50% 20% 100% 40% / 40% 40% 100% 50%;
+}

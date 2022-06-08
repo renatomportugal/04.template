@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Randomly generated CSS lava lamp 💡 #CodePenChallenge</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="scene">
+  <div class="lava-lamp" style="--height: 400; --width: 150;">
+    <div class="lava-lamp__main">
+      <div class="lava-lamp__glass">
+          <div class="lava-lamp__lava">
+            <svg>
+              <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+              <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+              <circle class="blob" r="17.5" cx="70" cy="400" style="--skewX: -4; --skewY: 3; --height: 35; --speed: 8; --delay: -4; --direction: alternate-reverse;"></circle>
+              <circle class="blob" r="49" cx="13" cy="400" style="--skewX: -1; --skewY: -5; --height: 98; --speed: 48; --delay: -3; --direction: alternate-reverse;"></circle>
+              <circle class="blob" r="29.5" cx="106" cy="400" style="--skewX: -4; --skewY: -3; --height: 59; --speed: 17; --delay: -3; --direction: alternate-reverse;"></circle>
+            </svg>
+          </div>
+          <div class="lava-lamp__lava">
+            <svg>
+              <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+              <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+              <circle class="blob" r="26.5" cx="106" cy="400" style="--skewX: -5; --skewY: -3; --height: 53; --speed: 19; --delay: -6; --direction: alternate-reverse;"></circle>
+              <circle class="blob" r="33.5" cx="125" cy="400" style="--skewX: -5; --skewY: 2; --height: 67; --speed: 38; --delay: -2; --direction: alternate-reverse;"></circle>
+              <circle class="blob" r="25" cx="12" cy="400" style="--skewX: -5; --skewY: 2; --height: 50; --speed: 13; --delay: -10; --direction: alternate-reverse;"></circle>
+              <circle class="blob" r="26" cx="53" cy="400" style="--skewX: 0; --skewY: 0; --height: 52; --speed: 50; --delay: -3; --direction: alternate;"></circle>
+            </svg>
+          </div>
+          <div class="lava-lamp__lava">
+            <svg>
+              <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+              <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+              <circle class="blob" r="47" cx="47" cy="400" style="--skewX: 1; --skewY: -2; --height: 94; --speed: 11; --delay: 0; --direction: alternate-reverse;"></circle>
+              <circle class="blob" r="20.5" cx="16" cy="400" style="--skewX: -4; --skewY: 3; --height: 41; --speed: 9; --delay: -10; --direction: alternate-reverse;"></circle>
+            </svg>
+          </div>
+          <div class="lava-lamp__lava">
+            <svg>
+              <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+              <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+              <circle class="blob" r="23" cx="119" cy="400" style="--skewX: 3; --skewY: -1; --height: 46; --speed: 25; --delay: -4; --direction: alternate;"></circle>
+            </svg>
+          </div>
+      </div>
+    </div>
+    <div class="lava-lamp__base"></div>
+  </div>
+  <svg style="position: absolute; left: 100%;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="BLUR"></feGaussianBlur>
+        <feColorMatrix in="BLUR" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="GOO"></feColorMatrix>
+        <feBlend in="SourceGraphic" in2="goo"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+</div>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

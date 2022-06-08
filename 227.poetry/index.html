@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Poetry with CSS</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class='loader'>
+  <div class='loader_line'></div>
+  <div class='loader_icon'>
+    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_loader.png'>
+  </div>
+</div>
+<div class='main'>
+  <section class='main_left'>
+    <div class='main_left__logo'>
+      <a>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_logo.png'>
+      </a>
+    </div>
+    <div class='main_left__poem'>
+      <h1></h1>
+      <p></p>
+      <i></i>
+      <div class='buttons'>
+        <div class='buttons_share tw'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_share.png'>
+          <img class='alt' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_share_white.png'>
+          <span>Tweet this</span>
+        </div>
+        <a href='http://www.google.com' target='_blank'>
+          <div class='buttons_poet'>
+            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_about.png'>
+            <img class='alt' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_about_white.png'>
+            <span>About poet</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class='main_left__footer'>
+      <p>
+        Created for the #CodepenChallenge by
+        <a href='https://www.codepen.io/jcoulterdesign' target='_blank'>Jamie Coulter</a>
+      </p>
+    </div>
+  </section>
+  <section class='main_center'>
+    <div class='main_center__button reset'>
+      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_play.png'>
+      <div class='tooltip'>
+        Replay
+      </div>
+    </div>
+    <div class='main_center__pips'></div>
+    <div class='main_center__stage lighthouse'>
+      <div class='lighthouse'>
+        <div class='stars'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_stars.png'>
+        </div>
+        <div class='hills'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_hills.png'>
+        </div>
+        <div class='storm'></div>
+        <div class='moon'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_moon.png'>
+        </div>
+        <div class='rain'>
+          <canvas id='rain'></canvas>
+        </div>
+        <div class='lighthouse'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_lighthouse.png'>
+        </div>
+        <div class='light'></div>
+        <div class='cloud_two'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_cloud_two.png'>
+        </div>
+        <div class='rock'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_rock.png'>
+        </div>
+        <div class='cloud_one'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_cloud_one.png'>
+        </div>
+        <div class='boat'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_boat.png'>
+        </div>
+        <div class='sea_back'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_sea_back.png'>
+        </div>
+        <div class='sea_mid'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_sea_mid.png'>
+        </div>
+        <div class='sea_front'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_sea_front.png'>
+        </div>
+      </div>
+      <div class='fall'>
+        <div class='hills'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_hills.png'>
+        </div>
+        <div class='birds'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_birds.png'>
+        </div>
+        <div class='sun'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_sun.png'>
+        </div>
+        <div class='light'></div>
+        <div class='cloud_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_cloud_left.png'>
+        </div>
+        <div class='cloud_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_cloud_right.png'>
+        </div>
+        <div class='ground_back'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_ground_back.png'>
+        </div>
+        <div class='ground_mid'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_ground_mid.png'>
+        </div>
+        <div class='ground_front'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_ground_front.png'>
+        </div>
+        <div class='tree_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_tree_right.png'>
+        </div>
+        <div class='tree_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_tree_left.png'>
+        </div>
+        <div class='leaf_one'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_leaf.png'>
+        </div>
+        <div class='leaf_two'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_leaf.png'>
+        </div>
+        <div class='leaf_three'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_leaf.png'>
+        </div>
+        <div class='leaf_four'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_leaf.png'>
+        </div>
+        <div class='leaf_five'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_leaf.png'>
+        </div>
+      </div>
+      <div class='sing'>
+        <div class='stars'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_stars.png'>
+        </div>
+        <div class='moon'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_lighthouse_moon.png'>
+        </div>
+        <div class='storm'></div>
+        <div class='city'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_city.png'>
+        </div>
+        <div class='rain'>
+          <canvas id='rain_sing'></canvas>
+        </div>
+        <div class='singer'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_singer.png'>
+        </div>
+        <div class='buildings'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_buildings.png'>
+        </div>
+        <div class='hill_back'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_hill_back.png'>
+        </div>
+        <div class='hill_front'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_hill_front.png'>
+        </div>
+        <div class='grass'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_grass.png'>
+        </div>
+        <div class='note_four'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_note.png'>
+        </div>
+        <div class='note_three'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_note.png'>
+        </div>
+        <div class='note_two'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_note.png'>
+        </div>
+        <div class='note_one'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sing_note.png'>
+        </div>
+      </div>
+      <div class='hope'>
+        <div class='glow'></div>
+        <div class='sun'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_sun.png'>
+        </div>
+        <div class='cloud'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_cloud_left.png'>
+        </div>
+        <div class='hill_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_hill_right.png'>
+        </div>
+        <div class='hill_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_hill_left.png'>
+        </div>
+        <div class='cloud_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_cloud_left.png'>
+        </div>
+        <div class='cloud_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_fall_cloud_right.png'>
+        </div>
+        <div class='house'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_house.png'>
+        </div>
+        <div class='gound_back'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_ground_back.png'>
+        </div>
+        <div class='ground_front'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_ground_front.png'>
+        </div>
+        <div class='dove_wing_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_wing_right.png'>
+        </div>
+        <div class='dove_wing_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_wing_left.png'>
+        </div>
+        <div class='dove'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_dove.png'>
+        </div>
+        <div class='tree'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_tree.png'>
+        </div>
+        <div class='flowers'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_hope_flowers.png'>
+        </div>
+      </div>
+      <div class='moon'>
+        <div class='stars'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_stars.png'>
+        </div>
+        <div class='moon'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_moon.png'>
+        </div>
+        <div class='cloud_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_cloud_left.png'>
+        </div>
+        <div class='hills'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_hills.png'>
+        </div>
+        <div class='cloud_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_cloud_right.png'>
+        </div>
+        <div class='smoke_three'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_smoke.png'>
+        </div>
+        <div class='smoke_two'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_smoke.png'>
+        </div>
+        <div class='smoke_one'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_smoke.png'>
+        </div>
+        <div class='house'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_house.png'>
+        </div>
+        <div class='ground_back'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_ground_back.png'>
+        </div>
+        <div class='ground_front'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_ground_front.png'>
+        </div>
+        <div class='tree_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_tree_right.png'>
+        </div>
+        <div class='tree_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_moon_tree_left.png'>
+        </div>
+      </div>
+      <div class='space'>
+        <div class='stars'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_stars.png'>
+        </div>
+        <div class='sun'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_sun.png'>
+        </div>
+        <div class='asteroids'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_asteroids.png'>
+        </div>
+        <div class='planet_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_planet_left.png'>
+        </div>
+        <div class='cloud_left'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_cloud_left.png'>
+        </div>
+        <div class='cloud_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_cloud_right.png'>
+        </div>
+        <div class='rocket'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_rocket.png'>
+        </div>
+        <div class='planet_right'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_planet_right.png'>
+        </div>
+        <div class='moon'>
+          <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_space_moon.png'>
+        </div>
+      </div>
+    </div>
+    <div class='overlay'></div>
+  </section>
+  <section class='main_right'>
+    <div class='main_right__audio'>
+      <img class='on' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sound.png'>
+      <img class='off' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_sound_off.png'>
+    </div>
+    <div class='main_right__controls'>
+      <div class='back button'>
+        <div class='tooltip'>
+          Previous
+        </div>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_arrow.png'>
+      </div>
+      <div class='random button'>
+        <div class='tooltip'>
+          Random
+        </div>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_random.png'>
+      </div>
+      <div class='next button'>
+        <div class='tooltip'>
+          Next
+        </div>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/poem_arrow.png'>
+      </div>
+    </div>
+  </section>
+</div>
+<canvas class='grain'></canvas>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

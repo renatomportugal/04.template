@@ -1,0 +1,42 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: url(https://source.unsplash.com/N3o-leQyFsI/1080x720) no-repeat 50% 50%;
+  background-size: cover;
+}
+svg {
+  max-width: 50vw;
+  max-height: 65vh;
+  display: block;
+  position: absolute;
+  left: 53%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+}
+#Signature path {
+  fill: black;
+}
+mask path {
+  fill: none;
+  stroke: white;
+}
+#Mouse path,
+mask path {
+  animation-duration: var(--duration);
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  stroke-dasharray: var(--length) var(--length);
+  stroke-dashoffset: var(--length);
+  animation-name: brush;
+  animation-delay: var(--delay);
+}
+@keyframes brush {
+  0% {
+    stroke-dashoffset: var(--length);
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

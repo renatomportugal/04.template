@@ -1,0 +1,38 @@
+{
+  "name": "vimeo-jquery-api",
+  "title": "Simple jQuery Vimeo API",
+  "description": "A jQuery plugin to easily control Vimeo videos through their API.",
+  "version": "0.10.3",
+  "homepage": "https://github.com/jrue/Vimeo-jQuery-API",
+  "author": {
+    "name": "Jeremy Rue",
+    "email": "jrue@berkeley.edu"
+  },
+  "main": "dist/jquery.vimeo.api.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jrue/Vimeo-jQuery-API"
+  },
+  "bugs": {
+    "url": "https://github.com/jrue/Vimeo-jQuery-API/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "keywords": [
+    "video",
+    "vimeo",
+    "iframe",
+    "api",
+    "javascript",
+    "jquery-plugin"
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bumpup": "^0.6.2",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "^0.8.0"
+  }
+}

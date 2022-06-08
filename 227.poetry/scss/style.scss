@@ -1,0 +1,1331 @@
+// Page
+
+// Colours
+$orange: #df6a23;
+$black: #211f18;
+$grey: #736241;
+$light-grey: #bfa475;
+
+@font-face {
+    font-family: 'organic';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/organic_teabags-webfont.woff2') format('woff2'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/organic_teabags-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    font-family: 'organic';
+    background: #ffe7bb;
+    padding: 60px;
+    background-size: 60px;
+    border: 8px solid white;
+    margin: 0;
+    height: 100vh;
+
+    @media only screen and (max-width: 1000px) {
+        height: 1000px;
+        padding: 40px;
+    }
+
+    @media only screen and (max-width: 620px) {
+        padding: 20px;
+
+    }
+
+    .grain {
+        width: 100%;
+        pointer-events: none;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+
+        @media only screen and (max-width: 1000px) {
+            height: 1000px;
+
+        }
+    }
+
+    .loader {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &_line {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 2px;
+            width: 40px;
+            margin: auto;
+            transform: translateY(calc(-50% - -18px)) translateX(-18px);
+            text-align: center;
+            background: #43413b;
+            border-radius: 10px 10px 10px 10px / 1px;
+            animation: line 1s infinite;
+
+            @keyframes line {
+                0% {
+                    width: 0px;
+                    left: -60px;
+                }
+                100% {
+                    width: 60px;
+                    left: 0px;
+                }
+            }
+        }
+
+        &_icon {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(-50%);
+            text-align: center;
+
+            img {
+                width: 38px;
+                position: relative;
+                left: -30px;
+                animation: loader 1s infinite;
+            }
+
+            @keyframes loader {
+                0% {
+                    left: -30px;
+                }
+                100% {
+                    left: 30px;
+                }
+            }
+        }
+    }
+
+    .main {
+        height: 100%;
+        display: none;
+
+        &_left {
+            height: 100%;
+            width: 25%;
+            position: relative;
+            float: left;
+
+            &__logo {
+                img {
+                    width: 82px;
+                }
+            }
+
+            &__poem {
+                padding-right: 0;
+                position: absolute;
+                top: 50%;
+                padding-bottom: 80px;
+                transform: translateY(-50%);
+
+                h1 {
+                    font-weight: normal;
+                    color: $black;
+                    font-size: 24px;
+                    position: relative;
+                    left: 0;
+                    transition: left 0.3s, opacity 0.2s;
+                }
+
+                p {
+                    color: $grey;
+                    font-size: 20px;
+                    position: relative;
+                    line-height: 20px;
+                    left: 0;
+                    transition: left 0.3s 0.1s, opacity 0.2s 0.1s;
+                }
+
+                i {
+                    color: $light-grey;
+                    font-size: 20px;
+                    position: relative;
+                    font-style: normal;
+                    left: 0;
+                    transition: left 0.3s 0.2s, opacity 0.2s 0.2s;
+                }
+
+                & .buttons {
+                    margin-top: 35px;
+                    width: 310px;
+                    position: absolute;
+                    left: 0;
+                    transition: left 0.3s 0.3s, opacity 0.2s 0.3s;
+
+                    div {
+                        background: white;
+                        border-radius: 3px;
+                        padding: 8px 16px;
+                        float: left;
+                        margin-right: 10px;
+                        font-size: 22px;
+                        color: $grey;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        position: relative;
+                        &.fb {
+                            left: 76px;
+                        }
+                        div {
+                            position: absolute;
+                            top: 59px;
+                            left: 0;
+                            opacity: 0;
+                        }
+
+                        img {
+                            width: 20px;
+                            position: relative;
+                            top: 3px;
+                            margin-right: 8px;
+                            opacity: 1;
+                            transition: all 0.3s;
+
+                            &.alt {
+                                position: absolute;
+                                left: 16px;
+                                top: 11px;
+                                opacity: 0;
+                            }
+                        }
+
+                        &:hover {
+                            background: $grey;
+                            color: white;
+
+                            div {
+                                opacity: 1;
+                                top: 49px;
+                            }
+
+                            img {
+                                opacity: 0;
+
+                                &.alt {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    @media only screen and (max-width: 1000px) {
+                        width: 289px;
+                        margin: 40px auto;
+                        position: relative;
+                        left: 9px;
+                    }
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    width: 100%;
+                    transform: translateY(0);
+                    top: 510px;
+                    padding-right: 0;
+                }
+
+                @media only screen and (max-width: 620px) {
+                    top: 370px;
+                }
+            }
+
+            &__footer {
+                position: absolute;
+                bottom: 0;
+
+                p {
+                    color: $light-grey;
+                    margin: 0;
+
+                    a {
+                        color: $orange;
+                        text-decoration: underline;
+                    }
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+
+            @media only screen and (max-width: 1000px) {
+                width: 100%;
+                text-align: center;
+            }
+
+
+
+        }
+
+        &_center {
+            position: relative;
+            width: 50%;
+            float: left;
+            height: 100%;
+
+            & .overlay {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 400px;
+                height: 400px;
+                border-radius: 100%;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+                margin: auto;
+                border: 10px solid white;
+                box-shadow: 0 0px 80px #00000080 inset;
+
+                @media only screen and (max-width: 1000px) {
+                    top: 410px;
+
+                }
+                @media only screen and (max-width: 620px) {
+                    transform:scale(0.6);
+                    top: -110px;
+                }
+            }
+
+            &__button {
+                position: absolute;
+                top: calc(50% - 170px);
+                transform: translateY(-50%);
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                background: white;
+                left: 200px;
+                right: 0;
+                margin: auto;
+                z-index: 66;
+                cursor: pointer;
+
+                @media only screen and (max-width: 1000px) {
+                    top: 240px;
+                }
+
+                @media only screen and (max-width: 620px) {
+
+                    top: 4px;
+                    left: 155px;
+                }
+
+                &:hover {
+                    & .tooltip {
+                        opacity: 1;
+                        right: -164px;
+
+
+                    }
+                    img {
+                        transform: rotate(-20deg);
+                    }
+                }
+
+                & .tooltip {
+                    background: white;
+                    border-radius: 3px;
+                    opacity: 0;
+                    padding: 8px 20px;
+                    float: left;
+                    pointer-events: none;
+                    font-size: 22px;
+                    color: #736241;
+                    cursor: pointer;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    position: absolute;
+                    right: -180px;
+                    margin-right: 70px;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+
+                    @media only screen and (max-width: 1000px) {
+
+                        display: none;
+                    }
+                }
+
+                img {
+                    width: 20px;
+                    transition: all 0.3s;
+                    position: relative;
+                    left: 15px;
+                    top: 15px;
+                }
+            }
+
+            &__pips {
+                position: absolute;
+                transition: all 0.3s;
+                top: 50%;
+                transform: rotate(180deg) translateY(50%);
+                width: 450px;
+                height: 450px;
+                border-radius: 100%;
+                left: 0;
+                right: 0;
+                z-index:4;
+                margin: auto;
+
+                & .pip {
+                    border-radius:20px;
+                    width: 10px;
+                    height: 3px;
+                    position: absolute;
+                    transform-origin: 50% 220px;
+                    left: 0;
+                    right: 0;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    transition: border-top 0.3s;
+                    border-top: 6px solid white;
+                    margin: auto;
+
+                    &.active,
+                    &:hover {
+                        border-top: 6px solid $grey;
+                    }
+
+
+                    @for $i from 1 through 10 {
+                        &:nth-of-type(#{$i}) {
+                            transform: rotate(10deg * $i);
+                        }
+                    }
+
+                    @media only screen and (max-width: 1000px) {
+                        transform: rotate(0deg) !important;
+                        position: relative !important;
+                        margin-top: 10px !important;
+                        top: -12px;
+                        width: 6px;
+                    }
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    width: 30px;
+                    left: 40px;
+                    height: auto;
+                    margin: 0;
+                    position: fixed;
+                }
+            }
+
+            &__stage {
+                position: absolute;
+                transition: background 0.3s;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 400px;
+                height: 400px;
+                border-radius: 100%;
+                background: #31434a;
+                border: 8px solid white;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+                margin: auto;
+
+                @media only screen and (max-width: 1000px) {
+                    top: 410px;
+                }
+
+                /* ==============================================
+
+                Scene specific
+
+                ================================================= */
+
+                $reverseStagger: 0.05s;
+                $forwardStagger: 0.05s;
+                $initialOffset: -1000px;
+
+                @mixin makeReverse {
+                    @for $i from 1 through 20 {
+                        & div div.light {
+                            opacity: 0 !important;
+                        }
+                        & div > div:nth-of-type(#{$i}) {
+                            animation: out .5s $reverseStagger * $i forwards;
+                        }
+                    }
+                }
+
+                %piece {
+                    position: absolute;
+                    bottom: 0;
+
+                    img {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        bottom: -200px; 
+                    }
+
+                }
+
+                @mixin makePiece($x, $y, $width, $intro, $ending, $duration, $order) {
+                    @extend %piece;
+
+                    transform: translateY($y) translateX($x);
+
+                    img {
+                        width: $width;
+                        bottom: $initialOffset;
+
+                        animation: $intro 0.5s 0s + ($forwardStagger * $order) forwards, 
+                            $ending $duration 0.5s + ($forwardStagger * $order) infinite linear;
+                    }
+                }
+
+                div {
+                    display: none;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                &.reverse {
+                    @include makeReverse;
+                }
+
+                /* ==============================================
+
+                Lighthouse scene 
+
+                ================================================= */
+
+                &.lighthouse {
+                    & .lighthouse {
+                        & > div {
+                            display: block;
+                        }
+
+                        display: block;
+
+                        & .sea_front {
+                            @include makePiece(0px, -10px, 380px, piece_in, rock, 1.5s, 1);
+                        }
+
+                        & .sea_mid {
+                            @include makePiece(0px, -40px, 380px, piece_in, rock, 1.5s, 2);
+                        }
+
+                        & .sea_back {
+                            @include makePiece(0px, -65px, 380px, piece_in, rock, 1.5s, 3);
+                        }
+
+                        & .rock {
+                            @include makePiece(-10px, -160px, 250px, piece_in, none, 0s, 4);
+                        }
+
+                        & .cloud_one {
+                            @include makePiece(-60px, -110px, auto, piece_in, up_down, 1.5s, 5);
+                        }
+
+                        & .cloud_two {
+                            @include makePiece(150px, -146px, auto, piece_in, up_down, 1.5s, 6);
+                        }
+
+                        & .hills {
+                            @include makePiece(-90px, 94px, auto, piece_in, none, 0s, 7);
+                        }
+
+                        & .lighthouse {
+                            @include makePiece(66px, -255px, auto, piece_in, none, 0s, 8);
+                        }
+
+                        & .boat {
+                            @include makePiece(269px, -146px, auto, piece_in, up_down, 2s, 9);
+                        }
+
+                        & .moon {
+                            @include makePiece(266px, -335px, auto, piece_in, none, 0s, 10);
+                        }
+
+                        & .stars {
+                            @include makePiece(36px, -322px, auto, fade_in, twinkle, 3s, 11);
+                        }
+
+                        & .storm {
+                            @extend %piece;
+
+                            opacity: 0;
+                            width: 400px;
+                            height: 400px;
+                            background: white;
+                            top: -400px;
+                            animation: flash 10s .8s infinite;
+                        }
+
+                        & .light {
+                            @extend %piece;
+
+                            opacity: 1;
+                            width: 12px;
+                            height: 12px;
+                            top: -295px;
+                            border-radius: 20px;
+                            box-shadow: 0px 0px 0px 0px yellow;
+                            left:97px;
+                            animation: glow 6s .8s infinite linear;
+                        }
+
+                        & .rain {
+                            opacity: 0;
+                            animation: fade_in 1s .7s forwards;
+                        }
+                    }
+                }
+
+                /* ==============================================
+
+                Fall scene
+
+                ================================================= */
+
+                &.fall {
+                    & .fall {
+                        & > div{
+                            display: block;
+                        }
+
+                        display: block;
+
+                        & .tree_left {
+                            @include makePiece(-30px, -170px, auto, piece_in, side_to_side, 4s, 1);
+                        }
+
+                        & .tree_right {
+                            @include makePiece(270px, -80px, auto, piece_in, side_to_side, 4s, 2);
+                        }
+
+                        & .ground_front {
+                            @include makePiece(0px, 10px, auto, piece_in, up_down, 4s, 3);
+                        }
+
+                        & .ground_mid {
+                            @include makePiece(-60px, 0px, auto, piece_in, up_down, 4s, 4);
+                        }
+
+                        & .ground_back {
+                            @include makePiece(-48px, -48px, auto, piece_in, up_down, 4s, 5);
+                        }
+
+                        & .cloud_left {
+                            @include makePiece(-130px, -170px, auto, piece_in, up_down, 4s, 7);
+                        }
+
+                        & .cloud_right {
+                            @include makePiece(200px, -184px, auto, piece_in, up_down, 4s, 8);
+                        }
+
+                        & .sun {
+                            @include makePiece(39px, -84px, auto, piece_in, up_down, 7s, 9);
+                        }
+
+                        & .birds {
+                            @include makePiece(39px, -84px, auto, piece_in, up_down, 7s, 10);
+                        }
+
+                        & .hills {
+                            @include makePiece(-52px, 6px, auto, piece_in, none, 7s, 11);
+                        }
+
+                        & .leaf_one {
+                            @include makePiece(258px, -404px, 90px, none, leaf_fall, 7s, 12);
+                        }
+
+                        & .leaf_two {
+                            @include makePiece(168px, -464px, 50px, none, leaf_fall, 3s, 12);
+                        }
+
+                        & .leaf_three {
+                            @include makePiece(148px, -494px, 35px, none, leaf_fall, 6s, 14);
+                        }
+
+                        & .leaf_four {
+                            @include makePiece(108px, -533px, 70px, none, leaf_fall, 5s, 15);
+                        }
+
+                        & .leaf_five {
+                            @include makePiece(54px, -539px, 26px, none, leaf_fall, 8s, 16);
+                        }
+
+                        & .light {
+                            @extend %piece;
+
+                            opacity: 1;
+                            width: 134px;
+                            height: 122px;
+                            top: -225px;
+                            border-radius: 140px;
+                            box-shadow: 0px 0px 0px 0px #f2a834;
+                            left: 123px;
+                            animation: glow 6s 1.5s infinite linear;
+                        }
+                    }
+                }
+
+                /* ==============================================
+
+                Sing scene
+
+                ================================================= */
+
+                &.sing {
+                    & .sing {
+                        & > div{
+
+                            display: block;
+                        }
+
+
+                        display: block;
+
+                        & .grass {
+                            @include makePiece(0px, -60px, 380px, piece_in, up_down, 1.5s, 1);
+                        }
+
+                        & .hill_front {
+                            @include makePiece(58px, 1px, auto, piece_in, none, 1.5s, 2);
+                        }
+
+
+                        & .hill_back {
+                            @include makePiece(-36px, 30px, auto, piece_in, none, 1.5s, 3);
+                        }
+                        & .buildings {
+                            @include makePiece(-56px, -130px, auto, piece_in,side_to_side, 15s, 4);
+                        }
+                        & .city {
+                            @include makePiece(64px, -150px, auto, piece_in,none, 15s, 5);
+                        }
+
+
+                        & .singer {
+
+                            @include makePiece(141px, -227px, auto, piece_in,none, 15s, 6);
+                        }
+
+                        & .moon {
+                            @include makePiece(141px, -400px, auto, piece_in,up_down, 8s, 7);
+                        }
+
+                        & .stars {
+                            @include makePiece(36px, -322px, auto, fade_in, twinkle, 3s, 14);
+
+                            img {    
+                                bottom: -60px;
+                                opacity: 0;
+                            }
+                        }
+                        & .note_one {
+                            @include makePiece(166px, -290px, 60px, note_in, note, 3s, 10);
+
+                        }
+                        & .note_two {
+                            @include makePiece(166px, -290px, 60px, note_in, note, 3s, 20);
+                        }
+                        & .note_three {
+                            @include makePiece(166px, -290px, 60px, note_in, note, 3s, 30);
+                        }
+                        & .note_four {
+                            @include makePiece(166px, -290px, 60px, note_in, note, 3s, 40);
+                        }
+
+                        & .rain {
+                            opacity: 0;
+                            animation: fade_in 1s .7s forwards;
+                        }
+
+                        & .storm {
+                            @extend %piece;
+
+                            opacity: 0;
+                            width: 400px;
+                            height: 400px;
+                            background: white;
+                            top: -400px;
+                            animation: flash 10s .8s infinite;
+                        }
+                    }
+                }
+
+                /* ==============================================
+
+                Hope scene
+
+                ================================================= */
+
+                &.hope {
+                    & .hope {
+                        & > div{
+
+                            display: block;
+                        }
+
+
+                        display: block;
+
+                        & .flowers {
+                            @include makePiece(109px, -50px, auto, piece_in, up_down, 1.5s, 1);
+                        }
+
+                        & .tree {
+                            @include makePiece(-70px, -130px, auto, piece_in, none, 1.5s, 2);
+                        }
+
+                        & .dove {
+                            @include makePiece(149px, -207px, auto, piece_in, up_down, 2s, 3);
+                        }
+
+                        & .dove_wing_left {
+                            @include makePiece(80px, -250px, auto, piece_in, wing_left, 1s, 4);
+                            img {
+                                transform-origin: 100% 50%;
+                            }
+                        }
+
+                        & .dove_wing_right {
+                            @include makePiece(183px, -250px, auto, piece_in, wing_right, 1s, 4);
+
+                            img{
+                                transform-origin: 0% 50%;
+                            }
+                        }
+
+                        & .ground_front {
+                            @include makePiece(52px, 40px, auto, piece_in, up_down, 4s, 6);
+                        }
+
+                        & .gound_back {
+                            @include makePiece(-96px, 60px, auto, piece_in, up_down, 4s, 7);
+                        }
+
+                        & .house {
+                            @include makePiece(310px, -170px, auto, piece_in, up_down, 4s, 8);
+                        }
+
+                        & .cloud_left {
+                            @include makePiece(0px, -60px, auto, piece_in, up_down, 4s, 9);
+
+                        }
+
+                        & .cloud_right {
+                            @include makePiece(0px, -60px, auto, piece_in, up_down, 4s, 10);
+                        }
+
+                        & .hill_left {
+                            @include makePiece(110px, -60px, auto, piece_in, none, 4s, 11);
+                        }
+
+                        & .hill_right {
+                            @include makePiece(-250px, -100px, auto, piece_in, none, 4s, 12);
+                        }
+
+                        & .cloud {
+                            @include makePiece(0px, -60px, auto, piece_in, up_down, 4s, 13);
+                        }
+
+                        & .sun {
+                            @include makePiece(140px, -150px, auto, piece_in, none, 4s, 14);
+                        }
+
+                        .glow {
+
+                        }
+                    }
+                }
+
+                /* ==============================================
+
+                Moon scene
+
+                ================================================= */
+
+                &.moon {
+                    & .moon {
+                        & > div{
+
+                            display: block;
+                        }
+
+
+                        display: block;
+
+                        & .tree_left {
+                            @include makePiece(-71px, -240px, auto, piece_in, side_to_side, 1.5s, 1);
+                        }
+
+                        & .tree_right {
+                            @include makePiece(259px, -40px, auto, piece_in, side_to_side, 1.5s, 2);
+                        }
+
+                        & .ground_front {
+                            @include makePiece(159px, 70px, auto, piece_in, up_down, 1.5s, 3);
+                        }
+
+                        & .ground_back {
+                            @include makePiece(-101px, 10px, auto, piece_in, up_down, 1.5s, 4);
+                        }
+
+                        & .house {
+                            @include makePiece(85px, -120px, auto, piece_in, up_down, 1.5s, 5);
+                        }
+
+                        & .smoke_one {
+                            @include makePiece(97px, -170px, auto, note_in, smoke, 2s, 11);
+                        }
+
+                        & .smoke_two {
+                            @include makePiece(97px, -170px, auto, note_in, smoke, 2s, 21);
+                        }
+
+                        & .smoke_three {
+                            @include makePiece(97px, -170px, auto, note_in, smoke, 2s, 31);
+                        }
+
+
+                        & .cloud_right {
+                            @include makePiece(201px, -191px, auto, piece_in, up_down, 1.5s, 6);
+                        }
+
+                        & .hills {
+                            @include makePiece(-71px, -140px, auto, piece_in, none, 1.5s, 7);
+                        }
+
+                        & .cloud_left {
+                            @include makePiece(19px, -380px, auto, piece_in, up_down, 1.5s, 8);
+                        }
+
+
+                        & .moon {
+                            @include makePiece(109px, -250px, auto, piece_in, up_down, 1.5s, 9);
+                        }
+
+                        & .stars {
+                            @include makePiece(37px, -203px, auto, fade_in, twinkle, 3s, 10);
+
+                            img {    
+                                bottom: -60px;
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+                
+                /* ==============================================
+
+                Space scene
+
+                ================================================= */
+
+                &.space {
+                    & .space {
+                        & > div{
+
+                            display: block;
+                        }
+
+
+                        display: block;
+
+                        & .moon {
+                            @include makePiece(129px, 10px, auto, piece_in, up_down, 1.5s, 1);
+                        }
+                        
+                        & .planet_right {
+                            @include makePiece(309px, -180px, auto, piece_in, up_down, 1.5s, 2);
+                        }
+                        
+                        & .rocket {
+                            @include makePiece(19px, -40px, auto, piece_in, rocket, 8s, 2);
+                        }
+                        
+                        & .rocket_smoke_one {
+                            @include makePiece(19px, -40px, auto, piece_in, rocketSmoke, 8s, 2);
+                        }
+                        
+                         & .cloud_right {
+                            @include makePiece(58px, -30px, auto, piece_in, up_down, 1.5s, 3);
+                        }
+                        
+                        & .cloud_left {
+                            @include makePiece(-102px, -40px, auto, piece_in, up_down, 1.5s, 4);
+                        }
+                        
+                        & .planet_left {
+                            @include makePiece(38px, -310px, auto, piece_in, up_down, 1.5s, 5);
+                        }
+                        
+                        
+                        & .sun {
+                            @include makePiece(138px, -280px, auto, piece_in, up_down, 1.5s, 6);
+                        }
+                        
+                        & .asteroids {
+                            @include makePiece(148px, -328px, auto, piece_in, up_down, 1.5s, 7);
+                        }
+                        
+                        & .stars {
+                            @include makePiece(36px, -258px, auto, piece_in, up_down, 6s, 8);
+                        }
+                    }
+                }
+                @media only screen and (max-width: 620px) {
+                    transform: scale(0.6);
+                    top: -110px;
+                }
+            }
+
+            @media only screen and (max-width: 1000px) {
+                position: absolute;
+                top: -60px;
+                width: 100%;
+                left: 0;
+            }
+
+            @media only screen and (max-width: 620px) {
+
+                top: 170px;
+            }
+
+
+        }
+
+        &_right {
+            width: 25%;
+            float: left;
+
+            &__audio {
+                position: absolute;
+                right: 80px;
+
+                @media only screen and (max-width: 1000px) {
+
+                    right: 86px;
+                    top: 37px;
+                }
+
+                img {
+                    opacity: 0.5;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    width: 23px;
+
+                    &.off {
+                        display: none;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &__controls {
+                position: absolute;
+                right: 80px;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+
+                & .button {
+                    position: relative;
+                    cursor: pointer;
+
+
+                    &:hover {
+                        & > img {
+                            opacity: 1;
+                        }
+
+                        & > .tooltip {
+                            opacity: 1;
+                            margin-right: 50px;
+                        }
+
+                    }
+                }
+
+                & .tooltip {
+                    background: white;
+                    border-radius: 3px;
+                    opacity: 0;
+                    padding: 8px 20px;
+                    float: left;
+                    pointer-events: none;
+                    font-size: 22px;
+                    color: $grey;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    position: absolute;
+                    right: 0;
+                    margin-right: 70px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    @media only screen and (max-width: 1000px) {
+
+                        display: none;
+                    }
+                }
+
+                img {
+                    height: 40px;
+                    cursor: pointer;
+                    opacity: 0.44;
+                    transition: all 0.3s;
+
+
+
+                }
+
+                & .random {
+                    margin: 20px 0;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        img {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+
+                & .next {
+                    img {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 1000px) {
+                position: fixed;
+                right: -30px;
+                height: 100vh;
+                top: 0;
+            }
+
+            @media only screen and (max-width: 620px) {
+                right: -50px;
+            }
+        }
+    }
+}
+
+// Global animations
+
+@keyframes glow {
+    0% {box-shadow: 0px 0px 0px 0px #ecc857;}
+    50% {box-shadow: 0px 0px 105px 50px #ecc857;}
+    100% {box-shadow: 0px 0px 0px 0px #ecc857;}
+}
+
+@keyframes rock {
+    0% {
+        left: 0px;
+        bottom: -70px;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        left: 10px;
+        bottom: -75px;
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        left: 0;
+        bottom: -80px;
+        transform: rotate(2deg);
+    }
+
+    75% {
+        left: -10px;
+        bottom: -75px;
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        left: 0px;
+        bottom: -70px;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes note {
+    0%{transform: scale(0) rotate(0deg); left: 0; top: 0}
+    100%{transform: scale(1) rotate(40deg); top: -150px; left: 150px;}
+}
+
+@keyframes smoke {
+    0%{transform: scale(0) rotate(0deg); left: 0; top: 0;opacity:1}
+    100%{transform: scale(1) rotate(40deg); top: -150px; left: 0;opacity:0}
+}
+
+@keyframes rocket {
+    0%{ left: 0px; top: 0}
+    100%{ top: -1200px; left: 400px}
+}
+
+@keyframes rocketSmoke {
+    0%{ left: 0px; top: 0}
+    100%{ top: -750px; left: 400px}
+}
+
+@keyframes flash {
+    0%{opacity: 0}
+    10%{opacity: 0}
+    12% {opacity: .3}
+    14% {opacity: 0}
+    16% {opacity: .5}
+    18% {opacity: 0}
+    24%{opacity: 0}
+    26% {opacity: .4}
+    28% {opacity: 0}
+    50%{opacity: 0}
+    52% {opacity: .7}
+    54% {opacity: 0}
+    67%{opacity: 0}
+    69% {opacity: .3}
+    71% {opacity: 0}
+    73% {opacity: .5}
+    75% {opacity: 0}
+    100% {opacity: 0}
+}
+
+
+@keyframes up_down {
+    0% {bottom: -70px}
+    50% {bottom: -78px}
+    100% {bottom: -70px}
+}
+
+@keyframes wing_left {
+    0% {bottom: -70px; transform: rotate(0deg)}
+    50% {bottom: -78px;transform: rotate(40deg)}
+    100% {bottom: -70px;transform: rotate(0deg)}
+}
+
+@keyframes wing_right {
+    0% {bottom: -70px; transform: rotate(0deg)}
+    50% {bottom: -78px;transform: rotate(-40deg)}
+    100% {bottom: -70px;transform: rotate(0deg)}
+}
+
+@keyframes leaf_fall {
+    0% {bottom: -70px; transform: rotate(0deg)}
+    100% {bottom: -728px; transform: rotate(540deg)}
+}
+
+@keyframes side_to_side {
+    0% {left: 0px}
+    50% {left: -10px}
+    100% {left: 0px}
+}
+
+@keyframes out {
+    0% {bottom: 0px}
+    100% {bottom: -610px}
+}
+
+@keyframes piece_in {
+    0% {
+        bottom: -480px;
+        transform: rotate(20deg);
+    }
+
+    100% {
+        bottom: -70px;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes note_in {
+    0% {
+        bottom: -480px;
+        transform: rotate(20deg) scale(0);
+    }
+
+    100% {
+        bottom: -70px;
+        transform: rotate(0deg) scale(0);
+    }
+}
+@keyframes note_in {
+    0% {
+        bottom: -480px;
+        transform: rotate(20deg) scale(0);
+    }
+
+    100% {
+        bottom: -70px;
+        transform: rotate(0deg) scale(0);
+    }
+}
+
+@keyframes twinkle {
+    0% {opacity: 1}
+    50% {opacity: 0.3}
+    100% {opacity: 1}
+}
+
+@keyframes fade_in {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes out_left {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+        left: -30px;
+    }
+    60% {
+        opacity: 0;
+        left: -30px;
+    }
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+
+h1.out_left,
+p.out_left,
+i.out_left ,
+.buttons.out_left {
+    left:-30px !important;
+    opacity: 0;
+}
+
+
+// Mobile
+
+
+
+// 732

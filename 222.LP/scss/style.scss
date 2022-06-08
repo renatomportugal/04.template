@@ -1,0 +1,178 @@
+//// settings
+$font-size:20px; // base size
+$size:20em;
+$background-color:#eaeaee;
+$rpm:33.5;
+$center-size:30%;
+
+//colors
+$highlight-color:#eef;
+$print-white:#dde;
+$print-1:rgb(77,67,145);
+$print-2:rgb(207,75,145);
+
+
+//// here be dragons
+// animation duration
+$t:60s/$rpm;
+
+// create grooves
+$grooves:();
+$grooves-loop-size:70px;
+$grooves-steps:59;
+@if($grooves-steps % 2 == 0){
+  $grooves-steps:$grooves-steps+1;
+}
+$grooves-step-size:$grooves-loop-size/$grooves-steps;
+$grooves-color:black;
+$grooves-variation:0.3;
+$grooves-max-transparency:0.5;
+
+@for $i from 1 through $grooves-steps{
+  $step:$grooves-step-size*$i;
+  $transparency:1;
+  $cur-variation:random()*$grooves-variation;
+  $transparency:$transparency - $cur-variation;
+  @if($i % 2==1){
+    $transparency:1-$transparency;
+  }
+  $transparency:1-((1-$transparency)*$grooves-max-transparency);
+
+  $grooves:append($grooves,(transparentize($grooves-color,$transparency) $step),comma);
+};
+
+// create tracks
+$tracks:();
+$tracks-num:7;
+$tracks-avail-size:65%;
+$tracks-start:30%;
+$track-size:$tracks-avail-size/$tracks-num;
+$track-variation:3%;
+$track-ridge-size:1%;
+$track-ridge-color:rgba(0,0,0,0.3);
+$track-ridge-blur:0.2%;
+@for $i from 1 through $tracks-num{
+  $cur-pos:$tracks-start+($i*$track-size);
+  $cur-pos:$cur-pos+(random()*$track-variation);
+  $tracks:append($tracks,(transparentize($track-ridge-color,1) $cur-pos - $track-ridge-blur),comma);
+  $tracks:append($tracks,($track-ridge-color $cur-pos),comma);
+  $cur-pos:$cur-pos+$track-ridge-size;
+  $tracks:append($tracks,($track-ridge-color $cur-pos),comma);
+  $tracks:append($tracks,(transparentize($track-ridge-color,1) $cur-pos+$track-ridge-blur),comma);
+}
+
+// animations
+@keyframes wiggle{
+  0%{
+    transform:rotate(0);
+  }
+  100%{
+    transform:rotate(0.5deg);
+  }
+}
+@keyframes zoom{
+  0%{
+    opacity:0.5;
+    transform:scale(1.4);
+  }
+  50%{
+    opacity:0.8;
+    transform:scale(1.2) rotate(180deg);
+  }
+  100%{
+    opacity:0.5;
+    transform:scale(1) rotate(360deg);
+  }
+}
+@keyframes spin{
+  0%{
+    transform:rotate(0);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+
+body{
+  background:$background-color;
+  font-size:$font-size;
+}
+.disco{
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-$size/2;
+  margin-top:-$size/2;
+  width:$size;
+  height:$size;
+  
+  background: 
+    // dark areas on both ends
+    radial-gradient(circle closest-side, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 35.5%, rgba(0,0,0,0) 96%, rgba(0,0,0,1) 96.5%),
+    // tracks
+    radial-gradient(circle closest-side, $tracks),
+    // highlight
+    conic-gradient(black 40deg, $highlight-color 42deg,black 44deg, black 219deg, $highlight-color 222deg, $highlight-color 223deg,black 228deg),
+    // grooves
+    repeating-radial-gradient($grooves),
+    // weak lighting
+    conic-gradient(
+      transparentize(white,1) 80deg,
+      transparentize(white,0.96) 90deg,
+      transparentize(white,1) 95deg,
+      transparentize(white,1) 260deg,
+      transparentize(white,0.96) 270deg,
+      transparentize(white,1) 285deg
+    ),
+    // strong lighting
+    conic-gradient(
+      transparentize(white,1),
+      transparentize(white,0.78) 20deg,
+      transparentize(white,0.71) 40deg,
+      transparentize(white,1) 70deg,
+      transparentize(white,1) 180deg,
+      transparentize(white,0.82) 200deg,
+      transparentize(white,0.85) 210deg,
+      transparentize(white,1) 250deg
+    ), 
+    black;
+  background-blend-mode:normal,normal,color-dodge,normal,normal;
+  animation:wiggle 30ms linear infinite alternate;
+  border-radius:100%;
+  overflow:hidden;
+  
+  // zoom anim thing
+  &::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:repeating-radial-gradient($grooves);
+    border-radius:100%;
+    animation:zoom $t linear infinite;
+    
+  }
+
+  // inner label thing
+  &::after{
+    content:"HEY";
+    display:block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:$center-size;
+    height:$center-size;
+    margin-left:-$center-size/2;
+    margin-top:-$center-size/2;
+    border-radius:100%;
+    color:$print-white;
+    text-align:center;
+    line-height:3em;
+    font-weight:bold;
+    background:radial-gradient(circle closest-side, $background-color 8%, transparentize($background-color,1) 9%, transparent 85%, $print-white 85%, $print-white 90%, transparent 90%),
+      conic-gradient($print-1 25%, $print-2 0 50%, $print-1 0 75%, $print-2 0);
+    background-size:100%, 3em 3em;
+    animation:spin $t linear infinite;
+  }
+}

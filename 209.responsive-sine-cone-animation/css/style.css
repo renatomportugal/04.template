@@ -1,0 +1,255 @@
+div {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+div:before, div:after {
+  content: '';
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+}
+
+body {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1vmin;
+  color: white;
+  background: radial-gradient(ellipse at center, white 0%, #8c8c8c 100%);
+}
+body .message {
+  position: absolute;
+  right: 0.5vw;
+  top: 1vw;
+  max-width: 60vw;
+  font-size: 0.75em;
+}
+body .message a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+body .message a:hover {
+  border-width: 3px;
+}
+body .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70em;
+  height: 70em;
+  overflow: visible;
+}
+body .wrapper > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid gray;
+  width: 100%;
+  height: 100%;
+  animation: rotation-1 30s 0s ease alternate infinite;
+}
+body .wrapper > div:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+body .wrapper > div.item2 {
+  width: 70.5%;
+  height: 70.5%;
+  animation-name: rotation-2;
+}
+body .wrapper > div.item3 {
+  width: 49.5%;
+  height: 49.5%;
+  animation-name: rotation-3;
+}
+body .wrapper > div.item4 {
+  width: 34.75%;
+  height: 34.75%;
+  animation-name: rotation-4;
+}
+body .wrapper > div.item5 {
+  width: 24.25%;
+  height: 24.25%;
+  animation-name: rotation-5;
+}
+body .wrapper > div.item6 {
+  width: 16.75%;
+  height: 16.75%;
+  animation-name: rotation-6;
+}
+body .wrapper > div.item7 {
+  width: 11.5%;
+  height: 11.5%;
+  animation-name: rotation-7;
+}
+body .wrapper > div.item8 {
+  width: 7.75%;
+  height: 7.75%;
+  animation-name: rotation-8;
+}
+body .wrapper > div.item9 {
+  width: 5.25%;
+  height: 5.25%;
+  animation-name: rotation-9;
+}
+body .wrapper > div.item10 {
+  width: 3.5%;
+  height: 3.5%;
+  animation-name: rotation-10;
+}
+
+@keyframes rotation-1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@keyframes rotation-2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-720deg);
+  }
+}
+@keyframes rotation-3 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(1080deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-1080deg);
+  }
+}
+@keyframes rotation-4 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(1440deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-1440deg);
+  }
+}
+@keyframes rotation-5 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(1800deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-1800deg);
+  }
+}
+@keyframes rotation-6 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(2160deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-2160deg);
+  }
+}
+@keyframes rotation-7 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(2520deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-2520deg);
+  }
+}
+@keyframes rotation-8 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(2880deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-2880deg);
+  }
+}
+@keyframes rotation-9 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(3240deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-3240deg);
+  }
+}
+@keyframes rotation-10 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotate(3600deg);
+  }
+  66% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-3600deg);
+  }
+}

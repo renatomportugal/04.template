@@ -1,0 +1,132 @@
+@mixin centercenter(){
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div{
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+  }
+}
+
+body{
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1vmin;
+  color: white;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(140,140,140,1) 100%);
+  
+  & .message{
+    position: absolute;
+    right:  0.5vw;
+    top: 1vw;
+    max-width: 60vw;
+    font-size: 0.75em;
+
+    & a{
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      &:hover{
+        border-width: 3px;
+      }
+    }
+
+  }
+  
+  & .wrapper{
+    position: absolute;
+    @include centercenter();
+    width: 70em;
+    height: 70em;
+    overflow: visible;
+    
+    & > div{
+      position: absolute;
+      @include centercenter();
+      border: 1px solid gray;
+      width: 100%;
+      height: 100%;
+      animation: rotation-1 30s 0s ease alternate infinite;
+      &:before{
+        @include centercenter();
+        width: 100%;
+        height: 100%;
+        border: 1px solid gray;
+        border-radius: 50%;
+      }
+      &.item2{
+        width: 70.5%;
+        height: 70.5%;
+        animation-name: rotation-2;
+      }
+      &.item3{
+        width: 49.5%;
+        height: 49.5%;
+        animation-name: rotation-3;
+      }
+      &.item4{
+        width: 34.75%;
+        height: 34.75%;
+        animation-name: rotation-4;
+      }
+      &.item5{
+        width: 24.25%;
+        height: 24.25%;
+        animation-name: rotation-5;
+      }
+      &.item6{
+        width: 16.75%;
+        height: 16.75%;
+        animation-name: rotation-6;
+      }
+      &.item7{
+        width: 11.5%;
+        height: 11.5%;
+        animation-name: rotation-7;
+      }
+      &.item8{
+        width: 7.75%;
+        height: 7.75%;
+        animation-name: rotation-8;
+      }
+      &.item9{
+        width: 5.25%;
+        height: 5.25%;
+        animation-name: rotation-9;
+      }
+      &.item10{
+        width: 3.5%;
+        height: 3.5%;
+        animation-name: rotation-10;
+      }
+    }
+    
+  }
+  
+}
+
+$degrees: 360;
+@for $i from 1 through 10 {
+  @keyframes rotation-#{$i} {
+    $r: $i * $degrees;
+      0% {transform: translate(-50%, -50%) rotate(0)};
+     33% {transform: translate(-50%, -50%) rotate(#{$r}deg)};
+     66% {transform: translate(-50%, -50%) rotate(0)};
+    100% {transform: translate(-50%, -50%) rotate(-#{$r}deg)};
+  }
+}

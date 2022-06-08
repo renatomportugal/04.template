@@ -1,0 +1,18 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+svg {
+  width: 70vmin;
+  height: 70vmin;
+}
+circle {
+  stroke-width: 1;
+  stroke: black;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+  transform-box: fill-box;
+}

@@ -1,0 +1,23 @@
+.refresh
+  %svg{:height => "50", :viewBox => "0 0 50 50", :width => "50", :xmlns => "http://www.w3.org/2000/svg"}
+    %path{:d => "M26.083 13C32.665 13 38 18.374 38 25.003c0 6.5-5.13 11.794-11.534 11.997v-2.184c5.207-.202 9.367-4.518 9.367-9.813 0-5.424-4.365-9.82-9.75-9.82-4.83 0-8.84 3.54-9.615 8.183H18.5l-3.25 3.82-3.25-3.82h2.277C15.07 17.51 20.053 13 26.083 13z", :fill => "#191747", "fill-rule" => "evenodd"}/
+    
+.main-ctr
+  .calendar-ctr
+
+    .top-ctr
+      .top.top-0
+
+      - (1..28).each do |i|
+        .top{:class => "top-#{i}"}
+          .number #{i}
+
+      .top-29
+        .number 29
+
+    .bottom-ctr
+      .bottom.bottom-0
+
+      - (1..29).each do |i|
+        .bottom{:class => "bottom-#{i}"}
+          .number #{i}

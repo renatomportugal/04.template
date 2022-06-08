@@ -1,0 +1,156 @@
+/* The version of Bourbon used in this Pen was 4.* */
+@import "bourbon";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700);
+
+html,
+body {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+}
+
+.main-ctr {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.calendar-ctr {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  @include perspective(500px);
+  font-family: Roboto;
+  font-weight: 400;
+  
+  .top {
+    @include position(absolute, 0 0 x 0);
+    height: 50%;
+    background: #3C75D3;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    @include transform-origin(center bottom);
+    will-change: transform;
+    
+    &:before {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      border-top: 1px solid rgba(0,0,0,.25);
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    
+    &.top-0 {
+      background: #ddd;
+    }
+    
+    @for $i from 0 through 29 {
+      
+      &.top-#{$i} {
+        z-index: 29 - $i;
+      }
+      
+    }
+    
+    .number {
+      @include position(absolute, 0 0 -100% 0);
+      text-align: center;
+      line-height: 200px;
+      font-size: 120px;
+      color: white;
+      text-shadow: 2px 2px rgba(0,0,0,.05);
+    }
+  }
+    
+  .top-29 {
+    @include position(absolute, 0 0 x 0);
+    height: 50%;
+    background: #3C6BD2;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    @include transform-origin(center bottom);
+    will-change: transform;
+    
+    &:before {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      border-top: 1px solid rgba(0,0,0,.25);
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    
+    .number {
+      @include position(absolute, 0 0 -100% 0);
+      text-align: center;
+      line-height: 200px;
+      font-size: 120px;
+      color: white;
+      text-shadow: 2px 2px rgba(0,0,0,.05);
+    }
+  }
+  
+  .bottom {
+    @include position(absolute, x 0 0 0);
+    height: 50%;
+    background: #4887F2;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    @include transform-origin(center top);
+    @include transform(rotateX(90deg));
+    will-change: transform;
+    
+    &:before {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      border-bottom: 1px solid rgba(0,0,0,.25);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-top: 1px solid rgba(0,0,0,.15);
+    }
+    
+    @for $i from 0 through 29 {
+      
+      &.bottom-#{$i} {
+        z-index: $i;
+      }
+      
+    }
+    
+    &.bottom-0 {
+      background: #eee;
+      @include transform(rotateX(0deg));
+    }
+    
+    .number {
+      @include position(absolute, -100% 0 0 0);
+      text-align: center;
+      line-height: 200px;
+      font-size: 120px;
+      color: white;
+      text-shadow: 2px 2px rgba(0,0,0,.05);
+    }
+  }
+}
+
+// refresh button
+.refresh {
+  @include position(fixed, 15px 15px x x);
+  @include transform-origin(right top);
+  @include transform(scale(.7));
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  z-index: 99;
+  cursor: pointer;
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+}

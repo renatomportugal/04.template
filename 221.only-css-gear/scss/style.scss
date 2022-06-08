@@ -1,0 +1,133 @@
+body {
+  background: #eef;
+}
+#ui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -70px;
+  filter: drop-shadow(2px 3px 1px #bbb);
+
+  .primary {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: -40px;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 999px;
+    transition: 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    animation: primaryRotate 6000ms linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 33px;
+      left: 33px;
+      width: 45px;
+      height: 45px;
+      border: 5px dotted #000;
+      background: #fff;
+      border-radius: 999px;
+      animation: secondaryRotate 1000ms linear infinite;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 40px;
+      height: 40px;
+      border: 2px dotted #000;
+      background: #fff;
+      border-radius: 999px;
+      box-sizing: border-box;
+    }
+    .gear {
+      position: absolute;
+      top: 42px;
+      left: -8px;
+      width: 116px;
+      height: 16px;
+      background: rgba(0, 0, 0, 1);
+      border-radius: 3px;
+
+      @for $value from 0 to 8 {
+        &:nth-child(#{$value + 1}) {
+          transform: rotateZ(30deg * $value);
+        }
+      }
+    }
+  }
+  .secondary {
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 999px;
+    transition: 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      background: #fff;
+      border-radius: 999px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      border: 1px dotted #000;
+      background: #fff;
+      border-radius: 999px;
+      box-sizing: border-box;
+    }
+    .gear {
+      position: absolute;
+      top: 20px;
+      left: -8px;
+      width: 66px;
+      height: 10px;
+      background: rgba(0, 0, 0, 1);
+      border-radius: 3px;
+
+      @for $value from 0 to 4 {
+        &:nth-child(#{$value + 1}) {
+          transform: rotateZ(45deg * $value + 3);
+        }
+      }
+    }
+  }
+  &.switch {
+    .primary {
+      margin-top: 0;
+    }
+    .secondary {
+      animation: secondaryRotate 4000ms linear infinite;
+    }
+  }
+}
+@keyframes primaryRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes secondaryRotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

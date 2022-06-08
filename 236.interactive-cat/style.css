@@ -1,0 +1,304 @@
+/* Variables */
+/* Reset */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Generic */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fcfcfc;
+  color: #7a3e5e;
+  cursor: pointer;
+}
+
+.main {
+  width: 400px;
+  height: 420px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat {
+  position: absolute;
+  margin-top: 80px;
+  width: 328px;
+  height: 352px;
+}
+
+.ear {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-top: 8px solid #7a3e5e;
+  border-left: 8px solid #7a3e5e;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-radius: 50%/60% 60% 60% 60%;
+  z-index: 100;
+  animation: ear .15s infinite;
+}
+.ear-l {
+  top: -4%;
+  left: 15%;
+  transform: rotateZ(10deg);
+}
+.ear-r {
+  top: 7%;
+  left: 82%;
+  transform: rotateZ(90deg);
+}
+
+@keyframes ear {
+  0% {
+    width: 42px;
+    height: 42px;
+  }
+  100% {
+    width: 43px;
+    height: 43px;
+  }
+}
+.eye {
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  background: #7a3e5e;
+  border-radius: 50%/60% 60% 40% 40%;
+  z-index: 100;
+}
+.eye-l {
+  top: 30%;
+  left: 30%;
+}
+.eye-r {
+  top: 35%;
+  left: 66%;
+}
+
+.ea {
+  animation: eye .75s;
+}
+
+.cheeks {
+  position: absolute;
+  width: 45px;
+  height: 35px;
+  border-radius: 50%/60% 50% 40% 40%;
+  border: 5px solid #ffc1db;
+  background: #ffc1db;
+  filter: blur(2px);
+}
+.cheeks-l {
+  top: 30%;
+  left: 14%;
+  animation: cheeks-l .075s linear infinite alternate;
+}
+.cheeks-r {
+  top: 40%;
+  left: 73%;
+  animation: cheeks-r .075s linear infinite alternate;
+}
+
+.motches {
+  position: absolute;
+  top: 36%;
+  height: 27px;
+  width: 100%;
+  transform: rotateZ(10deg);
+}
+
+.motche {
+  position: absolute;
+  width: 29px;
+  height: 7px;
+  border-radius: 50%/60% 60% 40% 40%;
+  background: #7a3e5e;
+  z-index: 200;
+}
+.motche:nth-of-type(1) {
+  top: 0%;
+  left: 16%;
+  transform: rotateZ(5deg);
+  animation: motche-1 .1s linear infinite alternate .015s;
+}
+.motche:nth-of-type(2) {
+  top: 75%;
+  left: 16%;
+  transform: rotateZ(-5deg);
+  animation: motche-2 .09s linear infinite alternate;
+}
+.motche:nth-of-type(3) {
+  top: 0%;
+  left: 76%;
+  transform: rotateZ(-5deg);
+  animation: motche-1 .09s linear infinite alternate .015s;
+}
+.motche:nth-of-type(4) {
+  top: 75%;
+  left: 76%;
+  transform: rotateZ(5deg);
+  animation: motche-2 .1s linear infinite alternate;
+}
+
+.mouth {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  width: 68px;
+  height: 48px;
+  border: 2px solid transparent;
+  transform: rotateZ(10deg);
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  top: -160%;
+  width: 95px;
+  height: 95px;
+  background: #fcfcfc;
+  border: 5px solid #7a3e5e;
+  border-radius: 50%;
+  z-index: 400;
+}
+.circle-l {
+  left: -80%;
+}
+.circle-r {
+  left: 30%;
+}
+
+.nose {
+  position: absolute;
+  top: -5%;
+  left: calc(50% - 11px);
+  height: 15px;
+  width: 20px;
+  border-radius: 50%/60% 60% 40% 40%;
+  background: #7a3e5e;
+  z-index: 500;
+}
+
+.tongue {
+  position: absolute;
+  top: -57%;
+  left: calc(50% - 22.5px);
+  width: 45px;
+  height: 55px;
+  border: 5px solid #7a3e5e;
+  border-radius: 50%/60% 60% 40% 40%;
+  background: #ffc1db;
+}
+
+.ta {
+  animation: tongue .75s;
+}
+
+.heart {
+  position: absolute;
+  left: calc(50% - 12.5px);
+  top: 40%;
+  height: 25px;
+  width: 25px;
+  background: #ef3e36;
+  transform: rotateZ(-30deg);
+  visibility: hidden;
+}
+.heart::before, .heart::after {
+  content: '';
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background: #ef3e36;
+  border-radius: 50%;
+}
+.heart::before {
+  top: -50%;
+}
+.heart::after {
+  left: 50%;
+}
+
+.ha {
+  animation: heart 3s;
+}
+
+/**/
+@keyframes heart {
+  0% {
+    visibility: visible;
+    opacity: .1;
+    top: 40%;
+    transform: rotateZ(-30deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotateZ(-60deg);
+  }
+  100% {
+    visibility: visible;
+    top: -200%;
+  }
+}
+@keyframes eye {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  70% {
+    transform: scaleY(0.25);
+  }
+}
+@keyframes cheeks-l {
+  0% {
+    top: 29%;
+    left: 14%;
+  }
+  100% {
+    top: 30%;
+    left: 14%;
+  }
+}
+@keyframes cheeks-r {
+  0% {
+    top: 39%;
+    left: 73%;
+  }
+  100% {
+    top: 40%;
+    left: 73%;
+  }
+}
+@keyframes tongue {
+  0%, 100% {
+    height: 55px;
+  }
+  70% {
+    height: 60px;
+  }
+}
+@keyframes motche-1 {
+  0% {
+    top: -1%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+@keyframes motche-2 {
+  0% {
+    top: 74%;
+  }
+  100% {
+    top: 77%;
+  }
+}

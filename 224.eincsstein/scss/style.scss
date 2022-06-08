@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One');
+
+:root {
+  --color-beige:  #ffeaa7;
+  --color-black:  #2d3436;
+  --color-gray:   #bdc3c7;
+  --color-green:  #556b2f;
+  --color-red:    #e74c3c;  
+  --color-river:  #3498db;
+  --color-white:  #f8f8ff;
+  --color-yellow: #f1c40f;
+}
+
+.visually-hidden {
+  position: absolute;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-river);
+  font-family: 'Sigmar One', sans-serif;
+}
+
+h1 {
+  font-size: 6.125vh;
+  color: var(--color-yellow);
+  
+  .char {
+    display: inline-block;
+    transform: scale(0);
+  }
+  
+  .word:last-child {
+    display: block;
+    font-size: 10vh;
+  }
+}
+
+label {
+  position: relative;
+}
+
+.head {
+  --size: 20vh;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  background-color: var(--color-beige);
+  z-index: 1;
+  box-shadow: 
+    inset rgba(white, 0.25) 1vh 0.5vh 0,
+    inset rgba(black, 0.05) -1vh -1vh 0;
+}
+
+.hair {
+  --size: 22vh;
+  
+  align-self: center;
+  position: absolute;
+  top: -4vh;
+  left: -1vh;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-gray);
+  border-radius: 100%;
+  z-index: 1;
+  box-shadow: 
+    inset rgba(white, 0.15) 2vh 0.25vh 0,
+    inset rgba(black, 0.05) -1.5vh -0.5vh 0;
+  
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    width: calc(100% - 2vh);
+    height: 60%;
+    background-color: inherit;
+    border-radius: inherit;
+  }
+  
+  &:before {
+    left: -2vh;
+    box-shadow: inset rgba(white, 0.15) 2vh -0.5vh 0;
+  }
+  
+  &:after {
+    right: -2vh;
+    box-shadow: inset rgba(black, 0.05) -1vh -1vh 0;
+  }
+}
+
+.face {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  
+  &:before, &:after {
+    --size: 2vh;
+    
+    content: '';
+    width: var(--size);
+    height: calc(var(--size) / 1.5);
+    background-color: var(--color-black);
+    border-radius: 10vh 10vh 0 0;
+    box-shadow: rgba(black, 0.05) 0 0.25vh 0;
+  }
+}
+
+.nose {
+  --size: 4vh;
+  
+  align-self: center;
+  margin: -2vh 0 -2.5vh;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-beige);
+  border-radius: 2vh 2vh 100% 100%;
+  box-shadow: rgba(black, 0.05) 0.5vh 1vh 0 -0.5vh;
+  z-index: 3;
+}
+
+.stache {
+  --size: 8vh;
+  
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 2vh;
+  width: var(--size);
+  height: calc(var(--size) / 2.5);
+  background-color: var(--color-gray);
+  border-radius: 4vh 4vh 100% 100%;
+  box-shadow: 
+    inset rgba(white, 0.15) 1vh 0.25vh 0,
+    inset rgba(black, 0.05) -1vh -0.25vh 0,
+    rgba(black, 0.05) 0.25vh 0.25vh 0;
+  z-index: 2;
+}
+
+.mouth {
+  --size: 4vh;
+  
+  position: relative;
+  align-self: center;
+  margin-top: -1vh;
+  width: var(--size);
+  height: calc(var(--size) / 2);
+  border-radius: 1vh 1vh 100% 100%;
+  background-color: var(--color-black);
+  box-shadow: rgba(black, 0.1) 0.25vh 0.25vh 0;
+  transform: scale(0, 0);
+}
+
+.tongue {
+  --size: 3vh;
+  
+  align-self: center;
+  position: relative;
+  margin-top: -2vh;
+  width: var(--size);
+  height: calc(var(--size) / 1.2);
+  border-radius: 1vh 1vh 100% 100%;
+  background-color: var(--color-red);
+  box-shadow: rgba(black, 0.1) 0.25vh 0.25vh 0;
+  transform: translateY(-100%) scaleY(0.5);
+  
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    background-color: var(--color-black);
+    width: 0.25vh;
+    height: calc(100% - 0.5vh);
+    border-radius: 1vh;
+    transform: translateX(-50%);
+    opacity: 0.05;
+  }
+}
+
+.bod {
+  --size: 20vh;
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -4vh;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100% 100% 10% 10%;
+  background-color: var(--color-white);
+  box-shadow: inset rgba(black, 0.035) -2vh -0.5vh 0;
+  z-index: -1;
+}
+
+label {
+  will-change: transform;
+  opacity: 0.6;
+  transform: scale(0.98);
+  transition: 
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Animations when checked
+input:checked + label {
+  --speed: 2s;
+  
+  opacity: 1;
+  transform: scale(1.01);
+  
+  .head,
+  .hair {
+    animation: 
+      move-head var(--speed) ease forwards 2,
+      laughing calc(var(--speed) / 12) calc(var(--speed) * 2) linear forwards 6;
+  }
+
+  .face,
+  .nose,
+  .stache {
+    animation: 
+      move-face-down var(--speed) ease forwards 2,
+      move-face-up calc(var(--speed) / 2) calc(var(--speed) * 2) ease forwards;
+  }
+  
+  .eyes:before,
+  .eyes:after {
+    animation: 
+      widen-eyes var(--speed) var(--speed) ease forwards,
+      squint-eyes calc(var(--speed) / 2) calc(var(--speed) * 2) ease forwards;
+  }
+  
+  .mouth {
+    animation: open-mouth var(--speed) ease forwards;
+  }
+  
+  .tongue {
+    animation: stick-out-tongue var(--speed) var(--speed) ease forwards;
+  }
+}
+
+// Animations
+@keyframes move-face-down {
+  20%, 60% { transform: translateY(10%) }
+}
+
+@keyframes move-face-up {
+  20%, 80% { transform: translateY(-10%) }
+}
+
+@keyframes move-head {
+  20%, 60% { transform: translateY(5%) }
+}
+
+@keyframes widen-eyes {
+  20%, 60% { transform: scaleY(1.5) }
+}
+
+@keyframes squint-eyes {
+  20%, 80% { transform: scaleY(0.25) }
+}
+
+@keyframes laughing {
+  50% { transform: translateY(5%) }
+}
+
+@keyframes stick-out-tongue {
+  10%, 60% { transform: translateY(10%) }
+}
+
+@keyframes open-mouth {
+  20%, 70%  { transform: scale(1, 1) }
+  90%, 100% { transform: scale(1, 0) }
+}
