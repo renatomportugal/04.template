@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Patua+One:400,500italic);
+@import url("https://fonts.googleapis.com/css?family=Bangers");
+
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	height: 100%;
+	background-color: silver;
+	background-image: radial-gradient(
+			circle at center,
+			rgba(71, 65, 76, 0.2) 0%,
+			rgba(34, 32, 36, 1) 100%
+		),
+		linear-gradient(335deg, #b00 23.5px, transparent 23px),
+		linear-gradient(155deg, #d00 23.5px, transparent 23px),
+		linear-gradient(335deg, #b00 23.5px, transparent 23px),
+		linear-gradient(155deg, #d00 23.5px, transparent 23px);
+
+	background-size: 100% 100%, 58px 58px, 58px 58px, 58px 58px, 58px 58px;
+	background-position: center center, 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+	font: normal 100% "Fira Sans", sans-serif;
+}
+.speech-bubble {
+	position: absolute;
+	background: #eee;
+	border: 0.1em solid black;
+	border-radius: 0.4em;
+	bottom: 98%;
+	left: 50%;
+	white-space: nowrap;
+	transform: translateX(-45%) rotate(-10deg);
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version */
+}
+
+.speech-bubble:before,
+.speech-bubble:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #eee;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -19px;
+}
+.speech-bubble:before {
+	border-top-color: black;
+	margin-left: -14px;
+	margin-bottom: -28px;
+}
+#quotecontainer {
+	text-align: center;
+	display: inline-block;
+	padding: 0.5em;
+	font-size: 3em;
+	font-family: Bangers, cursive;
+}
+#quotecontainer span {
+	position: relative;
+	display: inline-block;
+}
+#quotecontainer span.additional {
+	font-family: "Patua One";
+	/*white-space:normal; */
+}
+.wrapper {
+	position: fixed;
+	left: 50%;
+	bottom: -6px;
+	transform: translateX(-50%);
+	filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+	animation: move 0.3s ease-out;
+}
+.wrapper img {
+	position: relative;
+	max-height: 60vh;
+	animation: jump 3s ease-in-out infinite;
+}
+@keyframes move {
+	0% {
+		left: -20%;
+		transform: scale(60%);
+	}
+	100% {
+		left: 50%;
+		transform: scale(100%);
+	}
+}
+@keyframes jump {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-2px);
+	}
+	60% {
+		transform: translateY(-1px);
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Display Schedule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <main>
+  <section v-for="(day, index) in schedule">
+    <header>
+     
+    </header>
+    <ul>
+      <li v-for="slot in day.agenda" v-bind:class="{ current: checkTime(slot.range[0], slot.range[1]) }">
+        <h3><b></b>{{slot.range[0]}} - {{slot.range[1]}}</h3>
+        <div v-html="slot.desc"></div>
+        <div><small v-html="slot.location"></small></div>
+      </li>
+      <li class="after-hours">
+        <div>
+          <b>Nothing scheduled</b>
+          <br />at this time
+          <br /><small><small>Take a break</small></small>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
+<aside>
+  <div class="clock">
+    <h3>{{time}}</h3>
+  </div>
+  <h1>Today</h1>
+<div id="upNext">
+  <h3></h3>
+</div>
+</aside>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+/*
+  FontAwesome - The best icon font ever :)
+  https://fortawesome.github.io/Font-Awesome/
+
+  Thanks to Dave Gandy and all involved in FontAwesome !!!
+*/
+[class^="icon"], [class*=" icon"] {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+.iconUser:before {
+  content: "\f007";
+  margin-right: 6px;
+}
+
+.iconAdd {
+  color: gray;
+  cursor: pointer;
+  float: right;
+  font-size: 28px;
+  margin-top: 6px;
+  text-shadow: 0 0 2px black;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.iconAdd:before {
+  content: "\f067";
+}
+.iconAdd:hover {
+  color: #9a9a9a;
+}
+
+.iconRemove {
+  cursor: pointer;
+  color: gray;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.iconRemove:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.iconRemove:before {
+  content: "\f00d";
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.patternwall {
+  color: #e6e6e6;
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+body {
+  font: 14px/22px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url(http://www.patternwall.net/bundles/patternwall/images/patterns/52501e74082ce.png) left top;
+}
+
+.clear {
+  clear: both;
+}
+
+.permissionWrapper {
+  width: 600px;
+  margin: 50px auto;
+}
+
+.listFilterLabel {
+  color: gray;
+  text-shadow: 0 0 1px black;
+}
+
+.listFilterInput {
+  margin: 0 0 20px 10px;
+  height: 28px;
+  line-height: 28px;
+  color: gray;
+  padding: 0 10px;
+  background-color: #2e2e2e;
+  border: solid 1px #343434;
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.listFilterInput:focus {
+  outline: none;
+}
+
+.permissionsTable {
+  width: 100%;
+  color: #5a5a5a;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 0 5px black;
+  -webkit-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
+}
+.permissionsTable tr {
+  background-color: #e6e6e6;
+}
+.permissionsTable th, .permissionsTable td {
+  height: 42px;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 0 5px;
+}
+.permissionsTable th:first-child, .permissionsTable td:first-child {
+  text-align: left;
+  padding: 4px 10px;
+}
+.permissionsTable th:last-child, .permissionsTable td:last-child {
+  width: 25px !important;
+}
+.permissionsTable th:not(:first-child), .permissionsTable td:not(:first-child) {
+  width: 60px;
+}
+.permissionsTable thead th {
+  border-bottom: solid 3px #2e2e2e;
+}
+.permissionsTable tbody tr {
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+.permissionsTable tbody tr td:first-child {
+  font-style: italic;
+}
+.permissionsTable tbody tr:hover {
+  background-color: #dbdbdb;
+}
+.permissionsTable tbody tr.focused {
+  background-color: #d1d1d1;
+}
+.permissionsTable tbody tr.removeState {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: translate(200px, 0);
+  -ms-transform: translate(200px, 0);
+  -webkit-transform: translate(200px, 0);
+  transform: translate(200px, 0);
+}
+.permissionsTable tbody tr.addState {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: translate(-200px, 0);
+  -ms-transform: translate(-200px, 0);
+  -webkit-transform: translate(-200px, 0);
+  transform: translate(-200px, 0);
+}
+.permissionsTable tbody .userName {
+  display: inline-block;
+  width: 90%;
+}
+
+.permissionTag {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.permissionTag[data-perm=view].multi {
+  background-color: #c1c1c1;
+}
+.permissionTag[data-perm=view].active {
+  color: white;
+  background-color: #8DCA35;
+}
+.permissionTag[data-perm=edit].multi {
+  background-color: #c1c1c1;
+}
+.permissionTag[data-perm=edit].active {
+  color: white;
+  background-color: #FFAB00;
+}
+.permissionTag[data-perm=delete].multi {
+  background-color: #c1c1c1;
+}
+.permissionTag[data-perm=delete].active {
+  color: white;
+  background-color: #FFAB00;
+}
+.permissionTag[data-perm=owner].multi {
+  background-color: #c1c1c1;
+}
+.permissionTag[data-perm=owner].active {
+  color: white;
+  background-color: #FF702A;
+}
+.permissionTag[data-perm=admin].multi {
+  background-color: #c1c1c1;
+}
+.permissionTag[data-perm=admin].active {
+  color: white;
+  background-color: #FF702A;
+}

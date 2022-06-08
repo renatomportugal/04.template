@@ -1,0 +1,80 @@
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700i,800');
+
+html, body {
+  background-color: #fff;
+  background-image: url("http://phong-importer.com/upload/hinhanh/grayfull-1155.jpg");
+ 
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.pagetitle {
+  font-family: 'Open Sans';  
+  text-align: left;
+  text-indent: 1.5em;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 26px;
+  color: #000;
+  text-shadow: 1px 1px  rgba(0,0,0,0.2);
+ }
+.colorfull-underline {
+  height:5px;
+  background: -webkit-linear-gradient(left,#FFBF00, #74b9e7);
+  background: -o-linear-gradient(left,#FFBF00, #74b9e7);
+  background: -moz-linear-gradient(left,#FFBF00,#74b9e7);
+  background: linear-gradient(to right, #FFBF00, #74b9e7); 
+}
+
+.eventblock {
+      font-family: open sans, sans-serif;
+		  display: block;
+		  width: 90%;
+		  margin: 0 auto;
+		  padding: 10px;
+	  }
+ .eventcard {
+		  width: 220px;
+			height: 180px;
+			background-color: rgba(255,255,255, 1);
+			text-align: center;
+			padding: 10px;
+			box-shadow:0 4px 8px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.19);
+			display: inline-block;
+			margin: 15px; 
+			position: relative;
+	  }
+.eventcard:hover {
+    box-shadow:0 4px 20px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.3);
+}
+ .eventcard-date {
+	   	min-height: 30px;
+			background-color: #FFBF00;
+			margin: 0 auto;
+      padding: 1px;
+			position: relative;
+	  }
+.eventcard-date p {
+      color: #000;
+      text-shadow: 1px 1px rgba(0,0,0,0.2);
+      font-family: 'open sans', arial, sans-serif;
+			font-size: 1.1em;
+			font-weight: 600;
+     }
+
+.eventcard-text {
+		  height: 90px;
+			background-color: #74b9e7;
+			color: #000;
+			font-size: 0.75em;
+			padding: 10px;
+			margin: 0 auto; 
+	  }
+.eventcard-text p {
+      color: #fff;
+      font-size: 12px;
+	  }
+		

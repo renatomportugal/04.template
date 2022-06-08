@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle");
+:root {
+  --font: 'News Cycle', Helvetica, sans-serif;
+  --accent: #ff8f44;
+  --bg: #403638;
+  --transform: translate(-50%, -50%);
+}
+
+aside {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+main {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  overflow: auto;
+  height: 100vh;
+}
+main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+}
+
+
+main {
+  background: rgba(0, 0, 17, 0.8);
+  color: #fff;
+}
+main header {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  padding: 1em .5em;
+  color: rgba(0, 0, 17, 0.4);
+  background: #0070bb;
+}
+main ul {
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main li {
+  position: relative;
+  -webkit-transition: font-size 300ms ease-in, opacity 300ms ease-in;
+  transition: font-size 300ms ease-in, opacity 300ms ease-in;
+  font-size: .5em;
+  opacity: .2;
+  line-height: 1.2;
+}
+main li.current {
+  font-size: 1em;
+  opacity: 1;
+}
+main li.current::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  -webkit-transform: translateY(-0.5rem);
+          transform: translateY(-0.5rem);
+  border: .5em solid;
+  border-width: 1em 0 1em .625em;
+  border-color: transparent;
+  border-left-color: currentColor;
+}
+main li.current ~ li {
+  opacity: .4;
+}
+main li.current + li {
+  font-size: .675em;
+  opacity: .7;
+}
+
+h1 {
+  position: relative;
+  top: .65em;
+  left: .65em;
+  margin: 0;
+  line-height: 1;
+  display: inline;
+}
+
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.325em;
+}
+h3 b {
+  font-weight: 900;
+}
+
+.clock h3 {
+  -webkit-transform: rotate(90deg) translate( var(--y),-115px);
+          transform: rotate(90deg) translate( var(--y),-115px );
+}
+
+.clock {
+  width:130px;
+  position: absolute;
+  font-size: 1em;
+  top: 1em;
+  right: 1em;
+
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+}
+
+small {
+  font-size: .75em;
+  color: var(--accent);
+  -webkit-transition: color 3000ms linear;
+  transition: color 3000ms linear;
+}
+small small {
+  font-size: .85em;
+}
+
+main li.after-hours {
+  -webkit-animation: fade-in 1000ms ease-in 80ms forwards;
+          animation: fade-in 1000ms ease-in 80ms forwards;
+  position: fixed;
+  font-size: 1.2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  line-height: 1.5;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main li.current ~ li.after-hours {
+  display: none;
+  opacity: 0;
+}
+
+@-webkit-keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  font-family: var(--font);
+  font-size: calc(1em + 1.5vmin);
+  background: var(--bg);
+          background-repeat: no-repeat;
+        background-position: center center;
+            background-size: cover;
+  -webkit-transition: background 1500ms linear;
+  transition: background 1500ms linear;
+  color: #fff;
+}
+
+main header {
+  height: 100%;
+}
+
+main header {
+  width: 0px;
+  padding: 1em 1.25em;
+  line-height: 0;
+}
+
+#upNext{
+  position:absolute;
+  bottom:-5px;
+  left:-5px;
+  display:block;
+  background:rgba(0, 0, 17, 0.8);
+padding:20px;
+  border-radius:5px;
+  border:3px solid rgb(0, 0, 17);
+  
+}

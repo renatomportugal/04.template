@@ -1,0 +1,224 @@
+input {
+  display: none;
+}
+
+.egg {
+  display: block;
+  border-radius: 50% 50% 100px 100px;
+  width: 230px;
+  height: 280px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) rotate(0deg);
+  transform-origin: 50% 80%;
+  animation: wiggle 5s linear 0s infinite;
+  cursor: pointer;
+  transition: .2s ease;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: #ffeb00;
+    display: block;
+    border-radius: 50% 50% 25px 25px;
+    width: 100px;
+    height: 45px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: -35px;
+    width: 0%;
+    background-color: #fff;
+    display: block;
+    height: 100px;
+    border-radius: 25px 75%;
+    transform: translateX(-50%);
+  }
+  
+  .shadow {
+    opacity: .4;
+    background-color: #333;
+    filter: blur(6px);
+    position: absolute;
+    width: 80%;
+    height: 4px;
+    border-radius: 50%;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: -1;
+    transition: .2s ease;
+    animation: wiggleReverse 5s linear 0s infinite;
+  }
+
+  &:hover {
+    animation: none;
+    
+    .shadow {
+      animation: none;
+    }
+  }
+  
+  input:checked + & {
+    animation: none;
+    height: 50px;
+    margin-top: 140px;
+    
+    .shadow {
+      opacity: 0;
+    }
+    
+    &:before {
+      opacity: 1;
+      width: 150px;
+      height: 70px;
+    }
+    
+    &:after {
+      width: 240%;
+    }
+  }
+}
+
+@keyframes wiggle {
+  0%, 50%, 100% { transform: translate(-50%,-50%) rotate(0deg); }
+  25% { transform: translate(-50%,-50%) rotate(-8deg); }
+  75% { transform:translate(-50%,-50%) rotate(8deg); }
+}
+
+@keyframes wiggleReverse {
+  0%, 50%, 100% { transform:translate(-50%,-50%) rotate(0deg); }
+  25% { transform:translate(-60%,-60%) rotate(8deg); }
+  75% { transform:translate(-40%,-40%) rotate(-8deg); }
+}
+
+.face {
+  border: 4px solid transparent;
+  border-bottom-color: #333;
+  position:absolute;
+  left:50%;
+  bottom:25%;
+  width: 70px;
+  height: 10px;
+  z-index:4;
+  border-radius: 0 0 50px 50px;
+  transform:translateX(-50%);
+  transition: .2s ease;
+  
+  &:before,
+  &:after {
+    content:"";
+    border: 4px solid transparent;
+    border-top-color: #333;
+    border-right-color: #333;
+    border-radius: 50%;
+    display:block;
+    width:10px;
+    height:10px;
+    position:absolute;
+    top:-25px;
+    left: 10px;
+    transition: .2s ease;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  &:after {
+    left: auto;
+    right: 10px;
+    transform: translate(50%, -50%) rotate(-45deg);
+  }
+  
+  input:checked + .egg & {
+    width: 25px;
+    border-top-color: #333;
+    border-bottom-color: transparent;
+    border-radius: 50px 50px 0 0;
+    
+     &:before,
+     &:after {
+       border: 0px solid transparent;
+       border-bottom: 4px solid #333;
+       border-radius: 0;
+     }
+    
+    &:before {
+      left: -12px;
+       transform: translate(-50%, -50%) rotate(0deg);
+    }
+    
+    &:after {
+      right: -12px;
+      transform: translate(50%, -50%) rotate(0deg);
+    }
+  }
+}
+
+.egg {
+  &:hover {
+    .face {
+      width: 25px;
+      border-radius: 50%;
+      background-color: #333;
+      
+      &:before,
+      &:after {
+        border-color: #333;
+        background-color: #333;
+      }
+      
+      &:before {
+        left: -12px;
+      }
+      
+      &:after {
+        right: -12px;
+      }
+    }
+  }
+}
+
+input:checked + {
+  .egg {
+    &:hover {
+      .face {
+        &:after,
+        &:before {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+/**/
+body {
+  background: rgb(205,235,142);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(205,235,142,1) 0%, rgba(165,201,86,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=1 );
+  height: 100vh;
+}
+
+h2 {
+  margin: 45px 0;
+  width: 100%;
+  text-align:center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 45px;
+  font-size: 3em;
+  text-shadow: 2px 2px 3px rgba(0,0,0,.3);
+  font-family: 'Bungee Shade';
+}

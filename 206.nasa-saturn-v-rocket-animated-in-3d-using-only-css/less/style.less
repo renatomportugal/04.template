@@ -1,0 +1,985 @@
+// --------------------------------------------------------
+// Customizations - Modify some of these, have a play!
+// --------------------------------------------------------
+// --------------------------------------------------------
+// Rocket dimensions
+// --------------------------------------------------------
+@rocket-height: 750; // default 940
+@rocket-diameter: 72; // default 90
+// --------------------------------------------------------
+// Animation options
+// --------------------------------------------------------
+@animation-length: 10s; // lower is faster
+@animation-cycles: 2; // infinite to loop
+// --------------------------------------------------------
+// Optimizations - these can make things run a bit smoother
+// --------------------------------------------------------
+@show-exhaust: false;
+@show-engines: true;
+@show-rocket-fins: true;
+@use-low-poly-count: false;
+@use-simple-textures: false;
+// --------------------------------------------------------
+
+@fuselage-radius: @rocket-diameter/2;
+@fuselage-length: (59*@rocket-height)/100;
+@engine-height: ((20*@fuselage-length)/100)/3;
+@degrees-per-radian: 57.2958;
+
+body {
+  .axis {
+    width: unit(@rocket-height, px);
+    height: unit(@fuselage-radius * tan(unit(22.5/2, deg))*2, px);
+    transform-origin: unit((@rocket-height/2 - @engine-height/2), px) center;
+  }
+
+  overflow: hidden;
+  background-color: #202020;;
+  perspective: 1200px;
+  margin: 0;
+  height: 100vh;
+  width:100vw;
+
+  div {
+    transform-style: preserve-3d;
+    position: absolute;
+  }
+
+  > div {
+    &:first-child {
+      height: 100%;
+      width: 100%;
+      background-color: #202020;;
+
+      animation: overlay @animation-length @animation-cycles linear;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      @position-offset: unit((@rocket-height)/2 - (@engine-height/2), px);
+      left: calc(~'50% - @{position-offset}');
+      transform: rotateZ(-90deg) translateZ(-45px);
+
+      .axis;
+      animation: ZAxis @animation-length @animation-cycles linear;
+
+      > div {
+        transform: rotateY(-40deg) translateY(0);
+
+        .axis;
+        animation: YAxis @animation-length @animation-cycles linear;
+
+        .rocket {
+          transform: rotateX(8deg) translateX(unit((@rocket-height/11) * -1, px));
+
+          .axis;
+          animation: XAxis @animation-length @animation-cycles linear;
+        }
+      }
+    }
+  }
+}
+
+.common {
+  .shapes {
+    .polygon(@sides, @angle, @radius, @width, @colors, @i:1, @spread: 0) when (@i <= @sides) {
+      &:nth-child(@{i}){
+        background: if(length(@colors) > 1, extract(@colors, @i), extract(@colors, 1));
+        width: unit(@width, px);
+        height: unit((@radius*tan(unit(@angle/2, deg))*2), px);
+        transform-origin: right center;
+        transform: rotateX(unit((@i - 1)*@angle, deg)) translateZ(unit(@radius, px)) rotateY(unit(@spread, deg));
+      }
+      .polygon(@sides, @angle, @radius, @width, @colors, (@i + 1), @spread);
+    }
+
+    .polygon-angled(@n, @radius, @height, @section-outer-height, @width, @section-inner-height, @colors, @i:1) when (@i <= @n){
+      @spoke-poly-rotation: acos(@height/@width) * @degrees-per-radian;
+
+      &:nth-child(@{i}) {
+        background: if(length(@colors) > 1, extract(@colors, @i), extract(@colors, 1));
+        transform: translateY(unit((@section-outer-height/2)-(@section-inner-height/2), px))
+        rotateX((@i - 1)*unit(360/@n, deg))
+        translateX(unit(0-@width, px))
+        translateZ(unit(@radius, px))
+        rotateY(unit(180+@spoke-poly-rotation, deg));
+      }
+      .polygon-angled(@n, @radius, @height, @section-outer-height, @width, @section-inner-height, @colors, (@i + 1));
+    }
+
+    .polygon-flat(@sides, @radius, @angle, @rotation, @color, @i:1) when (@i <= @sides) {
+      &:nth-child(@{i}){
+        width: unit(@radius*2, px);
+        height: unit(@radius*tan(unit(@angle/2, deg))*2, px);
+        background: @color;
+        transform: rotateY(unit(@rotation, deg)) rotateZ(unit((@i - 1)*@angle, deg)) translateZ(0-unit(@radius, px));
+      }
+      .polygon-flat(@sides, @radius, @angle, @rotation, @color, (@i + 1));
+    }
+
+    .triangle(@color, @width: 100, @height: 100, @top: true, @left: true) {
+      width: 0;
+      height: 0;
+
+      border-top: if(@top, unit(@height, px) solid @color, 0);
+      border-bottom: if(not(@top), unit(@height, px) solid @color, 0);
+      border-left: if(not(@left), unit(@width, px) solid transparent, 0);
+      border-right: if(@left, unit(@width, px) solid transparent, 0);
+    }
+  }
+
+  .pseudo {
+    content: '';
+    position: absolute;
+  }
+
+  .fill {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.fuselage {
+
+  @module-radius: (67*@fuselage-radius)/100;
+  @module-length: (28*@rocket-height)/100;
+  @capsule-radius: (50*@module-radius)/100;
+  @escape-radius: (33*@capsule-radius)/100;
+  @escape-length: (14*@rocket-height)/100;
+  @escape-radius2: (70*@escape-radius)/100;
+  @escape-radius3: (70*@escape-radius2)/100;
+
+  @offset1-full: ((@fuselage-radius*tan(11.25deg)*2) - (2*(tan(11.25deg)*@module-radius)))/2;
+  @offset1-half: ((@fuselage-radius*tan(11.25deg)*2) - (2*(tan(22.5deg)*@module-radius)))/2;
+  @offset1: if(@use-low-poly-count, @offset1-half, @offset1-full);
+
+  @offset2-full: @offset1 + ((@module-radius*tan(11.25deg)*2) - (2*(tan(11.25deg)*@capsule-radius)))/2;
+  @offset2-half: @offset1 + ((@module-radius*tan(22.5deg)*2) - (2*(tan(22.5deg)*@capsule-radius)))/2;
+  @offset2: if(@use-low-poly-count, @offset2-half, @offset2-full);
+
+  @offset3-full: @offset2 + ((@capsule-radius*tan(11.25deg)*2) - (2*(tan(11.25deg)*@escape-radius)))/2;
+  @offset3-half: @offset2 + ((@capsule-radius*tan(22.5deg)*2) - (2*(tan(22.5deg)*@escape-radius)))/2;
+  @offset3: if(@use-low-poly-count, @offset3-half, @offset3-full);
+
+  @offset4-full: @offset3 + ((@escape-radius*tan(11.25deg)*2) - (2*(tan(11.25deg)*@escape-radius2)))/2;
+  @offset4-half: @offset3 + ((@escape-radius*tan(22.5deg)*2) - (2*(tan(22.5deg)*@escape-radius2)))/2;
+  @offset4: if(@use-low-poly-count, @offset4-half, @offset4-full);
+
+  @fuselage-stg1-height: (20*@fuselage-length)/100;
+  @fuselage-stg2-height: (9*@fuselage-length)/100;
+  @fuselage-stg3-height: (23*@fuselage-length)/100;
+  @fuselage-stg4-height: (15*@fuselage-length)/100;
+  @fuselage-stg5-height: (3*@fuselage-length)/100;
+  @fuselage-stg6-height: (25*@fuselage-length)/100;
+  @fuselage-stg7-height: (3*@fuselage-length)/100;
+  @fuselage-stg8-height: (3*@fuselage-length)/100;
+  @fuselage-stg9-height: (13*@module-length)/100;
+  @fuselage-stg10-height: (23*@module-length)/100;
+  @fuselage-stg11-height: (10*@module-length)/100;
+  @fuselage-stg12-height: (12*@module-length)/100;
+  @fuselage-stg13-height: (21*@module-length)/100;
+  @fuselage-stg14-height: (15*@module-length)/100;
+  @fuselage-stg15-height: (15*@escape-length)/100;
+  @fuselage-stg16-height: (27*@escape-length)/100;
+  @fuselage-stg17-height: (7*@escape-length)/100;
+  @fuselage-stg18-height: (46*@escape-length)/100;
+  @fuselage-stg19-height: (7*@escape-length)/100;
+
+  @stg1: @fuselage-stg1-height;
+  @stg2: @stg1 + @fuselage-stg2-height;
+  @stg3: @stg2 + @fuselage-stg3-height;
+  @stg4: @stg3 + @fuselage-stg4-height;
+  @stg5: @stg4 + @fuselage-stg5-height;
+  @stg6: @stg5 + @fuselage-stg6-height;
+  @stg7: @stg6 + @fuselage-stg7-height;
+  @stg8: @stg7 + @fuselage-stg8-height;
+  @stg9: @stg8 + @fuselage-stg9-height;
+  @stg10: @stg9 + @fuselage-stg10-height;
+  @stg11: @stg10 + @fuselage-stg11-height;
+  @stg12: @stg11 + @fuselage-stg12-height;
+  @stg13: @stg12 + @fuselage-stg13-height;
+  @stg14: @stg13 + @fuselage-stg14-height;
+  @stg15: @stg14 + @fuselage-stg15-height;
+  @stg16: @stg15 + @fuselage-stg16-height;
+  @stg17: @stg16 + @fuselage-stg17-height;
+  @stg18: @stg17 + @fuselage-stg18-height;
+  @stg19: @stg18 + @fuselage-stg19-height;
+
+  @grill-border-height: (8*@fuselage-stg2-height)/100;
+  @grill-middle-height: (25*@fuselage-stg2-height)/100;
+
+  @gr1: @stg1 + @grill-border-height;
+  @gr2: @gr1 +  @grill-middle-height;
+  @gr3: @gr2 + @grill-border-height;
+  @gr4: @gr3 +  @grill-middle-height;
+  @gr5: @gr4 + @grill-border-height;
+
+  @pat1-vert: linear-gradient(to right, black unit(@stg1,px),
+  white unit(@stg1,px), white unit(@gr1,px),
+  rgba(0,0,0,0) unit(@gr1,px), rgba(0,0,0,0) unit(@gr2,px),
+  white unit(@gr2,px), white unit(@gr3,px),
+  rgba(0,0,0,0) unit(@gr3,px), rgba(0,0,0,0) unit(@gr4,px),
+  white unit(@gr4,px), white unit(@gr5,px),
+  rgba(0,0,0,0) unit(@gr5,px), rgba(0,0,0,0) unit(@stg2,px),
+  white unit(@stg2,px), white unit(@stg3,px),
+  black unit(@stg3,px), black unit(@stg5,px),
+  white unit(@stg5,px), white unit(@stg6,px),
+  rgba(0,0,0,0) unit(@stg6,px), rgba(0,0,0,0) unit(@stg7,px),
+  white unit(@stg7,px));
+
+  @pat2-vert: linear-gradient(to right, white unit(@gr1,px),
+  rgba(0,0,0,0) unit(@gr1,px), rgba(0,0,0,0) unit(@gr2,px),
+  white unit(@gr2,px), white unit(@gr3,px),
+  rgba(0,0,0,0) unit(@gr3,px), rgba(0,0,0,0) unit(@gr4,px),
+  white unit(@gr4,px), white unit(@gr5,px),
+  rgba(0,0,0,0) unit(@gr5,px), rgba(0,0,0,0) unit(@stg2,px),
+  white unit(@stg2,px), white unit(@stg4,px),
+  black unit(@stg4,px), black unit(@stg5,px),
+  white unit(@stg5,px), white unit(@stg6,px),
+  rgba(0,0,0,0) unit(@stg6,px), rgba(0,0,0,0) unit(@stg7,px),
+  white unit(@stg7,px));
+
+  @pat-horiz: linear-gradient(to bottom, white 25%, #DCDCDC 25%, #DCDCDC 50%, white 50%, white 75%, #DCDCDC 75%);
+
+  @pat1-full: @pat1-vert, @pat-horiz;
+  @pat2-full: @pat2-vert, @pat-horiz;
+
+
+  @pat1-simple: linear-gradient(to right, black unit(@stg1,px), white unit(@stg1,px));
+  @pat2-simple: white;
+
+  @pat1: if(@use-simple-textures, white, @pat1-full);
+  @pat2: if(@use-simple-textures, white, @pat2-full);
+
+  > div {
+
+    &:nth-child(1) {
+      > div {
+        .common.shapes.polygon(16, 22.5, @fuselage-radius, @stg8, @pat1 @pat1 @pat2 @pat2 @pat1 @pat1 @pat2 @pat2 @pat1 @pat1 @pat2 @pat2 @pat1 @pat1 @pat2 @pat2);
+        overflow: hidden;
+
+        @poly-height: ceil(@fuselage-radius*tan(unit(22.5/2, deg))*2);
+
+        &:nth-child(2):before,
+        &:nth-child(3):before,
+        &:nth-child(4):before,
+        &:nth-child(6):before,
+        &:nth-child(7):before,
+        &:nth-child(8):before,
+        &:nth-child(10):before,
+        &:nth-child(11):before,
+        &:nth-child(12):before,
+        &:nth-child(14):before,
+        &:nth-child(15):before,
+        &:nth-child(16):before {
+          text-transform: uppercase;
+          writing-mode: vertical-lr;
+          text-orientation: upright;
+          font-family: sans-serif;
+          font-weight: 600;
+          color: red;
+          float: right;
+          line-height: 0;
+          transform-origin: top;
+        }
+
+        &:nth-child(3):before, &:nth-child(7):before, &:nth-child(11):before, &:nth-child(15):before {
+          content: 'usa';
+          font-size: 18px;
+          transform: rotate(90deg) translateY(unit(@stg8 - @fuselage-stg1-height,px)) scale(@rocket-diameter/90, @rocket-height/940);
+        }
+
+        &:nth-child(4):before, &:nth-child(8):before, &:nth-child(12):before, &:nth-child(16):before {
+          content: 'usa';
+          font-size: 18px;
+          transform: rotate(90deg) translateY(unit(@stg8 - @fuselage-stg1-height,px)) translateX(unit(@poly-height, px)) scale(@rocket-diameter/90, @rocket-height/940);
+        }
+
+        &:nth-child(2):before, &:nth-child(6):before, &:nth-child(10):before, &:nth-child(14):before {
+          content: 'united\00a0states';
+          font-size: 8px;
+          margin-top: unit(@fuselage-radius*tan(unit(22.5/2, deg)),px);
+          transform: rotate(90deg) translateY(unit(@fuselage-stg5-height*2+(@poly-height/2),px)) scale(@rocket-diameter/90, @rocket-height/940);
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      transform: translateX(unit(@stg8, px));
+
+      @sections: 16;
+      @base-height: @fuselage-radius*tan(unit((360/@sections)/2, deg))*2;
+
+      @radius-offset: @fuselage-radius - @module-radius;
+      @section-height: 2*(tan(unit((360/@sections)/2, deg))*@module-radius);
+      @section-width: sqrt(pow(@radius-offset, 2) + pow(@fuselage-stg9-height, 2));
+
+      height: unit(@section-height, px);
+      width: unit(@section-width, px);
+
+      > div {
+        .common.fill;
+        .common.shapes.polygon-angled(@sections, @fuselage-radius, @fuselage-stg9-height, @base-height, @section-width, @section-height, black black white white black black white white black black white white black black white white);
+
+        transform-origin: right;
+
+        &::before {
+          .common.pseudo;
+          .common.shapes.triangle(black, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+
+          top:  0 - unit(ceil((@base-height/2)-(@section-height/2)), px);
+        }
+
+        &::after {
+          .common.pseudo;
+          .common.shapes.triangle(black, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+
+          top:  unit(@section-height, px);
+        }
+
+        &:nth-child(4n) {
+          &::after {
+            .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+          }
+        }
+
+        &:nth-child(4n-1) {
+          &::before {
+            .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      transform: translateX(unit(@stg9, px)) translateY(unit(@offset1, px));
+      @pat-full: linear-gradient(to right, white unit(@fuselage-stg10-height, px), black unit(@fuselage-stg10-height, px), black unit(@fuselage-stg10-height + @fuselage-stg11-height, px), white unit(@fuselage-stg10-height + @fuselage-stg11-height, px));
+      @pat: if(@use-simple-textures, white, @pat-full);
+
+      > div {
+        .common.shapes.polygon(if(@use-low-poly-count, 8, 16), if(@use-low-poly-count, 45, 22.5), @module-radius, @fuselage-stg10-height + @fuselage-stg11-height + @fuselage-stg12-height, @pat);
+      }
+    }
+
+    &:nth-child(4) {
+      transform: translateX(unit(@stg12, px)) translateY(unit(@offset1, px));
+
+      @sections: if(@use-low-poly-count, 8, 16);
+      @base-height: @module-radius*tan(unit((360/@sections)/2, deg))*2;
+
+      @radius-offset: @module-radius - @capsule-radius;
+      @section-height: 2*(tan(unit((360/@sections)/2, deg))*@capsule-radius);
+      @section-width: sqrt(pow(@radius-offset, 2) + pow(@fuselage-stg13-height, 2));
+
+      height: unit(@section-height, px);
+      width: unit(@section-width, px);
+
+      > div {
+        .common.fill;
+        .common.shapes.polygon-angled(@sections, @module-radius, @fuselage-stg13-height, @base-height, @section-width, @section-height, white);
+
+        transform-origin: right;
+
+        &::before {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+
+          top:  0 - unit(ceil((@base-height/2)-(@section-height/2)), px);
+        }
+
+        &::after {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+
+          top:  unit(@section-height, px);
+        }
+
+        & when (@use-low-poly-count = true) {
+          &:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13),&:nth-child(14),&:nth-child(15),&:nth-child(16) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      transform: translateX(unit(@stg13, px)) translateY(unit(@offset2, px));
+      > div {
+        .common.shapes.polygon(if(@use-low-poly-count, 8, 16), if(@use-low-poly-count, 45, 22.5), @capsule-radius, @fuselage-stg14-height, gray);
+      }
+    }
+
+    &:nth-child(6) {
+      transform: translateX(unit(@stg14, px)) translateY(unit(@offset2, px));
+
+      @sections: if(@use-low-poly-count, 8, 16);
+      @base-height: @capsule-radius*tan(unit((360/@sections)/2, deg))*2;
+
+      @radius-offset: @capsule-radius - @escape-radius;
+      @section-height: 2*(tan(unit((360/@sections)/2, deg))*@escape-radius);
+      @section-width: sqrt(pow(@radius-offset, 2) + pow(@fuselage-stg15-height, 2));
+
+      height: unit(@section-height, px);
+      width: unit(@section-width, px);
+
+      > div {
+        .common.fill;
+        .common.shapes.polygon-angled(@sections, @capsule-radius, @fuselage-stg15-height, @base-height, @section-width, @section-height, white);
+
+        transform-origin: right;
+
+        &::before {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+
+          top:  0 - unit(ceil((@base-height/2)-(@section-height/2)), px);
+        }
+
+        &::after {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+
+          top:  unit(@section-height, px);
+        }
+
+        & when (@use-low-poly-count = true) {
+          &:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13),&:nth-child(14),&:nth-child(15),&:nth-child(16) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &:nth-child(7) {
+      transform: translateX(unit(@stg15, px)) translateY(unit(@offset3, px));
+      > div {
+        .common.shapes.polygon(if(@use-low-poly-count, 8, 16), if(@use-low-poly-count, 45, 22.5), @escape-radius, @fuselage-stg16-height, white);
+
+        &:nth-child(2n) {
+          background: if(@use-simple-textures, white, linear-gradient(to right, white 10%, #C0C0C0 10%, #C0C0C0 30%, white 30%, white 40%, #C0C0C0 40%, #C0C0C0 60%, white 60%, white 70%, #C0C0C0 70%, #C0C0C0 90%, white 90%));
+        }
+      }
+    }
+
+    &:nth-child(8) {
+      transform: translateX(unit(@stg16, px)) translateY(unit(@offset3, px));
+
+      @sections: if(@use-low-poly-count, 8, 16);
+      @base-height: @escape-radius*tan(unit((360/@sections)/2, deg))*2;
+
+      @radius-offset: @escape-radius - @escape-radius2;
+      @section-height: 2*(tan(unit((360/@sections)/2, deg))*@escape-radius2);
+      @section-width: sqrt(pow(@radius-offset, 2) + pow(@fuselage-stg17-height, 2));
+
+      height: unit(@section-height, px);
+      width: unit(@section-width, px);
+
+      > div {
+        .common.fill;
+        .common.shapes.polygon-angled(@sections, @escape-radius, @fuselage-stg17-height, @base-height, @section-width, @section-height, white);
+
+        transform-origin: right;
+
+        &::before {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+
+          top:  0 - unit(ceil((@base-height/2)-(@section-height/2)), px);
+        }
+
+        &::after {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+
+          top:  unit(@section-height, px);
+        }
+
+        & when (@use-low-poly-count = true) {
+          &:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13),&:nth-child(14),&:nth-child(15),&:nth-child(16) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &:nth-child(9) {
+      transform: translateX(unit(@stg17, px)) translateY(unit(@offset4, px));
+      > div {
+        .common.shapes.polygon(if(@use-low-poly-count, 8, 16), if(@use-low-poly-count, 45, 22.5), @escape-radius2, @fuselage-stg18-height, white);
+      }
+    }
+
+    &:nth-child(10) {
+      transform: translateX(unit(@stg18, px)) translateY(unit(@offset4, px));
+
+      @sections: if(@use-low-poly-count, 8, 16);
+      @base-height: @escape-radius2*tan(unit((360/@sections)/2, deg))*2;
+
+      @radius-offset: @escape-radius2 - @escape-radius3;
+      @section-height: 2*(tan(unit((360/@sections)/2, deg))*@escape-radius3);
+      @section-width: sqrt(pow(@radius-offset, 2) + pow(@fuselage-stg17-height, 2));
+
+      height: unit(@section-height, px);
+      width: unit(@section-width, px);
+
+      > div {
+        .common.fill;
+        .common.shapes.polygon-angled(@sections, @escape-radius2, @fuselage-stg19-height, @base-height, @section-width, @section-height, white);
+
+        transform-origin: right;
+
+        &::before {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+
+          top:  0 - unit(ceil((@base-height/2)-(@section-height/2)), px);
+        }
+
+        &::after {
+          .common.pseudo;
+          .common.shapes.triangle(white, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+
+          top:  unit(@section-height, px);
+        }
+
+        & when (@use-low-poly-count = true) {
+          &:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13),&:nth-child(14),&:nth-child(15),&:nth-child(16) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &:nth-child(11) {
+      > div {
+        .common.shapes.polygon-flat(8, @fuselage-radius, 22.5, 90, darkgray);
+      }
+    }
+  }
+}
+
+.fins {
+  & when (@show-rocket-fins = false) {
+    display: none;
+  }
+
+  @base-height: (20*@fuselage-length)/100;
+
+  @depth: (45*@fuselage-radius)/100;
+  @width: (60*@base-height)/100;
+  @height: (cos(unit(11.25, deg)) * @fuselage-radius*tan(unit(11.25, deg))*2);
+
+
+  @sqr-width: (66*@width)/100;
+  @angle-width: (34*@width)/100;
+
+  @angle-length: sqrt((@height*@height) + (@angle-width*@angle-width));
+
+  @fin-width: (60*@fuselage-radius)/100;
+
+
+  @angle-top-hyp: sqrt((@angle-width*@angle-width) + ((@depth/2) * (@depth/2)));
+  @angle-top-rot-amount: asin((@depth/2)/@angle-top-hyp)*@degrees-per-radian;
+
+  @angle-side-hyp: sqrt(@height*@height + @angle-width*@angle-width);
+  @angle-side-rot-amount: 90 - (asin((@angle-width)/@angle-side-hyp)*@degrees-per-radian);
+
+  > div {
+    width: unit(@sqr-width, px);
+    height: unit(@height, px);
+    transform-origin: center bottom;
+
+    &:nth-child(1) {
+      transform: translateY(unit(0-@height/2, px)) rotateX(33.75deg) translateZ(unit(@fuselage-radius, px));
+    }
+
+    &:nth-child(2) {
+      transform: translateY(unit(0-@height/2, px)) rotateX(123.75deg) translateZ(unit(@fuselage-radius, px));
+    }
+
+    &:nth-child(3) {
+      transform: translateY(unit(0-@height/2, px)) rotateX(213.75deg) translateZ(unit(@fuselage-radius, px));
+    }
+
+    &:nth-child(4) {
+      transform: translateY(unit(0-@height/2, px)) rotateX(303.75deg) translateZ(unit(@fuselage-radius, px));
+    }
+
+    > div {
+      > div {
+        &:nth-child(1) {
+          width: unit(@sqr-width, px);
+          height: unit(@height, px);
+
+          transform: translateZ(unit(@depth/2, px));
+
+          &:after {
+            .common.pseudo;
+            left: unit(@sqr-width, px);
+
+
+            transform-origin: left center;
+            transform: rotateY(unit(@angle-top-rot-amount, deg));
+          }
+        }
+
+        &:nth-child(2) {
+          width: unit(@sqr-width, px);
+          height: unit(@depth, px);
+
+          transform: rotateX(90deg) translateZ(unit(@depth/2, px));
+
+          &:after {
+            .common.pseudo;
+
+            left: unit(@sqr-width, px);
+            transform-origin: left center;
+            transform: translateY(unit(@depth/2, px)) rotateY(unit(@angle-side-rot-amount, deg));
+          }
+
+          &:before {
+            .common.pseudo;
+            width: unit(@angle-side-hyp, px);
+            height: unit(@depth/2, px);
+
+            transform-origin: left center;
+            background: inherit;
+            transform: translateX(unit(@sqr-width, px)) rotateY(unit(@angle-side-rot-amount, deg));
+          }
+        }
+
+        &:nth-child(3) {
+          width: unit(@depth, px);
+          height: unit(@height, px);
+
+          transform: rotateY(-90deg) translateZ(unit(@depth/2, px));
+        }
+
+        &:nth-child(4) {
+          width: unit(@depth, px);
+          height: unit(@height, px);
+
+          background: darkgray!important;
+          transform: rotateY(90deg) translateZ(unit(0-@depth/2 - 0.1, px));
+        }
+      }
+
+      &:nth-child(1) {
+        > div {
+          background-color: white;
+
+          &:nth-child(1) {
+            &:after {
+              .common.shapes.triangle(white, @angle-top-hyp, @height, false);
+            }
+          }
+
+          &:nth-child(2) {
+            &:after {
+              .common.shapes.triangle(white, @angle-side-hyp, @depth/2);
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        transform: scaleY(-1) translateY(unit(0-@height*2, px));
+        > div {
+          background-color: black;
+
+          &:nth-child(1) {
+            &:after {
+              .common.shapes.triangle(black, @angle-top-hyp, @height, false);
+            }
+          }
+
+          &:nth-child(2) {
+            &:after {
+              .common.shapes.triangle(black, @angle-side-hyp, @depth/2);
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        &:after {
+          .common.pseudo;
+          .common.shapes.triangle(white, @sqr-width, unit(@fin-width, px));
+
+          transform-origin: top center;
+          transform: rotateX(90deg) translateZ(unit(0-@height, px)) translateY(unit(@depth/2, px));
+        }
+
+        &:before {
+          .common.pseudo;
+          .common.shapes.triangle(white, @width/3, unit(@fin-width, px), false, false);
+
+          transform-origin: top center;
+          transform: rotateX(90deg) translateZ(unit(0-@height, px)) translateY(unit(@depth/2, px)) translateX(unit(0-@width/3, px));
+        }
+      }
+    }
+  }
+}
+
+.engines {
+  & when (@show-engines = false) {
+    display: none;
+  }
+
+  @engine-base-radius: @fuselage-radius/3;
+  @engine-base-height: (70*@engine-height)/100;
+
+  @engine-top-radius: @engine-base-radius/2;
+  @engine-top-height: (30*@engine-height/100);
+
+  transform: translateX(unit(0-@engine-height, px)) translateY(unit(((@fuselage-radius*tan(11.25deg)*2) - (2*(tan(11.25deg)*@engine-base-radius)))/2, px));
+
+  > div {
+    height: unit(@engine-base-radius*tan(unit(22.5/2, deg))*2, px);;
+    width: unit(@engine-base-height, px);
+
+    > div {
+      &:nth-child(1) {
+        > div {
+          .common.shapes.polygon(16, 22.5, @engine-base-radius, @engine-base-height, #696969);
+        }
+      }
+
+      &:nth-child(2) {
+        transform: translateX(unit(@engine-base-height, px));
+
+        @sections: 16;
+        @base-height: @engine-base-radius*tan(unit((360/@sections)/2, deg))*2;
+
+        @radius-offset: @engine-base-radius - @engine-top-radius;
+        @section-height: 2*(tan(unit((360/@sections)/2, deg))*@engine-top-radius);
+        @section-width: sqrt(pow(@radius-offset, 2) + pow(@engine-top-height, 2));
+
+        height: unit(@section-height, px);
+        width: unit(@section-width, px);
+
+        > div {
+          .common.fill;
+          .common.shapes.polygon-angled(@sections, @engine-base-radius, @engine-top-height, @base-height, @section-width, @section-height, #808080);
+
+          transform-origin: right;
+
+          &::before {
+            .common.pseudo;
+            .common.shapes.triangle(#808080, @section-width, ceil((@base-height/2)-(@section-height/2)), false, false);
+
+            top:  0 - unit(ceil((@base-height/2)-(@section-height/2)), px);
+          }
+
+          &::after {
+            .common.pseudo;
+            .common.shapes.triangle(#808080, @section-width, ceil((@base-height/2)-(@section-height/2)), true, false);
+
+            top:  unit(@section-height, px);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        transform: translateX(unit(@engine-base-height/4, px));
+
+        > div {
+          .common.shapes.polygon-flat(8, @engine-base-radius, 22.5, 90, orange);
+        }
+      }
+
+      &:nth-child(4) {
+        & when (@show-exhaust = false) {
+          display: none;
+        }
+
+        @base-exhaust-length: @engine-base-height+((50*@engine-base-height)/100);
+        @colors: #FF4500, #FFD700, #FFA500, #FF8C00, white;
+        @gradients: linear-gradient(to left, extract(@colors,1) 30%, rgba(0,0,0,0) 40%, extract(@colors,4) 50%, rgba(0,0,0,0) 60%, extract(@colors,3) 70%, rgba(0,0,0,0) 80%, extract(@colors,1) 90%, rgba(0,0,0,0)),
+        linear-gradient(to left, extract(@colors,2) 27%, rgba(0,0,0,0) 35%, extract(@colors,2) 41%, rgba(0,0,0,0) 49%, extract(@colors,5) 55%, rgba(0,0,0,0) 66%, extract(@colors,4) 85%, rgba(0,0,0,0)),
+        linear-gradient(to left, extract(@colors,5) 20%, rgba(0,0,0,0) 29%, extract(@colors,3) 35%, rgba(0,0,0,0) 45%, extract(@colors,2) 52%, rgba(0,0,0,0) 69%, extract(@colors,2) 80%, rgba(0,0,0,0)),
+        linear-gradient(to left, extract(@colors,3) 15%, rgba(0,0,0,0) 24%, extract(@colors,4) 33%, rgba(0,0,0,0) 40%, extract(@colors,1) 50%, rgba(0,0,0,0) 60%, extract(@colors,3) 77%, rgba(0,0,0,0)),
+        linear-gradient(to left, extract(@colors,2) 20%, rgba(0,0,0,0) 33%, extract(@colors,2) 40%, rgba(0,0,0,0) 50%, extract(@colors,2) 70%, rgba(0,0,0,0) 80%, extract(@colors,5) 92%, rgba(0,0,0,0));
+
+        > div {
+          &:nth-child(1) {
+            @exhaust-length: @base-exhaust-length;
+            @exhaust-radius: (75*@engine-base-radius)/100;
+
+            transform: translateX(unit(0-@exhaust-length, px));
+
+            > div {
+              .common.shapes.polygon(16, 22.5, @exhaust-radius, @exhaust-length,
+                      extract(@gradients,2) extract(@gradients,1) extract(@gradients,3) extract(@gradients,2) extract(@gradients,1)
+                      extract(@gradients,1) extract(@gradients,5) extract(@gradients,1) extract(@gradients,2) extract(@gradients,3)
+                      extract(@gradients,4) extract(@gradients,4) extract(@gradients,5) extract(@gradients,3) extract(@gradients,5)
+                      extract(@gradients,4), 1, 25);
+            }
+          }
+
+          &:nth-child(2) {
+            @exhaust-length: @base-exhaust-length+(50*@engine-base-height)/100;
+            @exhaust-radius: (50*@engine-base-radius)/100;
+
+            transform: translateX(unit(0-@exhaust-length, px)) rotateX(33.75deg);
+
+            > div {
+              .common.shapes.polygon(10, 36, @exhaust-radius, @exhaust-length,
+                      extract(@gradients,1) extract(@gradients,1) extract(@gradients,5) extract(@gradients,1) extract(@gradients,2) extract(@gradients,3)
+                      extract(@gradients,4) extract(@gradients,4) extract(@gradients,1) extract(@gradients,3), 1, 25);
+            }
+          }
+
+          &:nth-child(3) {
+            @exhaust-length: @base-exhaust-length+(75*@engine-base-height)/100;
+            @exhaust-radius: (25*@engine-base-radius)/100;
+
+            transform: translateX(unit(0-@exhaust-length, px)) rotateX(123.75deg);
+
+            > div {
+              .common.shapes.polygon(10, 36, @exhaust-radius, @exhaust-length,
+                      extract(@gradients,5) extract(@gradients,2) extract(@gradients,3) extract(@gradients,1) extract(@gradients,4) extract(@gradients,5)
+                      extract(@gradients,3) extract(@gradients,2) extract(@gradients,1) extract(@gradients,5), 1, 18);
+            }
+          }
+
+          &:nth-child(4) {
+            @exhaust-length: @base-exhaust-length+@engine-base-height;
+            @exhaust-radius: (10*@engine-base-radius)/100;
+
+            transform: translateX(unit(0-@exhaust-length, px)) rotateX(213.75deg);
+
+            > div {
+              .common.shapes.polygon(8, 45, @exhaust-radius, @exhaust-length,
+                      extract(@gradients,5) extract(@gradients,1) extract(@gradients,5) extract(@gradients,3) extract(@gradients,2) extract(@gradients,1)
+                      extract(@gradients,5) extract(@gradients,2), 1, 10);
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      transform: rotateX(33.75deg) translateZ(unit(@fuselage-radius - @engine-base-radius/2, px));
+    }
+
+    &:nth-child(2) {
+      transform: rotateX(123.75deg) translateZ(unit(@fuselage-radius - @engine-base-radius/2, px));
+    }
+
+    &:nth-child(3) {
+      transform: rotateX(213.75deg) translateZ(unit(@fuselage-radius - @engine-base-radius/2, px));
+    }
+
+    &:nth-child(4) {
+      transform: rotateX(303.75deg) translateZ(unit(@fuselage-radius - @engine-base-radius/2, px));
+    }
+  }
+}
+
+@keyframes overlay {
+  from {
+    z-index: 0;
+  }
+
+  59% {
+    z-index: 0;
+  }
+
+  60% {
+    z-index: 1;
+  }
+
+  63% {
+    z-index: 1;
+  }
+
+  64% {
+    z-index: 0;
+  }
+
+  to {
+    z-index: 0;
+  }
+}
+
+@keyframes ZAxis {
+  from {
+    transform: rotateZ(-90deg) translateZ(unit((45 - @fuselage-radius) - 45,px));
+  }
+
+  20% {
+    transform: rotateZ(-90deg) translateZ(unit((45 - @fuselage-radius) + 600,px));
+  }
+
+  60% {
+    transform: rotateZ(-90deg) translateZ(unit((45 - @fuselage-radius) + 600,px));
+  }
+
+  61% {
+    transform: rotateZ(-90deg) translateZ(unit((45 - @fuselage-radius) + 600,px));
+  }
+
+  62% {
+    transform: rotateZ(-20deg) translateZ(unit((45 - @fuselage-radius) + 600,px));
+  }
+
+  to {
+    transform: rotateZ(-20deg) translateZ(unit((45 - @fuselage-radius) + 600,px));
+  }
+}
+
+@keyframes YAxis {
+  from {
+    transform: rotateY(-40deg) translateY(0);
+  }
+
+  20% {
+    transform: rotateY(-20deg) translateY(0);
+  }
+
+  60% {
+    transform: rotateY(-20deg) translateY(0);
+  }
+
+  61% {
+    transform: rotateY(-20deg) translateY(0);
+  }
+
+  62% {
+    transform: rotateY(-120deg) translateY(0);
+  }
+
+  to {
+    transform: rotateY(-120deg) translateY(0);
+  }
+}
+
+@keyframes XAxis {
+  from {
+    transform: rotateX(8deg) translateX(unit((@rocket-height/11) * -1, px));
+  }
+
+  20% {
+    transform: rotateX(60deg) translateX(unit((@rocket-height/2), px));
+  }
+
+  60% {
+    transform: rotateX(180deg) translateX(unit((@rocket-height/2.35) * -1, px));
+  }
+
+  61% {
+    transform: rotateX(180deg) translateX(unit((@rocket-height/2.35) * -1, px));
+  }
+
+  62% {
+    transform: rotateX(180deg) translateX(unit((@rocket-height/2.35) * -2, px));
+  }
+
+  to {
+    transform: rotateX(270deg) translateX(unit((@rocket-height/0.94), px));
+  }
+}
+
+// (c) Hai Le

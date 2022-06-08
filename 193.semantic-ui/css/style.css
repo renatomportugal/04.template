@@ -1,0 +1,50 @@
+.agendaheader{
+    padding-top:15px;
+}
+
+.agenda-item {
+   margin-left: 10px;
+   line-height: 1.4em !important;
+}
+
+.sidebar-container {
+    width: 260px;
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.pusher {
+    padding-left: 260px;
+}
+
+.footer {
+    position: fixed !important;
+    background: #E6E6E6 !important;
+    bottom: 0px;
+    height: 75px;
+    width: 100%;
+    left: 260px;
+
+}
+
+.save-button{
+    position: fixed;
+    right: 10px;
+    bottom: 12px;
+}
+
+.pusher {
+    margin-bottom: 80px;
+}
+
+.side-agenda-item {
+    color: white !important;
+}
+
+.sidebar::-webkit-scrollbar { width: 0 !important }
+.sidebar { -ms-overflow-style: none; }
+.sidebar { overflow: -moz-scrollbars-none; }

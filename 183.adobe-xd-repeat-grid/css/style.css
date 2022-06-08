@@ -1,0 +1,105 @@
+/* 
+Settings: 
+
+1) Set a max width for the "artboard" which is defined on 
+.block { width : value }  line 18
+
+2) Set a width for your element which is defined on 
+.grid-element { width: value } line 74
+
+*/
+body {
+  user-select: none;
+}
+
+.block {
+  width: 1200px;
+  position: relative;
+}
+.block__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px dotted #1ECB40;
+}
+
+.image-nest {
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  padding-bottom: 50%;
+  background: #eee;
+  background-size: cover;
+  background-position: center;
+}
+
+.book-mark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.book-mark.booked g {
+  fill: black;
+}
+
+.content {
+  padding: 0.2em 1em;
+  margin-bottom: 1em;
+}
+.content h3 {
+  font-family: 'Exo 2', sans-serif;
+}
+.content p {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-element {
+  margin-right: 30px;
+  width: 300px;
+}
+.grid-element img {
+  width: 100%;
+}
+
+.bar {
+  height: 40px;
+  width: 10px;
+  border-radius: 20px;
+  border: 2px solid #1ECB40;
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+  right: -8px;
+  background: white;
+  transform: translateY(-50%);
+}
+
+.bar-bottom {
+  z-index: 999;
+  height: 10px;
+  width: 40px;
+  border-radius: 20px;
+  border: 2px solid #1ECB40;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  background: white;
+  transform: translateX(-50%);
+}
+
+.cta {
+  display: inline-block;
+  background: #343434;
+  padding: 0.8em 2em;
+  color: white;
+  text-decoration: none;
+}

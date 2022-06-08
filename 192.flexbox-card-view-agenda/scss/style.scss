@@ -1,0 +1,116 @@
+$color: #64bab7;
+
+.cards {
+  border: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards--startdata {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid;
+  padding: 0.5rem;
+}
+
+.card__top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.card__date {
+  margin-right: 0.5rem;
+}
+
+.card__bottom {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card__list {
+  margin: 0;
+
+  dt,
+  dd {
+    display: inline;
+    margin: 0;
+  }
+
+  dd + dt:before {
+    content: '\D\A';
+    white-space: pre-line;
+  }
+
+  dt:first-child:before {
+    content: normal;
+  }
+}
+
+.card__action {
+  order: 99;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+
+
+// Availability label
+.card--waitinglist {
+  position: relative;
+}
+
+.card__availability {
+  position: absolute;
+  left: 2.5rem;
+  top: 4rem;
+  background-color: #c3517e;
+  border: 1px solid #c3517e;
+  color: #fff;
+  padding: 0.5rem  1rem;
+  transform: rotate(-20deg);
+  transition: .2s cubic-bezier(.195,.4,.45,.785);
+}
+
+// Date block
+.date {
+  border: 1px solid $color;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  min-width: 75px;
+  max-width: 75px;
+  overflow: hidden;
+}
+
+.date__month {
+  background: #64bab7;
+}
+
+.date__month {
+  background: $color;
+  color: #fff;
+  font-size: .75rem;
+  white-space: nowrap;
+  padding: 4px 0 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.date__day {
+  background: #fff;
+  color: $color;
+  font-size: 2.25rem;
+  padding: .5rem;
+}

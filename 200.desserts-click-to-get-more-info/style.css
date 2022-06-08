@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container::before {
+    content:  "";
+    background: url('https://images.pexels.com/photos/2267873/pexels-photo-2267873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'), #402a2bd8;
+    background-size: cover;
+    filter: blur(40px);
+    height: 115vh;
+    width: 115vw;
+    position: fixed;
+    top: -10%;
+    display: block;
+    z-index: -1;
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:nth-child(3n+1) { order: 1; }
+.item:nth-child(3n+2) { order: 2; }
+.item:nth-child(3n)   { order: 3; }
+
+.grid::before,
+.grid::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.item {
+    height: 32%;
+    margin: 0 0.5em 0.5em 0;
+}
+
+.item img {
+    width: auto;
+    height: 97%;
+    border: 5px solid #FFF;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.item:hover {
+    position: relative;
+}
+
+.item:hover::after {
+    content: "Сlick to get more info...";
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 0.9em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    overflow: hidden;
+    width: 0;
+    background-color: #FFFFFFAF;
+    color: #333;
+    padding-left: 15px;
+    line-height: 30px;
+    box-sizing: border-box;
+    animation: show-up 0.5s linear forwards;
+}
+
+@keyframes show-up {
+    to {
+        width: 100%;
+    }
+}
+
+
+.big-panel {
+    font-family: 'Cedarville Cursive', cursive;
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: 0.3s all linear;
+    background: #FFFFFFDD;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.big-panel.show {
+    width: 90vw;
+    left: 5vw;
+    top: 5vh;
+}
+
+.big-panel.show .div-img {
+    width: 55%;
+    text-align: center;
+    height: 60vh;
+}
+
+.div-img img {
+    border: 8px solid #FFF;
+    max-height: 100%;
+    max-width: 90%;
+}
+
+.big-panel.show .info {
+    width: 40%;
+    padding-right: 5%;
+    font-size: 1.2em;
+    line-height: 1.35em;
+    text-align: justify;
+    overflow: auto;
+    max-height: 100%;
+}
+
+.big-panel.show .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    transition: 0.3s transform;
+}
+
+.close:hover {
+    transform: rotate(270deg) scale(1.2)
+}
+
+.close:active {
+    color: #fff;
+}

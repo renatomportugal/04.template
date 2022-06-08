@@ -1,0 +1,185 @@
+*{
+     margin: 0;
+     padding:0;
+     box-sizing: border-box;
+}
+body{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     background-color: bisque;
+}
+.nacho{
+     width: 250px;
+     height: 250px;
+     position: relative;
+     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+     background-color: #ef8c15;
+     box-shadow: inset -1px -18px 33px 6px rgba(224,116,16,1);
+     z-index: 5;
+     border-radius: 0 0 25px 25px;
+     transition: background-color .3s ease, box-shadow .3s ease;
+}
+.nacho:hover{
+     transform: scale(1.1)rotate(-10deg);
+     cursor: grab;
+}
+.nacho.ui-draggable-dragging{
+	cursor: grabbing;
+}
+.nacho.drowned{
+	background-color: #eaea41;
+	box-shadow: inset -1px -18px 33px 6px #d8d842;	
+}
+.dot{
+     width: 4px;
+     height: 4px;
+     background-color: #000;
+     position: absolute;
+     border-radius: 50%;
+}
+.dot:nth-child(1){
+     top: 22px;
+     left: 120px;
+}
+.dot:nth-child(2){
+     top: 70px;
+     left: 110px;
+}
+.dot:nth-child(3){
+     top: 150px;
+     left: 80px;
+}
+.dot:nth-child(4){
+     top: 60px;
+     left: 135px;
+}
+.dot:nth-child(5){
+    top: 150px;
+    left: 180px;
+}
+.eyes{
+     width: 72px;
+     margin: 100px auto 0;
+     display: flex;
+     justify-content: space-between;
+}
+.eye{
+     width: 30px;
+     height: 15px;
+     background: #fff;
+     border-radius: 100px / 50px;
+     position: relative;
+     overflow:hidden;
+}
+.pupil{
+     background-color: #000;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     position: absolute;
+     bottom: -.5px;
+     right: 4px;
+}
+.nacho.ui-draggable-dragging .pupil {
+    width: 15px;
+    height: 13px;
+}
+.nose{
+    margin: 25px 95px 0 auto;
+    width: 20px;
+}
+.bars{
+   background-color: #000; 
+ height: 2px;
+}
+.nose .bar1{
+    width: 25px;
+    transform: rotate(30deg);
+}
+.nose .bar2{
+    width: 20px;
+    margin: 10px 0 0 4px;
+    transform: rotate(-35deg);
+}
+.mouth{
+	height: 20px;
+	width: 120px;
+	background-image: url(https://i.postimg.cc/7hvzpmdg/teeth.jpg);
+    background-size: cover;
+    position: absolute;
+    left: 56%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    background-position-y: -15px;
+    border-radius: 30%;
+    border: 5px solid #de4c4c;
+    transition: all .3s ease;
+}
+.nacho.ui-draggable-dragging .mouth{    
+    height: 55px;
+    width: 140px;
+}
+.sauce{
+ position: relative;
+ height: 240px;
+ width: 280px;
+ top: 40px;
+}
+.cheese{
+    width: 80%;
+    height: 22px;
+    background: #fad68d;
+    border-radius: 160px / 70px;
+    position: absolute;
+    top: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+.inside-bowl{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border-top: 30px solid #902a2a;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 100%;
+    border-radius: 0px 0px 100px 100px;
+}
+.mid-bowl{
+    border-top: 115px solid #b93131;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 100%;
+    border-radius: 0px 0px 100px 100px;
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mid-bowl i{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -63px;
+    font-size: 35px;
+    color: #eaea41;
+}
+.bottom-bowl{
+    width: 90px;
+    height: 20px;
+    background: #b93131;
+    border-radius: 160px / 70px;
+    position: absolute;
+    bottom: 83px;
+    left: 50%;
+    transform: translateX(-50%);
+}

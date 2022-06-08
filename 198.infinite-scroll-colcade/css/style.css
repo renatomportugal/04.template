@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  font-size: 18px;
+  padding: 20px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.grid {
+  max-width: 1200px;
+}
+
+.grid:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.grid__column {
+  float: left;
+  width: 32%;
+  margin-left: 2%;
+}
+
+.grid__column:first-child { margin-left: 0 }
+
+.grid__item {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.grid__item--height1 { height: 140px; background: #EA0; }
+.grid__item--height2 { height: 220px; background: #C25; }
+.grid__item--height3 { height: 300px; background: #19F; }
+
+.grid__item img {
+  display: block;
+  max-width: 100%;
+}
+
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+/* loader ellips in separate pen CSS */
