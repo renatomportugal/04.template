@@ -430,12 +430,22 @@
 | [142.responsive-product-comparison-table](https://renatomportugal.github.io/04.template/142.responsive-product-comparison-table/) | <img src="images/142.responsive-product-comparison-table.jpg"/> |
 | [144.table2](https://renatomportugal.github.io/04.template/144.table2/) | <img src="images/144.table2.jpg"/> |
 
+## Desenho
+
+|Aprender     |Telas        |
+|---          |---          |
+| [280.eye](https://renatomportugal.github.io/04.template/280.eye/) | <img src="images/280.eye.jpg"/> |
+
 ## Diagrama_De_Força
 
 |Links        |Telas        |
 |---          |---          |
-| [015.force-directed-diagram](https://renatomportugal.github.io/04.template/015.force-directed-diagram/) ||
-| [024.it-system-interface-explorer](https://renatomportugal.github.io/04.template/024.it-system-interface-explorer/) ||
+| [015.force-directed-diagram](https://renatomportugal.github.io/04.template/015.force-directed-diagram/) |<img src="images/015.force-directed-diagram.jpg"/> |
+| [024.it-system-interface-explorer](https://renatomportugal.github.io/04.template/024.it-system-interface-explorer/) |<img src="images/024.it-system-interface-explorer.jpg"/> |
+| [281.air-nz-force-diagram-of-directors-500-nodes](https://renatomportugal.github.io/04.template/281.air-nz-force-diagram-of-directors-500-nodes/) |<img src="images/281.air-nz-force-diagram-of-directors-500-nodes.jpg"/> |
+| [282.country-borders-force-diagram-d3](https://renatomportugal.github.io/04.template/282.country-borders-force-diagram-d3/) |<img src="images/282.country-borders-force-diagram-d3.jpg"/> |
+| [283.d3-force-directed-node-link-diagram](https://renatomportugal.github.io/04.template/283.d3-force-directed-node-link-diagram/) |<img src="images/283.d3-force-directed-node-link-diagram.jpg"/> |
+| [284.force-directed-diagram](https://renatomportugal.github.io/04.template/284.force-directed-diagram/) |<img src="images/284.force-directed-diagram.jpg"/> |
 
 ## E-Commerce
 
@@ -462,6 +472,12 @@
 |Links        |Telas        |
 |---          |---          |
 | [028.map-creator](https://renatomportugal.github.io/04.template/028.map-creator/) ||
+
+## Emoji
+
+|Links        |Telas        |
+|---          |---          |
+| [288.emoji-picker-on-textarea](https://renatomportugal.github.io/04.template/288.emoji-picker-on-textarea) |<img src="images/288.emoji-picker-on-textarea.jpg"/> |
 
 ## Equipes
 
@@ -490,6 +506,13 @@
 | [132.elegant-contact-form](https://renatomportugal.github.io/04.template/132.elegant-contact-form/) | <img src="images/132.elegant-contact-form.jpg"/> |
 |Abelhas      |Telas        |
 | [231.not-the-bees](https://renatomportugal.github.io/04.template/231.not-the-bees/) | <img src="images/231.not-the-bees.jpg"/> |
+| [286.bootstrap_4_animated_dynamic_form](https://renatomportugal.github.io/04.template/286.bootstrap_4_animated_dynamic_form/) | <img src="images/286.bootstrap_4_animated_dynamic_form.jpg"/> |
+
+## Formulário_Físico
+
+|Links        |Telas        |
+|---          |---          |
+| [287.solicitacao-de-ferias](https://renatomportugal.github.io/04.template/287.solicitacao-de-ferias/) | <img src="images/287.solicitacao-de-ferias.jpg"/> |
 
 ## Gradient_Generator
 
@@ -697,6 +720,46 @@
 |Autocomplete |Telas        |
 |---          |---          |
 | [099.autocomplete](https://renatomportugal.github.io/04.template/099.autocomplete) |<img src="images/099.autocomplete.jpg"/> |
+
+## Timeline
+
+|Horizontal        |Telas        |
+|---               |---          |
+| [099.autocomplete](https://renatomportugal.github.io/04.template/099.autocomplete) |<img src="images/099.autocomplete.jpg"/> |
+| [291.building-a-horizontal-timeline-with-css-and-javascript](https://renatomportugal.github.io/04.template/291.building-a-horizontal-timeline-with-css-and-javascript) |<img src="images/291.building-a-horizontal-timeline-with-css-and-javascript.jpg"/> |
+| [292.horizontal-timeline](https://renatomportugal.github.io/04.template/292.horizontal-timeline) |<img src="images/292.horizontal-timeline.jpg"/> |
+| [293.responsive-horizontal-timeline-using-slick-1-9-0-bootstrap-4-3-1](https://renatomportugal.github.io/04.template/293.responsive-horizontal-timeline-using-slick-1-9-0-bootstrap-4-3-1) |<img src="images/293.responsive-horizontal-timeline-using-slick-1-9-0-bootstrap-4-3-1.jpg"/> |
+|Horizontal Click  |Telas        |
+| [294.horizontal-timeline](https://renatomportugal.github.io/04.template/294.horizontal-timeline) |<img src="images/294.horizontal-timeline.jpg"/> |
+| [295.horizontal-timeline-2](https://renatomportugal.github.io/04.template/295.horizontal-timeline-2) |<img src="images/295.horizontal-timeline-2.jpg"/> |
+| [296.nested-color-coded-interactive-timeline](https://renatomportugal.github.io/04.template/296.nested-color-coded-interactive-timeline) |<img src="images/296.nested-color-coded-interactive-timeline.jpg"/> |
+| [297.timeline (6)](https://renatomportugal.github.io/04.template/297.timeline (6)) |<img src="images/297.timeline (6).jpg"/> |
+| [298.timeline-slider](https://renatomportugal.github.io/04.template/298.timeline-slider) |<img src="images/298.timeline-slider.jpg"/> |
+|Horizontal Hover  |Telas        |
+| [299.animated-circle-timeline](https://renatomportugal.github.io/04.template/299.animated-circle-timeline) |<img src="images/299.animated-circle-timeline.jpg"/> |
+|Vertical          |Telas        |
+|---               |---          |
+| [300.bitcoin-timeline-with-fixed-header-using-flexbox](https://renatomportugal.github.io/04.template/300.bitcoin-timeline-with-fixed-header-using-flexbox) |<img src="images/300.bitcoin-timeline-with-fixed-header-using-flexbox.jpg"/> |
+| [301.bootstrap-timeline](https://renatomportugal.github.io/04.template/301.bootstrap-timeline) |<img src="images/301.bootstrap-timeline.jpg"/> |
+| [302.css-timeline](https://renatomportugal.github.io/04.template/302.css-timeline) |<img src="images/302.css-timeline.jpg"/> |
+| [303.css-timeline-with-custom-properties](https://renatomportugal.github.io/04.template/303.css-timeline-with-custom-properties) |<img src="images/303.css-timeline-with-custom-properties.jpg"/> |
+| [304.flexbox-timeline-layout](https://renatomportugal.github.io/04.template/304.flexbox-timeline-layout) |<img src="images/304.flexbox-timeline-layout.jpg"/> |
+| [305.life-timeline](https://renatomportugal.github.io/04.template/305.life-timeline) |<img src="images/305.life-timeline.jpg"/> |
+| [306.responsive-timeline](https://renatomportugal.github.io/04.template/306.responsive-timeline) |<img src="images/306.responsive-timeline.jpg"/> |
+| [307.simple-responsive-timeline](https://renatomportugal.github.io/04.template/307.simple-responsive-timeline) |<img src="images/307.simple-responsive-timeline.jpg"/> |
+| [308.simple-timeline-test](https://renatomportugal.github.io/04.template/308.simple-timeline-test) |<img src="images/308.simple-timeline-test.jpg"/> |
+| [309.timeline](https://renatomportugal.github.io/04.template/309.timeline) |<img src="images/309.timeline.jpg"/> |
+| [310.timeline-inspiration-material-design-compatible-responsive](https://renatomportugal.github.io/04.template/310.timeline-inspiration-material-design-compatible-responsive) |<img src="images/310.timeline-inspiration-material-design-compatible-responsive.jpg"/> |
+| [311.vertical-timeline](https://renatomportugal.github.io/04.template/311.vertical-timeline) |<img src="images/311.vertical-timeline.jpg"/> |
+| [312.vertical-timeline-2](https://renatomportugal.github.io/04.template/312.vertical-timeline-2) |<img src="images/312.vertical-timeline-2.jpg"/> |
+| [313.ygc-v2-timeline](https://renatomportugal.github.io/04.template/313.ygc-v2-timeline) |<img src="images/313.ygc-v2-timeline.jpg"/> |
+
+## UML
+
+|Autocomplete |Telas        |
+|---          |---          |
+| [289.mermaid-sequence-diagram](https://renatomportugal.github.io/04.template/289.mermaid-sequence-diagram) |<img src="images/289.mermaid-sequence-diagram.jpg"/> |
+| [290.sample-js-sequence-diagram-with-jquery](https://renatomportugal.github.io/04.template/290.sample-js-sequence-diagram-with-jquery) |<img src="images/290.sample-js-sequence-diagram-with-jquery.jpg"/> |
 
 ## Videos
 

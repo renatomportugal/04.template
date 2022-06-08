@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+form {
+  /* Apenas para centralizar o form na página */
+  margin: auto;
+  width: 600px;
+  min-height: 100%;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 9pt;
+       
+}
+
+footer { 
+  
+    margin-left: 0pt;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 8pt;
+  
+}
+
+/*fieldset {
+  /* Para ver as bordas do formulário
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}*/
+
+input {
+
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 10pt;
+  border-bottom: 1.3px solid grey;
+  border-right: white;
+  border-left: white;
+  border-top: white;
+}
+
+label.hora {
+
+  display: inline-block;
+  width: 120px;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 10pt;
+    
+}
+/* Validação de campos */
+#nome:valid {background:#006600;color:#fff }
+#nome:invalid {background:#990000; color:#fff}
+#matricula:valid {background:#006600;color:#fff }
+#matricula:invalid {background:#990000; color:#fff}
+#cargo:valid {background:#006600;color:#fff }
+#cargo:invalid {background:#990000; color:#fff}
+#setor:valid {background:#006600;color:#fff }
+#setor:invalid {background:#990000; color:#fff}
+
+input:hover, textarea:hover {
+
+  background: #dddddd;
+  
+}
+
+h1 {
+
+  text-align: center-left;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-weight: bold;
+
+}
+
+textarea {
+
+  width: 600px;
+  margin-left:20pt;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 10pt;
+  
+}
+
+select {
+  
+ font-family: sans-serif;
+ font-weight: normal;
+ font-size: 10pt;
+ border-bottom: 1.3px solid grey;
+ border-right: white;
+ border-left: white;
+ border-top: white;
+
+}
+
+.buttons {
+  
+  cursor: pointer;
+  
+}

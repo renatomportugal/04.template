@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:700italic);
+
+body {
+  background: #222;
+  color: #fff;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.actor {
+  stroke-width: 2;
+  stroke: #fff;
+  fill: #222;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+text.actor {
+  fill: #fff;
+  stroke: none; 
+}
+.actor-line {
+  stroke: #fff;
+}
+.messageLine0 {
+  stroke-width: 1;
+  marker-end: "url(#arrowhead)";
+  stroke: #fff;
+}
+.messageLine1 {
+  stroke-width: 1;
+  stroke-dasharray: "2 2";
+  stroke: #fff;
+}
+#arrowhead {
+  fill: #fff;
+}
+.messageText {
+  fill: #222;
+  stroke: #fff;    
+}
