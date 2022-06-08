@@ -1,0 +1,355 @@
+html body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 115, 171, 0.2);
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  position: relative;
+  z-index: -1;
+}
+
+.circle {
+  transform: scale(1.8);
+  width: 180px;
+  height: 180px;
+  position: relative;
+  background-color: black;
+  margin-top: 28vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 20px 20px 50px 10px grey;
+}
+
+.hair, .face, .curl, .glasses {
+  position: relative;
+  margin: auto;
+}
+
+.hair {
+  width: 90px;
+  height: 80px;
+  position: absolute;
+  top: 26px;
+  left: 46px;
+  z-index: 2;
+}
+.hair .left {
+  width: 52px;
+  height: 26px;
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  transform: rotate(-16deg);
+  background-color: #924324;
+  border-radius: 50% 40% 100% 0;
+}
+.hair .left .slice {
+  position: relative;
+  width: 35px;
+  height: 20px;
+  border-radius: 50%;
+  border-bottom: solid 4px #f7dece;
+  top: 5px;
+  left: -5px;
+  transform: rotate(-30deg);
+}
+.hair .left-side, .hair .right-side {
+  width: 17px;
+  height: 42px;
+  background-color: #924324;
+  position: absolute;
+  top: 13px;
+  border-radius: 100% 0;
+  transform: rotate(-6deg);
+}
+.hair .right-side {
+  width: 13px;
+  right: 2px;
+  top: 18px;
+  transform: rotate(3deg);
+  border-radius: 0 100%;
+}
+.hair .right {
+  position: absolute;
+  width: 22px;
+  height: 45px;
+  background-color: #924324;
+  right: 10px;
+  top: 2px;
+  transform: rotate(-35deg);
+  border-radius: 100% 100% 80% 100%;
+}
+
+.face {
+  margin: auto;
+  z-index: 1;
+  top: 35px;
+  width: 80px;
+  height: 120px;
+  background-color: #f7dece;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 68% 100%, 32% 100%, 0 65%);
+  border-radius: 30% 30% 40% 40%;
+}
+.face .beard {
+  position: absolute;
+  top: 22px;
+  left: -.5px;
+  width: 71px;
+  height: 68px;
+  z-index: -1;
+  border-radius: 0% 0% 100% 100%;
+  border-bottom: solid 36px rgba(146, 67, 36, 0.8);
+  border-right: solid 5px rgba(146, 67, 36, 0.8);
+  border-left: solid 5px rgba(146, 67, 36, 0.8);
+}
+
+.glasses {
+  top: 14px;
+}
+
+.left-spec, .right-spec {
+  position: relative;
+  width: 25px;
+  height: 23px;
+  border: solid 2px #4d2500;
+  border-radius: 47%;
+  top: 25px;
+  left: 7px;
+  z-index: 1;
+}
+
+.right-spec {
+  left: 43px;
+  top: -4px;
+}
+
+.middle-glasses {
+  position: relative;
+  width: 10px;
+  height: 2px;
+  background-color: #4d2500;
+  left: 34px;
+  top: 10px;
+}
+
+.eye {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 100% 0;
+  transform: rotate(45deg);
+  top: 2px;
+  left: 5px;
+  border: solid 0.5px rgba(0, 0, 0, 0.6);
+}
+.eye .inner-eye {
+  transform: rotate(-45deg);
+  position: relative;
+  width: 8.5px;
+  height: 8px;
+  background-color: #007067;
+  border-radius: 50%;
+  top: 3px;
+  left: 2.5px;
+  z-index: -2;
+}
+.eye .inner-eye .inner-inner {
+  position: relative;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 2;
+  margin: auto;
+  top: 2px;
+}
+
+.eyebrow-left, .eyebrow-right {
+  position: absolute;
+  width: 22px;
+  height: 8px;
+  border-radius: 50%;
+  border-top: solid 3px #421400;
+  top: 36px;
+  left: 10px;
+  transition: .2s;
+}
+
+.eyebrow-right {
+  left: 48px;
+}
+
+.frame-left, .frame-right {
+  width: 16px;
+  height: 2px;
+  background-color: #4d2500;
+  position: relative;
+  top: 34px;
+  left: -8px;
+  transform: rotate(15deg);
+  z-index: 4;
+}
+
+.frame-right {
+  top: -25px;
+  left: 70px;
+  transform: rotate(-15deg);
+}
+
+.neck {
+  position: absolute;
+  width: 28px;
+  height: 25px;
+  background-color: #f7dece;
+  top: 152px;
+  left: 75px;
+  z-index: 0;
+  box-shadow: inset 1px 4px 18px -6px;
+}
+
+.bang1, .bang2, .bang3, .bang4 {
+  position: absolute;
+  width: 20px;
+  height: 21px;
+  background-color: black;
+  top: 108px;
+  left: 110px;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.bang1 {
+  width: 22px;
+  height: 27px;
+}
+
+.bang2 {
+  left: 125px;
+}
+
+.bang3 {
+  left: 142px;
+}
+
+.bang4 {
+  left: 160px;
+}
+
+.left-ear, .right-ear {
+  position: absolute;
+  width: 7px;
+  height: 23px;
+  background-color: #f7dece;
+  left: 44px;
+  border-radius: 50%;
+  border-top: solid grey .5px;
+  top: 81px;
+  z-index: 1;
+}
+
+.right-ear {
+  left: 128px;
+}
+.right-ear .inner-ear {
+  border-right: solid 1px grey;
+  border-left: none;
+}
+
+.inner-ear {
+  position: relative;
+  top: 6px;
+  left: 2px;
+  width: 3px;
+  height: 10px;
+  border-top: solid 1px grey;
+  border-radius: 50%;
+  border-left: solid 1px grey;
+}
+
+.mask {
+  position: relative;
+  top: -3px;
+  left: 3px;
+}
+.mask .strap-right, .mask .strap-left {
+  top: -16px;
+  left: 0px;
+  position: relative;
+  width: 2px;
+  height: 38px;
+  background-color: #4f0070;
+  transform: rotate(150deg);
+}
+.mask .strap-left {
+  transform: rotate(-150deg);
+  left: 68px;
+  top: -46px;
+}
+.mask .face-cover {
+  position: relative;
+  width: 56px;
+  height: 48px;
+  background-color: #4f0070;
+  top: -67px;
+  left: 9px;
+  border-radius: 30% 30% 60% 60%;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 50%);
+}
+.mask .face-cover .nose {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 5px solid #4f0070;
+  border-radius: 50%;
+  top: -3px;
+  left: 6px;
+  z-index: -1;
+}
+.mask .face-cover .line1, .mask .face-cover .line2, .mask .face-cover .line3 {
+  position: relative;
+  width: 54px;
+  height: 10px;
+  border-radius: 60%;
+  border-top: solid 1px rgba(0, 0, 0, 0.2);
+  left: 1px;
+}
+.mask .face-cover .line3 {
+  width: 52px;
+  left: 2px;
+  top: 4px;
+}
+.mask .strap-bottom, .mask .strap-bottom-right {
+  position: relative;
+  width: 28px;
+  height: 1px;
+  top: -55px;
+  left: -10px;
+  background-color: #4f0070;
+  transform: rotate(60deg);
+}
+.mask .strap-bottom-right {
+  left: 56px;
+  transform: rotate(-60deg);
+}
+
+.shoulders {
+  width: 84px;
+  height: 10px;
+  background-color: #2673ab;
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: 50px;
+}

@@ -1,0 +1,221 @@
+:root {
+  --background-color: pink;
+}
+
+body{
+  background: var(--background-color);
+}
+
+.box-canvas{
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  width: 600px;
+  height:600px;
+  background: var(--background-color);
+}
+
+.playing-card {
+  position: absolute;
+  background: white;
+  width: 180px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+.spade {
+  right: 120px;
+  top: 5px;
+  transform: rotate(20deg);
+}
+
+.diamond {
+  right: 160px;
+  transform: rotate(10deg);
+}
+
+.club {
+  right: 200px;
+  transform: rotate(0deg);
+}
+
+.heart {
+  right: 240px;
+  transform: rotate(-10deg);
+}
+
+.spade-main {
+  position: absolute;
+  top: 100px;
+  left: 45px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+}
+
+.spade-main::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+}
+
+.spade-main::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: -19px;
+  width: 54px;
+  height: 54px;
+  background: black;
+  transform: rotate(45deg);
+}
+
+.stalk {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  height: 0;
+  width: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid black;
+}
+
+.corner-detail {
+  position: absolute;
+}
+
+.bottom {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.diamond .corner-detail::before,
+.heart .corner-detail::before {
+  color: red;
+}
+
+/* Letter in corner */
+.corner-detail::before {
+  content: 'A';
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.diamond-small {
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  background: red;
+  width: 20px;
+  height: 25px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Stalk of small spade and club */
+.spade .corner-detail::after, 
+.club .corner-detail::after {
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 18px;
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid black;
+}
+
+/* Left circle of small spade/club */
+.spade-small, .club-small {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: black;
+}
+
+/* Right circle of small spade/club */
+.spade-small::before,
+.club-small::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: black;
+}
+
+/* Point of small spade */
+.spade-small::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: -5px;
+  width: 14px;
+  height: 14px;
+  background: black;
+  transform: rotate(45deg);
+}
+
+/* Top of club */
+.club-small::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: -8px;
+  width: 14px;
+  height: 14px;
+  background: black;
+  border-radius: 50%;
+}
+
+/* Left circle of heart */
+.heart-small {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: red;
+}
+
+/* Right cirle of heart */
+.heart-small::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: red;
+}
+
+/* Point of heart */
+.heart-small::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 0px;
+  width: 0; 
+  height: 0; 
+  border-left: 13px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 13px solid red;
+}

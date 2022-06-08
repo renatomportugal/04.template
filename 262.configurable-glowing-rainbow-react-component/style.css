@@ -1,0 +1,62 @@
+body {
+  background: #000;
+  color: #fff;
+  margin: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#filterDefs {
+  position: absolute;
+  width: 0px;
+  height: 0px; 
+  margin-left: -9999px;
+}
+
+svg {
+  background: #014;
+  width: 100vmax;
+  height: 100vmin;
+}
+
+.ui {
+  opacity: 0;
+  transition: opacity 250ms ease;
+  position: fixed;
+  top: 8px;
+  left: 0; right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body:hover .ui,
+body:active .ui {
+  opacity: 1.0;
+}
+
+.ui label {
+  font-size: .75em;
+  display: block;
+}
+
+.ui__field {
+  display: block;
+  padding: .5em;
+  background: rgba(255,255,255, .5);
+  border-radius: 4px;
+  margin: .25em;
+
+}
+
+.ui__field:not(:last-child) {
+  border-bottom: 2px solid #000;
+}

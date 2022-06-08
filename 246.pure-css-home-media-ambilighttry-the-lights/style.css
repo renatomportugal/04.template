@@ -1,0 +1,195 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+:root {
+  --speed: 0.2;
+  --wall-lightness: 10;
+  --light-switch: 15;
+  --light-switch-border: 10;
+  --light-switch-top: 15;
+  --light-switch-bottom: 25;
+  --brightness: 250;
+  --blur: 30;
+  --shadow-opacity: 0;
+  --tv-bezel: 15;
+  --tv-unit-bezel: 4;
+  --desired-height: 25vmin;
+  --tv-width: 158.1;
+  --tv-height: 89.4;
+  --unit-height: 42;
+  --unit-width: 180;
+  --unit-top: 78.7;
+  --tv-bottom: 114.3;
+  --scaled-tv-width: calc((var(--tv-width) / var(--tv-height)) * var(--desired-height));
+  --one-cm: calc(var(--scaled-tv-width) / var(--tv-width));
+  --scaled-tv-height: calc(var(--tv-height) * var(--one-cm));
+  --scaled-unit-width: calc(var(--unit-width) * var(--one-cm));
+  --scaled-unit-height: calc(var(--unit-height) * var(--one-cm));
+}
+input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+:checked ~ .backdrop {
+  --wall-lightness: 95;
+}
+:checked ~ .scene {
+  --blur: 10;
+  --brightness: 500;
+  --shadow-opacity: 0.95;
+  --tv-bezel: 65;
+  --tv-unit-bezel: 15;
+  --light-switch: 95;
+  --light-switch-border: 75;
+  --light-switch-top: 75;
+  --light-switch-bottom: 95;
+}
+.light-switch {
+  --switch-top: hsl(0, 0%, calc(var(--light-switch-top) * 1%));
+  --switch-bottom: hsl(0, 0%, calc(var(--light-switch-bottom) * 1%));
+  height: 44px;
+  width: 44px;
+  position: absolute;
+  top: 50%;
+  left: calc(var(--tv-width) * 1.5 * var(--one-cm));
+}
+.light-switch:before {
+  content: '';
+  position: absolute;
+  height: calc(15 * var(--one-cm));
+  width: calc(15 * var(--one-cm));
+  background: hsl(0, 0%, calc(var(--light-switch) * 1%));
+  box-shadow: 0 calc(1 * var(--one-cm)) calc(1 * var(--one-cm)) calc(0 * var(--one-cm)) hsla(0, 0%, 35%, var(--shadow-opacity));
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: background calc(var(--speed, 0.2) * 1s) ease, box-shadow calc(var(--speed, 0.2) * 1s) ease;
+  transition: background calc(var(--speed, 0.2) * 1s) ease, box-shadow calc(var(--speed, 0.2) * 1s) ease;
+}
+.light-switch:after {
+  content: '';
+  height: calc(6 * var(--one-cm));
+  width: calc(4 * var(--one-cm));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: calc(var(--one-cm) * 0.5) solid hsl(0, 0%, calc(var(--light-switch-border) * 1%));
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--switch-top)), to(var(--switch-bottom)));
+  background: linear-gradient(var(--switch-top), var(--switch-bottom));
+  -webkit-transition: border 0.2 ease, background calc(var(--speed, 0.2) * 1s) ease;
+  transition: border 0.2 ease, background calc(var(--speed, 0.2) * 1s) ease;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: hsl(0, 0%, calc(var(--wall-lightness) * 1%));
+  z-index: -1;
+  -webkit-transition: background calc(var(--speed, 0.2) * 1s) ease;
+  transition: background calc(var(--speed, 0.2) * 1s) ease;
+}
+.scene {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  position: relative;
+}
+.scene > .tv {
+  margin-bottom: calc((var(--tv-bottom) - var(--unit-top)) * var(--one-cm));
+}
+.tv {
+  height: var(--scaled-tv-height);
+  width: var(--scaled-tv-width);
+  position: relative;
+  background: #000;
+  -webkit-transition: box-shadow calc(var(--speed, 0.2) * 1s) ease;
+  transition: box-shadow calc(var(--speed, 0.2) * 1s) ease;
+  box-shadow: 0 calc(15 * var(--one-cm)) calc(15 * var(--one-cm)) calc(0 * var(--one-cm)) hsla(0, 0%, 35%, var(--shadow-opacity));
+}
+.tv video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: transparent;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #000;
+  border: calc(2 * var(--one-cm)) solid hsl(0, 0%, calc(var(--tv-bezel) * 1%));
+  outline: transparent;
+  -webkit-transition: border calc(var(--speed, 0.2) * 1s) ease;
+  transition: border calc(var(--speed, 0.2) * 1s) ease;
+}
+.tv .ambilight {
+  height: 100%;
+  width: 100%;
+  -webkit-filter: brightness(calc(var(--brightness) * 1%)) blur(calc(var(--blur) * var(--one-cm)));
+          filter: brightness(calc(var(--brightness) * 1%)) blur(calc(var(--blur) * var(--one-cm)));
+}
+.tv-unit {
+  width: var(--scaled-unit-width);
+  height: var(--scaled-unit-height);
+  background: #000;
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  box-shadow: 0 calc(15 * var(--one-cm)) calc(15 * var(--one-cm)) calc(0 * var(--one-cm)) hsla(0, 0%, 35%, var(--shadow-opacity));
+}
+.tv-unit:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: linear-gradient(-35deg, transparent 25%, hsla(0, 0%, 85%, calc(var(--shadow-opacity) * 0.35)), transparent);
+}
+.tv-unit__door {
+  -webkit-box-flex: 1;
+          flex: 1 1 0;
+  background: hsl(0, 0%, calc(var(--tv-unit-bezel) * 1%));
+  position: relative;
+  -webkit-transition: background calc(var(--speed, 0.2) * 1s) ease;
+  transition: background calc(var(--speed, 0.2) * 1s) ease;
+}
+.tv-unit__door:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: calc(var(--scaled-unit-height) - (var(--one-cm) * 15));
+  width: calc(((var(--scaled-unit-width) - (2 * (var(--one-cm) * 0.75))) / 3) - (var(--one-cm) * 15));
+  background: #000;
+}
+.tv-unit__door:not(:last-of-type) {
+  margin-right: calc(0.75 * var(--one-cm));
+}

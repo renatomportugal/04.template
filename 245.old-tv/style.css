@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050205;
+}
+
+.tv-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.tv {
+  padding-top: 80%;
+  background: #443b3b;
+  border-radius: 2px;
+  border: 2px solid #6e5e5f;
+  box-shadow: inset 0 0 18px 0 rgba(0, 0, 0, 0.5), 0 0 0px 6px #443b3b;
+}
+.tv::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 7%;
+  left: 6%;
+  right: 6%;
+  bottom: 19%;
+  background: linear-gradient(0deg, transparent, #0d0c0c, transparent), linear-gradient(34deg, transparent 45%, #7c696b, transparent 55%), linear-gradient(90deg, transparent, #0d0c0c, transparent), linear-gradient(145deg, transparent 45%, #7c696b, transparent 55%);
+  z-index: 1;
+  border-radius: 4px;
+  border: 2px solid #897577;
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.2), 0 0 18px 0 rgba(0, 0, 0, 0.5);
+}
+.tv::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10.1%;
+  right: 10.1%;
+  bottom: 22%;
+  background: #050205;
+  opacity: 0.8;
+  z-index: 2;
+  border-radius: 18%;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.tv__screen {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  right: 12%;
+  bottom: 24%;
+  border-radius: 16%;
+  overflow: hidden;
+  z-index: 2;
+  background: #050205;
+  box-sizing: content-box;
+}
+.tv__screen shader-doodle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 320px;
+  transform: translate(-50%, -50%);
+}
+
+.tv__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 12%;
+  padding: 0 6%;
+  justify-content: space-between;
+}
+.tv__panel .tv__switch {
+  flex: 0 0 auto;
+  width: 6%;
+  margin: 0 2.6%;
+}
+.tv__panel .tv__switch::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #646570, #a2a3ac, #646570);
+  box-shadow: inset 0 0 4px 1px #9798a3, 0 0 8px 1px rgba(0, 0, 0, 0.42);
+}
+.tv__panel .tv__speaker {
+  margin-top: -4.2%;
+  height: 118%;
+  width: 29%;
+  background-image: repeating-linear-gradient(90deg, transparent, black 2%, black 4%, transparent 4%, transparent 8%);
+}
+
+.tv__holders {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.tv__holders .tv__holder {
+  width: 30px;
+  height: 10px;
+  background: linear-gradient(90deg, #101010, #434343, #101010);
+}

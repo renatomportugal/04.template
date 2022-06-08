@@ -1,0 +1,124 @@
+// palette
+$dbr: rgb(75,64,53);
+$dbrT: rgba(75,64,53,0);
+
+$br: rgb(115,96,80);
+$brT: rgba(115,96,80,0);
+
+$dr: rgb(16,2,2);
+$drT: rgba(16,2,2,0);
+
+$lb: rgb(150,200,230);
+$lbT: rgba(150,200,230,0);
+
+$b: rgb(120,170,200);
+$bT: rgba(120,170,200,0);
+
+$pk: rgb(248,135,153);
+$pkT: rgba(248,135,153,0);
+
+$bk: rgb(24,24,24);
+
+$w: rgb(236,236,236);
+$wT: rgba(236,236,236,0);
+
+*, *:before, *:after {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: rgb(150,200,255);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font: 16px Impact, sans-serif;
+	height: 100vh;
+}
+p {
+	color: $w;
+	font-size: 3em;
+	text-transform: uppercase;
+	-webkit-text-stroke: 2px $bk;
+}
+.grumpy-cat {
+	background:
+		// eyes
+		radial-gradient(0.5em 2em at 9em 16.5em,$dr 45%,$drT 50%),
+		radial-gradient(5em 4em at 9em 16.5em,$lb 39%,$b 40%,$b 49%,$bT 50%),
+		radial-gradient(0.5em 2em at 21em 16.5em,$dr 45%,$drT 50%),
+		radial-gradient(5em 4em at 21em 16.5em,$lb 39%,$b 40%,$b 49%,$bT 50%),
+		// whiskers
+		radial-gradient(200% 100% at 80% 0%,$wT 48%,$w 48.5%,$w 49%,$wT 50%) 2em 16.5em / 9em 10em,
+		radial-gradient(200% 100% at 20% 0%,$wT 48%,$w 48.5%,$w 49%,$wT 50%) 19em 16.5em / 9em 10em,
+		radial-gradient(200% 100% at 50% 100%,$wT 46%,$w 47%,$w 49%,$wT 50%) 1em 19.75em / 10em 4em,
+		radial-gradient(200% 100% at 50% 100%,$wT 46%,$w 47%,$w 49%,$wT 50%) 19em 19.75em / 10em 4em,
+		radial-gradient(200% 100% at 80% 100%,$wT 46%,$w 47%,$w 49%,$wT 50%) 1em 20.5em / 10em 4em,
+		radial-gradient(200% 100% at 20% 100%,$wT 46%,$w 47%,$w 49%,$wT 50%) 19em 20.5em / 10em 4em,
+		radial-gradient(200% 100% at 90% 100%,$wT 47%,$w 48%,$w 49%,$wT 50%) 2em 21em / 9em 4em,
+		radial-gradient(200% 100% at 10% 100%,$wT 47%,$w 48%,$w 49%,$wT 50%) 18em 21em / 9em 4em,
+		// nose
+		radial-gradient(3em 1.5em at 50% 20.5em,$pk 49%,$pkT 50%),
+		radial-gradient(1em 1em at 50% 21.25em,$pk 49%,$pkT 50%),
+		radial-gradient(1em 0.75em at 14.4em 21em,$dr 49%,$drT 50%),
+		radial-gradient(1em 0.75em at 15.6em 21em,$dr 49%,$drT 50%),
+		// mouth
+		radial-gradient(5em 2.6em at 50% 23.5em,$w 49%,$wT 50%),
+		radial-gradient(3.5em 2.5em at 50% 23.3em,$pk 49%,$pkT 50%),
+		radial-gradient(5em 2.75em at 50% 23.4em,$dr 49%,$drT 50%),
+		radial-gradient(0.3em 1em at 50% 22em,$dr 49%,$drT 50%),
+		radial-gradient(10em 5.5em at 50% 22.3em,$w 49%,$wT 50%),
+		// face
+		radial-gradient(200% 200% at 0 0,$br 49.5%,$brT 50%) 3.5em 10em / 9em 4em,
+		radial-gradient(200% 200% at 100% 0,$br 49.5%,$brT 50%) 17.5em 10em / 9em 4em,
+		radial-gradient(10em 12em at 9em 16em,$dbr 49.5%,$dbrT 50%),
+		radial-gradient(10em 12em at 21em 16em,$dbr 49.5%,$dbrT 50%),
+		radial-gradient(12em 16em at 8em 15em,$br 49.5%,$brT 50%),
+		radial-gradient(12em 16em at 22em 15em,$br 49.5%,$brT 50%),
+		radial-gradient(100% 200% at 50% 0,$br 49.5%,$brT 50%) 50% 21em / 20.5em 4em,
+		radial-gradient(26em 20em at 50% 15em,$w 49.5%,$wT 50%),
+		// ears
+		conic-gradient($dbrT 34%,$dbr 0 43%,$w 0 44.8%,$wT 0) -10em -10em / 20em 20em,
+		conic-gradient($wT 55.2%,$w 0 57%,$dbr 0 66%,$dbrT 0) 20em -10em / 20em 20em
+		{
+			repeat: no-repeat;
+		}
+	border-radius: 3em 3em 0 0 / 2em 2em 0 0;
+	font-size: 10px;
+	margin-bottom: 3rem;
+	position: relative;
+	width: 30em;
+	height: 25em;
+	// eyelids
+	&:before, &:after {
+		animation: blink 3s linear infinite;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		content: "";
+		display: block;
+		position: absolute;
+		top: 14.5em;
+		width: 5em;
+		height: 4em;
+	}
+	&:before {
+		background: {
+			image: radial-gradient(200% 105% at 75% 50%,$dbr 49%,$dbrT 50%);
+			position: 0 -2em;
+		};
+		left: 6.5em;
+	}
+	&:after {
+		background: {
+			image: radial-gradient(200% 105% at 25% 50%,$dbr 49%,$dbrT 50%);
+			position: 0 -2em;
+		};
+		right: 6.5em;
+	}
+}
+@keyframes blink {
+	from, 40%, 60%, to { background-position: 0 -2em }
+	50% { background-position: 0 0 }
+}

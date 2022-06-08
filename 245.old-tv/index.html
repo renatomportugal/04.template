@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Old TV</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="tv-wrapper">
+  <div class="tv">
+  <canvas id="buffer"
+          width="640"
+          height="480"
+          hidden></canvas>
+  <div class="tv__screen">
+    <shader-doodle shadertoy>
+      <sd-texture id="texture"
+                  src="#buffer"
+                  name="iTexture0"
+                  force-update></sd-texture>
+      <script type="x-shader/x-fragment">
+        #define PI 3.14159265359
+        #define TWO_PI 6.28318530718
+
+        uniform sampler2D iTexture0;
+
+        float noise(vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123 * sin(iTime));
+        }
+
+        float filter(vec2 st, vec4 texture) {
+          return texture2D(
+            iTexture0, 
+            vec2(st.x + sin(iTime * 142.) * .0005 + abs(sin(iTime)) * 0.005, st.y)
+          ).r; 
+        }
+
+        float ease(float x) {
+          return -(cos(PI * x) - 1.) / 2.;
+        }
+
+        void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+          vec2 st = fragCoord/iResolution.xy;
+
+          st -= vec2(.5);
+          float edgeWidth = .15;
+          float edgeSoftness = .2;
+          float edgeValue = .475;
+          float screen = min(.5, 
+            smoothstep(
+              edgeValue - edgeWidth, 
+              edgeValue + edgeSoftness, 
+              abs(st.y)
+            ) +  
+            smoothstep(
+              edgeValue - edgeWidth,
+              edgeValue + edgeSoftness,
+              abs(st.x)
+            )
+          );
+          float flare =
+            1. - smoothstep(
+              .0, 
+              .6, 
+              length(vec2(st.x * .7 + .1, st.y - .4))
+            ) +
+            1. - smoothstep(
+              .0, 
+              .075, 
+              length(vec2(st.x - .2, st.y - .2))
+            );
+          st += vec2(.5);
+          
+          float t = sin(iTime * 2.);
+          float glitchTime = (
+            smoothstep(.0, .5, t) +
+            smoothstep(.5, 1., t)
+          );
+ 
+          st.y +=
+            glitchTime *
+            sin(iTime * 234234.23) * 0.02; 
+          st.y = fract(st.y);
+          
+          float glitchWidth = .2;
+          float glitchOffset = mod(iTime * 1.6, 1.0 + glitchWidth);
+          st.x += 
+            glitchTime * 
+            smoothstep(
+              glitchOffset - glitchWidth, 
+              glitchOffset, 
+              1. - st.y
+            );
+          st.x = fract(st.x);
+
+          st = vec2(ease(st.x), ease(st.y));
+
+          vec4 texture = texture2D(iTexture0, st);
+
+          vec3 color = 
+            abs(1. - screen * 2.) * 
+            (
+              vec3(texture.r * .5 + filter(st, texture), texture.gb) -
+              vec3(glitchTime * noise(st) * .5)
+            ) + 
+            vec3(flare) * .3;
+          
+          fragColor = vec4(color, 1.);
+        }
+      </script>
+    </shader-doodle>
+  </div>
+  <div class="tv__panel">
+    <div class="tv__speaker"></div>
+    <div class="tv__switch"></div>
+    <div class="tv__switch"></div>
+    <div class="tv__switch"></div>
+    <div class="tv__speaker"></div>
+  </div>
+  <div class="tv__holders">
+    <div class="tv__holder"></div>
+    <div class="tv__holder"></div>
+  </div>
+</div>
+</div>
+<!-- partial -->
+  <script src='https://unpkg.com/shader-doodle@alpha'></script><script  src="./script.js"></script>
+
+</body>
+</html>

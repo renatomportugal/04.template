@@ -1,0 +1,35 @@
+body {
+  background: #2fa37f;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #2fa37f 0%, #2fa37f 58%, #1f8966 58%, #1f8966 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2fa37f', endColorstr='#1f8966',GradientType=0 );
+  /* IE6-9 */
+}
+
+svg {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cls-5 {
+  fill: #231f20;
+}
+
+.cls-4 {
+  fill: #fff;
+}
+
+.cls-7 {
+  fill: #b6c4cf;
+}
+
+.cls-9 {
+  fill: #9eb1bf;
+}
+
+.cls-11 {
+  fill: #ffc1c0;
+}

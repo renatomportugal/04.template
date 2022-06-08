@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap&text=Please+scream+inside+your+heart.');
+body {
+  margin: 0;
+  background-color: midnightBlue;
+  background-image: repeating-conic-gradient(transparent 0 5deg, #aaf8 0 10deg);
+}
+figure {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+figure > span, figure > figcaption {
+  display: block;
+  box-sizing: border-box;
+  grid-area: 1/1;
+  line-height: 1;
+}
+figure > span:first-child {
+  font-size: 80vmin;
+}
+figure > span:nth-child(2) {
+  font-size: 50vmin;
+  mix-blend-mode: screen;
+}
+figcaption {
+  align-self: end;
+  margin: 1rem 3rem;
+  text-align: center;
+  font-size: 3rem;
+  color: AliceBlue;
+  text-shadow:
+    midnightBlue 0 3px 2px,
+    royalBlue 1px 0 2px,
+    royalBlue -1px 0 2px,
+    skyBlue 0 -1px 2px;
+  font-family: "Lobster", "Brush Script", "Brush Script MT", cursive;
+  mix-blend-mode: hard-light;
+}

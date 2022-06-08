@@ -1,0 +1,780 @@
+/*COLORS*/
+$color-purple-dark: #4B384C; //dark purple
+$color-purple: #632C65; //purple
+$color-purple-light: #E2A9E5;
+$color-purplecow-base: #504e4a; //gray
+$color-purplecow-secondary: #827163; //light brown
+$color-purplecow-tertiary: #504e4a; // orange beige
+// $color-purplecow-tertiary: darken( $color-purplecow-base, 30% );
+// $color-purplecow-quaternary: #302f2e; // brown
+$color-purplecow-quaternary: #302f2e; // brown
+$color-purplecow-quinary: #f3b06c; // beige
+$color-purplecow-spot: #FFFFFF; // white
+$color-white: #FFF;
+$color-black: #000;
+
+
+/*Color Purple Dark Lighten*/
+
+//30% light
+$bg-color-purple-dark-lighten-30: lighten( $color-purple-dark, 30% );
+
+/*Color Purple Light Saturate*/
+//30% light
+$bg-color-purple-light-30: saturate( $color-purple-light, 30% );
+
+/*Color Purple Dark Saturate*/
+//30% light
+$bg-color-purple-dark-saturate-30: saturate( $color-purple-dark, 30% );
+
+.color-primary {
+ color: $color-purple-light;
+}
+
+.color-secondary {
+ color: $color-purple;
+}
+
+.color-highlight {
+ color: $color-purple-dark;
+}
+
+/* Mixins*/
+
+@mixin pseudo($display: block, $pos: absolute, $content: '', $top: 0, $bottom: 0, $right: 0, $left: 0){
+  content: $content;
+  display: $display;
+  position: $pos;
+  top: $top;
+  bottom: $bottom;
+ left: $left;
+ right: $right;
+}
+
+// breakpoints
+/* @include mq('tablet-wide') {} */
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+/* Layout*/
+
+body {
+   background: $bg-color-purple-dark-lighten-30;
+}
+
+.container {
+ display: flex;
+ position: relative;
+}
+
+.container-inner {
+ display: block;
+}
+
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  margin: auto;
+  height: 100vh;
+}
+
+.grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ margin: auto;
+ width: 100%;
+ 
+ @include mq('tablet-wide') {
+  grid-template-columns: 1fr 1fr 1fr;  
+ }
+ 
+}
+
+.col {
+ display: flex;
+ position: relative;
+ // border: 1px solid red;
+ grid-column: 1 / 3;
+ 
+ 
+ @include mq('tablet-wide') {
+    grid-column: unset;
+ }
+}
+
+.col-full {
+  grid-column: 1 / span 3;
+}
+
+.col-3 {
+  > * { 
+   width: 300px;
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+   flex-wrap: nowrap;
+  }
+}
+
+.col-cows {
+  height: 300px;
+}
+
+.row {
+ display: flex;
+ flex-direction: row;
+ position: relative;
+ margin: auto;
+ 
+ &:before,
+ &:after {
+   @include pseudo;
+ }
+}
+
+.row-cows {
+ .height: 300px;
+}
+
+.item {
+ display: block;
+}
+
+.text-center {
+ text-align: center;
+}
+
+.text-marginAuto {
+ margin: auto;
+}
+
+.text-marginCustom {
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text-wrapper {
+  height: 40px;
+}
+
+// cow styles
+
+//Crafted by Andrea Edstrom 05-05-17
+//Original drawing created by Andrea Edstrom, for my more artwork visit www.andreasartgallery.com
+//codepen.io/designer_guru
+//Twitter @andreaedstrom
+
+
+.purplecow {
+  height: 268px;
+  width: 205px;
+  position: absolute;
+	top: 0;
+	left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  // margin-top: 10px;
+}
+
+.circle {
+	width: 40px;
+	height: 40px;
+  position: absolute;
+  margin: auto;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.oval {
+	width: 100px;
+	height: 50px;
+  position: absolute;
+	background: red;
+	 -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+.head-circle-01 {
+  width: 140px;
+  height: 127px;
+  background-color: $color-purplecow-base;
+  top: 68px;
+  left: 0;
+  right: 0;
+ 
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+ 
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.head-oval-02 {
+  width: 126px;
+  height: 178px;
+  background-color: $color-purplecow-base;
+  bottom: 29px;
+  left: 0;
+  right: 0;
+  margin: auto;
+ 
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+ 
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+} 
+
+.head-top-oval-0 {
+  width: 105px;
+  height: 178px;
+  background-color: $color-purplecow-base;
+  bottom: 54px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 40px;
+ 
+ &.purplelight-saturate {
+  background-color: $bg-color-purple-light-30;
+ }
+
+ &.purpledark-saturate {
+  background-color: $bg-color-purple-dark-saturate-30;
+ }
+}
+
+.forhead-oval-03{
+  width: 60px;
+  height:87px;
+  background-color: $color-purplecow-spot;
+  top: 82px;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.forhead-top-oval-0 {
+  width: 78px;
+  height: 64px;
+  background-color: $color-purplecow-spot;
+  top: 62px;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.snout-oval-04 {
+  width: 119px;
+  height: 78px;
+  background-color: $color-purplecow-spot;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.snout-oval-05 {
+  width: 78px;
+  height: 93px;
+  background-color: $color-purplecow-spot;
+  bottom: 14px;
+  left: 40px;
+}
+
+.snout-oval-flip-06 {
+  width: 78px;
+  height: 93px;
+  background-color: $color-purplecow-spot;
+  bottom: 14px;
+  right: 40px;
+}
+
+.nostrils-oval-07{
+  width: 16px;
+  height: 6px;
+  -ms-transform: rotate(204deg); 
+  -webkit-transform: rotate(204deg); 
+  transform: rotate(204deg);
+  background-color: $color-purplecow-quaternary;
+  bottom: 43px;
+  left: 80px;
+  z-index: 4;
+}
+
+.nostrils-oval-flip-08 {
+  width: 16px;
+  height: 6px;
+  background-color: $color-purplecow-quaternary;
+  -ms-transform: rotate(-204deg); 
+  -webkit-transform: rotate(-204deg); 
+  transform: rotate(-204deg);
+  bottom: 43px;
+  right: 80px;
+  z-index: 4;
+}
+
+.mouth-09 {
+  width: 45px;
+  height: 6px;
+  position: absolute;
+  background-color: $color-purplecow-quaternary;
+  bottom: 18px;
+  z-index: 5;
+  text-align: center;
+  margin: auto;
+  right: 0;
+  left:0;
+}
+
+.ear-base-10 {
+  width: 46px;
+  height: 95px;
+  -ms-transform: rotate(-98deg); 
+  -webkit-transform: rotate(-98deg); 
+  transform: rotate(-98deg); 
+  background-color: $color-purplecow-base;
+  top: 28px;
+  right: -10px;
+  z-index: 2;
+ 
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.ear-base-flip-11 {
+  width: 49px;
+  height: 95px;
+  -ms-transform: rotate(98deg); 
+  -webkit-transform: rotate(98deg);
+  transform: rotate(98deg);
+  background-color: $color-purplecow-base;
+  top: 28px;
+  left: -10px;
+  z-index: 2;
+  
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.ear-tip-12 {
+  width: 32px;
+  height: 42px;
+  background-color: $color-purplecow-base;
+  z-index: 2;
+  top: 54px;
+  right: -30px;
+   -ms-transform: rotate(-94deg); 
+  -webkit-transform: rotate(-94deg);
+  transform: rotate(-94deg);
+  
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.ear-tip-flip-13 {
+  width: 32px;
+  height: 42px;
+  background-color: $color-purplecow-base;
+  z-index: 2;
+  top: 54px;
+  left: -30px;
+  -ms-transform: rotate(94deg); 
+  -webkit-transform: rotate(94deg);
+  transform: rotate(94deg);
+  
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.ear-tip-top-0 {
+    width: 36px;
+    height: 80px;
+    background-color: $color-purplecow-base;
+    z-index: 2;
+    top: 48px;
+    right: -5px;
+    -webkit-transform: rotate(-101deg);
+    transform: rotate(-101deg);
+  
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.ear-tip-top-flip-0 {
+    width: 36px;
+    height: 80px;
+    background-color: $color-purplecow-base;
+    z-index: 2;
+    top: 48px;
+    left: -5px;
+    -webkit-transform: rotate(101deg);
+    transform: rotate(101deg);
+  
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.ear-inner-14 {
+  width: 34px;
+  height: 68px;
+  -ms-transform: rotate(102deg); 
+  -webkit-transform: rotate(-102deg);
+  transform: rotate(-102deg); 
+  background-color: $color-purplecow-secondary;
+  z-index: 2;
+  top: 42px;
+  right: -2px;
+}
+
+.ear-inner-flip-15 {
+  width: 34px;
+  height: 68px;
+  -ms-transform: rotate(102deg); 
+  -webkit-transform: rotate(102deg);
+  transform: rotate(102deg);
+  background-color: $color-purplecow-secondary;
+  z-index: 2;
+  top: 42px;
+  left: -2px;
+}
+
+.horns-16 {
+  width: 17px;
+  height: 55px;
+  background-color: $color-purplecow-spot;
+  top: 22px;
+  right: 65px;
+  z-index: 1;
+}
+
+.horns-flip-17 {
+  width: 17px;
+  height: 55px;
+  background-color: $color-purplecow-spot;
+  top: 22px;
+  left: 65px;
+  z-index: 1;
+}
+
+.horns-top-18 {
+  width: 23px;
+  height: 23px;
+  background-color:$color-purplecow-quinary;
+  top: 18px;
+  right: 62px;
+  -moz-border-radius: 10px / 6px;
+	-webkit-border-radius: 10px / 6px;
+	border-radius: 10px / 6px;
+  z-index: 1;
+}
+
+.horns-top-flip-19{
+  width: 23px;
+  height: 23px;
+  background-color: $color-purplecow-quinary;
+  top: 18px;
+  left: 62px;
+  -moz-border-radius: 10px / 6px;
+	-webkit-border-radius: 10px / 6px;
+	border-radius: 10px / 6px;
+  z-index: 1;
+}
+.eyelash-20 {
+  width: 23px;
+  height: 4px;
+  position: absolute;
+  background-color: $color-purplecow-quaternary;
+  z-index: 4;
+  top: 121px;
+  right: 36px;
+  -ms-transform: rotate(7deg); 
+  -webkit-transform: rotate(7deg);
+  transform: rotate(7deg);
+ 
+  &.small {
+   width: 10px;
+   height: 4px;
+   top: 126px;
+   right: 40px;
+  }
+}
+
+.eyelash-flip-21 {
+  width: 23px;
+  height: 4px;
+  position: absolute;
+  background-color: $color-purplecow-quaternary;
+  z-index: 4;
+  top: 121px;
+  left: 34px;
+  background-color: $color-purplecow-quaternary;
+  -ms-transform: rotate(-7deg); 
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+    
+  &.small {
+   width: 10px;
+   height: 4px;
+   top: 126px;
+   left: 40px;
+  }
+}
+
+.eye-22{
+  width: 42px;
+  height: 42px;
+  background-color: $color-purplecow-tertiary;
+  left: 36px;
+  top: 110px;
+  z-index: 3;
+ 
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+.eye-flip-23 {
+  width: 42px;
+  height: 42px;
+  background-color: $color-purplecow-tertiary;
+  right: 38px;
+  top: 110px;
+  z-index: 3;
+  
+  &.purplelight-saturate {
+   background-color: $bg-color-purple-light-30;
+  }
+  
+  &.purpledark-saturate {
+   background-color: $bg-color-purple-dark-saturate-30;
+  }
+}
+
+
+.eyeball-24{
+  width: 29px;
+  height: 29px;
+  background-color: $color-purplecow-quaternary;
+  right: 43px;
+  top: 118px;
+  z-index: 3;
+  
+}
+
+.eyeball-flip-25{
+  width: 29px;
+  height: 29px;
+  background-color: $color-purplecow-quaternary;
+  left: 43px;
+  top: 118px;
+  z-index: 3;
+}
+
+.pupil-26 {
+ width: 6px;
+ height: 6px;
+ background-color: $color-white;
+ right: 50px;
+ top: 128px;
+  z-index: 3;
+}
+
+.pupil-flip-27 {
+ width: 6px;
+ height: 6px;
+ background-color: $color-white;
+ left: 50px;
+ top: 128px;
+  z-index: 3;
+}
+
+.head-top-28 {
+  width: 59px;
+  height: 75px;
+  background-color: $color-white;
+  top: 1px;
+}
+
+.mouth-base {
+  width: 84px;
+  height: 84px;
+  background: $color-purplecow-quinary;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.spot {
+  background-color: $color-purplecow-spot;
+  position: absolute;
+  z-index: 4;
+}
+.spot-01 {
+  width: 18px;
+  height: 24px;
+  -ms-transform: rotate(-10deg); 
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  bottom: 50px;
+  left: 42px;
+}
+
+.spot-02 {
+  width: 18px;
+  height: 24px;
+  -ms-transform: rotate(10deg); 
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  bottom: 50px;
+  right: 42px;
+}
+
+
+.spot-04 {
+  width: 12px;
+  height: 18px;
+  -ms-transform: rotate(-12deg); 
+  -webkit-transform: rotate(-12deg);
+  transform: rotate(-12deg);
+  bottom: 80px;
+  left: 42px;
+}
+
+.spot-05 {
+  width: 12px;
+  height: 18px;
+  -ms-transform: rotate(12deg); 
+  -webkit-transform: rotate(12deg);
+  transform: rotate(12deg);
+  bottom: 80px;
+  right: 42px;
+}
+
+.spot-06 {
+  width: 8px;
+  height: 9px;
+  -ms-transform: rotate(-14deg); 
+  -webkit-transform: rotate(-14deg);
+  transform: rotate(-14deg);
+  bottom: 104px;
+  left: 42px;
+}
+
+.spot-07 {
+  width: 8px;
+  height: 9px;
+  -ms-transform: rotate(14deg); 
+  -webkit-transform: rotate(14deg);
+  transform: rotate(14deg);
+  bottom: 104px;
+  right: 42px;
+}
+
+.spot-08 {
+  width: 26px;
+  height: 32px;
+  top: 98px;
+  z-index: 5;
+  background-color: $color-purplecow-quaternary;
+  opacity: .5;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.purplecow-base-color {
+  background-color: $color-purplecow-base;
+}
+
+.purplecow-base-color {
+  background-color: $color-purplecow-base;
+}
+
+.purplecow-secondary-color {
+  background-color: $color-purplecow-secondary;
+}
+
+.purplecow-tertiary-color {
+   background-color: $color-purplecow-tertiary;
+}
+
+.purplecow-quinary-color {
+   background-color: $color-purplecow-quinary;
+}
+
+.purplecow-quaternary-color {
+   background-color: $color-purplecow-quaternary;
+}
+
+.purplecow-white-color {
+  background-color: $color-white;
+}

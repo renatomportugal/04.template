@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f9ea8f;
+	background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+button {
+	cursor: pointer;
+	font-family: 'Libre Barcode 39 Text', cursive;
+	font-size: 40px;
+	background: none;
+	border: none;
+}
+
+button:before {
+	content: '';
+	position: absolute;
+	width: 150px;
+	height: 5px;
+	transform: translateX(-3px) translateY(-5px);
+	background: rgba(255,0,0,0.0);
+	transition: 500ms;
+}
+
+button:hover:before {
+	animation: line 500ms forwards;
+}
+
+button:hover {
+	animation: blink 500ms 300ms;
+}
+
+@keyframes line {
+	from { background: rgba(255,0,0,0.8);}
+	to {
+		background: rgba(255,0,0,0.8);
+		transform: translateX(-3px) translateY(38px);
+	}
+}
+
+@keyframes blink {
+	from {color: #eee;}
+	to {color: black;}
+}
+
+button:focus {
+	outline: none;
+}

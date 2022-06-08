@@ -1,0 +1,64 @@
+*, *:before, *:after {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #96c8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: 16px Impact, sans-serif;
+  height: 100vh;
+}
+
+p {
+  color: #ececec;
+  font-size: 3em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #181818;
+}
+
+.grumpy-cat {
+  background: radial-gradient(0.5em 2em at 9em 16.5em, #100202 45%, rgba(16, 2, 2, 0) 50%), radial-gradient(5em 4em at 9em 16.5em, #96c8e6 39%, #78aac8 40%, #78aac8 49%, rgba(120, 170, 200, 0) 50%), radial-gradient(0.5em 2em at 21em 16.5em, #100202 45%, rgba(16, 2, 2, 0) 50%), radial-gradient(5em 4em at 21em 16.5em, #96c8e6 39%, #78aac8 40%, #78aac8 49%, rgba(120, 170, 200, 0) 50%), radial-gradient(200% 100% at 80% 0%, rgba(236, 236, 236, 0) 48%, #ececec 48.5%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 2em 16.5em/9em 10em, radial-gradient(200% 100% at 20% 0%, rgba(236, 236, 236, 0) 48%, #ececec 48.5%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 19em 16.5em/9em 10em, radial-gradient(200% 100% at 50% 100%, rgba(236, 236, 236, 0) 46%, #ececec 47%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 1em 19.75em/10em 4em, radial-gradient(200% 100% at 50% 100%, rgba(236, 236, 236, 0) 46%, #ececec 47%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 19em 19.75em/10em 4em, radial-gradient(200% 100% at 80% 100%, rgba(236, 236, 236, 0) 46%, #ececec 47%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 1em 20.5em/10em 4em, radial-gradient(200% 100% at 20% 100%, rgba(236, 236, 236, 0) 46%, #ececec 47%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 19em 20.5em/10em 4em, radial-gradient(200% 100% at 90% 100%, rgba(236, 236, 236, 0) 47%, #ececec 48%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 2em 21em/9em 4em, radial-gradient(200% 100% at 10% 100%, rgba(236, 236, 236, 0) 47%, #ececec 48%, #ececec 49%, rgba(236, 236, 236, 0) 50%) 18em 21em/9em 4em, radial-gradient(3em 1.5em at 50% 20.5em, #f88799 49%, rgba(248, 135, 153, 0) 50%), radial-gradient(1em 1em at 50% 21.25em, #f88799 49%, rgba(248, 135, 153, 0) 50%), radial-gradient(1em 0.75em at 14.4em 21em, #100202 49%, rgba(16, 2, 2, 0) 50%), radial-gradient(1em 0.75em at 15.6em 21em, #100202 49%, rgba(16, 2, 2, 0) 50%), radial-gradient(5em 2.6em at 50% 23.5em, #ececec 49%, rgba(236, 236, 236, 0) 50%), radial-gradient(3.5em 2.5em at 50% 23.3em, #f88799 49%, rgba(248, 135, 153, 0) 50%), radial-gradient(5em 2.75em at 50% 23.4em, #100202 49%, rgba(16, 2, 2, 0) 50%), radial-gradient(0.3em 1em at 50% 22em, #100202 49%, rgba(16, 2, 2, 0) 50%), radial-gradient(10em 5.5em at 50% 22.3em, #ececec 49%, rgba(236, 236, 236, 0) 50%), radial-gradient(200% 200% at 0 0, #736050 49.5%, rgba(115, 96, 80, 0) 50%) 3.5em 10em/9em 4em, radial-gradient(200% 200% at 100% 0, #736050 49.5%, rgba(115, 96, 80, 0) 50%) 17.5em 10em/9em 4em, radial-gradient(10em 12em at 9em 16em, #4b4035 49.5%, rgba(75, 64, 53, 0) 50%), radial-gradient(10em 12em at 21em 16em, #4b4035 49.5%, rgba(75, 64, 53, 0) 50%), radial-gradient(12em 16em at 8em 15em, #736050 49.5%, rgba(115, 96, 80, 0) 50%), radial-gradient(12em 16em at 22em 15em, #736050 49.5%, rgba(115, 96, 80, 0) 50%), radial-gradient(100% 200% at 50% 0, #736050 49.5%, rgba(115, 96, 80, 0) 50%) 50% 21em/20.5em 4em, radial-gradient(26em 20em at 50% 15em, #ececec 49.5%, rgba(236, 236, 236, 0) 50%), conic-gradient(rgba(75, 64, 53, 0) 34%, #4b4035 0 43%, #ececec 0 44.8%, rgba(236, 236, 236, 0) 0) -10em -10em/20em 20em, conic-gradient(rgba(236, 236, 236, 0) 55.2%, #ececec 0 57%, #4b4035 0 66%, rgba(75, 64, 53, 0) 0) 20em -10em/20em 20em;
+  background-repeat: no-repeat;
+  border-radius: 3em 3em 0 0 / 2em 2em 0 0;
+  font-size: 10px;
+  margin-bottom: 3rem;
+  position: relative;
+  width: 30em;
+  height: 25em;
+}
+.grumpy-cat:before, .grumpy-cat:after {
+  animation: blink 3s linear infinite;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 14.5em;
+  width: 5em;
+  height: 4em;
+}
+.grumpy-cat:before {
+  background-image: radial-gradient(200% 105% at 75% 50%, #4b4035 49%, rgba(75, 64, 53, 0) 50%);
+  background-position: 0 -2em;
+  left: 6.5em;
+}
+.grumpy-cat:after {
+  background-image: radial-gradient(200% 105% at 25% 50%, #4b4035 49%, rgba(75, 64, 53, 0) 50%);
+  background-position: 0 -2em;
+  right: 6.5em;
+}
+
+@keyframes blink {
+  from, 40%, 60%, to {
+    background-position: 0 -2em;
+  }
+  50% {
+    background-position: 0 0;
+  }
+}

@@ -1,0 +1,233 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.fish__transparent::before, .fish__body::before, .fish__body::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+body {
+  background: #7690B5;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .container {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  animation: swim 5s cubic-bezier(0.17, 0.78, 0.8, 0.28) infinite;
+}
+
+.fish {
+  position: relative;
+  background: #7690B5;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.fish > * {
+  position: absolute;
+}
+.fish__transparent {
+  width: 50%;
+  height: 100%;
+  background: #7690B5;
+  right: 0;
+}
+.fish__transparent::before {
+  width: 7.75rem;
+  height: 7.75rem;
+  background: #7690B5;
+  border-radius: 50%;
+  top: 0;
+  left: -4.5rem;
+}
+.fish__body {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(200deg, transparent 24%, #FBFBF2 24%);
+}
+.fish__body::before {
+  z-index: 5;
+  width: 7.75rem;
+  height: 7.75rem;
+  background-color: #FBFBF2;
+  border-radius: 0% 126% 0% 54%;
+  right: -4.5rem;
+  bottom: -0.75rem;
+}
+.fish__body::after {
+  z-index: 8;
+  height: 6.5rem;
+  width: 2.5rem;
+  background-color: #7690B5;
+  border-radius: 0% 144%;
+  right: -28px;
+  bottom: 61px;
+  transform: rotate(-52deg);
+}
+.fish__body .eye {
+  z-index: 6;
+  position: absolute;
+  width: 0.75rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #121212;
+}
+.fish__body .eye.left {
+  top: 11rem;
+  left: 9.5rem;
+  transform: rotate(20deg);
+}
+.fish__body .eye.right {
+  top: 14rem;
+  left: 9.25rem;
+  transform: rotate(-20deg);
+}
+.fish__body .spot {
+  position: absolute;
+  border-radius: 50%;
+  background: #F6B543;
+}
+.fish__body .spot:nth-of-type(1) {
+  width: 3.5rem;
+  height: 3.5rem;
+  top: 3.75rem;
+  left: 2rem;
+}
+.fish__body .spot:nth-of-type(2) {
+  z-index: 6;
+  width: 4rem;
+  height: 3rem;
+  top: 14rem;
+  left: 7rem;
+}
+.fish__body .spot:nth-of-type(3) {
+  z-index: 6;
+  width: 5rem;
+  height: 5rem;
+  top: 9.5rem;
+  left: -2rem;
+}
+.fish__body .spot:nth-of-type(4) {
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  top: 6.75rem;
+  left: -3.5rem;
+}
+
+.snout {
+  position: absolute;
+  z-index: 5;
+  width: 1rem;
+  height: 2.75rem;
+  border-radius: 0.5rem 100% 50% 0.5rem;
+  background: #FBFBF2;
+  right: 3.3rem;
+  bottom: 0.9rem;
+  transform: rotate(-7deg);
+}
+
+.upperfin {
+  z-index: 5;
+  position: absolute;
+  top: 4rem;
+  left: 1.5rem;
+  width: 8rem;
+  height: 8rem;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: radial-gradient(transparent 65%, rgba(246, 181, 67, 0.3) 65%);
+  background-size: 12rem 12rem;
+}
+
+.fin {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: #FBFBF2;
+  border-radius: 20% 100% 5% 100%;
+}
+.fin.left {
+  z-index: 10;
+  transform: rotate(19deg);
+  top: 6.75rem;
+  left: 6rem;
+  box-shadow: inset 5px -3px 0 #80808047;
+}
+.fin.right {
+  z-index: -2;
+  transform: rotate(-53deg);
+  bottom: -0.5rem;
+  left: 3.25rem;
+  box-shadow: inset 5px 5px 0 #80808047;
+}
+
+.tail {
+  position: absolute;
+  width: 7rem;
+  height: 5rem;
+  top: 0rem;
+  left: -1rem;
+  transform: rotate(45deg);
+}
+.tail-left, .tail-right {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem 100%;
+  background: #FBFBF2;
+}
+.tail-left {
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  top: 0;
+  left: 0;
+  animation: left-t 1s ease infinite;
+}
+.tail-right {
+  transform: rotate(90deg);
+  top: 0;
+  right: 0;
+  animation: right-t 1s ease infinite;
+}
+
+@keyframes swim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes left-t {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes right-t {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(100deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}

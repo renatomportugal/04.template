@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Custom cursors using data-uri</title>
+  <link rel='stylesheet' href='https://s.cdpn.io/9729/cyborg_bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container fluid">
+  <div class="row">
+    <div class="span12"><h1>Custom cursors using data-uri</h1></div>
+    <blockquote class="span12">The data-uri among other things allows you to use inline graphics in <code>CSS</code> using <code>base64</code> encoded strings. This can be handy as you will have all resources in one file - your CSS file. The method requires you to <code>Base64 encode</code> your image, converting the binary data into a long string which you then use in CSS.</blockquote>
+    <h4 class="span12">This example uses a Base64 encoded icon/pointer which is then used as a custom cursor in the CSS. The fourth example uses SVG based cursor.<h4>
+  </div>
+  <div class="row cursors">
+    <div class="span2 cursor1" title="The original cute arrow"><div class="air">This area has a custom cursor no 1</div></div><div class="span2 cursor2" title="A piece of graphics where I just played around with my graphics program and wanted to test how big an cursor can get"><div class="air">This area has a custom cursor no 2</div></div><div class="span2 cursor3" title="One Direction logo, cause I showed this custom cursor stuff to my daughter and she asked can you do it with 1D dad!?"><div class="air">This area has a custom cursor no 3 (my daughter asked if I could make this :-))</div></div><div class="span2 svg">
+      <div class="air">Here a SVG external cursor is used</div>
+    </div><div class="theCursor1 span2"><br />This is the cursor1</div>
+  </div>
+      <div class="row">
+        <div class="span12">
+          <h4>Source CSS</h4>
+          <pre title="Data have been shortend, look in the CSS tab for full data.">.cursor1 {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAASUhEUgAAACAAAAAgCAYAAABzenr0AAAJFklEQVR42rWXCXBU9R3Hv+/V...), auto;
+}
+.svg {
+  cursor: url(http://cursor.in/assets/copy.svg), auto;
+}
+          </pre>
+        </div>
+      </div>
+  <footer class="row"><br />    <div class="span12"><small><em>The code here is a copy of code related to a post on Stack overflow: "<a href="http://stackoverflow.com/questions/13932291/css-cursor-using-data-uri">css cursor using data-uri</a>".</em></small></div></footer>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</body>
+</html>
