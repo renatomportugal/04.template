@@ -641,6 +641,13 @@
 | [038.tabs-navigation-ui](https://renatomportugal.github.io/04.template/038.tabs-navigation-ui/) ||
 | [041.vuetify-avatars-group](https://renatomportugal.github.io/04.template/041.vuetify-avatars-group/) ||
 
+## Livros
+
+|Links        |Telas        |
+|---          |---          |
+| [315.book-layout](https://renatomportugal.github.io/04.template/315.book-layout) |<img src="images/315.book-layout.png"/> |
+| [316.turning-pages-with-css](https://renatomportugal.github.io/04.template/316.turning-pages-with-css) |<img src="images/316.turning-pages-with-css.png"/> |
+
 ## Mensagem
 
 |Chat         |Telas        |
