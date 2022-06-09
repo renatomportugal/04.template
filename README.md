@@ -142,6 +142,7 @@
 | [251.cat-in-a-box](https://renatomportugal.github.io/04.template/251.cat-in-a-box/) |<img src="images/251.cat-in-a-box.jpg"/> |
 | [256.grumpy-cat](https://renatomportugal.github.io/04.template/256.grumpy-cat/) |<img src="images/256.grumpy-cat.jpg"/> |
 | [261.window-cat](https://renatomportugal.github.io/04.template/261.window-cat/) |<img src="images/261.window-cat.jpg"/> |
+| [314.animated-cat-with-css](https://renatomportugal.github.io/04.template/314.animated-cat-with-css/) |<img src="images/314.animated-cat-with-css.jpg"/> |
 |Girafa       |Telas        |
 | [239.codevember-29giraffe](https://renatomportugal.github.io/04.template/239.codevember-29giraffe/) |<img src="images/239.codevember-29giraffe.jpg"/> |
 |Google       |Telas        |
