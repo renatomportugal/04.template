@@ -1,0 +1,111 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1280 - 320));
+}
+body, input {
+	font: 1em/1.5 Inconsolata, monospace;
+}
+body, label {
+	display: flex;
+}
+body {
+	background: linear-gradient(-45deg,#0b46da,#5583f6);
+	height: 100vh;
+}
+form, input[type=checkbox] {
+	border-radius: 50%;
+}
+form {
+	background:
+		linear-gradient(-45deg,#abafba00 40%,#abafba 48%,#e3e4e8 49% 51%,#e3e4e800 52%) 50% 50% / 12% 12% no-repeat,
+		linear-gradient(45deg,#e3e4e800 48%,#e3e4e8 49% 51%,#abafba 52%,#abafba00 54%) 50% 50% / 12% 12% no-repeat,
+		radial-gradient(2% 2% at 45% 45%,#e3e4e8,#e3e4e800),
+		radial-gradient(2% 2% at 55% 45%,#e3e4e8,#e3e4e800),
+		radial-gradient(2% 2% at 55% 55%,#e3e4e8,#e3e4e800),
+		radial-gradient(2% 2% at 45% 55%,#e3e4e8,#e3e4e800),
+		radial-gradient(100% 100% at center,#abafba00 9%,#abafba 10.75%,#e3e4e8 11% 11.25%,#e3e4e800 11.5% 13.5%,#e3e4e8 13.75% 14%,#abafba 14.25%,#abafba00 17%),
+		radial-gradient(100% 100% at center,#abafba00 44%,#abafba 45.75%,#e3e4e8 46% 46.5%,#e3e4e800 47.5% 48.5%,#e3e4e8 49%),
+		linear-gradient(-45deg,#abafba,#c7cad1);
+	border-radius: 50%;
+	box-shadow: 0 0 0.5em #0007;
+	color: #e3e4e8;
+	margin: auto;
+	padding: 0.75em;
+	opacity: 0.8;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 17em;
+	height: 17em;
+}
+h1 {
+	font: bold 1.5em/1 Karla, sans-serif;
+	margin: 1.5rem 0;
+	text-shadow:
+		0.1rem 0.1rem 0 #8f95a3,
+		-0.1rem -0.1rem 0 #c7cad1;
+}
+label {
+	flex-direction: column-reverse;
+	position: absolute;
+	top: calc(50% - 2em);
+	left: calc(50% - 1.75em);
+	text-shadow:
+		0.05rem 0.05rem 0 #8f95a3,
+		-0.05rem -0.05rem 0 #c7cad1;
+	width: 3.5em;
+}
+label:first-of-type {
+	transform: translateX(-5.25em);
+}
+label:nth-of-type(2) {
+	transform: rotate(-60deg) translateX(-5.25em) rotate(60deg);
+}
+label:nth-of-type(3) {
+	transform: rotate(60deg) translateX(5.25em) rotate(-60deg);
+}
+label:last-of-type {
+	transform: translateX(5.25em);
+}
+input[type=checkbox] {
+	background: radial-gradient(100% 100% at center,#e3e4e8 25%,#e3e4e800 35%) center / 0 0 no-repeat;
+	box-shadow:
+		0 0 0.1em #0007,
+		0 0 0 #fffc,
+		-0.4em -0.4em 1em #abafba inset,
+		0 0.4em 1em #e3e4e8 inset,
+		0 0 0 #fff inset;
+	cursor: pointer;
+	margin: auto;
+	transition: all 0.15s cubic-bezier(0.5,0,0.5,1);
+	width: 2.5em;
+	height: 2.5em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+input[type=checkbox]:focus {
+	outline: transparent;
+}
+input[type=checkbox]:checked {
+	background-size: 100% 100%;
+	box-shadow:
+		0 0 0.1em #fff7,
+		0 0 1em #fffc,
+		0 0 0 #abafba inset,
+		0 0 0 #e3e4e8 inset,
+		0 0 0.25em #fff inset;
+}
+.worn:not(:checked) {
+	box-shadow:
+		0 0 0.1em #0007,
+		0 0 1em #fffc,
+		-0.4em -0.4em 1em #abafba inset,
+		0 0.4em 1em #e3e4e8 inset,
+		0 0 0 #fff inset;
+}

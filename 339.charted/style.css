@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#myDiagram {
+  position: absolute;
+  z-index: 1;
+}
+
+article {
+  max-width: 700px;
+  margin: 0 0 0 auto;
+}
+article section {
+  background-color: white;
+}

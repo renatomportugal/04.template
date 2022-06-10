@@ -1,0 +1,91 @@
+/* #myDiagramDiv {
+	background-color: #F8F8F8;
+	border: 1px solid #aaa;
+}
+ */
+.topo-chart {
+  position: relative;
+  height: 808px;
+  width: 100%;
+  background: #050f26;
+}
+
+.chart {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.topo-operate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 120px;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  background: #050f26;
+}
+
+.operate-item {
+  margin-left: 30px;
+}
+.operate-item span {
+  display: inline-block;
+  color: #0f98b4;
+  font-size: 16px;
+  cursor: pointer;
+}
+.operate-item .collapse-icon {
+  margin-left: 5px;
+  width: 10px;
+  height: 10px;
+  background: url("/static/images/topo-manage/all-collapse-icon.svg");
+  background-size: 20px 10px;
+}
+.operate-item .expand-icon {
+  margin-left: 5px;
+  width: 10px;
+  height: 10px;
+  background: url("/static/images/topo-manage/all-expand-icon.svg");
+  background-size: 20px 10px;
+}
+.operate-item .zoom-icon {
+  margin-left: 5px;
+  width: 11px;
+  height: 10px;
+  background: url("/static/images/topo-manage/zoom-icon.svg");
+  background-size: 22px 10px;
+}
+.operate-item .full-screen {
+  width: 12px;
+  height: 12px;
+  background-size: 24px 12px;
+}
+.operate-item .full-screen-open {
+  background-image: url("/static/images/topo-manage/enter-full-screen-icon.svg");
+}
+.operate-item .full-screen-close {
+  background-image: url("/static/images/topo-manage/exit-full-screen-icon.svg");
+}
+
+.operate-item:hover span {
+  color: #23daff;
+}
+.operate-item:hover .collapse-icon,
+.operate-item:hover .expand-icon,
+.operate-item:hover .zoom-icon,
+.operate-item:hover .full-screen {
+  background-position-x: 100%;
+}
+
+.topo-scale {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #8e8e8e;
+  font-size: 16px;
+}

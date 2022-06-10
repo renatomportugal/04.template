@@ -5,6 +5,8 @@
 |Links        |Telas        |
 |---          |---          |
 | [093.threesixtyjs-master](https://renatomportugal.github.io/04.template/093.threesixtyjs-master/) |<img src="images/093.threesixtyjs-master.jpg"/> |
+|Sõ Desktop   |Telas        |
+| [321.3d-carousel-v4panorama](https://renatomportugal.github.io/04.template/321.3d-carousel-v4panorama/) |<img src="images/321.3d-carousel-v4panorama.jpg"/> |
 
 ## 3D
 
@@ -414,6 +416,8 @@
 | [160.windows-8-metro-ui](https://renatomportugal.github.io/04.template/160.windows-8-metro-ui/) | <img src="images/160.windows-8-metro-ui.jpg"/> |
 |Local não    |Funciona só em Servidor |
 | [161.codepen_ajCxc](https://renatomportugal.github.io/04.template/161.codepen_ajCxc/) | <img src="images/161.codepen_ajCxc.jpg"/> |
+|Tarefas      |Telas                   |
+| [319.task-manager-ui-with-css-grid](https://renatomportugal.github.io/04.template/319.task-manager-ui-with-css-grid/) | <img src="images/319.task-manager-ui-with-css-grid.jpg"/> |
 
 ## Data-Table
 
@@ -447,12 +451,35 @@
 | [282.country-borders-force-diagram-d3](https://renatomportugal.github.io/04.template/282.country-borders-force-diagram-d3/) |<img src="images/282.country-borders-force-diagram-d3.jpg"/> |
 | [283.d3-force-directed-node-link-diagram](https://renatomportugal.github.io/04.template/283.d3-force-directed-node-link-diagram/) |<img src="images/283.d3-force-directed-node-link-diagram.jpg"/> |
 | [284.force-directed-diagram](https://renatomportugal.github.io/04.template/284.force-directed-diagram/) |<img src="images/284.force-directed-diagram.jpg"/> |
+| [335.mindmap](https://renatomportugal.github.io/04.template/335.mindmap/) |<img src="images/335.mindmap.jpg"/> |
+
+## Documentacao
+
+|Não Responsivo |Telas        |
+|---            |---          |
+| [337.base-element](https://renatomportugal.github.io/04.template/337.base-element/) |<img src="images/337.base-element.jpg"/> |
+
+## DOM
+
+|Hierarquia     |Telas        |
+|---            |---          |
+| [339.charted](https://renatomportugal.github.io/04.template/339.charted/) |<img src="images/339.charted.jpg"/> |
+
+## DragDrop
+
+|Links        |Telas        |
+|---          |---          |
+| [340.lappy](https://renatomportugal.github.io/04.template/340.lappy/) |<img src="images/340.lappy.jpg"/> |
+|Só PC        |Telas        |
+| [341.mindmap-draggable-exploration](https://renatomportugal.github.io/04.template/341.mindmap-draggable-exploration/) |<img src="images/341.mindmap-draggable-exploration.jpg"/> |
 
 ## E-Commerce
 
 |Links        |Telas        |
 |---          |---          |
 | [060.CodePen_Export_Nqwbmg](https://renatomportugal.github.io/04.template/060.CodePen_Export_Nqwbmg) |<img src="images/060.CodePen_Export_Nqwbmg.png"/> |
+|Produtos | Responsivo |
+| [326.bottle-of-text](https://renatomportugal.github.io/04.template/326.bottle-of-text) |<img src="images/326.bottle-of-text.png"/> |
 |Produtos | Não Responsivo |
 | [145.css-big-box-pc-games](https://renatomportugal.github.io/04.template/145.css-big-box-pc-games) |<img src="images/145.css-big-box-pc-games.png"/> |
 | [146.css-trapper-keeper-effect](https://renatomportugal.github.io/04.template/146.css-trapper-keeper-effect) |<img src="images/146.css-trapper-keeper-effect.jpg"/> |
@@ -465,7 +492,9 @@
 |Tickets      |Não Responsivo  |
 | [149.folding-ticket-detail](https://renatomportugal.github.io/04.template/149.folding-ticket-detail) |<img src="images/149.folding-ticket-detail.jpg"/> |
 |Serviços     |Responsivo |
-| [179.css-grid-workout-schedule](https://renatomportugal.github.io/04.template/179.css-grid-workout-schedule) |<img src="images/179.css-grid-workout-schedule.png"/> |
+| [179.css-grid-workout-schedule](https://renatomportugal.github.io/04.template/179.css-grid-workout-schedule) |<img src="images/179.css-grid-workout-schedule.jpg"/> |
+|Refrigerante |Responsivo |
+| [336.interactive-soft-drink-lid](https://renatomportugal.github.io/04.template/336.interactive-soft-drink-lid) |<img src="images/336.interactive-soft-drink-lid.jpg"/> |
 
 
 ## Editor
@@ -486,6 +515,20 @@
 |---          |---          |
 | [164.material-design-responsive-card](https://renatomportugal.github.io/04.template/164.material-design-responsive-card) |<img src="images/164.material-design-responsive-card.jpg"/> |
 | [165.snap-it-like-thanos](https://renatomportugal.github.io/04.template/165.snap-it-like-thanos) |<img src="images/165.snap-it-like-thanos.jpg"/> |
+
+## Eventos
+
+|Responsivo   |Telas        |
+|---          |---          |
+| [324.gdpr-are-you-ready-the-countdown-begins](https://renatomportugal.github.io/04.template/324.gdpr-are-you-ready-the-countdown-begins) |<img src="images/324.gdpr-are-you-ready-the-countdown-begins.jpg"/> |
+| [325.responsive-grid-timeline](https://renatomportugal.github.io/04.template/325.responsive-grid-timeline) |<img src="images/325.responsive-grid-timeline.jpg"/> |
+
+## FilmesSeries
+
+|Matrix       |Telas        |
+|---          |---          |
+| [343.matrix-digital-rain-animated-version](https://renatomportugal.github.io/04.template/343.matrix-digital-rain-animated-version) |<img src="images/343.matrix-digital-rain-animated-version.jpg"/> |
+| [344.the-matrix-is-everywhere](https://renatomportugal.github.io/04.template/344.the-matrix-is-everywhere) |<img src="images/344.the-matrix-is-everywhere.jpg"/> |
 
 ## Fluxograma
 
@@ -515,6 +558,18 @@
 |---          |---          |
 | [287.solicitacao-de-ferias](https://renatomportugal.github.io/04.template/287.solicitacao-de-ferias/) | <img src="images/287.solicitacao-de-ferias.jpg"/> |
 
+## FPS
+
+|Grava Tela   |Telas        |
+|---          |---          |
+| [322.lavalamp-image-shader](https://renatomportugal.github.io/04.template/322.lavalamp-image-shader/) | <img src="images/322.lavalamp-image-shader.jpg"/> |
+
+## Fractal
+
+|Mostra FPS   |Telas        |
+|---          |---          |
+| [323.canvas-tree](https://renatomportugal.github.io/04.template/323.canvas-tree/) | <img src="images/323.canvas-tree.jpg"/> |
+
 ## Gradient_Generator
 
 |Links        |Telas        |
@@ -528,6 +583,12 @@
 |---          |---          |
 | [269.amcharts-4-sankey-diagram](https://renatomportugal.github.io/04.template/269.amcharts-4-sankey-diagram/) | <img src="images/269.amcharts-4-sankey-diagram.jpg"/> |
 
+## Grafo
+
+|Links        |Telas        |
+|---          |---          |
+| [327.busca-em-profundidade](https://renatomportugal.github.io/04.template/327.busca-em-profundidade/) | <img src="images/327.busca-em-profundidade.jpg"/> |
+
 ## Hot_Relod
 
 |Botões       |Telas        |
@@ -539,6 +600,8 @@
 |Botões       |Telas        |
 |---          |---          |
 | [110.fireflies](https://renatomportugal.github.io/04.template/110.fireflies/) | <img src="images/110.fireflies.jpg"/> |
+| [317.bold-hover-animations-with-splitting-js](https://renatomportugal.github.io/04.template/317.bold-hover-animations-with-splitting-js/) | <img src="images/317.bold-hover-animations-with-splitting-js.jpg"/> |
+| [318.custom-cursor-effect](https://renatomportugal.github.io/04.template/318.custom-cursor-effect/) | <img src="images/318.custom-cursor-effect.jpg"/> |
 
 ## IHM - Interface Homem Máquina
 
@@ -554,10 +617,12 @@
 | [124.circular3](https://renatomportugal.github.io/04.template/124.circular3/) | <img src="images/124.circular3.jpg"/> |
 | [125.Gauge](https://renatomportugal.github.io/04.template/125.Gauge/) | <img src="images/125.Gauge.jpg"/> |
 | [126.ponteiro](https://renatomportugal.github.io/04.template/126.ponteiro/) | <img src="images/126.ponteiro.jpg"/> |
-|Painéis      |Telas        |
-| [102.apollo-agc-apollo-guidance-computer](https://renatomportugal.github.io/04.template/102.apollo-agc-apollo-guidance-computer/) | <img src="images/102.apollo-agc-apollo-guidance-computer.jpg"/> |
 |Mostrador Mecânico |Telas        |
 | [101.mechincal-number-counter](https://renatomportugal.github.io/04.template/101.mechincal-number-counter/) | <img src="images/101.mechincal-number-counter.jpg"/> |
+|Mouse        |Telas        |
+| [338.mouse-debugger](https://renatomportugal.github.io/04.template/338.mouse-debugger/) | <img src="images/338.mouse-debugger.jpg"/> |
+|Painéis      |Telas        |
+| [102.apollo-agc-apollo-guidance-computer](https://renatomportugal.github.io/04.template/102.apollo-agc-apollo-guidance-computer/) | <img src="images/102.apollo-agc-apollo-guidance-computer.jpg"/> |
 
 ## Imagem_Camadas
 
@@ -648,6 +713,25 @@
 | [315.book-layout](https://renatomportugal.github.io/04.template/315.book-layout) |<img src="images/315.book-layout.png"/> |
 | [316.turning-pages-with-css](https://renatomportugal.github.io/04.template/316.turning-pages-with-css) |<img src="images/316.turning-pages-with-css.png"/> |
 
+## Loader
+
+|Links        |Telas        |
+|---          |---          |
+| [328.css3-loader-spinners](https://renatomportugal.github.io/04.template/328.css3-loader-spinners) |<img src="images/328.css3-loader-spinners.jpg"/> |
+
+## Login
+
+|Links        |Telas        |
+|---          |---          |
+| [329.slide-sign-in-sign-up-form](https://renatomportugal.github.io/04.template/329.slide-sign-in-sign-up-form) |<img src="images/329.slide-sign-in-sign-up-form.jpg"/> |
+
+## Mapeamento_De_Processos
+
+|Links        |Telas        |
+|---          |---          |
+| [330.CodePen_Export_gqzjeE](https://renatomportugal.github.io/04.template/330.CodePen_Export_gqzjeE) |<img src="images/330.CodePen_Export_gqzjeE.jpg"/> |
+
+
 ## Mensagem
 
 |Chat         |Telas        |
@@ -660,19 +744,34 @@
 |---          |---          |
 | [233.bojack-s-face-animated-w-gsap](https://renatomportugal.github.io/04.template/233.bojack-s-face-animated-w-gsap) |<img src="images/233.bojack-s-face-animated-w-gsap.png"/> |
 
+## Musica
+
+|Links        |Telas        |
+|---          |---          |
+| [331.challenge-take-on-me](https://renatomportugal.github.io/04.template/331.challenge-take-on-me) |<img src="images/331.challenge-take-on-me.jpg"/> |
+
 ## Neon
 
 |404          |Telas        |
 |---          |---          |
-| [176.neon404-page-not-found](https://renatomportugal.github.io/04.template/176.neon404-page-not-found/) |<img src="images/176.neon404-page-not-found"/> |
+| [176.neon404-page-not-found](https://renatomportugal.github.io/04.template/176.neon404-page-not-found/) |<img src="images/176.neon404-page-not-found.jpg"/> |
 |Arco-íris    |Telas        |
 | [262.configurable-glowing-rainbow-react-component](https://renatomportugal.github.io/04.template/262.configurable-glowing-rainbow-react-component/) |<img src="images/262.configurable-glowing-rainbow-react-component.jpg"/> |
+
+## Noticiario
+
+|FoxNews      |Telas        |
+|---            |---          |
+| [332.fox-news-tv-display](https://renatomportugal.github.io/04.template/332.fox-news-tv-display/) |<img src="images/332.fox-news-tv-display.jpg"/> |
+|Não Responsivo |Telas        |
+| [333.news-ticker](https://renatomportugal.github.io/04.template/333.news-ticker/) |<img src="images/333.news-ticker.jpg"/> |
 
 ## Organograma
 
 |Links        |Telas        |
 |---          |---          |
 | [012.Cursos](https://renatomportugal.github.io/04.template/012.Cursos/) ||
+| [342.gojs-vue](https://renatomportugal.github.io/04.template/342.gojs-vue/) |<img src="images/342.gojs-vue.jpg"/> |
 
 ## Pascoa
 |Links        |Telas        |
@@ -692,6 +791,18 @@
 | [019.image-upload-preview](https://renatomportugal.github.io/04.template/019.image-upload-preview/) ||
 | [025.jquery-image-upload-preview](https://renatomportugal.github.io/04.template/025.jquery-image-upload-preview/) ||
 | [026.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop](https://renatomportugal.github.io/04.template/026.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop/) ||
+
+## Pre-Requisitos
+
+|Links        |Telas        |
+|---          |---          |
+| [345.carrera-y-previas-gojs](https://renatomportugal.github.io/04.template/345.carrera-y-previas-gojs) |<img src="images/345.carrera-y-previas-gojs.gif"/> |
+
+## Progress_Bar
+
+|Radial       |Telas        |
+|---          |---          |
+| [334.radial-animated-progress-2](https://renatomportugal.github.io/04.template/334.radial-animated-progress-2) |<img src="images/334.radial-animated-progress-2.jpg"/> |
 
 ## Responsivo
 
@@ -716,6 +827,12 @@
 |Links        |Telas        |
 |---          |---          |
 | [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/04.template/022.infinity-scroll-with-angularjs/) ||
+
+## Taxonomia
+
+|Etiquetas        |Telas        |
+|---          |---          |
+| [320.bookmarks-play](https://renatomportugal.github.io/04.template/320.bookmarks-play) |<img src="images/320.bookmarks-play.jpg"/> |
 
 ## Testes
 

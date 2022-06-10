@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lavalamp Image Shader</title>
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Bangers'>
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+  background-color: #000;
+}
+canvas {
+  width: 800px;
+  height: 600px;
+  border: 1px solid #fff;
+}
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <script id="fs" type="notjs">
+  // Fragment shader
+  #extension GL_OES_standard_derivatives : enable
+
+  #ifdef GL_ES
+  precision mediump float;
+  #endif
+
+  uniform float u_time;
+  uniform vec2 u_mouse;
+  uniform vec2 u_resolution;
+  uniform sampler2D u_texture;
+  uniform sampler2D u_texture2;
+
+  float aastep(float threshold, float value) {
+    #ifdef GL_OES_standard_derivatives
+      float afwidth = length(vec2(dFdx(value), dFdy(value))) * 0.70710678118654757;
+      return smoothstep(threshold-afwidth, threshold+afwidth, value);
+    #else
+      return step(threshold, value);
+    #endif  
+  }
+  
+  float smin( float a, float b, float k )
+  {
+      float h = clamp( 0.5+0.5*(b-a)/k, 0.0, 1.0 );
+      return mix( b, a, h ) - k*h*(1.0-h);
+  }
+
+  float circle(in vec2 st) {
+    vec2 dist = st-vec2(0.5);
+    dist = mod(dist, 0.5) - 0.5 * 0.5;
+    return dot(dist,dist);
+  }
+
+  void main(void)
+  {
+      vec2 uv = gl_FragCoord.xy / u_resolution;
+      vec2 pos1 = vec2(sin(u_time) * 0.7, cos(u_time) * 0.7);
+      float c1 = smoothstep(0.0, 0.25, max(0.0, circle(vec2(uv - pos1) + sin(u_time) * 0.3)));
+  
+      vec2 pos2 = vec2(cos(u_time) * 0.3, sin(u_time) * 0.3);
+      float c2 = smoothstep(0.0, 0.4, max(0.0, circle(vec2(uv - pos2))));
+
+      float shape = 1. - aastep(0.025, smin(c1, c2, 0.05));
+      vec4 texColor = mix(texture2D(u_texture, uv), texture2D(u_texture2, uv), shape);
+      gl_FragColor = texColor;
+  }
+
+</script>
+
+<script id="vs" type="notjs">
+  // Vertex shader
+  attribute vec4 position;
+  void main() {
+    gl_Position = position;
+  }
+</script>
+
+<canvas id="c"></canvas>
+  <script src='https://unpkg.com/twgl.js@4.4.0/dist/4.x/twgl-full.js'></script>
+<script src='https://unpkg.com/ccapture.js@1.1.0/build/CCapture.all.min.js'></script>
+<script src='https://unpkg.com/stats.js@0.17.0/build/stats.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

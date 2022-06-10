@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Busca em profundidade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.1/vis.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Busca em profundidade</h1>
+<main>
+	<div class="btn-group btn-group-sm" role="group" aria-label="Exemplos">
+		<button type="button" class="btn btn-primary" data-ex-n="1">Exemplo 1</button>
+		<button type="button" class="btn btn-primary" data-ex-n="2">Exemplo 2</button>
+		<button type="button" class="btn btn-primary" data-ex-n="3">Exemplo 3</button>
+	</div>
+	<section>
+		<h2>Grafo</h2>
+		<h3>Visualização</h3>
+		<div id="mynetwork"></div>
+		<h3>Tabela de adjacência</h3>
+		<table>
+			<tbody></tbody>
+		</table>
+	</section>
+	<section>
+		<h2>Algoritmo</h2>
+		<h3>JavaScript</h3>
+		<pre><code></code></pre>
+	</section>
+	<section>
+		<h2>Busca</h2>
+		<form onsubmit="calcule(); return false;"><input type="number" name="partida" placeholder="Nó de partida" min="0" step="1" defaultValue="0" required /><input type="number" name="valor" placeholder="Nó a ser encontrado" min="0" step="1" defaultValue="0" required /><input type="submit" value="Calcular" /></form>
+		<details>
+			<summary>Resultado</summary>
+		</details>
+	</section>
+</main>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vis/4.20.1/vis.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

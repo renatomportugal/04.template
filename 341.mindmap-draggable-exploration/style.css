@@ -1,0 +1,58 @@
+body {
+  margin-top: 50px;
+  background: #ccc;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 15.5px;
+  line-height: 24px;
+}
+
+div {
+  background: #fff;
+}
+
+.mindmapwrapper {
+  width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  min-height: 500px;
+}
+
+.node {
+  border: 2px solid #F0F0F0;
+  border-radius: 15px;
+  min-width: 50px;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  min-height: 50px;
+  /* width: 50px; */
+  display: block;
+}
+
+.node:hover {
+  cursor: pointer;
+}
+
+.thesis {
+  width: 500px;
+  border-color: #666;
+}
+
+.second {
+  border-radius: 50px;
+  border-color: #ccc;
+}
+
+.third {
+  border: none;
+  width: 200px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  background: none;
+  height: auto;
+  background: rgba(0,0,0,0.05);
+  border-radius: 0px;
+  min-height: auto;
+}

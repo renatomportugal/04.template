@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Indie Flower', cursive;
+  background-color: orange;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+#graphicalTestToggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  padding: 5px;
+  cursor: pointer;
+}
+#graphicalTestToggle::after {
+  display: block;
+  content: '';
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  width: 0;
+  height: 1px;
+}
+#graphicalTestToggle:hover::after {
+  width: 100%;
+}
+
+.test-container {
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+.test-container.main {
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: fixed;
+  background-color: #F93822;
+  color: #FDD20E;
+}
+.test-container.main.overlapping--check {
+  background-color: #F95700;
+  color: #00A4CC;
+  opacity: 0.5;
+}
+.test-container.main.overlapping--second {
+  background-color: #101820;
+  color: #F2AA4C;
+  opacity: 0.5;
+}
+.test-container.main.approaching--check {
+  color: #FCF951;
+  background-color: #422057;
+}
+.test-container.main.approaching--second {
+  color: #FCF6F5;
+  background-color: #2BAE66;
+}
+.test-container.check {
+  position: relative;
+  z-index: 0;
+  left: 100px;
+  color: #DF6589;
+  background-color: #3C1053;
+}
+.test-container.check.overlapped {
+  background-color: #2C5F2D;
+  color: #97BC62;
+}
+.test-container.check.approached {
+  background-color: #101820;
+  color: #FEE715;
+}
+.test-container.second {
+  background-color: blue;
+  position: relative;
+  z-index: 0;
+  right: 100px;
+  background-color: #00B1D2;
+  color: #FDDB27;
+}
+.test-container.second.overlapped {
+  background-color: #00203F;
+  color: #ADEFD1;
+}
+.test-container.second.approached {
+  color: #ED2B33;
+  background-color: #D85A7F;
+}
+.test-container h1 {
+  padding: 50px;
+}
+
+h1 {
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .test-container h1 {
+    padding: 30px;
+  }
+}

@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+  background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg) no-repeat;
+  background-size: cover;
+}
+
+.ticker {
+  overflow: hidden;
+  width: 100%;
+  padding: 5px 0 120px;
+  position: fixed;
+  bottom: -50px;
+  left: 0;
+  font-family: 'Montserrat', Arial;
+}
+
+.ticker-logo-channel {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  color: #ffffff;
+  font-size: 160px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.ticker-logo {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  z-index: 10;
+}
+
+.ticker-logo:before {
+  display: table;
+  content: "";
+  width: 260px;
+  height: 91px;
+  position: absolute;
+  top: 2px;
+  left: -50px;
+  background: linear-gradient(to right,  rgba(59,211,224,1) 0%,rgba(59,211,224,1) 84%,rgba(59,211,224,1) 91%,rgba(59,211,224,0.5) 96%,rgba(59,211,224,0) 100%); /* W3C */
+}
+
+.ticker-tip {
+  width: 100%;
+  padding: 6px 0;
+  margin-left: 200px;
+  box-shadow: inset 0 -3px 3px rgba(255,255,255,.5);
+  background-color: #1b87a4;
+  color: #ffffff;
+  transform: skew(-45deg,0);
+}
+
+.ticker-tip-info {
+  margin-left: 50px;
+  position: relative;
+  transform: skew(45deg,0);
+}
+
+.icon-info {
+  display: block;
+  padding: 0px 10px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 2px 3px rgba(0,0,0,.5);
+  position: absolute;
+  top: -6px;
+  left: -45px;
+  background-color: #29a1e0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ticker-title {
+  width: 2500px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  color: #065b70;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #065b70;
+  
+  background: linear-gradient(135deg,  rgba(74,255,255,1) 0%,rgba(58,208,221,1) 11%,rgba(38,153,181,1) 24%,rgba(29,127,162,0.93) 30%,rgba(29,127,162,0.5) 68%); /* W3C */
+}
+
+.ticker-title > * {
+  display: inline-block;
+  margin-right: 50px;
+  animation: title 6s infinite linear;
+}
+
+@keyframes title {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-233px);}
+}
+
+.ticker-news {
+  width: 7000px;
+  padding: 10px 0;
+  color: #ffffff;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(0,0,0,1); 
+  
+  background: linear-gradient(135deg,  rgba(74,255,255,1) 0%,rgba(29,127,162,1) 11%,rgba(29,127,162,0.5) 29%); /* W3C */
+}
+
+.ticker-news > * {
+  display: inline-block;
+  animation: news 20s infinite linear;
+}
+
+@keyframes news {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-4135px);}
+}

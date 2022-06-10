@@ -1,0 +1,95 @@
+* {
+	outline: none;
+	transition: all .3s;
+}
+body {
+	background-image: linear-gradient(to bottom, #1061da 200px, #fff 202px, #bbb 100%);
+	text-align: center;
+}
+h1 {
+	color: white;
+	margin: 1.5em 0;
+}
+main {
+	background-color: white;
+	border: 1px solid #ccc;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 8px;
+	overflow: hidden;
+}
+button {
+	cursor: pointer;
+}
+section ~ section {
+	border-top: solid 1px #ccc;
+}
+h2 {
+	color: #444;
+	margin: .5em;
+}
+h3 {
+	color: #aaa;
+	margin: -.5em 0 1em 0;
+	font-size: .9em;
+}
+table {
+	margin: 20px auto;
+	font-size: .5em;
+	overflow: auto;
+	display: block;
+	width: fit-content;
+	max-width: 100%;
+}
+#mynetwork {
+	width: calc(100% - 20px);
+	height: 400px;
+	border: 1px solid lightgray;
+	margin: 10px;
+}
+#mynetwork * {
+	/*width: 580px;*/
+}
+pre {
+	text-align: left;
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+input:not([type="checkbox"]) {
+	text-align: center;
+	display: block;
+	margin: 3px auto;
+	padding: 3px;
+	border: solid 1px #ddd;
+	border-radius: 4px;
+	width: 140px;
+}
+input:not([type="submit"]):focus {
+	border-bottom-color: #22f;
+}
+input[type="submit"] {
+	cursor: pointer;
+}
+input[type="submit"]:hover {
+	background-color: #66f;
+	border-color: #008;
+	color: white;
+}
+section > details {
+	margin: 15px 0;
+}
+details {
+	text-align: left;
+	overflow: auto;
+}
+details summary {
+	cursor: pointer;
+	display: inline-block;
+}
+details details {
+	margin-left: 2em;
+	width: max-content;
+}

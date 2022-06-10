@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;700&display=swap");
+:root {
+  --normal: 300;
+  --bold: 700;
+  --duration: 250ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-family: "Public Sans", sans-serif;
+  font-size: 1rem;
+  padding: 4rem 1rem;
+  background-color: whitesmoke;
+}
+body > * + * {
+  margin-top: 4rem;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+}
+
+.icon {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 0.75em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.label {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid lightgray;
+  border-radius: 0.25rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(whitesmoke));
+  background-image: linear-gradient(to bottom, white, whitesmoke);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.select:focus {
+  border-color: dodgerblue;
+}
+
+.menu {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-size: 1.5rem;
+}
+
+.menu-link {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: black;
+  font-variation-settings: "wght" var(--normal);
+  text-decoration: none;
+}
+.menu-link:hover {
+  font-variation-settings: "wght" var(--bold);
+}
+.menu-link .char {
+  --delay: calc(var(--char-index) * 0.024s);
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  letter-spacing: -0.05rem;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: font-variation-settings var(--duration) var(--ease), opacity var(--duration) var(--ease);
+  transition: font-variation-settings var(--duration) var(--ease), opacity var(--duration) var(--ease);
+}
+.menu-link .whitespace {
+  width: 4px;
+}
+.menu-link .char::before {
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+.menu-link .char::before,
+.menu-link .char::after {
+  pointer-events: none;
+  font-variation-settings: "wght" var(--bold);
+}
+
+[data-animation="bold-delay"] .menu-link .char {
+  -webkit-transition-delay: var(--delay);
+          transition-delay: var(--delay);
+}
+
+[data-animation="buoy"] .menu-link:hover .char {
+  -webkit-transition-delay: var(--delay);
+          transition-delay: var(--delay);
+  -webkit-animation: buoy calc(var(--duration) * 6) var(--delay) ease-in-out infinite;
+          animation: buoy calc(var(--duration) * 6) var(--delay) ease-in-out infinite;
+}
+@-webkit-keyframes buoy {
+  25% {
+    -webkit-transform: translateY(-6px) rotate(-5deg);
+            transform: translateY(-6px) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateY(-6px) rotate(5deg);
+            transform: translateY(-6px) rotate(5deg);
+  }
+}
+@keyframes buoy {
+  25% {
+    -webkit-transform: translateY(-6px) rotate(-5deg);
+            transform: translateY(-6px) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateY(-6px) rotate(5deg);
+            transform: translateY(-6px) rotate(5deg);
+  }
+}
+[data-animation="front-flip"] .menu-link:hover .char {
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-animation: front-flip calc(var(--duration) * 6) calc(var(--char-index) * 0.02s) var(--ease) forwards;
+          animation: front-flip calc(var(--duration) * 6) calc(var(--char-index) * 0.02s) var(--ease) forwards;
+}
+@-webkit-keyframes front-flip {
+  20% {
+    -webkit-transform: translateY(0) scale(0.8);
+            transform: translateY(0) scale(0.8);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  25% {
+    -webkit-transform: translateY(2px) scale(0.8, 0.6);
+            transform: translateY(2px) scale(0.8, 0.6);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  30% {
+    -webkit-transform: translateY(-10px) scale(0.8, 1.2);
+            transform: translateY(-10px) scale(0.8, 1.2);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  40% {
+    -webkit-transform: translateY(-10px) scale(1, -1);
+            transform: translateY(-10px) scale(1, -1);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  50% {
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+  70% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes front-flip {
+  20% {
+    -webkit-transform: translateY(0) scale(0.8);
+            transform: translateY(0) scale(0.8);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  25% {
+    -webkit-transform: translateY(2px) scale(0.8, 0.6);
+            transform: translateY(2px) scale(0.8, 0.6);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  30% {
+    -webkit-transform: translateY(-10px) scale(0.8, 1.2);
+            transform: translateY(-10px) scale(0.8, 1.2);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  40% {
+    -webkit-transform: translateY(-10px) scale(1, -1);
+            transform: translateY(-10px) scale(1, -1);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  50% {
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+  70% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+[data-animation="reflection-pool"] .menu-link:hover .char {
+  -webkit-animation: reflection-pool var(--duration) calc(var(--char-index) * (var(--duration) / -2)) linear alternate infinite;
+          animation: reflection-pool var(--duration) calc(var(--char-index) * (var(--duration) / -2)) linear alternate infinite;
+}
+@-webkit-keyframes reflection-pool {
+  from {
+    font-variation-settings: "wght" var(--normal);
+  }
+  to {
+    font-variation-settings: "wght" var(--bold);
+  }
+}
+@keyframes reflection-pool {
+  from {
+    font-variation-settings: "wght" var(--normal);
+  }
+  to {
+    font-variation-settings: "wght" var(--bold);
+  }
+}
+[data-animation="jump"] .menu-link:hover .char {
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition-delay: var(--delay);
+          transition-delay: var(--delay);
+  -webkit-animation: jump calc(var(--duration) * 3.5) calc(var(--char-index) * 0.04s) var(--ease) forwards;
+          animation: jump calc(var(--duration) * 3.5) calc(var(--char-index) * 0.04s) var(--ease) forwards;
+}
+@-webkit-keyframes jump {
+  0% {
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  30% {
+    -webkit-transform: translateY(2px) scaleY(0.9);
+            transform: translateY(2px) scaleY(0.9);
+  }
+  50% {
+    -webkit-transform: translateY(-30px) scaleY(1.25);
+            transform: translateY(-30px) scaleY(1.25);
+  }
+  60% {
+    -webkit-transform: translateY(3px) scaleY(0.75);
+            transform: translateY(3px) scaleY(0.75);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  80% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+@keyframes jump {
+  0% {
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  30% {
+    -webkit-transform: translateY(2px) scaleY(0.9);
+            transform: translateY(2px) scaleY(0.9);
+  }
+  50% {
+    -webkit-transform: translateY(-30px) scaleY(1.25);
+            transform: translateY(-30px) scaleY(1.25);
+  }
+  60% {
+    -webkit-transform: translateY(3px) scaleY(0.75);
+            transform: translateY(3px) scaleY(0.75);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  80% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+[data-animation="shadow"] .menu-link:hover .char,
+[data-animation="shadow"] .menu-link:hover .char::after {
+  -webkit-animation: calc(var(--duration) * 3) calc(var(--char-index) * 0.024s) var(--ease) forwards;
+          animation: calc(var(--duration) * 3) calc(var(--char-index) * 0.024s) var(--ease) forwards;
+}
+[data-animation="shadow"] .menu-link:hover .char {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transition-delay: var(--delay);
+          transition-delay: var(--delay);
+  -webkit-animation-name: shadow;
+          animation-name: shadow;
+}
+[data-animation="shadow"] .menu-link .char::after {
+  visibility: visible;
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+[data-animation="shadow"] .menu-link:hover .char::after {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-animation-name: shadow-after;
+          animation-name: shadow-after;
+}
+@-webkit-keyframes shadow {
+  to {
+    -webkit-transform: scaleY(1.05);
+            transform: scaleY(1.05);
+  }
+}
+@keyframes shadow {
+  to {
+    -webkit-transform: scaleY(1.05);
+            transform: scaleY(1.05);
+  }
+}
+@-webkit-keyframes shadow-after {
+  from {
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  to {
+    opacity: 0.25;
+    -webkit-transform: scaleY(-0.75) skewX(-30deg);
+            transform: scaleY(-0.75) skewX(-30deg);
+  }
+}
+@keyframes shadow-after {
+  from {
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  to {
+    opacity: 0.25;
+    -webkit-transform: scaleY(-0.75) skewX(-30deg);
+            transform: scaleY(-0.75) skewX(-30deg);
+  }
+}
+[data-animation="smile"] .menu-link:hover .char {
+  --d: calc(var(--duration) * 3);
+  -webkit-transition-duration: var(--d);
+          transition-duration: var(--d);
+  -webkit-animation: smile var(--d) var(--ease) forwards;
+          animation: smile var(--d) var(--ease) forwards;
+}
+@-webkit-keyframes smile {
+  to {
+    -webkit-transform: translate(calc(10px * var(--distance-sine)), calc(-10px * var(--distance-percent))) rotate(calc(-25deg * var(--distance-sine)));
+            transform: translate(calc(10px * var(--distance-sine)), calc(-10px * var(--distance-percent))) rotate(calc(-25deg * var(--distance-sine)));
+  }
+}
+@keyframes smile {
+  to {
+    -webkit-transform: translate(calc(10px * var(--distance-sine)), calc(-10px * var(--distance-percent))) rotate(calc(-25deg * var(--distance-sine)));
+            transform: translate(calc(10px * var(--distance-sine)), calc(-10px * var(--distance-percent))) rotate(calc(-25deg * var(--distance-sine)));
+  }
+}
+[data-animation="step-sequence"] {
+  --opacity: 0.4;
+}
+[data-animation="step-sequence"] .menu-link:hover .char {
+  opacity: var(--opacity);
+  font-variation-settings: "wght" var(--normal);
+  -webkit-animation: step-sequence calc((var(--duration) / 1.5) * var(--char-total)) calc(var(--char-index) * calc(var(--duration) / 1.5)) steps(2, end) infinite;
+          animation: step-sequence calc((var(--duration) / 1.5) * var(--char-total)) calc(var(--char-index) * calc(var(--duration) / 1.5)) steps(2, end) infinite;
+}
+@-webkit-keyframes step-sequence {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+    font-variation-settings: "wght" var(--bold);
+  }
+  10%, 100% {
+    opacity: var(--opacity);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    font-variation-settings: "wght" var(--normal);
+  }
+}
+@keyframes step-sequence {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+    font-variation-settings: "wght" var(--bold);
+  }
+  10%, 100% {
+    opacity: var(--opacity);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    font-variation-settings: "wght" var(--normal);
+  }
+}
+[data-animation="wave"] .menu-link:hover .char {
+  -webkit-transition-delay: var(--delay);
+          transition-delay: var(--delay);
+  -webkit-animation: wave calc(var(--duration) * 3) calc(var(--char-index) * 0.04s) ease-in-out alternate infinite;
+          animation: wave calc(var(--duration) * 3) calc(var(--char-index) * 0.04s) ease-in-out alternate infinite;
+}
+@-webkit-keyframes wave {
+  50% {
+    -webkit-transform: translate(calc(-0.125em * var(--char-index)), calc(-0.25em * var(--char-index))) rotate(calc(-5deg * (var(--char-index) + 1)));
+            transform: translate(calc(-0.125em * var(--char-index)), calc(-0.25em * var(--char-index))) rotate(calc(-5deg * (var(--char-index) + 1)));
+  }
+}
+@keyframes wave {
+  50% {
+    -webkit-transform: translate(calc(-0.125em * var(--char-index)), calc(-0.25em * var(--char-index))) rotate(calc(-5deg * (var(--char-index) + 1)));
+            transform: translate(calc(-0.125em * var(--char-index)), calc(-0.25em * var(--char-index))) rotate(calc(-5deg * (var(--char-index) + 1)));
+  }
+}

@@ -1,0 +1,86 @@
+/* CSS tag effect */
+.tags {
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.tags li {
+  float: left;
+  padding: 0;
+  margin: 0 0 5px 20px;
+  /* make some space for the triangle */
+  font: 12px/20px Arial, sans-serif;
+}
+.tags a {
+  position: relative;
+  display: block;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #fff;
+  background: #8e855a;
+}
+/* CSS triangle */
+.tags a:before {
+  content: "";
+  /* generate the pseudo-element */
+  position: absolute;
+  left: -10px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #8e855a;
+}
+/* CSS circle */
+.tags a:after {
+  content: "";
+  /* generate the pseudo-element */
+  position: absolute;
+  left: -2px;
+  top: 8px;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.tags a:hover,
+.tags a:focus,
+.tags a:active {
+  background: #555;
+}
+.tags a:hover:before,
+.tags a:focus:before,
+.tags a:active:before {
+  border-right-color: #555;
+}
+/* Larger version with a few more CSS3 enhancements */
+.tags-alt li {
+  margin: 0 0 5px 25px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.tags-alt a {
+  padding: 0 12px;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+.tags-alt a:before {
+  left: -15px;
+  border-width: 15px 15px 15px 0;
+  border-style: solid;
+  border-color: transparent #8e855a;
+}
+.tags-alt a:after {
+  top: 12px;
+  width: 5px;
+  height: 5px;
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+a {
+  color: #8e855a;
+}
