@@ -1,0 +1,43 @@
+:root {
+  --color-primary: rgba(0, 0, 0, 0.25);
+  --color-lightgrey: rgba(0, 0, 0, 0.1);
+  --color-grey: rgba(0, 0, 0, 0.1);
+  --color-black: rgba(0, 0, 0, 0.75);
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 10px;
+  
+  &__item {
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    overflow: hidden;
+  
+    &--horizontal {
+      background: var(--color-black);
+      grid-area: span 1 / span 2;
+    }
+    
+    &--vertical {
+      background: var(--color-lightgrey);
+      grid-area: span 2 / span 1;
+    }
+    
+    &--large {
+      background: var(--color-grey);
+      grid-area: span 2 / span 2;
+    }
+  }
+  
+  &__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+}

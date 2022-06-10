@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: whitesmoke;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 60px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 12px;
+  padding-right: 12px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  margin-right: 10px;
+  margin-left: 10px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
+  border-radius: 2px;
+  height: 20px;
+  padding: 5px;
+  background-color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+  top: -4px;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  width: 0;
+}
+
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  width: calc(100% - 24px);
+}
+
+.checkbox-all:checked + label:after,
+.checkbox-all:not(:checked) + label:after {
+  background-color: hotpink;
+}
+
+.checkbox-js:checked + label:after,
+.checkbox-js:not(:checked) + label:after {
+  background-color: #f1c40f;
+}
+
+.checkbox-html:checked + label:after,
+.checkbox-html:not(:checked) + label:after {
+  background-color: #ff932b;
+}
+
+.checkbox-react:checked + label:after,
+.checkbox-react:not(:checked) + label:after {
+  background-color: #64e1fe;
+}
+
+.checkbox-vue:checked + label:after,
+.checkbox-vue:not(:checked) + label:after {
+  background-color: #6edbbe;
+}
+
+.checkbox-angular:checked + label:after,
+.checkbox-angular:not(:checked) + label:after {
+  background-color: #e75139;
+}
+
+.checkbox-all:checked + label {
+  margin-left: 17px;
+}
+
+.seperator {
+  width: 100%;
+  height: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+}
+
+.project {
+  border-radius: 4px;
+  box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.3s linear;
+}
+
+.project.js {
+  border: 3px solid #f1c40f;
+}
+
+.project.html {
+  border: 3px solid #ff932b;
+}
+
+.project.react {
+  border: 3px solid #64e1fe;
+}
+
+.project.vue {
+  border: 3px solid #6edbbe;
+}
+
+.project.angular {
+  border: 3px solid #e75139;
+}
+
+.project.js,
+.project.html,
+.project.react,
+.project.vue,
+.project.angular {
+  opacity: 0;
+  transform: scale(0);
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  border-width: 0;
+}
+
+.checkbox-all:checked ~ .cards .project.js,
+.checkbox-all:checked ~ .cards .project.html,
+.checkbox-all:checked ~ .cards .project.react,
+.checkbox-all:checked ~ .cards .project.vue,
+.checkbox-all:checked ~ .cards .project.angular,
+.checkbox-js:checked ~ .cards .project.js,
+.checkbox-html:checked ~ .cards .project.html,
+.checkbox-react:checked ~ .cards .project.react,
+.checkbox-vue:checked ~ .cards .project.vue,
+.checkbox-angular:checked ~ .cards .project.angular {
+  opacity: 1;
+  min-height: 140px;
+  min-width: calc(22% - 28px);
+  padding: 0 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  visibility: visible;
+  transform: scale(1);
+  border-width: 3px;
+}
+
+.project:nth-child(2n - 3) {
+  grid-row-end: span 2;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    width: 100%;
+  }
+
+  label {
+    display: block;
+  }
+
+  .cards {
+    flex-direction: column;
+    width: auto;
+  }
+}

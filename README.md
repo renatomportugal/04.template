@@ -211,6 +211,12 @@
 |---          |---          |
 | [172.no-div-arduino-uno-with-lcd-display-and-animation](https://renatomportugal.github.io/04.template/172.no-div-arduino-uno-with-lcd-display-and-animation/) |<img src="images/172.no-div-arduino-uno-with-lcd-display-and-animation.jpg"/> |
 
+## Arte
+
+|Quadro       |Telas        |
+|---          |---          |
+| [434.Quadro](https://renatomportugal.github.io/04.template/434.Quadro/) |<img src="images/434.Quadro.jpg"/> |
+
 ## Astronomia
 
 |Links        |Telas        |
@@ -650,6 +656,16 @@
 |---          |---          |
 | [323.canvas-tree](https://renatomportugal.github.io/04.template/323.canvas-tree/) | <img src="images/323.canvas-tree.jpg"/> |
 
+## Galeria
+|Flex            |Telas        |
+|---             |---          |
+| [429.thumbnail_gallery_modal_view_and_arrow_key_navigation](https://renatomportugal.github.io/04.template/429.thumbnail_gallery_modal_view_and_arrow_key_navigation/) | <img src="images/429.thumbnail_gallery_modal_view_and_arrow_key_navigation.jpg"/> |
+| [430.easiest-masonry-grid-layout-tutorial](https://renatomportugal.github.io/04.template/430.easiest-masonry-grid-layout-tutorial/) | <img src="images/430.easiest-masonry-grid-layout-tutorial.jpg"/> |
+| [431.grid-masonary](https://renatomportugal.github.io/04.template/431.grid-masonary/) | <img src="images/431.grid-masonary.jpg"/> |
+|Filtro de Busca |Telas        |
+|---             |---          |
+| [428.pure-css-project-filter-tabs](https://renatomportugal.github.io/04.template/428.pure-css-project-filter-tabs/) | <img src="images/428.pure-css-project-filter-tabs.jpg"/> |
+
 ## Gradient_Generator
 
 |Links        |Telas        |
@@ -729,6 +745,24 @@
 |Slider       |Telas        |
 | [349.neumorphic-light-switch](https://renatomportugal.github.io/04.template/349.neumorphic-light-switch/) | <img src="images/349.neumorphic-light-switch.jpg"/> |
 
+## Imagem
+
+|Efeito - Mouse |Telas        |
+| [432.tsparticles-mouse-trail-unveiling-background](https://renatomportugal.github.io/04.template/432.tsparticles-mouse-trail-unveiling-background) |<img src="images/432.tsparticles-mouse-trail-unveiling-background.jpg"/> |
+|Upload Preview |Telas        |
+| [435.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop](https://renatomportugal.github.io/04.template/435.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop) |<img src="images/435.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop.jpg"/> |
+| [436.jquery-image-upload-preview](https://renatomportugal.github.io/04.template/436.jquery-image-upload-preview) |<img src="images/436.jquery-image-upload-preview.jpg"/> |
+| [437.image-upload-preview_2](https://renatomportugal.github.io/04.template/437.image-upload-preview_2) |<img src="images/437.image-upload-preview_2.jpg"/> |
+| [438.image-upload-preview](https://renatomportugal.github.io/04.template/438.image-upload-preview) |<img src="images/438.image-upload-preview.jpg"/> |
+| [439.file-upload-preview-image](https://renatomportugal.github.io/04.template/439.file-upload-preview-image) |<img src="images/439.file-upload-preview-image.jpg"/> |
+|Upload Zoom    |Telas        |
+| [440.amplify-master](https://renatomportugal.github.io/04.template/440.amplify-master) |<img src="images/440.amplify-master.jpg"/> |
+| [441.elevateweb-elevatezoom-f6bc619](https://renatomportugal.github.io/04.template/441.elevateweb-elevatezoom-f6bc619) |<img src="images/441.elevateweb-elevatezoom-f6bc619.jpg"/> |
+| [442.i-like-robots-EasyZoom-be809bf](https://renatomportugal.github.io/04.template/442.i-like-robots-EasyZoom-be809bf) |<img src="images/442.i-like-robots-EasyZoom-be809bf.jpg"/> |
+| [443.iviewer-0.7.11](https://renatomportugal.github.io/04.template/443.iviewer-0.7.11) |<img src="images/443.iviewer-0.7.11.jpg"/> |
+| [444.jackmoore-zoom-7a52232](https://renatomportugal.github.io/04.template/444.jackmoore-zoom-7a52232) |<img src="images/444.jackmoore-zoom-7a52232.jpg"/> |
+| [445.zoom.js-master](https://renatomportugal.github.io/04.template/445.zoom.js-master) |<img src="images/445.zoom.js-master.jpg"/> |
+
 ## Imagem_Camadas
 
 |Links        |Telas        |
@@ -782,6 +816,12 @@
 | [037.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/04.template/037.responsive-infographic-css-variables-grid.JSON/) | |
 |Surf         |Telas        |
 | [271.surf-world-league](https://renatomportugal.github.io/04.template/271.surf-world-league) |<img src="images/271.surf-world-league.jpg"/> |
+
+## Inteligencia_Artificial
+
+|Links        |Telas        |
+| [433.hypermorph-3000](https://renatomportugal.github.io/04.template/433.hypermorph-3000) |<img src="images/433.hypermorph-3000.jpg"/> |
+
 
 ## KeyGen
 
