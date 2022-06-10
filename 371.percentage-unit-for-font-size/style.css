@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #291642;
+  font-family: "Gochi Hand", sans-serif;
+  font-size: 100%;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background-blend-mode: hue;
+}
+
+.container {
+  min-height: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-top: auto;
+}
+
+.actions {
+  padding: 3vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 2rem;
+  margin-top: auto;
+}
+
+:root {
+  --font-size: 100%;
+}
+
+h1 {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  font-size: var(--font-size);
+  background: -webkit-gradient(linear, left top, right top, from(#44ea76), color-stop(80%, #39fad7), to(#39fad7))
+      no-repeat,
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg")
+      no-repeat fixed;
+  background: linear-gradient(to right, #44ea76 0%, #39fad7 80%, #39fad7 100%)
+      no-repeat,
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg")
+      no-repeat fixed;
+  background-size: cover;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  width: 50vmax;
+  height: 50vmin;
+  border: 1px dashed #f36;
+  position: relative;
+  font-size: var(--font-size);
+}
+
+.box {
+  background-color: #f36;
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  padding: 4px 6px;
+  font-size: 16px;
+  border-radius: 4px 4px 0 0;
+  font-size: 16px;
+}
+
+.container::before {
+  content: '<div class="container"></div> | 基本字号: 16px';
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  font-size: 16px;
+}
+
+h1 {
+  border: 1px dotted #0ff;
+  padding: 20px 50px;
+  border-radius: 5px;
+  position: relative;
+}
+
+h1::before {
+  content: "<h1>";
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  z-index: 2;
+  font-size: 16px;
+}

@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #291642;
+  font-family: "Gochi Hand", sans-serif;
+  font-size: 100%;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background-blend-mode: hue;
+}
+
+.container {
+  width: 500px;
+  height: 200px;
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  margin-top: auto;
+  box-shadow: 0 0 2px 0 #f36;
+}
+
+.container::before {
+  content: "width: 500px";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.container::after {
+  content: "height: 200px";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  white-space: nowrap;
+  -webkit-transform: translate(-40%, -50%) rotate(90deg);
+          transform: translate(-40%, -50%) rotate(90deg);
+}
+
+.actions {
+  padding: 3vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 2rem;
+  margin-top: auto;
+}
+
+label:nth-of-type(2) {
+  margin-left: 20px;
+}
+
+:root {
+  --width: 50%;
+  --height: 50%;
+}
+
+.element {
+  width: var(--width);
+  height: var(--height);
+  background-color: #09f;
+}
+
+strong {
+  color: #f89;
+}

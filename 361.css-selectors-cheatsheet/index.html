@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS selectors cheatsheet</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Roboto:300,400,500,600,900', 'Roboto+Condensed:300,300i,400,400i,700,700i', 'Roboto+Mono:300,400,500,700']
+      }
+    });
+  </script>
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!-- FAB -->
+<div class="fab-outer">
+	<a class="fab" role="button" target="_black" href="https://frontend30.com/css-selectors-cheatsheet/"> <span>play &nbsp 🕹</span></a>
+	<a class="fab" role="button" target="_black" href="https://www.dropbox.com/home/CSS%20selectors%20cheatsheet?preview=CSS+selectors+cheatsheet.pdf"></span>download 👇</span></a>
+	<a class="fab" role="button" target="_black" href="https://medium.com/p/9593bc204e3f"> </span>read &nbsp  📖</span></a>
+	<a class="fab fe30" role="button" href="https://frontend30.com/"> 			
+		<span class="fe30-yellow">&#60;</span>
+		<span>FrontEnd30</span>
+		<span class="fe30-yellow">&#47;&#62;</span>
+	</a>
+</div>
+<!-- FAB close-->
+
+<div class="content-outer">
+	<div class="title-outer">
+		
+		<div class="title">
+			<h1>CSS</h1> 
+			<h2>selectors</h2>
+			<h2>cheatsheet</h2>
+			<div class="symbol"> #  >  .  ,  *  +  ~  :  { }  ( )  [ ] </div>
+		</div>
+		
+		<div class="copyright-outer">
+			
+			<div class="text-medium copyright">Designed & built by <a target="_black" href="http://nanajeon.com">nana</a>
+			</div>
+			
+			<div class="text-medium copyright">Collaborated with <a target="_black" href="https://ryanyu.com/">Ryan Yu</a>
+			</div>
+			
+		</div> 
+		<!-- copyright-outer close-->
+		
+	</div>
+	<!-- title-outer close-->
+	
+
+	<!-- Type selector -->
+
+	<div class="content">
+		<p><strong>Type</strong> Selector: <strong>a</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>c</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Type selector close-->
+
+	<div class="border"></div>
+
+	<!-- ID selector -->
+
+	<div class="content"> 
+		<p><strong>ID</strong> Selector: <strong>#a</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>#a</div>
+			</div>
+			<div class="circle">
+				<div>#b</div>
+			</div>
+			<div class="circle">
+				<div>#c</div>
+			</div>
+		</div>
+		<p class="text-medium">* <strong>ID</strong> is not recommended as a selector</p>
+	</div>
+
+	<!-- ID selector close -->
+
+	<div class="border"></div>
+
+	<!-- Child selector -->
+
+	<div class="content"> 
+		<p><strong>Child</strong> Selector: <strong>a > b</strong> { }</p>
+
+		<div>	<!-- Level 2 + 4 circle -->
+			<div class="level1">   <!-- Level 1  -->
+				<div class="circle-outer">
+					<div class="circle level-parent1">
+						<div>a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="level-parent1-bar-center"></div>
+					<div class="level-parent1-bar-horizontal"></div>
+					<div class="level-parent1-bar1"></div>
+					<div class="level-parent1-bar2"></div>
+				</div>
+
+			<div class="circle-outer">
+				<div class="circle selected">
+					<div>b</div>
+				</div>
+				<div class="circle levelCircle">
+					<div>c</div>
+				</div>
+			</div>
+		</div>   <!-- level 1 close-->
+
+
+		<div class="flex-row">
+			<div class="leve2-1">  <!-- level 2-1-->
+				<div class="bar">  
+					<div class="circle2-bar-center"></div>
+					<div class="circle2-bar-horizontal"></div>
+					<div class="circle2-bar1"></div>
+					<div class="circle2-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>a</div>
+					</div>
+					<div class="circle">
+						<div>b</div>
+					</div>
+				</div>
+			</div>  <!-- level 2-1 close-->
+
+
+			<div class="leve2-2">
+				<div class="bar">  <!-- level 2-2-->
+					<div class="circle2-bar-center"></div>
+					<div class="circle2-bar-horizontal"></div>
+					<div class="circle2-bar1"></div>
+					<div class="circle2-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>a</div>
+					</div>
+					<div class="circle">
+						<div>b</div>
+					</div>
+				</div>
+			</div> <!-- level 2-2 close-->
+		</div> <!-- level 2 close-->
+
+	</div>	<!-- 2 Level + 4circle close -->
+
+
+
+	</div> 
+
+	<!-- Child selector close -->
+
+	<div class="border"></div>
+
+	<!-- Descendant selector -->
+
+	<div class="content"> 
+		<p><strong>Descendant</strong> Selector: <strong>a  b</strong> { }</p>
+
+		<div>	<!-- Level 2 + 4 circle -->
+			<div class="level1">   <!-- Level 1  -->
+				<div class="circle-outer">
+					<div class="circle level-parent1">
+						<div>a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="level-parent1-bar-center"></div>
+					<div class="level-parent1-bar-horizontal"></div>
+					<div class="level-parent1-bar1"></div>
+					<div class="level-parent1-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle selected">
+						<div>b</div>
+					</div>
+					<div class="circle levelCircle">
+						<div>c</div>
+					</div>
+				</div>
+			</div>   <!-- level 1 close-->
+
+
+			<div class="flex-row">
+				<div class="leve2-1">  <!-- level 2-1-->
+					<div class="bar">  
+						<div class="circle2-bar-center"></div>
+						<div class="circle2-bar-horizontal"></div>
+						<div class="circle2-bar1"></div>
+						<div class="circle2-bar2"></div>
+					</div>
+
+					<div class="circle-outer">
+						<div class="circle">
+							<div>a</div>
+						</div>
+						<div class="circle selected">
+							<div>b</div>
+						</div>
+					</div>
+				</div>  <!-- level 2-1 close-->
+
+
+				<div class="leve2-2">
+					<div class="bar">  <!-- level 2-2-->
+						<div class="circle2-bar-center"></div>
+						<div class="circle2-bar-horizontal"></div>
+						<div class="circle2-bar1"></div>
+						<div class="circle2-bar2"></div>
+					</div>
+
+					<div class="circle-outer">
+						<div class="circle">
+							<div>a</div>
+						</div>
+						<div class="circle selected">
+							<div>b</div>
+						</div>
+					</div>
+				</div> <!-- level 2-2 close-->
+			</div> <!-- level 2 close-->
+
+		</div>	<!-- 2 Level + 4circle close -->
+	</div> 
+
+	<!-- Descendant selector close -->
+
+	<div class="border"></div>
+
+	<!-- Combine Descendant & ID selector -->
+
+	<div class="content"> 
+		<p><strong>Combine Descendant & ID</strong> Selector: <strong>#a b</strong> { }</p>
+
+		<div>	<!-- Level 2 + 4 circle -->
+			<div class="level1">   <!-- Level 1  -->
+				<div class="circle-outer">
+					<div class="circle level-parent1">
+						<div>#a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="level-parent1-bar-center"></div>
+					<div class="level-parent1-bar-horizontal"></div>
+					<div class="level-parent1-bar1"></div>
+					<div class="level-parent1-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle selected">
+						<div>b</div>
+					</div>
+					<div class="circle levelCircle">
+						<div>c</div>
+					</div>
+				</div>
+			</div>   <!-- level 1 close-->
+
+
+			<div class="flex-row">
+				<div class="leve2-1">  <!-- level 2-1-->
+					<div class="bar">  
+						<div class="circle2-bar-center"></div>
+						<div class="circle2-bar-horizontal"></div>
+						<div class="circle2-bar1"></div>
+						<div class="circle2-bar2"></div>
+					</div>
+
+					<div class="circle-outer">
+						<div class="circle">
+							<div>a</div>
+						</div>
+						<div class="circle selected">
+							<div>b</div>
+						</div>
+					</div>
+				</div>  <!-- level 2-1 close-->
+
+
+				<div class="leve2-2">
+					<div class="bar">  <!-- level 2-2-->
+						<div class="circle2-bar-center"></div>
+						<div class="circle2-bar-horizontal"></div>
+						<div class="circle2-bar1"></div>
+						<div class="circle2-bar2"></div>
+					</div>
+
+					<div class="circle-outer">
+						<div class="circle">
+							<div>a</div>
+						</div>
+						<div class="circle selected">
+							<div>b</div>
+						</div>
+					</div>
+				</div> <!-- level 2-2 close-->
+			</div> <!-- level 2 close-->
+
+		</div>	<!-- 2 Level + 4circle close -->
+	</div> 
+
+	<!-- Descendant selector close -->
+
+
+	<div class="border"></div>
+
+
+	<!-- Class selector -->
+
+	<div class="content">
+		<p><strong>Class</strong> Selector: <strong>.a</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>.a</div>
+			</div>
+			<div class="circle">
+				<div>.b</div>
+			</div>
+			<div class="circle">
+				<div>.c</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Type selector close-->
+
+	<div class="border"></div>
+
+	<!-- Combine the Class selector -->
+
+	<div class="content">
+		<p><strong>Combine the Class</strong> Selector: <strong>b.x</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a.x</div>
+			</div>
+			<div class="circle selected">
+				<div>b.x</div>
+			</div>
+			<div class="circle">
+				<div>c.x</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Combine the Class selector close-->
+
+	<div class="border"></div>
+
+	<!-- Comma Combinator selector -->
+
+	<div class="content">
+		<p><strong>Comma Combinator</strong> Selector: <strong>a, c</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>c</div>
+			</div>
+			<div class="circle">
+				<div>d</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Comma Combinator selector close-->
+
+	<div class="border"></div>
+
+	<!-- Universal selector -->
+
+	<div class="content">
+		<p><strong>Universal</strong> Selector: <strong>*</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>c</div>
+			</div>
+			<div class="circle selected">
+				<div>d</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Universal selector close-->
+
+	<div class="border"></div>
+
+	<!-- Combine Universal selector -->
+
+	<div class="content"> 
+		<p><strong>Combine Universal</strong> Selector: <strong>a *</strong> { }</p>
+
+		<div>	<!-- Level 2 + 4 circle -->
+			<div class="level1">   <!-- Level 1  -->
+				<div class="circle-outer">
+					<div class="circle level-parent1">
+						<div>a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="level-parent1-bar-center"></div>
+					<div class="level-parent1-bar-horizontal"></div>
+					<div class="level-parent1-bar1"></div>
+					<div class="level-parent1-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle selected">
+						<div>b</div>
+					</div>
+					<div class="circle levelCircle selected">
+						<div>c</div>
+					</div>
+				</div>
+			</div>   <!-- level 1 close-->
+
+			<div class="flex-row">
+				<div class="leve2-1">  <!-- level 2-1-->
+					<div class="bar">  
+						<div class="circle2-bar-center"></div>
+						<div class="circle2-bar-horizontal"></div>
+						<div class="circle2-bar1"></div>
+						<div class="circle2-bar2"></div>
+					</div>
+
+					<div class="circle-outer">
+						<div class="circle selected">
+							<div>a</div>
+						</div>
+						<div class="circle selected">
+							<div>b</div>
+						</div>
+					</div>
+				</div>  <!-- level 2-1 close-->
+
+
+				<div class="leve2-2">
+					<div class="bar">  <!-- level 2-2-->
+						<div class="circle2-bar-center"></div>
+						<div class="circle2-bar-horizontal"></div>
+						<div class="circle2-bar1"></div>
+						<div class="circle2-bar2"></div>
+					</div>
+
+					<div class="circle-outer">
+						<div class="circle selected">
+							<div>a</div>
+						</div>
+						<div class="circle selected">
+							<div>b</div>
+						</div>
+					</div>
+				</div> <!-- level 2-2 close-->
+			</div> <!-- level 2 close-->
+
+		</div>	<!-- 2 Level + 4circle close -->	
+
+	</div> 
+
+	<!-- Combine Universal close -->
+
+	<div class="border"></div>
+
+	<!-- Adjacent Sibling selector -->
+
+	<div class="content">
+		<p><strong>Adjacent Sibling</strong> Selector: <strong>a + b</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Adjacent Sibling selector close-->
+
+	<div class="border"></div>
+
+	<!-- General Sibling selector -->
+
+	<div class="content">
+		<p><strong>General Sibling</strong> Selector: <strong>a ~ b</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>c</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- General Sibling selector close-->
+
+	<div class="border"></div>
+
+	<!-- First Child Pseudo selector -->
+
+	<div class="content">
+		<p><strong>First Child Pseudo</strong> Selector: <strong>b:first-child</strong> { }</p>
+		<div class="circle-outer ">
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+		</div>
+		<p class="or">or</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+		</div>
+		<p class="text-small firstChildPseudo">first-child</p>
+		<p class="text-medium">* In the second diagram, <strong>first-child</strong> is <strong>'a'</strong> element, not <strong>'b'</strong> element. So there is nothing to be selected</p>
+	</div>
+
+	<!-- First Child Pseudo selector close-->
+
+	<div class="border"></div>
+
+	<!-- Only Child Pseudo selector -->
+
+	<div class="content">
+		<p><strong>Only Child Pseudo </strong> Selector: 
+		<p><strong>b:only-child</strong> { } or</p>
+		<p><strong>a :only-child</strong> { }</p> 
+
+
+		<div class="flex-row">
+
+			<!-- 1circle -->
+			<div>
+				<div class="circle-outer">
+					<div class="circle circle1-parent">
+						<div>a</div>
+					</div>
+				</div>
+				<div class="bar">
+					<div class="circle1-bar-center"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle selected">
+						<div>b</div>
+					</div>
+				</div>
+			</div>	
+			<!-- 1circle close-->
+
+			<!-- 2circle -->
+			<div>
+
+				<div class="circle-outer">
+					<div class="circle circle2-parent">
+						<div>a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="circle2-bar-center"></div>
+					<div class="circle2-bar-horizontal"></div>
+					<div class="circle2-bar1"></div>
+					<div class="circle2-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>a</div>
+					</div>
+					<div class="circle">
+						<div>b</div>
+					</div>
+				</div>
+
+			</div>	
+			<!-- 2circle close -->
+
+			<!-- 3circle -->
+			<div>			
+				<div class="circle-outer">
+					<div class="circle circle3-parent">
+						<div>a</div>
+					</div>
+				</div>
+				<div class="bar">
+					<div class="circle3-bar-center"></div>
+					<div class="circle3-bar1"></div>
+					<div class="circle3-bar2"></div>
+					<div class="circle3-bar-horizontal"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>a</div>
+					</div>
+					<div class="circle">
+						<div>b</div>
+					</div>
+					<div class="circle">
+						<div>c</div>
+					</div>
+				</div>
+			</div>	
+			<!-- 3circle close-->	
+		</div> <!-- diagram-outer close-->
+
+	</div>
+
+	<!-- Only Child Pseudo selector close-->
+
+	<div class="border"></div>
+
+	<!-- Last Child Pseudo selector -->
+
+	<div class="content">
+		<p><strong>Last Child Pseudo</strong> Selector: <strong>b:last-child</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+		</div>
+		<p class="or">or</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>c</div>
+			</div>
+		</div>
+		<p class="text-medium">* In the second diagram, <strong>last-child</strong> is <strong>'c'</strong> element, not <strong>'b'</strong> element. So there is nothing to be selected.</p>
+	</div>
+
+	<!-- Last Child Pseudo selector close-->
+
+	<div class="border"></div>
+
+	<!-- Nth Child Pseudo selector -->
+
+	<div class="content">
+		<p><strong>Nth Child Pseudo</strong> Selector:</p> 
+		<br>
+		<p>	<strong>b:nth-child(2)</strong> { }</p>
+		<!-- circle with number -->
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small">2</p>
+			<p class="text-small">3</p>
+
+		</div>
+
+		<div class="circle-outer">
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+		</div>
+
+		<p class="or">or</p>
+
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small">2</p>
+			<p class="text-small">3</p>		
+		</div>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+		</div>
+
+		<p class="or">or</p>
+
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small">2</p>
+			<p class="text-small">3</p>		
+		</div>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+		</div>
+		<!-- circle with number close-->
+
+		<p class="text-medium">* In the third diagram, <strong>nth-child(2)</strong> is <strong>'a'</strong> element, not <strong>'b'</strong> element. So there is nothing to be selected.</p>
+
+		<br>
+		<p>	<strong>a :nth-child(2)</strong> { }</p>
+
+			<!-- 3circle -->
+		<div>			
+			<div class="circle-outer">
+				<div class="circle circle3-parent">
+					<div>a</div>
+				</div>
+			</div>
+			<div class="bar">
+				<div class="circle3-bar-center"></div>
+				<div class="circle3-bar1"></div>
+				<div class="circle3-bar2"></div>
+				<div class="circle3-bar-horizontal"></div>
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>a</div>
+				</div>
+				<div class="circle selected">
+					<div>b</div>
+				</div>
+				<div class="circle">
+					<div>c</div>
+				</div>
+			</div>
+		</div>	
+		<!-- 3circle close-->
+
+	</div>
+
+	<!-- Nth Child Pseudo selector close -->
+
+	<div class="border"></div>
+
+	<!-- Nth Last Child selector -->
+
+	<div class="content">
+		<p><strong>Nth Last Child</strong> Selector:</p>
+		<br>
+		<p><strong>a :nth-last-child(2)</strong> { } or</p>
+		<p><strong>c:nth-last-child(2)</strong> { }</p>
+
+
+
+		<!-- 4circle -->
+		<div>	
+			<div class="circle-outer">
+				<div class="circle circle4-parent">
+					<div>a</div>
+				</div>
+			</div>
+
+			<div class="bar">
+				<div class="circle4-bar-center"></div>
+				<div class="circle4-bar-horizontal"></div>
+				<div class="circle4-bar1"></div>
+				<div class="circle4-bar2"></div>
+				<div class="circle4-bar3"></div>
+				<div class="circle4-bar4"></div>
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>a</div>
+				</div>
+				<div class="circle">
+					<div>b</div>
+				</div>
+				<div class="circle selected">
+					<div>c</div>
+				</div>
+				<div class="circle">
+					<div>d</div>
+				</div>
+			</div>
+		</div>	
+		<!-- 4circle close -->
+
+		<!-- numbers -->
+		<div class="number">
+			<p class="text-small">4</p>
+			<p class="text-small">3</p>
+			<p class="text-small">2</p>
+			<p class="text-small">1</p>
+
+		</div>
+		<!-- numbers close -->
+
+		<br><br><br>
+
+		<p><strong>a:nth-last-child(2)</strong> { } or</p> 
+		<p><strong>b:nth-last-child(2)</strong> { } or</p> 
+		<p><strong>d:nth-last-child(2)</strong> { }</p>
+
+			<!-- 4circle -->
+		<div>	
+			<div class="circle-outer">
+				<div class="circle circle4-parent">
+					<div>a</div>
+				</div>
+			</div>
+
+			<div class="bar">
+				<div class="circle4-bar-center"></div>
+				<div class="circle4-bar-horizontal"></div>
+				<div class="circle4-bar1"></div>
+				<div class="circle4-bar2"></div>
+				<div class="circle4-bar3"></div>
+				<div class="circle4-bar4"></div>
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>a</div>
+				</div>
+				<div class="circle">
+					<div>b</div>
+				</div>
+				<div class="circle">
+					<div>c</div>
+				</div>
+				<div class="circle">
+					<div>d</div>
+				</div>
+			</div>
+		</div>	
+		<!-- 4circle close -->
+
+		<!-- numbers -->
+		<div class="number">
+			<p class="text-small">4</p>
+			<p class="text-small">3</p>
+			<p class="text-small">2</p>
+			<p class="text-small">1</p>
+
+		</div>
+		<!-- numbers close -->
+		<p class="text-medium">* In this diagram, <strong>nth-last-child(2)</strong> is <strong>'c'</strong> element, not <strong>'b'</strong> element. So there is nothing to be selected.</p>
+
+	</div>
+
+	<!-- Nth Last Child selector close-->
+
+	<div class="border"></div>
+
+	<!-- First of Type selector -->
+
+	<div class="content">
+		<p><strong>First of Type</strong> Selector: <strong>b:first-of-type</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>		
+		</div>
+	</div>
+
+	<!-- First of Type selector close-->
+
+	<div class="border"></div>
+
+	<!-- Nth of Type selector -->
+
+	<div class="content">
+		<p><strong>Nth of Type</strong> Selector:</p> 
+		<br>
+		<p>	<strong>a:nth-of-type(2)</strong> { }</p>
+		<!-- circle with number -->
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">2</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">3</p>	
+			<p class="text-small invisible">0</p>
+			<p class="text-small">4</p>	
+		</div>
+
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+		</div>
+		<!-- circle with number close-->
+
+		<br><br>
+
+			<p>	<strong>a:nth-of-type(even)</strong> { }</p>
+		<!-- circle with number -->
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">2</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">3</p>		
+			<p class="text-small invisible">0</p>
+			<p class="text-small">4</p>			
+		</div>
+
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+		</div>
+		<!-- circle with number close-->
+
+			<br><br>
+
+			<p>	<strong>a:nth-of-type(odd)</strong> { }</p>
+		<!-- circle with number -->
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">2</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">3</p>		
+			<p class="text-small invisible">0</p>
+			<p class="text-small">4</p>			
+		</div>
+
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+		</div>
+		<!-- circle with number close-->
+
+			<br><br>
+
+			<p>	<strong>a:nth-of-type(2n+1)</strong> { }</p>
+		<!-- circle with number -->
+		<div class="number">
+			<p class="text-small">1</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">2</p>
+			<p class="text-small invisible">0</p>
+			<p class="text-small">3</p>		
+			<p class="text-small invisible">0</p>
+			<p class="text-small">4</p>			
+		</div>
+
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+		</div>
+		<!-- circle with number close-->
+		<div class="number">
+			<p class="text-small nth-of-type">2n+1</p>		
+		</div>
+	</div>
+
+	<!-- Nth of Type selector close -->
+
+	<div class="border"></div>
+
+	<!-- Only of Type selector -->
+
+	<div class="content">
+		<p><strong>Only of Type </strong> Selector: <strong>b:only-of-type</strong> { }</p>
+
+
+
+		<div class="flex-row">
+
+			<!-- 1circle -->
+			<div>
+				<div class="circle-outer">
+					<div class="circle circle1-parent">
+						<div>a</div>
+					</div>
+				</div>
+				<div class="bar">
+					<div class="circle1-bar-center"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle selected">
+						<div>b</div>
+					</div>
+				</div>
+			</div>	
+			<!-- 1circle close-->
+
+			<!-- 2circle -->
+			<div>
+
+				<div class="circle-outer">
+					<div class="circle circle2-parent">
+						<div>a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="circle2-bar-center"></div>
+					<div class="circle2-bar-horizontal"></div>
+					<div class="circle2-bar1"></div>
+					<div class="circle2-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>b</div>
+					</div>
+					<div class="circle">
+						<div>b</div>
+					</div>
+				</div>
+
+			</div>	
+			<!-- 2circle close -->
+
+			<!-- 3circle -->
+			<div>			
+				<div class="circle-outer">
+					<div class="circle circle3-parent">
+						<div>a</div>
+					</div>
+				</div>
+				<div class="bar">
+					<div class="circle3-bar-center"></div>
+					<div class="circle3-bar1"></div>
+					<div class="circle3-bar2"></div>
+					<div class="circle3-bar-horizontal"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>a</div>
+					</div>
+					<div class="circle selected">
+						<div>b</div>
+					</div>
+					<div class="circle">
+						<div>c</div>
+					</div>
+				</div>
+			</div>	
+			<!-- 3circle close-->	
+		</div> <!-- diagram-outer close-->
+
+	</div>
+
+	<!-- Only of Type selector close -->
+
+	<div class="border"></div>
+
+	<!-- Last of Type selector -->
+
+	<div class="content">
+		<p><strong>Last of Type</strong> Selector: </p>
+		<br>
+
+		<p><strong>b:last-of-type</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>b</div>
+			</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+		<p><strong>a :last-of-type</strong> { }</p>
+		<!-- 3circle -->
+		<div>			
+			<div class="circle-outer">
+				<div class="circle circle3-parent">
+					<div>a</div>
+				</div>
+			</div>
+			<div class="bar">
+				<div class="circle3-bar-center"></div>
+				<div class="circle3-bar1"></div>
+				<div class="circle3-bar2"></div>
+				<div class="circle3-bar-horizontal"></div>
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>b</div>
+				</div>
+				<div class="circle">
+					<div>b</div>
+				</div>
+				<div class="circle selected">
+					<div>b</div>
+				</div>
+			</div>
+		</div>	
+		<!-- 3circle close-->
+
+
+		<p class="or">or</p>
+
+		<!-- 5circle -->
+		<div>	
+			<div class="circle-outer">
+				<div class="circle circle5-parent">
+					<div>a</div>
+				</div>
+			</div>
+
+			<div class="bar">
+				<div class="circle5-bar-center"></div>
+				<div class="circle5-bar-horizontal"></div>
+				<div class="circle5-bar1"></div>
+				<div class="circle5-bar2"></div>
+				<div class="circle5-bar3"></div>
+				<div class="circle5-bar4"></div>
+				<div class="circle5-bar5"></div>		
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>b</div>
+				</div>
+				<div class="circle selected">
+					<div>b</div>
+				</div>
+				<div class="circle">
+					<div>c</div>
+				</div>
+				<div class="circle selected">
+					<div>c</div>
+				</div>
+				<div class="circle selected">
+					<div>d</div>
+				</div>		
+			</div>
+		</div>	
+		<!-- 5circle close -->
+
+		<br><br><br>
+
+		<p><strong>.x:last-of-type</strong> { }</p>
+
+		<!-- 6 circle -->
+		<div>	
+			<div class="circle-outer">
+				<div class="circle circle6-parent">
+					<div>a</div>
+				</div>
+			</div>
+
+			<div class="bar">
+				<div class="circle6-bar-center"></div>
+				<div class="circle6-bar-horizontal"></div>
+				<div class="circle6-bar1"></div>
+				<div class="circle6-bar2"></div>
+				<div class="circle6-bar3"></div>
+				<div class="circle6-bar4"></div>
+				<div class="circle6-bar5"></div>		
+				<div class="circle6-bar6"></div>		
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>b</div>
+				</div>
+				<div class="circle">
+					<div>c</div>
+				</div>
+				<div class="circle">
+					<div>b.x</div>
+				</div>
+				<div class="circle">
+					<div>c.x</div>
+				</div>
+				<div class="circle selected">
+					<div>b.x</div>
+				</div>		
+				<div class="circle selected">
+					<div>c.x</div>
+				</div>
+			</div>
+		</div>	
+		<!-- 6 circle close -->
+
+		<p class="or">or</p>
+
+		<!-- 6 circle -->
+		<div>	
+			<div class="circle-outer">
+				<div class="circle circle6-parent">
+					<div>a</div>
+				</div>
+			</div>
+
+			<div class="bar">
+				<div class="circle6-bar-center"></div>
+				<div class="circle6-bar-horizontal"></div>
+				<div class="circle6-bar1"></div>
+				<div class="circle6-bar2"></div>
+				<div class="circle6-bar3"></div>
+				<div class="circle6-bar4"></div>
+				<div class="circle6-bar5"></div>		
+				<div class="circle6-bar6"></div>		
+			</div>
+
+			<div class="circle-outer">
+				<div class="circle">
+					<div>b.x</div>
+				</div>
+				<div class="circle">
+					<div>c.x</div>
+				</div>
+				<div class="circle">
+					<div>b.x</div>
+				</div>
+				<div class="circle">
+					<div>c.x</div>
+				</div>
+				<div class="circle">
+					<div>b</div>
+				</div>		
+				<div class="circle">
+					<div>c</div>
+				</div>
+			</div>
+		</div>	
+		<!-- 6 circle close -->
+
+
+		<!-- arrow -->
+		<div class="arrow-outer">
+			<div class="arrow flex-row">
+				<div class="arrow1"></div>
+				<div class="arrow2"></div>
+			</div>	
+
+			<div class="bar">
+				<div class="arrow-bar-center"></div>
+				<div class="arrow-bar-horizontal"></div>
+				<div class="arrow-bar1"></div>
+				<div class="arrow-bar2"></div>
+			</div>
+		</div>
+		<!-- arrow close -->
+		<p class="text-medium">* Those items won’t be selected as no <strong>.x</strong> is presented</p>
+
+	</div>
+
+	<!-- Last of Type selector close -->
+
+	<div class="border"></div>
+
+	<!-- Empty selector -->
+
+	<div class="content">
+		<p><strong>Empty</strong> Selector: <strong>a:empty</strong> { }</p>
+
+		<!-- 	infographic outer -->
+		<div class="circle-outer">
+			<div class="circle selected marginRight">
+				<div>a</div>
+			</div>
+			<div class="circle marginRight">
+				<div>a</div>
+			</div>
+			<!-- 2circle -->
+			<div>
+				<div class="circle-outer">
+					<div class="circle circle2-parent">
+						<div>a</div>
+					</div>
+				</div>
+
+				<div class="bar">
+					<div class="circle2-bar-center"></div>
+					<div class="circle2-bar-horizontal"></div>
+					<div class="circle2-bar1"></div>
+					<div class="circle2-bar2"></div>
+				</div>
+
+				<div class="circle-outer">
+					<div class="circle">
+						<div>b</div>
+					</div>
+					<div class="circle">
+						<div>b</div>
+					</div>
+				</div>
+
+			</div>	
+			<!-- 2circle close -->
+			<p class="text-small hello">hello</p>
+		</div>  
+		<!-- 	infographic outer close-->
+
+		<p class="text-medium">* <strong>`empty`</strong> indicates no children elements or  text.</p>
+	</div>
+
+	<!-- Empty selector close -->
+
+	<div class="border"></div>
+
+	<!-- Negation Pseudo-class selector -->
+
+	<div class="content">
+		<p><strong>Negation Pseudo-class</strong> Selector:</p> 
+		<br><br>
+		<p><strong>a:not(.x)</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle">
+				<div>a.x</div>
+			</div>
+			<div class="circle">
+				<div>b.x</div>
+			</div>
+		</div>
+
+		<br><br>
+		<p><strong>a:not(:last-of-type)</strong> { }</p>
+		<div class="circle-outer">
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>b</div>
+			</div>
+			<div class="circle selected">
+				<div>a</div>
+			</div>
+			<div class="circle">
+				<div>a</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Negation Pseudo-class selector close -->
+
+	<div class="border"></div>
+
+	<!-- Attribute selector -->
+
+	<div class="content">
+		<p><strong>Attribute</strong> Selector:</p> 
+		<br>
+		<p><strong>[for]</strong> { }</p>
+		<div class="circle-outer condensed">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>a[x]</div>
+			</div>
+			<div class="circle selected">
+				<div>a[y]</div>
+			</div>
+			<div class="circle selected">
+				<div>a[z]</div>
+			</div>
+		</div>
+
+		<br><br>
+		<p><strong>a[for]</strong> { }</p>
+		<div class="circle-outer condensed">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>a[x]</div>
+			</div>
+			<div class="circle">
+				<div>b[y]</div>
+			</div>
+			<div class="circle">
+				<div>c[z]</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Attribute selector close -->
+
+	<div class="border"></div>
+
+	<!-- Attribute Value selector -->
+
+	<div class="content">
+		<p><strong>Attribute Value</strong> Selector: <strong>a[for=“x”]</strong> { }</p>
+		<div class="circle-outer condensed">
+			<div class="circle">
+				<div>a</div>
+			</div>
+			<div class="circle selected">
+				<div>a[x]</div>
+			</div>
+			<div class="circle">
+				<div>a[y]</div>
+			</div>
+			<div class="circle">
+				<div>a[z]</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Attribute Value selector close -->
+
+	<div class="border"></div>
+
+	<!-- Attribute Starts selector -->
+
+	<div class="content">
+		<p><strong>Attribute Starts</strong> Selector: <strong>[for^=“x”]</strong> { }</p>
+		<div class="circle-outer condensed">
+			<div class="circle selected">
+				<div>[x]</div>
+			</div>
+			<div class="circle selected">
+				<div>[xy]</div>
+			</div>
+			<div class="circle">
+				<div>[yz]</div>
+			</div>
+			<div class="circle">
+				<div>[zx]</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Attribute Starts selector close -->
+
+	<div class="border"></div>
+
+	<!-- Attribute Ends selector -->
+
+	<div class="content">
+		<p><strong>Attribute Ends</strong> Selector: <strong>[for$=“x”]</strong> { }</p>
+		<div class="circle-outer condensed">
+			<div class="circle selected">
+				<div>[x]</div>
+			</div>
+			<div class="circle">
+				<div>[xy]</div>
+			</div>
+			<div class="circle">
+				<div>[yz]</div>
+			</div>
+			<div class="circle selected">
+				<div>[zx]</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Attribute Ends selector close -->
+
+	<div class="border"></div>
+
+	<!-- Attribute Wildcard selector -->
+
+	<div class="content">
+		<p><strong>Attribute Wildcard</strong> Selector: <strong>[for*=“x”]</strong> { }</p>
+		<div class="circle-outer condensed">
+			<div class="circle selected">
+				<div>[x]</div>
+			</div>
+			<div class="circle selected">
+				<div>[xy]</div>
+			</div>
+			<div class="circle">
+				<div>[yz]</div>
+			</div>
+			<div class="circle selected">
+				<div>[zx]</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Attribute Wildcard selector close -->
+
+	<br>
+
+	<div class="footer">
+		<h2>* the end *</h2> 
+		<div>
+			<p class="doTheMagic">This cheatsheet is desinged for a quick search on CSS selectors  :) 
+	There are so many CSS selectors with unfamiliar symbols,  >  .  ,  *  +  ~ [ ] etc,   
+	so I am often confused with how CSS selectors work.  
+	I wish this infographic helps you find proper CSS selectors.
+	Print this PDF out and stick it on the wall. 
+	And if you need more details on CSS selectors, check out links below;</p>
+		</div>
+
+	<!--   button -->
+
+		<div class="button">
+			<a class="c-btn" href="" target="_black">Go 🕹</a>
+			<a class="c-btn" href="https://medium.com/p/9593bc204e3f/" target="_black">📖 more</a>
+			<a class="c-btn" href="https://www.dropbox.com/home/CSS%20selectors%20cheatsheet?preview=CSS+selectors+cheatsheet.pdf" target="_black">☕️ cheatsheet download</a>
+
+		</div>
+
+		<h2>* Happy codesign today! *</h2>
+	</div>
+</div>
+  
+  
+
+</body>
+
+</html>

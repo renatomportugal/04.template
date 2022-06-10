@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>7 Basic Animation Effects</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  display: grid;
+  place-content: center;
+  background: #333;
+  padding: 2em;
+}
+
+.container {
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  width: 16em;
+  height: 16em;
+  background: #fff;
+  margin: 0.7em;
+  overflow: hidden;
+}
+.card h1 {
+  text-align: center;
+  margin: 1em 0;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+.back {
+  background: #555;
+}
+.middle {
+  background: #444;
+}
+.front {
+  background: #333;
+}
+
+.card b {
+  display: block;
+}
+
+/* PARALLAX */
+
+.parallax .back {
+  margin-top: 2em;
+  width: 1em;
+  height: 1em;
+  box-shadow: 
+    -15em 0 0 0 #555,
+    -10em 0 0 0 #555, 
+    -5em 0 0 0 #555, 
+    5em 0 0 0 #555, 
+    10em 0 0 0 #555, 
+    15em 0 0 0 #555;
+  animation: parallax-back 12s linear infinite;
+}
+@keyframes parallax-back {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(20em) }
+}
+.parallax .middle {
+  margin-top: 1em;
+  width: 2em;
+  height: 2em;
+  box-shadow: 
+    -20em 0 0 0 #444,
+    -10em 0 0 0 #444, 
+    10em 0 0 0 #444, 
+    20em 0 0 0 #444;
+  animation: parallax-middle 2s linear infinite;
+}
+@keyframes parallax-middle {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(20em) }
+}
+.parallax .front {
+  margin-top: 0.5em;
+  width: 4em;
+  height: 4em;
+  box-shadow: 
+    -15em 0 0 0 #333,
+    15em 0 0 0 #333;
+  animation: parallax-front 0.6s linear infinite;
+}
+@keyframes parallax-front {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(15em) }
+}
+
+/* PERSPECTIVE */
+
+.perspec b {
+  position: absolute;
+}
+.perspec .back {
+  width: 2em;
+  height: 2em;
+  animation: perspec-back 3s linear infinite;
+}
+@keyframes perspec-back {
+  0%,100% { transform: translate(3em,0) }
+  25% { transform: translate(3.4em,0) }
+  50% { transform: translate(3.4em,0.6em) }
+  75% { transform: translate(3em,0.6em) }
+}
+.perspec .middle {
+  width: 4em;
+  height: 4em;
+  animation: perspec-middle 3s linear infinite;
+}
+@keyframes perspec-middle {
+  0%,100% { transform: translate(4.2em,0.4em) }
+  25% { transform: translate(4.8em,0.4em) }
+  50% { transform: translate(4.8em,1.2em) }
+  75% { transform: translate(4.2em,1.2em) }
+}
+.perspec .front {
+  width: 6em;
+  height: 6em;
+  animation: perspec-front 3s linear infinite;
+}
+@keyframes perspec-front {
+  0%,100% { transform: translate(6.5em,1em) }
+  25% { transform: translate(7.5em,1em) }
+  50% { transform: translate(7.5em,2em) }
+  75% { transform: translate(6.5em,2em) }
+}
+
+/* FOCUS */
+
+.focus b {
+  position: absolute;
+}
+.focus .back {
+  width: 2em;
+  height: 2em;
+  transform: translate(3.4em,0.6em) ;
+  animation: focus-back 8s linear infinite;
+}
+@keyframes focus-back {
+  20%,30% { filter: blur(5px) }
+  0%,40%,50%,80%,100% { filter: blur(3px) }
+  60%,70% { filter: blur(0.01px) }
+}
+.focus .middle {
+  width: 4em;
+  height: 4em;
+  transform: translate(4.8em,1.2em);
+  animation: focus-middle 8s linear infinite;
+}
+@keyframes focus-middle {
+  20%,70% { filter: blur(3px) }
+  0,10%,80%,100% { filter: blur(0.01px) }
+}
+.focus .front {
+  width: 6em;
+  height: 6em;
+  transform: translate(7.5em,2em);
+  animation: focus-front 8s linear infinite;
+}
+@keyframes focus-front {
+  60%,70% { filter: blur(6px) }
+  0%,10%,50%,80%,100% { filter: blur(3px) }
+  20%,40% { filter: blur(0.01px) }
+}
+
+
+/* ZOOM */
+
+.zoom b {
+  position: absolute;
+}
+.zoom .back {
+  width: 2em;
+  height: 2em;
+  animation: zoom-back 4s infinite;
+}
+@keyframes zoom-back {
+  0%,100% { transform: translate(5em,0em) scale(1) }
+  50% { transform: translate(4em,-0.8em) scale(0.6) }
+}
+.zoom .middle {
+  width: 4em;
+  height: 4em;
+  transform: translate(6em,0.5em);
+}
+.zoom .front {
+  width: 6em;
+  height: 6em;
+  animation: zoom-front 4s infinite;
+}
+@keyframes zoom-front {
+  0%,100% { transform: translate(8em,1.5em) scale(1) }
+  50% { transform: translate(10em,3em) scale(1.4) }
+}
+
+/* SLOW MOTION */
+
+.slow b {
+  position: absolute;
+}
+
+.slow .middle {
+  width: 4em;
+  height: 4em;
+  box-shadow: -4em -2em 0 -1em #555, 6.5em 4em 0 1.5em #333;
+  animation: slow-middle 2s linear infinite;
+}
+@keyframes slow-middle {
+  0% { transform: translate(-1em,-2em) scale(0.2) }
+  12% { transform: translate(3em,0) scale(0.9) }
+  100% { transform: translate(5em,1em) scale(1.1) }
+}
+
+/* GLITCH */
+
+.glitch b {
+  position: absolute;
+}
+
+.glitch .back {
+  width: 2em;
+  height: 2em;
+  transform: translate(2em,5em) ;
+}
+.glitch .middle {
+  width: 4em;
+  height: 4em;
+  transform: translate(4.5em,3em);
+  animation: glitch-middle 3s infinite;
+}
+@keyframes glitch-middle {
+  0%,26%,30%,72%,76%,100% { transform: translate(4.5em,3em) skew(0deg) ; box-shadow: none }
+  30%,70% {transform: translate(4.5em,3em) skew(30deg);}
+  29%,31%,69%,71% {transform: translate(4.5em,3em) skew(0deg);}
+  28%,74% { box-shadow: 
+    -0.2em 0.1em 0 0 cyan,
+    0.2em -0.1em 0 0 magenta
+  }
+}
+.glitch .middle:after,
+.glitch .middle:before {
+  display: block;
+  content: "";
+  background: #444;
+  width: 4em;
+}
+.glitch .middle:after {
+  height: 1.4em;
+  animation: glitch-middle-after 3s infinite;
+}
+@keyframes glitch-middle-after {
+  0%,34%,38%,46%,50%,100% { transform: translate(0,1em); box-shadow: none; }
+  36%,48% { transform: translate(0.4em,0em);
+  box-shadow: 
+    -1em 0 0 0 cyan,
+    1em 0 0 0 magenta,
+    0.5em 1em 0 -0.8em cyan
+  }
+}
+.glitch .middle:before {
+  height: 1em;
+  transform: translate(0em,3em);
+  animation: glitch-middle-before 3s infinite;
+}
+@keyframes glitch-middle-before {
+  0%,30%,34%,50%,54%,100% { transform: translate(0,0); box-shadow: none; }
+  32%,52% { transform: translate(-0.4em,1em);
+  box-shadow: 
+    -0.3em 0 0 0 red,
+    0.3em 0 0 0 yellow}
+}
+.glitch .front {
+  width: 6em;
+  height: 6em;
+  transform: translate(9em,1em);
+}
+
+
+/* SHAKE */
+
+.shake b {
+  position: absolute;
+}
+
+.shake .back {
+  width: 2em;
+  height: 2em;
+  transform: translate(2em,5em) ;
+}
+.shake .middle {
+  width: 4em;
+  height: 4em;
+  animation: zoom-middle 2s infinite;
+}
+@keyframes zoom-middle {
+  0%,40%,80%,100% { transform: translate(4.5em,3em) }
+  42%,46%,50%,54%,58%,62%,66%,70%,74%,78% { transform: translate(4.4em,3em) }
+  44%,48%,52%,56%,60%,64%,68%,72%,76% { transform: translate(4.6em,3em) }
+}
+.shake .front {
+  width: 6em;
+  height: 6em;
+  transform: translate(9em,1em);
+}
+
+
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+  <div class="parallax card">
+    <h1>Parallax</h1>
+    <b class="back"></b>
+    <b class="middle"></b>
+    <b class="front"></b>
+  </div>
+
+  <div class="perspec card">
+    <h1>Perspective</h1>
+    <b class="back"></b>
+    <b class="middle"></b>
+    <b class="front"></b>
+  </div>
+
+  <div class="focus card">
+    <h1>Focus</h1>
+    <b class="back"></b>
+    <b class="middle"></b>
+    <b class="front"></b>
+  </div>
+
+  <div class="zoom card">
+    <h1>Zoom</h1>
+    <b class="back"></b>
+    <b class="middle"></b>
+    <b class="front"></b>
+  </div>
+
+  <div class="slow card">
+    <h1>Slow Motion</h1>
+    <b class="middle"></b>
+  </div>
+
+  <div class="glitch card">
+    <h1>Glitch</h1>
+    <b class="back"></b>
+    <b class="middle"></b>
+    <b class="front"></b>
+  </div>
+
+  <div class="shake card">
+    <h1>Shake</h1>
+    <b class="back"></b>
+    <b class="middle"></b>
+    <b class="front"></b>
+  </div>
+</div>
+  
+  
+
+</body>
+
+</html>

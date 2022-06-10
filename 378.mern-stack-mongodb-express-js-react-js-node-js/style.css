@@ -1,0 +1,213 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration : none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #00d8ff;
+  font-size: 60px;
+}
+
+.mern-logos {
+  display: flex;
+}
+.mongo-logo{
+  margin-left: 80px;
+  display: column;
+  
+}
+.topmongo{
+  display: flex;
+  position:relative;
+  bottom: 50px;
+  
+}
+.leftleave{
+  width: 50px;
+        height: 190px;
+        background-color: #41a83b;
+        border-radius: 0  190px 200px 0 ;
+  margin-right:75px;
+  clip-path: ellipse(100% 50% at 0% 50%);
+}
+.rightleave{
+  width: 50px;
+        height: 190px;
+  
+  background-color: #5ebc44;
+        border-radius: 200px 0 0 200px;
+    margin-right:0px;
+  clip-path: ellipse(100% 50% at 100% 50%);
+}
+.chunk{
+  background-color: #a8ab84;
+  position:relative;
+margin-left: 44px;
+  margin-top: -70px;
+  height: 35px;
+    width: 10px;
+z-index: 1;
+  border-radius: 63% 37% 100% 0% / 100% 100% 0% 0% ;
+}
+.express-logo {
+  position:relative;
+  width: 200px;
+  height: 80px;
+  color: #f20609;
+  display: flex;
+  bottom: 70px;
+  justify-content: center;
+}
+
+.express-logo:after {
+  content: "ex";
+  font-family: 'Raleway', sans-serif;
+  font-size: 150px;
+  position: absolute;
+  top: 10px;
+}
+
+.expressive {
+  display: flex;
+  justify-content: center;
+}
+
+.expressive:before {
+  content: "E";
+  position: absolute;
+  top: 240px;
+}
+.expressive:after {
+  content: "M";
+  position: absolute;
+  color: #3d9439;
+  right: 300px;
+  top: 240px;
+}
+
+.react-logo {
+  position:relative;
+  width: 240px;
+  height: 80px;
+  border: 10px solid #00d8ff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  
+}
+
+.react-logo:before {
+  box-sizing: border-box;
+  content: " ";
+  position:absolute;
+  width: 240px;
+  height: 80px;
+  border: 10px solid #00d8ff;
+  border-radius: 50%;
+  transform: rotate(120deg);
+  left: 50%;
+  top: 50%;
+  margin-left: -120px;
+  margin-top: -40px;
+}
+
+.react-logo:after {
+  box-sizing: border-box;
+  content: " ";
+  position:absolute;
+  width: 240px;
+  height: 80px;
+  border: 10px solid #00d8ff;
+  border-radius: 50%;
+  transform: rotate(-120deg); 
+  left: 50%;
+  top: 50%;
+  margin-left: -120px;
+  margin-top: -40px;
+}
+
+.reactive {
+  width: 40px;
+  height: 40px;
+  background: #00d8ff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.reactive:before {
+  content: "R";
+  position: absolute;
+  top: 160px;
+}
+.reactive:after {
+  content: "N";
+  position: absolute;
+  left: 335px;
+  top: 160px;
+  color: #66a416;
+}
+.nodes{
+  display: column;
+}
+
+.node-logo {
+  position:relative;
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  margin-right: 80px;
+  background: #66a416;
+  -webkit-clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  -webkit-box-pack: center;
+  bottom: 60px;
+  
+}
+.nodive:before {
+  content: "n o d e";
+  position: absolute;
+  font-weight: bold;
+    color: #666861;
+  left: 10px;
+  top: 60px;
+}
+.nodive:after {
+  content: "o";
+  position: absolute;
+  font-weight: bold;
+    color: #ffffff;
+  left: 58.5px;
+  top: 60px;
+}

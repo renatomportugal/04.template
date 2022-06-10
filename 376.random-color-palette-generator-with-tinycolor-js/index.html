@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random Color Palette Generator with Tinycolor.js</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+	<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+</head>
+
+<body>
+	<div class="hero is-fullheight">
+		<div class="navigation-container">
+			<div class="container">
+				<h1 class="color-title">
+					Color Palette Generator.
+				</h1>
+				<p class="color-subtitle">Simple to use tool for generating color palettes.</p>
+				<div class="links-top">
+				<a href="https://dev.to/newerrror" class="link-top">
+					<i class="fab fa-dev fa-2x"></i></a><a href="https://twitter.com/thisisbetkowski" class="link-top">
+					<i class="fab fa-twitter fa-2x"></i></a>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+		<div class="section controls-section columns">
+			<div class="column generator-section">
+				<p class="color-paragraph">
+					Input hex color code (ex. 123456)
+				</p>#<input maxlength="6" class="color-input" type="text" value="your colour here">
+				<div class="color-controls">
+					
+					<button class="color-submit" type="submit" onClick="generateColor()"><ion-icon name="planet"></ion-icon> Generate</button>
+					<button class="color-submit" type="submit" onClick="generateRandomColor()"><ion-icon name="color-wand"></ion-icon> 
+						Random 
+					</button>
+				</div>
+			</div>
+			<div class="column">
+				<p class="color-paragraph">
+					Change background:
+				</p>
+				<div class="change-color change-color-light" onClick="lightBackground()">
+
+				</div>
+				<div class="change-color change-color-dark" onClick="darkBackground()">
+
+				</div>
+			</div>
+
+		</div></div>
+		<div class="generated-section section">
+			<div class="container">
+				<p class="color-paragraph">
+					Primary Color
+				</p>
+				<!--
+				<div class="colorBox chosenColorDarkest"></div>
+				<div class="colorBox chosenColorDarker"></div>
+			<div class="colorBox chosenColor"></div>
+				<div class="colorBox chosenColorLighter"></div>
+				<div class="colorBox chosenColorLightest"></div>
+-->
+				<div class="columns colorBoxColumns">
+					<div class="column colorBox chosenColorDarkest">
+						<p class="bold-p chosenColorDarkestP hero-body"></p>
+					</div>
+					<div class="column colorBox chosenColorDarker">
+						<p class="bold-p chosenColorDarkerP hero-body"></p>
+					</div>
+					<div class="column colorBox chosenColor">
+						<p class="bold-p chosenColorP hero-body"></p>
+					</div>
+					<div class="column colorBox chosenColorLighter">
+						<p class="bold-p chosenColorLighterP hero-body"></p>
+					</div>
+					<div class="column colorBox chosenColorLightest">
+						<p class="bold-p chosenColorLightestP hero-body"></p>
+					</div>
+				</div>
+				<p class="color-paragraph">
+					Accent Color 1
+				</p>
+				<div class="columns colorBoxColumns">
+					<div class="column colorBox accentColorDarkest">
+						<p class="bold-p accentColorDarkestP hero-body"></p>
+					</div>
+					<div class="column colorBox accentColorDarker">
+						<p class="bold-p accentColorDarkerP hero-body"></p>
+					</div>
+					<div class="column colorBox accentColor">
+						<p class="bold-p accentColorP hero-body"></p>
+					</div>
+					<div class="column colorBox accentColorLighter">
+						<p class="bold-p accentColorLighterP hero-body"></p>
+					</div>
+					<div class="column colorBox accentColorLightest">
+						<p class="bold-p accentColorLightestP hero-body"></p>
+					</div>
+				</div>
+
+				<p class="color-paragraph">
+					Accent Color 2
+				</p>
+				<div class="columns colorBoxColumns">
+					<div class="column colorBox accentTwoColorDarkest">
+						<p class="bold-p accentTwoColorDarkestP hero-body"></p>
+					</div>
+					<div class="column colorBox accentTwoColorDarker">
+						<p class="bold-p accentTwoColorDarkerP hero-body"></p>
+					</div>
+					<div class="column colorBox accentTwoColor">
+						<p class="bold-p accentTwoColorP hero-body"></p>
+					</div>
+					<div class="column colorBox accentTwoColorLighter">
+						<p class="bold-p accentTwoColorLighterP hero-body"></p>
+					</div>
+					<div class="column colorBox accentTwoColorLightest">
+						<p class="bold-p accentTwoColorLightestP hero-body"></p>
+					</div>
+				</div>
+
+				<p class="color-paragraph">
+					Complement Color
+				</p>
+				<div class="columns colorBoxColumns">
+					<div class="column colorBox accentThreeColorDarkest">
+						<p class="bold-p accentThreeColorDarkestP hero-body"></p>
+					</div>
+					<div class="column colorBox accentThreeColorDarker">
+						<p class="bold-p accentThreeColorDarkerP hero-body"></p>
+					</div>
+					<div class="column colorBox accentThreeColor">
+						<p class="bold-p accentThreeColorP hero-body"></p>
+					</div>
+					<div class="column colorBox accentThreeColorLighter">
+						<p class="bold-p accentThreeColorLighterP hero-body"></p>
+					</div>
+					<div class="column colorBox accentThreeColorLightest">
+						<p class="bold-p accentThreeColorLightestP hero-body"></p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

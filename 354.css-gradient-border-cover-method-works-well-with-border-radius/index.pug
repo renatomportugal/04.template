@@ -1,0 +1,26 @@
+- var v = ['top', 'bottom'];
+- var p = v.length;
+- var h = ['left', 'right'];
+- var q = h.length;
+- var dims = ['x', 'y'];
+- var n = dims.length;
+- var vals = '';
+
+section
+	.container
+		.iso
+			- for(var i = 0; i < p; i++)
+				- for(var j = 0; j < q; j++)
+					- for(var k = 0; k < n; k++) {
+						- var sf = ((1 - k)*j || k*i) ? -1 : 1
+						- var val = 38 + Math.round(9*Math.random());
+						- vals += `--r${dims[k]}${i}${j}: ${val}%;`
+						.wrap(style=`--v: ${i}; --h: ${j}; --ax: ${k}; --val: ${val}; --sf: ${sf}`)
+							input(type='range' value=val id=`r${dims[k]}${i}${j}`)
+							label(for=`r${dims[k]}${i}${j}`)
+								span #{v[i]} #{h[j]}
+								var r#{dims[k]}
+								output
+					- }
+		#blob(style=vals)
+pre#code

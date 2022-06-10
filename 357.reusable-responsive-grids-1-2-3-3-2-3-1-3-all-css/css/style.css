@@ -1,0 +1,111 @@
+body {
+  text-align: center;
+  margin: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 700;
+  height: 100vh;
+}
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+article {
+  padding: 1em;
+  margin-bottom: 20px;
+}
+header,
+footer {
+  background-color: #6A5ACD;
+  padding: 1em;
+  margin-bottom: 20px;
+  height: 60px;
+}
+.content {
+  width: calc(1000vw -40);
+  height: 180px;
+  background-color:red;
+  padding: 1em;
+  margin-bottom: 20px;
+}
+header {
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+}
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: calc(50vw -40) calc(50vw-40) ;
+  grid-template-rows: 1;
+  grid-gap: 20px;
+  grid-template-areas: "left-half right-half";
+}
+.half-left {
+  grid-area: left-half;
+  background-color: #9ACD32;
+}
+.half-right {
+  grid-area: right-half;
+  background-color: #9ACD32;
+}
+.grid-wrapper-equal-thirds {
+  display: grid;
+  grid-template-columns: calc(33vw -50) calc(33vw-50) calc(33vw-50) ;
+  grid-template-rows: 1;
+  grid-gap: 20px;
+  grid-template-areas: "left-third middle-third right-third";
+}
+.left-third, .middle-third, .right-third {
+  background-color: #1E90FF;
+  padding: 1em;
+  margin-bottom: 20px;
+}
+.grid-wrapper-two-thirds {
+  display: grid;
+  grid-template-columns: 
+    66% calc(33% - 10px);
+  grid-template-rows: 1;
+  grid-gap: 20px;
+  grid-template-areas: "left-two-thirds right-one-third";
+}
+.left-two-thirds, .right-one-third {
+  background-color: #FF6347;
+  padding: 1em;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 700px) {
+	.grid-wrapper {
+		grid-template-areas: "left-half" "right-half";
+		grid-template-columns: 100%;
+		grid-template-rows: 100px 
+							100px;
+      grid-row-gap: 0;
+	}
+  .left-half, .right-half {
+    margin: 0px;
+  }
+	.grid-wrapper-equal-thirds {
+		grid-template-areas: "left-third" "middle-third" "right-third";
+		grid-template-columns: 100%;
+		grid-template-rows: 100px 100px 100px;
+      grid-gap: 20;
+	}
+  .left-third, .middle-third {
+    margin: 0px;
+  }
+.grid-wrapper-two-thirds {
+		grid-template-areas: "left-two-thirds" "right-one-third";
+		grid-template-columns: 100%;
+		grid-template-rows: 100px 100px;
+      grid-gap: 20;
+	}
+  .left-two-thirds {
+    margin: 0;
+  }
+  .right-one-third {
+    margin-bottom: 20px;
+  }
+}

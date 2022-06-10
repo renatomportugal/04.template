@@ -1,0 +1,195 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Oxygen:300,700);
+
+/*
+  Try some of the simple Chinese Radicals
+  I've listed below (copy/paste):
+
+  火 = Fire;
+  水 = Water;
+  日 = Sun;
+  月 = Moon;
+
+  Alternatively, find some more and
+  start learning today at:
+  http://chineasy.org/
+
+*/
+
+$color: #fefefe;
+$colorInactive: rgba(255,255,255,0.6);
+$border: transparentize($color,0.7);
+$borderActive: transparentize($color,0.4);
+
+body { 
+  background: #cc0000;
+  font-family: Oxygen, Arial, sans-serif;
+  color: $color; font-size: 20px;
+  padding: 10px 0 100px;
+}
+
+.goodchars {
+  text-align: center;
+}
+
+.logo { 
+  
+  vertical-align: middle;
+  display: inline-block;
+  width: 110px; 
+  height: 110px;
+  background: url(https://service.goodcharacters.com/images/icons-nav/nav-top-2013-07.png);
+}
+
+.intro {
+  
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 13px; 
+  opacity: 0.8;
+  width: 240px; 
+  padding: 0; 
+  margin: 0;
+  text-align: left;
+  
+  a { 
+    font-weight: 700; 
+    color: rgba(255,255,255,1); }
+}
+
+.container { 
+  
+  width: auto; 
+  margin: auto; 
+  padding: 20px; 
+
+}
+
+.tryme {
+  
+  font-size: 0.7em;
+  line-height: 2;
+  
+  a {
+    margin: 0 3px;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+  }
+  
+}
+
+.input-container {
+  
+  position: relative; padding: 10px;
+  width: 600px; 
+  border-bottom: 2px solid;
+  border-color: $border;
+  
+  &:after,
+  &:before { 
+    content: " "; width: 2px; height: 6px;
+    position: absolute; left: 0; bottom: 0; z-index: 1;
+    border-left: 2px solid $border;
+  } 
+  &:after { 
+    left: auto; right: 0; 
+    border-left: none;
+    border-right: 2px solid $border;
+  }
+  
+  input { 
+    
+    width: 100%; border: none; 
+    margin: 0; padding: 0; 
+    background: transparent; border: none;
+    color: $colorInactive; transition: 0.4s color;
+    
+    font-family: 'AR PL UKai HK','AR PL UKai CN','AR PL ZenKai Uni','AR PL KaitiM Big5','DFKai-SB','KaiTi','FangSong','AR PL UMing','MingLiu';
+    font-size: 65px; letter-spacing: -0px;
+    text-align: center;
+    
+    &:focus { outline: none; color: $color; }
+    
+  }
+  
+  &.active {
+    animation: 2.5s pulse ease infinite;
+    &:before, &:after { 
+      animation: 2.5s pulse ease infinite;
+    }
+  }
+  
+}
+
+.error-container,
+.help {
+  width: 600px; font-size: 12px; padding-top: 10px;
+  display: block; margin: auto; text-align: center;
+  height: 0; overflow: hidden;
+  
+  transition: height 0.2s ease;
+  
+  &.show { height: 30px; }
+}
+
+
+.output-container {
+   
+  width: 700px; text-align: center;
+  
+  a {
+    display: inline-block; max-width: 120px; 
+    margin: 5px;
+    img { border-radius: 6px; max-width: 100%; }
+  }
+  
+}
+
+
+
+@keyframes pulse {
+ 
+  0% { border-color: $border; }
+  23% { border-color: $borderActive; }
+  100% { border-color: $border; }
+  
+}
+
+
+@media screen and (max-width: 800px) {
+  .intro { display: none; }
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: transparentize($color,0.5);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: transparentize($color,0.5);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: transparentize($color,0.5);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: transparentize($color,0.5);
+}
+
+
+
+@media screen and (max-width: 560px) {
+
+  body { padding: 0; vertical-align: top; }
+
+  .logo { position: static; display: inline-block; }
+  .intro { position: static; display: inline-block; max-width: 220px; width: 220px; }
+  
+  .container { width: auto; margin: 20px; }
+  .input-container input { width: 100%; }
+
+ .error-container,
+ .help { width: auto; }
+
+}

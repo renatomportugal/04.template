@@ -1,0 +1,230 @@
+body {
+  background-color: #c33;
+}
+
+.frame {
+  background-color: #b22;
+  border: solid 5vmin #fc0;
+  border-radius: 50%;
+  box-shadow: 0 5vmin #a11 inset, 0 2vmin #a11;
+  box-sizing: border-box;
+  height: 80vmin;
+  margin: 10vmin auto;
+  overflow: hidden;
+  position: relative;
+  width: 80vmin;
+}
+
+.person .body {
+  background-color: #09f;
+  border-radius: 50%;
+  bottom: -5vmin;
+  height: 20vmin;
+  position: absolute;
+  width: 80vmin;
+}
+.person .neck {
+  background-color: #b88;
+  border-radius: 0 0 50% 50%;
+  bottom: 3vmin;
+  box-sizing: border-box;
+  height: 15vmin;
+  left: 22.5vmin;
+  position: absolute;
+  width: 25vmin;
+}
+.person .head {
+  background-color: #c99;
+  border-radius: 50%;
+  height: 50vmin;
+  margin: 10vmin 17.5vmin;
+  position: relative;
+  width: 35vmin;
+}
+.person .head .ear {
+  background-color: #b88;
+  border: solid 1vmin #c99;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 12.5vmin;
+  position: absolute;
+  top: 40%;
+  width: 3vmin;
+}
+.person .head .ear.left {
+  left: -1.5vmin;
+  transform: rotate(-5deg);
+}
+.person .head .ear.right {
+  right: -1.5vmin;
+  transform: rotate(5deg);
+}
+.person .head .nose {
+  background-color: #daa;
+  border-radius: 1vmin;
+  height: 12vmin;
+  left: 16vmin;
+  position: absolute;
+  top: 50%;
+  width: 3vmin;
+}
+.person .head .nose:before {
+  border: solid transparent;
+  border-bottom-color: #b88;
+  border-right-color: #b88;
+  border-width: 4vmin 1vmin;
+  content: "";
+  height: 0;
+  left: -2vmin;
+  position: absolute;
+  top: 4vmin;
+  width: 0;
+}
+.person .head .nose:after {
+  border: solid transparent;
+  border-bottom-color: #b88;
+  border-left-color: #b88;
+  border-width: 4vmin 1vmin;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: -2vmin;
+  top: 4vmin;
+  width: 0;
+}
+.person .head .cheek {
+  background-color: #daa;
+  border-radius: 50%;
+  height: 4vmin;
+  position: absolute;
+  top: 57%;
+  width: 6vmin;
+}
+.person .head .cheek.left {
+  border-top-left-radius: 20%;
+  left: 3vmin;
+  transform: rotate(15deg);
+}
+.person .head .cheek.right {
+  border-top-right-radius: 20%;
+  right: 3vmin;
+  transform: rotate(-15deg);
+}
+.person .head .mouth {
+  background-color: #600;
+  border-bottom: solid 1vmin #d88;
+  border-radius: 50%;
+  border-top: solid .5vmin #faa;
+  bottom: 6vmin;
+  height: 1.5vmin;
+  left: 13.5vmin;
+  overflow: hidden;
+  position: absolute;
+  width: 8vmin;
+}
+.person .head .mouth .teeth {
+  background-color: #ffc;
+  height: .5vmin;
+  width: 8vmin;
+}
+.person .head .hair {
+  border-top: solid 7vmin #643;
+  border-radius: 50%;
+  height: 50vmin;
+  position: absolute;
+  top: -2vmin;
+  width: 35vmin;
+}
+.person .head .hair:before {
+  background-image: repeating-linear-gradient(60deg, #643, #643 2vmin, #999 2vmin, #999 3vmin);
+  border-radius: 0 50% 20% 20%;
+  content: "";
+  height: 12vmin;
+  left: 7.5vmin;
+  position: absolute;
+  top: -7vmin;
+  width: 20vmin;
+}
+.person .head .beard {
+  border-bottom: solid 7vmin #310;
+  border-radius: 50%;
+  bottom: -3vmin;
+  height: 50vmin;
+  opacity: .5;
+  position: absolute;
+  width: 35vmin;
+}
+.person .head .beard:after {
+  background-color: #310;
+  border-radius: 0 0 50% 50%;
+  bottom: -7vmin;
+  content: "";
+  height: 10vmin;
+  left: 15vmin;
+  position: absolute;
+  width: 5vmin;
+}
+.person .head .beard:before {
+  border-radius: 50%;
+  border: solid 3vmin #310;
+  bottom: -4vmin;
+  box-sizing: border-box;
+  content: "";
+  height: 12.5vmin;
+  left: 10vmin;
+  position: absolute;
+  width: 15vmin;
+}
+.person .head .eyebrow {
+  background-color: #310;
+  border-radius: 1vmin;
+  height: 2vmin;
+  position: absolute;
+  top: 45%;
+  width: 10vmin;
+}
+.person .head .eyebrow.left {
+  border-bottom-left-radius: 100%;
+  left: 5vmin;
+  transform: rotate(-5deg);
+}
+.person .head .eyebrow.right {
+  border-bottom-right-radius: 100%;
+  right: 5vmin;
+  transform: rotate(5deg);
+}
+.person .head .eye-socket {
+  background-color: #b88;
+  border-radius: 20% 20% 50% 50%;
+  height: 5vmin;
+  position: absolute;
+  top: 50%;
+  width: 10vmin;
+}
+.person .head .eye-socket.left {
+  left: 5vmin;
+}
+.person .head .eye-socket.right {
+  right: 5vmin;
+}
+.person .head .eye {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 3vmin;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  width: 6vmin;
+}
+.person .head .eye.left {
+  left: 7vmin;
+}
+.person .head .eye.right {
+  right: 7vmin;
+}
+.person .head .eye .pupil {
+  background-color: #630;
+  border-radius: 2vmin;
+  height: 2.5vmin;
+  width: 2.5vmin;
+}

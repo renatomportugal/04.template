@@ -1,0 +1,272 @@
+@import "https://fonts.googleapis.com/css?family=Inconsolata";
+body, html {
+  font-family: "Inconsolata", ipm, Menlo, "Courier New", monospace;
+  height: 100%;
+  font-size: calc(0.5rem + 1.4vh);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  transition: 200ms background-color linear 500ms;
+  will-change: background-color;
+}
+
+.app-wrap__header {
+  padding: 1rem;
+}
+.app-wrap__title {
+  font-size: 2rem;
+  margin-bottom: 0.15em;
+}
+.app-wrap__sub {
+  font-family: "Inconsolata", ipm, Menlo, "Courier New", monospace;
+}
+
+.fan {
+  position: absolute;
+  top: 50vh;
+  right: 50vw;
+  -webkit-perspective: 600;
+          perspective: 600;
+  transition: 450ms -webkit-transform cubic-bezier(0.37, 0, 0.25, 0.98);
+  transition: 450ms transform cubic-bezier(0.37, 0, 0.25, 0.98);
+  transition: 450ms transform cubic-bezier(0.37, 0, 0.25, 0.98), 450ms -webkit-transform cubic-bezier(0.37, 0, 0.25, 0.98);
+}
+
+.blade {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  width: 10vh;
+  top: -40vh;
+  left: 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 0 15px rgba(33, 33, 33, 0.1);
+  -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+          transform: translate3d(0, 0, 0) rotate(0deg);
+  -webkit-transform-origin: 1vh 39vh;
+          transform-origin: 1vh 39vh;
+  border-radius: .5vh;
+  overflow: hidden;
+  transition: 200ms 200ms transform ease-in-out;
+  transition: 200ms 200ms transform cubic-bezier(0.25, 0.25, 0.275, 1.265);
+}
+.blade__label, .blade__value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1vh;
+  line-height: 1.2;
+}
+.blade__label {
+  color: #fff;
+  font-size: 1.6vh;
+  padding-top: .75vh;
+}
+.blade__label--inner {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blade__value {
+  font-size: 1.8vh;
+  font-weight: 500;
+  line-height: .75;
+  text-transform: uppercase;
+  background: #fff;
+  color: currentColor;
+}
+
+.settings,
+.settings-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 250px;
+  -webkit-transform: translateZ(1000px);
+          transform: translateZ(1000px);
+}
+
+.settings {
+  box-sizing: border-box;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: -1px 0 0 rgba(33, 33, 33, 0.1);
+  overflow: auto;
+}
+.settings__entry {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.settings__label {
+  flex-grow: 1;
+  width: 80%;
+  flex-basis: 80%;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+.settings__input {
+  width: 70%;
+}
+.settings__value {
+  font-family: "Inconsolata", ipm, Menlo, "Courier New", monospace;
+  font-size: 0.8rem;
+  text-align: right;
+  width: 20%;
+}
+
+.settings-background {
+  pointer-events: none;
+  -webkit-transform: translateZ(999px);
+          transform: translateZ(999px);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  overflow: hidden;
+}
+.settings-background .blade {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+input {
+  background-color: transparent;
+}
+
+input[type=range],
+input[type=color] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+input[type=range] {
+  margin: 0 0 0.5rem 0;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-thumb {
+  -webkit-clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%);
+          clip-path: polygon(100% 0%, 0% 0%, 50% 100%, 50% 100%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1rem;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  color: transparent;
+  border-radius: 0;
+  border: solid #212121;
+  border-width: 0 0 1px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid transparent;
+  height: .75rem;
+  width: .5rem;
+  border-radius: 0;
+  background: #212121;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0.25rem;
+  transition: 150ms background-color, 200ms clip-path, 200ms -webkit-clip-path;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1rem;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  color: transparent;
+  border-radius: 0;
+  border: solid #212121;
+  border-width: 0 0 1px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 2px solid transparent;
+  height: .75rem;
+  width: .5rem;
+  border-radius: 0;
+  background: #212121;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0.25rem;
+  transition: 150ms background-color, 200ms clip-path, 200ms -webkit-clip-path;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 1rem;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  color: transparent;
+  border-radius: 0;
+  border: solid #212121;
+  border-width: 0 0 1px;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #212121;
+  border: none;
+  border-radius: 100%;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #212121;
+  border-radius: 100%;
+  box-shadow: none;
+}
+
+input[type=range]::-ms-thumb {
+  border: 2px solid transparent;
+  height: .75rem;
+  width: .5rem;
+  border-radius: 0;
+  background: #212121;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0.25rem;
+  transition: 150ms background-color, 200ms clip-path, 200ms -webkit-clip-path;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+select {
+  font-family: "Inconsolata", ipm, Menlo, "Courier New", monospace;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  -webkit-appearance: none;
+  border: 0;
+  box-shadow: 0 1px 0 0 #212121;
+  border-radius: 0;
+  padding: 0.25rem 1rem 0.25rem 0.25rem;
+  background-color: transparent;
+  background-size: auto 40%;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%20%3C%21--%20Generator%3A%20IcoMoon.io%20--%3E%20%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%20%3Csvg%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M%2096.00%2C96.00l-96.00%2C96.00l%20256.00%2C256.00l%20256.00-256.00l-96.00-96.00L%20256.00%2C256.00L%2096.00%2C96.00z%22%20%3E%3C/path%3E%3C/svg%3E");
+  transition: 150ms background-color;
+}
+select:focus {
+  outline: none;
+  background-color: white;
+}

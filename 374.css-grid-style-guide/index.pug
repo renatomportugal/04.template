@@ -1,0 +1,210 @@
+input#bluepurple.variation(type="radio" value="1" name="color" checked)
+label(for="bluepurple")
+
+input#sunset.variation(type="radio" value="2" name="color")
+label(for="sunset")
+
+input#godiva.variation(type="radio" value="3" name="color")
+label(for="godiva")
+
+input#dark.variation(type="radio" value="4" name="color")
+label(for="dark")
+
+input#pinkaru.variation(type="radio" value="5" name="color")
+label(for="pinkaru")
+
+main
+	section.colors
+		h6 colors
+		div.palette.main
+			div.palette__main
+			- for (var i=0; i<6; i++)
+				div.palette__shade
+			h5 Primary
+		div.palette.secondary
+			div.palette__main
+			- for (var i=0; i<6; i++)
+				div.palette__shade
+			h5 Secondary
+		div.palette.accent1
+			div.palette__main
+			- for (var i=0; i<6; i++)
+				div.palette__shade
+			h5 Accent #1
+		div.palette.accent2
+			div.palette__main
+			- for (var i=0; i<6; i++)
+				div.palette__shade
+			h5 Accent #2
+		div.palette.accent3
+			div.palette__main
+			- for (var i=0; i<6; i++)
+				div.palette__shade
+			h5 Accent #3
+		div.palette.neutrals
+			- for (var i=0; i<8; i++)
+				div.palette__shade
+			h5 Neutrals
+	section.typography
+		h6 typography
+		div.font-family
+			div.font-family-bold
+				h1 Aa
+				h4 Poppins Bold
+			div.font-family-medium
+				h1 Aa
+				h4 Poppins Medium
+			div.font-family-light
+				h1 Aa
+				h4 Poppins Light
+		div.font-example
+			div.font-example__headline
+				h6.subheader Headlines
+				h1 h1 headline
+				h2 h2 headline
+				h3 h3 headline
+				h4 h4 headline
+				h5 h5 headline
+				h6 h6 headline
+			div.font-example__bodytext
+				h6.subheader Body Text
+				p I think we need to start from scratch. Jazz it up a little bit- use a funky color like purple.
+				p
+					strong  Can you add a bit of pastel pink and baby blue because the purple alone looks too fancy.
+				p
+					em  Make the purple more well, purple-er. Try a more powerful colour, it needs to be the same, but totally different.
+	section.buttons-wrapper
+		h6 Buttons
+		div.buttons
+			a.button Default Button
+			input.button.hover(type="button" value="Hovered Button")
+			button.button.active Active Button
+			a.button.disabled Disabled Button
+			a.button.secondary Secondary Button
+			a.button.accent Other Button
+			a.button.accent2 Other Button
+			a.button.accent3 Another Button
+			div
+				a.button.medium Medium Button
+				a.button.small Smol Button
+	section.links
+		h6 Links
+		.links__sec
+			a.link Sample Link
+			br
+			a.link.hover Hovered Link
+		.links__sec
+			a.link.primary Sample Link
+			br
+			a.link.primary.hover Hovered Link
+		.links__sec
+			a.link.secondary Sample Link
+			br
+			a.link.secondary.hover Hovered Link
+	section.inputs-selects
+		h6 Inputs & Selects
+		div.inputs
+			.input__wrapper
+				label.label-form A Normal Input
+				input.input-form(type="text" placeholder="Placeholder")
+				p.feedback-form A message here.
+			.input__wrapper
+				label.label-form An Active Input
+				input.input-form.active(type="text" placeholder="Placeholder" value="Typing Here...")
+			.input__wrapper
+				label.label-form A Disabled Input
+				input.input-form(type="text" placeholder="Placeholder" disabled)
+			.input__wrapper
+				label.label-form A Normal Select
+				select(type="text" placeholder="Placeholder")
+					option(value='1') Option 1
+					option(value='2') Option 2		
+		div.textarea-select
+			.input__wrapper.input-success
+				label.label-form A Right Input
+				.input__validator
+					input.input-form(type="text" placeholder="Placeholder")
+					.input__validator__status
+				p.feedback-form Awesome job.
+			.input__wrapper.input-error
+				label.label-form A Left Input
+				.input__validator
+					input.input-form(type="text" placeholder="Placeholder")
+					.input__validator__status
+				p.feedback-form You shall not pass.
+			.input__wrapper
+				label.label-form Textarea
+				textarea(type="text" placeholder="Placeholder")
+		div.toggle-buttons
+			h6.subheader Toggle Buttons
+			.checkbox-toggle
+				input#toggle-checkbox(type="checkbox")
+				label(for="toggle-checkbox")
+			.checkbox-toggle
+				input#toggle-checkbox-1(type="checkbox" checked)
+				label(for="toggle-checkbox-1")
+			.checkbox-toggle
+				input#toggle-checkbox-2(type="checkbox" disabled)
+				label(for="toggle-checkbox-2")
+		div.checkboxes
+			h6.subheader Checkboxes
+			.checkbox
+				input#checkbox-1(type="checkbox")
+				span.box
+				label(for="checkbox-1") Checkbox
+			.checkbox
+				input#checkbox-2(type="checkbox" checked)
+				span.box
+				label(for="checkbox-2") Checked Box
+		div.radio-buttons
+			h6.subheader Radio Buttons
+			.radio
+				input#radio-1(type="radio" name="radio-test" value="1" checked)
+				label(for="radio-1") Radio Button
+			.radio
+				input#radio-2(type="radio" name="radio-test" value="1")
+				label(for="radio-2") Selected Radio Button
+	section.badges
+		h6 Badges
+		span.badge.status-primary Received
+		span.badge.status-secondary Pending
+		span.badge.status-info Pending
+		span.badge.status-success Approved
+		span.badge.status-error Rejected
+	section.tooltips
+		h6 Tooltips
+		div
+			.tooltip.top.hovered(data-tooltip="Show a helpful tooltip here 😄") 
+				span Light Tooltip
+			.tooltip.top.dark.hovered(data-tooltip="Show a helpful tooltip here 😄") 
+				span Dark Tooltip
+			.tooltip.bottom(data-tooltip="Hello 👋") 
+				span Bottom Tooltip
+	section.alerts
+		h6 Alerts
+		.alert.status-primary A normal alert here.
+		.alert.status-secondary A normal alert here.
+		.alert.status-info A normal alert here.
+		.alert.status-success A happy alert here.
+		.alert.status-error A sad alert here.
+	section.loading
+		h6 loading indicators
+		div.spinner-1
+			.spinner(data-loading="Loading...")
+			label Please wait...
+		div.spinner-2
+			.spinner(data-loading="Loading...")
+			label Loading...
+
+footer
+	.explanation
+		| Part of the  
+		a(href="https://codepen.io/collection/DQvYpQ" target="_blank") CSS Grid collection here
+		| .
+	.social
+		a(href="https://twitter.com/meowlivia_" target="_blank")
+			i.icon-social-twitter.icons
+		a(href="https://github.com/oliviale" target="_blank")
+			i.icon-social-github.icons
+		a(href="https://dribbble.com/oliviale" target="_blank")
+			i.icon-social-dribbble.icons

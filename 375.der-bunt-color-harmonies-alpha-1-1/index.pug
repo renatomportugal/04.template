@@ -1,0 +1,33 @@
+.js-colors
+  .js-palette
+    app-wrap('title'='Der Bunt', 'value'='#ffffff')
+      .settings-background
+        fan(':colors'='colors')
+
+      .settings
+        label.settings__entry
+          h3.settings__label Method
+          select('v-model'='currentSpace', 'v-on:change'='updatePalette')
+            option('v-for'='space in spacesList', value='{{space}}') {{space}}
+
+        div
+          label.settings__entry
+            h3.settings__label colors
+            span.settings__value {{maxColors}}
+            input.settings__input(type='range', min=2, 'v-bind:max'='colorsLimit', step=1, 'v-bind:value'='maxColors', 'v-model'='maxColors', 'v-on:input'='updatePalette')
+          label.settings__entry('v-for'='attr in currentSettings.attr')
+            h3.settings__label {{attr.name}}
+            span.settings__value {{attr.value}}
+            template(v-if='attr.type == "color"')
+              input.settings__input(type='color', 'v-bind:value'='attr.value', 'v-on:input'='updatePalette', 'v-model'='attr.value')
+            template(v-if='attr.type == "select"')
+              select(type='{{attr.type}}', 'v-bind:value'='attr.value', 'v-on:change'='updatePalette', 'v-model'='attr.value')
+                option(v-for='val in attr.values', value='{{val}}') {{val}}
+            template(v-if='!attr.type')
+              input.settings__input(type='range', 'v-bind:min'='attr.min', 'v-bind:max'='attr.max', 'v-bind:step'='attr.step', 'v-bind:value'='attr.value', 'v-model'='attr.value', 'v-on:input'='updatePalette')
+          label.settings__entry('v-if'='space.hasStart')
+            h3.settings__label start color
+            input.settings__input(type='text', placeholder='HEX, RGB, HSL, Name, HSV etc..', 'v-on:change'='updatePalette')
+          
+
+      fan(':colors'='colors')

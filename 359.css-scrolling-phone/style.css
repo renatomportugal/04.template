@@ -1,0 +1,208 @@
+:root {
+  --col-metal-light: #f2f2f2;
+  --col-metal-medium: #a6a6a6;
+  --col-metal-dark: #737373;
+  --grad-1: 0deg, var(--col-metal-dark) 0%, var(--col-metal-light) 50%,
+    var(--col-metal-dark);
+  --grad-2: 45deg, black 0%, var(--col-metal-dark) 50%, var(--col-metal-light);
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: repeating-linear-gradient(
+    45deg,
+    #004c66,
+    #004c66 1em,
+    #306880 1em,
+    #306880 50%
+  );
+  background-size: 5em 5em;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rim {
+  width: 240px;
+  height: 440px;
+  background: red;
+  border-radius: 18px;
+  background: linear-gradient(var(--grad-1));
+  box-shadow: 0px 3px 21px rgba(0, 0, 0, 0.7);
+  
+    animation-name: rotate-phone;
+  animation-duration: 3s;
+  animation-delay: 0;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.rim2 {
+  width: 234px;
+  height: 434px;
+  background: red;
+  border-radius: 1em;
+  background: linear-gradient(var(--grad-2));
+}
+
+.face {
+  width: 228px;
+  height: 428px;
+  background: red;
+  border-radius: 13px;
+  background: linear-gradient(
+    0deg,
+    rgba(37, 37, 37, 1) 0%,
+    rgba(65, 65, 65, 1) 18%,
+    rgba(14, 14, 14, 1) 100%
+  );
+  box-shadow: inset rgba(0, 0, 0, 0.78) 0px 0px 5px;
+  position: relative;
+}
+
+.light{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background:#6eff3a;
+  border-radius: 10px;
+  display: block;
+  top:10px;
+  right:26px;
+  
+  animation-name: flash;
+   animation-direction: alternate;
+  animation-duration: 1s;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.speaker {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background: red;
+  display: block;
+  border-radius: 10px;
+  top: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(37, 37, 37, 1) 0%,
+    rgba(65, 65, 65, 1) 18%,
+    black 100%
+  );
+  border-bottom: 1px solid var(--col-metal-medium);
+}
+
+.screen {
+  width: 210px;
+  height: 370px;
+  background: white;
+  overflow: hidden;
+}
+
+.content {
+  animation-name: content-scroll;
+  animation-duration: 8s;
+  animation-delay: 0;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.paragraph{
+  margin:1em;
+}
+
+.line1{
+  width:10em;
+  height:10px;
+  background:var(--col-metal-dark);
+  border-radius:10px;
+  margin-bottom:1em;
+}
+
+.line2{
+  width:6em;
+  height:10px;
+  background:var(--col-metal-dark);;
+  border-radius:10px;
+  margin-bottom:1em;
+}
+
+.line3{
+  width:9em;
+  height:10px;
+  background:var(--col-metal-dark);;
+  border-radius:10px;
+  margin-bottom:1em;
+}
+
+.picture1{
+  width:calc(100% - 2em);
+  height:160px;
+  background:#fd349c;
+  margin:1em;
+}
+
+.picture_row{
+  display:flex;
+   margin:1em 1em;
+  justify-content: space-between;
+}
+.picture2{
+  width:calc(50% - 0.5em);
+  height:5em;
+  background:#34fd9f;
+ 
+}
+
+.picture3{
+  width:calc(50% - 0.5em);
+  height:5em;
+  background:#7dbcf3;
+ 
+}
+
+@keyframes content-scroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -600px);
+  }
+}
+
+@keyframes rotate-phone{
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes flash{
+  0% {
+    background:#6eff3a;
+    box-shadow:0 0 10px 0 #6eff3a;
+  }
+  100% {
+    background:black;
+    box-shadow:0 0 0 0 #6eff3a;
+  }
+}

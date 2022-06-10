@@ -118,14 +118,18 @@
 | [232.67puppy-s-night-time](https://renatomportugal.github.io/04.template/232.67puppy-s-night-time/) |<img src="images/232.67puppy-s-night-time.jpg"/> |
 | [243.boston-terrier-pure-css-image](https://renatomportugal.github.io/04.template/243.boston-terrier-pure-css-image/) |<img src="images/243.boston-terrier-pure-css-image.jpg"/> |
 | [258.mochi-shiba-vuejs-svg-css-cute](https://renatomportugal.github.io/04.template/258.mochi-shiba-vuejs-svg-css-cute/) |<img src="images/258.mochi-shiba-vuejs-svg-css-cute.jpg"/> |
+| [355.dog](https://renatomportugal.github.io/04.template/355.dog/) |<img src="images/355.dog.jpg"/> |
 |Com CSS      |Telas        |
 |---          |---          |
 | [205.animal-crossing-isabelle-s-day-off-pure-css](https://renatomportugal.github.io/04.template/205.animal-crossing-isabelle-s-day-off-pure-css/) |<img src="images/205.animal-crossing-isabelle-s-day-off-pure-css.jpg"/> |
 | [206.nasa-saturn-v-rocket-animated-in-3d-using-only-css](https://renatomportugal.github.io/04.template/206.nasa-saturn-v-rocket-animated-in-3d-using-only-css/) |<img src="images/206.nasa-saturn-v-rocket-animated-in-3d-using-only-css.jpg"/> |
 |Celular      |Telas        |
 | [212.mobiltelefonens-evolution-svg-shape-morphing](https://renatomportugal.github.io/04.template/212.mobiltelefonens-evolution-svg-shape-morphing/) |<img src="images/212.mobiltelefonens-evolution-svg-shape-morphing.jpg"/> |
+| [359.css-scrolling-phone](https://renatomportugal.github.io/04.template/359.css-scrolling-phone/) |<img src="images/359.css-scrolling-phone.jpg"/> |
 |Com Fala     |Telas        |
 | [213.an-owl-trapped-in-the-instawasher](https://renatomportugal.github.io/04.template/213.an-owl-trapped-in-the-instawasher/) |<img src="images/213.an-owl-trapped-in-the-instawasher.jpg"/> |
+|Coruja       |Telas        |
+| [356.cute-owl-css-only](https://renatomportugal.github.io/04.template/356.cute-owl-css-only/) |<img src="images/356.cute-owl-css-only.jpg"/> |
 |Costura      |Telas        |
 | [214.nick-slater-svg-animated-by-kono](https://renatomportugal.github.io/04.template/214.nick-slater-svg-animated-by-kono/) |<img src="images/214.nick-slater-svg-animated-by-kono.jpg"/> |
 |Culinária    |Telas        |
@@ -167,8 +171,11 @@
 | [254.eggs](https://renatomportugal.github.io/04.template/254.eggs/) |<img src="images/254.eggs.jpg"/> |
 |Poesia       |Telas        |
 | [227.poetry](https://renatomportugal.github.io/04.template/227.poetry/) |<img src="images/227.poetry.jpg"/> |
+|Praia        |Telas        |
+| [352.only-css-summer-dream](https://renatomportugal.github.io/04.template/352.only-css-summer-dream/) |<img src="images/352.only-css-summer-dream.jpg"/> |
 |Programador  |Telas        |
 | [225.the-mind-of-a-web-developer-pure-css-svg](https://renatomportugal.github.io/04.template/225.the-mind-of-a-web-developer-pure-css-svg/) |<img src="images/225.the-mind-of-a-web-developer-pure-css-svg.jpg"/> |
+| [360.programmer](https://renatomportugal.github.io/04.template/360.programmer/) |<img src="images/360.programmer.jpg"/> |
 |Rinoceronte  |Telas        |
 | [255.farting-rhino](https://renatomportugal.github.io/04.template/255.farting-rhino/) |<img src="images/255.farting-rhino.jpg"/> |
 | [257.interactive-hippo-button](https://renatomportugal.github.io/04.template/257.interactive-hippo-button/) |<img src="images/257.interactive-hippo-button.jpg"/> |
@@ -296,13 +303,13 @@
 
 |Categoria        |Telas        |
 |---          |---          |
-| [267.css-aces](https://renatomportugal.github.io/04.template/267.css-aces/) | <img src="images/267.css-aces.png"/> |
+| [267.css-aces](https://renatomportugal.github.io/04.template/267.css-aces/) | <img src="images/267.css-aces.jpg"/> |
 
 ## Cartaz
 
 |Categoria        |Telas        |
 |---          |---          |
-| [268.css-folded-poster-effect](https://renatomportugal.github.io/04.template/268.css-folded-poster-effect/) | <img src="images/268.css-folded-poster-effect.png"/> |
+| [268.css-folded-poster-effect](https://renatomportugal.github.io/04.template/268.css-folded-poster-effect/) | <img src="images/268.css-folded-poster-effect.jpg"/> |
 
 ## Catalogo
 
@@ -384,22 +391,54 @@
 
 |Avatar       |Telas        |
 |---          |---          |
-| [276.pure-css-avatar](https://renatomportugal.github.io/04.template/276.pure-css-avatar/) | <img src="images/276.pure-css-avatar.png"/> |
+| [276.pure-css-avatar](https://renatomportugal.github.io/04.template/276.pure-css-avatar/) | <img src="images/276.pure-css-avatar.jpg"/> |
 |Campanha     |Telas        |
-| [275.2020](https://renatomportugal.github.io/04.template/275.2020/) | <img src="images/275.2020.png"/> |
+| [275.2020](https://renatomportugal.github.io/04.template/275.2020/) | <img src="images/275.2020.jpg"/> |
 
 ## CSS
 
 |Links        |Telas        |
 |---          |---          |
 | [065.only-css-showcase-car](https://renatomportugal.github.io/04.template/065.only-css-showcase-car/) | <img src="images/065.only-css-showcase-car.png"/> |
+|Aprendizado  |Com Server   |
+| [368.angular-interactive-box-model-diagram](https://renatomportugal.github.io/04.template/368.angular-interactive-box-model-diagram/) | <img src="images/368.angular-interactive-box-model-diagram..jpg"/> |
+|Aprendizado  |Sem Server   |
+| [369.bootstrap-navbar-toggle-animations](https://renatomportugal.github.io/04.template/369.bootstrap-navbar-toggle-animations/) | <img src="images/369.bootstrap-navbar-toggle-animations..jpg"/> |
+| [370.padding-versus-margin-in-the-real-world](https://renatomportugal.github.io/04.template/370.padding-versus-margin-in-the-real-world/) | <img src="images/370.padding-versus-margin-in-the-real-world..jpg"/> |
+| [371.percentage-unit-for-font-size](https://renatomportugal.github.io/04.template/371.percentage-unit-for-font-size/) | <img src="images/371.percentage-unit-for-font-size..jpg"/> |
+| [372.percentage-unit-for-width-or-height](https://renatomportugal.github.io/04.template/372.percentage-unit-for-width-or-height/) | <img src="images/372.percentage-unit-for-width-or-height..jpg"/> |
+|Background   |Telas        |
+| [353.5-way-gradient-generator](https://renatomportugal.github.io/04.template/353.5-way-gradient-generator/) | <img src="images/353.5-way-gradient-generator.jpg"/> |
+|Border       |Telas        |
+| [354.css-gradient-border-cover-method-works-well-with-border-radius](https://renatomportugal.github.io/04.template/354.css-gradient-border-cover-method-works-well-with-border-radius/) | <img src="images/354.css-gradient-border-cover-method-works-well-with-border-radius.jpg"/> |
+|Color        |Contrast     |
+| [373.c3-color-contrast-checker](https://renatomportugal.github.io/04.template/373.c3-color-contrast-checker/) | <img src="images/373.c3-color-contrast-checker.jpg"/> |
+| [374.css-grid-style-guide](https://renatomportugal.github.io/04.template/374.css-grid-style-guide/) | <img src="images/374.css-grid-style-guide.jpg"/> |
+| [375.der-bunt-color-harmonies-alpha-1-1](https://renatomportugal.github.io/04.template/375.der-bunt-color-harmonies-alpha-1-1/) | <img src="images/375.der-bunt-color-harmonies-alpha-1-1.jpg"/> |
+| [376.random-color-palette-generator-with-tinycolor-js](https://renatomportugal.github.io/04.template/376.random-color-palette-generator-with-tinycolor-js/) | <img src="images/376.random-color-palette-generator-with-tinycolor-js.jpg"/> |
+|Efeitos      |Telas        |
+| [362.7-basic-animation-effects](https://renatomportugal.github.io/04.template/362.7-basic-animation-effects/) | <img src="images/362.7-basic-animation-effects.jpg"/> |
+|Logo         |Telas        |
+| [377.css-batman-logo](https://renatomportugal.github.io/04.template/377.css-batman-logo/) | <img src="images/377.css-batman-logo.jpg"/> |
+| [378.mern-stack-mongodb-express-js-react-js-node-js](https://renatomportugal.github.io/04.template/378.mern-stack-mongodb-express-js-react-js-node-js/) | <img src="images/378.mern-stack-mongodb-express-js-react-js-node-js.jpg"/> |
+| [379.ubuntu](https://renatomportugal.github.io/04.template/379.ubuntu/) | <img src="images/379.ubuntu.jpg"/> |
+|Pessoa       |Telas        |
+| [365.css-self-portrait](https://renatomportugal.github.io/04.template/365.css-self-portrait/) | <img src="images/365.css-self-portrait.jpg"/> |
+| [366.self-portrait-in-css](https://renatomportugal.github.io/04.template/366.self-portrait-in-css/) | <img src="images/366.self-portrait-in-css.jpg"/> |
+| [367.the-girl-with-a-p-e-a-r-l-css-earring](https://renatomportugal.github.io/04.template/367.the-girl-with-a-p-e-a-r-l-css-earring/) | <img src="images/367.the-girl-with-a-p-e-a-r-l-css-earring.jpg"/> |
+|Seletores    |Telas        |
+| [361.css-selectors-cheatsheet](https://renatomportugal.github.io/04.template/361.css-selectors-cheatsheet/) | <img src="images/361.css-selectors-cheatsheet.jpg"/> |
+|Shadow       |Telas        |
+| [363.google-paper-shadows](https://renatomportugal.github.io/04.template/363.google-paper-shadows/) | <img src="images/363.google-paper-shadows.jpg"/> |
+|Transform    |Telas        |
+| [364.css-transform-functions-visualizer](https://renatomportugal.github.io/04.template/364.css-transform-functions-visualizer/) | <img src="images/364.css-transform-functions-visualizer.jpg"/> |
 
 ## Cursor
 
 |Links        |Telas        |
 |---          |---          |
-| [278.cursors](https://renatomportugal.github.io/04.template/278.cursors/) | <img src="images/278.cursors.png"/> |
-| [279.custom-cursors-using-data-uri](https://renatomportugal.github.io/04.template/279.custom-cursors-using-data-uri/) | <img src="images/279.custom-cursors-using-data-uri.png"/> |
+| [278.cursors](https://renatomportugal.github.io/04.template/278.cursors/) | <img src="images/278.cursors.jpg"/> |
+| [279.custom-cursors-using-data-uri](https://renatomportugal.github.io/04.template/279.custom-cursors-using-data-uri/) | <img src="images/279.custom-cursors-using-data-uri.jpg"/> |
 
 ## CV
 
@@ -479,7 +518,7 @@
 |---          |---          |
 | [060.CodePen_Export_Nqwbmg](https://renatomportugal.github.io/04.template/060.CodePen_Export_Nqwbmg) |<img src="images/060.CodePen_Export_Nqwbmg.png"/> |
 |Produtos | Responsivo |
-| [326.bottle-of-text](https://renatomportugal.github.io/04.template/326.bottle-of-text) |<img src="images/326.bottle-of-text.png"/> |
+| [326.bottle-of-text](https://renatomportugal.github.io/04.template/326.bottle-of-text) |<img src="images/326.bottle-of-text.jpg"/> |
 |Produtos | Não Responsivo |
 | [145.css-big-box-pc-games](https://renatomportugal.github.io/04.template/145.css-big-box-pc-games) |<img src="images/145.css-big-box-pc-games.png"/> |
 | [146.css-trapper-keeper-effect](https://renatomportugal.github.io/04.template/146.css-trapper-keeper-effect) |<img src="images/146.css-trapper-keeper-effect.jpg"/> |
@@ -523,12 +562,14 @@
 | [324.gdpr-are-you-ready-the-countdown-begins](https://renatomportugal.github.io/04.template/324.gdpr-are-you-ready-the-countdown-begins) |<img src="images/324.gdpr-are-you-ready-the-countdown-begins.jpg"/> |
 | [325.responsive-grid-timeline](https://renatomportugal.github.io/04.template/325.responsive-grid-timeline) |<img src="images/325.responsive-grid-timeline.jpg"/> |
 
-## FilmesSeries
+## Filmes_Series
 
 |Matrix       |Telas        |
 |---          |---          |
 | [343.matrix-digital-rain-animated-version](https://renatomportugal.github.io/04.template/343.matrix-digital-rain-animated-version) |<img src="images/343.matrix-digital-rain-animated-version.jpg"/> |
 | [344.the-matrix-is-everywhere](https://renatomportugal.github.io/04.template/344.the-matrix-is-everywhere) |<img src="images/344.the-matrix-is-everywhere.jpg"/> |
+|Lost         |Telas        |
+| [346.jqVintageTxt-master](https://renatomportugal.github.io/04.template/346.jqVintageTxt-master) |<img src="images/346.jqVintageTxt-master.jpg"/> |
 
 ## Fluxograma
 
@@ -589,6 +630,13 @@
 |---          |---          |
 | [327.busca-em-profundidade](https://renatomportugal.github.io/04.template/327.busca-em-profundidade/) | <img src="images/327.busca-em-profundidade.jpg"/> |
 
+## Grid
+
+|Links        |Telas        |
+|---          |---          |
+| [357.reusable-responsive-grids-1-2-3-3-2-3-1-3-all-css](https://renatomportugal.github.io/04.template/357.reusable-responsive-grids-1-2-3-3-2-3-1-3-all-css/) | <img src="images/357.reusable-responsive-grids-1-2-3-3-2-3-1-3-all-css.jpg"/> |
+
+
 ## Hot_Relod
 
 |Botões       |Telas        |
@@ -602,6 +650,15 @@
 | [110.fireflies](https://renatomportugal.github.io/04.template/110.fireflies/) | <img src="images/110.fireflies.jpg"/> |
 | [317.bold-hover-animations-with-splitting-js](https://renatomportugal.github.io/04.template/317.bold-hover-animations-with-splitting-js/) | <img src="images/317.bold-hover-animations-with-splitting-js.jpg"/> |
 | [318.custom-cursor-effect](https://renatomportugal.github.io/04.template/318.custom-cursor-effect/) | <img src="images/318.custom-cursor-effect.jpg"/> |
+| [358.product-mindmap](https://renatomportugal.github.io/04.template/358.product-mindmap/) | <img src="images/358.product-mindmap.jpg"/> |
+
+## Idiomas
+
+|Chinês       |Telas        |
+|---          |---          |
+| [347.learn-stroke-order-of-chinese-characters](https://renatomportugal.github.io/04.template/347.learn-stroke-order-of-chinese-characters/) | <img src="images/347.learn-stroke-order-of-chinese-characters.jpg"/> |
+|Coreano      |Telas        |
+| [348.vinglish-vocab-flashcard-quiz](https://renatomportugal.github.io/04.template/348.vinglish-vocab-flashcard-quiz/) | <img src="images/348.vinglish-vocab-flashcard-quiz.jpg"/> |
 
 ## IHM - Interface Homem Máquina
 
@@ -623,6 +680,8 @@
 | [338.mouse-debugger](https://renatomportugal.github.io/04.template/338.mouse-debugger/) | <img src="images/338.mouse-debugger.jpg"/> |
 |Painéis      |Telas        |
 | [102.apollo-agc-apollo-guidance-computer](https://renatomportugal.github.io/04.template/102.apollo-agc-apollo-guidance-computer/) | <img src="images/102.apollo-agc-apollo-guidance-computer.jpg"/> |
+|Slider       |Telas        |
+| [349.neumorphic-light-switch](https://renatomportugal.github.io/04.template/349.neumorphic-light-switch/) | <img src="images/349.neumorphic-light-switch.jpg"/> |
 
 ## Imagem_Camadas
 
@@ -710,8 +769,8 @@
 
 |Links        |Telas        |
 |---          |---          |
-| [315.book-layout](https://renatomportugal.github.io/04.template/315.book-layout) |<img src="images/315.book-layout.png"/> |
-| [316.turning-pages-with-css](https://renatomportugal.github.io/04.template/316.turning-pages-with-css) |<img src="images/316.turning-pages-with-css.png"/> |
+| [315.book-layout](https://renatomportugal.github.io/04.template/315.book-layout) |<img src="images/315.book-layout.jpg"/> |
+| [316.turning-pages-with-css](https://renatomportugal.github.io/04.template/316.turning-pages-with-css) |<img src="images/316.turning-pages-with-css.jpg"/> |
 
 ## Loader
 
@@ -736,13 +795,13 @@
 
 |Chat         |Telas        |
 |---          |---          |
-| [272.apple-imessage-in-css](https://renatomportugal.github.io/04.template/272.apple-imessage-in-css) |<img src="images/272.apple-imessage-in-css.png"/> |
+| [272.apple-imessage-in-css](https://renatomportugal.github.io/04.template/272.apple-imessage-in-css) |<img src="images/272.apple-imessage-in-css.jpg"/> |
 
 ## Mouse
 
 |Cavalo       |Telas        |
 |---          |---          |
-| [233.bojack-s-face-animated-w-gsap](https://renatomportugal.github.io/04.template/233.bojack-s-face-animated-w-gsap) |<img src="images/233.bojack-s-face-animated-w-gsap.png"/> |
+| [233.bojack-s-face-animated-w-gsap](https://renatomportugal.github.io/04.template/233.bojack-s-face-animated-w-gsap) |<img src="images/233.bojack-s-face-animated-w-gsap.jpg"/> |
 
 ## Musica
 
@@ -827,6 +886,13 @@
 |Links        |Telas        |
 |---          |---          |
 | [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/04.template/022.infinity-scroll-with-angularjs/) ||
+
+## Slide
+
+|Automático   |Telas        |
+|---          |---          |
+| [350.carousel](https://renatomportugal.github.io/04.template/350.carousel) |<img src="images/350.carousel.jpg"/> |
+| [351.client_or_partners_logo_slider](https://renatomportugal.github.io/04.template/351.client_or_partners_logo_slider) |<img src="images/351.client_or_partners_logo_slider.jpg"/> |
 
 ## Taxonomia
 
@@ -927,4 +993,4 @@
 
 |Links        |Telas        |
 |---          |---          |
-| [046.Blender](https://renatomportugal.github.io/04.template/) |<img src="images/030.mouse-xy-position.png"/> |
+| [046.Blender](https://renatomportugal.github.io/04.template/) |<img src="images/030.mouse-xy-position.jpg"/> |
