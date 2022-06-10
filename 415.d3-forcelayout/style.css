@@ -1,0 +1,36 @@
+*, body{
+  font-family: sans-serif;
+  color:#000;
+}
+
+rect {
+  fill:black;
+  stroke:none;
+}
+
+#mindMap-canvas{
+  max-width:100%;
+  margin:0 auto;
+}
+
+#mindMap-canvas svg{
+  width:100%;
+  height:auto;
+}
+
+.link {
+  stroke: rgba(122,122,122,0.4);
+}
+
+.node {
+  fill: #fff;
+  stroke: #000;
+  currsor: 'pointer';
+}
+
+.node text{
+  stroke: none;
+  fill:#fff;
+}
+
+svg{ background-color:#eee;}

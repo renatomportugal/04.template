@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Mind Map</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Platform Matomo Mind-map</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsmind@0.4.6/style/jsmind.css" integrity="sha256-bRaebMjWC2LwqX1p18fo00K/1Up8ltIu787l8MrlT/k=" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>
+          jmnode {
+            max-width: initial;
+          }
+          jmnode > a {
+            text-decoration: none;
+            color: white;
+          }
+          .jsmind-inner {
+              overflow: initial;
+            }
+          .mindmap {
+            margin: 10px 40px;
+          }
+
+          svg {
+            border: 1px solid #333;
+            width: 1200px;
+          }
+          a {
+            fill: #004c99;
+          }
+          a:hover {
+            fill: #09f;
+          }
+        </style>
+    </head>
+    <body>
+    <div class="alert alert-info" role="alert">
+        <p>Click on a case to view within Fogbugz. Click <i class="fa fa-file-text-o"></i> to view <i>QA Downstream Notes</i>. Cases are color coded as follows: </p>
+        <p>
+          <span class="badge badge-primary">&nbsp;&nbsp;</span> - Completed
+          <span class="badge badge-success">&nbsp;&nbsp;</span> - In Progress
+          <span class="badge badge-warning">&nbsp;&nbsp;</span> - Refined
+          <span class="badge badge-danger">&nbsp;&nbsp;</span> - Unrefined
+        </p>
+        <p><small class="font-weight-light">Generated 10&#x2F;25&#x2F;2019, 5:10:28 PM</small></p>
+    </div>
+        <div id="the-mindmap" class="mindmap"></div>
+        <div class="modal fade" id="qaNotesModal111070" tabindex="-1" role="dialog" aria-labelledby="qaNotesModalLabel111070" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="qaNotesModalLabel111070">Case 111070 - QA Downstream Notes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="white-space: pre-wrap;">This case introduces the &quot;Dialog&quot; custom event category for Matomo analytics tracking. The tracked actions for this event category are Opened, Closed, and Success, and apply to modal windows.
+Platform testing covers modals that are accessible from the Platform baseline application. Downstream application QAers should discuss additional testing needs with their engineers.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="qaNotesModal111616" tabindex="-1" role="dialog" aria-labelledby="qaNotesModalLabel111616" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="qaNotesModalLabel111616">Case 111616 - QA Downstream Notes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="white-space: pre-wrap;">This case lays the ground work for custom Matomo Events tracking. It adds event categories for Dialogs, Errors, Reporting, and Searching, and it implements event tracking for 4 search category actions (sorting columns, adding columns, removing columns, and resetting columns) in React-based tables.
+Platform QA will cover testing to ensure tracking occurs for the 4 mentioned actions on the react tables we own: Organizations on the Organizations landing page; and Contacts on the Contacts landing page, Organizations console Summary tab, and Organizations console Contacts tab. Downstream app QAers should talk to your engineers to see if you have any additional React-based tables to check.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="qaNotesModal110929" tabindex="-1" role="dialog" aria-labelledby="qaNotesModalLabel110929" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="qaNotesModalLabel110929">Case 110929 - QA Downstream Notes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="white-space: pre-wrap;">This case provides 2 application.conf keys for enabling Matomo analytics tracking. Tracking is disabled by default.
+When tracking is enabled in application.conf, Matomo tracking code is added to Platform pages.
+This case also defines under what circumstances Matomo will track a new page view.
+Downstream app QAers should meet with your engineers to determine if, when, and how Matomo will be implemented for your product, and what needs to be tested.
+This case is one piece of a larger project to configure and implement Matomo analytics. While it can be tested independently, it may be more efficient to test it together with other Matomo cases.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js" integrity="sha256-3BMRAc+yX0neFRvyfGGfd3aZK8NKwYTOzq93ubNY2iU=" crossorigin="anonymous"></script>
+        
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+
+            const mindData = {
+  "meta": {
+    "name": "Matomo",
+    "version": "0.1",
+    "title": "Platform Matomo Mind-map"
+  },
+  "fogbugz": {
+    "search": "tag: MATOMO_*"
+  },
+  "format": "node_tree",
+  "data": {
+    "id": " root",
+    "topic": "Matomo",
+    "children": [
+      {
+        "id": "events",
+        "topic": "Custom Events",
+        "background-color": "#1abc9c",
+        "children": [
+          {
+            "id": "reporting",
+            "topic": "Reporting",
+            "background-color": "#34495e",
+            "tag": "MATOMO_REPORTS",
+            "children": [
+              {
+                "id": "111068",
+                "background-color": "#ffc107",
+                "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111068/\">Case 111068 - Customize Matomo to support reports</a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": null
+              },
+              {
+                "id": "111538",
+                "background-color": "#ffc107",
+                "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111538/\">Case 111538 - Investigate how Matomo might track which report parameters are used</a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": null
+              }
+            ]
+          },
+          {
+            "id": "searching",
+            "topic": "Search Pages",
+            "background-color": "#34495e",
+            "tag": "MATOMO_SEARCHING",
+            "children": [
+              {
+                "id": "111069",
+                "background-color": "#28a745",
+                "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111069/\">Case 111069 - Customize Matomo to support filters, pagination, show more activity on REACT pages</a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": null
+              },
+              {
+                "id": "111587",
+                "background-color": "#ffc107",
+                "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111587/\">Case 111587 - Customize Matomo to support sorting activity on BACKBONE pages</a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": null
+              },
+              {
+                "id": "111606",
+                "background-color": "#ffc107",
+                "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111606/\">Case 111606 - Customize Matomo to support filter, show more, pagination activity on BACKBONE pages</a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": null
+              },
+              {
+                "id": "111616",
+                "background-color": "#28a745",
+                "topic": "<i title=\"View QA Downstream Notes\" data-toggle=\"modal\" data-target=\"#qaNotesModal111616\" class=\"fa fa-file-text-o\" style=\"cursor:pointer; margin-left: 5px;\"></i><a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111616/\">Case 111616 - Customize Matomo to support column selector and sort activity on REACT pages</a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": "#qaNotesModal111616"
+              }
+            ]
+          },
+          {
+            "id": "other",
+            "topic": "Other",
+            "background-color": "#34495e",
+            "tag": "MATOMO_EVENTS",
+            "children": [
+              {
+                "id": "111070",
+                "background-color": "#28a745",
+                "topic": "<i title=\"View QA Downstream Notes\" data-toggle=\"modal\" data-target=\"#qaNotesModal111070\" class=\"fa fa-file-text-o\" style=\"cursor:pointer; margin-left: 5px;\"></i><a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111070/\">Case 111070 - Add customization so Matomo can analyze modal activity </a>",
+                "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+                "data-target": "#qaNotesModal111070"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "legal",
+        "topic": "Rollout",
+        "background-color": "#1abc9c",
+        "tag": "MATOMO_ROLLOUT",
+        "children": [
+          {
+            "id": "104570",
+            "background-color": "#007bff",
+            "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/104570/\">Case 104570 - Investigate adding Matomo to Base Platform</a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": null
+          },
+          {
+            "id": "108842",
+            "background-color": "#dc3545",
+            "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/108842/\">Case 108842 - Matomo User-level tracking opt-in </a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": null
+          },
+          {
+            "id": "110929",
+            "background-color": "#28a745",
+            "topic": "<i title=\"View QA Downstream Notes\" data-toggle=\"modal\" data-target=\"#qaNotesModal110929\" class=\"fa fa-file-text-o\" style=\"cursor:pointer; margin-left: 5px;\"></i><a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/110929/\">Case 110929 - Add out-of-the-box Matomo analytics to Platform</a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": "#qaNotesModal110929"
+          },
+          {
+            "id": "110930",
+            "background-color": "#ffc107",
+            "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/110930/\">Case 110930 - Investigate using Matomo for/with MTT apps</a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": null
+          },
+          {
+            "id": "111180",
+            "background-color": "#ffc107",
+            "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111180/\">Case 111180 - Investigate default configurable privacy settings for Matomo</a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": null
+          },
+          {
+            "id": "111670",
+            "background-color": "#007bff",
+            "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111670/\">Case 111670 - Reminder to create a resource that documents Matomo mapping e.g., what categories represent</a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": null
+          },
+          {
+            "id": "111918",
+            "background-color": "#dc3545",
+            "topic": "<a target=\"_blank\" href=\"https://fogbugz.forteresearch.com/f/cases/111918/\">Case 111918 - Matomo - remove numeric identifiers from tracked URLs</a>",
+            "href": "https://fogbugz.forteresearch.com/f/cases/${ c.ixBug }/",
+            "data-target": null
+          }
+        ]
+      }
+    ]
+  }
+};
+            //const chart = createChart(mindData.data);
+            //document.getElementById('the-mindmap').append(chart);
+        </script>
+    </body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+/*
+https://gojs.net/latest/samples/mindMap.html
+https://gojs.net/latest/samples/orgChartStatic.html
+
+https://github.com/opentecture/mindmapping
+https://miro.com/
+https://github.com/anteriovieira/vue-mindmap
+*/
+
+/*
+TODO: Pretty Print checkbox
+TODO: Ace/Codemirror input - https://stackoverflow.com/questions/1619167/textarea-that-can-do-syntax-highlighting-on-the-fly
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
+
+html {
+  font-family: "Open Sans", sans-serif;
+  /*   font-family: 'Roboto', sans-serif; */
+}
+.viewport {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.model-toolbar {
+  margin-bottom: 1rem;  
+}
+
+#diagramModel {
+  width:100%;
+  height:80vh;
+  background-color: #3a3a3a;
+  color: #00FF41;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - User list with quick search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <div class="search">
+      <label>Search for user</label>
+      <input type="search" data-search="data-search" placeholder="Search..."/>
+      <button class="search__clear">&times;</button>
+      <div class="recent-search">
+        <button class="clear-btn" disabled="disabled" onclick="clearRecent()">No Recent Items</button>
+        <div class="recent-search__list"></div>
+      </div>
+    </div>
+    <div class="list" id="list" data-searchable="data-searchable"></div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://codepen.io/ryanparag/pen/pxVOpP.js'></script>
+<script src='https://codepen.io/ryanparag/pen/pxVOpP.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

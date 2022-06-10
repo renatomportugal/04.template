@@ -1,0 +1,103 @@
+.mindmap{
+  text-align: left;
+	0background: pink;
+	
+}
+.mindmap label:checked{
+	display: none; 
+}
+.mindmap label{
+	display: inline-block; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; appearance:none;  position: relative;
+	margin:0; padding:.5em 1.5em .5em .5em;
+	vertical-align: middle; 
+	background:hsla(0,50%,50%,.2);
+}
+.mindmap label:after{
+	content: "+"; display:block; position: absolute; 0z-index: 2;
+	right: 0; top:0; bottom:0;
+	margin: auto 0 auto auto; 
+
+	
+}
+ .mindmap input{
+	position: absolute; z-index: 1;
+	top: 0; bottom: 0;
+	width: 1.5em; height: 1.5em;
+	margin: auto 0 auto -1.5em;
+	opacity: 0;
+	cursor: pointer;
+}
+.mindmap input+ul:before{
+	content: "-"; display: block; position: absolute;
+	left:auto; right: 100%; top:0; bottom: 0;
+	margin: auto ;
+}
+.mindmap label:after,.mindmap input+ul:before{
+	width:1em; height: 1em; line-height: 1em;
+	border-radius: 50% 0 0 50%;
+	padding: .1em;
+	text-align: center;	vertical-align: middle;
+	background: hsla(0,70%,40%,1);
+}
+.mindmap input:checked+ul{
+	0display: none;	
+	margin: -100% -12em -100% 12em;
+	opacity: 0;
+}
+.mindmap,.mindmap ul{
+	display: inline-block; position: relative;	
+	padding: .5em;
+	vertical-align: middle;
+	list-style: none;	
+	-webkit-transition:all .15s ease; -moz-transition:all .15s ease; -o-transition:all .15s ease; transition:all .15s ease;
+}
+.mindmap ul li{
+	position: relative;
+	float: left;
+	clear: both;
+	margin: .5em; padding:.5em;	
+	border-radius: .5em;
+}
+.mindmap,.mindmap .topics{
+	padding:0;	background: transparent;
+	box-shadow: none;
+	border: none;
+}
+
+/*decoration*/
+.mindmap{
+	font-family: "Verdana"; color:white; 
+}
+.mindmap ul{
+	background: hsla(0, 0%, 60%, .1);	
+	border-left: solid hsla(0,70%,40%,1) 8px;
+	border-radius: 1em;
+	box-shadow: 0em 0 .2em hsla(0,0%,0%,.4),inset .1em 0 .2em hsla(0,0%,0%,.4);
+}
+.mindmap input+ul:before{	
+    width: .5em; height: .5em; line-height: .45em; 
+    font-size: 2em;
+	color: hsla(0,0%,100%, 0);
+    text-shadow: 1px 1px 6px hsla(0,70%,40%,1), 0 0 0 hsla(0,0%,10%,.7), 1px 1px 6px hsla(0,70%,30%,1);
+	box-shadow:inset .15em 0 .15em hsla(0,0%,0%,.7);
+	margin-right: 8px;
+}
+.mindmap label,.mindmap ul li {
+	background: hsla(0,70%,30%,1);	
+	box-shadow: 0 0 .1em .1em hsla(0,0%,40%,.4),inset 0 0 0 .1em hsla(0,0%,0%,.2);
+}
+.mindmap label{
+	border-radius: .5em 0 0 .5em;
+	-webkit-transition:all .15s ease; -moz-transition:all .15s ease; -o-transition:all .15s ease; transition:all .15s ease;
+}
+.mindmap label:after{
+	color:hsla(0,0%,50%,.1);
+	text-shadow: 1px 1px 6px hsla(0,70%,40%,1), 0 0 0 hsla(0,0%,10%,.7), 1px 1px 6px hsla(0,70%,30%,1);
+	box-shadow:inset 0em 0 .5em hsla(0,0%,0%,1);
+}
+.mindmap label:hover{
+	background: hsla(0,70%,40%,1);
+}
+.mindmap label:active{
+	background: hsla(0,80%,35%,1);
+}

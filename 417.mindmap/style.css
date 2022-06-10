@@ -1,0 +1,37 @@
+body{
+  background-color:grey;
+}
+h3{
+  text-align:center;
+  padding:0px;
+  margin:0px;
+}
+#divCanvas{
+  position:relative;
+  width:900px;
+  height:500px;
+  background-color:white;
+  margin:0 auto;
+  
+}
+#htmlCanvas{
+  position:absolute;
+}
+.mainNode{
+  position:absolute;
+  background-color:lightblue;
+  padding: 20px;
+  border-radius:30px;
+}
+.subNode{
+  position:absolute;
+  background-color:lightgreen;
+  padding: 20px;
+  max-width:70px;
+}
+#controlNode{
+  position:absolute;
+  background-color:blue;
+  padding: 20px;
+  border-radius:30px;
+}

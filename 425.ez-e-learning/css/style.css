@@ -1,0 +1,213 @@
+body {font-family: sans-serif;}
+p {color: #000000;}
+
+h2 {
+    font-size: 2em;
+    color: #e74c3c;
+}
+.centered {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.logo {
+  width: 80px;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
+    }
+}
+
+/*--------------------------------------------------------------
+Header styles minus menu
+--------------------------------------------------------------*/
+
+footer, .masthead {
+    background: #4c4c4c;
+    box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+    text-color: #fff;
+    color: #fff;
+}
+
+footer {
+    padding: 1em;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-title {
+    margin: 0 0 1em;
+    padding: 1em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (min-width: 44.44em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .site-title {
+        font-size: 2.5em;
+    }
+}
+
+.site-title a {
+    color: hsl(5, 45%, 95%);
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    text-decoration: underline;
+}
+
+/* Card Based Layout - Base styles */
+body {
+    background: #ecf0f1;
+    line-height: 1.4;
+}
+
+.site-title {
+    color: white;
+}
+
+.white-bg {
+    background: white;
+}
+
+.card {
+    background: white;
+    margin-bottom: 2em;
+}
+
+.card a {
+    color: black;
+    text-decoration: none;
+}
+
+.card a:hover {
+    box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.card-content {
+    padding: 1.4em;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    margin-bottom: .5em;
+    font-weight: normal;
+}
+
+.card-content p {
+    font-size: 95%;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Flexbox styles */
+@media screen and (min-width: 40em) {
+    .cards {
+        margin-top: -1em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin-bottom: 1em;
+        display: flex;
+        flex: 0 1 calc(50% - 0.5em);
+        /* width: calc(50% - 1em); */
+    }
+} /* mq 40em*/
+
+@media screen and (min-width: 60em) {
+    .cards {
+        margin-top: inherit;
+    }
+
+    .card {
+        margin-bottom: 2em;
+        display: flex;
+        flex: 0 1 calc(33% - 0.5em);
+        /* width: calc(33% - 1em); */
+    }
+} /* mq 60em*/
+
+
+.wrapper {
+    margin: 50px auto;
+    width: 280px;
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 90;
+}
+
+.ribbon-wrapper-green {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+
+.ribbon-green {
+    font: bold 15px Sans-Serif;
+    color: #333;
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform:    rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    -o-transform:      rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #BFDC7A;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+    background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
+    color: #6a6340;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green:before, .ribbon-green:after {
+			  content: "";
+			  border-top:   3px solid #6e8900;
+			  border-left:  3px solid transparent;
+			  border-right: 3px solid transparent;
+			  position:absolute;
+			  bottom: -3px;
+		      }
+
+.ribbon-green:before {
+    left: 0;
+}
+.ribbon-green:after {
+    right: 0;
+}

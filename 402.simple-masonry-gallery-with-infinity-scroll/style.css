@@ -1,0 +1,23 @@
+h1 {
+  font-size: 24px;
+}
+
+hr {
+  width: 50px;
+  border: 1.5px solid pink;
+}
+
+.column-masonry {
+  display: inline-block;
+  width: 33.3333%;
+}
+
+.masonry-img {
+  margin: 15px 0;
+  display: inline-block;
+}
+
+#infinity-scroll-trigger {
+  height: 1px;
+  width: 1px;
+}

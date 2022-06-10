@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --search-box-height: 54px;
+  --avatar-size: 44px;
+  --bg-color: #d8d8d8;
+  --color-white: #ffffff;
+  --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background: var(--bg-color);
+}
+
+.search-outer {
+  max-width: 500px;
+  height: var(--search-box-height);
+  margin: 100px auto 0 auto;
+  position: relative;
+  overflow-x: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-radius: var(--search-box-height);
+}
+
+.search-inner {
+  position: relative;
+  top: 0;
+  height: 100%;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.avatars {
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  position: relative;
+  pointer-events: none;
+}
+
+.avatar {
+  margin: 0px 5px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.avatar > img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.draggable {
+  height: var(--search-box-height);
+  top: calc(50% - calc(var(--search-box-height) / 2));
+  width: 100%;
+  position: absolute;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}

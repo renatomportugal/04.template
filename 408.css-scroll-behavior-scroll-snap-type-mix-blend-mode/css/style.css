@@ -1,0 +1,128 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 62.5%;
+  color: #f4f4f4;
+  background-color: #1d1e22;
+}
+
+.scrolls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.25em;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: #f4f4f4;
+}
+.scrolls .center {
+  font-size: 0.825rem;
+}
+
+.smooth {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  min-height: 60px;
+  font-size: 1rem;
+  background-image: linear-gradient(180deg, #1d1e22, rgba(29, 30, 34, 0.1), transparent);
+  mix-blend-mode: luminosity;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.header ul li {
+  margin: 0 1em;
+  padding: 1em;
+}
+.header ul li a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #f4f4f4;
+}
+.header ul li a::after {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  content: '';
+  width: 0;
+  height: 3px;
+  transition: all 0.2s linear;
+}
+.header ul li a:hover::after {
+  width: 100%;
+  background-color: #f4f4f4;
+}
+
+section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background-color: #f4f4f4;
+  background-image: url(http://www.ochevidets.ru/userfiles/2018/02/25/c6f0cb9b67_large.jpg);
+  background-size: cover;
+  scroll-snap-align: center;
+}
+section h2 {
+  text-transform: uppercase;
+  font-size: 2.25rem;
+  font-weight: 900;
+  padding: 0.5em 1em;
+  color: #1d1e22;
+  background-color: #f4f4f4;
+  mix-blend-mode: screen;
+  border-radius: 0.25em;
+  pointer-events: none;
+  user-select: none;
+}
+section:nth-child(2) {
+  background-image: url(https://cdn.shopify.com/s/files/1/3026/6974/files/happy-alpacas-landscape_1024x1024.jpg?v=1532619630);
+}
+section:nth-child(3) {
+  background-image: url(https://mymodernmet.com/wp/wp-content/uploads/2018/08/albert-dros-kyrgyzstan-1.jpg);
+}
+section:nth-child(4) {
+  background-image: url(https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2018/05/editors-block-lead-image.jpg);
+}

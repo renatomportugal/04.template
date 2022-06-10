@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Webpage Scrolling Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="scroll-right-container">
+  <div id="section-two">
+    <div class="padding">
+      <h1>Section Two</h1>
+      <h2>Now scroll to the right!</h2>
+    </div>
+    <!-- No white space can be left between the below </div><div...> -->
+  </div><div id="scroll-down-container">
+    <!-- These divs are inline-block, so inline whitespace spreads them apart. -->
+  <div id="section-three">
+    <div class="padding">
+      <h1>Section Three</h1>
+      <h2>Now scroll to the bottom!</h2>
+    </div>
+  </div>
+  <div id="scroll-left-container">
+    <div id="section-five">
+      <div class="padding">
+        <h1>Web Scrolling Experiment</h1>
+        <h2>Scroll up!</h2>
+      </div>
+    </div><div id="section-four"> 
+    <!--Again, no whitespace between the above inline elements. -->
+      <div class="padding">
+        <h1>Section Four</h1>
+        <h2>One last time - to the left!</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section-one">
+  <div class="padding">
+    <h1>Web Scrolling Experiment</h1>
+    <h2>Scroll up!</h2>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

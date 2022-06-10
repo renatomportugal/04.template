@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vuetify Avatars Group</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@1.5.24/dist/vuetify.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <v-app :dark="darkMode" id="inspire">
+    <v-container grid-list-xl>
+      <v-layout
+        align-center
+        column
+        wrap
+      >
+        <v-flex>
+          <v-card
+            v-if="avatars && avatars.length > 0"
+            width="320"
+          >
+            <v-card-title class="title">
+              Team
+              <span class="grey--text ml-1">
+                Stacked
+              </span>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text>
+              <div>
+                The main objective of the stacked avatar group:
+              </div>
+              <ul>
+                <li>To display a list of avatars, overlapped (left to right) with the avatars laid over each other</li>
+                <li>The avatars should be overlaid on top of each other, so that the first avatar is fully visible</li>
+                <li>The stacked avatars container should be scrollable (horizontally) on both desktop and mobile when needed</li>
+              </ul>
+            </v-card-text>
+            <v-divider></v-divider>
+            <section class="avatars-group pa-3 stacked">
+              <div v-for="avatar in avatarsSorted" :key="`avatar-id-${avatar.id}`" class="avatars-group__item">
+                <v-tooltip bottom>
+                  <profile-avatar :avatar="avatar" slot="activator">
+                    <profile-presence v-if="presence" :presence="avatar.presence"></profile-presence>
+                  </profile-avatar>
+                  <profile-tooltip :avatar="avatar" :presence="presence"></profile-tooltip>
+                </v-tooltip>
+              </div>
+            </section>
+          </v-card>
+        </v-flex>
+        <v-flex>
+          <v-card
+            v-if="avatarsStackedLimited && avatarsStackedLimited.length > 0"
+            width="320"
+          >
+            <v-card-title class="title">
+              Team
+              <span class="grey--text ml-1">
+                Stacked &amp; Limited
+              </span>
+            </v-card-title>
+            <v-divider></v-divider>
+            <section class="avatars-group pa-3 stacked">
+              <div v-for="avatar in avatarsStackedLimited" :key="`avatar-id-${avatar.id}`" class="avatars-group__item">
+                <v-tooltip bottom>
+                  <profile-avatar :avatar="avatar" slot="activator">
+                    <profile-presence v-if="presence" :presence="avatar.presence"></profile-presence>
+                  </profile-avatar>
+                  <profile-tooltip :avatar="avatar" :presence="presence"></profile-tooltip>
+                </v-tooltip>
+              </div>
+              <div class="avatars-group__item more">
+                <v-avatar color="primary" size="40px">
+                  <v-menu
+                    v-model="stackedMenu"
+                    lazy
+                    left
+                    :max-height="menuMaxHeight"
+                    nudge-bottom="8"
+                    offset-y
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-btn icon v-on="on">
+                        <v-icon :color="$vuetify.theme.dark ? 'grey darken-2' : 'white'">more_horiz</v-icon>
+                      </v-btn>
+                    </template>
+                    <v-list dense two-line>
+                      <v-list-tile
+                        v-for="avatar in avatarsSorted"
+                        :key="`avatar-menu-id-${avatar.id}`"
+                        avatar
+                      >
+                        <v-list-tile-avatar>
+                          <profile-avatar :avatar="avatar" custom-class="bordered small" size="32px">
+                            <profile-presence v-if="presence" :presence="avatar.presence"></profile-presence>
+                          </profile-avatar>
+                        </v-list-tile-avatar>
+                        <v-list-tile-content>
+                          <v-list-tile-title>{{ avatar.alt }}</v-list-tile-title>
+                          <v-list-tile-sub-title>{{ avatar.role }}</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                    </v-list>
+                  </v-menu>
+                </v-avatar>
+              </div>
+            </section>
+          </v-card>
+        </v-flex>
+        <v-flex>
+          <v-card
+            v-if="avatarsSorted && avatarsSorted.length > 0"
+            width="320"
+          >
+            <v-card-title class="title">
+              Team
+              <span class="grey--text ml-1">
+                Grid
+              </span>
+            </v-card-title>
+            <v-divider></v-divider>
+            <section class="avatars-group grid pa-3">
+              <div v-for="avatar in avatarsSorted" :key="`avatar-id-${avatar.id}`" class="avatars-group__item">
+                <v-tooltip bottom>
+                  <profile-avatar :avatar="avatar" slot="activator">
+                    <profile-presence v-if="presence" :presence="avatar.presence"></profile-presence>
+                  </profile-avatar>
+                  <profile-tooltip :avatar="avatar" :presence="presence"></profile-tooltip>
+                </v-tooltip>
+              </div>
+            </section>
+          </v-card>
+        </v-flex>
+        <v-flex>
+          <v-switch label="Dark mode" v-model="darkMode"></v-switch>
+          <v-switch label="Display presence" v-model="presence"></v-switch>
+        </v-flex>
+        <v-flex>
+          <v-card width="320">
+            <v-card-title class="title">
+              Inspiration
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text>
+              <ul>
+                <li><a href="https://leap.mediumra.re/documentation/css-avatars.html" target="_blank">Leap - CSS avatars</a></li>
+                <li><a href="https://csslayout.io/patterns/avatar-list" target="_blank">CSS Layout - Avatar List</a></li>
+              </ul>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-app>
+</div>
+<!-- partial -->
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script> -->
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script> -->
+<!-- <script src='https://cdn.jsdelivr.net/npm/vuetify@1.5.24/dist/vuetify.min.js'></script> -->
+<script src="js/polyfill.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/vuetify.min.js"></script>
+
+<script  src="./script.js"></script>
+
+</body>
+</html>

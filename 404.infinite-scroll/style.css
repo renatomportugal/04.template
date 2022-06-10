@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400, 700);
+* {
+  font-family: roboto;
+}
+
+.small {
+  font-size: 11px;
+}
+
+#fixed {
+  height: 400px;
+  overflow: auto;
+  /*border: 1px solid #DDD;*
+}

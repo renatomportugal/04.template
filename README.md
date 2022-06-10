@@ -269,6 +269,12 @@
 |---          |---          |
 | [059.searching-rod](https://renatomportugal.github.io/04.template/059.searching-rod) |<img src="images/059.searching-rod.png"/> |
 
+## Camera
+
+|Click        |Telas        |
+|---          |---          |
+| [423.camera-shutter](https://renatomportugal.github.io/04.template/423.camera-shutter) |<img src="images/423.camera-shutter.jpg"/> |
+
 ## Canvas
 
 |Links        |Telas        |
@@ -491,6 +497,10 @@
 | [283.d3-force-directed-node-link-diagram](https://renatomportugal.github.io/04.template/283.d3-force-directed-node-link-diagram/) |<img src="images/283.d3-force-directed-node-link-diagram.jpg"/> |
 | [284.force-directed-diagram](https://renatomportugal.github.io/04.template/284.force-directed-diagram/) |<img src="images/284.force-directed-diagram.jpg"/> |
 | [335.mindmap](https://renatomportugal.github.io/04.template/335.mindmap/) |<img src="images/335.mindmap.jpg"/> |
+| [412.CodePen_Export_jOWMXye](https://renatomportugal.github.io/04.template/412.CodePen_Export_jOWMXye/) |<img src="images/412.CodePen_Export_jOWMXye.jpg"/> |
+| [415.d3-forcelayout](https://renatomportugal.github.io/04.template/415.d3-forcelayout/) |<img src="images/415.d3-forcelayout.jpg"/> |
+| [416.d3-mindmap](https://renatomportugal.github.io/04.template/416.d3-mindmap/) |<img src="images/416.d3-mindmap.jpg"/> |
+| [417.mindmap](https://renatomportugal.github.io/04.template/417.mindmap/) |<img src="images/417.mindmap.jpg"/> |
 
 ## Documentacao
 
@@ -620,6 +630,14 @@
 |---          |---          |
 | [287.solicitacao-de-ferias](https://renatomportugal.github.io/04.template/287.solicitacao-de-ferias/) | <img src="images/287.solicitacao-de-ferias.jpg"/> |
 
+## Fotos
+
+|Puzze        |Telas        |
+|---          |---          |
+| [426.svg-pattern-jigsaw-puzzle-gallery-experiment](https://renatomportugal.github.io/04.template/426.svg-pattern-jigsaw-puzzle-gallery-experiment/) | <img src="images/426.svg-pattern-jigsaw-puzzle-gallery-experiment.jpg"/> |
+|Sombra       |Telas        |
+| [427. image-drop-shadow-effects](https://renatomportugal.github.io/04.template/427. image-drop-shadow-effects/) | <img src="images/427. image-drop-shadow-effects.jpg"/> |
+
 ## FPS
 
 |Grava Tela   |Telas        |
@@ -675,6 +693,10 @@
 |Link da Tela |Telas        |
 |---          |---          |
 | [386.portfolio-hover](https://renatomportugal.github.io/04.template/386.portfolio-hover/) | <img src="images/386.portfolio-hover.jpg"/> |
+| [392.link-fill-on-hover](https://renatomportugal.github.io/04.template/392.link-fill-on-hover/) | <img src="images/392.link-fill-on-hover.jpg"/> |
+|Link da Tela |Responsivo   |
+|---          |---          |
+| [393.bootstrap_4_our_services](https://renatomportugal.github.io/04.template/393.bootstrap_4_our_services/) | <img src="images/393.bootstrap_4_our_services.jpg"/> |
 
 ## Idiomas
 
@@ -781,13 +803,25 @@
 
 ## Lista de Pessoas
 
-|Links        |Telas        |
-|---          |---          |
+|Links          |Telas        |
+|---            |---          |
 | [039.user-list-with-quick-search](https://renatomportugal.github.io/04.template/039.user-list-with-quick-search/) ||
 | [001.alan-sugar-s-fired-employeesvue-transitions-challenge](https://renatomportugal.github.io/04.template/001.alan-sugar-s-fired-employeesvue-transitions-challenge/) ||
 | [033.police-academy-characters](https://renatomportugal.github.io/04.template/033.police-academy-characters/) ||
 | [038.tabs-navigation-ui](https://renatomportugal.github.io/04.template/038.tabs-navigation-ui/) ||
 | [041.vuetify-avatars-group](https://renatomportugal.github.io/04.template/041.vuetify-avatars-group/) ||
+|Não Responsivo |Telas        |
+| [316.turning-pages-with-css](https://renatomportugal.github.io/04.template/316.turning-pages-with-css) |<img src="images/316.turning-pages-with-css.jpg"/> |
+| [316.turning-pages-with-css](https://renatomportugal.github.io/04.template/316.turning-pages-with-css) |<img src="images/316.turning-pages-with-css.jpg"/> |
+| [394.alan-sugar-s-fired-employeesvue-transitions-challenge](https://renatomportugal.github.io/04.template/394.alan-sugar-s-fired-employeesvue-transitions-challenge) |<img src="images/394.alan-sugar-s-fired-employeesvue-transitions-challenge.jpg"/> |
+| [395.avatars-draggable-filter](https://renatomportugal.github.io/04.template/395.avatars-draggable-filter) |<img src="images/395.avatars-draggable-filter.jpg"/> |
+| [396.menu-1](https://renatomportugal.github.io/04.template/396.menu-1) |<img src="images/396.menu-1.jpg"/> |
+| [398.ui-profile-list](https://renatomportugal.github.io/04.template/398.ui-profile-list) |<img src="images/398.ui-profile-list.jpg"/> |
+| [401.vuetify-avatars-group](https://renatomportugal.github.io/04.template/401.vuetify-avatars-group) |<img src="images/401.vuetify-avatars-group.jpg"/> |
+|Responsivo |Telas        |
+| [397.police-academy-characters](https://renatomportugal.github.io/04.template/397.police-academy-characters) |<img src="images/397.police-academy-characters.jpg"/> |
+| [399.user-list](https://renatomportugal.github.io/04.template/399.user-list) |<img src="images/399.user-list.jpg"/> |
+| [400.user-list-with-quick-search](https://renatomportugal.github.io/04.template/400.user-list-with-quick-search) |<img src="images/400.user-list-with-quick-search.jpg"/> |
 
 ## Livros
 
@@ -814,12 +848,27 @@
 |---          |---          |
 | [330.CodePen_Export_gqzjeE](https://renatomportugal.github.io/04.template/330.CodePen_Export_gqzjeE) |<img src="images/330.CodePen_Export_gqzjeE.jpg"/> |
 
-
 ## Mensagem
 
 |Chat         |Telas        |
 |---          |---          |
 | [272.apple-imessage-in-css](https://renatomportugal.github.io/04.template/272.apple-imessage-in-css) |<img src="images/272.apple-imessage-in-css.jpg"/> |
+
+## Mind_Map
+
+|Links        |Telas        |
+|---          |---          |
+| [413.CodePen_Export_MWwRKwL](https://renatomportugal.github.io/04.template/413.CodePen_Export_MWwRKwL) |<img src="images/413.CodePen_Export_MWwRKwL.jpg"/> |
+| [414.css-outline](https://renatomportugal.github.io/04.template/414.css-outline) |<img src="images/414.css-outline.jpg"/> |
+| [418.mind-map](https://renatomportugal.github.io/04.template/418.mind-map) |<img src="images/418.mind-map.jpg"/> |
+| [420.tree-diagram](https://renatomportugal.github.io/04.template/420.tree-diagram) |<img src="images/420.tree-diagram.jpg"/> |
+| [421.vue-vue-mindmap](https://renatomportugal.github.io/04.template/421.vue-vue-mindmap) |<img src="images/421.vue-vue-mindmap.jpg"/> |
+
+## Mobile
+
+|Links        |Telas        |
+|---          |---          |
+| [422.take-out-me](https://renatomportugal.github.io/04.template/422.take-out-me) |<img src="images/422.take-out-me.jpg"/> |
 
 ## Mouse
 
@@ -903,13 +952,29 @@
 | [168.css-clip-path-ribbons](https://renatomportugal.github.io/04.template/168.css-clip-path-ribbons) |<img src="images/168.css-clip-path-ribbons.jpg"/> |
 | [169.demo-pure-css-corner-ribbon](https://renatomportugal.github.io/04.template/169.demo-pure-css-corner-ribbon) |<img src="images/169.demo-pure-css-corner-ribbon.jpg"/> |
 | [170.pure-css-corner-ribbon](https://renatomportugal.github.io/04.template/170.pure-css-corner-ribbon) |<img src="images/170.pure-css-corner-ribbon.jpg"/> |
+| [424.css-fizzbuzz](https://renatomportugal.github.io/04.template/424.css-fizzbuzz) |<img src="images/424.css-fizzbuzz.jpg"/> |
+| [425.ez-e-learning](https://renatomportugal.github.io/04.template/425.ez-e-learning) |<img src="images/425.ez-e-learning.jpg"/> |
 
+## Scroll
 
-## Scroll Infinito
+|Links        |Telas        |
+|---          |---          |
+| [408.css-scroll-behavior-scroll-snap-type-mix-blend-mode](https://renatomportugal.github.io/04.template/408.css-scroll-behavior-scroll-snap-type-mix-blend-mode) |<img src="images/408.css-scroll-behavior-scroll-snap-type-mix-blend-mode.jpg"/> |
+| [409.scrolling-animationsshow-recommendations](https://renatomportugal.github.io/04.template/409.scrolling-animationsshow-recommendations) |<img src="images/409.scrolling-animationsshow-recommendations.jpg"/> |
+| [410.svg-overlay-pinned-section](https://renatomportugal.github.io/04.template/410.svg-overlay-pinned-section) |<img src="images/410.svg-overlay-pinned-section.jpg"/> |
+| [411.webpage-scrolling-experiment](https://renatomportugal.github.io/04.template/411.webpage-scrolling-experiment) |<img src="images/411.webpage-scrolling-experiment.jpg"/> |
+
+## Scroll_Infinito
 
 |Links        |Telas        |
 |---          |---          |
 | [022.infinity-scroll-with-angularjs](https://renatomportugal.github.io/04.template/022.infinity-scroll-with-angularjs/) ||
+| [403.css-html-jsinfinity-scroll-timeline](https://renatomportugal.github.io/04.template/403.css-html-jsinfinity-scroll-timeline) |<img src="images/403.css-html-jsinfinity-scroll-timeline.jpg"/> |
+| [404.infinite-scroll](https://renatomportugal.github.io/04.template/404.infinite-scroll) |<img src="images/404.infinite-scroll.jpg"/> |
+| [405.infinity-scroll](https://renatomportugal.github.io/04.template/405.infinity-scroll) |<img src="images/405.infinity-scroll.jpg"/> |
+| [407.jquery-mobile-infinite-scroll](https://renatomportugal.github.io/04.template/407.jquery-mobile-infinite-scroll) |<img src="images/407.jquery-mobile-infinite-scroll.jpg"/> |
+|Só no PC     |Telas        |
+| [402.simple-masonry-gallery-with-infinity-scroll](https://renatomportugal.github.io/04.template/402.simple-masonry-gallery-with-infinity-scroll) |<img src="images/402.simple-masonry-gallery-with-infinity-scroll.jpg"/> |
 
 ## Slide
 

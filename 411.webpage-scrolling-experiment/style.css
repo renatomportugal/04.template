@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+}
+
+html {
+  scrollbar-color: #F35C16 #F7996E;
+  background-color: #24324f;
+}
+
+h1, h2 {
+  color: white;
+}
+
+h1 {
+  font-family: 'Arvo', serif;
+}
+
+h2 {
+  font-family: 'Arvo', serif;
+  font-weight: 400;
+}
+
+.padding {
+  padding: 20px 50px;
+  white-space: initial;
+}
+
+#section-one {
+  height: 100vh;
+  
+  background-color: #48639C;
+  box-shadow: inset 0px 0px 20px #182134;
+}
+
+#section-two {
+  display: inline-block;
+  vertical-align: top;
+  height: calc(100vh - 17px);
+  width: 100vw;
+  
+  /* This height used to be 96.5vh until I discovered calc(). Why subtract 17px? See https://codepen.io/sambible/post/browser-scrollbar-widths */
+  
+  background-color: #4C4C9D;
+  box-shadow: inset 0px 0px 20px #191934;
+}
+
+#section-three {
+  display: none;
+  height: calc(100vh - 17px);
+  width: 100vw;
+  
+  background-color: #712F79;
+  box-shadow: inset 0px 0px 20px #341537;
+}
+
+#section-four {
+  display: none;  
+  vertical-align: top;
+  height: 100vh;
+  width: 100vw;
+  
+  background-color: #976391;
+  box-shadow: inset 0px 0px 20px #4d324a;
+}
+
+#section-five {
+  display: none;
+  vertical-align: top;
+  width: 100vw;
+  
+  background-color: #48639C;
+  box-shadow: inset 0px 0px 20px #182134; 
+}
+
+#scroll-right-container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#scroll-left-container {
+  white-space: nowrap;
+}
+
+#scroll-down-container {
+  display: inline-block;
+  vertical-align: top;
+}

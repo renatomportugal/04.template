@@ -1,0 +1,32 @@
+.scrolls
+  .up
+    span ↑
+    .center
+      span mouse <br> scrolling
+  .down
+    span ↓
+.smooth
+  .header
+    ul
+      each link in ["home","about","price","contact",]
+        li
+          a(href="#" + link) #{link}
+
+  each name in ["home","about","price","contact",]
+    section(
+    id=name
+    )
+      h2 Section #{name}
+      
+//- svg(
+//- id="cursor"
+//- width="50"
+//- height="50"
+//- )
+//-   circle(
+//-   r="25"
+//-   cx="25"
+//-   cy="25"
+//-   fill="rgba(0, 0, 0, .3)"
+//-   )
+      

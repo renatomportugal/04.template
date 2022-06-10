@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Avatars draggable filter</title>
+      <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="search-outer">
+  <div class="search-inner">
+    <div class="draggable"></div>
+    <div class="avatars">
+      <figure class="avatar">
+        <img
+             src="https://pbs.twimg.com/profile_images/953658232517652480/Xp0NB-TL.jpg"
+             alt="Silvio Bompan"
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://images.pexels.com/photos/412840/pexels-photo-412840.jpeg?h=350&auto=compress&cs=tinysrgb"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://pbs.twimg.com/profile_images/984678118509109248/_lKShg6s.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MjI0MzY2MF5BMl5BanBnXkFtZTcwMzM3ODM3OA@@._V1_UX172_CR0,0,172,256_AL_.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTMzNDY3NDQ3MV5BMl5BanBnXkFtZTcwODI3MTkyMQ@@._V1_UX172_CR0,0,172,256_AL_.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/79.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/39.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/84.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/99.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/20.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/71.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://pbs.twimg.com/profile_images/1068045383606005761/VxDQx_gA.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://randomuser.me/api/portraits/women/2.jpg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://tinyfac.es/data/avatars/B0298C36-9751-48EF-BE15-80FB9CD11143-500w.jpeg"
+             alt=""
+             />
+      </figure>
+      <figure class="avatar">
+        <img
+             src="https://pbs.twimg.com/profile_images/1056600329662459904/ukegoVAy.jpg"
+             alt=""
+             />
+      </figure>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/draggabilly/2.3.0/draggabilly.pkgd.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
