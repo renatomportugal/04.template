@@ -1,0 +1,97 @@
+body {
+  background-color: #000;
+}
+.item {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-left: 50px;
+  margin-top: 50px;
+  height: 100px;
+}
+h1 {
+  color: #FFF;
+  font-family: sans-serif;
+  position: absolute;
+  z-index: 99999;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.05,.03,.35,1);
+}
+h2 {
+  position: absolute;
+  color: #FFF;
+  font-family: sans-serif;
+  font-weight: normal!important;
+  font-size: 15px;
+  opacity: .5;
+  margin-top: 38px;
+  margin-left: 350px;
+}
+h3 {
+  font-family: "Montserrat";
+  color: rgba(255,255,255,.5);
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+h4 {
+  color: rgba(255,255,255,.5);
+  font-family: sans-serif;
+  margin-right: 50px;
+  text-align: right;
+  font-weight: normal;
+  font-size: 13px;
+}
+h4 a {
+  text-decoration: none;
+  color: rgba(255,255,255,.5);
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: all .3s cubic-bezier(.05,.03,.35,1);
+}
+/* Underline effect on personal link */
+h4 a:after {
+  content: "";
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	margin-top: 5px;
+	background-color: #FFF;
+	display: block;
+	opacity: .3;
+	transition: all .3s cubic-bezier(.05,.03,.35,1);
+}
+h4 a:hover {
+  color: rgba(255,255,255,1);
+}
+h4 a:hover:after {
+  margin-top: 10px;
+}
+hr {
+  border: 0px;
+  height: 1px;
+  background-color: rgba(255,255,255,.2);
+  width: 80%;
+  margin-left: 50px;
+}
+h1:hover {
+  transform: scale(1.2);
+  opacity: .5;
+}
+img {
+  width: 300px;
+  position: absolute;
+  opacity: .2;
+  visibility: hidden;
+  display: block;
+  transform: scale(0);
+  transition: all .15s cubic-bezier(.05,.03,.35,1);
+}
+/* Show and scale up on hover */
+.ishover {
+  visibility: visible!important;
+  transform: scale(1);
+}

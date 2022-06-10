@@ -1,0 +1,300 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+	background: #333;
+	color: #fff;
+	font-family: 'Times New Roman', sans-serif;
+	
+	box-sizing: border-box;
+  display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+/* Header */
+#header {
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+#header :-webkit-any(h1.title, h2.subtitle, p.description) {
+	padding: 0;
+	margin: 0;
+}
+#header :is(h1.title, h2.subtitle) {
+	display: inline-block;
+	font-family: 'Times New Roman';
+	font-size: 1.2em;
+	font-weight: normal;
+}
+#header h1.title {
+	font-weight: bold;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+#header h1.title:after {
+	content: ":";
+	margin-right: .5em;
+}
+#header h2.subtitle {
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+.description a {
+	color: #f90;
+	font-weight: bold;
+	letter-spacing: .1em;
+	padding: 0 .5em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.description a:hover {
+	color: #fc0;
+}
+
+/* >>> APPEARANCE (scroll to >>> COUNTERS for the important stuff) */
+.board {
+	display: inline-grid;
+	grid-template-columns: repeat(20, max-content);
+	margin: 0 auto;
+}
+.board .info_container {
+	grid-column: 1 / -1;
+	width: max-content;
+	margin: 0 auto;
+}
+.checkbox {
+	--box-shadow:
+		0 0 0 1px #0007,
+		inset 0 0 0 1px #0008
+	;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: 2px solid #222;
+	border-radius: 4px;
+	box-shadow: var(--box-shadow);
+	cursor: pointer;
+	font-family: inherit;
+	margin: 2px;
+	padding: 28px 14px;
+	position: relative;
+	transition: all .2s;
+}
+.checkbox:hover {
+	border-color: #f60;
+	box-shadow:
+		0 0 8px #f60,
+		var(--box-shadow);
+}
+.checkbox:checked {
+	background: #f606;
+}
+.checkbox:not(:checked):active {
+	background: #fff;
+}
+.checkbox:before {
+	color: #fff;
+	content: counter(total);
+	display: inline-block;
+	margin: 2px 8px;
+	opacity: .2;
+	transform: rotate(-90deg);
+	text-align: right;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.counter {
+	/* Removing these .counter elements from the grid */
+	position: absolute;
+	left: -10000px;
+	top: -10000px;
+}
+
+/* >>> COUNTERS */
+/* Counter: Determining number of checkboxes */
+.checkbox {
+	counter-increment: total;
+}
+
+/* Counter - CHECKED: Determining number of checked checkboxes */
+.checkbox:checked +.checked {
+	counter-increment: checked;
+}
+/* Counter - UNCHECKED: Determining number of unchecked checkboxes */
+.checkbox:not(:checked) + .checked + .unchecked {
+	counter-increment: unchecked;
+}
+
+/* Counter - FOCUSED: Determining index of the focused checkbox */
+.board:focus-within > .checkbox + .checked + .unchecked + .focused {
+	counter-increment: focused;
+}
+.board:focus-within > .checkbox:focus + .checked + .unchecked + .focused 
+~ .checkbox + .checked + .unchecked + .focused {
+	counter-increment: focused 0;
+}
+
+/* Counter - HOVERED: Determining index of the hovered checkbox */
+.checkbox + .checked ~ .focused + .hovered {
+	counter-increment: hovered;
+}
+.checkbox:hover + .checked ~ .focused + .hovered 
+~ .checkbox:not(:hover) + .checked ~ .focused + .hovered {
+	counter-increment: hovered 0;
+}
+/* Reset if no checkboxes were hovered */
+.checkbox:not(:hover) ~ .checkbox:last-of-type:not(:hover) ~ .hovered {
+	counter-reset: hovered -1;
+}
+/* Don't reset if a checkbox was hovered */ 
+.checkbox:hover ~ .checkbox:last-of-type:not(:hover) ~ .hovered {
+	counter-reset: none;
+}
+
+/* Counter - 1ST CHECKED: Determining index of the first checked checkbox */
+.checkbox + .checked ~ .hovered + .first-checked {
+	counter-increment: first-checked;
+}
+.checkbox:checked + .checked ~ .hovered + .first-checked 
+~ .checkbox + .checked ~ .hovered + .first-checked {
+	counter-increment: first-checked 0;
+}
+/* Reset counter if nothing is checked */
+.checkbox:not(:checked) ~ .checkbox:last-of-type:not(:checked) ~ .first-checked {
+	counter-reset: first-checked -1;
+}
+/* Don't reset if something is checked */
+.checkbox:checked ~ .checkbox:last-of-type:not(:checked) ~ .first-checked {
+	counter-reset: none;
+}
+
+/* Counter - 1ST UNCHECKED: Determining index of the first checked checkbox */
+ .checkbox + .checked ~ .first-checked + .first-unchecked {
+	counter-increment: first-unchecked;
+}
+.checkbox:not(:checked) + .checked ~ .first-checked + .first-unchecked
+~ .checkbox + .checked ~ .first-checked + .first-unchecked {
+	counter-increment: first-unchecked 0;
+}
+/* Reset counter if everything is checked */
+.checkbox:checked ~ .checkbox:last-of-type:checked ~ .first-unchecked {
+	counter-reset: first-unchecked -1;
+}
+/* Don't reset if something isn't checked */
+.checkbox:not(:checked) ~ .checkbox:last-of-type:checked ~ .first-unchecked {
+	counter-reset: none;
+}
+
+/* Counter - 2ND CHECKED: Determining index of the second checked checkbox */
+.checkbox + .checked ~ .first-unchecked + .second-checked {
+	counter-increment: second-checked;
+}
+.checkbox:checked + .checked ~ .first-unchecked + .second-checked 
+~ .checkbox:checked + .checked ~ .first-unchecked + .second-checked
+~ .checkbox + .checked ~ .first-unchecked + .second-checked {
+	counter-increment: second-checked 0;
+}
+/* Reset counter if nothing is checked */
+.checkbox:not(:checked) ~ .checkbox:not(:checked) ~ .checkbox:last-of-type:not(:checked) ~ .second-checked {
+	counter-reset: second-checked -1;
+}
+/* Don't reset if two checkboxes are checked */
+.checkbox:checked ~ .checkbox:checked ~ .checkbox:last-of-type:not(:checked) ~ .second-checked {
+	counter-reset: none;
+}
+
+/* Counter - 2ND UNCHECKED: Determining index of the second unchecked checkbox */
+.checkbox + .checked ~ .second-checked + .second-unchecked {
+	counter-increment: second-unchecked;
+}
+.checkbox:not(:checked) + .checked ~ .second-checked + .second-unchecked 
+~ .checkbox:not(:checked) + .checked ~ .second-checked + .second-unchecked 
+~ .checkbox + .checked ~ .second-checked + .second-unchecked {
+	counter-increment: second-unchecked 0;
+}
+.checkbox:checked ~ .checkbox:checked ~ .checkbox:last-of-type:checked ~ .second-unchecked {
+	counter-reset: second-unchecked -1;
+}
+.checkbox:not(:checked) ~ .checkbox:not(:checked) ~ .checkbox:last-of-type:checked ~ .second-unchecked {
+	counter-reset: none;
+}
+
+.info_container {
+	border: 3px solid #3330;
+	border-radius: 8px;
+	box-shadow:
+		inset 0 0 0 1px #000,
+		0 0 8px #000;
+	overflow: hidden;
+}
+.info_container > .title {
+	background-color: #222;
+	background-image: linear-gradient(to bottom, #0003, #0000);
+	border-bottom: 1px solid #0001;
+	box-shadow: inset 0 -1px #fff1;
+	font-size: 1.4em;
+	font-weight: bold;
+	letter-spacing: .25em;
+	padding: 8px;
+	position: relative;
+	text-transform: uppercase;
+	z-index: -1;
+}
+.info {
+	box-shadow: inset 0 0 16px #000;
+}
+.info:before, .info:after {
+	background-image:
+		linear-gradient(to top, #0003 0%, #0003 50%, #0000 50%, #0000 100%);
+	background-size:
+		3em 2.75em;
+	display: inline-block;
+	line-height: 1.4em;
+	padding: 0px 8px;
+	white-space: pre-wrap;
+	vertical-align: top;
+}
+.info:before {
+	background-color: #f603;
+	content:
+		"total: \A"
+		"unchecked: \A"
+		"checked: \A"
+		"\A"
+		"1st/2nd checked: \A"
+		"1st/2nd unchecked: \A"
+		"\A"
+		"focused index: \A"
+		"hovered index: \A"
+	;
+	font-weight: bold;
+	letter-spacing: .2em;
+	padding: 0 8px;
+	text-transform: uppercase;
+	width: 16em;
+}
+.info:after {
+	background-color: #06f3;
+	color: #fc0;
+	content:
+		counter(total) "\A"
+		counter(unchecked) "\A"
+		counter(checked) "\A"
+		"\A"
+		counter(first-checked) 		" / " counter(second-checked) "\A"
+		counter(first-unchecked) 	" / " counter(second-unchecked) "\A"
+		"\A"
+		counter(focused) "\A"
+		counter(hovered) "\A"
+	;
+	letter-spacing: .1em;
+	text-align: right;
+	width: 4em;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Animation package documentation</title>
+</head>
+<body>
+<center><h1>Animation package documentation</h1></center>
+<hr />
+<ul>
+<p><b>Author:</b> Manuel Lemos (<a href="mailto:mlemos-at-acm.org">mlemos-at-acm.org</a>)</p>
+<p><b>Version:</b> <tt>@(#) $Id: pageAnimation.documentation,v 1.2 2013/01/28 10:34:20 mlemos Exp $</tt></p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#2.1.1">Summary</a></li>
+<li><a href="#3.1.2">Classes</a></li>
+<ul>
+<li><a href="#4.2.1">ML.Animation.Animate</a></li>
+<ul>
+<li><a href="#5.3.1">Functions</a></li>
+<ul>
+<li><a href="#6.4.0">addAnimation</a></li>
+</ul>
+</ul>
+<li><a href="#8.2.2">ML.Animation.Effects</a></li>
+<ul>
+<li><a href="#9.3.1">Effect classes</a></li>
+<ul>
+<li><a href="#10.4.1">AppendContent</a></li>
+<li><a href="#12.4.2">CancelAnimation</a></li>
+<li><a href="#14.4.3">Emphasize</a></li>
+<li><a href="#16.4.4">FadeIn</a></li>
+<li><a href="#18.4.5">FadeOut</a></li>
+<li><a href="#20.4.6">Hide</a></li>
+<li><a href="#22.4.7">MakeVisible</a></li>
+<li><a href="#24.4.8">PrependContent</a></li>
+<li><a href="#26.4.9">ProgressNumber</a></li>
+<li><a href="#28.4.10">ReplaceContent</a></li>
+<li><a href="#30.4.11">Show</a></li>
+<li><a href="#32.4.12">SlideIn</a></li>
+<li><a href="#34.4.13">SlideOut</a></li>
+<li><a href="#36.4.14">Wait</a></li>
+</ul>
+</ul>
+</ul>
+<li><a href="#38.1.3">Variables</a></li>
+<ul>
+<li><a href="#39.2.0">ML.Animation.defaultDuration</a></li>
+</ul>
+<li><a href="#39.1.4">Functions</a></li>
+<ul>
+<li><a href="#40.2.0">ML.Animation.registerEffects</a></li>
+</ul>
+</ul>
+</ul>
+<hr />
+<ul>
+<h2><li><a name="2.1.1">Summary</a></li></h2>
+<ul>
+<h3>Name</h3>
+<p>Animation package</p>
+<h3>Purpose</h3>
+<p>Classes for animating HTML page elements.</p>
+<h3>Author</h3>
+<p>Manuel Lemos (<a href="mailto:mlemos-at-acm.org">mlemos-at-acm.org</a>)</p>
+</ul>
+<h2><li><a name="3.1.2">Classes</a></li></h2>
+<ul>
+<h3><li><a name="4.2.1">ML.Animation.Animate</a></li></h3>
+<ul>
+<h4><li><a name="5.3.1">Functions</a></li></h4>
+<ul>
+<h5><a name="6.4.0">addAnimation</a></h5>
+<ul>
+<h6>Synopsis</h6>
+<p><tt>animationNumber = animate.addAnimation(animation)</tt></p>
+<h6>Purpose</h6>
+<p>Add an animation to the list of running animations.</p>
+<h6>Usage</h6>
+<p>The <tt>animation</tt> argument is an object that defines properties of the animation. The animation object may have the following properties:</p>
+<ul>
+<p><tt>name</tt> (optional) - Name of the animation</p>
+<p><tt>effects</tt> - Array with the definition of the sequence of effects of the animation. Each entry in this array is an object that defines the effect properties.</p>
+<p>All effect properties must have an entry named <tt>type</tt> that defines the type of effect.</p>
+<p>All other effect properties are specific to each type of effect. See the <a href="#animation-effect-classes">Effects</a> classes to learn about the available effects and their parameters.</p>
+<p><tt>debug</tt> (optional) - Integer value to specify the animation debug level. 0 means no debugging support is enabled. Higher values make the object generate more debug information.</p>
+</ul>
+<p>The <tt>animationNumber</tt> return value is an integer value that is the number of the added animation.</p>
+</ul>
+</ul>
+</ul>
+<h3><li><a name="animation-effect-classes"></a><a name="8.2.2">ML.Animation.Effects</a></li></h3>
+<p>This object contains several classes that implement the built-in supported animation effects.</p>
+<p>Additional effects may be implemented by external animation plug-in classes that may become available by registering them with the <tt><a href="#ML-Animation-registerEffects">ML.Animation.registerEffects</a></tt> function.</p>
+<ul>
+<h4><li><a name="9.3.1">Effect classes</a></li></h4>
+<p>All effect classes take as constructor function argument an object with parameters to configure the animation effect.</p>
+<p>Most of the parameters are defined by the application. The names and the types of the parameters depend on the type of effect.</p>
+<p>Below follows the list of supported parameters for each type of built-in animation effect.</p>
+<ul>
+<h5><li><a name="10.4.1">AppendContent</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Add content to the end of a given page element.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to which the content will be added</p>
+<p><li><tt>content</tt></li></p>
+<p>(Required) HTML content to be added to the page element</p>
+</ul>
+</ul>
+<h5><li><a name="12.4.2">CancelAnimation</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Cancel a given animation if it is in progress</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>animation</tt></li></p>
+<p>(Required) Name of the animation that should be canceled</p>
+</ul>
+</ul>
+<h5><li><a name="14.4.3">Emphasize</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Give visual emphasis to a given page element.</p>
+<p>This effect requires HTML5 canvas objects support in the user browser, otherwise the effect is skipped.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>canvas</tt></li></p>
+<p>(Optional) Identifier that will be assigned to the canvas object that will be created.</p>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element that will be emphasized</p>
+<p><li><tt>lineWidth</tt></li></p>
+<p>Number value with the thickness of the lines that will be drawn</p>
+<p>Default value: <tt>4</tt></p>
+<p><li><tt>method</tt></li></p>
+<p>(Required) Name of the method of emphasis. Currently this effect can give emphasis by drawing lines around the given page element. The method may be either <tt>'circle'</tt>, <tt>'underline'</tt> and <tt>'double-underline'</tt>.</p>
+<p><li><tt>opacity</tt></li></p>
+<p>Number value of the opacity level of the lines that will be drawn. The value must be between <tt>0</tt> and <tt>1</tt></p>
+<p>Default value: <tt>0.5</tt></p>
+<p><li><tt>strokeStyle</tt></li></p>
+<p>String of parameters that define how the lines will be stroke in the canvas object.</p>
+<p>Default value: <tt>'#0000ff'</tt></p>
+</ul>
+</ul>
+<h5><li><a name="16.4.4">FadeIn</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Make a given page element fade and appear gradually.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to be faded</p>
+<p><li><tt>visibility</tt></li></p>
+<p>(Required) String with the type of visibility property that should be set in the beginning to make the page element visible. The value must be either <tt>'display'</tt> or <tt>'visibility'</tt>.</p>
+</ul>
+</ul>
+<h5><li><a name="18.4.5">FadeOut</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Make a given page element fade and disappear gradually.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to be faded</p>
+<p><li><tt>visibility</tt></li></p>
+<p>(Required) String with the type of visibility property that should be set in the end to make the page element invisible. The value must be either <tt>'display'</tt> or <tt>'visibility'</tt>.</p>
+</ul>
+</ul>
+<h5><li><a name="20.4.6">Hide</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Hide a given page element if it is visible.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to be hidden</p>
+</ul>
+</ul>
+<h5><li><a name="22.4.7">MakeVisible</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Scroll the page if necessary to make a given page element show in the browser window viewport.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to be made visible</p>
+</ul>
+</ul>
+<h5><li><a name="24.4.8">PrependContent</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Add content to the beginning of a given page element.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to which the content will be added</p>
+<p><li><tt>content</tt></li></p>
+<p>(Required) HTML content to be added to the page element</p>
+</ul>
+</ul>
+<h5><li><a name="26.4.9">ProgressNumber</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Display a number in a given page element increasing or decreasing gradually from a given start number to an end number.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element into which the number will be displayed</p>
+<p><li><tt>start</tt></li></p>
+<p>Integer with the start value of the number</p>
+<p>Default value: <tt>0</tt></p>
+<p><li><tt>end</tt></li></p>
+<p>(Required) Integer with the end value of the number</p>
+</ul>
+</ul>
+<h5><li><a name="28.4.10">ReplaceContent</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Replace the content of a given page element.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element that will have its content replaced</p>
+<p><li><tt>content</tt></li></p>
+<p>(Required) HTML content to replace in the page element</p>
+</ul>
+</ul>
+<h5><li><a name="30.4.11">Show</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Show a given page element if it is invisible.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to be shown</p>
+</ul>
+</ul>
+<h5><li><a name="32.4.12">SlideIn</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Scroll the content of a given page element horizontally or vertically until it completely appears.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to slide</p>
+<p><li><tt>edge</tt></li></p>
+<p>(Required) String with the name of the side from which the page element should scroll. It should be either <tt>'left'</tt>, <tt>'right'</tt>, <tt>'top'</tt>, or <tt>'bottom'</tt></p>
+</ul>
+</ul>
+<h5><li><a name="34.4.13">SlideOut</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Scroll the content of a given page element horizontally or vertically until it completely disappears.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+<p><li><tt>element</tt></li></p>
+<p>(Required) Identifier of the element to slide</p>
+<p><li><tt>edge</tt></li></p>
+<p>(Required) String with the name of the side to which the page element should scroll. It should be either <tt>'left'</tt>, <tt>'right'</tt>, <tt>'top'</tt>, or <tt>'bottom'</tt></p>
+</ul>
+</ul>
+<h5><li><a name="36.4.14">Wait</a></li></h5>
+<ul>
+<h6>Purpose</h6>
+<p>Wait for a given period of time before proceeding to the next animation effect.</p>
+<h6>Parameters</h6>
+<ul>
+<p><li><tt>duration</tt></li></p>
+<p>Number with the length of time of the effect in seconds</p>
+<p>Default value: defined by the <tt><a href="#ML-Animation-defaultDuration">ML.Animation.defaultDuration</a></tt> variable</p>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<h2><li><a name="38.1.3">Variables</a></li></h2>
+<ul>
+<h3><a name="ML-Animation-defaultDuration"></a><a name="39.2.0">ML.Animation.defaultDuration</a></h3>
+<p>Number that defines the default duration of animation effects</p>
+<p>Default value: <tt>1</tt></p>
+</ul>
+<h2><li><a name="39.1.4">Functions</a></li></h2>
+<ul>
+<h3><a name="ML-Animation-registerEffects"></a><a name="40.2.0">ML.Animation.registerEffects</a></h3>
+<ul>
+<h4>Synopsis</h4>
+<p><tt>registered = ML.Animation.registerEffects(name, effects)</tt></p>
+<h4>Purpose</h4>
+<p>Register a new type of animation effect by assigning an effects class that will implement it.</p>
+<h4>Usage</h4>
+<p>The <tt>name</tt> argument is a string with the name of the new animation effect to be registered.</p>
+<p>The <tt>effects</tt> argument is a reference to the constructor function of the class that implements the new effect.</p>
+<p>The <tt>registered</tt> return value is a boolean value that indicates whether the new animation effect was registered successfully. If this value is <tt>false</tt>, it means there is already a registered animation effect with the same name.</p>
+</ul>
+</ul>
+</ul>
+
+<hr />
+<address>Manuel Lemos (<a href="mailto:mlemos-at-acm.org">mlemos-at-acm.org</a>)</address>
+</body>
+</html>

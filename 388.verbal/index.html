@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Verbal</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+  
+  
+</head>
+
+<body>
+
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="jumbotron">
+<h1> Verbal Reasoning Test</h1>
+</div>
+<button type="button" class="btn btn-primary" id="start">Start</button>
+<button type="button" class="btn btn-danger" id="reset">Reset</button>
+
+ <h2><small>Remaining time: </small><span id="time">35:00</span><small> minutes!</small></h2>
+
+    <strong><p id="text"></p></strong>
+ <form>
+
+   <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="A" value="A"> A:<div id='a'></label></div>
+  
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="B" value="B">
+    B:<div id='b'></label></div>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="C" value="C">
+    C:<div id='c'></label></div>
+</div>
+ <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="D" value="D">
+    D:<div id='d'></label></div>
+</div>  
+</form>
+</br>
+      
+<div class="progress">
+  <div class="progress-bar" role="progressbar"  aria-valuemin="0" aria-valuemax="20" style="width: 0%;">    
+  </div>
+</div>
+  </BR>
+<button type="button" class="btn" id="next">Next</button>
+<button type="button" class="btn" id="check">Check</button>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+  <div id="answer"></div><div id="qid"></div>
+<br>
+<div id="result"></div>
+Corect :<div id="correct"></div>
+False :<div id="false"></div>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

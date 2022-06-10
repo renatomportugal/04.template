@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+/*
+ * testPageAnimation.html
+ *
+ * @(#) $Id: testPageAnimation.html,v 1.2 2013/01/28 10:19:52 mlemos Exp $
+ *
+ */
+-->
+<html lang="en">
+<head>
+<title>Test the Page Animation Object</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+* { font-family: sans-serif,arial,helvetica }
+.box { border-radius: 8px; border-style: solid; border-width: 1px; padding: 4px }
+#menu { float: left; width: 10em; overflow: auto; position: fixed; top: 0 }
+#effects { margin-left: 10em }
+</style>
+<script type="text/javascript" src="animation.js"></script>
+<script type="text/javascript"><!--
+
+/*
+ * Create the animation object
+ */
+var a = new ML.Animation.Animate();
+
+/*
+ * Definition of effects
+ */
+var effects = {
+	ReplaceContent: [
+		{
+			type: 'MakeVisible',
+			element: 'ReplaceContent'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<span style="background-color: yellow">Replaced content here</span>',
+			element: 'ReplaceContent'
+		}
+	],
+	AppendContent: [
+		{
+			type: 'MakeVisible',
+			element: 'AppendContent'
+		},
+		{
+			type: 'AppendContent',
+			content: '<span style="background-color: yellow">Appended content here<br /></span>',
+			element: 'AppendContent'
+		}
+	],
+	PrependContent: [
+		{
+			type: 'MakeVisible',
+			element: 'PrependContent'
+		},
+		{
+			type: 'PrependContent',
+			content: '<span style="background-color: yellow">Prepended content here<br /></span>',
+			element: 'PrependContent'
+		}
+	],
+	'Emphasize-circle': [
+		{
+			type: 'MakeVisible',
+			element: 'Emphasize-circle'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<span id="Emphasize circle">Emphasize circle</span>',
+			element: 'Emphasize-circle'
+		},
+		{
+			type: 'Emphasize',
+			method: 'circle',
+//			lineWidth: 4,
+//			opacity: 0.5,
+//			strokeStyle: '#0000ff',
+//			duration: 1,
+			element: 'Emphasize circle'
+		}
+	],
+	'Emphasize-underline': [
+		{
+			type: 'MakeVisible',
+			element: 'Emphasize-underline'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<span id="Emphasize underline">Emphasize underline</span>',
+			element: 'Emphasize-underline'
+		},
+		{
+			type: 'Emphasize',
+			method: 'underline',
+//			lineWidth: 4,
+//			opacity: 0.5,
+//			strokeStyle: '#0000ff',
+//			duration: 1,
+			element: 'Emphasize underline'
+		}
+	],
+	'Emphasize-double-underline': [
+		{
+			type: 'MakeVisible',
+			element: 'Emphasize-double-underline'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<span id="Emphasize double-underline">Emphasize double-underline</span>',
+			element: 'Emphasize-double-underline'
+		},
+		{
+			type: 'Emphasize',
+			method: 'double-underline',
+//			lineWidth: 4,
+//			opacity: 0.5,
+//			strokeStyle: '#0000ff',
+//			duration: 1,
+			element: 'Emphasize double-underline'
+		}
+	],
+	'FadeIn': [
+		{
+			type: 'MakeVisible',
+			element: 'FadeIn'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<span id="Fade In" style="background-color: yellow">Fade In</span>',
+			element: 'FadeIn'
+		},
+		{
+			type: 'FadeIn',
+//			visibility: 'visible',
+//			duration: 1,
+			element: 'Fade In'
+		}
+	],
+	'FadeOut': [
+		{
+			type: 'MakeVisible',
+			element: 'FadeOut'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<span id="Fade Out" style="background-color: yellow">Fade Out</span>',
+			element: 'FadeOut'
+		},
+		{
+			type: 'FadeOut',
+//			visibility: 'visible',
+//			duration: 1,
+			element: 'Fade Out'
+		}
+	],
+	'ProgressNumber': [
+		{
+			type: 'MakeVisible',
+			element: 'ProgressNumber'
+		},
+		{
+			type: 'ReplaceContent',
+			content: 'Progress Number <span id="Progress Number">0</span>',
+			element: 'ProgressNumber'
+		},
+		{
+			type: 'ProgressNumber',
+			start: 0,
+			end: 5000,
+			duration: 5,
+			element: 'Progress Number'
+		}
+	],
+	'SlideIn': [
+		{
+			type: 'MakeVisible',
+			element: 'SlideIn'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<div id="Slide In">Slide In</div>',
+			element: 'SlideIn'
+		},
+		{
+			type: 'SlideIn',
+			edge: 'right',
+//			duration: 1,
+			element: 'Slide In'
+		}
+	],
+	'SlideOut': [
+		{
+			type: 'MakeVisible',
+			element: 'SlideOut'
+		},
+		{
+			type: 'ReplaceContent',
+			content: '<div id="Slide Out">Slide Out</div>',
+			element: 'SlideOut'
+		},
+		{
+			type: 'SlideOut',
+			edge: 'right',
+//			duration: 1,
+			element: 'Slide Out'
+		}
+	]
+};
+
+// --></script>
+</head>
+<body>
+
+<div id="menu">
+<h1>Effects</h1>
+<p><a onclick="a.addAnimation({effects: effects.ReplaceContent}); return false" href="#ReplaceContent">ReplaceContent</a><p>
+<p><a onclick="a.addAnimation({effects: effects.AppendContent}); return false" href="#AppendContent">AppendContent</a><p>
+<p><a onclick="a.addAnimation({effects: effects.PrependContent}); return false" href="#PrependContent">PrependContent</a><p>
+<p><a onclick="a.addAnimation({effects: effects['Emphasize-circle']}); return false" href="#Emphasize-circle">Emphasize circle</a><p>
+<p><a onclick="a.addAnimation({effects: effects['Emphasize-underline']}); return false" href="#Emphasize-underline">Emphasize underline</a><p>
+<p><a onclick="a.addAnimation({effects: effects['Emphasize-double-underline']}); return false" href="#Emphasize-double-underline">Emphasize double-underline</a><p>
+<p><a onclick="a.addAnimation({effects: effects.FadeIn}); return false" href="#FadeIn">FadeIn</a><p>
+<p><a onclick="a.addAnimation({effects: effects.FadeOut}); return false" href="#FadeOut">FadeOut</a><p>
+<p><a onclick="a.addAnimation({effects: effects.ProgressNumber}); return false" href="#ProgressNumber">ProgressNumber</a><p>
+<p><a onclick="a.addAnimation({effects: effects.SlideIn}); return false" href="#SlideIn">SlideIn</a><p>
+<p><a onclick="a.addAnimation({effects: effects.SlideOut}); return false" href="#SlideOut">SlideOut</a><p>
+</div>
+
+<div id="effects">
+<h2>ReplaceContent</h2>
+<div class="box" id="ReplaceContent">No content here</div>
+<h2>AppendContent</h2>
+<div class="box" id="AppendContent">No content here<br></div>
+<h2>PrependContent</h2>
+<div class="box" id="PrependContent">No content here</div>
+<h2>Emphasize circle</h2>
+<div class="box" id="Emphasize-circle">Emphasize-circle</div>
+<h2>Emphasize underline</h2>
+<div class="box" id="Emphasize-underline">Emphasize-underline</div>
+<h2>Emphasize double-underline</h2>
+<div class="box" id="Emphasize-double-underline">Emphasize-double-underline</div>
+<h2>FadeIn</h2>
+<div class="box" id="FadeIn">FadeIn</div>
+<h2>FadeOut</h2>
+<div class="box" id="FadeOut">FadeOut</div>
+<h2>ProgressNumber</h2>
+<div class="box" id="ProgressNumber">ProgressNumber</div>
+<h2>SlideIn</h2>
+<div class="box" id="SlideIn">SlideIn</div>
+<h2>SlideOut</h2>
+<div class="box" id="SlideOut">SlideOut</div>
+</div>
+
+</body>
+</html>
