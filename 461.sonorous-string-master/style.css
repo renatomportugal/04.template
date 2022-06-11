@@ -1,0 +1,230 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+}
+body:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px), url(https://eko.com/s/sonorous/demos/string_master/tillian_live_small.gif);
+  width: 100%;
+  height: 100%;
+  background-size: 3px 3px, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center calc(50% - 100px);
+}
+body:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, black 100%, black 100%);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+a.sonorous {
+  z-index: 100;
+  display: block;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 180px;
+  height: 100px;
+  background-image: url(https://eko.engineering/static/media/sonorous_logo.83f6c44b.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 110px;
+  font-family: arial;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  perspective: 400px;
+  position: fixed;
+  width: 100%;
+  bottom: -100px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.board {
+  position: relative;
+  height: 600px;
+  width: 200px;
+  margin: 0 auto;
+  transform: rotateX(70deg);
+  background: #333;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0.3) 15%, black 100%);
+  overflow: hidden;
+}
+.board:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #aaaaaa;
+  opacity: 0.6;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.6);
+  animation: 5.5s bar linear infinite;
+  transform: translateY(0);
+}
+
+.strings {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: all;
+}
+
+.string {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  transform: translateX(-50%);
+  background: white;
+  top: 0;
+  opacity: .5;
+  z-index: 6;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+.string:first-child, .string:last-child {
+  width: 3px;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.6);
+}
+.string:nth-child(1) {
+  left: 0%;
+}
+.string:nth-child(2) {
+  left: 20%;
+}
+.string:nth-child(3) {
+  left: 40%;
+}
+.string:nth-child(4) {
+  left: 60%;
+}
+.string:nth-child(5) {
+  left: 80%;
+}
+.string:nth-child(6) {
+  left: 100%;
+}
+
+.note {
+  z-index: 1;
+  top: -100px;
+  position: absolute;
+  width: 20%;
+  display: inline-block;
+  padding-bottom: 20%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  pointer-events: all;
+}
+.note:before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  width: 50%;
+  padding-bottom: 50%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #333;
+  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+.note:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1;
+  background: radial-gradient(ellipse at top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.6) 95%, black 100%);
+}
+
+.type0 {
+  left: 0;
+  background: green;
+}
+
+.type1 {
+  left: 20%;
+  background: red;
+}
+
+.type2 {
+  left: 40%;
+  background: yellow;
+}
+
+.type3 {
+  left: 60%;
+  background: blue;
+}
+
+.type4 {
+  left: 80%;
+  background: orange;
+}
+
+.note {
+  transform: scale(1);
+  animation: 5.5s slide linear;
+  top: -110px;
+}
+
+.note:before {
+  animation: 5.5s cap linear;
+}
+
+.note.selected {
+  transform-origin: center;
+  transform: scaleX(1.7) scaleY(1.5) translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.strings.wrong {
+  animation: 0.2s wrong linear;
+}
+
+@keyframes slide {
+  to {
+    top: 110%;
+  }
+}
+@keyframes cap {
+  to {
+    top: 14%;
+  }
+}
+@keyframes bar {
+  to {
+    top: 110%;
+  }
+}
+@keyframes wrong {
+  50% {
+    background: rgba(255, 0, 0, 0.6);
+  }
+}

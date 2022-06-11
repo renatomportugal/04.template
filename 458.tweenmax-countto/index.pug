@@ -1,0 +1,17 @@
+.counter#js-counter
+  form.counter_form
+    ul.counter_form_list
+      li.counter_form_item
+        label.counter_form_label(for="start") start
+        input.counter_form_input_text#start(type="number" v-model="start")
+      li.counter_form_item
+        label.counter_form_label(for="end") end
+        input.counter_form_input_text#end(type="number" v-model="end")
+      li.counter_form_item
+        label.counter_form_label(for="duration") duration
+        input.counter_form_input_text#duration(type="number" v-model="duration")
+      li.counter_form_item
+        label.counter_form_label(for="format") format
+        input.counter_form_input_checkbox#format(type="checkbox" v-model="format")
+    input.counter_form_button(type="button" value="Let's start!" @click="click")
+  .counter_monitor {{ counter }}

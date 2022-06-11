@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: #ddd;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2rem;
+}
+
+.counter_form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+}
+.counter_form_list {
+  margin: 0;
+  padding: 0;
+}
+.counter_form_item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.counter_form_label {
+  display: block;
+  width: 80px;
+}
+.counter_form_input_text {
+  width: 100px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #bbb;
+  font-family: "Source Sans Pro", sans-serif;
+  transition: 300ms;
+}
+.counter_form_input_text:focus {
+  color: #ffdd40;
+  border-color: #ffdd40;
+}
+.counter_form_button {
+  width: 180px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  cursor: pointer;
+  transition: 300ms;
+}
+.counter_form_button:hover {
+  background: #ffdd40;
+}
+.counter_monitor {
+  color: #ffdd40;
+  font-size: 5rem;
+}
+
+input:focus {
+  outline: none;
+}

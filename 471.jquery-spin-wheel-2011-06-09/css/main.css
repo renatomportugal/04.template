@@ -1,0 +1,56 @@
+/* 
+    Document   : main
+    Created on : Jun 7, 2011, 4:11:21 PM
+    Author     : ryu
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#main {
+    width:1000px;
+}
+
+#left-column {
+    float:left;
+    width:600px;
+    padding-right:15px;
+}
+
+#right-column {
+    float:right;
+    width:300px;
+}
+
+.participants {
+    list-style:none;
+}
+
+.participants li {
+    border-radius:15px;
+    padding:15px;
+    font-family: 'Carter One', arial, serif;
+    font-size:150%;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.participants li:nth-child(2n+1) {
+    background-color:#bada55;
+}
+
+.winner {
+    font-family: 'Carter One', arial, serif;
+    font-size:250%;
+    text-shadow: 2px 2px 2px #000;    
+    display:none;
+}
+
+.winner:before {
+    content: "The Winner is ... "
+}
+
+

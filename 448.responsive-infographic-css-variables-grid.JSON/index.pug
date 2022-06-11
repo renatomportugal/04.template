@@ -1,0 +1,46 @@
+- var data = [
+- 	{
+- 		stop: '#00aab7', 
+- 		icon: '📊', 
+- 		title: 'gingerbread', 
+- 		ptext: 'Cake muffin donut chocolate cake jelly sesame snaps wafer tart pie sweet roll muffin chupa chups.'
+- 	}, 
+- 	{
+- 		stop: '#6c4296', 
+- 		icon: '🙎', 
+- 		title: 'brownie', 
+- 		ptext: 'Cake cookie lemon drops muffin sugar plum. Liquorice pudding sugar plum topping macaroon pie chocolate.'
+- 	}, 
+- 	{
+- 		stop: '#b53292', 
+- 		icon: '📍', 
+- 		title: 'ice cream', 
+- 		ptext: 'Cake muffin donut chocolate cake jelly sesame snaps wafer tart pie sweet roll muffin chupa chups.'
+- 	}, 
+- 	{
+- 		stop: '#e35638', 
+- 		icon: '💬', 
+- 		title: 'lava cake', 
+- 		ptext: 'Cake cookie lemon drops muffin sugar plum. Liquorice pudding sugar plum topping macaroon pie chocolate.'
+- 	}, 
+- 	{
+- 		stop: '#f8d602', 
+- 		icon: '⚙️', 
+- 		title: 'macaroon', 
+- 		ptext: 'Cake muffin donut chocolate cake jelly sesame snaps wafer tart pie sweet roll muffin chupa chups.'
+- 	}
+- ];
+- var n = data.length;
+- var clist = ['#00a9b6', 
+- '#168fae', '#366aa3', 
+- '#50448e', '#764094', 
+- '#90388e', '#b53292', 
+- '#be3c68', '#dc4f45', 
+- '#e15822', '#f48b15', 
+- '#fad700']
+
+- for(var i = 0; i < n; i++)
+	article(data-icon=`${data[i].icon}` style=`--c: ${data[i].stop}; --slist: ${clist.slice(2*i, 2*i + 4)}`)
+		span(aria-hidden='true')
+		h3 #{data[i].title}
+		p #{data[i].ptext}

@@ -1,0 +1,105 @@
+body {
+  background: #2ecc71;
+}
+.lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+.lock .instruction {
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: -100px;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  width: 400px;
+  margin-left: -100px;
+}
+.lock .ring {
+  position: absolute;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.lock .ring.checked {
+  animation: blink 2s ease-in-out;
+}
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    border: 5px solid rgba(255, 255, 255, 1);
+  }
+  25%,
+  75% {
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+}
+.lock .lockpick {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background: black;
+  left: 50%;
+  top: 0px;
+  margin-left: -2px;
+  background: white;
+  transform-origin: bottom;
+}
+.lock .stage {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lock .stage li {
+  width: 10px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.5);
+  float: left;
+  margin: 0 2px;
+  border-radius: 5px;
+  transition: all 1s ease;
+}
+.lock .stage li.active,
+.lock .stage li.done {
+  background: white;
+  margin-top: -10px;
+}
+.lock .stage li.done {
+  margin-top: -20px;
+}
+.lock > .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.lock .lockpick .fas {
+  position: absolute;
+  color: white;
+  display: none;
+}
+.lock .lockpick .fas.fa-caret-right {
+  top: 3px;
+  right: -8px;
+}
+.lock .lockpick .fas.fa-caret-left {
+  top: 3px;
+  left: -8px;
+}

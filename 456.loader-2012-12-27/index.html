@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+    <head> 
+        <title>JSClasses | Loader</title>
+    </head>
+    
+    <body>
+        <header>
+            <h1>JSClasses | Loader - Basic usage</h1>
+            <h2>Type the file you want to load and click the load button</h2>
+        </header>
+        
+        <section>
+            <input id="txtFile" type="text" value="test-loader.js" placeholder="file.js" /> <input id="btnLoad" type="button" value="load file" />
+            <span id="info"></span>
+        </section>        
+    </body>
+    
+    <script src="loader.js"></script>
+    <script>
+        window.onload = function() {
+            btnLoad.addEventListener('click', function(e) {
+                
+                /**
+                * Loader.load usage
+                * the anonymous function will execute after the load process is over
+                */
+                Loader.load(txtFile.value).then(function(){
+                    info.innerHTML = txtFile.value + ' loaded successfully';
+                });
+                
+            });
+        };
+    </script>
+    
+</html> 

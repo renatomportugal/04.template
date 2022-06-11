@@ -1,0 +1,84 @@
+$font-family: 'Source Sans Pro', sans-serif;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: #ddd;
+  font-family: $font-family;
+  font-size: 1.2rem;
+}
+
+.counter {
+  &_form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    
+    &_list {
+      margin: 0;
+      padding: 0;
+    }
+    
+    &_item {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-bottom: 10px;
+    }
+    
+    &_label {
+      display: block;
+      width: 80px;
+    }
+    
+    &_input_text {
+      width: 100px;
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      color: #bbb;
+      font-family: $font-family;
+      transition: 300ms;
+      
+      &:focus {
+        color: #ffdd40;
+        border-color: #ffdd40;
+      }
+    }
+    
+    &_button {
+      width: 180px;
+      height: 30px;
+      padding: 0;
+      margin: 0;
+      border-radius: 4px;
+      border: none;
+      background: rgba(#fff, 0.4);
+      font-size: 1.2rem;
+      font-family: $font-family;
+      cursor: pointer;
+      transition: 300ms;
+      
+      &:hover {
+        background: #ffdd40;
+      }
+    }
+  }
+  
+  &_monitor {
+    color: #ffdd40;
+    font-size: 5rem;
+  }
+}
+
+input:focus {
+  outline: none;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>TweenMax CountTo</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="counter" id="js-counter">
+  <form class="counter_form">
+    <ul class="counter_form_list">
+      <li class="counter_form_item">
+        <label class="counter_form_label" for="start">start</label>
+        <input class="counter_form_input_text" id="start" type="number" v-model="start"/>
+      </li>
+      <li class="counter_form_item">
+        <label class="counter_form_label" for="end">end</label>
+        <input class="counter_form_input_text" id="end" type="number" v-model="end"/>
+      </li>
+      <li class="counter_form_item">
+        <label class="counter_form_label" for="duration">duration</label>
+        <input class="counter_form_input_text" id="duration" type="number" v-model="duration"/>
+      </li>
+      <li class="counter_form_item">
+        <label class="counter_form_label" for="format">format</label>
+        <input class="counter_form_input_checkbox" id="format" type="checkbox" v-model="format"/>
+      </li>
+    </ul>
+    <input class="counter_form_button" type="button" value="Let's start!" @click="click"/>
+  </form>
+  <div class="counter_monitor">{{ counter }}</div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

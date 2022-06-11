@@ -1,0 +1,56 @@
+[
+    {
+        "color": "#fce013",
+        "href": "#link1",
+        "titulo": "Step 1",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#23b590",
+        "href": "#link2",
+        "titulo": "Step 2",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#25a6dd",
+        "href": "#link3",
+        "titulo": "Step 3",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#273e8c",
+        "href": "#link4",
+        "titulo": "Step 4",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#8d489b",
+        "href": "#link5",
+        "titulo": "Step 5",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#ff8000",
+        "href": "#link6",
+        "titulo": "Step 6",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#0000a0",
+        "href": "#link7",
+        "titulo": "Step 7",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#008000",
+        "href": "#link8",
+        "titulo": "Step 8",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    },
+    {
+        "color": "#808080",
+        "href": "#link 9",
+        "titulo": "Step 9",
+        "texto": "Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin."
+    }
+]

@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  overflow-x: hidden;
+  height: 100vh;
+  background: radial-gradient(circle at 100% 0, #fefefe, #929391);
+}
+
+.assembly, article {
+  transform-style: preserve-3d;
+}
+
+article {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  padding: 0.125em;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(calc(var(--k)*1turn)) translatey(calc(-0.125em - 100%)) rotate(calc(var(--k)*-1turn));
+  background: linear-gradient(30deg, #fdfdfd, #bfbfbf) content-box, linear-gradient(30deg, rgba(253, 253, 253, 0.5), rgba(254, 254, 254, 0.8)) padding-box;
+  font: 1em/ 1.25 trebuchet ms, verdana, arial, sans serif;
+  text-align: center;
+  text-shadow: 0 0 1px #000, 1px 1px #000;
+}
+article:before {
+  box-sizing: inherit;
+  position: absolute;
+  top: -2.25em;
+  right: -2.25em;
+  bottom: -2.25em;
+  left: -2.25em;
+  border: solid 0.125em #fff;
+  padding: 1.25em;
+  border-radius: 50%;
+  transform: translatez(-20px) rotate(calc(var(--k)*1turn)) rotatex(calc(var(--s, -1)*1deg));
+  background: radial-gradient(#fff calc(6em - 1px), rgba(255, 255, 255, 0) 6em) currentcolor;
+  --m: linear-gradient(red, red) content-box, linear-gradient(red, red) border-box;
+  -webkit-mask: var(--m);
+  -webkit-mask-composite: xor;
+  mask: var(--m);
+  mask-composite: exclude;
+  content: "";
+}
+article:nth-child(2n):before {
+  --s: 1 ;
+}
+
+h3 {
+  line-height: 2;
+  text-transform: uppercase;
+}

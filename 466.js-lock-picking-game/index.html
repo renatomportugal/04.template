@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - js lock picking game</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+<link rel='stylesheet' href='https://csshake.surge.sh/csshake.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="lock">
+  <div class="instruction">move the mouse around the lock to find the pin position and hold it for 5 sec</div>
+  <div class="lockpick">
+    <div class="fas fa-caret-right"></div>
+    <div class="fas fa-caret-left"></div>
+  </div>
+  <div class="fas fa-lock fa-3x"></div>
+  <div class="ring shake-constant"></div>
+  <ul class="stage">
+    <li data-deg="25" class="active"></li>
+    <li data-deg="180"></li>
+    <li data-deg="0"></li>
+  </ul>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

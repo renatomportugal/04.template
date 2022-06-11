@@ -691,6 +691,11 @@
 |---          |---          |
 | [357.reusable-responsive-grids-1-2-3-3-2-3-1-3-all-css](https://renatomportugal.github.io/04.template/357.reusable-responsive-grids-1-2-3-3-2-3-1-3-all-css/) | <img src="images/357.reusable-responsive-grids-1-2-3-3-2-3-1-3-all-css.jpg"/> |
 
+## HighLight
+
+|Links        |Telas        |
+|---          |---          |
+| [457.SyntaxHighlighter](https://renatomportugal.github.io/04.template/457.SyntaxHighlighter/) | <img src="images/457.SyntaxHighlighter.jpg"/> |
 
 ## Hot_Relod
 
@@ -814,13 +819,55 @@
 | [023.infografico-json](https://renatomportugal.github.io/04.template/023.infografico-json/) | |
 | [035.pure-css-circles-infographic-JSON](https://renatomportugal.github.io/04.template/035.pure-css-circles-infographic-JSON/) | |
 | [037.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/04.template/037.responsive-infographic-css-variables-grid.JSON/) | |
+| [450.interactive-svg-with-popups-and-micro-animations](https://renatomportugal.github.io/04.template/450.interactive-svg-with-popups-and-micro-animations) |<img src="images/450.interactive-svg-with-popups-and-micro-animations.gif"/> |
+| [449.courses-page-concept](https://renatomportugal.github.io/04.template/449.courses-page-concept) |<img src="images/449.courses-page-concept.jpg"/> |
+| [451.pure-css-circles-infographic](https://renatomportugal.github.io/04.template/451.pure-css-circles-infographic) |<img src="images/451.pure-css-circles-infographic.jpg"/> |
+| [452.responsive-infographic-css-variables-grid](https://renatomportugal.github.io/04.template/452.responsive-infographic-css-variables-grid) |<img src="images/452.responsive-infographic-css-variables-grid.jpg"/> |
+| [452.responsive-infographic-css-variables-grid](https://renatomportugal.github.io/04.template/452.responsive-infographic-css-variables-grid) |<img src="images/452.responsive-infographic-css-variables-grid.jpg"/> |
+| [454.timeline-of-html](https://renatomportugal.github.io/04.template/454.timeline-of-html) |<img src="images/454.timeline-of-html.jpg"/> |
+| [455.vertical-left-and-right-timeline](https://renatomportugal.github.io/04.template/455.vertical-left-and-right-timeline) |<img src="images/455.vertical-left-and-right-timeline.jpg"/> |
 |Surf         |Telas        |
 | [271.surf-world-league](https://renatomportugal.github.io/04.template/271.surf-world-league) |<img src="images/271.surf-world-league.jpg"/> |
+|JSON - CORS  |Telas        |
+| [446.infografico-json](https://renatomportugal.github.io/04.template/446.infografico-json) |<img src="images/446.infografico-json.jpg"/> |
+| [447.pure-css-circles-infographic-JSON](https://renatomportugal.github.io/04.template/447.pure-css-circles-infographic-JSON) |<img src="images/447.pure-css-circles-infographic-JSON.jpg"/> |
+| [448.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/04.template/448.responsive-infographic-css-variables-grid.JSON) |<img src="images/448.responsive-infographic-css-variables-grid.JSON.jpg"/> |
 
 ## Inteligencia_Artificial
 
 |Links        |Telas        |
 | [433.hypermorph-3000](https://renatomportugal.github.io/04.template/433.hypermorph-3000) |<img src="images/433.hypermorph-3000.jpg"/> |
+
+## Javascript
+
+|Loader       |Telas        |
+| [456.loader-2012-12-27](https://renatomportugal.github.io/04.template/456.loader-2012-12-27) |<img src="images/456.loader-2012-12-27.jpg"/> |
+|Contador     |Telas        |
+| [458.tweenmax-countto](https://renatomportugal.github.io/04.template/458.tweenmax-countto) |<img src="images/458.tweenmax-countto.jpg"/> |
+
+## Jogos
+|Arkanoid            |Telas        |
+| [459.block-breaking](https://renatomportugal.github.io/04.template/459.block-breaking) |<img src="images/459.block-breaking.jpg"/> |
+|Apenas a Tela       |Telas        |
+| [472.streetFighter](https://renatomportugal.github.io/04.template/472.streetFighter) |<img src="images/472.streetFighter.jpg"/> |
+|Forca               |Telas        |
+| [460.plankman-a-css-game](https://renatomportugal.github.io/04.template/460.plankman-a-css-game) |<img src="images/460.plankman-a-css-game.jpg"/> |
+|Guitar Hero - CORS  |Telas        |
+| [461.sonorous-string-master](https://renatomportugal.github.io/04.template/461.sonorous-string-master) |<img src="images/461.sonorous-string-master.jpg"/> |
+|Habilidades Manuais |Telas        |
+| [466.js-lock-picking-game](https://renatomportugal.github.io/04.template/466.js-lock-picking-game) |<img src="images/466.js-lock-picking-game.jpg"/> |
+|Marcador de Energia |Telas        |
+| [465.fight](https://renatomportugal.github.io/04.template/465.fight) |<img src="images/465.fight.jpg"/> |
+|Memória             |Telas        |
+| [467.memodeck-fully-responsive](https://renatomportugal.github.io/04.template/467.memodeck-fully-responsive) |<img src="images/467.memodeck-fully-responsive.jpg"/> |
+| [468.memory](https://renatomportugal.github.io/04.template/468.memory) |<img src="images/468.memory.jpg"/> |
+| [470.html5-canvas-puzzle-2012-02-18](https://renatomportugal.github.io/04.template/470.html5-canvas-puzzle-2012-02-18) |<img src="images/470.html5-canvas-puzzle-2012-02-18.jpg"/> |
+|Personagens         |Telas        |
+| [469.day-2-character-design-with-css-variables](https://renatomportugal.github.io/04.template/469.day-2-character-design-with-css-variables) |<img src="images/469.day-2-character-design-with-css-variables.jpg"/> |
+|Roda a Roda         |Telas        |
+| [471.jquery-spin-wheel-2011-06-09](https://renatomportugal.github.io/04.template/471.jquery-spin-wheel-2011-06-09) |<img src="images/471.jquery-spin-wheel-2011-06-09.jpg"/> |
+|Tabuleiro           |Telas        |
+| [473.css-mastermind](https://renatomportugal.github.io/04.template/473.css-mastermind) |<img src="images/473.css-mastermind.jpg"/> |
 
 
 ## KeyGen
@@ -921,6 +968,10 @@
 |Links        |Telas        |
 |---          |---          |
 | [331.challenge-take-on-me](https://renatomportugal.github.io/04.template/331.challenge-take-on-me) |<img src="images/331.challenge-take-on-me.jpg"/> |
+|CORS         |Telas        |
+| [462.boombox](https://renatomportugal.github.io/04.template/462.boombox) |<img src="images/462.boombox.jpg"/> |
+| [463.rapid-click](https://renatomportugal.github.io/04.template/463.rapid-click) |<img src="images/463.rapid-click.jpg"/> |
+| [464.track-mixer](https://renatomportugal.github.io/04.template/464.track-mixer) |<img src="images/464.track-mixer.jpg"/> |
 
 ## Neon
 

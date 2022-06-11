@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Fighting Game Health Meters 2: Now with color changes!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<!-- <link rel="stylesheet" href="./style.css"> -->
+<style>
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+/* Play with the values here */
+.health_container {
+	--health-flip: var(--true);
+	
+	--player-1: "Player 1";
+	--player-2: "Player 2";
+	/* If EQCSS is removed or Javascript is disabled, you can play with these */
+	--player-1-health: 100%;
+	--player-2-health: 100%;
+}
+.health_meter {
+	/* 
+		Health damage color stops
+		* perfect ←– • –→ KO
+	*/
+	--health-bg:
+			#0c0, #00c, #0cc, #cc0, #c00, #000;
+	--health-bg-accent:
+			#0c0, #00c, #cc0, #c00, #000;
+	/* Other meters */
+	--meter-bg:
+			#0036;
+	--damage-bg:
+			#600;
+	/* Timing */
+	--health-duration: .25s;
+	--damage-duration: .5s;
+	--damage-delay: .5s;
+}
+
+/* html, body */
+html {
+	display: flex;
+	min-height: 100%;
+	min-height: 100vh;
+}
+body {
+	flex: 1;
+	background-color: black;
+	background-image:
+		radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+		radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+		radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+		radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px),
+		
+		linear-gradient(to bottom, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%)
+	;
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, contain;
+	background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+	color: #fff;
+	font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+.hud {
+	box-sizing: border-box;
+	
+	padding: 16px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 960px;
+	overflow: hidden;
+}
+
+/* This was a last minute addition designed to help with flipping health meters horizontally */
+.health_container {
+	display: inline-block;
+	width: 40%;
+}
+.health_container#player-1 {
+	--true: scaleX(-1);
+	-webkit-transform: var(--health-flip, scaleX(1)) skew(10deg);
+	        transform: var(--health-flip, scaleX(1)) skew(10deg);
+	float: left;
+}
+.health_container#player-2 {
+	--true: scaleX(1);
+	float: right;
+	-webkit-transform: var(--health-flip, scaleX(-1)) skew(10deg);
+	        transform: var(--health-flip, scaleX(-1)) skew(10deg);
+}
+/* Player names */
+.health_container:after {
+	--true: scaleX(-1);
+	background: linear-gradient(to right, #0006, transparent);
+	color: white;
+	content: var(--player-1);
+	display: block;
+	font-size: 80%;
+	margin: -4px;
+	margin-top: 6px;
+	padding: 4px 8px;
+	text-align: left;
+	-webkit-transform: var(--health-flip, scaleX(1));
+	        transform: var(--health-flip, scaleX(1));
+}
+.health_container#player-2:after {
+	--true: scaleX(1);
+	background: linear-gradient(to left, #0006, transparent);
+	content: var(--player-2);
+	-webkit-transform: var(--health-flip, scaleX(-1));
+	        transform: var(--health-flip, scaleX(-1));
+	text-align: right;
+}
+.health_container#player-1 { --health: var(--player-1-health); }
+.health_container#player-2 { --health: var(--player-2-health); }
+
+/* This contains the health and damage bars. Also contains the translucent background color of the container. */
+.health_meter {
+	background: var(--meter-bg, #3009);
+	box-shadow: 0 0 0 1px #0009;
+	width: 100%;
+	height: 16px;
+	position: relative;
+}
+/* General styling for background and foreground of the health bars */
+.health_meter:before, .health_meter:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: "";
+}
+/* Border around the bars */
+.health_meter:before {
+	z-index: -1;
+	margin: -4px;
+	
+	background: linear-gradient(to bottom, #fff 0%, #999 50%, #666 50%, #999);
+	border: 1px solid #222;
+	box-shadow: inset 0 0 1px #fff;
+	-webkit-clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, calc(100% - 4px) 4px, calc(100% - 4px) calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+	        clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, calc(100% - 4px) 4px, calc(100% - 4px) calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+}
+/* This provides lines and overlaid gradients over the bars */
+.health_meter:after {
+	background:
+		repeating-conic-gradient(from -35deg, transparent 0% 7.5%, #fff3 10% 10%, transparent 12.5% 57.5%, #fff3 60% 60%, transparent 62.5% 100%),
+		linear-gradient(to bottom, #fff9, transparent, #fff3);
+	background-position: 50% 0, top left;
+	background-size:
+		10%,
+		contain;
+}
+/* This provides general styling for both the actual health bar as well as the damage bar */
+.health_damage, .health {
+	box-shadow: inset -1px 0 0 #fff3, 1px 0 0 #0009;
+	width: var(--health, 100%);
+	height: 100%;
+	position: relative;
+	transition: all var(--health-duration, .2s);
+}
+/* The "health" bar */
+.health {
+	background-image: linear-gradient(to left, var(--health-bg, #099, #090, #990, #900));
+	background-size: 1000% 100%;
+	background-position: var(--health) 100%;
+	background-repeat: repeat-x;
+}
+.health:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	background-image: linear-gradient(to left, var(--health-bg-accent, var(--health-bg, #099, #090, #990, #900)));
+	-webkit-mask-image: linear-gradient(to left, transparent, #000);
+	        mask-image: linear-gradient(to left, transparent, #000);
+}
+/* The "health damage" bar  */
+.health_damage {
+	background: var(--damage-bg, #900);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition-delay: var(--damage-delay, 1s);
+	transition-duration: var(--damage-duration, var(--health-duration));
+}
+
+/* Health Range Input */
+@element .health_container {
+	:self#player-1 {
+		--player-1-health: calc((100 / eval("$it.querySelector('.health_value').max")) * eval("$it.querySelector('.health_value').value") * 1%);
+	}
+	:self#player-2 {
+		--player-2-health: calc((100 / eval("$it.querySelector('.health_value').max")) * eval("$it.querySelector('.health_value').value") * 1%);
+	}
+}
+.health_value {
+	cursor: pointer;
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	z-index: 1;
+	transition: all .25s;
+}
+.health_meter:hover .health_value,
+.health_meter .health_value:focus {
+	opacity: 0;
+}
+
+.info {
+	background: rgba(255, 255, 255, .1);
+	margin: 1em;
+	padding: 1em;
+	text-align: center;
+}
+
+/* Footer */
+.footer {
+	background-color: rgba(0, 0, 0, .5);
+	color: #fff;
+	text-shadow: 1px 1px 0 #000;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.footer ul { display: block; padding: 1em; margin: 0; }
+.footer li { display: inline-block; margin: 0 1em; }
+.footer a { text-decoration: none; color: cyan; }
+.footer a:hover, .footer a:focus { text-decoration: underline; }
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="hud">
+  <div class="health_container" id="player-1">
+    <div class="health_meter">
+      <div class="health_damage"></div>
+      <div class="health"></div>
+      <input class="health_value" type="range" min="0" max="1000" value="1000" step="1" title=""/>
+    </div>
+  </div>
+  <div class="health_container" id="player-2">
+    <div class="health_meter">
+      <div class="health_damage"></div>
+      <div class="health"></div>
+      <input class="health_value" type="range" min="0" max="1000" value="1000" step="1"/>
+    </div>
+  </div>
+</div>
+<div class="info">Hover over the health meter and adjust the input to see changes</div>
+<div class="footer">
+  <ul>
+    <li>Pen by <a href="https://codepen.io/seto89" target="_blank">@seto89</a></li>
+    <li><a href="https://linktr.ee/seto89" target="_blank">Linktree</a></li>
+    <li>Powered by <a href="https://elementqueries.com" target="_blank">EQCSS</a></li>
+  </ul>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/eqcss/1.9.2/EQCSS.min.js'></script>
+
+</body>
+</html>

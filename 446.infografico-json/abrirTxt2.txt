@@ -1,0 +1,20 @@
+{
+    "titulo": "Vertical Left-Right Timeline",
+    "casas": [
+        {
+            "casaNumero":"1",
+            "casaTitulo":"Fully Responsive",
+            "casaTexto":"Lorem <span class='bmd-modalButton linkModal' data-toggle='modal' data-bmdSrc='https://player.vimeo.com/video/18539129' data-bmdWidth='500' data-bmdHeight='281' data-target='#myModal'>ipsum</span> dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus."
+        },
+        {
+            "casaNumero":"2",
+            "casaTitulo":"Using Bootstrap",
+            "casaTexto":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus."
+        },
+        {
+            "casaNumero":"3",
+            "casaTitulo":"Using Bootstrap",
+            "casaTexto":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus."
+        }
+    ]
+}

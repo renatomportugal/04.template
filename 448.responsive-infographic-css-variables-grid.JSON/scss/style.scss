@@ -1,0 +1,136 @@
+$gap-s: .75em;
+$gap-n: 3;
+$art-w-wide: 32em;
+$art-h-wide: 9em;
+$art-w-narr: 100%;
+$lin-r: calc(#{.5*$art-h-wide} + (1 + var(--i))*#{$gap-s});
+$solid: linear-gradient(red, red);
+
+*, :before, :after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0
+}
+
+body {
+	--i: var(--wide, 1);
+	--j: calc(1 - var(--i));
+	--k: calc(1 - var(--narr, 0));
+	display: grid;
+	place-content: center;
+	grid-gap: calc(var(--i)*#{$gap-n*$gap-s} + var(--j)*#{$gap-s});
+	overflow-x: hidden;
+	min-height: 100vh;
+	background: linear-gradient(to right bottom, #e5e5e5, #b3b3b3) fixed;
+	$c: rgba(#fff, .8);
+	background: 
+		linear-gradient($c, $c), 
+		url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/kreator_rockharz_july_2018.jpg) 
+			50%/ cover;
+	font: 1em/ 1.25 open sans, sans-serif;
+	transition: .3s;
+	
+	@media (max-width: 2*$art-w-wide) { --wide: 0 }
+	
+	@media (max-width: 2*$gap-s + $art-w-wide) { --narr: 1 }
+	
+	@media (max-width: 200px) { font-size: .75em }
+}
+
+article {
+	--p: var(--parity, 0);
+	--q: calc(1 - var(--p));
+	--s: calc(2*var(--p) - 1);
+	--art-w: calc(var(--k)*#{$art-w-wide} + var(--narr, 0)*#{$art-w-narr});
+	display: grid;
+	grid-template: 1fr 2fr/ 
+		calc(var(--k)*#{$art-h-wide} + var(--narr, 0)*3em) 1fr calc(var(--k)*3.25em);
+	place-self: center;
+	position: relative;
+	padding: .125em;
+	width: var(--art-w); min-height: $art-h-wide;
+	border-radius: calc(var(--k)*#{$art-h-wide});
+	box-shadow: 1em 1em 1.5em rgba(#000, .15);
+	background: linear-gradient(90deg, #d4d4d4, #fff) content-box, 
+		linear-gradient(90deg, #fff, #d2d2d2);
+	counter-increment: idx;
+	transition: inherit;
+	
+	&:before {
+		grid-row: 1/ calc(2 + var(--k));
+		font-size: calc(var(--k)*#{.75*$art-h-wide} + var(--narr, 0)*1.5em);
+		place-self: center;
+		color: var(--c);
+		text-shadow: 1px 1px 1px #000;
+		transition: inherit;
+		content: counter(idx, decimal-leading-zero)
+	}
+	
+	&:after {
+		display: flex;
+		place-self: center;
+		align-items: center;
+		justify-content: center;
+		grid-row: 1/ span 2;
+		position: var(--wide, absolute);
+		top: calc(50% - 1em); left: calc(var(--q)*(100% - 2em) - var(--s)*2.5em);
+		padding: .25rem;
+		width: 2em; height: 2em;
+		border-radius: 50%;
+		font-size: calc(var(--i)*#{.625*$art-h-wide} + var(--j)*1em);
+		box-shadow: var(--wide, inherit);
+		background: var(--wide, 
+			linear-gradient(#ccc, #fff) content-box, 
+			linear-gradient(#fff, #d1d1d1));
+		transition: inherit;
+		content: var(--narr, attr(data-icon))
+	}
+	
+	&:nth-child(2n) { --parity: 1 }
+	
+	& + & {
+		--fader: linear-gradient(90deg, red, transparent) 
+			0 0/ calc(#{$art-w-wide} - var(--j)*#{$art-h-wide}) #{$gap-s} no-repeat
+			#{unquote(',')}
+	}
+	
+	&:first-of-type, &:last-of-type {
+		--rounder: radial-gradient(at 100% 50%, transparent 70%, red 71%)
+			0 var(--gy, 0)/ #{.5*$gap-s} #{$gap-s} no-repeat
+			#{unquote(',')}
+	}
+	
+	&:last-of-type { --gy: 100% }
+}
+
+span {
+	position: absolute;
+	z-index: -1;
+	top: calc(var(--i)*#{(1 - $gap-n)*$gap-s} - var(--j)*#{$gap-s});
+	left: calc(var(--j)*#{.5*$art-h-wide});
+	border: solid $gap-s transparent;
+	border-left: none;
+	width: calc(#{$art-w-wide} - var(--j)*#{$art-h-wide} + #{$lin-r});
+	height: calc(2*#{$lin-r});
+	border-radius: 0 $lin-r $lin-r 0;
+	transform-origin: calc(#{.5*$art-w-wide} - var(--j)*#{.5*$art-h-wide}) 50%;
+	transform: scalex(calc(var(--k)*var(--s)));
+	background: conic-gradient(from -90deg, var(--slist)) border-box;
+	--m: var(--rounder, ) var(--fader, ) 
+		#{$solid} padding-box, #{$solid} border-box;
+	-webkit-mask: var(--m);
+	-webkit-mask-composite: xor;
+					mask: var(--m);
+					mask-composite: exclusion;
+	transition: inherit
+}
+
+h3 {
+	align-self: center;
+	text-transform: uppercase
+}
+
+p {
+	grid-row: 2/ 3;
+	grid-column: calc(1 + var(--k))/ calc(2 + 2*var(--narr, 0))
+}

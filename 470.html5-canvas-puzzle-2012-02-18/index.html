@@ -1,0 +1,123 @@
+<!--
+    Puzzle.js
+    Thank you for download this class.
+    Please, any suggestion, 
+    contact me: danimartcas@hotmail.com <www.webofilia.com>
+-->
+<html>
+    <head>
+        <title>Canvas Puzzle!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            h1,h2 {
+                padding:0;margin:0
+            }
+            #regame {
+                text-decoration: none;
+                font-size:16px;
+                font-weight: bold;
+                padding:10px;
+                color:#333;
+                border:1px dotted #ccc;
+                background-color: yellow;
+                display:block
+            }
+            #regame:hover {
+                background-color: #333;
+                color:yellow
+            }
+        </style>
+    </head>
+    <body>
+        <h1>html5 Canvas Puzzle</h1>
+        <br />
+        <div id="canvasPuzzle" style="width:80%">
+            
+            <!-- You can put the solution here -->
+            <div style="float:right;">
+                <h2>Solution</h2>
+                <img src="src/Simpsons-2.jpg" style="width:300px;height:200px" />
+                
+                <div>
+                    <input type="radio" name="level" value="easy" id="easy"/>
+                    <label for="easy">Easy</label><br />
+                    <input type="radio" name="level" value="normal" id="normal"/>
+                    <label for="normal">Normal</label><br />
+                    <input type="radio" name="level" value="hard" id="hard"/>
+                    <label for="hard">Hard</label><br />
+                    <input type="radio" name="level" value="crazy" id="crazy"/>
+                    <label for="crazy" style="color:red">Crazy</label><br />
+                    
+                </div>
+                <a href="#" id="regame">regame</a>
+            </div>
+        </div>
+        
+        <h4>Code example</h4>
+        <pre>
+            &#60;script type="text/javascript" src="Puzzle.js"&#62;&#60;/script&#62;
+            &#60;script type="text/javascript"&#62;
+            
+            var options = {
+                idDiv: 'canvasPuzzle',
+                src:'src/Simpsons-2.jpg',
+                width:'653',
+                height:'435',
+                level:'easy',
+                emptyColor:'#333'
+            },
+            
+            puzzle = new Puzzle( options );
+            &#60;/script&#62;
+        </pre>
+        <h4>Options</h4>
+        <ul>
+            <li>idDiv: 'id Element'</li>
+            <li>src :'path/to/img'</li>
+            <li>width: 'width of image'</li>
+            <li>height: 'height of image'</li>
+            <li>level: 'easy' | 'normal' | 'hard' | 'crazy'</li>
+            <li>emptyColor: '#empty color'</li>
+            <li>loadingGif: 'path/to/loading gif'</li>
+        </ul>
+        <script type="text/javascript" src="Puzzle.js"></script>
+        <script type="text/javascript">
+            
+            var options = {
+                idDiv:'canvasPuzzle',
+                src:'src/Simpsons-2.jpg',
+                width:'653',
+                height:'435',
+                level:'easy',
+                emptyColor:'#333'
+            },
+            
+            puzzle = new Puzzle( options );
+            
+            document.getElementById('regame').onclick = function(){
+                puzzle.reGame();
+                return false;
+            }
+            
+            document.getElementById('easy').onclick = function(){
+                puzzle.reGame('easy');
+                
+            }
+            
+            document.getElementById('normal').onclick = function(){
+                puzzle.reGame('normal');
+                
+            }
+            
+            document.getElementById('hard').onclick = function(){
+                puzzle.reGame('hard');
+                
+            }
+            
+            document.getElementById('crazy').onclick = function(){
+                puzzle.reGame('crazy');
+                
+            }
+       </script>
+    </body>
+</html>

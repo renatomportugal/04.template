@@ -1,0 +1,76 @@
+$d: 10em;
+$g: .875em;
+$p: 1.25em;
+$b: .125em;
+$o: -($g + $p + $b);
+$full: linear-gradient(red, red);
+
+* { margin: 0; padding: 0; }
+
+body {
+	display: grid;
+	place-content: center;
+	overflow-x: hidden;
+	height: 100vh;
+	background: 
+		radial-gradient(circle at 100% 0, 
+				#fefefe, #929391);
+}
+
+.assembly, article { transform-style: preserve-3d }
+
+article {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	padding: $b;
+	width: $d; height: $d;
+	border-radius: 50%;
+	transform: 
+		translate(-50%, -50%) 
+		rotate(calc(var(--k)*1turn)) 
+		translatey(calc(#{-$b} - 100%)) 
+		rotate(calc(var(--k)*-1turn));
+	background: 
+		linear-gradient(30deg, 
+				#fdfdfd, #bfbfbf) 
+			content-box, 
+		linear-gradient(30deg, 
+				rgba(#fdfdfd, .5), rgba(#fefefe, .8)) 
+			padding-box;
+	font: 1em/ 1.25 trebuchet ms, verdana, arial, sans serif;
+	text-align: center;
+	text-shadow: 0 0 1px #000, 1px 1px #000;
+	
+	&:before {
+		$ri: .5*$d + $g + $b;
+		box-sizing: inherit;
+		position: absolute;
+		top: $o; right: $o; bottom: $o; left: $o;
+		border: solid $b #fff;
+		padding: $p;
+		border-radius: 50%;
+		transform: 
+			translatez(-20px) 
+			rotate(calc(var(--k)*1turn)) 
+			rotatex(calc(var(--s, -1)*1deg));
+		background: 
+			radial-gradient(#fff calc(#{$ri} - 1px), rgba(#fff, 0) $ri)
+			currentcolor;
+		--m: #{$full} content-box, #{$full} border-box;
+		-webkit-mask: var(--m);
+		-webkit-mask-composite: xor;
+						mask: var(--m);
+						mask-composite: exclude;
+		content: ''
+	}
+	
+	&:nth-child(2n):before { --s: 1 }
+}
+
+h3 {
+	line-height: 2;
+	text-transform: uppercase;
+}

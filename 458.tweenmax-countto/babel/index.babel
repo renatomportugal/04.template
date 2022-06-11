@@ -1,0 +1,38 @@
+new Vue({
+  el: '#js-counter',
+
+  data () {
+    return {
+      counter: 0,
+      start: 0,
+      end: 10000,
+      duration: 3,
+      format: true
+    }
+  },
+  
+  computed: {
+    formatter () {
+      return new Intl.NumberFormat('en-IN')
+    }
+  },
+  
+  mounted () {
+    this.click()
+  },
+  
+  methods: {
+    click () {
+      TweenMax.to(this, this.duration, {
+        ease: Power2.easeInOut,
+        log: this.end,
+        onUpdate: () => {
+          this.counter = (this.format) ? this.formatter.format(Math.floor(this.log)) : Math.floor(this.log)
+        }
+      })
+      TweenMax.set(this, {
+        log: this.start
+      })
+    }
+  }
+})
