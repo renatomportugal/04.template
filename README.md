@@ -663,8 +663,9 @@
 | [430.easiest-masonry-grid-layout-tutorial](https://renatomportugal.github.io/04.template/430.easiest-masonry-grid-layout-tutorial/) | <img src="images/430.easiest-masonry-grid-layout-tutorial.jpg"/> |
 | [431.grid-masonary](https://renatomportugal.github.io/04.template/431.grid-masonary/) | <img src="images/431.grid-masonary.jpg"/> |
 |Filtro de Busca |Telas        |
-|---             |---          |
 | [428.pure-css-project-filter-tabs](https://renatomportugal.github.io/04.template/428.pure-css-project-filter-tabs/) | <img src="images/428.pure-css-project-filter-tabs.jpg"/> |
+|Template        |Telas        |
+| [475.TemplateGaleria](https://renatomportugal.github.io/04.template/475.TemplateGaleria/) | <img src="images/475.TemplateGaleria.jpg"/> |
 
 ## Gradient_Generator
 
@@ -1158,6 +1159,8 @@
 | [084.videoHtml5](https://renatomportugal.github.io/04.template/084.videoHtml5) |<img src="images/084.videoHtml5.jpg"/> |
 |Scroll       |Telas        |
 | [085.popout-video](https://renatomportugal.github.io/04.template/085.popout-video) |<img src="images/085.popout-video.jpg"/> |
+|Template     |Telas        |
+| [474.TemplateVideos](https://renatomportugal.github.io/04.template/474.TemplateVideos) |<img src="images/474.TemplateVideos.jpg"/> |
 |Timeline     |Telas        |
 | [086.mcu-timeline-carousel](https://renatomportugal.github.io/04.template/086.mcu-timeline-carousel) |<img src="images/086.mcu-timeline-carousel.jpg"/> |
 |Outros       |Telas        |
