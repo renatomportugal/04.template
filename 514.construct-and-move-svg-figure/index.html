@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Construct and move svg figure</title>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<input type="text" value="110 110 200 170 200 320 29 140 30 40 300 60 230 180 200 100 180 130" class="points">
+<svg>
+	<defs>
+       <filter id="boxshadow" x="0" y="0">
+           <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+           <feBlend in="SourceGraphic" in2="blurOut" mode="multiply" />
+    </filter>
+</defs>
+	
+	<g class="figure" pointer-events="bounding-box"></g></svg>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

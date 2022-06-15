@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Croppie +PHP</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Send Photo with PHP</title>
+
+                  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+<link rel='stylesheet prefetch' href='https://foliotek.github.io/Croppie/croppie.css'>
+
+                <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  
+  
+  </head>
+<body>
+
+  
+
+  
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12">
+
+                    <form action="test-image.php" id="form" method="post">
+
+                      <label class="cabinet center-block">
+                        <figure>
+                          <img src="" class="gambar img-responsive img-thumbnail" id="item-img-output" />
+                          <figcaption><i class="fa fa-camera"></i></figcaption>
+                        </figure>
+                        <input type="file" class="item-img file center-block" name="file_photo"/>
+                      </label>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel"> </h4>
+                    </div>
+                    <div class="modal-body">
+                      <div id="upload-demo" class="center-block"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                      <button type="button" id="cropImageBtn" class="btn btn-primary">Cortar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+  
+  <h3>My file upload.php</h3>  
+<pre>
+<code>
+$croped_image = $_POST['image'];
+list($type, $croped_image) = explode(';', $croped_image);
+list(, $croped_image)      = explode(',', $croped_image);
+$croped_image = base64_decode($croped_image);
+$image_name = time().'.png';
+// upload cropped image to server 
+file_put_contents('../upload/'.$image_name, $croped_image);
+</code>
+</pre>
+
+  
+  
+  
+                  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+                  <script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+  
+                  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  
+  
+  
+  
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

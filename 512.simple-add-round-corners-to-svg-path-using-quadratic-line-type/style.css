@@ -1,0 +1,65 @@
+html, body, .app {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+label {
+	display: flex;
+	font-size: 16pt;
+	line-height: 30pt;
+	align-items: center;
+	justify-content: space-around;
+}
+
+input {
+	height: 30pt;
+	display: inline-block;
+	width: 60%;
+}
+
+.app-settings {
+	position: fixed;
+	bottom: 100px;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+}
+.app-settings-info:after {
+	content: attr(radius)"px";
+	position: absolute;
+	margin-left: 4px;
+}
+
+.corner-points,
+.control-points {
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+#originalPath 
+{
+	opacity: .1;
+	transition: opacity .75s;
+}
+
+.show-nots .corner-points,
+.show-nots .control-points,
+.show-nots #originalPath
+{
+	opacity: .8;
+	transition: opacity .5s;
+}

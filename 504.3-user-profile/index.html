@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>(3) User Profile</title>
+  <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/reset.min.css'>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/bootstrap-3.3.7-min.css'>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/global-bmic.min.css'>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/font-awesome.min.css'>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/jquery.fancybox-3.5.7.min.css'>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-8">
+        <div class="row">
+          <div class="col-sm-3">
+            <a class="branding" href="javascript:void(0);">Builders<br />Mutual</a>
+          </div>
+          <div class="col-sm-9 hidden-sm hidden-xs" id="project-details">
+            <a class="home-link" href="https://codepen.io/bmico/live/mYRvYQ" title="B.O.S.S."><span class="fa fa-home"></span></a>
+            <div class="project">
+              <a href="https://codepen.io/bmico/live/ZZZBGx">User Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-4 text-right" id="account">
+        <a href="javascript:void(0);" id="user-profile" title="Manage"><span class="fa fa-user-circle"></span>Tom Markart <span class="fa fa-caret-down"></span></a>
+        <div id="account-options">
+          <ul>
+            <li>
+              <a href="https://codepen.io/bmico/live/ZZZBGx"><span class="fa fa-user"></span>View Profile</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><span class="fa fa-cog"></span>Settings</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><span class="fa fa-bug"></span>Report a Bug </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><span class="fa fa-power-off"></span>Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="visible-xs visible-sm" id="project-details">
+    <a class="home-link" href="https://codepen.io/bmico/live/mYRvYQ" title="B.O.S.S."><span class="fa fa-home"></span></a>
+    <div class="project">
+      User Profile
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="user-profile-heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-3">
+            <img alt="Tom Markart" class="user-photo img-responsive img-circle" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/profile-tmarkart.jpg" />
+          </div>
+          <div class="col-md-9">
+            <h1 class="user-name visible-md visible-lg">
+              Tom Markart
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="point-summary">
+          <div class="points">
+            450
+          </div>
+          <p>
+            BUILDERS POINTS Earned
+            <a data-fancybox="point-description" data-src="#point-description" href="javascript:void(0);" title="Learn More"><span class="fa fa-question-circle-o"></span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="point-description">
+  <h3>
+    BUILDERS POINTS
+  </h3>
+  <dl>
+    <dt>
+      What are BUILDERS POINTS?
+    </dt>
+    <dd>
+      Points were created as a way to recognize the things you do to make Builders Mutual a great place to work. You earn points for embracing and expanding our company culture.
+    </dd>
+    <dt>
+      How do you earn points?
+    </dt>
+    <dd>
+      <ul>
+        <li>
+          1pt for each BUILDERS BUCK earned
+        </li>
+        <li>
+          10pts for each new badge earned
+        </li>
+        <li>
+          10pts for each year of service
+        </li>
+      </ul>
+    </dd>
+    <dt>
+      Do I get anything with all of the points I've earned?
+    </dt>
+    <dd>
+      You get the love and admiration of your peers. Isn't that enough?        
+    </dd>
+  </dl>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 element-spacing-lg">
+      <ul class="user-details element-spacing-md">
+        <li class="visible-xs visible-sm">
+          <h1 class="user-name">
+            Tom Markart
+          </h1>
+        </li>
+        <li>
+          UI Developer
+        </li>
+        <li>
+          Information Technology
+        </li>
+        <li>
+          Hire Date: 05/01/2017
+        </li>
+        <li>
+          919-555-5555
+        </li>
+        <li>
+          <a href="mailto:tmarkart@bmico.com">tmarkart@bmico.com</a>
+        </li>
+        <li class="profile-links">
+          <a class="locate" href="https://codepen.io/bmico/live/MZbPpX" title="Locate"><span class="fa fa-map-marker"></span></a><a class="orgchart" href="https://codepen.io/bmico/live/QRwpQa" title="Organization Chart"><span class="fa fa-sitemap"></span></a><a class="linkedin" href="https://www.linkedin.com/in/tmarkart" target="_blank" title="LinkedIn"><span class="fa fa-linkedin"></span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 element-spacing-lg">
+      <h2>
+        Builders Bucks
+      </h2>
+      <div class="row element-spacing-lg">
+        <div class="col-sm-4">
+          <div class="builders-bucks-given">
+            <h3>
+              Given
+              <a href="javascript:void(0);" class="bb-nominate" title="Nominate Someone"><span class="fa fa-plus-circle"></a>
+            </h3>
+            <div class="value">
+              0
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="builders-bucks-received">
+            <h3>
+              Received
+              <a data-fancybox="registration" data-src="#received" href="javascript:void(0);" class="bb-list" title="View Your Builders Bucks"><span class="fa fa-list-ul"></a>
+            </h3>
+            <div class="value">
+              45
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="builders-bucks-balance">
+            <h3>
+              Balance
+              <a href="javascript:void(0);" class="bb-balance" title="View Your Balance"><span class="fa fa-credit-card"></a>
+            </h3>
+            <div class="value">
+              40
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>
+        Badges
+      </h2>
+      <div class="row element-spacing-lg">
+        <ul class="badges">
+          <li>
+            <img alt="Service Award" class="center-block" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/gamification-badges-2years.png" />
+            <p class="badge-description">
+              Service Award
+            </p>
+          </li>
+          <li>
+            <img alt="Eco Friendly" class="center-block" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/gamification-badges-eco-friendly.png" />
+            <p class="badge-description">
+              Eco Friendly
+            </p>
+          </li>
+          <li>
+            <img alt="Black History" class="center-block" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/gamification-badges-bhm-member.png" />
+            <p class="badge-description">
+              Black History
+            </p>
+          </li>
+          <li>
+            <img alt="Financial Planner" class="center-block" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/gamification-badges-financial-planner.png" />
+            <p class="badge-description">
+              Financial Planner
+            </p>
+          </li>
+          <li>
+            <img alt="Race for a Cure" class="center-block" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/gamification-badges-susan-b-komen.png" />
+            <p class="badge-description">
+              Race for a Cure
+            </p>
+          </li>
+          <li>
+            <img alt="Blood Donor" class="center-block" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/gamification-badges-blood-donor.png" />
+            <p class="badge-description">
+              Blood Donor 
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="element-spacing-lg">
+        <a href="https://codepen.io/bmico/live/bJXVjY"><img alt="Builders Bucks Store" class="img-responsive" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/builders-bucks-ad-300x100.jpg" /></a>
+      </div>
+      <div class="element-spacing-lg" id="course-schedule">
+        <h4>
+          Your Course Schedule
+        </h4>
+        <ul>
+          <li>
+            <span class="online" title="Online"></span><a href="javascript:void(0);">05/08/19 - Welcome video for employees</a>
+          </li>
+          <li>
+            <span class="classroom-only" title="Classroom Only"></span><a href="javascript:void(0);">06/15/19 - June Fit Chat with Zach</a>
+          </li>
+          <li>
+            <span class="learning-path" title="Learning Path"></span><a href="javascript:void(0);">07/17/19 - BU - Strengthfinder</a>
+          </li>
+        </ul>
+      </div>
+      <div id="course-transcript">
+        <h4>
+          Your Completed Courses
+        </h4>
+        <ul>
+          <li>
+            <span class="online" title="Online"></span><a href="javascript:void(0);">04/23/19 - Excel for Dummies</a>
+          </li>
+          <li>
+            <span class="classroom-only" title="Classroom Only"></span><a href="javascript:void(0);">08/03/18 - Policy Life Cycle</a>
+          </li>
+          <li>
+            <span class="certification" title="Certification"></span><a href="javascript:void(0);">06/11/18 - Brand Series</a>
+          </li>
+          <li>
+            <span class="learning-path" title="Learning Path"></span><a href="javascript:void(0);">05/06/17 - Financials 101</a>
+          </li>
+          <li>
+            <span class="classroom-only" title="Classroom Only"></span><a href="javascript:void(0);">02/23/17 - Strengthfinders</a>
+          </li>
+          <li class="more">
+            <span class="job-aid" title="Job Aid"></span><a href="javascript:void(0);">01/30/17 - Word for Dummies</a>
+          </li>
+          <li class="more">
+            <span class="classroom-only" title="Classroom Only"></span><a href="javascript:void(0);">12/25/16 - Employee Orientation            </a>
+          </li>
+        </ul>
+        <div class="text-center">
+          <a class="btn btn-default view-more" href="javascript:void(0);">View More </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="received">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>
+        Builders Bucks Received
+      </h3>
+    </div>
+    <div class="col-sm-12">
+      <div class="builders-bucks-nomination">
+        <div class="print">
+          <a href="javascript:void(0);" title="Print Certificate">
+            <div class="fa fa-print"></div>
+          </a>
+        </div>
+        <h4>
+          Connect with Customers
+        </h4>
+        <dl>
+          <dt>
+            Nominated By
+          </dt>
+          <dd>
+            Mayela Migliore
+          </dd>
+          <dt>
+            Nomination Date
+          </dt>
+          <dd>
+            01/29/2019
+          </dd>
+          <dt>
+            Description
+          </dt>
+          <dd>
+            <p>
+              Recognizing the hard work of Tom, always listening, taking notes and smiling, with a lot of patience to understand what we needed as a department and bring those ideas to such a fantastic final product, many hours designing and testing that ultimately gave us the opportunity to have a wonderful product: Collections Case Management is the coolest tool ever desired, incredibly user-friendly tool, wonderful design, clean lines. Great team player. BIG THANK YOU!!!!!!
+            </p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="builders-bucks-nomination">
+        <div class="print">
+          <a href="javascript:void(0);" title="Print Certificate">
+            <div class="fa fa-print"></div>
+          </a>
+        </div>
+        <h4>
+          Strategic Agility, Customer Focus (RM/UW)
+        </h4>
+        <dl>
+          <dt>
+            Nominated By
+          </dt>
+          <dd>
+            Sean Purcell
+          </dd>
+          <dt>
+            Nomination Date
+          </dt>
+          <dd>
+            01/15/2018
+          </dd>
+          <dt>
+            Description
+          </dt>
+          <dd>
+            <p>
+              You and your IT cohorts have outdone our expectations on the report update project. This is our first official project with IT and it has been a pleasure to work with you from the beginning to now. I am amazed at how quickly you all have put our vision together from the requirements.
+            </p>
+            <p>
+              I look forward to testing and completion. As I said, when it is done and in place I will bring in a homemade BBQ lunch for us all to enjoy and celebrate. 
+            </p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="builders-bucks-nomination">
+        <div class="print">
+          <a href="javascript:void(0);" title="Print Certificate">
+            <div class="fa fa-print"></div>
+          </a>
+        </div>
+        <h4>
+          Composting - Strengthening our Culture
+        </h4>
+        <dl>
+          <dt>
+            Nominated By
+          </dt>
+          <dd>
+            Natalie Barbare
+          </dd>
+          <dt>
+            Nomination Date
+          </dt>
+          <dd>
+            03/21/2019
+          </dd>
+          <dt>
+            Description
+          </dt>
+          <dd>
+            <p>
+              You were the behind-the-scenes creative genius for our composting program. You researched ideas, came up with a theme for it, and corrected and cleaned up all of the communications and advertising for the program. You made us look better and were responsive and helpful all along the way
+            </p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="copyright">
+          <div class="fa fa-copyright"></div>
+          Copyright 2018 Builders Mutual Insurance Company
+        </div>
+        <ul class="footer-navigation">
+          <li>
+            <a href="http://www.buildersmutual.com" target="_blank">buildersmutual.com</a>
+          </li>
+          <li>
+            <a href="mailto:BMICSWSTeam@bmico.com?subject=@ViewBag.ApplicationName Bug Report">Report a Bug</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 text-right">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/jquery-3.3.1.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1535263/jquery.fancybox-3.5.7.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>

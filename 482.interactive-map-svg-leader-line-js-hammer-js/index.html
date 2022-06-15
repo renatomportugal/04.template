@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Map (SVG + leader-line.js + hammer.js)</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik+Mono+One&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='map' id='my-map'>
+    <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='2400' height='1600' preserveAspectRatio='xMinYMin slice' viewBox='0 0 2400 1600'>
+        <g class='buildings_layer'>
+            <image xlink:href='https://habrastorage.org/webt/jf/6m/gr/jf6mgrhykg3sk4y3sggchvb-l0m.jpeg' y='0' x='0' preserveAspectRatio='none' height='1600' width='2400' />
+            <rect width='2400' height='1600' style='fill:rgb(255,255,255);stroke-width:0;opacity:0' />
+            <path style='opacity:0.3;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 755.85612,1434.204 2.172,5.792 70.95201,52.852 63.71202,-19.548 -3.62001,-97.74 135.38806,-78.192 53.576,6.516 -3.62,-112.2201 60.816,-18.824 -217.20005,-169.416 -157.83203,-43.44 -123.08002,99.912 -42.716,12.308 57.19601,49.232 4.344,85.432 39.82,16.652 62.98801,104.2561 z' class='building' data-building-id='0' />
+            <path style='opacity:0.3;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 1002.7402,1025.1439 2.896,49.956 129.596,97.74 -61.54,18.824 3.62,76.02 21.72,17.376 10.136,-12.308 44.164,26.0641 106.428,-29.6841 44.164,36.9241 42.716,-12.308 -44.888,-36.9241 48.508,-10.86 74.572,-59.368 -0.724,-93.396 60.816,-14.48 -233.128,-157.83201 -135.388,-33.30401 -110.048,81.08802 -58.64405,13.032 z' class='building' data-building-id='1' />
+            <path style='opacity:0.3;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 1739.5904,772.1843 50.1707,26.62116 1.5358,29.18089 168.942,98.29351 -53.2423,16.8942 -2.5597,91.63824 28.157,15.3583 97.2696,-82.42316 157.1672,63.99316 11.7748,-6.6553 9.7269,-156.65527 63.9932,-16.89419 -279.5222,-142.32082 z' class='building'  data-building-id='2' />
+            <path style='opacity:0.3;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 1054.0956,597.61092 3.5836,126.45051 -65.52903,13.31058 18.43003,15.35836 -36.34812,8.70308 144.88052,116.2116 -95.7338,24.06143 38.9079,27.64506 54.2662,-43.00342 76.7918,20.47782 215.529,-48.63481 -1.5358,-68.60069 74.2321,-12.28669 -78.3277,-48.12286 2.0478,-85.49488 51.7065,-9.72697 -203.2423,-120.81911 -56.826,-1.02389 -193.0034,55.80205 z' class='building'  data-building-id='3' />
+            <path style='opacity:0.3;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 502.21843,248.46416 0,2.04778 11.77474,142.83277 48.12287,40.95563 51.19454,-5.6314 31.22867,68.08874 157.67918,-27.13311 -2.55973,-28.15699 -42.49146,-28.157 63.99317,-17.91809 -24.06143,-26.62116 -10.23891,-4.60751 -3.58362,-86.51877 35.83618,-6.65529 -140.27304,-81.91126 -60.40956,-12.28669 -158.70307,49.14676 z' class='building' data-building-id='4' />
+            <path style='opacity:0.3;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 818.60068,114.33447 -83.95904,66.04096 -23.03754,8.19112 34.81228,20.47782 1.53584,18.43003 72.69625,44.53925 -37.37202,5.6314 3.58362,77.30375 54.77816,34.81229 91.12628,-27.64505 62.45733,9.72696 65.01706,41.97952 -1.0239,-23.54948 -39.9317,-22.01366 32.2525,-11.77474 56.826,-43.51536 -85.4949,-46.58703 0,-28.66894 38.3959,-7.67918 -69.11263,-33.7884 -22.5256,-61.43344 -73.20819,13.82252 z' class='building' data-building-id='5' />
+        </g>
+    </svg>
+    
+    <div class='info'></div>
+</div>
+<!-- partial -->
+  <script src='https://unpkg.com/leader-line@1.0.5/leader-line.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

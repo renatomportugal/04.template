@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue Material Design Card  Prototype</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- https://material.io/components/cards/#behavior -->
+<div id="app">
+  <div class="card" :class="{'open': open}">
+    <div class="card-info top">
+      <div class="card-image"></div>
+      <div class="card-details">
+        <div class="card-thumbnail">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/845908/sasha.png" alt="">
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-name">
+            <div class="card-name">Sasha Tran</div>
+            <div class="card-type">Work contact</div>
+          </div>
+          <div class="chevron" v-on:click="openCard"><i
+              :class="{'fa fa-chevron-down': open, 'fa fa-chevron-up': !open}"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info bottom">
+      <div class="card-mobile">
+        <div class="mobile-icon"><i class="fa fa-phone"></i></div>
+        <div class="mobile-detail">
+          <div class="contact-num">(123) 456-7890</div>
+          <div class="contact-type">Mobile</div>
+        </div>
+      </div>
+      <div class="card-email">
+        <div class="email-icon"><i class="fa fa-envelope"></i></div>
+        <div class="email-detail">
+          <div class="email-add">me@example.com</div>
+          <div class="email-type">Work</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

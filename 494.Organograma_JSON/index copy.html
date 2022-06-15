@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - organo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="inicio()">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script>
+      function inicio() {
+        $.ajax({
+          url: "abrirTxt.txt",
+          dataType: "text",
+          success: function (data) {
+            montarTela(data);
+          },
+        });
+      }
+
+      function montarTela(data){
+    try {
+      if (data != null) {
+        json = JSON.parse(data);
+        console.log(json);
+        const itens = json;
+        for (let i = 0; i < itens.length; i++) {
+          const item = itens[i];
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+    </script>
+    <div class="organograma">
+      <!-- Linha 1 -->
+      <!-- LinhasExternas [Texto, Classe, data-legend, Colunas[Texto,Classe, data-legend, Linhas[classe,texto]] -->
+      <div class="row-ext">
+        <!-- Coluna Esquerda -->
+        <div class="col-6-ext dashed" data-legend="Governance Committee">
+          <div class="row">
+            <div class="col-6">Nomination and Remuneration Committee</div>
+            <div class="col-6">Risk and Compliance Committee</div>
+          </div>
+        </div>
+        <!-- Coluna Direita -->
+        <div class="col-6-ext dashed" data-legend="">
+          <div class="row">
+            <div class="col-4">Supervisory Board</div>
+            <div class="col-4">Board of Directors</div>
+            <div class="col-4">Company Secretary</div>
+          </div>
+        </div>
+      </div>
+      <!-- Linha 2 -->
+      <div class="row-ext">
+        <div class="col-6-ext dashed" data-legend="Functional Committee">
+          <div class="row">
+            <div class="col-4">Asset and Liability and Risk Management Committee</div>
+            <div class="col-4 card-danger">Planning and Control Committee</div>
+            <div class="col-4 card-ok">Compliance Committee</div>
+          </div>
+          <div class="row">
+            <div class="col-6">Depositary Bank Function Committee</div>
+            <div class="col-6">Commercial Committee</div>
+          </div>
+          <div class="row">
+            <div class="col-6">Wealth Management Committee</div>
+            <div class="col-6">Projects and Quality Committee</div>
+          </div>
+        </div>
+        <div class="col-6-ext">Executive Committee</div>
+      </div>
+      <!-- Linha 3 -->
+      <div class="row-ext dashed" data-legend="Departments">
+        <div class="row">
+          <div class="col-2">Executive Board Office (EBO)</div>
+          <div class="col-2">Internal Audit Department (IAD)</div>
+          <div class="col-2">Legal Departments (LED)</div>
+          <div class="col-2">Accounting &amp; Planning Department (APD)</div>
+          <div class="col-2">Compliance Department (COD)</div>
+          <div class="col-2">Investment Banking Department (IBD)</div>
+        </div>
+        <div class="row">
+          <div class="col-2">Clients Management Department (CMD)</div>
+          <div class="col-2">Risk Department (RID)</div>
+          <div class="col-2">IT Department (ITD)</div>
+          <div class="col-2">Sales &amp; Trading Department (STD)</div>
+          <div class="col-2">Treasury Department (TED)</div>
+          <div class="col-2">Wealth Management Department (WMD)</div>
+        </div>
+        <div class="row">
+          <div class="col-10">Operations Department (OPD)</div>
+          <div class="col-2">Human Resources Department (HRD)</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

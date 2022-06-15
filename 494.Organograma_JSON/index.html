@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - organo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="inicio()">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script>
+      function inicio() {
+        $.ajax({
+          url: "abrirTxt.txt",
+          dataType: "text",
+          success: function (data) {
+            montarTela(data);
+          },
+        });
+      }
+      function montarTela(data) {
+        try {
+          if (data != null) {
+            const json = JSON.parse(data);
+            const linhasExternas = json.LinhasExternas;
+            for (let i = 0; i < linhasExternas.length; i++) {
+              const linhaExterna = linhasExternas[i];
+              // LinhasExternas
+              // Cria o elemento
+              var div_linhaExterna = document.createElement("div");
+              // id
+              var div_linhaExterna_id = "div_linhaExterna_" + i;
+              div_linhaExterna.setAttribute("id", div_linhaExterna_id);
+              // Texto
+              var div_linhaExterna_Texto = document.createTextNode(
+                linhaExterna.Texto
+              );
+              div_linhaExterna.appendChild(div_linhaExterna_Texto);
+              // Classe
+              div_linhaExterna.setAttribute("class", linhaExterna.Classe);
+              // Adiciona a linha externa
+              document
+                .getElementById("organograma")
+                .appendChild(div_linhaExterna);
+              // legenda
+              var classes_linhaExterna = linhaExterna.Classe.split(" ");
+              if (classes_linhaExterna.indexOf("dashed") > 0) {
+                // Cria o elemento
+                var div_legenda_linhaExterna = document.createElement("div");
+                // id
+                var div_legenda_linhaExterna_id =
+                  "div_legenda_linhaExterna_" + i;
+                div_legenda_linhaExterna.setAttribute(
+                  "id",
+                  div_legenda_linhaExterna_id
+                );
+                // Texto
+                var div_legenda_linhaExterna_Texto = document.createTextNode(
+                  linhaExterna.legenda
+                );
+                div_legenda_linhaExterna.appendChild(
+                  div_legenda_linhaExterna_Texto
+                );
+                // Classe
+                div_legenda_linhaExterna.setAttribute("class", "legenda");
+                document
+                  .getElementById(div_linhaExterna_id)
+                  .appendChild(div_legenda_linhaExterna);
+              }
+              // LinhasInternas
+              for (let j = 0; j < linhaExterna.LinhasInternas.length; j++) {
+                const linhaInterna = linhaExterna.LinhasInternas[j];
+                // console.log(linhaInterna)
+                // Cria o elemento
+                var div_linhaInterna = document.createElement("div");
+                // id
+                var div_linhaInterna_id = "div_linhaInterna_" + i + "_" + j;
+                div_linhaInterna.setAttribute("id", div_linhaInterna_id);
+                // Classe
+                div_linhaInterna.setAttribute("class", "row");
+                document
+                  .getElementById(div_linhaExterna_id)
+                  .appendChild(div_linhaInterna);
+                // Colunas
+                for (let k = 0; k < linhaInterna.Colunas.length; k++) {
+                  const col_n1 = linhaInterna.Colunas[k];
+                  // console.log(col_n1)
+                  // Cria o elemento
+                  var div_col_n1 = document.createElement("div");
+                  // id
+                  var div_col_n1_id = "col_n1_" + i + "_" + j + "_" + k;
+                  div_col_n1.setAttribute("id", div_col_n1_id);
+                  // Texto
+                  var col_n1_Texto = document.createTextNode(col_n1.Texto);
+                  div_col_n1.appendChild(col_n1_Texto);
+                  // Classe
+                  div_col_n1.setAttribute("class", col_n1.Classe);
+                  document
+                    .getElementById(div_linhaInterna_id)
+                    .appendChild(div_col_n1);
+                  // legenda
+                  var classes_col_n1 = col_n1.Classe.split(" ");
+                  if (classes_col_n1.indexOf("dashed") > 0) {
+                    // Cria o elemento
+                    var div_legenda_col_n1 = document.createElement("div");
+                    // id
+                    var div_legenda_col_n1_id = "div_legenda_col_n1_" + k;
+                    div_legenda_col_n1.setAttribute(
+                      "id",
+                      div_legenda_col_n1_id
+                    );
+                    // Texto
+                    var div_legenda_col_n1_Texto = document.createTextNode(
+                      col_n1.legenda
+                    );
+                    div_legenda_col_n1.appendChild(div_legenda_col_n1_Texto);
+                    // Classe
+                    div_legenda_col_n1.setAttribute("class", "legenda");
+                    document
+                      .getElementById(div_col_n1_id)
+                      .appendChild(div_legenda_col_n1);
+                  }
+                  // Linhas
+                  try {
+                    for (let l = 0; l < col_n1.Linhas.length; l++) {
+                      const linha = col_n1.Linhas[l];
+                      // Cria o elemento
+                      var div_linha = document.createElement("div");
+                      // id
+                      var div_linha_id =
+                        "div_linha_" + i + "_" + j + "_" + k + "_" + l;
+                      div_linha.setAttribute("id", div_linha_id);
+                      // Classe
+                      div_linha.setAttribute("class", "row");
+                      document
+                        .getElementById(div_col_n1_id)
+                        .appendChild(div_linha);
+                      for (let m = 0; m < linha.Colunas.length; m++) {
+                        const col_n2 = linha.Colunas[m];
+                        // Cria o elemento
+                        var nome = "div_col_n2_" + m;
+                        var nome = document.createElement("div");
+                        // id
+                        var nome_id =
+                          "col_n2_" + i + "_" + j + "_" + k + "_" + l + "_" + m;
+                        nome.setAttribute("id", nome_id);
+                        // Texto
+                        var col_n2_Texto = document.createTextNode(
+                          col_n2.Texto
+                        );
+                        nome.appendChild(col_n2_Texto);
+                        // Classe
+                        nome.setAttribute("class", col_n2.Classe);
+                        document.getElementById(div_linha_id).appendChild(nome);
+                        // legenda
+                        var classes_col_n2 = col_n2.Classe.split(" ");
+                        if (classes_col_n2.indexOf("dashed") > 0) {
+                          // Cria o elemento
+                          var div_legenda_col_n2 = document.createElement(
+                            "div"
+                          );
+                          // id
+                          var div_legenda_col_n2_id =
+                            "div_legenda_col_n2_" +
+                            i +
+                            "_" +
+                            j +
+                            "_" +
+                            k +
+                            "_" +
+                            l +
+                            "_" +
+                            m;
+                          div_legenda_col_n2.setAttribute(
+                            "id",
+                            div_legenda_col_n2_id
+                          );
+                          // Texto
+                          var div_legenda_col_n2_Texto = document.createTextNode(
+                            col_n1.legenda
+                          );
+                          div_legenda_col_n2.appendChild(
+                            div_legenda_col_n2_Texto
+                          );
+                          // Classe
+                          div_legenda_col_n2.setAttribute("class", "legenda");
+                          document
+                            .getElementById(nome_id)
+                            .appendChild(div_legenda_col_n2);
+                        }
+                      }
+                    }
+                  } catch (error) {}
+                }
+              }
+            }
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      /*
+  CONFIGURAÇÕES:
+  [{ 
+    "LinhasExternas": [{
+      "Texto",
+      "Classe",
+      "legenda",
+      "LinhasInternas": [{
+        Colunas:[{ 
+          "Texto", 
+          "Classe", 
+          "legenda", 
+          "Linhas":[{ 
+            "Colunas": [{ 
+              "Classe", 
+              "Texto"
+            }]
+          }]
+        }]
+      }]
+    }]
+  }]
+  */
+    </script>
+
+    <div id="organograma" class="organograma">
+      <!--      
+      <div class="row-ext">
+        <div class="row">
+          <div class="col-6-ext dashed">
+            <div class="legenda">Governance Committee</div>
+            <div class="row">
+              <div class="col-6">Nomination and Remuneration Committee</div>
+              <div class="col-6">Risk and Compliance Committee</div>
+            </div>
+          </div>
+          <div class="col-6-ext dashed" data-legend="">
+            <div class="row">
+              <div class="col-4">Supervisory Board</div>
+              <div class="col-4">Board of Directors</div>
+              <div class="col-4">Company Secretary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-ext">
+        <div class="row">
+          <div class="col-6-ext dashed">
+            <div class="legenda">Functional Committee</div>
+            <div class="row">
+              <div class="col-4">Asset and Liability and Risk Management Committee</div>
+              <div class="col-4 card-danger">Planning and Control Committee</div>
+              <div class="col-4 card-ok">Compliance Committee</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Depositary Bank Function Committee</div>
+              <div class="col-6">Commercial Committee</div>
+            </div>
+            <div class="row">
+              <div class="col-6">Wealth Management Committee</div>
+              <div class="col-6">Projects and Quality Committee</div>
+            </div>
+          </div>
+          <div class="col-6-ext">Executive Committee</div>
+        </div>
+      </div>
+      <div class="row-ext dashed">
+        <div class="legenda">Departments</div>
+        <div class="row">
+          <div class="col-2">Executive Board Office (EBO)</div>
+          <div class="col-2">Internal Audit Department (IAD)</div>
+          <div class="col-2">Legal Departments (LED)</div>
+          <div class="col-2">Accounting &amp; Planning Department (APD)</div>
+          <div class="col-2">Compliance Department (COD)</div>
+          <div class="col-2">Investment Banking Department (IBD)</div>
+        </div>
+        <div class="row">
+          <div class="col-2">Clients Management Department (CMD)</div>
+          <div class="col-2">Risk Department (RID)</div>
+          <div class="col-2">IT Department (ITD)</div>
+          <div class="col-2">Sales &amp; Trading Department (STD)</div>
+          <div class="col-2">Treasury Department (TED)</div>
+          <div class="col-2">Wealth Management Department (WMD)</div>
+        </div>
+        <div class="row">
+          <div class="col-10">Operations Department (OPD)</div>
+          <div class="col-2">Human Resources Department (HRD)</div>
+        </div>
+      </div>
+-->
+    </div>
+  </body>
+</html>

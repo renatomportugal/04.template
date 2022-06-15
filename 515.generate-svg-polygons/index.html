@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Generate SVG polygons</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container" ng-app="myApp" ng-controller="Example">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Generate SVG polygons</h2>
+            <p>Playing around with javascript to draw SVG shapes. <br />
+          You may want to visit <a href="https://codepen.io/netsi1964/full/ZYEbLY/" target="_top">version II</a> and <a href="https://codepen.io/netsi1964/full/PwZYdo/" target="_top">Version III</a>. <br /><small>
+              <mark>Info</mark> Save SVG into <code>test.svg</code> file and import into say Sketch or Illustrator.</small> Thanks to <a href="https://codepen.io/gsans/">Gerard Sans</a> for save PNG functionality.</p> 
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="svg"></div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+
+                <table class="table">
+                  <tr>
+                    <th colspan="2">              <h2>Parameters</h2></th>
+                    <td><button class="btn btn-success random">Random</button> <button class="btn save btn-primary">Save PNG</button></td>
+                  </tr>
+                    <tr>
+                        <th>Corners</th>
+                        <th><output for="corners" id=corners></output></th>
+                        <td><input type="range" name="corners" min="3" max="36" value="9" /></td>
+                    </tr>
+                    <tr>
+                        <th>Radius</th>
+                        <th><output for="r" id="r"></output></th>
+                        <td> <input type="range" name="r" min="40" max="200" value="150"/></td>
+                    </tr>
+                    <tr> 
+                        <th>Min. radius</th>
+                        <th><output for="minR" id="minR"></output></th>
+                        <td> <input type="range" name="minR" min="0" max="200" value="10"/></td>
+                    </tr>
+                    <tr>
+                        <th>Lines</th>
+                        <th><output for="lines" id="lines"></output></th>
+                        <td><input type="range" name="lines" min="2" max="24" value="9" /></td>
+                    </tr>
+                    <tr>
+                        <th>Rotate</th>
+                        <th><output for="rotateEach" id="rotateEach"></output></th>
+                        <td><input type="range" name="rotateEach" value="7" min="-40" max="40" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"><h3>SVG: Try altering it! :-)</h3></div>
+          <div class="col-md-12"><textarea name="" id="svg" cols="30" rows="10"></textarea></div>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

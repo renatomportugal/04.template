@@ -1,0 +1,83 @@
+svg, defs, clipPath {
+height: 0; 
+position: absolute; 
+top: 0; left: 0;  
+}
+
+#figura {
+position: relative; 
+width: 360px; height: 480px; 
+border: 1px solid black; 
+border-radius: 20px; 
+margin: 10px auto; 
+overflow: hidden; 
+background-color: white;
+}
+#figura::before {
+display: block; 
+content: ""; 
+position: absolute; 
+top: 0; left: 0; 
+background-image: url('https://lh3.googleusercontent.com/-nGr9cn8UyPc/Vhvb4OAhzlI/AAAAAAAAEsc/OWUL6oQjPys/s800-Ic42/AugustoWarnke.jpg'); 
+background-size: cover;  
+opacity: .4;
+width: 360px; height: 480px; 
+}
+
+#capaRecorte {
+display: block; 
+position: absolute; 
+top: 0; left: 0; 
+width: 360px; height: 480px; 
+}
+
+#imagen {
+width: 360px; height: 480px; 
+position: absolute;
+top: 0; left: 0; 
+cursor: crosshair; 
+}
+
+#figura area {
+display: block; 
+}
+
+#figura area:nth-of-type(1):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(120px 368px,177px 372px,172px 444px,117px 449px);
+clip-path: url(#A1); 
+}
+
+#figura area:nth-of-type(2):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(199px 370px,284px 377px,269px 449px,199px 448px,193px 432px);
+clip-path: url(#B1); 
+}
+
+#figura area:nth-of-type(3):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(101px 277px,157px 278px,174px 283px,173px 290px,172px 359px,100px 363px,99px 353px);
+clip-path: url(#A2); 
+}
+
+#figura area:nth-of-type(4):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(194px 283px,202px 276px,219px 283px,255px 283px,262px 287px,268px 293px,277px 341px,274px 366px,193px 365px,188px 338px,194px 283px);
+clip-path: url(#B2); 
+}
+
+#figura area:nth-of-type(5):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(97px 153px,135px 158px,163px 155px,167px 160px,167px 231px,170px 241px,170px 258px,152px 267px,135px 264px,100px 264px,95px 161px,94px 158px);
+clip-path: url(#A3); 
+}
+
+#figura area:nth-of-type(6):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(185px 154px,226px 158px,267px 156px,274px 162px,277px 177px,274px 257px,194px 264px,186px 257px,183px 161px);
+clip-path: url(#B3); 
+}
+
+#figura area:nth-of-type(7):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(93px 42px,158px 31px,169px 44px,171px 97px,168px 132px,163px 142px,102px 143px,86px 132px,91px 54px);
+clip-path: url(#A4); 
+}
+
+#figura area:nth-of-type(8):hover ~ #capaRecorte {
+-webkit-clip-path: polygon(180px 38px,281px 39px,280px 110px,276px 146px,271px 144px,184px 140px,180px 134px,182px 83px,181px 76px);
+clip-path: url(#B4); 
+}

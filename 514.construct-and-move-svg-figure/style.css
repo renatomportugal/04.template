@@ -1,0 +1,30 @@
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+svg {
+	width: 100%;
+	height: 100%;
+	outline: solid 1xp;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 18pt;
+}
+
+g:hover {
+	cursor: grab;
+}
+g.moving {
+	cursor: grabbing;
+}
+
+g.moving path {
+	filter: url(#boxshadow);
+}

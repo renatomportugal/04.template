@@ -1,0 +1,263 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+.box-shadow {
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.box-shadow-hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+/* ----------------------------------------------
+--------------- Global Overrides ----------------
+---------------------------------------------- */
+.project a {
+  color: #333;
+}
+.project a:hover {
+  color: #007299;
+}
+/* ----------------------------------------------
+------------------ User Profile -----------------
+---------------------------------------------- */
+.user-profile-heading {
+  background-color: #005f7f;
+  color: #fff;
+  margin-bottom: 50px;
+  padding: 0;
+  position: relative;
+}
+.user-profile-heading .user-photo {
+  border: 4px solid #fff;
+  position: absolute;
+  top: 20px;
+}
+.user-profile-heading h1.user-name {
+  font-size: 45px;
+  font-weight: 300;
+  margin: 55px 0 5px 0;
+}
+.user-profile-heading a {
+  color: #dcdcdc;
+}
+.user-profile-heading a:hover {
+  color: #fff;
+}
+.user-profile-heading .point-summary {
+  padding: 10px 0;
+  text-align: right;
+}
+.user-profile-heading .point-summary .points {
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 1;
+}
+.user-profile-heading .point-summary p {
+  margin-bottom: 0;
+}
+.user-details {
+  font-size: 16px;
+}
+.user-details li {
+  margin-bottom: 10px;
+}
+li.profile-links a {
+  border: 1px solid #a9a9a9;
+  border-radius: 50%;
+  color: #a9a9a9;
+  font-size: 16px;
+  margin: 0 10px 10px 0;
+  padding: 3px 6px;
+}
+li.profile-links a:hover {
+  background-color: #cfcfcf;
+  color: #000000;
+  transition: all 0.5s ease;
+}
+li.profile-links a.linkedin:hover {
+  background-color: #0077b5;
+  border-color: #0077b5;
+  color: #ffffff;
+}
+li.profile-links a.twitter {
+  border-color: #1da1f2;
+  color: #1da1f2;
+}
+li.profile-links a.twitter:hover {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: #ffffff;
+}
+li.profile-links a.orgchart {
+  padding: 3px 5px;
+}
+li.profile-links a.orgchart:hover {
+  background-color: #d5252f;
+  border: 1px solid #d5252f;
+  color: #ffffff;
+}
+li.profile-links a.locate {
+  padding: 3px 8px;
+}
+li.profile-links a.locate:hover {
+  background-color: #d5252f;
+  border: 1px solid #d5252f;
+  color: #ffffff;
+}
+.builders-bucks-given,
+.builders-bucks-received,
+.builders-bucks-balance {
+  padding: 10px 0;
+}
+.builders-bucks-given h3,
+.builders-bucks-received h3,
+.builders-bucks-balance h3 {
+  margin: 0;
+}
+.builders-bucks-given .value,
+.builders-bucks-received .value,
+.builders-bucks-balance .value {
+  font-size: 65px;
+  text-align: center;
+}
+.bb-nominate,
+.bb-list,
+.bb-balance {
+  color: #c3c3c3;
+  font-size: 16px;
+  float: right;
+  padding-top: 3px;
+}
+.bb-nominate:hover,
+.bb-list:hover,
+.bb-balance:hover {
+  color: #005f7f;
+}
+.badges li {
+  float: left;
+  list-style-type: none;
+  padding: 0 1em 1em 1em;
+  text-align: center;
+}
+.badges li .badge-description {
+  font-size: 12px;
+  font-weight: 600;
+}
+#course-schedule li,
+#course-transcript li {
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#course-schedule li:last-child,
+#course-transcript li:last-child {
+  border-bottom: none;
+}
+#course-schedule .online,
+#course-transcript .online,
+#course-schedule .job-aid,
+#course-transcript .job-aid,
+#course-schedule .learning-path,
+#course-transcript .learning-path,
+#course-schedule .certification,
+#course-transcript .certification,
+#course-schedule .classroom-only,
+#course-transcript .classroom-only {
+  margin-right: 5px;
+}
+#course-schedule .online:after,
+#course-transcript .online:after,
+#course-schedule .job-aid:after,
+#course-transcript .job-aid:after,
+#course-schedule .learning-path:after,
+#course-transcript .learning-path:after,
+#course-schedule .certification:after,
+#course-transcript .certification:after,
+#course-schedule .classroom-only:after,
+#course-transcript .classroom-only:after {
+  font-family: "FontAwesome";
+}
+#course-schedule .online:after,
+#course-transcript .online:after {
+  color: #005f7f;
+  content: " \f109";
+}
+#course-schedule .job-aid:after,
+#course-transcript .job-aid:after {
+  color: #b6bd00;
+  content: " \f12e";
+}
+#course-schedule .learning-path:after,
+#course-transcript .learning-path:after {
+  color: #ef7521;
+  content: " \f097";
+}
+#course-schedule .certification:after,
+#course-transcript .certification:after {
+  color: #ffc600;
+  content: " \f0a3";
+}
+#course-schedule .classroom-only:after,
+#course-transcript .classroom-only:after {
+  color: #45a7c5;
+  content: " \f0c0";
+}
+.builders-bucks-nomination {
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.builders-bucks-nomination .print {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.builders-bucks-nomination .print .fa {
+  border: 1px solid #a9a9a9;
+  border-radius: 50%;
+  color: #a9a9a9;
+  font-size: 16px;
+  padding: 5px;
+}
+.builders-bucks-nomination .print .fa:hover {
+  color: #fff;
+  background-color: #d5252f;
+  border-color: #d5252f;
+}
+.fancybox-slide {
+  padding: 2.5%;
+}
+#point-description,
+#received {
+  border-radius: 0.3em;
+}
+/* ---------------------------------------------
+--------- Breakpoints - Media Queries ----------
+--------------------------------------------- */
+@media screen and (min-width: 768px) {
+  #point-description,
+  #received {
+    max-width: 80%;
+  }
+}
+@media screen and (min-width: 992px) {
+  #point-description,
+  #received {
+    max-width: 60%;
+  }
+}

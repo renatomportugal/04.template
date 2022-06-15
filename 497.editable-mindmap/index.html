@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Editable mindmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="mindmap">
+
+  <!--LEFT-->
+  <ol class="children children_leftbranch">
+    <li class="children_item">
+      <div class="node">
+        <div class="node_text">L1</div>
+        <input type="text" class="node_input">
+      </div>
+      <ol class="children">
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L1.1</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L1.2</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+      </ol>
+    </li>
+    <li class="children_item">
+      <div class="node">
+        <div class="node_text">L2</div>
+        <input type="text" class="node_input">
+      </div>
+      <ol class="children">
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L2.1</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L2.2</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L2.3</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+      </ol>
+    </li>
+    <li class="children_item">
+      <div class="node">
+        <div class="node_text">L3</div>
+        <input type="text" class="node_input">
+      </div>
+      <ol class="children">
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L3.1</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L3.2</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L3.3</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">L3.4</div>
+            <input type="text" class="node_input">
+          </div>
+          <ol class="children">
+            <li class="children_item">
+              <div class="node">
+                <div class="node_text">L3.4.1</div>
+                <input type="text" class="node_input">
+              </div>
+            </li>
+            <li class="children_item">
+              <div class="node">
+                <div class="node_text">L3.4.2</div>
+                <input type="text" class="node_input">
+              </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <!--CENTER-->
+  <div class="node node_root">
+    <div class="node_img"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/887373/profile/profile-80.jpg"></div>
+    <input type="file" class="node_input">
+  </div>
+
+  <!--RIGHT-->
+  <ol class="children children_rightbranch">
+    <li class="children_item">
+      <div class="node">
+        <div class="node_text">R1</div>
+        <input type="text" class="node_input">
+      </div>
+      <ol class="children">
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R1.1</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R1.2</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R1.3</div>
+            <input type="text" class="node_input">
+          </div>
+          <ol class="children">
+            <li class="children_item">
+              <div class="node">
+                <div class="node_text">R1.3.1</div>
+                <input type="text" class="node_input">
+              </div>
+            </li>
+            <li class="children_item">
+              <div class="node">
+                <div class="node_text">R1.3.2</div>
+                <input type="text" class="node_input">
+              </div>
+              <ol class="children">
+                <li class="children_item">
+                  <div class="node">
+                    <div class="node_text">R1.3.2.1</div>
+                    <input type="text" class="node_input">
+                  </div>
+                </li>
+              </ol>
+            </li>
+            <li class="children_item">
+              <div class="node">
+                <div class="node_text">R1.3.3</div>
+                <input type="text" class="node_input">
+              </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li class="children_item">
+      <div class="node">
+        <div class="node_text">R2</div>
+        <input type="text" class="node_input">
+      </div>
+      <ol class="children">
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R2.1</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R2.2</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R2.3</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R2.4</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+      </ol>
+    </li>
+    <li class="children_item">
+      <div class="node">
+        <div class="node_text">R3</div>
+        <input type="text" class="node_input">
+      </div>
+      <ol class="children">
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R3.1</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R3.2</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+        <li class="children_item">
+          <div class="node">
+            <div class="node_text">R3.3</div>
+            <input type="text" class="node_input">
+          </div>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<div class="toolkit">
+
+  <div class="collapse_btn">&#10224;</div>
+
+  <p>
+    Double-click a node to edit.<br>
+    Select and press <i>enter</i> to add a node on the same level.<br>
+    Select and press <i>tab</i> to add a node on a sub-level.<br>
+    Select and press <i>delete</i> to delete a node.
+  </p>
+
+  <label for="primary-color-picker">Primary color: </label>
+  <input id="primary-color-picker" type="color" value="#8ca0be" onchange="body.style.setProperty(`--primary-color`,this.value);"><br>
+  <label for="secondary-color-picker">Secondary color: </label>
+  <input id="secondary-color-picker" type="color" value="#7d7dbe" onchange="body.style.setProperty(`--secondary-color`,this.value);"><br>
+  <label for="text-color-picker">Text color: </label>
+  <input id="text-color-picker" type="color" value="#e6e6e6" onchange="body.style.setProperty(`--text-color`,this.value);"><br>
+  <label for="line-color-picker">Line color: </label>
+  <input id="line-color-picker" type="color" value="#ffbea0" onchange="body.style.setProperty(`--line-color`,this.value);"><br>
+  <label for="focus-color-picker">Focus color: </label>
+  <input id="focus-color-picker" type="color" value="#ff007d" onchange="body.style.setProperty(`--focus-color`,this.value);"><br>
+  <br>
+  <label for="node-size">Zoom level: </label>
+  <input id="node-size" type="range" min="1" max="12" step="1" value="4" onchange="body.style.setProperty(`--node-size`,this.value + 'vw');"><br>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

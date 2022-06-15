@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: grid;
+  grid-template: "edit view"/18em calc(100vw - 18em - 1px);
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.edit {
+  grid-area: edit;
+  display: flex;
+  flex-direction: column;
+}
+.edit > * + * {
+  border-top: 1px solid #ddd;
+}
+.edit > *:nth-child(2) {
+  flex: 2;
+}
+.edit > *:nth-child(3) {
+  flex: 1;
+}
+.edit_row {
+  display: flex;
+  flex-direction: row;
+}
+.edit_row > * {
+  margin-top: 0;
+  flex: 1;
+}
+.edit_row > * + * {
+  border-left: 1px solid #ddd;
+}
+
+.view {
+  grid-area: view;
+  position: relative;
+  background-color: #eee;
+  border-left: 1px solid #ddd;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+.view svg {
+  background-color: #fff;
+  overflow: visible;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+label div {
+  padding: 0.5em;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+
+input[type=number], textarea {
+  width: 100%;
+  flex: 1;
+  font: inherit;
+  padding: 0.5em;
+  border: 0;
+  resize: none;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+input[type=checkbox] {
+  font: inherit;
+  margin: 0.5em;
+}

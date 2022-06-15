@@ -1,0 +1,89 @@
+.main-content
+	input(type="radio" id="about" name="pages" checked)
+	label(for="about") Lin-Manuel Miranda
+	input(type="radio" id="awards" name="pages" )
+	label(for="awards") EGOT Awards
+	input(type="radio" id="book" name="pages")
+	label(for="book") Motivational Speaker
+	.profile-content
+		.profile-name Lin-Manuel Miranda
+		.profile-pic
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/lmm.png" alt="LMM")
+		.item.page-1.intro Lin-Manuel Miranda is an award-winning composer, lyricist, and performer.
+		.item.page-1.hamilton
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/hamilton.png" alt="Hamilton")
+		.item.page-1.moana
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/moana.png" alt="Moana")
+		.item.page-1.ith
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/ith.png" alt="In The Heights")
+		.item.page-1.chump
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/chump.png" alt="21 Chump Street")
+		.item.page-1.bringiton
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/bringiton.png" alt="Bring It On")
+		.item.page-2.intro
+			| Lin-Manuel Miranda has won many awards. But he is not an EGOT winner... 
+			em yet
+			|.
+		.item.page-2.emmy
+			.subitem
+				.trophy Emmy's
+				.list
+					- var emmyawards = [{ recipient: "\"Bigger!\" (from 67th Tony Awards)", title: "Outstanding Original Music and Lyrics", year: "2014"}]
+						each val in emmyawards
+							.list_item
+								.award-recipient= val.recipient
+								.award-title 
+									span= val.title
+									span.award-year= val.year
+		.item.page-2.grammy
+			.subitem
+				.trophy Grammy's
+				.list
+					- var grammyawards = [{ recipient: "\"How Far I'll Go\" (from Moana)", title: "Best Song Written for Visual Media", year: "2018"},{ recipient: "Hamilton", title: "Best Musical Theater Album", year: "2016"},{ recipient: "In the Heights", title: "Best Musical Theater Album", year: "2009"}]
+						each val in grammyawards
+							.list_item
+								.award-recipient= val.recipient
+								.award-title 
+									span= val.title
+									span.award-year= val.year
+		.item.page-2.oscar
+			.subitem
+				.trophy Oscar's
+				.coming-soon 
+					em Coming Soon
+		.item.page-2.tony
+			.subitem
+				.trophy Tony's
+				.list
+					- var tonyawards = [{ recipient: "Hamilton", title: "Best Book of a Musical", year: "2016"},{ recipient: "Hamilton", title: "Best Original Score", year: "2016"},{ recipient: "In the Heights", title: "Best Original Score", year: "2008"}]
+						each val in tonyawards
+							.list_item
+								.award-recipient= val.recipient
+								.award-title 
+									span= val.title
+									span.award-year= val.year
+		.item.page-3.intro Lin-Manuel Miranda wrote so many motivational tweets, they made it into a book.
+		.item.page-3.book
+			img(src="https://images.penguinrandomhouse.com/cover/9781984854278" alt="Gmorning, Gnight! book")
+		.item.page-3.book-info
+			.subitem
+				h5.title 
+					| Gmorning, Gnight!:
+					br
+					| Little Pep Talks for Me & You
+				p 
+					span 200 pages of concise pieces of advice with which to start or end the day.
+
+//aside.context
+	.explanation
+		| Some kind of explanation that is 
+		a(href="" target="_blank") interesting here
+		| .
+
+//footer
+	a(href="https://twitter.com/meowlivia_" target="_blank")
+		i.icon-social-twitter.icons
+	a(href="https://github.com/oliviale" target="_blank")
+		i.icon-social-github.icons
+	a(href="https://dribbble.com/oliviale" target="_blank")
+		i.icon-social-dribbble.icons

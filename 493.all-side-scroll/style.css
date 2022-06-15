@@ -1,0 +1,114 @@
+html,body{
+	overflow: hidden !important; 
+}
+	#middlediv{
+		height: 100%; 
+		width: 100%; 
+		background: black; 
+		background-image: linear-gradient(to top, #16222A 0%, #3A6073 100%);	
+		position: absolute;
+	}
+	#topdiv{
+		height: 100%; 
+		width: 100%; 
+		background: red; 
+		background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);
+		position: absolute; 
+		bottom: 100%;
+	}
+	#bottomdiv{
+		height: 100%; 
+		width: 100%; 
+	background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+		position: absolute; 
+		top: 100%;
+	}
+	#rightdiv{
+		height: 100%; 
+		width: 100%; 
+		background: blue; 
+		background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+		position: absolute; 
+		left: 100%;
+	}
+	#leftdiv{
+		height: 100%; 
+		width: 100%; 
+		background: blue; 
+		background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+		position: absolute; 
+		right: 100%;
+		
+	}
+	#bottom{
+		color: white; 
+		position: absolute; 
+		bottom: 0px;
+		left: 50%; 
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#left{
+		color: white; 
+		position: absolute; 
+		bottom: 50%;
+		left: 10px;
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#top{
+		color: white; 
+		position: absolute;
+		left: 50%;
+		top: 10px;
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#right{
+		color: white; 
+		position: absolute;
+		right:0px;
+		bottom: 50%;
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#topcenter{
+		color: white; 
+		position: absolute; 
+		bottom: 0px;
+		left: 50%; 
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#bottomcenter{
+		color: white; 
+		position: absolute;
+		left: 50%;
+		top: 10px;
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#rightcenter{
+		color: white; 
+		position: absolute; 
+		bottom: 50%;
+		left: 10px;
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}
+	#center{
+		color: white; 
+		position: absolute;
+		right:10px;
+		bottom: 50%;
+		font-size: 2em;
+		z-index: 111;
+		cursor: pointer;
+	}

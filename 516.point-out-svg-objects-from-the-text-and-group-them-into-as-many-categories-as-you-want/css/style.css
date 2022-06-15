@@ -1,0 +1,35 @@
+body{
+	font-family:arial;
+	font-size:16px;
+	text-align:center;
+}
+[pointTo],[indicated_by] ,[indicated_by] *{
+	color:green;
+	cursor:default;
+	transition:.5s;
+	transition-delay:.24s;
+}
+[mobile]{
+	transition-delay:0s;
+}
+[pointTo]{
+	display:inline-block;
+	padding:0px 5px 3px 5px;
+	border-radius:10px;
+}
+.menu [pointTo] {
+	border:1px solid green;
+	margin: 5px 8px;
+}
+
+[textOver]{
+	color:white;
+	background-color:green;
+	transition:.24s;
+	transition-delay:.12s;
+}
+#suport{
+	background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><line x1='0' y1='0' x2='32' y2='32' stroke='green' stroke-width='1' /><line x1='0' y1='32' x2='32' y2='0' stroke='green' stroke-width='1' /></svg>");
+	background-size:16px 16px;
+	padding:20px 0px;
+}

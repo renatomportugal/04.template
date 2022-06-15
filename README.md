@@ -755,6 +755,20 @@
 
 |Efeito - Mouse |Telas        |
 | [432.tsparticles-mouse-trail-unveiling-background](https://renatomportugal.github.io/04.template/432.tsparticles-mouse-trail-unveiling-background) |<img src="images/432.tsparticles-mouse-trail-unveiling-background.jpg"/> |
+|Links - Mapeamento de Imagem |Telas        |
+| [476.codepenchallenge-teaching-map-area](https://renatomportugal.github.io/04.template/476.codepenchallenge-teaching-map-area) |<img src="images/476.codepenchallenge-teaching-map-area.jpg"/> |
+| [477.responsive-image-map-demo](https://renatomportugal.github.io/04.template/477.responsive-image-map-demo) |<img src="images/477.responsive-image-map-demo.jpg"/> |
+|Links - Mapeamento de Imagem - Editor |Telas        |
+| [478.map-creator](https://renatomportugal.github.io/04.template/478.map-creator) |<img src="images/478.map-creator.jpg"/> |
+|Links - Mapeamento de Imagem - Hover |Telas        |
+| [479.highlights-map-area-with-css-hover](https://renatomportugal.github.io/04.template/479.highlights-map-area-with-css-hover) |<img src="images/479.highlights-map-area-with-css-hover.jpg"/> |
+| [480.responsive-scalable-map](https://renatomportugal.github.io/04.template/480.responsive-scalable-map) |<img src="images/480.responsive-scalable-map.jpg"/> |
+| [482.interactive-map-svg-leader-line-js-hammer-js](https://renatomportugal.github.io/04.template/482.interactive-map-svg-leader-line-js-hammer-js) |<img src="images/482.interactive-map-svg-leader-line-js-hammer-js.jpg"/> |
+| [483.magnetic-hotspots-w-connecting-lines-gsap-pixi-js](https://renatomportugal.github.io/04.template/483.magnetic-hotspots-w-connecting-lines-gsap-pixi-js) |<img src="images/483.magnetic-hotspots-w-connecting-lines-gsap-pixi-js.jpg"/> |
+| [484.mapeamento](https://renatomportugal.github.io/04.template/484.mapeamento) |<img src="images/484.mapeamento.jpg"/> |
+| [485.xkcd-1501-image-map](https://renatomportugal.github.io/04.template/485.xkcd-1501-image-map) |<img src="images/485.xkcd-1501-image-map.jpg"/> |
+|Links - Mapeamento de Imagem - Polyline |Telas        |
+| [481.Javascript-Image-Map-Generator-master](https://renatomportugal.github.io/04.template/481.Javascript-Image-Map-Generator-master) |<img src="images/481.Javascript-Image-Map-Generator-master.jpg"/> |
 |Upload Preview |Telas        |
 | [435.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop](https://renatomportugal.github.io/04.template/435.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop) |<img src="images/435.knockout-js-html5-file-bindings-with-upload-preview-and-drag-and-drop.jpg"/> |
 | [436.jquery-image-upload-preview](https://renatomportugal.github.io/04.template/436.jquery-image-upload-preview) |<img src="images/436.jquery-image-upload-preview.jpg"/> |
@@ -942,6 +956,26 @@
 |---          |---          |
 | [272.apple-imessage-in-css](https://renatomportugal.github.io/04.template/272.apple-imessage-in-css) |<img src="images/272.apple-imessage-in-css.jpg"/> |
 
+## Menu
+
+|Blur           |Telas        |
+|---            |---          |
+| [486.dynamic-inside-blur-pure-css](https://renatomportugal.github.io/04.template/486.dynamic-inside-blur-pure-css) |<img src="images/486.dynamic-inside-blur-pure-css.jpg"/> |
+|Botão Suspenso |Telas        |
+| [487.circular-navigation-button](https://renatomportugal.github.io/04.template/487.circular-navigation-button) |<img src="images/487.circular-navigation-button.jpg"/> |
+|Hover - Só PC  |Telas        |
+| [488.menu-hover-slide-fill](https://renatomportugal.github.io/04.template/488.menu-hover-slide-fill) |<img src="images/488.menu-hover-slide-fill.jpg"/> |
+|Ícones         |Telas        |
+| [489.cpc-a-part-of-the-page-navigation](https://renatomportugal.github.io/04.template/489.cpc-a-part-of-the-page-navigation) |<img src="images/489.cpc-a-part-of-the-page-navigation.jpg"/> |
+|Setorial       |Telas        |
+| [490.grid-navigation](https://renatomportugal.github.io/04.template/490.grid-navigation) |<img src="images/490.grid-navigation.jpg"/> |
+|Sobreposto     |Telas        |
+| [491.dls-scroll-nav](https://renatomportugal.github.io/04.template/491.dls-scroll-nav) |<img src="images/491.dls-scroll-nav.jpg"/> |
+|Subitens       |Telas        |
+| [492.mindmap-menu](https://renatomportugal.github.io/04.template/492.mindmap-menu) |<img src="images/492.mindmap-menu.jpg"/> |
+|Telas          |Telas        |
+| [492.mindmap-menu](https://renatomportugal.github.io/04.template/492.mindmap-menu) |<img src="images/492.mindmap-menu.jpg"/> |
+
 ## Mind_Map
 
 |Links        |Telas        |
@@ -996,6 +1030,13 @@
 |---          |---          |
 | [012.Cursos](https://renatomportugal.github.io/04.template/012.Cursos/) ||
 | [342.gojs-vue](https://renatomportugal.github.io/04.template/342.gojs-vue/) |<img src="images/342.gojs-vue.jpg"/> |
+|JSON         |Telas        |
+| [494.Organograma_JSON](https://renatomportugal.github.io/04.template/494.Organograma_JSON/) |<img src="images/494.Organograma_JSON.jpg"/> |
+| [495.CodePen_Export_MWKLadq](https://renatomportugal.github.io/04.template/495.CodePen_Export_MWKLadq/) |<img src="images/495.CodePen_Export_MWKLadq.jpg"/> |
+| [496.CodePen_Export_VaewJE](https://renatomportugal.github.io/04.template/496.CodePen_Export_VaewJE/) |<img src="images/496.CodePen_Export_VaewJE.jpg"/> |
+| [497.editable-mindmap](https://renatomportugal.github.io/04.template/497.editable-mindmap/) |<img src="images/497.editable-mindmap.jpg"/> |
+| [498.node-list](https://renatomportugal.github.io/04.template/498.node-list/) |<img src="images/498.node-list.jpg"/> |
+| [499.organo](https://renatomportugal.github.io/04.template/499.organo/) |<img src="images/499.organo.jpg"/> |
 
 ## Pascoa
 |Links        |Telas        |
@@ -1006,6 +1047,22 @@
 |Links        |Telas        |
 |---          |---          |
 | [112.native-js-day-8-drawing-canvas](https://renatomportugal.github.io/04.template/112.native-js-day-8-drawing-canvas) |<img src="images/112.native-js-day-8-drawing-canvas.jpg"/> |
+
+## Perfil
+|Avatar       |Telas        |
+|---          |---          |
+| [500.crop-image-with-croppie-modal](https://renatomportugal.github.io/04.template/500.crop-image-with-croppie-modal) |<img src="images/500.crop-image-with-croppie-modal.jpg"/> |
+| [501.croppie-php](https://renatomportugal.github.io/04.template/501.croppie-php) |<img src="images/501.croppie-php.jpg"/> |
+|Contato       |Telas        |
+| [502.vue-material-design-card-prototype](https://renatomportugal.github.io/04.template/502.vue-material-design-card-prototype) |<img src="images/502.vue-material-design-card-prototype.jpg"/> |
+|Tabs          |Telas        |
+| [503.tabs-navigation-ui](https://renatomportugal.github.io/04.template/503.tabs-navigation-ui) |<img src="images/503.tabs-navigation-ui.jpg"/> |
+|Perfil        |Telas        |
+| [504.3-user-profile](https://renatomportugal.github.io/04.template/504.3-user-profile) |<img src="images/504.3-user-profile.jpg"/> |
+| [505.css-grid-profile-page-a-tribute-to-lin-manuel-miranda](https://renatomportugal.github.io/04.template/505.css-grid-profile-page-a-tribute-to-lin-manuel-miranda) |<img src="images/505.css-grid-profile-page-a-tribute-to-lin-manuel-miranda.jpg"/> |
+| [506.personalwebsite](https://renatomportugal.github.io/04.template/506.personalwebsite) |<img src="images/506.personalwebsite.jpg"/> |
+| [507.profile-card-ui](https://renatomportugal.github.io/04.template/507.profile-card-ui) |<img src="images/507.profile-card-ui.jpg"/> |
+| [508.tribute-page](https://renatomportugal.github.io/04.template/508.tribute-page) |<img src="images/508.tribute-page.jpg"/> |
 
 ## Preview de Upload
 
@@ -1074,6 +1131,26 @@
 |---          |---          |
 | [350.carousel](https://renatomportugal.github.io/04.template/350.carousel) |<img src="images/350.carousel.jpg"/> |
 | [351.client_or_partners_logo_slider](https://renatomportugal.github.io/04.template/351.client_or_partners_logo_slider) |<img src="images/351.client_or_partners_logo_slider.jpg"/> |
+
+## SVG
+
+|Animação     |Telas        |
+|---          |---          |
+| [509.isometric-floating-layers-svg](https://renatomportugal.github.io/04.template/509.isometric-floating-layers-svg) |<img src="images/509.isometric-floating-layers-svg.jpg"/> |
+| [510.sugar-rush-candyland](https://renatomportugal.github.io/04.template/510.sugar-rush-candyland) |<img src="images/510.sugar-rush-candyland.jpg"/> |
+| [511.svg-transform-origin](https://renatomportugal.github.io/04.template/511.svg-transform-origin) |<img src="images/511.svg-transform-origin.jpg"/> |
+|Corner       |Telas        |
+| [512.simple-add-round-corners-to-svg-path-using-quadratic-line-type](https://renatomportugal.github.io/04.template/512.simple-add-round-corners-to-svg-path-using-quadratic-line-type) |<img src="images/512.simple-add-round-corners-to-svg-path-using-quadratic-line-type.jpg"/> |
+|Editor       |Telas        |
+| [513.svg-path-editor](https://renatomportugal.github.io/04.template/513.svg-path-editor) |<img src="images/513.svg-path-editor.jpg"/> |
+|Figuras      |Telas        |
+| [514.construct-and-move-svg-figure](https://renatomportugal.github.io/04.template/514.construct-and-move-svg-figure) |<img src="images/514.construct-and-move-svg-figure.jpg"/> |
+| [515.generate-svg-polygons](https://renatomportugal.github.io/04.template/515.generate-svg-polygons) |<img src="images/515.generate-svg-polygons.jpg"/> |
+| [516.point-out-svg-objects-from-the-text-and-group-them-into-as-many-categories-as-you-want](https://renatomportugal.github.io/04.template/516.point-out-svg-objects-from-the-text-and-group-them-into-as-many-categories-as-you-want) |<img src="images/516.point-out-svg-objects-from-the-text-and-group-them-into-as-many-categories-as-you-want.jpg"/> |
+|Pinturas     |Telas        |
+| [517.a-css-portrait-of-ada-lovelace](https://renatomportugal.github.io/04.template/517.a-css-portrait-of-ada-lovelace) |<img src="images/517.a-css-portrait-of-ada-lovelace.jpg"/> |
+| [518.pure-css-frida-kahlo](https://renatomportugal.github.io/04.template/518.pure-css-frida-kahlo) |<img src="images/518.pure-css-frida-kahlo.jpg"/> |
+| [519.still-life-with-pears-pencil-illustration-as-svg](https://renatomportugal.github.io/04.template/519.still-life-with-pears-pencil-illustration-as-svg) |<img src="images/519.still-life-with-pears-pencil-illustration-as-svg.jpg"/> |
 
 ## Taxonomia
 
