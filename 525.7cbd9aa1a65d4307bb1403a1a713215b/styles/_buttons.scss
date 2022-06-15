@@ -1,0 +1,21 @@
+.button {
+  color: black;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 2px solid black;
+  font-family: inherit;
+  font-size: 1rem;
+  &:hover,
+  &:focus {
+    background: rgba(black, 0.2);
+  }
+  .dark & { 
+    color: white;
+    border-color: white;
+    &:hover,
+    &:focus {
+      color: white;
+      background: rgba(white, 0.2);
+    }
+  }
+}

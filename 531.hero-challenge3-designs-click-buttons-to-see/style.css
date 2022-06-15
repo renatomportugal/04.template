@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@100;500&family=IBM+Plex+Serif:ital,wght@0,100;0,500;0,600;0,700;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gotu&display=swap");
+body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+body button, html button {
+  cursor: pointer;
+}
+body a, html a {
+  text-decoration: none;
+}
+
+.hero1 {
+  width: 90%;
+  height: 140%;
+  top: -20%;
+  right: -20%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  float: right;
+  border-radius: 50%;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1472698938026-79bed881e5b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-position: center top;
+}
+
+.hero-container {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #c76baa;
+}
+
+.bubble {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 65%;
+  height: 140%;
+  border-radius: 0% 0% 50% 50%;
+  left: -30%;
+  top: -20%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hero-text, .hero2-text {
+  position: absolute;
+  width: 20%;
+  left: 5%;
+  top: 25%;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+}
+.hero-text h1, .hero2-text h1 {
+  font-weight: 400;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 46px;
+}
+.hero-text button, .hero2-text button {
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 36px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+  font-size: 22px;
+}
+.hero-text button a, .hero2-text button a {
+  letter-spacing: 1.5px;
+  font-family: 'Varela Round', sans-serif;
+  color: #6f2a59;
+}
+.hero-text button:hover, .hero2-text button:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  color: #4a1c3b;
+}
+
+.hero2, .hero3 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), black), url("https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-position: center;
+  filter: grayscale(40%);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.border-text {
+  width: 160px;
+  text-transform: uppercase;
+  z-index: 1;
+  font-size: 18px;
+  letter-spacing: 1.8px;
+  color: #deb221;
+  text-align: left;
+  overflow: hidden;
+}
+
+.hero2-text {
+  z-index: 0;
+  width: 35%;
+  top: 35%;
+  font-family: 'IBM Plex Serif', serif;
+  letter-spacing: 1.8px;
+  position: relative;
+  border: solid rgba(222, 178, 33, 0.3) 2px;
+  padding-left: 40px;
+  padding-right: 30px;
+}
+.hero2-text p {
+  margin: 0px;
+}
+.hero2-text h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 52px;
+  letter-spacing: 4px;
+}
+.hero2-text button {
+  position: relative;
+  border: solid #deb221 3px;
+  border-radius: 0;
+  background-color: #212121;
+  text-transform: uppercase;
+  font-family: 'IBM Plex Serif', serif;
+  letter-spacing: 2px;
+  margin-left: 0;
+  bottom: -40px;
+  color: #deb221;
+  font-size: 18px;
+}
+.hero2-text button:hover {
+  transform: translate(0px);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  color: #deb221;
+  background-color: black;
+  border: solid #deb221 3px;
+}
+
+.sticky {
+  position: fixed;
+  bottom: 0;
+}
+
+.hero3 {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2823&q=80");
+  background-position: left top;
+}
+.hero3 .hero3-text {
+  position: relative;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  top: 25%;
+  color: white;
+  font-size: 30px;
+  font-weight: 100;
+}
+.hero3 .hero3-text h1 {
+  font-size: 46px;
+  text-transform: uppercase;
+  letter-spacing: 2.6px;
+  font-family: 'Gotu', sans-serif;
+}
+.hero3 .hero3-text button {
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.hero3 .hero3-text button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-text, .hero2-text, .hero2-text, .hero3-text {
+    top: 10px;
+    margin: auto;
+  }
+  .hero-text h1, .hero2-text h1, .hero2-text h1, .hero3-text h1 {
+    font-size: 30px;
+  }
+  .hero-text p, .hero2-text p, .hero2-text p, .hero3-text p {
+    font-size: 18px;
+  }
+  .hero-text button, .hero2-text button, .hero2-text button, .hero3-text button {
+    font-size: 16px;
+  }
+}

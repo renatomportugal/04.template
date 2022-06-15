@@ -1,0 +1,348 @@
+/* 
+/* GLOBAL STYLES
+========================================
+========================================*/
+
+/* Import fonts from Google Foots */
+
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+
+
+body {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+.section {
+  text-align: center;
+}
+
+/* Fonts settings  */
+
+h1 {
+  font-family: "Amatic SC", cursive;
+  color: mediumpurple;
+  font-weight: bolder;
+}
+
+
+h1.title {
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-family: "Amatic SC", cursive;
+  color: orangered;
+}
+
+/* Links */
+
+a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:visited {
+  color: inherit;
+}
+
+/* visited link */
+
+a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Custom default button */
+
+.btn-secondary {
+  text-shadow: none;
+  background-color: mediumpurple;
+  color: white;
+  border: none;
+}
+
+
+
+/*
+ *  Section 0 Settings
+ *============================
+ *=============================*/
+
+/* Video caption settings */
+
+.cover-heading h1 {
+  text-shadow: 0 0.05rem 2rem rgba(255, 255, 255, 0.5);
+}
+
+.cover-heading {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  left: 0;
+  top: 43%;
+}
+
+
+/* Video settings */
+
+.media {
+  opacity: 0.8;
+  min-height: 100%;
+  width: 100%;
+}
+
+/* Navbar settings */
+
+#menu {
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.navbar .nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: mediumpurple;
+  background-color: transparent;
+  border-bottom: 0.2rem solid transparent;
+  font-family: "Amatic SC", cursive;
+  font-size: 25px;
+}
+
+.nav-link:hover {
+  border-bottom-color: orangered;
+}
+
+.navbar .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+a.navbar-brand {
+  font-family: "Amatic SC", cursive;
+  font-size: 25px;
+  font-weight: 700;
+  color: orangered;
+  padding: 0.25rem 0;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  border-color: orangered;
+}
+
+/*  Section 1 Settings
+ *============================
+ *=============================*/
+
+
+/* Center align the text within the three columns below the 3 circles */
+
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.marketing h2 {
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.marketing .col-lg-4 p {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+.rounded-circle {
+  width: 60px;
+  height: 60px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/*  Section 2 Settings
+ *==========================================
+ *==========================================*/
+
+/* Carousel base class */
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+  bottom: 5rem;
+  z-index: 10;
+}
+
+.carousel-caption p {
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
+  height: 20rem;
+  background-color: #777;
+  margin-top: 1rem;
+}
+
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*  Section 3 Settings
+ *==========================================
+ *==========================================*/
+
+.table {
+  text-align: center;
+  font-family: "Poiret One", cursive;
+  font-size: 15px;
+  transform: scale(0.5);
+}
+
+.table .btn-secondary {
+  font-family: "Poiret One", cursive;
+  font-size: 15px;
+}
+
+/*  Section 4 Settings
+ *==========================================
+ *==========================================*/
+
+/* Google Map settings */
+iframe {
+  width: 100%;
+  height: 80%;
+}
+
+.intro {
+  position: absolute;
+  margin-top: -450px;
+  margin-left: 500px;
+  margin-right: 50px;
+}
+
+.intro p {
+  color: #fff;
+}
+
+/*  Footer Settings
+ *==========================================
+ *==========================================*/
+
+#footer {
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.7em;
+  position: fixed;
+  padding: 8px 20px;
+}
+
+#footer .float-right {
+  font-size: 1.2em;
+  vertical-align: top;
+}
+
+#footer img {
+  width: 20px;
+  height: 20px;
+}
+
+#footer .svg {
+  width: 60px;
+}
+
+/*  Responsive Css
+ *==========================================
+ *==========================================*/
+
+/* min-width: 40em */
+
+@media (min-width: 40em) {
+  .cover-heading h1 {
+    font-size: 100px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .cover-heading p {
+    font-size: 1.25rem;
+  }
+
+  .carousel-caption {
+    opacity: 0;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .carousel-item {
+    height: 40rem;
+    margin-top: 0;
+  }
+
+  .table,
+  .table .btn-secondary {
+    font-size: 20px;
+  }
+  #footer {
+    height: 70px;
+  }
+  .rounded-circle {
+    width: 90px;
+
+    height: 90px;
+  }
+}
+
+/* min-width: 62em */
+
+@media (min-width: 62em) {
+  .cover-heading h1 {
+    font-size: 180px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .cover-heading p {
+    font-size: 1.25rem;
+  }
+  .carousel-caption h1 {
+    margin-bottom: 1.25rem;
+    font-size: 70px;
+    line-height: 1.4;
+  }
+
+  h1.title {
+    font-size: 80px;
+    margin-bottom: 60px;
+  }
+  .rounded-circle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+

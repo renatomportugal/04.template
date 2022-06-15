@@ -1,0 +1,827 @@
+html {
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.66;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  color: #FF9900;
+}
+
+h1,
+.h1 {
+  font-size: 3.71293rem;
+}
+
+h1,
+.h1 {
+  font-size: 44.55516px;
+}
+
+@media screen and (min-width: 320px) {
+  h1,
+  .h1 {
+    font-size: calc(44.55516px + 62.80416 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1,
+  .h1 {
+    font-size: 107.35932px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 2.197rem;
+}
+
+h2,
+.h2 {
+  font-size: 26.364px;
+}
+
+@media screen and (min-width: 320px) {
+  h2,
+  .h2 {
+    font-size: calc(26.364px + 18.3225 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h2,
+  .h2 {
+    font-size: 44.6865px;
+  }
+}
+
+.special-header {
+  text-transform: uppercase;
+  color: #383838;
+  line-height: 0.9;
+  letter-spacing: -0.2rem;
+  margin: 0;
+}
+
+.special-header span {
+  letter-spacing: 0;
+  font-size: 50%;
+  display: block;
+  color: #FF9900;
+  text-transform: none;
+}
+
+.special-header-inline span {
+  display: inline;
+}
+
+a {
+  color: #8181ff;
+  text-decoration: none;
+}
+
+p {
+  max-width: 350px;
+}
+
+/*csslint box-model:false*/
+
+/*
+Box-model set to false because we're setting a height on select elements, which
+also have border and padding. This is done because some browsers don't render
+the padding. We explicitly set the box-model for select elements to border-box,
+so we can ignore the csslint warning.
+*/
+
+.pure-form input[type="text"],
+.pure-form input[type="password"],
+.pure-form input[type="email"],
+.pure-form input[type="url"],
+.pure-form input[type="date"],
+.pure-form input[type="month"],
+.pure-form input[type="time"],
+.pure-form input[type="datetime"],
+.pure-form input[type="datetime-local"],
+.pure-form input[type="week"],
+.pure-form input[type="number"],
+.pure-form input[type="search"],
+.pure-form input[type="tel"],
+.pure-form input[type="color"],
+.pure-form select,
+.pure-form textarea {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form input:not([type]) {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+
+.pure-form input[type="color"] {
+  padding: 0.2em 0.5em;
+}
+
+.pure-form input[type="text"]:focus,
+.pure-form input[type="password"]:focus,
+.pure-form input[type="email"]:focus,
+.pure-form input[type="url"]:focus,
+.pure-form input[type="date"]:focus,
+.pure-form input[type="month"]:focus,
+.pure-form input[type="time"]:focus,
+.pure-form input[type="datetime"]:focus,
+.pure-form input[type="datetime-local"]:focus,
+.pure-form input[type="week"]:focus,
+.pure-form input[type="number"]:focus,
+.pure-form input[type="search"]:focus,
+.pure-form input[type="tel"]:focus,
+.pure-form input[type="color"]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form input:not([type]):focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+.pure-form input[type="file"]:focus,
+.pure-form input[type="radio"]:focus,
+.pure-form input[type="checkbox"]:focus {
+  outline: thin solid #129FEA;
+  outline: 1px auto #129FEA;
+}
+
+.pure-form .pure-checkbox,
+.pure-form .pure-radio {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.pure-form input[type="text"][disabled],
+.pure-form input[type="password"][disabled],
+.pure-form input[type="email"][disabled],
+.pure-form input[type="url"][disabled],
+.pure-form input[type="date"][disabled],
+.pure-form input[type="month"][disabled],
+.pure-form input[type="time"][disabled],
+.pure-form input[type="datetime"][disabled],
+.pure-form input[type="datetime-local"][disabled],
+.pure-form input[type="week"][disabled],
+.pure-form input[type="number"][disabled],
+.pure-form input[type="search"][disabled],
+.pure-form input[type="tel"][disabled],
+.pure-form input[type="color"][disabled],
+.pure-form select[disabled],
+.pure-form textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form input:not([type])[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+.pure-form input[readonly],
+.pure-form select[readonly],
+.pure-form textarea[readonly] {
+  background-color: #eee;
+  /* menu hover bg color */
+  color: #777;
+  /* menu text color */
+  border-color: #ccc;
+}
+
+.pure-form input:focus:invalid,
+.pure-form textarea:focus:invalid,
+.pure-form select:focus:invalid {
+  color: #b94a48;
+  border-color: #e9322d;
+}
+
+.pure-form input[type="file"]:focus:invalid:focus,
+.pure-form input[type="radio"]:focus:invalid:focus,
+.pure-form input[type="checkbox"]:focus:invalid:focus {
+  outline-color: #e9322d;
+}
+
+.pure-form select {
+  /* Normalizes the height; padding is not sufficient. */
+  height: 2.25em;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.pure-form select[multiple] {
+  height: auto;
+}
+
+.pure-form label {
+  margin: 0.5em 0 0.2em;
+}
+
+.pure-form fieldset {
+  margin: 0;
+  padding: 0.35em 0 0.75em;
+  border: 0;
+}
+
+.pure-form legend {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  margin-bottom: 0.3em;
+  color: #333;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.pure-form-stacked input[type="text"],
+.pure-form-stacked input[type="password"],
+.pure-form-stacked input[type="email"],
+.pure-form-stacked input[type="url"],
+.pure-form-stacked input[type="date"],
+.pure-form-stacked input[type="month"],
+.pure-form-stacked input[type="time"],
+.pure-form-stacked input[type="datetime"],
+.pure-form-stacked input[type="datetime-local"],
+.pure-form-stacked input[type="week"],
+.pure-form-stacked input[type="number"],
+.pure-form-stacked input[type="search"],
+.pure-form-stacked input[type="tel"],
+.pure-form-stacked input[type="color"],
+.pure-form-stacked input[type="file"],
+.pure-form-stacked select,
+.pure-form-stacked textarea {
+  display: block;
+  margin: 0 0 1rem 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form-stacked input:not([type]) {
+  display: block;
+  margin: 0.25em 0;
+}
+
+.pure-form-aligned input,
+.pure-form-aligned textarea,
+.pure-form-aligned select,
+.pure-form-aligned .pure-help-inline,
+.pure-form-message-inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+.pure-form-aligned textarea {
+  vertical-align: top;
+}
+
+/* Aligned Forms */
+
+.pure-form-aligned .pure-control-group {
+  margin-bottom: 0.5em;
+}
+
+.pure-form-aligned .pure-control-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+
+.pure-form-aligned .pure-controls {
+  margin: 1.5em 0 0 11em;
+}
+
+/* Rounded Inputs */
+
+.pure-form input.pure-input-rounded,
+.pure-form .pure-input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+
+.pure-form .pure-group fieldset {
+  margin-bottom: 10px;
+}
+
+.pure-form .pure-group input,
+.pure-form .pure-group textarea {
+  display: block;
+  padding: 10px;
+  margin: 0 0 -1px;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+
+.pure-form .pure-group input:focus,
+.pure-form .pure-group textarea:focus {
+  z-index: 3;
+}
+
+.pure-form .pure-group input:first-child,
+.pure-form .pure-group textarea:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+}
+
+.pure-form .pure-group input:first-child:last-child,
+.pure-form .pure-group textarea:first-child:last-child {
+  top: 1px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.pure-form .pure-group input:last-child,
+.pure-form .pure-group textarea:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+}
+
+.pure-form .pure-group button {
+  margin: 0.35em 0;
+}
+
+.pure-form .pure-input-1 {
+  width: 100%;
+}
+
+.pure-form .pure-input-3-4 {
+  width: 75%;
+}
+
+.pure-form .pure-input-2-3 {
+  width: 66%;
+}
+
+.pure-form .pure-input-1-2 {
+  width: 50%;
+}
+
+.pure-form .pure-input-1-3 {
+  width: 33%;
+}
+
+.pure-form .pure-input-1-4 {
+  width: 25%;
+}
+
+/* Inline help for forms */
+
+/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+
+.pure-form .pure-help-inline,
+.pure-form-message-inline {
+  display: inline-block;
+  padding-left: 0.3em;
+  color: #666;
+  vertical-align: middle;
+  font-size: 0.875em;
+}
+
+/* Block help for forms */
+
+.pure-form-message {
+  display: block;
+  color: #666;
+  font-size: 0.875em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+section,
+.site-header,
+.site-footer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+@media (max-width: 48.75em) {
+  section,
+  .site-header,
+  .site-footer {
+    padding: 2rem 1rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.grid-flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width: 48.75em) {
+  .grid-flex {
+    display: block;
+  }
+  .grid-flex>[class^="grid-"] {
+    margin: 0 0 4rem 0;
+  }
+}
+
+.grid-1-2 {
+  -ms-flex-preferred-size: calc(50% - 1rem);
+  flex-basis: calc(50% - 1rem);
+}
+
+.grid-1-3 {
+  -ms-flex-preferred-size: calc(33.33% - 1rem);
+  flex-basis: calc(33.33% - 1rem);
+}
+
+.grid-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+}
+
+@media (max-width: 48.75em) {
+  .grid-grid {
+    display: block;
+  }
+}
+
+.button {
+  color: black;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 2px solid black;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.button:hover,
+.button:focus {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark .button {
+  color: white;
+  border-color: white;
+}
+
+.dark .button:hover,
+.dark .button:focus {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid #999;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.modal {
+  background: rgba(255, 0, 0, 0.5);
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main-nav {
+  background: #444;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.main-nav ul li a {
+  color: white;
+  display: inline-block;
+  padding: 0.25rem 1rem;
+}
+
+.main-nav ul li svg {
+  width: 10px;
+  height: 10px;
+  fill: #ccc;
+}
+
+.site-header {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.site-header .logo-area {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.site-header .logo {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 1rem 0 0;
+}
+
+.site-header .logo>svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social a {
+  display: block;
+}
+
+.dark {
+  position: relative;
+  background: #444;
+  color: white;
+}
+
+.dark::before,
+.dark::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background: #444;
+  width: 2000px;
+  height: 100%;
+}
+
+.dark::after {
+  left: 100%;
+}
+
+.dark::before {
+  right: 100%;
+}
+
+.dark table {
+  border-color: #eee;
+}
+
+.dark .special-header {
+  color: white;
+}
+
+.section-about,
+.section-about::before,
+.section-about::after {
+  background-image: url(../images/gym.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.section-what-we-do>h2 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.section-what-we-do .do {
+  background: #eee;
+  color: #666;
+  padding: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: top;
+  align-items: top;
+}
+
+.section-what-we-do .do svg {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 2rem;
+}
+
+.section-what-we-do .do strong {
+  display: block;
+  color: black;
+}
+
+@media (max-width: 48.75em) {
+  .section-what-we-do .do {
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+  }
+}
+
+.section-what-we-do .do-weights {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.section-what-we-do .do-kettlebells {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.section-what-we-do .do-jumprope {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.section-what-we-do .do-rings {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.section-coaches {
+  position: relative;
+}
+
+@media (max-width: 64em) {
+  .section-coaches .coach {
+    margin: 3rem 0;
+    padding-left: 2rem;
+  }
+  .section-coaches .coach img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  .section-coaches .coach {
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  }
+  .section-coaches .coach:hover {
+    z-index: 2;
+  }
+  .section-coaches .coach:hover img {
+    filter: brightness(75%) grayscale(25%);
+    opacity: 1;
+  }
+  .section-coaches .coach img {
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .section-coaches .coach-1 {
+    -webkit-clip-path: inset(12% 40% 12% 45%);
+    clip-path: inset(12% 40% 12% 45%);
+  }
+  .section-coaches .coach-1:hover {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+  .section-coaches .coach-2 {
+    -webkit-clip-path: inset(8% 20% 8% 65%);
+    clip-path: inset(8% 20% 8% 65%);
+  }
+  .section-coaches .coach-2:hover {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+  .section-coaches .coach-3 {
+    -webkit-clip-path: inset(4% 0% 4% 85%);
+    clip-path: inset(4% 0% 4% 85%);
+  }
+  .section-coaches .coach-3:hover {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+  .section-coaches .coach-text {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+  }
+  .section-coaches .coach-text .special-header {
+    color: white;
+  }
+  .section-coaches .coach-text .special-header span {
+    color: white;
+  }
+  .section-coaches .coach-text p {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}

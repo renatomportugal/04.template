@@ -1,0 +1,97 @@
+extends parts/_layout.pug
+
+block content
+
+  section.dark.grid-flex.section-about
+  
+    .grid-1-3
+      h2 Hello!
+      p We are Random City CrossFit, a member-owned gym in the hip-but-aging neighborhood of a second-tier city in middle america.
+      p
+        a.button(href="#what-we-do")
+          | 👩🏽‍🏫 Learn More
+
+    .grid-1-3
+      h2 What is CrossFit?
+      p High-intensity workouts based on functional movements. It combines the best aspects of gymnastics, weightlifting, running, rowing, and more.
+      p
+        a.button(href="https://www.youtube.com/watch?v=tzD9BkXGJ1M" data-popup="1")
+          | ▶️ Watch Video
+
+    .grid-1-3
+      h2 Wanna join?
+      p We have a flat-rate monthly fee of $129 which allows you to come to unlimited classes.</p>
+      p
+        a(href="#0" class="button")
+          | 💪🏽 Sign Up
+             
+  section#what-we-do.grid-grid.section-what-we-do
+  
+    h2.h1.special-header
+      span The Things 
+      | That We Do
+    .do.do-weights
+      svg
+        use(xlink:href="#icon-weight")
+      p
+        strong Weightlifting. 
+        | Weights are a core part of CrossFit. We do a lot of olympic-style lifting with a barbell, like cleans and jerks. Deadlifts, squats, and presses are also fundamental.
+    .do.do-kettlebells
+      svg
+        use(xlink:href="#icon-kettlebell")
+      p
+        strong Kettlebells. 
+        | Russian & American swings. Turkish get-ups. Full snatches!
+    .do.do-jumprope
+      svg
+        use(xlink:href="#icon-jumprope")
+      p
+        strong Jumprope. 
+        | Jumping rope is a great warm-up, but can be part of a workout too. We level up to double (or even triple!) unders.
+    .do.do-rings
+      svg
+        use(xlink:href="#icon-rings")
+      p
+        strong Rings. 
+        | A ring muscle-up is the goal. Ring rows are also a stepping stone to pull ups. 
+
+  section.dark
+
+    include parts/_schedule.pug
+    
+  section.section-coaches
+  
+    h2.h1.special-header
+      span Our
+      | Coaches
+      
+    p All of our coaches have extensive coaching experience and are required to pass rigorous background checks.
+    p They are also cool and hot...
+    
+    .coach.coach-1
+      .coach-text
+        h3.h1.special-header
+          span Amy 
+          | Shultz
+        p Amy is our lead coach and has been a professional CrossFit trainer for over 5 years.
+      img(src="images/coach-1-600.jpg" sizes="(min-width: 1000px) 75vw, 90vw" srcset="images/coach-1-600.jpg 600w, images/coach-1-1200.jpg 1200w")
+      
+    .coach.coach-2
+      .coach-text
+        h3.h1.special-header
+          span James 
+          | Frederick
+        p James is our newest coach. He competed in regionals last year and is an Olympic (!) archer.
+      img(src="images/coach-2-600.jpg" sizes="(min-width: 1000px) 75vw, 90vw" srcset="images/coach-2-600.jpg 600w, images/coach-2-1200.jpg 1200w")
+      
+    .coach.coach-3
+      .coach-text
+        h3.h1.special-header
+          span Susan 
+          | Hammershark
+        p Susan coaches all evening and weekend classes. In addition to CrossFit, she is a rock climber and Yoga enthusiast.
+      img(src="images/coach-3-600.jpg" sizes="(min-width: 1000px) 75vw, 90vw" srcset="images/coach-3-600.jpg 600w, images/coach-3-1200.jpg 1200w")
+    
+block scripts
+
+  script(src="scripts/app.processed.js")  

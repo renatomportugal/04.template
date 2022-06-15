@@ -1,0 +1,29 @@
+extends parts/_layout.pug
+
+block content
+
+  section
+      
+    form.signup-form.pure-form.pure-form-stacked
+    
+      fieldset
+      
+        legend Join Our Gym!
+    
+        label(for="name") Your Name
+        input(type="text" id="name")
+        
+        label(for="email") Your Email Address
+        input(type="email" id="email")
+        
+        label(for="phone") Your Phone Number
+        input(type="tel" id="phone")
+        
+        label(for="membership") Membership Type
+        select(id="membership")
+          option Unlimited
+          option 1 Class per Week
+        
+        button(class="button") Submit
+
+        

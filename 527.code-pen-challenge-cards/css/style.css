@@ -1,0 +1,61 @@
+body {
+  margin: auto;
+  background-color: #ddd;
+}
+
+img {
+  width: 100%;
+}
+
+.header-container {
+  height: 160px;
+  color: #fff;
+  background-color: #666;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1492463104320-56094d69c6c4");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  position: relative;
+  max-height: 100px;
+  margin-top: 30px;
+}
+
+.card-container {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.card {
+  margin-top: 30px;
+  padding: 5px;
+}
+
+.card-img-top {
+  border: 15px solid #fff;
+}
+
+.group-img-container {
+  position: relative;
+  margin: auto;
+  padding: 0;
+}
+
+.footer {
+  position: relative;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  background-color: #000;
+}

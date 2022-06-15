@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+section {
+  @extend %inside-spacer;
+}
+
+@mixin breakpoint($point) {
+  @if $point == papa-bear { 
+    @media (max-width: 80em) { @content; }
+  }
+  @if $point == mama-bear { // 64em seems to cover iPad landscape.
+    @media (max-width: 64em) { @content; } 
+  }
+  @if $point == baby-bear {
+    @media (max-width: 48.75em) { @content; } 
+  }
+  @if $point == reverso-baby-bear {
+    @media (min-width: 48.75em) { @content; } 
+  }
+  @if $point == reverso-mama-bear {
+    @media (min-width: 64em) { @content; }
+  }
+}
+
+%inside-spacer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  @include breakpoint(baby-bear) {
+    padding: 2rem 1rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+$gutter: 1rem;
+.grid-flex {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint(baby-bear) {
+    display: block;
+    > [class^="grid-"] {
+      margin: 0 0 4rem 0;
+    }
+  }
+}
+.grid-1-2 {
+  flex-basis: calc(50% - #{$gutter}); // almost doesn't even matter much. flex: 1 would work.
+}
+.grid-1-3 {
+  flex-basis: calc(33.33% - #{$gutter});
+}
+
+.grid-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  // grid-column-gap: $gutter;
+  grid-template-rows: auto;
+  // grid-row-gap: $gutter;
+  grid-gap: $gutter;
+  @include breakpoint(baby-bear) {
+    display: block;
+  }
+}

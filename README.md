@@ -1151,12 +1151,40 @@
 | [517.a-css-portrait-of-ada-lovelace](https://renatomportugal.github.io/04.template/517.a-css-portrait-of-ada-lovelace) |<img src="images/517.a-css-portrait-of-ada-lovelace.jpg"/> |
 | [518.pure-css-frida-kahlo](https://renatomportugal.github.io/04.template/518.pure-css-frida-kahlo) |<img src="images/518.pure-css-frida-kahlo.jpg"/> |
 | [519.still-life-with-pears-pencil-illustration-as-svg](https://renatomportugal.github.io/04.template/519.still-life-with-pears-pencil-illustration-as-svg) |<img src="images/519.still-life-with-pears-pencil-illustration-as-svg.jpg"/> |
+|Save         |Telas        |
+| [518.pure-css-frida-kahlo](https://renatomportugal.github.io/04.template/518.pure-css-frida-kahlo) |<img src="images/518.pure-css-frida-kahlo.jpg"/> |
 
 ## Taxonomia
 
 |Etiquetas        |Telas        |
 |---          |---          |
 | [320.bookmarks-play](https://renatomportugal.github.io/04.template/320.bookmarks-play) |<img src="images/320.bookmarks-play.jpg"/> |
+
+## Template
+
+|Bandas       |Telas        |
+|---          |---          |
+| [521.RockBand](https://renatomportugal.github.io/04.template/521.RockBand) |<img src="images/521.RockBand.jpg"/> |
+|Bar          |Telas        |
+| [522.64d1932d13ef4c75bf2fd49b65022842](https://renatomportugal.github.io/04.template/522.64d1932d13ef4c75bf2fd49b65022842) |<img src="images/522.64d1932d13ef4c75bf2fd49b65022842.jpg"/> |
+|Ciência      |Telas        |
+| [523.design_studio](https://renatomportugal.github.io/04.template/523.design_studio) |<img src="images/523.design_studio.jpg"/> |
+|Circo        |Telas        |
+| [524.wild-circus-v4](https://renatomportugal.github.io/04.template/524.wild-circus-v4) |<img src="images/524.wild-circus-v4.jpg"/> |
+|Cross Fit    |Telas        |
+| [525.7cbd9aa1a65d4307bb1403a1a713215b](https://renatomportugal.github.io/04.template/525.7cbd9aa1a65d4307bb1403a1a713215b) |<img src="images/525.7cbd9aa1a65d4307bb1403a1a713215b.jpg"/> |
+|Dinossauro   |Telas        |
+| [526.dinosaur-park-scroll-snap-demo](https://renatomportugal.github.io/04.template/526.dinosaur-park-scroll-snap-demo) |<img src="images/526.dinosaur-park-scroll-snap-demo.jpg"/> |
+|Equipe       |Telas        |
+| [527.code-pen-challenge-cards](https://renatomportugal.github.io/04.template/527.code-pen-challenge-cards) |<img src="images/527.code-pen-challenge-cards.jpg"/> |
+|Eventos      |Telas        |
+| [528.0607f0df154543d3be3f933489699143](https://renatomportugal.github.io/04.template/528.0607f0df154543d3be3f933489699143) |<img src="images/528.0607f0df154543d3be3f933489699143.jpg"/> |
+| [529.conference](https://renatomportugal.github.io/04.template/529.conference) |<img src="images/529.conference.jpg"/> |
+|Imagem de fundo com Texto  |Telas        |
+| [530.css-parallax-hero](https://renatomportugal.github.io/04.template/530.css-parallax-hero) |<img src="images/530.css-parallax-hero.jpg"/> |
+| [531.hero-challenge3-designs-click-buttons-to-see](https://renatomportugal.github.io/04.template/531.hero-challenge3-designs-click-buttons-to-see) |<img src="images/531.hero-challenge3-designs-click-buttons-to-see.jpg"/> |
+|Vídeo - Só PC  |Telas        |
+| [532.internal-video-platform-ui](https://renatomportugal.github.io/04.template/532.internal-video-platform-ui) |<img src="images/532.internal-video-platform-ui.jpg"/> |
 
 ## Testes
 

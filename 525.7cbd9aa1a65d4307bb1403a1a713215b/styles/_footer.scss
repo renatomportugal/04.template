@@ -1,0 +1,9 @@
+.site-footer {
+  @extend %inside-spacer;
+}
+
+.social {
+  a {
+    display: block;
+  } 
+}
