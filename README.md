@@ -434,6 +434,8 @@
 | [377.css-batman-logo](https://renatomportugal.github.io/04.template/377.css-batman-logo/) | <img src="images/377.css-batman-logo.jpg"/> |
 | [378.mern-stack-mongodb-express-js-react-js-node-js](https://renatomportugal.github.io/04.template/378.mern-stack-mongodb-express-js-react-js-node-js/) | <img src="images/378.mern-stack-mongodb-express-js-react-js-node-js.jpg"/> |
 | [379.ubuntu](https://renatomportugal.github.io/04.template/379.ubuntu/) | <img src="images/379.ubuntu.jpg"/> |
+|nth-child       |Telas        |
+| [533.nth-child-practice](https://renatomportugal.github.io/04.template/533.nth-child-practice/) | <img src="images/533.nth-child-practice.jpg"/> |
 |Pessoa       |Telas        |
 | [365.css-self-portrait](https://renatomportugal.github.io/04.template/365.css-self-portrait/) | <img src="images/365.css-self-portrait.jpg"/> |
 | [366.self-portrait-in-css](https://renatomportugal.github.io/04.template/366.self-portrait-in-css/) | <img src="images/366.self-portrait-in-css.jpg"/> |

@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  background-color: #1D1F20;
+}
+
+* {
+  font-family: courier;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 450px;
+  float: left;
+}
+
+.instructions {
+  position: relative;
+  top: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  text-align: left;
+  font-size: 200%;
+  text-decoration: underline;
+}
+
+p, ul, li {
+  color: white;
+  text-align: left;
+}
+
+.bonus {
+  color: #7DE9BB;
+}
+
+.grid {
+  position: relative;
+  margin: auto;
+  top: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 350px;
+  height: 350px;
+}
+
+.cell-off {
+  width: 70px;
+  height: 70px;
+  background: #cccccc;
+  border-radius: 50%;
+}
+
+.cell-on {
+  width: 70px;
+  height: 70px;
+  background: #cccccc;
+  border-radius: 50%;
+  background: #7DE9BB;
+  box-shadow: 0 0 10px 2px #7DE9BB;
+}
+
+button, input {
+  position: absolute;
+  margin: auto;
+  width: 100px;
+  height: 30px;
+  top: 440px;
+  left: -50%;
+  right: 0;
+  border-radius: 10px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background: #7DE9BB;
+}
+
+button:active {
+  box-shadow: 0 0 10px 2px #7DE9BB;
+}
+
+input.txt {
+  width: 350px;
+  height: 20px;
+  top: 400px;
+  border-radius: 0;
+  background: white;
+  color: black;
+}
