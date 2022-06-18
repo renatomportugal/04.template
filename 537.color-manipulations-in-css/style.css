@@ -1,0 +1,26 @@
+:root {
+  --h: 100;
+  --s: 50%;
+  --l: 50%;
+  --hsl: var(--h), var(--s), var(--l);
+  --hslf: hsl(var(--hsl));
+}
+
+body {
+  font-family: monospace;
+}
+
+pre:not(.example) {
+  background-color: lightgray;
+}
+
+.example {
+  width: 300px;
+  height: 100px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.w {
+  color: white;
+}

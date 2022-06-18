@@ -1,0 +1,28 @@
+table {
+  display:inline-block;
+  border-collapse:collapse;
+  border-spacing:0;
+  background-color:#222;
+  color:#fff;
+}
+table td {
+  width:1.1em;
+  height:1.2em;
+  text-align:center;
+}
+.border {
+  background-color:#ddd;
+}
+.end {
+  background-color:#4ea6ca;
+}
+.type_K {
+  background-image:url('http://www.pngmart.com/files/1/Key-PNG-Clipart.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.type_D {
+  background-image:url('https://lh3.ggpht.com/HRQFs2zD9ym23JwJEjshYhZNGobW7M6e1Yq1wJf0mzVi-kkplx_Ss25fEzBqBfQyqS8=w300');
+  background-size:contain;
+  background-repeat:no-repeat;
+}

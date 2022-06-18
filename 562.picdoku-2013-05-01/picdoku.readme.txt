@@ -1,0 +1,28 @@
+  Picdoku - Sudoku puzzles using pictures
+
+  picdoku.readme.txt
+    getting started with the picdoku game
+
+  Author: Randal Allen Anderson III
+          rational_ape@hotmail.com
+  Web: http://raa3enterprises.com/picdoku
+  Copyright (c) 2013 RAA3 Enterprises, Inc.
+  GNU General Public License - http://www.gnu.org/licenses/gpl.html
+
+To start, double click the "picdoku.html" icon. This game runs entirely in your browser. You do not need an internet connection once you have extracted the zip file.
+
+The game board will size itself to fit the window it is opened in. If you resize the window then refreshing the page will resize the game board. Too small will not work.
+
+Two pop-up sections will display when the page is first started or refreshed. One allows you to select a set of icon pictures to use. The other allows you to select your own pictures from the myIcons directory, where you should have already copied them, so that you can play the game using these pictures. There are buttons at the top of the page to hide and show and hide these controls as needed. These controls will also be hidden whenever you drag any of the icons on the page.
+
+This is the standard 9x9 Sudoku puzzle but instead of plain numbers, it uses pictures or images as the icons to place around the board. You can drag and drop the icons from either the legend on the right or from one puzzle square to another. To erase a placed icon, drag the eraser over the icon you want erased or press the Ctrl key and start to drag the icon. Only placed icons can be erased, not the original puzzle icons that have the dotted border around them. To move a placed icon to another square, press and hold the Shift key while dragging the icon. You can also drop an icon onto an already placed icon to replace that icon with the dragged icon, providing the move is valid.
+
+Several icon sets are provided for you. You can select an icon set to use by clicking on the button with that set's name. The "My Icons" set is an example of what is possible.
+
+You can load your own pictures. You must place them in the "myIcons" directory and then you can select them from the input field next to the icon in the legend. When adding your own pictures, crop the pictures as square as you can to avoid distortion.
+
+When placing an icon on the board, the game checks whether the move is allowed according to the current placements on the board. If there is a conflict in a row or column or in the subsections, the icon will not place on the board and instead the conflicting placements will be highlighted in a red border.
+
+If no inputs are shown for selecting icons to load, then the browser you are using does not support some necessary functions in this version of picdoku. The built in icons should all work. Sorry!
+
+If you have troubles you wish to report, there is a built in logger that could show useful information if sent as a screen capture. Press the F2 key for the logger to appear (and again to disappear.)

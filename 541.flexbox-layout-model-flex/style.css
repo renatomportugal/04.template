@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #291642;
+  font-family: "Gochi Hand", sans-serif;
+  font-size: 100%;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --flexGrow1: 0;
+  --flexShrink1: 1;
+  --flexBasis1: auto;
+  --flexGrow2: 0;
+  --flexShrink2: 1;
+  --flexBasis2: auto;
+  --flexGrow3: 0;
+  --flexShrink3: 1;
+  --flexBasis3: auto;
+}
+
+.flex__container {
+  inline-size: 80vw;
+  min-inline-size: calc(228px * 3 + 20vh);
+  max-inline-size: 96vw;
+  padding: 2vh;
+  border: 1px dashed #f36;
+  overflow: hidden;
+  resize: horizontal;
+  display: flex;
+  align-items: stretch;
+}
+
+.flex__item {
+  padding: 2vh;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.flex__item:nth-child(1) {
+  background-color: #f36;
+  flex: var(--flexGrow1, 0) var(--flexShrink1, 1) var(--flexBasis1, auto);
+}
+
+.flex__item:nth-child(2) {
+  background-color: #cddc39;
+  flex: var(--flexGrow2, 0) var(--flexShrink2, 1) var(--flexBasis2, auto);
+  margin: 0 2vh;
+}
+
+.flex__item:nth-child(3) {
+  background-color: #2196f3;
+  flex: var(--flexGrow3, 0) var(--flexShrink3, 1) var(--flexBasis3, auto);
+}
+
+.controls {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  margin: 0 2px 0 0;
+}
+
+input,
+select {
+  font-size: 0.9em;
+  max-width: 100px;
+  min-width: 100px;
+}
+
+input {
+  padding: 2px;
+}

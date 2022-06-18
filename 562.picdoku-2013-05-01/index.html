@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>
+  Picture Sudoku
+ </title>
+ <meta name="description" content="Picture Sudoku.">
+ <meta name="Keywords" content="Sudoku, picture, custom"> 
+ <meta http-equiv="content-language" content="en"> 
+ <link rel="shortcut icon" href="./packageIcons/favicon.ico">
+ <meta name="rating" content="General"> 
+ <meta name="copyright" content="Copyright 2013, Randal Allen Anderson III. All Rights Reserved.">
+ <meta name="ROBOTS" content="ALL">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link type="text/css" rel="Stylesheet" href="./packageIcons/blackbird.css" />
+ <link type="text/css" rel="stylesheet" href="./picdoku.css">
+</style>
+</head>
+<body>
+
+ <!-- these controls are always displayed -->
+ <div id="controls">
+  <!-- puzzle difficulty indicator -->
+  <input id="levelOut" type="text" class="selector largefonts" title="Difficulty level of current game." size="6" disabled />
+  <!-- New Game button -->
+  <input type="button" class="pbutton largefonts" title="Start a new game. Erases the current puzzle." value="New Puzzle" onClick="picdoku.loadPuzzle();"/>
+  <!-- Restart Game button -->
+  <input type="button" class="pbutton largefonts" title="Restart the current game. Erases all placed icons." value="Restart Puzzle" onClick="picdoku.placePuzzle();"/>
+  <!-- Show Settings button -->
+  <input type="button" id="hideiconload" class="pbutton largefonts" onClick="picdoku.toggleIconButtons();" title="Click to show or hide settings." value="Hide Settings"/>
+  <!-- Show Picture Choosers button -->
+  <input type="button" id="hidefileload" class="pbutton largefonts" onClick="picdoku.toggleFileLoaders();" title="Click to show or hide icon picture file choosers." value="Hide File Loaders"/>
+ </div>
+
+ <!-- buttons to load package icon sets -->
+ <div id="loadiconbuttons">
+  <table style="margin-left:auto;margin-right:auto;">
+   <tr>
+    <th>
+     Difficulty Level
+    </th>
+    <th>
+     &nbsp;
+    </th>
+    <th>
+     Puzzle Symmetry
+    </th>
+   </tr>
+   <tr>
+    <td>
+     <!-- puzzle difficulty selector -->
+     <select id="difficulty" class="selector largefonts" title="Choose difficulty level to use." onChange="picdoku.setDifficulty();">
+      <option value="Any">Any</option>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+     </select>
+    </td>
+    <td>
+     &nbsp;
+    </td>
+    <td>
+     <!-- puzzle symmetry selector -->
+     <select id="symmetry" class="selector largefonts" title="Choose symmetry of game board layout." onChange="picdoku.setSymmetry();">
+      <option value="foursquare" title="The puzzle will be symmetrical along both the horizontal and vertical axis">Four Corners</option>
+      <option value="vertical" title="The puzzle will be symmetrical along the vertical axis">Fold Left / Right</option>
+      <option value="horizontal" title="The puzzle will be symmetrical along the horizontal axis">Fold Top / Bottom</option>
+      <option value="rotate" title="The puzzle will be rotationally symmetrical as if rotated 180 degrees">Rotate 180</option>
+      <option value="backslashfold" title="Bottom-Left of the puzzle will be symmetrical with Top-Right as if folded along the 'backslash' diagonal">Fold Diagonally</option>
+      <option value="off" title="No symmetry in the puzzle">Symmetry Off</option>
+     </select>
+    </td>
+   </tr>
+  </table>
+  <br/>
+  <table>
+   <tr>
+    <th>Icon Sets, 'My Icons' can be loaded using 'File Loaders' from pictures you supply.</th>
+   </tr>
+   <tr>
+    <td>
+     <input type="button" class="pbutton largefonts" title="Load the default numbered icons." value="Default Icons" onClick="picdoku.loadDefault();"/>
+     <input type="button" class="pbutton largefonts" title="Load icons with large numbers in pool ball colors." value="Pool Ball Icons 1" onClick="picdoku.loadBalls1();"/>
+     <input type="button" class="pbutton largefonts" title="Load pool ball-like icons." value="Pool Ball Icons 2" onClick="picdoku.loadBalls2();"/>
+     <input type="button" class="pbutton largefonts" title="Load icons with dots like dice." value="Dice Icons" onClick="picdoku.loadDice();"/>
+     <input type="button" class="pbutton largefonts" title="Load custom icons." value="My Icons" onClick="picdoku.loadMine();"/>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <input type="button" class="pbutton largefonts" title="Load Mahjong Bamboo Set icons." value="Mahjong Bamboo Icons" onClick="picdoku.loadMahBam();"/>
+     <input type="button" class="pbutton largefonts" title="Load Mahjong Character Set icons." value="Mahjong Character Icons" onClick="picdoku.loadMahChar();"/>
+     <input type="button" class="pbutton largefonts" title="Load Mahjong Circle Set icons." value="Mahjong Circle Icons" onClick="picdoku.loadMahCirc();"/>
+    </td>
+   </tr>
+  </table>
+ </div>
+
+ <!-- Congratulations message -->
+ <div id="finalmessagediv" style="display:block;">
+  <h3 id="finalmessage" class="congrats largefonts" style="display:block;">Congratulations!<br/>You finished the puzzle!</h3>
+ </div>
+
+ <!-- divs for puzzle canvas, need a blank div for dropping -->
+ <div id="meat">
+  <canvas id="canvas">
+   <h3 id="nographics">Sorry: Browser does not support Graphics Canvas</h3>
+  </canvas>
+  <div>
+   <div id="instructions_div" style="float:left;">
+    <h4 id="instructions" class="instructions largefonts">Drag any icon onto a square to copy it there.<br/>+Shift key moves placed icon.<br/>+Ctrl key erases placed icon.</h4>
+   </div>
+  </div>
+ </div>
+ <div id="puzzle" ondrop="Picdoku.drop(event)" ondragover="Picdoku.allowDrop(event)" draggable="false">
+ </div>
+
+ <!-- div for draggable icons legend -->
+ <div id="potatoes">
+  <p> </p>
+  <h3 id="scriptsuccessindicator" style="color:red;">Javascript must be turned on for this page to function properly, or Javascript may have failed!</h3>
+  <table>
+   <tr>
+    <td>
+     <span id="Used1" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon1" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/one.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used2" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon2" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/two.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used3" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon3" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/three.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used4" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon4" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/four.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used5" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon5" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/five.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used6" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon6" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/six.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used7" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon7" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/seven.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used8" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon8" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/eight.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <span id="Used9" class="countplaced">0</span>
+    </td>
+    <td>
+     <img id="icon9" class="sudokuicon" draggable="true" title = "Drag me onto a square to copy me to that square." ondragstart="Picdoku.drag(event)" src="packageIcons/nine.png" />
+    </td>
+   </tr>
+   <tr>
+    <td>
+    </td>
+    <td>
+     <img id="eraser" class="sudokuicon" draggable="true" title="Drag me onto a square to erase the picture in that square." ondragstart="Picdoku.drag(event)" src="packageIcons/eraser.jpg" />
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div id="smileys_div">
+  <img id="hintsmiley3" class="hinticon largehint" draggable="false" title="Proud owner of three unused hints." src="packageicons/hints1.png" onclick="picdoku.doHint(3)" />
+  <img id="hintsmiley2" class="hinticon largehint" draggable="false" title="Still have two hints available." src="packageicons/hints2.png" onclick="picdoku.doHint(2)" style="display:none;" />
+  <img id="hintsmiley1" class="hinticon largehint" draggable="false" title="One hint left to use." src="packageicons/hints3.png" onclick="picdoku.doHint(1)" style="display:none;" />
+  <img id="hintsmiley0" class="hinticon largehint" draggable="false" title="All my hints are used up." src="packageicons/hints4.png" onclick="picdoku.doHint(0)" style="display:none;" />
+ </div><!-- #smileys -->
+ <!-- file inputs for picture loading -->
+ <input type="file" id="picfile1" name="picfile1[]" class="loadimage largefonts" title="Click to choose custom picture to use for One." onChange="Picdoku.handleFileSelect(event,1)" value="myIcons/"/>
+ <input type="file" id="picfile2" name="picfile2[]" class="loadimage largefonts" title="Click to choose custom picture to use for Two." onChange="Picdoku.handleFileSelect(event,2)" value="myIcons/"/>
+ <input type="file" id="picfile3" name="picfile3[]" class="loadimage largefonts" title="Click to choose custom picture to use for Three." onChange="Picdoku.handleFileSelect(event,3)" value="myIcons/"/>
+ <input type="file" id="picfile4" name="picfile4[]" class="loadimage largefonts" title="Click to choose custom picture to use for Four." onChange="Picdoku.handleFileSelect(event,4)" value="myIcons/"/>
+ <input type="file" id="picfile5" name="picfile5[]" class="loadimage largefonts" title="Click to choose custom picture to use for Five." onChange="Picdoku.handleFileSelect(event,5)" value="myIcons/"/>
+ <input type="file" id="picfile6" name="picfile6[]" class="loadimage largefonts" title="Click to choose custom picture to use for Six." onChange="Picdoku.handleFileSelect(event,6)" value="myIcons/"/>
+ <input type="file" id="picfile7" name="picfile7[]" class="loadimage largefonts" title="Click to choose custom picture to use for Seven." onChange="Picdoku.handleFileSelect(event,7)" value="myIcons/"/>
+ <input type="file" id="picfile8" name="picfile8[]" class="loadimage largefonts" title="Click to choose custom picture to use for Eight." onChange="Picdoku.handleFileSelect(event,8)" value="myIcons/"/>
+ <input type="file" id="picfile9" name="picfile9[]" class="loadimage largefonts" title="Click to choose custom picture to use for Nine." onChange="Picdoku.handleFileSelect(event,9)" value="myIcons/"/>
+</body>
+<script type="text/javascript" src="./packageIcons/blackbird.js"></script>
+<script type="text/javascript" src="./sudokuPuzzle.js"></script>
+<script type="text/javascript" src="./picdoku.js"></script>
+</html>

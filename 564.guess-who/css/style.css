@@ -1,0 +1,235 @@
+body {
+  font-family: "Avenir", sans-serif;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+  background-color: #345;
+}
+
+@media (min-width: 0px) {
+  :root {
+    --board-width: 80vw;
+    --card-width: calc(var(--board-width) / 10.6);
+    --card-height: calc(var(--board-width) / 7.4);
+  }
+
+  .board {
+    width: var(--board-width);
+    height: calc(var(--board-width) * .5625);
+    padding: 30px 20px 50px;
+    -webkit-transform: rotateX(30deg) translateX(10px);
+            transform: rotateX(30deg) translateX(10px);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    box-shadow: 0px -20px 60px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: calc(var(--board-width) / 10);
+    background-color: #ff5d3e;
+    border-radius: calc(var(--board-width) / 100);
+    margin: auto;
+  }
+
+  .slots {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: calc(var(--board-width) / 100);
+    width: 100%;
+    height: 100%;
+  }
+
+  .slot {
+    border-radius: calc(var(--board-width) / 100);
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.2), 0px 2px 0px 1px #ff7036;
+  }
+
+  .card {
+    display: block;
+    cursor: pointer;
+    margin: calc(var(--board-width) / 100) calc(var(--board-width) / 200);
+    border-radius: calc(var(--board-width) / 200);
+    background-color: #fff;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    position: relative;
+    padding: calc(var(--board-width) / 100) calc(var(--board-width) / 100) calc(var(--board-width) / 36) calc(var(--board-width) / 100);
+    box-sizing: border-box;
+    top: calc(-100% + 10px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+    -webkit-transform: rotateX(-45deg);
+            transform: rotateX(-45deg);
+    transition: all 0.5s;
+    box-shadow: 0px -30px 50px rgba(0, 0, 0, 0.2);
+  }
+  .card:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 100%;
+    background-image: url("http://ruidovisual.com/guess.jpg");
+    background-size: calc(var(--board-width) / 2.13);
+    transition: opacity 0.3s;
+  }
+  .card--assigned {
+    position: absolute;
+    top: 80%;
+    width: calc(10% + 4px);
+    height: calc(26.65% + 4px);
+    left: 44%;
+    box-sizing: border-box;
+    border: 4px solid #a93a14;
+  }
+
+  .control {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .control:checked ~ .card {
+    -webkit-transform: rotateX(-179deg);
+            transform: rotateX(-179deg);
+    box-shadow: none;
+  }
+  .control:checked ~ .card:after {
+    opacity: 0;
+  }
+
+  .card-0:after {
+    background-position: calc(var(--card-width) * -0) calc(var(--card-height) * -0);
+  }
+
+  .card-1:after {
+    background-position: calc(var(--card-width) * -1) calc(var(--card-height) * -0);
+  }
+
+  .card-2:after {
+    background-position: calc(var(--card-width) * -2) calc(var(--card-height) * -0);
+  }
+
+  .card-3:after {
+    background-position: calc(var(--card-width) * -3) calc(var(--card-height) * -0);
+  }
+
+  .card-4:after {
+    background-position: calc(var(--card-width) * -4) calc(var(--card-height) * -0);
+  }
+
+  .card-5:after {
+    background-position: calc(var(--card-width) * -5) calc(var(--card-height) * -1);
+  }
+
+  .card-6:after {
+    background-position: calc(var(--card-width) * -6) calc(var(--card-height) * -1);
+  }
+
+  .card-7:after {
+    background-position: calc(var(--card-width) * -7) calc(var(--card-height) * -1);
+  }
+
+  .card-8:after {
+    background-position: calc(var(--card-width) * -8) calc(var(--card-height) * -1);
+  }
+
+  .card-9:after {
+    background-position: calc(var(--card-width) * -9) calc(var(--card-height) * -1);
+  }
+
+  .card-10:after {
+    background-position: calc(var(--card-width) * -10) calc(var(--card-height) * -2);
+  }
+
+  .card-11:after {
+    background-position: calc(var(--card-width) * -11) calc(var(--card-height) * -2);
+  }
+
+  .card-12:after {
+    background-position: calc(var(--card-width) * -12) calc(var(--card-height) * -2);
+  }
+
+  .card-13:after {
+    background-position: calc(var(--card-width) * -13) calc(var(--card-height) * -2);
+  }
+
+  .card-14:after {
+    background-position: calc(var(--card-width) * -14) calc(var(--card-height) * -2);
+  }
+
+  .card-15:after {
+    background-position: calc(var(--card-width) * -15) calc(var(--card-height) * -3);
+  }
+
+  .card-16:after {
+    background-position: calc(var(--card-width) * -16) calc(var(--card-height) * -3);
+  }
+
+  .card-17:after {
+    background-position: calc(var(--card-width) * -17) calc(var(--card-height) * -3);
+  }
+
+  .card-18:after {
+    background-position: calc(var(--card-width) * -18) calc(var(--card-height) * -3);
+  }
+
+  .card-19:after {
+    background-position: calc(var(--card-width) * -19) calc(var(--card-height) * -3);
+  }
+
+  .card-20:after {
+    background-position: calc(var(--card-width) * -20) calc(var(--card-height) * -4);
+  }
+
+  .card-21:after {
+    background-position: calc(var(--card-width) * -21) calc(var(--card-height) * -4);
+  }
+
+  .card-22:after {
+    background-position: calc(var(--card-width) * -22) calc(var(--card-height) * -4);
+  }
+
+  .card-23:after {
+    background-position: calc(var(--card-width) * -23) calc(var(--card-height) * -4);
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: 1vw;
+    line-height: 1;
+    color: #d04f30;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .subtitle {
+    font-weight: normal;
+    display: block;
+  }
+
+  .btn--rematch {
+    background-color: #e65438;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-family: "Avenir", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    height: 25px;
+    padding: 0 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  .btn--rematch:hover {
+    background-color: #d1381a;
+  }
+}
+@media (min-width: 1400px) {
+  :root {
+    --board-width: 1150px;
+  }
+}

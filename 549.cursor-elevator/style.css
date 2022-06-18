@@ -1,0 +1,186 @@
+:root {
+  --cursor: url("https://assets.codepen.io/605876/default-cursor.png?width=20&height=30"), pointer;
+  --frame: #a57a50;
+  --shine: rgba(255,255,255,0.5);
+  --button: #212121;
+  --active: #fbe7b6;
+  --bar: #b3b3b3;
+  --back: #707070;
+  --door: #7a7a7a;
+  --face: #a6a6a6;
+  --glass: #d6f5f5;
+  --dial: #212121;
+}
+* {
+  cursor: var(--cursor) !important;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background: #f2f2f2;
+  color: #333;
+  font-weight: 300;
+  overflow: auto;
+  cursor: url("https://assets.codepen.io/605876/default-cursor.png?width=20&height=30"), pointer !important;
+}
+main {
+  height: 100%;
+  padding: 3rem 0;
+}
+article {
+  width: 600px;
+  max-width: calc(100% - (140px + 0.5rem));
+  padding: 0 1rem 0;
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  article {
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+.elevator {
+  height: 100%;
+}
+.elevator__wrapper {
+  width: 896px;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  height: 100vh;
+}
+.elevator__door-body {
+  fill: var(--door);
+}
+.elevator__door-shine {
+  fill: var(--shine);
+}
+.elevator__plate {
+  fill: var(--face);
+}
+.elevator__call,
+.elevator__up,
+.elevator__down {
+  fill: var(--button);
+}
+.elevator__frame {
+  fill: var(--frame);
+}
+.elevator__dial-face {
+  fill: var(--face);
+}
+.elevator__dial-dial {
+  fill: var(--dial);
+}
+.elevator__glass {
+  fill: var(--glass);
+}
+.elevator__glass-shine {
+  fill: var(--shine);
+}
+.elevator__back {
+  fill: var(--back);
+}
+.elevator__bar {
+  fill: var(--bar);
+}
+.elevator__call-button {
+  left: -16px;
+}
+.elevator__call-button:hover ~ .elevator .elevator__call {
+  fill: var(--active);
+}
+.elevator__cursor {
+  fill: #000;
+}
+.elevator__cursor-reflection {
+  fill: rgba(0,0,0,0.5);
+}
+.elevator__up-button,
+.elevator__down-button,
+.elevator__call-button {
+  top: 72px;
+  position: absolute;
+  height: 44px;
+  width: 44px;
+}
+.elevator__down-button {
+  left: 78px;
+}
+.elevator__down-button:hover ~ .elevator .elevator__down {
+  fill: var(--active);
+}
+.elevator__up-button {
+  left: 34px;
+}
+.elevator__up-button:hover ~ .elevator .elevator__up {
+  fill: var(--active);
+}
+.elevator__container {
+  position: fixed;
+  right: 0;
+  top: 5rem;
+  height: 130px;
+}
+.elevator .elevator__cursor,
+.elevator .elevator__cursor-reflection {
+  display: none;
+}
+[data-elevator-open=true] .elevator__opening *,
+[data-elevator-open=true] .elevator__up-button:hover,
+[data-elevator-open=true] .elevator__down-button:hover {
+  cursor: none !important;
+}
+[data-elevator-open=true] .elevator__up-button:hover ~ .elevator .elevator__cursor,
+[data-elevator-open=true] .elevator__up-button:hover ~ .elevator .elevator__cursor-reflection,
+[data-elevator-open=true] .elevator__down-button:hover ~ .elevator .elevator__cursor,
+[data-elevator-open=true] .elevator__down-button:hover ~ .elevator .elevator__cursor-reflection,
+[data-elevator-open=true] .elevator__opening:hover .elevator__cursor,
+[data-elevator-open=true] .elevator__opening:hover .elevator__cursor-reflection {
+  display: block;
+}
+[data-elevator-elevating=true] * {
+  cursor: none !important;
+}
+[data-elevator-elevating=true] .elevator .elevator__dial-face {
+  fill: var(--active);
+}
+[data-elevator-elevating=true] .elevator__call-button:hover ~ .elevator .elevator__call {
+  fill: var(--button);
+}
+footer {
+  height: 100vh;
+  text-align: right;
+  position: relative;
+}
+h2 {
+  font-size: 2rem;
+}
+@media (min-width: 992px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+.agree {
+  top: 9rem;
+  right: 0;
+  position: absolute;
+  padding: 16px 32px;
+  background: #80cc33;
+  color: #fff;
+  font-weight: bold;
+  -webkit-transition: background 0.15s ease;
+  transition: background 0.15s ease;
+  border: 0;
+}
+.agree:hover {
+  background: #66a329;
+}
+.agree:active {
+  background: #4d7a1f;
+}

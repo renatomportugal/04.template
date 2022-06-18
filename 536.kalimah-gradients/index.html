@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Kalimah Gradients</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+
+  <info-box></info-box>
+
+  <social-networks :show='showShare'></social-networks>
+
+  <transition name="hide-background">
+    <div id='background-display' v-if="showInfo == false" :class='{"show-social-networks": (showShare == true)}'>
+      <no-ie></no-ie>
+      <div class='show-gradient' @wheel='toggleControls("wheel", $event)' @click='toggleControls("click", $event)' :style='style'></div>
+
+      <div id='presets-fullview-container' :class='{show: showPresets}'>
+        <div class='presets-wrapper'>
+          <div v-for='(preset, index) in presets' :style="preset.style" @click='applyGradient(index)'></div>
+        </div>
+      </div>
+
+
+      <div id='controls-container' :class='{show: showControls}'>
+        <div class='controls-wrapper'>
+          <color-slider :colors='getColors' @add='addColorStop($event)'></color-slider>
+          <!-- <div class='title'>
+      <h1 data-title='Gradient Generator'>Gradient Generator</h1> 
+    </div> -->
+          <div class='gradients-stack'>
+            <h3>Stack</h3>
+            <div class='gradients-stack-container'>
+              <div v-for='(gradient, index) in gradients' :class='{highlight: (currentGradient == index), noneed: (gradients.length == 1)}'>
+                <div class='gradient-box-container'>
+                  <div class='gradient-box' @click='setGradient(index)' :style='showGradient(index)'>
+                  </div>
+                </div>
+                <div class='delete' @click='deleteGradient(index)'>×</div>
+                <div class='hide' :class='{hidden: (gradient.status == "hide"), tall: (gradients.length == 1)}' @click='toggleGradient(index)'></div>
+              </div>
+            </div>
+            <div class='add-gradient' @click='addGradient'>+</div>
+          </div>
+          <options-container :options='getData'></options-container>
+          <div class='color-stops-container'>
+            <h3>Colors</h3>
+            <div class='color-picker'>
+              <chrome-picker :value="currentColor.value" @input="updatePicker"></chrome-picker>
+            </div>
+          </div>
+          <div class='color-presets-container'>
+            <h3>Presets</h3>
+            <user-presets></user-presets>
+
+            <div class='other-presets'>
+              <div class='gradient-div' v-for='(presetObj, index) in presetsFilterd' :style="presetObj.preset.style" @click='applyGradient(presetObj.index)'></div>
+            </div>
+            <div class="more-presets" @click='showPresets = true'>More</div>
+
+          </div>
+          <div class='user-actions-container'>
+            <div class='copy-css' @click='copyCSS'>{{copyCSSText}}</div>
+            <div class='info' @click='showInfo = true; showShare = false'>Info</div>
+						<div class='share' @click='showShare = true'>Share</div>
+
+            <div class='reset' @click='resetGradient'>RESET</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<template id='user-presets'>
+        <div class='user-generated' v-click-outside="deselectPreset">
+            <div class='user-presets'>
+                <span v-for='(preset, index) in userPresets' :class='{selected: selectedPreset == index}' @click='selectedPreset = index' :style='preset.style'></span>
+            </div>
+            <div class='presets-actions' :class='enableClass'>
+                <div class='apply-preset' @click='applyPreset'><i class="icon ion-md-checkmark-circle-outline"></i></div>
+                <div class='save-preset' @click='savePreset'><i class="icon ion-md-save"></i></div>
+            </div>
+        </div>
+    </template>
+
+<template id='options-container'>
+        <div class='colors-options-container'>
+            <h3>Options</h3>
+            <div class='colors-options-top'>
+
+                <toggle-control :options='options.type' :icons='typeIcons'></toggle-control>
+
+                <toggle-control :options='options.repeating' :boolean-icon='repeatIcon' :type="'boolean'" :tip="'Repeat'"></toggle-control>
+
+                <toggle-control :options='options.shape' v-if="(options.type.selected == 'radial')" :icons="shapeIcons"></toggle-control>
+            </div>
+            <div class='colors-options-bottom'>
+                <div class='linear-direction' v-if="(options.type.selected == 'linear')">
+                    <circular-control :direction='options.direction'></circular-control>
+                </div>
+
+                <div class='radial-size' v-if="(options.type.selected == 'radial')">
+                    <range :rangedata='options.size.ellipse.width' v-if="(options.shape.selected == 'ellipse')"></range>
+                    <range :rangedata='options.size.ellipse.height' v-if="(options.shape.selected == 'ellipse')"></range>
+                    <range :rangedata='options.size.circle.length' v-if="(options.shape.selected == 'circle')"></range>
+                </div>
+                <div class='radial-position' v-if="(options.type.selected == 'radial')">
+                    <range :rangedata='options.position.horizontal'></range>
+                    <range :rangedata='options.position.vertical'></range>
+                </div>
+            </div>
+        </div>
+    </template>
+
+<template id='circular-control'>
+        <div class='control circle' @wheel='handleCircleValue'>
+            <circle-slider v-model="direction.amount" :min="0" :max="360" circle-color="#2980b9" progress-color="#2980b9" :side=120 knob-color="#2c3e50" :circle-width="4" :progress-width="4" :knob-radius=7></circle-slider>
+            <span class='icon spread'></span>
+            <span class='amount'>
+                <span>
+                    <input v-model='direction.amount' min="0" max="360" size="3" @keydown.up="increaseValue" @keydown.down="decreaseValue" @input="parseDigits" />
+                </span>
+                <span>deg</span>
+            </span>
+        </div>
+    </template>
+
+<template id='range'>
+        <div class='control range'>
+            <span class='title'>{{rangedata.name}}</span>
+            <span class='range'>
+                <input type="range" :min="rangedata.min" :max="rangedata.max" :step='rangedata.step' v-model='rangedata.amount' @input="$emit('update')" />
+            </span>
+            <span class='amount'>{{rangedata.amount}}{{rangedata.unit}}</span>
+        </div>
+    </template>
+
+
+<template id='colors'>
+        <div class='control color'>
+            <span class='color-box'>
+                <span :style='{"background-color": color.value }'></span>
+            </span>
+            <span class='color-stop'>
+                <input v-model='color.stop'>
+            </span>
+            <span class='color-delete' @click='length > 2 ? $emit("delete") : null' :class='{disabled: length <= 2}'>×</span>
+        </div>
+    </template>
+
+
+<template id='toggle-control'>
+        <div class='toggle control'>
+            <div v-for='(selection, index) in options.selections' @click='toggleSelection(index)' v-if='options.selected == selection' :class='{on: (selection == true), off: (selection == false)}' :data-tip="(type == 'boolean') ? tip : selection">
+                <span class='icon' v-if='showIcon == true' :style="{'background-image': (type == 'boolean') ? 'url('+ booleanIcon +')' : 'url('+ icons[index] +')'}"></span>
+                <span class='text' v-if='showText == true'></span>
+            </div>
+        </div>
+    </template>
+
+<template id='social-networks'>
+        <div id='share-container' :class='{show: show == true}'>
+            <div v-for='(network, index) in networks' :href='network.link' target='_blank' @click="openPopup(network.link)"  :style="{'background-color': [network.color]}">
+            	<i class="icon" :class="[network.icon]"></i>
+            </div>
+        </div>
+    </template>
+
+<template id='color-slider'>
+        <div class='colors-slider'>
+            <div class='gradient-bar' :style='displayBarGradient' @click='$emit("add", $event)'></div>
+            <color-stop v-for='(color, index) in colors' :color='color' :key='index' :index='index'></color-stop>
+        </div>
+    </template>
+
+
+<template id='color-stop'>
+        <div class='color-stop' :style='{left: color.stop + "%" }' :class='{hide: (color.status == "out"), selected: (this.$root.currentColorIndex == index)}'>
+            <span class='color-view' :style='opaqueColor' @mousedown="dragStart(index)"></span>
+            <span class='stop-input'>
+                <input v-model='color.stop' size='3' min="0" max="100" @keydown.up="increaseValue" @keydown.down="decreaseValue" @keyup="parseDigits" @focus='$root.currentColorIndex = index'>
+            </span>
+
+        </div>
+    </template>
+<template id='no-ie'>
+        <div id='dont-use-ie' v-if='showIENotification'>
+            <span class='text'>This gradient generator works on IE/Edge but for better performance please consider using <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>.</span>
+            <span class='close' @click="clearNotification">×</span>
+        </div>
+    </template>
+<template id='info-box-template'>
+        <transition name="show-info">
+            <div id='info-box-wrapper' v-if='showInfo' @keydown.esc="hideInfo">
+                <div class='info-box'>
+                    <div class='close' @click="hideInfo">×</div>
+                    <div class='logo'>
+                        Kalimah Gradient Generator
+                    </div>
+                    <div class='welcome'>
+                        <h1>Welcome</h1>
+                        <p>Thanks for using Kalimah Gradient Generator. There are many gradient generators available online but I tried to make this generator as comprehensive and as easy to use as possible.</p>
+                        <p>You can customize all aspects of gradients including stacking multiple gradients, creating linear and radial gradients, applying repeat gradients as well as many other features.</p>
+                    </div>
+
+                    <div class='howto'>
+                        <h1>How to use:</h1>
+                        <div class='howto-wrapper'>
+                            <p>Using the generator should be straight forward. I will, however, provide some details in this section for competence of the project.</p>
+                            <h2>Stack</h2>
+                            <p>You can add a new gradient layer by clicking on the add button below the gradient stack. Each layer has a show/hide and delete buttons.</p>
+                            <p>Those buttons appears when you hover the layer or select it. If there is only one layer in the stack the buttons will not show as there is no point in using them.</p>
+                            <h2>Color options</h2>
+                            <p>In this section all main options can be configured. Gradient type (linear, radial), repeat, gradient shape (circle, ellipse) for radial gradients and also height, width and position of the gradient.</p>
+                            <h2>Colors</h2>
+                            <p>To change color of any of the stops select the stop first then modify the color using this section. You can either select a color from the color box or insert the hex color in the input provided. You can also modify the alpha channel of the color if you wish.</p>
+                            <p>The color box is designed similar to Chrome developer tools color picker. So if you are familiar with that picker it should be similar to this one.</p>
+                            <p>You can change the stop value by dragging the pin on the gradient bar or set the value directly by clicking on the value above the pin.</p>
+                            <h2>Presets</h2>
+                            <p>There are two main usage for this section. Either save (or apply) the presets that you generated or select on the presets available.</p>
+                            <p>There are more 500 gradient preset that you can view by clicking on "more presets" button below the presets section.</p>
+                            <p>Once displayed, to hide the presets section you can either scroll down with the mouse wheel or click anywhere on the gradient display.</p>
+                        </div>
+                    </div>
+
+                    <div class='resources'>
+                        <h1>Made with</h1>
+                        <li><a target="_blank" href='https://vuejs.org/'>Vue.js</a></li>
+                        <li><a target="_blank" href='https://github.com/devstark-com/vue-circle-slider'>Vue circle slider</a></li>
+                        <li><a target="_blank" href='http://vue-color.surge.sh/'>Vue Color</a></li>
+                        <li><a target="_blank" href='https://github.com/DamonOehlman/detect-browser'>detect-browser</a></li>
+                        <hr />
+                        <li><a target="_blank" href='https://webgradients.com/'>WebGradients</a></li>
+                        <li><a target="_blank" href='https://uigradients.com/'>uiGradients</a></li>
+                        <hr />
+                        <li><a target="_blank" href='https://thenounproject.com/indygo'>Repeat icon</a></li>
+                        <li><a target="_blank" href='https://www.iconfinder.com/yanlu'>Hide icon</a></li>
+                      <li><a target="_blank" href='https://ionicons.com/'>Ionicons</a></li>
+                      <li><a target="_blank" href='http://www.socicon.com/'>Socicon</a></li>
+                      
+                        <hr />
+
+                        <li><a target="_blank" href='https://fonts.google.com'>Google Fonts</a></li>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </transition>
+    </template>
+<!-- partial -->
+  <script src='https://unpkg.com/vue@2.5.21'></script>
+<script src='https://unpkg.com/vue-color@2.7.0'></script>
+<script src='https://unpkg.com/vue-circle-slider@1.0.2'></script><script  src="./script.js"></script>
+
+</body>
+</html>

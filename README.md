@@ -244,6 +244,7 @@
 | [105.perticle-rotation-05](https://renatomportugal.github.io/04.template/105.perticle-rotation-05) |<img src="images/105.perticle-rotation-05.jpg"/> |
 | [106.tunnel-ride-ii](https://renatomportugal.github.io/04.template/106.tunnel-ride-ii) |<img src="images/106.tunnel-ride-ii.jpg"/> |
 | [208.zim-domes-tribute-to-scifi-book-artists-codepen-challenge](https://renatomportugal.github.io/04.template/208.zim-domes-tribute-to-scifi-book-artists-codepen-challenge) |<img src="images/208.zim-domes-tribute-to-scifi-book-artists-codepen-challenge.jpg"/> |
+| [550.apartment-rental-homepagecodepen-challenge-vue-transition](https://renatomportugal.github.io/04.template/550.apartment-rental-homepagecodepen-challenge-vue-transition) |<img src="images/550.apartment-rental-homepagecodepen-challenge-vue-transition.jpg"/> |
 
 ## Banner
 
@@ -281,6 +282,11 @@
 |---          |---          |
 | [423.camera-shutter](https://renatomportugal.github.io/04.template/423.camera-shutter) |<img src="images/423.camera-shutter.jpg"/> |
 
+## Campo_Magnetico
+
+|Click        |Telas        |
+|---          |---          |
+| [552.moving-electric-field-lines](https://renatomportugal.github.io/04.template/552.moving-electric-field-lines) |<img src="images/552.moving-electric-field-lines.jpg"/> |
 ## Canvas
 
 |Links        |Telas        |
@@ -493,6 +499,8 @@
 |Aprender     |Telas        |
 |---          |---          |
 | [280.eye](https://renatomportugal.github.io/04.template/280.eye/) | <img src="images/280.eye.jpg"/> |
+|Estante      |Telas        |
+| [544.css-collector-s-cabinet](https://renatomportugal.github.io/04.template/544.css-collector-s-cabinet/) | <img src="images/544.css-collector-s-cabinet.jpg"/> |
 
 ## Diagrama_De_Força
 
@@ -509,6 +517,13 @@
 | [415.d3-forcelayout](https://renatomportugal.github.io/04.template/415.d3-forcelayout/) |<img src="images/415.d3-forcelayout.jpg"/> |
 | [416.d3-mindmap](https://renatomportugal.github.io/04.template/416.d3-mindmap/) |<img src="images/416.d3-mindmap.jpg"/> |
 | [417.mindmap](https://renatomportugal.github.io/04.template/417.mindmap/) |<img src="images/417.mindmap.jpg"/> |
+
+## Digitação
+
+|Links        |Telas        |
+|---          |---          |
+| [543.alphabet-speed-test](https://renatomportugal.github.io/04.template/543.alphabet-speed-test/) |<img src="images/543.alphabet-speed-test.jpg"/> |
+
 
 ## Documentacao
 
@@ -594,6 +609,21 @@
 | [164.material-design-responsive-card](https://renatomportugal.github.io/04.template/164.material-design-responsive-card) |<img src="images/164.material-design-responsive-card.jpg"/> |
 | [165.snap-it-like-thanos](https://renatomportugal.github.io/04.template/165.snap-it-like-thanos) |<img src="images/165.snap-it-like-thanos.jpg"/> |
 
+## Esteganografia
+
+|Links        |Telas        |
+|---          |---          |
+| [545.e-portfolio-part-3-stega](https://renatomportugal.github.io/04.template/545.e-portfolio-part-3-stega) |<img src="images/545.e-portfolio-part-3-stega.jpg"/> |
+| [546.part-3-steganography-using-javascript](https://renatomportugal.github.io/04.template/546.part-3-steganography-using-javascript) |<img src="images/546.part-3-steganography-using-javascript.jpg"/> |
+| [547.steganography](https://renatomportugal.github.io/04.template/547.steganography) |<img src="images/547.steganography.jpg"/> |
+| [548.steganography-2](https://renatomportugal.github.io/04.template/548.steganography-2) |<img src="images/548.steganography-2.jpg"/> |
+
+## EULA
+
+|Links        |Telas        |
+|---          |---          |
+| [549.cursor-elevator](https://renatomportugal.github.io/04.template/549.cursor-elevator) |<img src="images/549.cursor-elevator.jpg"/> |
+
 ## Eventos
 
 |Responsivo   |Telas        |
@@ -609,6 +639,18 @@
 | [344.the-matrix-is-everywhere](https://renatomportugal.github.io/04.template/344.the-matrix-is-everywhere) |<img src="images/344.the-matrix-is-everywhere.jpg"/> |
 |Lost         |Telas        |
 | [346.jqVintageTxt-master](https://renatomportugal.github.io/04.template/346.jqVintageTxt-master) |<img src="images/346.jqVintageTxt-master.jpg"/> |
+| [551.dailycssimages-day-20mike](https://renatomportugal.github.io/04.template/551.dailycssimages-day-20mike) |<img src="images/551.dailycssimages-day-20mike.jpg"/> |
+
+## Flex
+
+|Responsivo   |Telas        |
+|---          |---          |
+| [535.justify-content-property-in-css](https://renatomportugal.github.io/04.template/535.justify-content-property-in-css) |<img src="images/535.justify-content-property-in-css.jpg"/> |
+| [540.css-vertical-centering-options](https://renatomportugal.github.io/04.template/540.css-vertical-centering-options) |<img src="images/540.css-vertical-centering-options.jpg"/> |
+| [541.flexbox-layout-model-flex](https://renatomportugal.github.io/04.template/541.flexbox-layout-model-flex) |<img src="images/541.flexbox-layout-model-flex.jpg"/> |
+| [553.realistic-image-shadows](https://renatomportugal.github.io/04.template/553.realistic-image-shadows) |<img src="images/553.realistic-image-shadows.jpg"/> |
+| [554.responsive-css-grid-gallery](https://renatomportugal.github.io/04.template/554.responsive-css-grid-gallery) |<img src="images/554.responsive-css-grid-gallery.jpg"/> |
+| [555.space-between-vs-space-around-vs-space-evenly](https://renatomportugal.github.io/04.template/555.space-between-vs-space-around-vs-space-evenly) |<img src="images/555.space-between-vs-space-around-vs-space-evenly.jpg"/> |
 
 ## Fluxograma
 
@@ -645,6 +687,9 @@
 | [426.svg-pattern-jigsaw-puzzle-gallery-experiment](https://renatomportugal.github.io/04.template/426.svg-pattern-jigsaw-puzzle-gallery-experiment/) | <img src="images/426.svg-pattern-jigsaw-puzzle-gallery-experiment.jpg"/> |
 |Sombra       |Telas        |
 | [427. image-drop-shadow-effects](https://renatomportugal.github.io/04.template/427. image-drop-shadow-effects/) | <img src="images/427. image-drop-shadow-effects.jpg"/> |
+|Outros       |Telas        |
+| [556.new-portfolio-layout](https://renatomportugal.github.io/04.template/556.new-portfolio-layout/) | <img src="images/556.new-portfolio-layout.jpg"/> |
+| [557.splitting-an-image](https://renatomportugal.github.io/04.template/557.splitting-an-image/) | <img src="images/557.splitting-an-image.jpg"/> |
 
 ## FPS
 
@@ -669,12 +714,72 @@
 |Template        |Telas        |
 | [475.TemplateGaleria](https://renatomportugal.github.io/04.template/475.TemplateGaleria/) | <img src="images/475.TemplateGaleria.jpg"/> |
 
+## Games
+
+|Arkanoid            |Telas        |
+| [459.block-breaking](https://renatomportugal.github.io/04.template/459.block-breaking) |<img src="images/459.block-breaking.jpg"/> |
+|Apenas a Tela       |Telas        |
+| [472.streetFighter](https://renatomportugal.github.io/04.template/472.streetFighter) |<img src="images/472.streetFighter.jpg"/> |
+|Forca               |Telas        |
+| [460.plankman-a-css-game](https://renatomportugal.github.io/04.template/460.plankman-a-css-game) |<img src="images/460.plankman-a-css-game.jpg"/> |
+|Guitar Hero - CORS  |Telas        |
+| [461.sonorous-string-master](https://renatomportugal.github.io/04.template/461.sonorous-string-master) |<img src="images/461.sonorous-string-master.jpg"/> |
+|Habilidades Manuais |Telas        |
+| [466.js-lock-picking-game](https://renatomportugal.github.io/04.template/466.js-lock-picking-game) |<img src="images/466.js-lock-picking-game.jpg"/> |
+|Labirinto           |Telas        |
+| [558.9418c473895a4890802081727b7d37d5](https://renatomportugal.github.io/04.template/558.9418c473895a4890802081727b7d37d5) |<img src="images/558.9418c473895a4890802081727b7d37d5.jpg"/> |
+|Marcador de Energia |Telas        |
+| [465.fight](https://renatomportugal.github.io/04.template/465.fight) |<img src="images/465.fight.jpg"/> |
+|Memória             |Telas        |
+| [467.memodeck-fully-responsive](https://renatomportugal.github.io/04.template/467.memodeck-fully-responsive) |<img src="images/467.memodeck-fully-responsive.jpg"/> |
+| [468.memory](https://renatomportugal.github.io/04.template/468.memory) |<img src="images/468.memory.jpg"/> |
+| [470.html5-canvas-puzzle-2012-02-18](https://renatomportugal.github.io/04.template/470.html5-canvas-puzzle-2012-02-18) |<img src="images/470.html5-canvas-puzzle-2012-02-18.jpg"/> |
+|Personagens         |Telas        |
+| [469.day-2-character-design-with-css-variables](https://renatomportugal.github.io/04.template/469.day-2-character-design-with-css-variables) |<img src="images/469.day-2-character-design-with-css-variables.jpg"/> |
+|Roda a Roda         |Telas        |
+| [471.jquery-spin-wheel-2011-06-09](https://renatomportugal.github.io/04.template/471.jquery-spin-wheel-2011-06-09) |<img src="images/471.jquery-spin-wheel-2011-06-09.jpg"/> |
+|RPG                 |Telas        |
+| [559.2d-rpg-from-javascript-array](https://renatomportugal.github.io/04.template/559.2d-rpg-from-javascript-array) |<img src="images/559.2d-rpg-from-javascript-array.jpg"/> |
+|Sudoku              |Telas        |
+| [562.picdoku-2013-05-01](https://renatomportugal.github.io/04.template/562.picdoku-2013-05-01) |<img src="images/562.picdoku-2013-05-01.jpg"/> |
+|Tabuleiro           |Telas        |
+| [473.css-mastermind](https://renatomportugal.github.io/04.template/473.css-mastermind) |<img src="images/473.css-mastermind.jpg"/> |
+| [563.css-grid-monopoly-harry-potter-edition](https://renatomportugal.github.io/04.template/563.css-grid-monopoly-harry-potter-edition) |<img src="images/563.css-grid-monopoly-harry-potter-edition.jpg"/> |
+| [564.guess-who](https://renatomportugal.github.io/04.template/564.guess-who) |<img src="images/564.guess-who.jpg"/> |
+|Xadrez           |Telas        |
+| [560.3D-Hartwig-chess-set-master](https://renatomportugal.github.io/04.template/560.3D-Hartwig-chess-set-master) |<img src="images/560.3D-Hartwig-chess-set-master.jpg"/> |
+| [561.css-fool-s-mate](https://renatomportugal.github.io/04.template/561.css-fool-s-mate) |<img src="images/561.css-fool-s-mate.jpg"/> |
+
+## Games_Engine
+
+|Gravidade           |Telas        |
+| [567.apple-falling-classic-with-easy-physics-in-zim-newtonish-dedication](https://renatomportugal.github.io/04.template/567.apple-falling-classic-with-easy-physics-in-zim-newtonish-dedication) |<img src="images/567.apple-falling-classic-with-easy-physics-in-zim-newtonish-dedication.jpg"/> |
+|Links        |Telas        |
+| [568.binary-addition-on-turing-machine](https://renatomportugal.github.io/04.template/568.binary-addition-on-turing-machine) |<img src="images/568.binary-addition-on-turing-machine.jpg"/> |
+| [569.canvas-particular-animation](https://renatomportugal.github.io/04.template/569.canvas-particular-animation) |<img src="images/569.canvas-particular-animation.jpg"/> |
+| [570.EaselJS-0.8.1](https://renatomportugal.github.io/04.template/570.EaselJS-0.8.1) |<img src="images/570.EaselJS-0.8.1.jpg"/> |
+| [571.fizzbuzz-codepen-challenge](https://renatomportugal.github.io/04.template/571.fizzbuzz-codepen-challenge
+) |<img src="images/571.fizzbuzz-codepen-challenge
+.jpg"/> |
+| [572.flocking-first-attempt](https://renatomportugal.github.io/04.template/572.flocking-first-attempt) |<img src="images/572.flocking-first-attempt.jpg"/> |
+| [573.gravity-2012-07-25](https://renatomportugal.github.io/04.template/573.gravity-2012-07-25) |<img src="images/573.gravity-2012-07-25.jpg"/> |
+| [574.physics-playground](https://renatomportugal.github.io/04.template/574.physics-playground) |<img src="images/574.physics-playground.jpg"/> |
+| [574.physics-playground575.physics-simulation-1-pendulum](https://renatomportugal.github.io/04.template/574.physics-playground575.physics-simulation-1-pendulum) |<img src="images/574.physics-playground575.physics-simulation-1-pendulum.jpg"/> |
+| [576.SoundJS-0.6.1](https://renatomportugal.github.io/04.template/576.SoundJS-0.6.1) |<img src="images/576.SoundJS-0.6.1.jpg"/> |
+| [577.steering-behaviours-on-a-sphere](https://renatomportugal.github.io/04.template/577.steering-behaviours-on-a-sphere) |<img src="images/577.steering-behaviours-on-a-sphere.jpg"/> |
+| [578.TweenJS-0.6.1](https://renatomportugal.github.io/04.template/578.TweenJS-0.6.1) |<img src="images/578.TweenJS-0.6.1.jpg"/> |
+
 ## Gradient_Generator
 
 |Links        |Telas        |
 |---          |---          |
 | [174.5-way-gradient-generator](https://renatomportugal.github.io/04.template/174.5-way-gradient-generator/) | <img src="images/174.5-way-gradient-generator.jpg"/> |
 | [270.proof-of-concept-chart-js-with-background-gradient](https://renatomportugal.github.io/04.template/270.proof-of-concept-chart-js-with-background-gradient/) | <img src="images/270.proof-of-concept-chart-js-with-background-gradient.jpg"/> |
+| [536.kalimah-gradients](https://renatomportugal.github.io/04.template/536.kalimah-gradients/) | <img src="images/536.kalimah-gradients.jpg"/> |
+| [537.color-manipulations-in-css](https://renatomportugal.github.io/04.template/537.color-manipulations-in-css/) | <img src="images/537.color-manipulations-in-css.jpg"/> |
+| [538.color-modes-chroma-js](https://renatomportugal.github.io/04.template/538.color-modes-chroma-js/) | <img src="images/538.color-modes-chroma-js.jpg"/> |
+| [539.hexplorer](https://renatomportugal.github.io/04.template/539.hexplorer/) | <img src="images/539.hexplorer.jpg"/> |
+| [542.sorted-css-colors](https://renatomportugal.github.io/04.template/542.sorted-css-colors/) | <img src="images/542.sorted-css-colors.jpg"/> |
 
 ## Gráficos
 
@@ -862,31 +967,6 @@
 |Contador     |Telas        |
 | [458.tweenmax-countto](https://renatomportugal.github.io/04.template/458.tweenmax-countto) |<img src="images/458.tweenmax-countto.jpg"/> |
 
-## Jogos
-|Arkanoid            |Telas        |
-| [459.block-breaking](https://renatomportugal.github.io/04.template/459.block-breaking) |<img src="images/459.block-breaking.jpg"/> |
-|Apenas a Tela       |Telas        |
-| [472.streetFighter](https://renatomportugal.github.io/04.template/472.streetFighter) |<img src="images/472.streetFighter.jpg"/> |
-|Forca               |Telas        |
-| [460.plankman-a-css-game](https://renatomportugal.github.io/04.template/460.plankman-a-css-game) |<img src="images/460.plankman-a-css-game.jpg"/> |
-|Guitar Hero - CORS  |Telas        |
-| [461.sonorous-string-master](https://renatomportugal.github.io/04.template/461.sonorous-string-master) |<img src="images/461.sonorous-string-master.jpg"/> |
-|Habilidades Manuais |Telas        |
-| [466.js-lock-picking-game](https://renatomportugal.github.io/04.template/466.js-lock-picking-game) |<img src="images/466.js-lock-picking-game.jpg"/> |
-|Marcador de Energia |Telas        |
-| [465.fight](https://renatomportugal.github.io/04.template/465.fight) |<img src="images/465.fight.jpg"/> |
-|Memória             |Telas        |
-| [467.memodeck-fully-responsive](https://renatomportugal.github.io/04.template/467.memodeck-fully-responsive) |<img src="images/467.memodeck-fully-responsive.jpg"/> |
-| [468.memory](https://renatomportugal.github.io/04.template/468.memory) |<img src="images/468.memory.jpg"/> |
-| [470.html5-canvas-puzzle-2012-02-18](https://renatomportugal.github.io/04.template/470.html5-canvas-puzzle-2012-02-18) |<img src="images/470.html5-canvas-puzzle-2012-02-18.jpg"/> |
-|Personagens         |Telas        |
-| [469.day-2-character-design-with-css-variables](https://renatomportugal.github.io/04.template/469.day-2-character-design-with-css-variables) |<img src="images/469.day-2-character-design-with-css-variables.jpg"/> |
-|Roda a Roda         |Telas        |
-| [471.jquery-spin-wheel-2011-06-09](https://renatomportugal.github.io/04.template/471.jquery-spin-wheel-2011-06-09) |<img src="images/471.jquery-spin-wheel-2011-06-09.jpg"/> |
-|Tabuleiro           |Telas        |
-| [473.css-mastermind](https://renatomportugal.github.io/04.template/473.css-mastermind) |<img src="images/473.css-mastermind.jpg"/> |
-
-
 ## KeyGen
 
 |Links        |Telas        |
@@ -1050,6 +1130,12 @@
 |---          |---          |
 | [112.native-js-day-8-drawing-canvas](https://renatomportugal.github.io/04.template/112.native-js-day-8-drawing-canvas) |<img src="images/112.native-js-day-8-drawing-canvas.jpg"/> |
 
+## Passo-a-Passo
+|Links        |Telas        |
+|---          |---          |
+| [565.leader-line-example](https://renatomportugal.github.io/04.template/565.leader-line-example) |<img src="images/565.leader-line-example.jpg"/> |
+| [566.path-generator-on-svg-animated-board](https://renatomportugal.github.io/04.template/566.path-generator-on-svg-animated-board) |<img src="images/566.path-generator-on-svg-animated-board.jpg"/> |
+
 ## Perfil
 |Avatar       |Telas        |
 |---          |---          |
@@ -1114,6 +1200,7 @@
 | [409.scrolling-animationsshow-recommendations](https://renatomportugal.github.io/04.template/409.scrolling-animationsshow-recommendations) |<img src="images/409.scrolling-animationsshow-recommendations.jpg"/> |
 | [410.svg-overlay-pinned-section](https://renatomportugal.github.io/04.template/410.svg-overlay-pinned-section) |<img src="images/410.svg-overlay-pinned-section.jpg"/> |
 | [411.webpage-scrolling-experiment](https://renatomportugal.github.io/04.template/411.webpage-scrolling-experiment) |<img src="images/411.webpage-scrolling-experiment.jpg"/> |
+| [534.how-to-make-a-dribbble-shot-gsap-scrolltrigger](https://renatomportugal.github.io/04.template/534.how-to-make-a-dribbble-shot-gsap-scrolltrigger) |<img src="images/534.how-to-make-a-dribbble-shot-gsap-scrolltrigger.jpg"/> |
 
 ## Scroll_Infinito
 

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Steganography</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+<style>
+  body {
+    margin-left: 200px;
+    margin-right: 200px;
+    background: #5d9ab2 url("img_tree.png") no-repeat top left;
+}
+.container {
+    text-align: center;
+}
+
+.center_div {
+    border: 5px solid gold;
+    margin-left: 20;
+    margin-right: auto;
+    width: 70%;
+    background-color: #6E6E99;
+    text-align: left;
+    padding: 8px;
+
+}
+.center1_div {
+    border: 5px solid red;
+    margin-left: 20;
+    margin-right: auto;
+    width: 70%;
+    background-color: #142966;
+    text-align: left;
+    padding: 8px;
+}
+.center2_div {
+    border: 5px solid blue;
+    margin-left: 20;
+    margin-right: auto;
+    width: 70%;
+    background-color: black;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+</head>
+
+<body class="enjoy-css">
+
+<h1> Steganography
+</h1>
+  <h2> Original images cropped to same size
+</h2>
+  <table style="width:100%">
+    <tr>
+    <td>Image </td>
+    <td>Image to Hide </td> 
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/2gaI1Zb.jpg" width="500" /> </td>
+    <td><img src="https://i.imgur.com/Ndac7Po.jpg" width="500" /> </td> 
+</table>
+<h2> Images with Hidden Value hiding in lower 2 bits</h2>
+  <table style="width:100%">
+    <tr>
+    <td>Image with Hidden Image </td>
+    <td>Hidden Image Extracted </td> 
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/0NZnqVK.png" width="500" /> </td>
+    <td><img src="https://i.imgur.com/rUcmOeL.png" width="500" /> </td> 
+</table>
+  
+
+</table>
+<h2> Images with Hidden Value hiding in lower 3 bits</h2>
+  <table style="width:100%">
+    <tr>
+    <td>Image with Hidden Image </td>
+    <td>Hidden Image Extracted </td> 
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/RE38bLe.png" width="500" /> </td>
+    <td><img src="https://i.imgur.com/wNmSKGR.png" width="500" /> </td> 
+</table></table>
+<h2> Images with Hidden Value hiding in lower 4 bits</h2>
+  <table style="width:100%">
+    <tr>
+    <td>Image with Hidden Image </td>
+    <td>Hidden Image Extracted </td> 
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/C91gxfM.png" width="500" /> </td>
+    <td><img src="https://i.imgur.com/8f7AhgR.png" width="500" /> </td> 
+</table></table>
+<h2> Images with Hidden Value hiding in lower 5 bits</h2>
+  <table style="width:100%">
+    <tr>
+    <td>Image with Hidden Image </td>
+    <td>Hidden Image Extracted </td> 
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/iHMpUCX.png" width="500" /> </td>
+    <td><img src="https://i.imgur.com/3ViWaTB.png" width="500" /> </td> 
+</table></table>
+<h2> Images with Hidden Value hiding in lower 7 bits</h2>
+  <table style="width:100%">
+    <tr>
+    <td>Image with Hidden Image </td>
+    <td>Hidden Image Extracted </td> 
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/wYZlBO5.png" width="500" /> </td>
+    <td><img src="https://i.imgur.com/CSXRBdf.png" width="500" /> </td> 
+</table>
+<div class="container">
+  <div class="center1_div">
+<h3>Algorithm</h3>
+
+<p>
+For this assignment what I did is basically looking at the original code with the 4 digits hiding from the class exercise, and replacing all the 16(2^4) with 2 to the argument "numbits" power. I looked up the proper formula from online javascript documentation, and pick Math.pow(). The algorithm includes a the following functions: crop(), pixchange(), chop2hide(), shift(), newpv(), combine(), setnewvalue() and extract(). The last two are for extracting, and the rest are for hiding. The formula for extracting is (num - ( Math.floor(num /Math.pow(2,numbits)) 
+    * Math.pow(2,numbits))) * Math.pow(2,numbits).
+  
+</p>
+<p>
+Since the lower 2 bits did not work out for my choice of images, I experimented with all the other options. As you can see 4 bits is the best fit for my pictures.  
+  
+</p>   
+    
+  </div>
+</div>
+
+<div class="container">
+  <div class="center_div">
+<h3>Code</h3>
+<pre>
+function pixchange(pixval,numbits){
+    var x = Math.floor(pixval/Math.pow(2,numbits)); 
+    var y = x * Math.pow(2,numbits);
+    return y;
+}
+
+function chop2hide(image,numbits){
+    for(var px of image.values()){
+        px.setRed(pixchange(px.getRed(),numbits));
+        px.setGreen(pixchange(px.getGreen(),numbits));
+        px.setBlue(pixchange(px.getBlue(),numbits));
+    }
+    return image;
+}
+
+function shift(im,numbits){
+  var nim = new SimpleImage(im.getWidth(), 
+                            im.getHeight());
+  for(var px of im.values()){
+    var x = px.getX();
+    var y = px.getY();
+    var npx = nim.getPixel(x,y);
+    var a = Math.floor(px.getRed()/Math.pow(2,numbits));
+    var b = Math.floor(px.getGreen()/Math.pow(2,numbits));
+    var c = Math.floor(px.getBlue()/Math.pow(2,numbits));
+    npx.setRed(a);
+    npx.setGreen(b);
+    npx.setBlue(c);
+  }
+  return nim;
+}
+
+var start = new SimpleImage("astrachan.jpg");
+var hide = new SimpleImage("duvall.jpg");
+
+function crop(image,width,height){
+    var n = new SimpleImage(width,height);
+    for(var p of image.values()){
+        var x = p.getX();
+   	    var y = p.getY();
+   	    if (x < width && y < height){
+     var np = n.getPixel(x,y);
+     np.setRed(p.getRed());
+     np.setBlue(p.getBlue());
+     np.setGreen(p.getGreen()); 
+    }
+}
+    return n;
+}
+var cropWidth = start.getWidth();
+if (hide.getWidth() < cropWidth) {
+	cropWidth = hide.getWidth();
+}
+var cropHeight = start.getHeight();
+if (hide.getHeight() < cropHeight) {
+	cropHeight = hide.getHeight();
+}
+start = crop(start,cropWidth, cropHeight);
+hide = crop(hide,cropWidth, cropHeight);
+
+function newpv(p,q){
+     var answer = p+q;
+     if (p+q > 255){print("error too big: answer")};
+     return answer;
+}
+
+function combine(a,b){
+     var n = new SimpleImage(a.getWidth(), a.getHeight());
+     for(var pa of a.values()){
+    	var x = pa.getX();
+var y = pa.getY();
+var pb = b.getPixel(x,y);
+var np = n.getPixel(x,y);
+np.setRed(newpv(pa.getRed(),pb.getRed()));
+np.setGreen(newpv(pa.getGreen(),pb.getGreen()));
+np.setBlue(newpv(pa.getBlue(),pb.getBlue()));
+     }
+     return n;
+}
+
+function setnewvalue(num,numbits){
+    var a =(num - ( Math.floor(num /Math.pow(2,numbits)) 
+    * Math.pow(2,numbits))) * Math.pow(2,numbits);
+    num = a;
+    return num;
+}
+x = setnewvalue(203,4);
+print(x);
+
+function extract(a,numbits){
+    var n = new SimpleImage(a.getWidth(), a.getHeight());
+    for(var num of a.values()){
+        var x = num.getX();
+        var y = num.getY();
+        var np = n.getPixel(x,y);
+        np.setRed (setnewvalue(num.getRed(),numbits));
+        np.setGreen(setnewvalue(num.getGreen(),numbits));
+        np.setBlue(setnewvalue(num.getBlue(),numbits));
+    }
+    return n;
+}
+
+var bits = 4;
+
+start = chop2hide(start,bits);
+hide = shift(hide,bits);
+stego = combine(start,hide);
+print(stego);
+
+x = extract(stego,bits);
+print(x);
+</pre>
+  </div>
+</div>
+
+<h1>Hidden message</h1>
+<div class="container">
+  <div class="center2_div">
+<h3>Program testing can be used to show the presence of bugs, but never to show their absence! -- E. Dijkstra</h3>
+ </div>
+</div>
+<h2> Thank you for visiting!</h2>
+</body>
+<!-- partial -->
+  
+</body>
+</html>

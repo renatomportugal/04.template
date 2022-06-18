@@ -1,0 +1,73 @@
+:root {
+  --r: 255;
+  --g: 255;
+  --b: 255;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.hexplorer {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  margin-right: 2.5em;
+}
+
+.output__hex,
+.output__valuesets {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 22px;
+}
+
+.output__hex span {
+  font-size: 72px;
+  font-weight: 400;
+  padding: 2px 5px;
+  color: black;
+}
+.output__hex span:nth-child(1) {
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.15);
+}
+.output__hex span:nth-child(2), .output__hex span:nth-child(3) {
+  color: rgb(var(--r), 0, 0);
+}
+.output__hex span:nth-child(4), .output__hex span:nth-child(5) {
+  color: rgb(0, var(--g), 0);
+}
+.output__hex span:nth-child(6), .output__hex span:nth-child(7) {
+  color: rgb(0, 0, var(--b));
+}
+
+.valueset {
+  display: flex;
+  flex-direction: column;
+}
+.valueset:nth-child(1) {
+  grid-column: 2;
+}
+.valueset span {
+  text-align: center;
+  padding: 2px;
+  color: rgba(0, 0, 0, 0.25);
+  transition: all 150ms ease-out;
+}
+.valueset span.is--active {
+  font-weight: 400;
+  color: black;
+  transform: scale(2);
+}

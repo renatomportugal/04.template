@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Helvetica;
+  color: White;
+}
+
+h1 {
+  position: relative;
+  margin: 2vw;
+}
+
+h1 span {
+  font-weight: 300;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: Black;
+}
+
+.controls {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  z-index: 1;
+  display: grid;
+  grid-gap: 5px;
+  background: #fff;
+  padding: 2vw;
+}
+
+.control {
+  display: grid;
+  grid-template-columns: 1fr 100px 30px;
+  grid-gap: 5px;
+  justify-content: end;
+}
+
+input[type="number"] {
+  width: 30px;
+}

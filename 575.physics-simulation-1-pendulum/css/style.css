@@ -1,0 +1,7 @@
+body{
+  background:black;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  color:white;
+}

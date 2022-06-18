@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Part 3: Steganography using JavaScript</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <head>
+    <title>Part 3: Steganography using JavaScript</title>
+  </head>
+  <body>
+    <p>
+      I used <a href="https://www.dukelearntoprogram.com/course1/example/index.php">Duke's Coding Environment</a> to write the steganography program. There are two parts of this assignment: 1.write a stegaongraphy program and test with two images; 2.extract the hidden message from a provided image.
+    </p>
+    <h1>1. Steganography</h1>
+    <h2>Original Images</h2>
+    <p>
+      <img src="https://res.cloudinary.com/devleg/image/upload/v1524124951/rose.jpg"/>
+      <img src="https://res.cloudinary.com/devleg/image/upload/v1524124969/hide.jpg"/>
+    </p>
+    <p> Source of image:</p>
+    <p>
+      <a href="https://c2.staticflickr.com/4/3622/3360625424_af73094e48_b.jpg">https://c2.staticflickr.com/4/3622/3360625424_af73094e48_b.jpg</a>
+    </p>
+    <p>
+      <a href="http://pastormarkmartin.com/wp-content/uploads/2015/01/Fotolia_44441951_Subscription_Monthly_M1.jpg">http://pastormarkmartin.com/wp-content/uploads/2015/01/Fotolia_44441951_Subscription_Monthly_M1.jpg</a>
+    </p>
+    <h2>Combined Image</h2>
+    <p>
+      <img src="https://res.cloudinary.com/devleg/image/upload/v1524125229/combinedimage.png"/>
+    </p>
+    <h2>Extract the Hidden Image</h2>
+    <p>
+      <img src="https://res.cloudinary.com/devleg/image/upload/v1524125052/hiddenimage.png"/>
+    </p>
+    <h2>Algorithm</h2>
+    <P>
+      How to hide 2 bits instead of 4? Changing the number "16(2^4)" to "4(2^2)" and "64(2^6)" is the key. 
+    </p>
+    <p>
+      As we know, computer works with binary numbers, so I will use binary numbers 0 and 1 to explain this problem.
+    </p>
+    <p>
+      For the  "start" image,get the first 6 bits by pixel=Math.floor(pixval/4) * 4; for the "hide" image, get the first 2 bits by pixel=Math.floor(pixval/64). Then combine them to get the new pixel values for the combined image. The combined image gets the first 6 bits from the "start” image and the last 2 bits from the "hide" image.
+    </p>
+    <p>
+      For example,if the red value for a pixel in the "start" image is 10110001, we will get 10110000; if the red value for a pixel in the "hide"image (with the same x,y coordinates) is 11001001, we will get the first 2 digits 11 and put it to the end of the combined value: 10110011.
+    </p>
+    <p>
+      Similarly, when I extract the hidden image from a combined image, I would take the last two bits and multiply it by 64. For example, get 11 from 10110011 and multiply 64(=2^6) to get 11000000.
+    </p>
+    <h2>Code</h2>
+    <pre>
+// crop two images to be the same size
+function crop(image,width,height){
+    var n = new SimpleImage(width,height);
+    for(var p of image.values()){
+   	   var x = p.getX();
+   	   var y = p.getY();
+  	   if (x < width && y < height){
+       var np = n.getPixel(x,y);
+       np.setRed(p.getRed());
+       np.setBlue(p.getBlue());
+       np.setGreen(p.getGreen()); 
+       }
+    }
+    return n;
+}
+
+var start = new SimpleImage("rose.jpg");
+var hide = new SimpleImage("word.jpg");
+
+var cropWidth = start.getWidth();
+if (hide.getWidth() < cropWidth) {
+	cropWidth = hide.getWidth();
+}
+var cropHeight = start.getHeight();
+if (hide.getHeight() < cropHeight) {
+	cropHeight = hide.getHeight();
+}
+startc = crop(start,cropWidth, cropHeight);
+hidec = crop(hide,cropWidth, cropHeight);
+print(startc);
+print(hidec);
+
+// prepare for steganography: convert two images
+// only hide 2 bits this time
+function pixchange(pixval){
+    var x = Math.floor(pixval/4) * 4;
+    return x;
+}
+function chop2hide(image){
+    for(var px of image.values()){
+        px.setRed(pixchange(px.getRed()));
+        px.setGreen(pixchange(px.getGreen()));
+        px.setBlue(pixchange(px.getBlue()));
+    }
+    return image;
+}
+function shift(im){
+  var nim = new SimpleImage(im.getWidth(), 
+                            im.getHeight());
+  for(var px of im.values()){
+    var x = px.getX();
+    var y = px.getY();
+    var npx = nim.getPixel(x,y);
+    npx.setRed(Math.floor(px.getRed()/64));
+    npx.setGreen(Math.floor(px.getGreen()/64));
+    npx.setBlue(Math.floor(px.getBlue()/64));
+  }
+  return nim;
+}
+
+starts = chop2hide(startc);
+hides = shift(hidec);
+print(starts);
+print(hides);
+
+// steganography: combine the above two images (we'll call them "a","b" in the funtion)
+// Combine image "starts"&"hides" = hide image "hide" in "start"
+function newpv(va,vb){
+    var answer=va+vb;
+    if (va+vb>255) print("error:RGB value cannot be greater than 255"); 
+    return answer;
+}
+function combine(a,b){
+    var n = new SimpleImage (a.getWidth(),a.getHeight());
+    for (var pa of a.values()){
+        var x = pa.getX();
+        var y = pa.getY();
+        var pb = b.getPixel (x,y);
+        var np = n.getPixel (x,y);
+        np.setRed(newpv(pa.getRed(),pb.getRed()));
+        np.setGreen(newpv(pa.getGreen(),pb.getGreen()));
+        np.setBlue(newpv(pa.getBlue(),pb.getBlue()));
+    }
+    return n;
+}
+combinedimage=combine(starts,hides);
+print(combinedimage);
+
+// extract the hidden image, this time 2 bits
+// e.g. extract 11 from 10001011...
+// ...and make it 11000000
+function pchange(n){
+    var value = (n-Math.floor(n/4)*4)*64;
+    return value;
+}
+function extract(i){
+    for(var ip of i.values()){
+        ip.setRed(pchange(ip.getRed()));
+        ip.setGreen(pchange(ip.getGreen()));
+        ip.setBlue(pchange(ip.getBlue()));
+    }
+    return i;
+}
+hiddenimage = extract(combinedimage);
+print(hiddenimage);
+    </pre>  
+    <h1>2. Extract the Hidden Message</h1>
+    <h2>Image Provided by Duke's programming course on Coursera</h2>
+    <img src="https://res.cloudinary.com/devleg/image/upload/v1524125107/DrewHiding2bitMessage.png"/>
+    <h2>The Hidden Message</h2>
+    <img src="https://res.cloudinary.com/devleg/image/upload/v1524125112/hiddenimage2.png"/>
+    <h2>Code</h2>
+    <p>Well it's the same program. I just need to upload the image, and change the image's name in the codes to extract the hidden message.
+    <pre>
+// extract the hidden image from the last 2 bits
+function pchange(n){
+    var value = (n-Math.floor(n/4)*4)*64;
+    return value;
+}
+function extract(i){
+    for(var ip of i.values()){
+        ip.setRed(pchange(ip.getRed()));
+        ip.setGreen(pchange(ip.getGreen()));
+        ip.setBlue(pchange(ip.getBlue()));
+    }
+    return i;
+}
+
+var combinedimage = new SimpleImage("DrewHiding2bitMessage.png");
+hiddenimage = extract(combinedimage);
+print(hiddenimage);
+    </pre>
+  </body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

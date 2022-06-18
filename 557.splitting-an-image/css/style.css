@@ -1,0 +1,35 @@
+/* Clear out these styles to start fresh or use this as a base! */
+
+@import url(https://fonts.googleapis.com/css?family=Kanit:600);
+
+html { height: 100%; display: flex; }
+body { margin: auto; }
+html, body {
+  background: #00043C;
+  color: #FFF;
+  font: normal 600 10vw/1.5 Kanit, sans-serif;
+}
+
+
+.vertical-flip {
+  perspective: 600px;
+}
+
+.vertical-flip .cell {
+  transform-style: preserve-3d;
+  
+  animation: vertical-flip .7s cubic-bezier(.35,.33,0,1.5);
+  animation-delay: calc(.25s + (.05s * var(--cell-index)));
+  
+  transition: transform .7s cubic-bezier(.35,.33,0,1.5);
+  transition-delay: calc(.25s + (.05s * (var(--cell-total) - var(--cell-index))));
+}
+
+.vertical-flip:hover .cell {
+  transform: rotateX(180deg);
+}
+
+@keyframes vertical-flip {
+  0% { transform: rotateX(360deg); }
+  100% { transform: rotateX(0deg); }
+}

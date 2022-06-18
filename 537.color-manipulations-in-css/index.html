@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Color Manipulations in CSS</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Color Maninpulations in CSS</h1>
+
+<p>Given the base set of color values for a single color:</p>
+
+<pre>
+:root {
+  --h: 100;
+  --s: 50%;
+  --l: 50%;
+  --hsl: var(--h), var(--s), var(--l);
+  --hslf: hsl(var(--hsl));
+}
+</pre>
+
+<p>You can play with color in any of the following ways.</p>
+
+<h2>Alpha Channel</h2>
+
+<h3>Base color with variations using the alpha channel</h3>
+
+<pre class="example">
+background-color: hsla(
+  var(--hsl),
+  1
+);
+</pre>
+
+<pre class="example">
+background-color: hsla(
+  var(--hsl),
+  .8
+);
+</pre>
+
+<pre class="example">
+background-color: hsla(
+  var(--hsl),
+  .6
+);
+</pre>
+
+<pre class="example">
+background-color: hsla(
+  var(--hsl),
+  .4
+);
+</pre>
+
+<pre class="example">
+background-color: hsla(
+  var(--hsl),
+  .2
+);
+</pre>
+
+<h2>Sass Color Function Equivalents</h2>
+
+<h3>`adjust-hue`</h3>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  calc(var(--h) + 72),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  calc(var(--h) + 144),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  calc(var(--h) + 216),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  calc(var(--h) + 288),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  calc(var(--h) + 360),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<h3>`saturate`</h3>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) + 10%),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) + 20%),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) + 30%),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) + 40%),
+  var(--l)
+ );
+</pre>
+
+<h3>`desaturate`</h3>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) - 10%),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) - 20%),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) - 30%),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  calc(var(--s) - 40%),
+  var(--l)
+ );
+</pre>
+
+  
+<h3>`lighten`</h3>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) + 10%)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) + 20%)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) + 30%)
+ );
+</pre>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) + 40%)
+ );
+</pre>
+
+
+<h3>`darken`</h3>
+
+<pre class="example">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  var(--l)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) - 10%)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) - 20%)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) - 30%)
+ );
+</pre>
+
+<pre class="example w">
+background-color: hsl(
+  var(--h),
+  var(--s),
+  calc(var(--l) - 40%)
+ );
+</pre>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

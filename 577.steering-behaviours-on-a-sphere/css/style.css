@@ -1,0 +1,52 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  background-color: #222;
+}
+
+canvas {
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.ui {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  color: #444;
+  text-align: center;
+  z-index: 10;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+}
+
+label {
+  display: block;
+  color: #AAA;
+  font-size: 18px;
+  letter-spacing: 0px;
+  margin-bottom: 10px;
+}
+
+button {
+  color: #AAA;
+  background-color: #222;
+  border: 1px solid #333;
+  padding: 10px 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:active {
+  background-color: #e5004f;
+  color: #FFF;
+}
+
+:focus { outline: none !important; }

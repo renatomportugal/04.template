@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * Gravity is a box2dweb wrapper for HTML elements. It provides a way to apply physics
+ * to HTML elements, define gravity, handle collisions, apply different parameters as
+ * friction, restitution, density and even drag physical HTML element bodies.
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Apply-physics-to-HTML-elements
+**************************************************************/
+-->
+<html>
+<head>
+</head>
+<body>
+<div id='box' style='width: 1000px; height: 300px; margin-left: auto; margin-right: auto;'>
+<h1 id='heading' style='width: 300px; text-align: center; background-color: red;'>Website heading</h1>
+<h1 id='heading2' style='margin-left: 250px; margin-top: 300px; width: 300px; text-align: center; background-color: red;'>Website heading2</h1>
+</div>
+
+<script type="text/javascript" src="./Box2dWeb-2.1.a.3.min.js" ></script>
+<script type="text/javascript" src="./gravity.packed.js" ></script>
+<script type="text/javascript">
+var gr = new gravity({
+	boundaries: "document",
+	debugDraw: true,
+	dragging: false
+});
+gr.add("heading", {
+	fixed: false,
+	restitution: 1,
+	friction: 0.1,
+	density: 1,
+	includeChild: false
+});
+gr.add("heading2", {
+	fixed: true,
+	restitution: 1,
+	friction: 0.1,
+	density: 1,
+	includeChild: false
+});
+gr.load();
+</script>
+</body>
+</html>

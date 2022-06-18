@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+/*************************************************************
+ * This script is developed by Arturs Sosins aka ar2rsawseen, http://webcodingeasy.com
+ * Feel free to distribute and modify code, but keep reference to its creator
+ *
+ * Gravity is a box2dweb wrapper for HTML elements. It provides a way to apply physics
+ * to HTML elements, define gravity, handle collisions, apply different parameters as
+ * friction, restitution, density and even drag physical HTML element bodies.
+ *
+ * For more information, examples and online documentation visit: 
+ * http://webcodingeasy.com/JS-classes/Apply-physics-to-HTML-elements
+**************************************************************/
+-->
+<html>
+<head>
+<style>
+#input
+{
+	margin: 100px auto 0 auto;
+	width: 170px;
+	display: block;
+}
+#input2
+{
+	margin: 0px auto 0 auto;
+	width: 170px;
+	display: block;
+}
+#submit
+{
+	margin: 0px auto 0 auto;
+	width: 51px;
+	display: block;
+}
+</style>
+</head>
+<body>
+<p><input type='text' placeholder='Username' id='input'/></p>
+<p><input type='password' placeholder='Password' id='input2'/></p>
+<p><input type='submit' id='submit' value='Login' onclick="gr.load();"/></p>
+
+<script type="text/javascript" src="./Box2dWeb-2.1.a.3.min.js" ></script>
+<script type="text/javascript" src="./gravity.packed.js" ></script>
+<script type="text/javascript">
+var gr = new gravity({
+	boundaries: "document",
+	debugDraw: false
+});
+gr.add("input", {
+	fixed: false,
+	restitution: 1,
+	friction: 0.1,
+	density: 1,
+	includeChild: false
+});
+gr.add("input2", {
+	fixed: false,
+	restitution: 1,
+	friction: 0.1,
+	density: 1,
+	includeChild: false
+});
+gr.add("submit", {
+	fixed: false,
+	restitution: 1,
+	friction: 0.1,
+	density: 1,
+	includeChild: false
+});
+</script>
+</body>
+</html>

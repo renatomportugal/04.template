@@ -1,0 +1,96 @@
+.main-content
+	.middle-space
+		.stack.stack--community
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/cauldron.png")
+		.stack.stack--chance
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/wand.png")
+	.parking
+		div
+			p Broom
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/broomstick.png")
+			p Parking
+	.go-to-jail
+		div
+			p Go To
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dementor.png")
+			p Azkaban
+	.jail
+		div
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/azkaban.png")
+		span Just
+		span Visiting
+	.pass-go
+		div
+			p 
+				| Collect 200 Ğ 
+				br
+				| as you pass
+			p GO
+		img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/broomstick.png")
+	- for (var i=0; i<3; i++)
+		.chance 
+			p Charms
+			figure
+	- for (var i=0; i<3; i++)
+		.community
+			p Potions
+			figure
+			
+	- var railroad = [{ name: "Portkey", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/boot.png"},{ name: "Floo Network", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/fireplace.png"},{ name: "Hogwarts Express", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/train.png"},{ name: "Knight Bus", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/bus.png"}]
+	each val in railroad
+		.railroad.non-property
+			p= val.name
+			img(src=val.image)
+			span 200 Ğ
+			
+	- var utilies = [{ name: "The Daily Prophet", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/newspaper.png", price:"150 Ğ"},{ name: "The Quibbler", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/magazine.png", price:"150 Ğ"},{ name: "Gringotts Vault Fee", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/trophy.png", price:"100 Ğ"},{ name: "Ministry of Magic Tax", image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/momlogo.png", price:"200 Ğ"}]
+	each val in utilies
+		.utility.non-property
+			p= val.name
+			img(src=val.image)
+			span= val.price
+		
+	- var topProperties = [{ name: "Shell Cottage", color: "#f21a24", price:"220 Ğ"},{ name: "The Burrow", color: "#f21a24", price:"220 Ğ"},{ name: "Number 12 Grimmauld Place", color: "#f21a24", price:"240 Ğ"},{ name: "Hagrid's Hut", color: "#fff200", price:"260 Ğ"},{ name: "Forbidden Forest", color: "#fff200", price:"260 Ğ"},{ name: "Quidditch Pitch", color: "#fff200", price:"280 Ğ"},];
+		each val in topProperties
+			div.property.top
+				div.property__color(style="--color:"+val.color)
+				span.property__name= val.name
+				span.property__price= val.price
+				
+	- var leftProperties = [{ name: "Weasleys' Wizard Wheezes", color: "#f9921b", price:"200 Ğ"},{ name: "Ollivanders", color: "#f9921b", price:"180 Ğ"},{ name: "Eeylops Owl Emporium", color: "#f9921b", price:"180 Ğ"},{ name: "Madam Malkin's Robes", color: "#d83a96", price:"160 Ğ"},{ name: "Flourish and Blotts", color: "#d83a96", price:"140 Ğ"},{ name: "The Leaky Cauldron", color: "#d83a96", price:"140 Ğ"},];
+		each val in leftProperties
+			div.property.left
+				div.property__color(style="--color:"+val.color)
+				span.property__name= val.name
+				span.property__price= val.price
+				
+	- var rightProperties = [{ name: "Hogwarts Library", color: "#1eb159", price:"300 Ğ"},{ name: "Chamber of Secrets", color: "#1eb159", price:"300 Ğ"},{ name: "Room of Requirement", color: "#1eb159", price:"320 Ğ"},{ name: "Gringotts Wizarding Bank", color: "#0173ba", price:"350 Ğ"},{ name: "Ministry of Magic", color: "#0173ba", price:"400 Ğ"}];
+		each val in rightProperties
+			div.property.right
+				div.property__color(style="--color:"+val.color)
+				span.property__name= val.name
+				span.property__price= val.price
+				
+	- var bottomProperties = [{ name: "Zonko's Joke Shop", color: "#aae2f9", price:"120 Ğ"},{ name: "The Hog's Head Inn", color: "#aae2f9", price:"100 Ğ"},{ name: "The Shrieking Shack", color: "#aae2f9", price:"100 Ğ"},{ name: "Godric's Hollow", color: "#935433", price:"60 Ğ"},{ name: "Number 4 Privet Drive", color: "#935433", price:"60 Ğ"}];
+		each val in bottomProperties
+			div.property.bottom
+				div.property__color(style="--color:"+val.color)
+				span.property__name= val.name
+				span.property__price= val.price
+	
+
+aside.context
+	.explanation
+		| Part of the 
+		a(href="https://codepen.io/collection/DQvYpQ/" target="_blank") CSS Grid 
+		| and 
+		a(href="https://codepen.io/collection/DjwqvK/" target="_blank") Harry Potter
+		|  collections.
+
+footer
+	a(href="https://twitter.com/meowlivia_" target="_blank")
+		i.icon-social-twitter.icons
+	a(href="https://github.com/oliviale" target="_blank")
+		i.icon-social-github.icons
+	a(href="https://dribbble.com/oliviale" target="_blank")
+		i.icon-social-dribbble.icons

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Binary addition on Turing Machine</title>
+  
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#rule {
+  position: fixed;
+  z-index: -1;
+  top: -100px;
+  width: 1.5rem;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+}
+
+#controlbox {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+#controlbox ul {
+  padding-left: 1.2rem;
+}
+
+.turingmachine {
+  position: relative;
+  height: 3.75rem;
+  overflow: hidden;
+}
+.turingmachine .tape {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left .1s ease;
+}
+.turingmachine .tape div {
+  display: inline-block;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  border-right: 1px solid gray;
+}
+.turingmachine .tape div:last-child {
+  border-right: none;
+}
+.turingmachine .tape div.zero {
+  background-color: rgba(0, 255, 255, 0.3);
+}
+.turingmachine .tape div.empty {
+  color: rgba(0, 0, 0, 0.2);
+}
+.turingmachine .cursor {
+  position: absolute;
+  bottom: .1rem;
+  left: 7.5rem;
+}
+.turingmachine .tape div, .turingmachine .cursor {
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+}
+.turingmachine .c {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  transform: translate(-50%);
+  width: auto;
+  text-align: center;
+}
+.turingmachine .c:before {
+  content: '{';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  transform: rotate(-90deg) scaleY(9) translateY(-0.13rem);
+  color: gray;
+}
+
+.automa {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+.automa div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 0 0 2rem;
+  line-height: 1.3rem;
+  padding: .2rem .5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.automa div:hover {
+  border: 1px solid black;
+}
+.automa div.current {
+  background: rgba(0, 255, 255, 0.2);
+}
+.automa div:nth-child(1) {
+  flex: 0 0 auto;
+  text-align: right;
+  position: -webkit-sticky;
+  position: sticky;
+  background: white;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.turingmachine.history {
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+.turingmachine.history .tape {
+  top: 2.1rem;
+}
+.turingmachine.history .a, .turingmachine.history .b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%);
+  width: auto;
+  text-align: center;
+}
+.turingmachine.history .a input, .turingmachine.history .b input {
+  width: 2rem;
+  text-align: center;
+}
+.turingmachine.history .a:after, .turingmachine.history .b:after {
+  content: '{';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  transform: rotate(90deg) scaleY(9) translateY(-0.07rem);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: gray;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+#buttons > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#buttons > div input {
+  width: 2rem;
+  text-align: center;
+}
+
+button {
+  padding: .5rem;
+  border-radius: .3rem;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  margin-top: .2rem;
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <template id="automa-template">
+	<div class="automa">
+		<div>
+			<span>Status from</span>
+			<span>Char reading</span>
+			<span>Char writing</span>
+			<span>Status to</span>
+		</div>
+		<div v-for="(arc, i) in arcs" :key="i" :class="{ current: arc === current }">
+			<span>{{arc.kfrom}}</span>
+			<span>{{arc.read}}</span>
+			<span>{{arc.write}}</span>
+			<span>{{arc.kto === 'end' ? '#' : arc.kto}}</span>
+		</div>
+	</div>
+</template>
+
+<div id="rule"></div>
+<div id="app">
+	<div id="controlbox">
+		<div>
+			<h4>Instructions</h4>
+			<ul>
+				<li>Edit addends</li>
+				<li>Press reset/prepare</li>
+				<li>Press start/stop</li>
+			</ul>
+			<div id="buttons">
+				<button @click="reset">Reset/Prepare</button>
+				<button @click="startStop">Start/Stop</button>
+				<button @click="clockTick(true)">Single step</button>
+				<br />Clock ticks per sec:
+				<div>
+					<button @click="slowDown">-</button>
+					<input v-model="ticks_per_sec" min="1" max="200" />
+					<button @click="speedUp">+</button>
+				</div>
+			</div>
+		</div>
+		<!--
+		{{a | binary}}
+		{{b | binary}}<br/>-->
+	</div>
+	<div>
+		<div class="turingmachine history">
+			<div class="a" :style="{ left: ((5+4) * tapecellsize)+'px' }"><input v-model="a" /></div>
+			<div class="b" :style="{ left: ((5+13) * tapecellsize)+'px' }"><input v-model="b" /></div>
+			<div class="tape" :style="{ left: ((5-cursor_offset) * tapecellsize)+'px' }">
+				<div v-for="(t, i) in tapePreview" :key="i" :class="classTapeCell(t,i)">{{t}}</div>
+			</div>
+		</div>
+		Cursor position: {{cursor - cursor_offset}}
+		<div class="turingmachine">
+			<div class="tape" :style="{ left: ((5 - cursor) * tapecellsize)+'px' }">
+				<div v-for="(t, i) in tape" :key="i" :class="classTapeCell(t,i)">{{t}}</div>
+			</div>
+			<div class="cursor" :style="{ left: (5 * tapecellsize)+'px' }" v-if="computed !== true">^</div>
+			<div v-else class="c" :style="{ left: ((-cursor+cursor_offset+9) * tapecellsize)+'px' }">{{result | decimal}}</div>
+		</div>
+		<div v-if="computed === true">Done! Result: {{result | decimal}}, number of operations: {{clock}}</div>
+		<div v-else-if="computed === false">The clock has run out!</div>
+		<div v-else-if="!running">Stopped, clock {{clock}}</div>
+		<div v-else>Computing, clock {{clock}}</div>
+		<h4>Deterministic finite state machine</h4>
+		<automa :nodes="automa" :order="['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'end']" :current-status="statusName" :current-char="tape[cursor]" />
+	</div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.1/vue.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

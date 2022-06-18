@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Steganography</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1> Hide an Image in another Image </h1>
+<h3><u>Original Images</u></h3>
+<p> Here are the two original images I am going to work with. </p>
+
+<p>
+   <a href="https://imgur.com/8XdKVd3"><img src="https://i.imgur.com/8XdKVd3.jpg" title="source: imgur.com" /></a>
+  <a href="https://imgur.com/iBpPnb5"><img src="https://i.imgur.com/iBpPnb5.jpg" title="source: imgur.com" /></a>
+
+<p><b>Here are the cropped images</b></p>
+<p>
+  <a href="https://imgur.com/TfQI0yN"><img src="https://i.imgur.com/TfQI0yN.png" title="source: imgur.com" /></a>
+  <a href="https://imgur.com/iBpPnb5"><img src="https://i.imgur.com/iBpPnb5.jpg" title="source: imgur.com" /></a>
+ 
+
+</p><h3><u>Algorithm</u></h3>
+<p>In this example, I start with two images of different sizes. The funcrion crop, adjusts the two images to have the same size. I called one of the images "hide" for it will be the hidden image in the next step.</p>
+
+<h3><u> Code of cropped images; function crop</u></h3>
+<pre>
+//FUNCTION CROP
+function crop (image, width, height){
+
+var n = new SimpleImage(width, height);
+for (var p of image.values()){
+var x = p.getX();
+var y = p.getY();
+
+if (x < width && y < height){
+var np = n.getPixel(x,y);
+np.setRed(p.getRed());
+np.setBlue(p.getBlue());
+np.setGreen(p.getGreen());
+   }
+ }
+return n;
+}
+
+var image = new SimpleImage ("astrachan.jpg");
+print(image);
+
+var hide = new SimpleImage("duvall.jpg");
+print(hide);
+
+var cropHeight = image.getHeight();
+if (hide.getHeight() < cropHeight) {
+image = crop (image,200,300);
+}
+
+print(image);</pre>
+
+<h3><u>Hidden image an extracted image</u></h3>
+<p>On the left hand side,we have the combined image that has the other image hidden in it with the hidden image hidding in the 2 lower bits. On the right, we have the extracted image.</p>
+<p>
+<a href="https://imgur.com/DlDPXGN"><img src="https://i.imgur.com/DlDPXGN.png" title="source: imgur.com" 
+<a href="https://imgur.com/Zj0dniQ"><img src="https://i.imgur.com/Zj0dniQ.png" title="source: imgur.com" /></a>
+
+
+
+</p><h3><u>Algorithm</u></h3>
+<p>After we cropped the two images to have the same size, now we can hide one into another.
+The function pixchange, converts the last numbits to 0's.
+The function chop2hide, is the one we use to "make room": clearing pixels to hide data clearing numbits of the eight bits out.
+With the function shift, we shift the top (8 numbits) to right; clear out top numbits bits.
+Now we can combine the two images (a,b) with the function combine.
+We finally extract the hidden image from the original image with the function extract.</h3>
+<pre>
+//FUNCTION CROP: adjust the two images to have the same size
+function crop (image, width, height){
+var n = new SimpleImage(width, height);
+
+for (var p of image.values()){
+ var x = p.getX();
+ var y = p.getY();
+ if (x < width && y < height){
+ var np = n.getPixel(x,y);
+   np.setRed(p.getRed());
+   np.setBlue(p.getBlue());
+   np.setGreen(p.getGreen());
+}
+
+}
+
+return n;
+}
+
+//FUNCTION pixchange:convert last numbits to 0's
+function pixchange (pixval){
+  
+  var x = Math.floor(pixval/16) *16;
+  
+  return x;
+
+}
+//function chop2hide(image,numbits):clearing pixels to hide data clearig numbits of the eight bits out
+function chop2hide(image) {
+  for (var px of image.values()) {
+
+     px.setRed(pixchange(px.getRed()));
+     px.setGreen(pixchange(px.getGreen()));
+     px.setBlue(pixchange(px.getBlue()));
+        
+    }
+  
+  return image;
+
+}
+
+//FUNCTION shift(im,numbits):shift top(8 numbits) to right, clear out top numbits bits
+function shift(im){
+   
+ var nim = new SimpleImage(im.getWidth(),im.getHeight());
+
+for (var px of im.values()) {
+ var x = px.getX();
+ var y = px.getY();
+ var npx = nim.getPixel(x,y);
+  
+ npx.setRed(Math.floor(px.getRed()/16));
+ npx.setGreen(Math.floor(px.getGreen()/16));
+ npx.setBlue(Math.floor(px.getBlue()/16));
+}       
+  return nim;
+}
+
+//FUNCTION newpv(p,q)
+
+function newpv(p,q){
+ var answer = p+q;
+ if (p+q > 255) print ("error too big: answer");
+  return answer;
+}
+
+//FUNCTION combine(a,b)
+
+function combine (a,b){
+   var n = new SimpleImage(a.getWidth(), a.getHeight());
+   for (var pa of a.values()){
+   var x = pa.getX();
+   var y = pa.getY();
+   var pb = b.getPixel (x,y);
+   var np = n.getPixel(x,y);
+      
+  np.setRed(newpv(pa.getRed(),pb.getRed()));
+  np.setGreen(newpv(pa.getGreen(),pb.getGreen()));
+  np.setBlue(newpv(pa.getGreen(),pb.getBlue()));
+ }
+ return n;
+}
+
+//FUNCTION extract
+function extract(image){
+    var hidden = new SimpleImage(image.getWidth(),image.getHeight());
+    
+    for (var px of image.values()){
+        var x = px.getX();
+        var y = px.getY();
+        var newpx = hidden.getPixel(x,y);
+        newpx.setRed((px.getRed() - (Math.floor(px.getRed()/16) *16)) *16);
+        newpx.setGreen((px.getGreen() - (Math.floor(px.getGreen()/16)) *16) *16);
+        newpx.setBlue((px.getBlue() - (Math.floor(px.getBlue()/16) *16)) *16);
+    }
+    return hidden;
+}
+
+
+
+var image = new SimpleImage ("astrachan.jpg");
+print(image);
+
+print("cropped two pictures");
+
+var hide = new SimpleImage("duvall.jpg");
+print(hide);
+
+var cropHeight = image.getHeight();
+if (hide.getHeight() < cropHeight) {
+   image = crop (image,200,300);
+}
+
+print(image);
+
+var bitsToHideIn = 2;
+image = chop2hide(image,bitsToHideIn);
+
+hide = shift(hide, bitsToHideIn);
+
+var stego = combine(hide,image);
+print("here is the image with the hidden picture");
+print(stego);
+
+var hiddenImage = extract(stego,bitsToHideIn);
+print("here is the extracted image");
+print(hiddenImage);
+</pre>
+<h3><u> Hidden Message in Drew's picture:</u></h3>
+<p>Program testing can be used to show the presence of bugs, but never to show their absence!
+E.Dijkstra
+</p>
+<p>
+<a href="https://imgur.com/6lDNl9e"><img src="https://i.imgur.com/6lDNl9e.png" title="source: imgur.com" href="https://imgur.com/je4Slih"><img src="https://i.imgur.com/je4Slih.png" title="source: imgur.com" /></a>
+<!-- partial -->
+  
+</body>
+</html>

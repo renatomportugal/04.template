@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#rule {
+  position: fixed;
+  z-index: -1;
+  top: -100px;
+  width: 1.5rem;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+}
+
+#controlbox {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+#controlbox ul {
+  padding-left: 1.2rem;
+}
+
+.turingmachine {
+  position: relative;
+  height: 3.75rem;
+  overflow: hidden;
+}
+.turingmachine .tape {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left .1s ease;
+}
+.turingmachine .tape div {
+  display: inline-block;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  border-right: 1px solid gray;
+}
+.turingmachine .tape div:last-child {
+  border-right: none;
+}
+.turingmachine .tape div.zero {
+  background-color: rgba(0, 255, 255, 0.3);
+}
+.turingmachine .tape div.empty {
+  color: rgba(0, 0, 0, 0.2);
+}
+.turingmachine .cursor {
+  position: absolute;
+  bottom: .1rem;
+  left: 7.5rem;
+}
+.turingmachine .tape div, .turingmachine .cursor {
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+}
+.turingmachine .c {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  transform: translate(-50%);
+  width: auto;
+  text-align: center;
+}
+.turingmachine .c:before {
+  content: '{';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  transform: rotate(-90deg) scaleY(9) translateY(-0.13rem);
+  color: gray;
+}
+
+.automa {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+.automa div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 0 0 2rem;
+  line-height: 1.3rem;
+  padding: .2rem .5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.automa div:hover {
+  border: 1px solid black;
+}
+.automa div.current {
+  background: rgba(0, 255, 255, 0.2);
+}
+.automa div:nth-child(1) {
+  flex: 0 0 auto;
+  text-align: right;
+  position: -webkit-sticky;
+  position: sticky;
+  background: white;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.turingmachine.history {
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+.turingmachine.history .tape {
+  top: 2.1rem;
+}
+.turingmachine.history .a, .turingmachine.history .b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%);
+  width: auto;
+  text-align: center;
+}
+.turingmachine.history .a input, .turingmachine.history .b input {
+  width: 2rem;
+  text-align: center;
+}
+.turingmachine.history .a:after, .turingmachine.history .b:after {
+  content: '{';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 1.5rem;
+  transform: rotate(90deg) scaleY(9) translateY(-0.07rem);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: gray;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+#buttons > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#buttons > div input {
+  width: 2rem;
+  text-align: center;
+}
+
+button {
+  padding: .5rem;
+  border-radius: .3rem;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  margin-top: .2rem;
+}

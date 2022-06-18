@@ -1,0 +1,200 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+$tapecell: 1.5rem;
+#rule {
+	position: fixed;
+	z-index: -1;
+	top: -100px;
+	width: $tapecell;
+}
+
+#app {
+	display: flex;
+	flex-direction: row;
+	padding: .5rem;
+}
+
+#controlbox {
+	display: flex;
+	flex-direction: column;
+	margin-right: 1rem;
+	
+	ul {
+		padding-left: 1.2rem;
+	}
+}
+
+.turingmachine {
+	position: relative;
+	height: $tapecell * 2.5;
+	overflow: hidden;
+	
+	.tape {
+		display: flex;
+		flex-direction: row;
+		border: 1px solid gray;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: left .1s ease;
+		
+		div {
+			display: inline-block;
+			height: $tapecell;
+			line-height: $tapecell;
+			border-right: 1px solid gray;
+			&:last-child {
+				border-right: none;
+			}
+			
+			&.zero {
+				background-color: rgba(cyan, 0.3);
+			}
+			&.empty {
+				color: rgba(black, 0.2);
+			}
+		}
+	}
+	
+	.cursor {
+		position: absolute;
+		bottom: .1rem;
+		left: $tapecell * 5;
+	}
+	
+	.tape div, .cursor {
+		flex: 0 0 $tapecell;
+		width: $tapecell;
+		text-align: center;
+	}
+	
+	.c {
+		position: absolute;
+		top: $tapecell;
+		left: 0;
+		transform: translate(-50%);
+		width: auto;
+		text-align: center;
+		
+		&:before {
+			content: '{';
+			display: block;
+			width: 1rem;
+			height: 1rem;
+			line-height: 1rem;
+			font-size: $tapecell;
+			transform: rotate(-90deg) scaleY(9) translateY(-0.13rem);
+			color: gray;
+		}
+	}
+}
+
+
+
+
+$rowwidthplain: 2;
+$rowwidth: 2rem;
+$rowheight: 1.3rem;
+.automa {
+	display: flex;
+	flex-direction: row;
+	overflow-x: auto;
+	font-size: 0.9rem;
+	
+	div {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		flex: 0 0 $rowwidth;
+		line-height: $rowheight;
+		padding: .2rem .5rem;
+		border: 1px solid rgba(black, 0.2);
+		position: relative;
+		
+		&:hover {
+			border: 1px solid black;
+		}
+		
+		&.current {
+			background: rgba(cyan, 0.2);
+		}
+		
+		
+		&:nth-child(1) {
+			flex: 0 0 auto;
+			text-align: right;
+			position: -webkit-sticky;
+			position: sticky;
+			background: white;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			pointer-events: none;
+		}
+	}
+}
+
+.turingmachine.history {
+	height: 4rem;
+	margin-bottom: 1rem;
+	
+	.tape {
+		top: 2.1rem;
+	}
+	.a, .b {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(-50%);
+		width: auto;
+		text-align: center;
+		
+		input {
+			width: 2rem;
+			text-align: center;
+		}
+		
+		&:after {
+			content: '{';
+			display: block;
+			width: 1rem;
+			height: 1rem;
+			line-height: 1rem;
+			font-size: $tapecell;
+			transform: rotate(90deg) scaleY(9) translateY(-0.07rem);
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			color: gray;
+		}
+	}
+}
+
+#buttons {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	
+	& > div {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		
+		input {
+			width: 2rem;
+			text-align: center;
+		}
+	}
+}
+
+button {
+	padding: .5rem;
+	border-radius: .3rem;
+	background-color: whitesmoke;
+	border: 1px solid gray;
+	margin-top: .2rem;
+}

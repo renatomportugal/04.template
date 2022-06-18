@@ -1,0 +1,15 @@
+%form.board
+  .card.card--assigned#card-assigned
+  .slots
+    - (0..23).each do |i|
+      .slot
+        %input.control(id="card-#{i}" type="checkbox")
+        %label.card(class="card-#{i}" for="card-#{i}")
+  %footer.footer
+    %h1.title 
+      Guess Who IRL 
+      %small.subtitle 
+        Interact with real people while on keyboard :v
+    
+    %button.btn--rematch#btn-rematch(type="reset")
+      Rematch

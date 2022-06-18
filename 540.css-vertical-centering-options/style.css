@@ -1,0 +1,97 @@
+html,
+body {
+  height: 100%;
+  background: #333;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5em;
+  display: -webkit-box;
+  display: flex;
+}
+body > div {
+  width: 23%;
+  float: left;
+  color: #bbb;
+  margin: 1%;
+  text-align: center;
+  background: #111;
+  padding: 25px;
+}
+body > div > div {
+  outline: 1px solid #444;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.flexCenter {
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.tableCenter {
+  height: 100%;
+  display: table;
+}
+.tableCenter > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.transformCenter {
+  height: 100%;
+}
+.transformCenter > div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.pseudoCenter {
+  height: 100%;
+}
+.pseudoCenter:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.pseudoCenter > div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 99%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  padding-bottom: 40px;
+}
+
+p {
+  font-family: 'Crimson Text';
+}
+
+h3 {
+  font-family: 'Raleway';
+  font-weight: normal;
+  font-size: 1.5em;
+}
+h3 span {
+  display: block;
+  font-size: .7em;
+  color: #666;
+  margin: 5px 0;
+}

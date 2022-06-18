@@ -1,0 +1,10 @@
+%main.page
+  - (1..12).each do |i|
+    %div{:class => "panel panel--#{i}"}      
+      .panel--front Front of #{i}
+      .panel--back Back of #{i}
+    
+  - (1..5).each do |i|
+    %div{:class => "panel __empty empty--#{i}"}
+  
+  %nav#navigation Click me!

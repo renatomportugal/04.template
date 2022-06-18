@@ -1,0 +1,108 @@
+html, body, main {
+  height: 100%;
+}
+
+body {
+  background: black;
+}
+
+main {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+nav {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+nav input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  margin: 1rem 0.5rem;
+}
+
+section {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+div {
+  -webkit-box-flex: 1;
+          flex: 1;
+  position: relative;
+}
+
+div > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+div > ul {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+}
+div:hover > ul {
+  opacity: 1;
+}
+div:hover > p {
+  opacity: 0;
+}
+div > ul li {
+  -webkit-box-flex: 1;
+          flex: 1;
+  font-size: 0.7rem;
+  letter-spacing: 0.0625em;
+  line-height: 1;
+  text-align: center;
+}
+div > ul li:last-child {
+  display: block;
+  -webkit-box-flex: 1;
+          flex: auto;
+/*   margin-top: 1rem; */
+  width: 100%;
+}
+div > ul li span {
+  background: white;
+  border-radius: 2px;
+  padding: 0.125rem;
+}
+div > p {
+  background: white;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 0.7rem;
+  left: 50%;
+  letter-spacing: 0.0625em;
+  line-height: 1;
+  margin: 0;
+  padding: 0.25rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
