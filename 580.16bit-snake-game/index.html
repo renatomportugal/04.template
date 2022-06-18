@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>16bit Snake Game</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="wrapper">
+  <!-- Header -->
+  <h1 class="snake-title">Snake</h1>
+  <p class="snake-p">Use keyboard arrows or buttons.<br><br>1. Hitting walls is a no-no.<br>2. Don't eat yourself.<br>3. Traveling backwards is a no-no too.<br>4. Everytime you fail it's faster.</p>
+  <!-- Menu Container -->
+<br>
+          <p class="snake-high-score-p">High-score</p>
+    <p class="snake-high-score">0</p>
+  <div id="menu-container">
+    <button class="menu-play-button" onClick="playGame()">Play</button>
+  </div>
+  <!-- Game Container -->
+  <div id="game-container">
+  <!-- Score -->
+    <p class="snake-score-p">Score</p>
+    <p class="snake-score">0</p>
+  <!-- Canvas, the Game -->
+  <canvas id="snakeGame" width="400" height="400">
+</canvas>
+  <!-- Controls -->
+  <div class="controls">
+    <div class="control-button" id="left" onClick="Left()"><i class="fas fa-2x fa-arrow-left"></i></div>
+    <div class="control-button" id="up" onClick="Up()"><i class="fas fa-2x fa-arrow-up"></i></div>
+    <div class="control-button" id="down" onClick="Down()"><i class="fas fa-2x fa-arrow-down"></i></div>
+    <div class="control-button" id="right" onClick="Right()"><i class="fas fa-2x fa-arrow-right"></i></div>
+  </div>
+  </div>
+  <!-- Game Over Container -->
+  <div id="game-over-container">
+    <h1 class="game-over-title">Game Over</h1>
+    <button class="game-over-play-button" onClick="playGame()">Play Again</button>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body, button {
+	font-family: "Press Start 2P", sans-serif;
+	text-transform: uppercase;
+}
+body {
+	background: #171717;
+	color: #fff;
+	font-size: calc(8px + (16 - 8) * (100vh - 320px)/(640 - 320));
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	line-height: 1.5;
+	overflow: hidden;
+}
+button, canvas, div {
+	display: block;
+}
+canvas {
+	image-rendering: pixelated;
+	margin: auto;
+}
+h2, p, table {
+	margin-bottom: 1.5em;
+}
+h2, th {
+	font-weight: normal;
+}
+h2 {
+	font-size: 1em;
+}
+table {
+	width: 100%;
+}
+th {
+	padding: 1.5em 0;
+}
+td:first-of-type {
+	padding-right: 1.5em;
+	text-align: right;
+}
+button {
+	background: #0f0;
+	font-size: 1em;
+	margin: auto;
+	padding: 0.75em 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+}
+button:focus, button:hover {
+	background: #fff;
+	cursor: pointer;
+}
+button:focus {
+	outline: transparent;
+}
+button:active {
+	background: transparent;
+	box-shadow: 0 0 0 0.25em inset;
+	color: #fff;
+}
+div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 32em;
+	transform: translate(-50%,-50%);
+}
+div:not(:first-of-type) {
+	text-align: center;
+}
+div:nth-of-type(2) {
+	height: 100vh;
+}
+div:nth-of-type(2) p {
+	position: absolute;
+}
+div:nth-of-type(2) p:first-of-type {
+	left: 50%;
+	transform: translateX(-50%);
+}
+div:nth-of-type(2) p ~ p {
+	bottom: -0.5vh;
+}
+div:nth-of-type(2) p:nth-of-type(2) {
+	text-align: left;
+}
+div:nth-of-type(2) p:nth-of-type(3) {
+	right: 0;
+	text-align: right;
+}
+div:nth-of-type(n + 3):nth-of-type(-n + 4) {
+	background: #000;
+	padding: 1.5em 0;
+	width: 21em;
+}
+.hide {
+	display: none;
+}

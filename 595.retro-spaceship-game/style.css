@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: black;
+}
+
+#canvas {
+  background: black;
+  border: solid 5px white;
+  position: absolute;
+  top: calc(50% - 245px);
+  left: calc(50% - 185px);
+  outline: none;
+}

@@ -715,13 +715,32 @@
 | [475.TemplateGaleria](https://renatomportugal.github.io/04.template/475.TemplateGaleria/) | <img src="images/475.TemplateGaleria.jpg"/> |
 
 ## Games
-
+|2D                  |Telas        |
+| [580.16bit-snake-game](https://renatomportugal.github.io/04.template/580.16bit-snake-game) |<img src="images/580.16bit-snake-game.jpg"/> |
+|3D                  |Telas        |
+| [596.Cube-engine-master](https://renatomportugal.github.io/04.template/596.Cube-engine-master) |<img src="images/596.Cube-engine-master.jpg"/> |
+| [581.car-pool-game](https://renatomportugal.github.io/04.template/581.car-pool-game) |<img src="images/581.car-pool-game.jpg"/> |
+| [582.Digger-master](https://renatomportugal.github.io/04.template/582.Digger-master) |<img src="images/582.Digger-master.jpg"/> |
+| [583.game](https://renatomportugal.github.io/04.template/583.game) |<img src="images/583.game.jpg"/> |
+| [584.game-of-trains-css-js-no-tricks](https://renatomportugal.github.io/04.template/584.game-of-trains-css-js-no-tricks) |<img src="images/584.game-of-trains-css-js-no-tricks.jpg"/> |
+| [585.ghost-pong](https://renatomportugal.github.io/04.template/585.ghost-pong) |<img src="images/585.ghost-pong.jpg"/> |
+| [586.HTML5-Asteroids-master](https://renatomportugal.github.io/04.template/586.HTML5-Asteroids-master) |<img src="images/586.HTML5-Asteroids-master.jpg"/> |
+| [587.maze-generation-with-p5-js](https://renatomportugal.github.io/04.template/587.maze-generation-with-p5-js) |<img src="images/587.maze-generation-with-p5-js.jpg"/> |
+| [588.orbium-gh-pages](https://renatomportugal.github.io/04.template/588.orbium-gh-pages) |<img src="images/588.orbium-gh-pages.jpg"/> |
+| [589.playable-canvas-asteroids](https://renatomportugal.github.io/04.template/589.playable-canvas-asteroids) |<img src="images/589.playable-canvas-asteroids.jpg"/> |
 |Arkanoid            |Telas        |
 | [459.block-breaking](https://renatomportugal.github.io/04.template/459.block-breaking) |<img src="images/459.block-breaking.jpg"/> |
+|Aperte-o-Coelho     |Telas        |
+| [594.wack-the-bunny-game-easter-inspired-css-javascript](https://renatomportugal.github.io/04.template/594.wack-the-bunny-game-easter-inspired-css-javascript) |<img src="images/594.wack-the-bunny-game-easter-inspired-css-javascript.jpg"/> |
 |Apenas a Tela       |Telas        |
 | [472.streetFighter](https://renatomportugal.github.io/04.template/472.streetFighter) |<img src="images/472.streetFighter.jpg"/> |
+|Demo                |Telas        |
+| [597.jeffrey-bennett-s-super-cool-resume](https://renatomportugal.github.io/04.template/597.jeffrey-bennett-s-super-cool-resume) |<img src="images/597.jeffrey-bennett-s-super-cool-resume.jpg"/> |
+| [598.role-swapped-space-invaders](https://renatomportugal.github.io/04.template/598.role-swapped-space-invaders) |<img src="images/598.role-swapped-space-invaders.jpg"/> |
 |Forca               |Telas        |
 | [460.plankman-a-css-game](https://renatomportugal.github.io/04.template/460.plankman-a-css-game) |<img src="images/460.plankman-a-css-game.jpg"/> |
+|Futebol             |Telas        |
+| [593.soc-car](https://renatomportugal.github.io/04.template/593.soc-car) |<img src="images/593.soc-car.jpg"/> |
 |Guitar Hero - CORS  |Telas        |
 | [461.sonorous-string-master](https://renatomportugal.github.io/04.template/461.sonorous-string-master) |<img src="images/461.sonorous-string-master.jpg"/> |
 |Habilidades Manuais |Telas        |
@@ -734,12 +753,20 @@
 | [467.memodeck-fully-responsive](https://renatomportugal.github.io/04.template/467.memodeck-fully-responsive) |<img src="images/467.memodeck-fully-responsive.jpg"/> |
 | [468.memory](https://renatomportugal.github.io/04.template/468.memory) |<img src="images/468.memory.jpg"/> |
 | [470.html5-canvas-puzzle-2012-02-18](https://renatomportugal.github.io/04.template/470.html5-canvas-puzzle-2012-02-18) |<img src="images/470.html5-canvas-puzzle-2012-02-18.jpg"/> |
+|Minerar                |Telas        |
+| [599.tile-game](https://renatomportugal.github.io/04.template/599.tile-game) |<img src="images/599.tile-game.jpg"/> |
 |Personagens         |Telas        |
 | [469.day-2-character-design-with-css-variables](https://renatomportugal.github.io/04.template/469.day-2-character-design-with-css-variables) |<img src="images/469.day-2-character-design-with-css-variables.jpg"/> |
 |Roda a Roda         |Telas        |
 | [471.jquery-spin-wheel-2011-06-09](https://renatomportugal.github.io/04.template/471.jquery-spin-wheel-2011-06-09) |<img src="images/471.jquery-spin-wheel-2011-06-09.jpg"/> |
 |RPG                 |Telas        |
 | [559.2d-rpg-from-javascript-array](https://renatomportugal.github.io/04.template/559.2d-rpg-from-javascript-array) |<img src="images/559.2d-rpg-from-javascript-array.jpg"/> |
+| [590.pure-css-rpg-game](https://renatomportugal.github.io/04.template/590.pure-css-rpg-game) |<img src="images/590.pure-css-rpg-game.jpg"/> |
+|Snake               |Telas        |
+| [591.snake-2011-03-31](https://renatomportugal.github.io/04.template/591.snake-2011-03-31) |<img src="images/591.snake-2011-03-31.jpg"/> |
+| [592.snake-master](https://renatomportugal.github.io/04.template/592.snake-master) |<img src="images/592.snake-master.jpg"/> |
+|Space Invaders      |Telas        |
+| [595.retro-spaceship-game](https://renatomportugal.github.io/04.template/595.retro-spaceship-game) |<img src="images/595.retro-spaceship-game.jpg"/> |
 |Sudoku              |Telas        |
 | [562.picdoku-2013-05-01](https://renatomportugal.github.io/04.template/562.picdoku-2013-05-01) |<img src="images/562.picdoku-2013-05-01.jpg"/> |
 |Tabuleiro           |Telas        |
@@ -1172,6 +1199,7 @@
 |Radial       |Telas        |
 |---          |---          |
 | [334.radial-animated-progress-2](https://renatomportugal.github.io/04.template/334.radial-animated-progress-2) |<img src="images/334.radial-animated-progress-2.jpg"/> |
+| [600.rpg-player-info-smaller](https://renatomportugal.github.io/04.template/600.rpg-player-info-smaller) |<img src="images/600.rpg-player-info-smaller.jpg"/> |
 
 ## Responsivo
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Role-Swapped Space Invaders</title>
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Press+Start+2P'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <canvas></canvas>
+<div id="intro">
+	<p>Use the aliens to destroy the laser base 3 times or successfully land them!</p>
+	<p>Try to lose as few as possible.</p>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">Controls</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>[Space]</td>
+				<td>Move aliens</td>
+			</tr>
+			<tr>
+				<td>[A]</td>
+				<td>Summon ship from left</td>
+			</tr>
+			<tr>
+				<td>[S]</td>
+				<td>Fire</td>
+			</tr>
+			<tr>
+				<td>[D]</td>
+				<td>Summon ship from right</td>
+			</tr>
+		</tbody>
+	</table>
+	<button id="play" type="button">Play</button>
+</div>
+<div id="stats" class="hide">
+	<p>Aliens<br><br><span id="aliens-alive">0</span></p>
+	<p id="base-lives">0</p>
+	<p>Credit 00</p>
+</div>
+<div id="win" class="hide">
+	<h2>You Win</h2>
+	<p>Aliens alive: <span id="aliens-alive-result">0</span>/55</p>
+	<button id="play-again-win" type="button">Play Again</button>
+</div>
+<div id="lose" class="hide">
+	<h2>Game Over</h2>
+	<button id="play-again-lose" type="button">Play Again</button>
+</div>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

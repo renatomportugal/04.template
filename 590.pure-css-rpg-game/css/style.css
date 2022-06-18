@@ -1,0 +1,446 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+	counter-reset: posX;
+	background-color: #57606f;
+}
+input {
+	display: none;
+}
+.grid {
+	background-color: #34495e;
+	border: 3px solid #1e272e;
+	width: 960px;
+	height: 640px;
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+	position: relative;
+}
+.grid:after {
+	position: absolute;
+	font-size: 40px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	background-color: #222;
+	line-height: 640px;
+	z-index: 3;
+}
+.grid div {
+	height: 64px;
+	width: 64px;
+	background: url('http://loscil.fr/CSS-RPG/tile.png');
+	background-size: 1024px 768px;
+	--x: 0;
+	--y: 0;
+	background-position: calc(-64px * var(--x)) calc(-64px * var(--y));
+}
+.grid *:nth-child(1), .grid *:nth-child(150) {
+	--x: 4;
+}
+.grid *:nth-child(17), .grid *:nth-child(21), .grid *:nth-child(22), .grid *:nth-child(23), .grid *:nth-child(24), .grid *:nth-child(25), .grid *:nth-child(26), .grid *:nth-child(27), .grid *:nth-child(28), .grid *:nth-child(29) {
+	--x: 2;
+}
+.grid *:nth-child(32), .grid *:nth-child(47), .grid *:nth-child(62), .grid *:nth-child(63), .grid *:nth-child(64), .grid *:nth-child(79), .grid *:nth-child(94), .grid *:nth-child(109), .grid *:nth-child(122), .grid *:nth-child(123), .grid *:nth-child(124), .grid *:nth-child(137), .grid *:nth-child(91), .grid *:nth-child(92) {
+	--x: 2;
+}
+.grid *:nth-child(44), .grid *:nth-child(59), .grid *:nth-child(74), .grid *:nth-child(89), .grid *:nth-child(104), .grid *:nth-child(119), .grid *:nth-child(131), .grid *:nth-child(132), .grid *:nth-child(133), .grid *:nth-child(134), .grid *:nth-child(87), .grid *:nth-child(88), .grid *:nth-child(100), .grid *:nth-child(114), .grid *:nth-child(129), .grid *:nth-child(144) {
+	--x: 2;
+}
+.grid *:nth-child(51), .grid *:nth-child(52), .grid *:nth-child(53), .grid *:nth-child(54), .grid *:nth-child(55), .grid *:nth-child(56), .grid *:nth-child(57), .grid *:nth-child(66), .grid *:nth-child(68), .grid *:nth-child(81), .grid *:nth-child(82), .grid *:nth-child(83), .grid *:nth-child(97), .grid *:nth-child(112), .grid *:nth-child(127), .grid *:nth-child(141) {
+	--x: 2;
+}
+.grid *:nth-child(33) {
+	--x: 4;
+	--y: 7;
+}
+.grid *:nth-child(34) {
+	--x: 5;
+	--y: 7;
+}
+.grid *:nth-child(48) {
+	--x: 4;
+	--y: 8;
+}
+.grid *:nth-child(49) {
+	--x: 5;
+	--y: 8;
+}
+.grid *:nth-child(69), .grid *:nth-child(103), .grid *:nth-child(110), .grid *:nth-child(120) {
+	--x: 4;
+	--y: 6;
+}
+.controls {
+	margin: auto;
+	width: 120px;
+	height: 120px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		". top ."
+		"left action right"
+		". bottom .";
+	justify-content: center;
+	align-items: center;
+}
+.controls > * {
+	height: 40px;
+	width: 40px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+}
+.controls > *:hover {
+	opacity: 0.9;
+}
+.controls > *:nth-child(1) {
+	grid-area: top;
+}
+.controls > *:nth-child(2) {
+	grid-area: left;
+}
+.controls > *:nth-child(3) {
+	grid-area: right;
+}
+.controls > *:nth-child(4) {
+	grid-area: bottom;
+}
+.controls > *:nth-child(5) {
+	grid-area: action;
+	font-size: 30px;
+	display: none;
+}
+.controls > * label {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+/* Position Player */
+.grid .player {
+	background-image: url('http://loscil.fr/CSS-RPG/player.png');
+	background-size: contain;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	--x: 0;
+	--y: 0;
+	left: calc(64px * var(--x));
+	top: calc(64px * var(--y));
+}
+#x2:checked ~ .grid .player {
+	--x: 1;
+}
+#x3:checked ~ .grid .player {
+	--x: 2;
+}
+#x4:checked ~ .grid .player {
+	--x: 3;
+}
+#x5:checked ~ .grid .player {
+	--x: 4;
+}
+#x6:checked ~ .grid .player {
+	--x: 5;
+}
+#x7:checked ~ .grid .player {
+	--x: 6;
+}
+#x8:checked ~ .grid .player {
+	--x: 7;
+}
+#x9:checked ~ .grid .player {
+	--x: 8;
+}
+#x10:checked ~ .grid .player {
+	--x: 9;
+}
+#x11:checked ~ .grid .player {
+	--x: 10;
+}
+#x12:checked ~ .grid .player {
+	--x: 11;
+}
+#x13:checked ~ .grid .player {
+	--x: 12;
+}
+#x14:checked ~ .grid .player {
+	--x: 13;
+}
+#x15:checked ~ .grid .player {
+	--x: 14;
+}
+#y2:checked ~ .grid .player {
+	--y: 1;
+}
+#y3:checked ~ .grid .player {
+	--y: 2;
+}
+#y4:checked ~ .grid .player {
+	--y: 3;
+}
+#y5:checked ~ .grid .player {
+	--y: 4;
+}
+#y6:checked ~ .grid .player {
+	--y: 5;
+}
+#y7:checked ~ .grid .player {
+	--y: 6;
+}
+#y8:checked ~ .grid .player {
+	--y: 7;
+}
+#y9:checked ~ .grid .player {
+	--y: 8;
+}
+#y10:checked ~ .grid .player {
+	--y: 9;
+}
+
+/* Position other elements */
+.grid .key {
+	background-image: url('http://loscil.fr/CSS-RPG/key.png');
+	background-size: contain;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+}
+#hasKey:checked ~ .grid .key {
+	display: none;
+}
+.grid .door {
+	background-image: url('http://loscil.fr/CSS-RPG/closed-door.png');
+	background-size: contain;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#hasKey:checked ~ .grid .door {
+	background-image: url('http://loscil.fr/CSS-RPG/opened-door.png');
+}
+
+/* Display controls */
+
+/* Top */
+#y2:checked ~ .controls *:nth-child(1) label:nth-of-type(1) {
+	display: block;
+}
+#x6:not(:checked) ~ #x7:not(:checked) ~ #x8:not(:checked) ~ #x9:not(:checked) ~ #x10:not(:checked) ~ #x11:not(:checked) ~ #x12:not(:checked) ~ #x13:not(:checked) ~ #y3:checked ~ .controls *:nth-child(1) label:nth-of-type(2) {
+	display: block;
+}
+#y4:checked ~ .controls *:nth-child(1) label:nth-of-type(3) {
+	display: block;
+}
+#x10:not(:checked) ~ #x11:not(:checked) ~ #x12:not(:checked) ~ #y5:checked ~ .controls *:nth-child(1) label:nth-of-type(4) {
+	display: block;
+}
+#x2:not(:checked) ~ #x3:not(:checked) ~ #y6:checked ~ .controls *:nth-child(1) label:nth-of-type(5) {
+	display: block;
+}
+#x6:not(:checked) ~ #x8:not(:checked) ~ #x12:not(:checked) ~ #y7:checked ~ .controls *:nth-child(1) label:nth-of-type(6) {
+	display: block;
+}
+#x1:not(:checked) ~ #x2:not(:checked) ~ #x10:not(:checked) ~ #y8:checked ~ .controls *:nth-child(1) label:nth-of-type(7) {
+	display: block;
+}
+#y9:checked ~ .controls *:nth-child(1) label:nth-of-type(8) {
+	display: block;
+}
+#x3:not(:checked) ~ #x4:not(:checked) ~ #x11:not(:checked) ~ #x12:not(:checked) ~ #x13:not(:checked) ~ #x14:not(:checked) ~ #y10:checked ~ .controls *:nth-child(1) label:nth-of-type(9) {
+	display: block;
+}
+
+/* Left */
+#x2:checked ~ .controls *:nth-child(2) label:nth-of-type(1) {
+	display: block;
+}
+#x3:checked ~ #y2:not(:checked) ~ #y7:not(:checked) ~ #y10:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(2) {
+	display: block;
+}
+#x4:checked ~ .controls *:nth-child(2) label:nth-of-type(3) {
+	display: block;
+}
+#x5:checked ~ #y5:not(:checked) ~ #y6:not(:checked) ~ #y7:not(:checked) ~ #y9:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(4) {
+	display: block;
+}
+#x6:checked ~ .controls *:nth-child(2) label:nth-of-type(5) {
+	display: block;
+}
+#x7:checked ~ #y10:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(6) {
+	display: block;
+}
+#x8:checked ~ #y7:not(:checked) ~ #y8:not(:checked) ~ #y9:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(7) {
+	display: block;
+}
+#x9:checked ~ #y6:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(8) {
+	display: block;
+}
+#x10:checked ~ #y8:not(:checked) ~ #y9:not(:checked) ~ #y10:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(9) {
+	display: block;
+}
+#x11:checked ~ #y7:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(10) {
+	display: block;
+}
+#x12:checked ~ .controls *:nth-child(2) label:nth-of-type(11) {
+	display: block;
+}
+#x13:checked ~ #y4:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(12) {
+	display: block;
+}
+#x14:checked ~ .controls *:nth-child(2) label:nth-of-type(13) {
+	display: block;
+}
+#x15:checked ~ #y2:not(:checked) ~ #y3:not(:checked) ~ #y4:not(:checked) ~ #y5:not(:checked) ~ #y6:not(:checked) ~ #y7:not(:checked) ~ #y9:not(:checked) ~ .controls *:nth-child(2) label:nth-of-type(14) {
+	display: block;
+}
+
+/* Right */
+#x1:checked ~ #y2:not(:checked) ~ #y3:not(:checked) ~ #y4:not(:checked) ~ #y5:not(:checked) ~ #y9:not(:checked) ~ #y10:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(1) {
+	display: block;
+}
+#x2:checked ~ .controls *:nth-child(3) label:nth-of-type(2) {
+	display: block;
+}
+#x3:checked ~ #y6:not(:checked) ~ #y7:not(:checked) ~ #y8:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(3) {
+	display: block;
+}
+#x4:checked ~ .controls *:nth-child(3) label:nth-of-type(4) {
+	display: block;
+}
+#x5:checked ~ #y2:not(:checked) ~ #y4:not(:checked) ~ #y5:not(:checked) ~ #y6:not(:checked) ~ #y10:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(5) {
+	display: block;
+}
+#x6:checked ~ #y7:not(:checked) ~ #y8:not(:checked) ~ #y9:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(6) {
+	display: block;
+}
+#x7:checked ~ .controls *:nth-child(3) label:nth-of-type(7) {
+	display: block;
+}
+#x8:checked ~ #y8:not(:checked) ~ #y9:not(:checked) ~ #y10:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(8) {
+	display: block;
+}
+#x9:checked ~ #y7:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(9) {
+	display: block;
+}
+#x10:checked ~ #y9:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(10) {
+	display: block;
+}
+#x11:checked ~ #y6:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(11) {
+	display: block;
+}
+#x12:checked ~ .controls *:nth-child(3) label:nth-of-type(12) {
+	display: block;
+}
+#x13:checked ~ #y2:not(:checked) ~ #y3:not(:checked) ~ #y4:not(:checked) ~ #y5:not(:checked) ~ #y6:not(:checked) ~ #y7:not(:checked) ~ #y8:not(:checked) ~ #y9:not(:checked) ~ .controls *:nth-child(3) label:nth-of-type(13) {
+	display: block;
+}
+#x14:checked ~ .controls *:nth-child(3) label:nth-of-type(14) {
+	display: block;
+}
+
+/* Bottom */
+#x2:not(:checked) ~ #x6:not(:checked) ~ #x7:not(:checked) ~ #x8:not(:checked) ~ #x9:not(:checked) ~ #x10:not(:checked) ~ #x11:not(:checked) ~ #x12:not(:checked) ~ #x13:not(:checked) ~ #x14:not(:checked) ~ #y1:checked ~ .controls *:nth-child(4) label:nth-of-type(1) {
+	display: block;
+}
+#y2:checked ~ .controls *:nth-child(4) label:nth-of-type(2) {
+	display: block;
+}
+#x6:not(:checked) ~ #x7:not(:checked) ~ #x8:not(:checked) ~ #x9:not(:checked) ~ #x10:not(:checked) ~ #x11:not(:checked) ~ #x12:not(:checked) ~ #y3:checked ~ .controls *:nth-child(4) label:nth-of-type(3) {
+	display: block;
+}
+#y4:checked ~ .controls *:nth-child(4) label:nth-of-type(4) {
+	display: block;
+}
+#x12:not(:checked) ~ #x13:not(:checked) ~ #y5:checked ~ .controls *:nth-child(4) label:nth-of-type(5) {
+	display: block;
+}
+#x1:not(:checked) ~ #x2:not(:checked) ~ #x10:not(:checked) ~ #y6:checked ~ .controls *:nth-child(4) label:nth-of-type(6) {
+	display: block;
+}
+#x9:not(:checked) ~ #y7:checked ~ .controls *:nth-child(4) label:nth-of-type(7) {
+	display: block;
+}
+#x2:not(:checked) ~ #x3:not(:checked) ~ #x11:not(:checked) ~ #x12:not(:checked) ~ #x13:not(:checked) ~ #y8:checked ~ .controls *:nth-child(4) label:nth-of-type(8) {
+	display: block;
+}
+#x6:not(:checked) ~ #y9:checked ~ .controls *:nth-child(4) label:nth-of-type(9) {
+	display: block;
+}
+#y10:checked ~ .controls *:nth-child(4) label:nth-of-type(10) {
+	display: block;
+}
+
+/* Display key and labels */
+#hasKey:not(:checked) ~ #x1:checked ~ #y10:checked ~ .controls > *:nth-child(5) {
+	display: flex;
+}
+#hasKey:not(:checked) ~ #x1:checked ~ #y10:checked ~ .controls > *:nth-child(5) label {
+	display: block;
+}
+#hasKey:checked ~ #x14:checked ~ #y10:checked ~ .controls *:nth-child(3) label:nth-of-type(16) {
+	display: block;
+}
+
+/* Handle Game Overs */
+#x5:checked ~ #y9:checked ~ .controls *:nth-child(1) label:nth-of-type(15) {
+	display: block;
+}
+#x9:checked ~ #y6:checked ~ .controls *:nth-child(1) label:nth-of-type(15) {
+	display: block;
+}
+#x13:checked ~ #y8:checked ~ .controls *:nth-child(1) label:nth-of-type(15) {
+	display: block;
+}
+#x15:checked ~ #y9:checked ~ .controls *:nth-child(1) label:nth-of-type(15) {
+	display: block;
+}
+#x5:checked ~ #y3:checked ~ .controls *:nth-child(2) label:nth-of-type(15) {
+	display: block;
+}
+#x5:checked ~ #y4:checked ~ .controls *:nth-child(2) label:nth-of-type(15) {
+	display: block;
+}
+#x6:checked ~ #y8:checked ~ .controls *:nth-child(2) label:nth-of-type(15) {
+	display: block;
+}
+#x10:checked ~ #y5:checked ~ .controls *:nth-child(2) label:nth-of-type(15) {
+	display: block;
+}
+#x12:checked ~ #y7:checked ~ .controls *:nth-child(3) label:nth-of-type(15) {
+	display: block;
+}
+#x3:checked ~ #y2:checked ~ .controls *:nth-child(4) label:nth-of-type(15) {
+	display: block;
+}
+#x4:checked ~ #y2:checked ~ .controls *:nth-child(4) label:nth-of-type(15) {
+	display: block;
+}
+#x5:checked ~ #y7:checked ~ .controls *:nth-child(4) label:nth-of-type(15) {
+	display: block;
+}
+#x15:checked ~ #y7:checked ~ .controls *:nth-child(4) label:nth-of-type(15) {
+	display: block;
+}
+
+/* End of Game */
+#go:checked ~ .grid:after {
+	content: "Game Over, you felt in a hole !";
+}
+#finish:checked ~ .grid:after {
+	content: "Congratulations, you won !";
+}
+/* Disable controls if the game is over */
+#go:checked ~ .controls > * > label, #finish:checked ~ .controls > * > label {
+	display: none !important;
+}
