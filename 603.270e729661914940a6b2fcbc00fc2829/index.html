@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="assets/css/main.processed.css">
+  <link rel="stylesheet" href="assets/css/animations.processed.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body><canvas id="stars"></canvas>
+  <div class="container">
+    <div class="wall">
+      <div class="lights"></div>
+    </div>
+    <div class="wall">
+      <div class="machine">
+        <div class="panel">
+          <p>Origin</p><input type="range" min="100" max="1820" value="960" id="slider">
+          <div class="set">Set</div>
+        </div>
+        <div class="panel">
+          <p>Perspective</p><input type="range" min="100" max="3000" value="500" id="slider2">
+          <div class="set">Set</div>
+        </div>
+      </div>
+    </div>
+    <div class="wall">
+      <div class="frame">
+        <div class="pic"></div>
+        <div class="pic"></div>
+        <div class="pic"></div>
+        <div class="pic"></div><canvas id="whiteboard"></canvas>
+        <div class="pen"></div>
+        <div class="social"><a href="https://codepen.io/vinnywoo" target="_Blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/whitecp.png"></a><a href="https://www.linkedin.com/in/vincent-danna-378924b0" target="_Blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/lin.png"></a></div>
+      </div>
+    </div>
+    <div class="wall">
+      <div class="button">
+        <div class="switch"></div>
+      </div>
+    </div>
+    <div class="door"></div>
+  </div>
+</body>
+<script src="assets/scripts/main.js"></script>
+<script src="assets/scripts/starfield.js"></script>
+<script src="assets/scripts/whiteboard.js"></script>
+
+</html>

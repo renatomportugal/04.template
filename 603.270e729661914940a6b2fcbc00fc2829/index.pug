@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="assets/css/main.processed.css")
+    link(rel="stylesheet" href="assets/css/animations.processed.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  body
+    canvas#stars
+    .container
+      .wall
+        .lights
+      .wall
+        .machine
+          .panel
+            p Origin
+            input(type="range" min="100" max="1820" value="960" id="slider")
+            .set Set
+          .panel
+            p Perspective
+            input(type="range" min="100" max="3000" value="500" id="slider2")
+            .set Set
+      .wall
+        .frame
+          - var n = 0
+          while n < 4
+            .pic
+            - n++
+          canvas#whiteboard
+          .pen
+          .social
+            a(href="https://codepen.io/vinnywoo" target="_Blank")
+              img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/whitecp.png")
+            a(href="https://www.linkedin.com/in/vincent-danna-378924b0" target="_Blank")
+              img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/lin.png")
+      .wall
+        .button
+          .switch
+      .door
+  script(src="assets/scripts/main.js")
+  script(src="assets/scripts/starfield.js")
+  script(src="assets/scripts/whiteboard.js")

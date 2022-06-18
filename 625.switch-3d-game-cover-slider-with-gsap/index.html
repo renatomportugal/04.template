@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Switch 3D game cover slider with GSAP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script id="boxTmpl" type="x-tmpl-mustache">
+  <div id="{{id}}" class="box" {{{bg}}}>
+    <div class="back" {{{bg}}}></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="opening"></div>
+    <div class="spine" {{{bg}}}></div>
+  </div>
+</script>
+
+<div id="ctrlLeft" class="ctrl left"><i class="fas fa-angle-left"></i></div>
+<div id="ctrlRight" class="ctrl right"><i class="fas fa-angle-right"></i></div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

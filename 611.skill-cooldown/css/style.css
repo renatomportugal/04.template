@@ -1,0 +1,59 @@
+/* Icon Font setup */
+
+@font-face {
+	font-family: 'rpg-icons';
+	src:url('https://dl.dropboxusercontent.com/s/tppndyihrrvp6v8/rpg-icons.eot?dl=1');
+	src:url('https://dl.dropboxusercontent.com/s/k4prglgx8k1slfj/rpg-icons.woff?dl=1') format('woff'),
+		url('https://dl.dropboxusercontent.com/s/qxikkw6zzwgkm3k/rpg-icons.ttf?dl=1') format('truetype'),
+		url('https://dl.dropboxusercontent.com/s/qbsn3doq0uuab2y/rpg-icons.svg?dl=1#rpg-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	font-family: 'rpg-icons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Overlay setup */
+
+.skill {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  border: 1px solid tan;
+  border-radius: 25%;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  background-color: wheat;
+}
+
+.withFont{
+  font-size: 55px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.withImage {
+  background-image: url("https://ssl.gstatic.com/gb/images/p1_0fa642a2.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.cdOverlay {
+  position: absolute;
+  opacity: 0.5;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}

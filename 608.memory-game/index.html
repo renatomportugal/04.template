@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="container main-container" ng-app="MemoryGame" ng-controller="GameCtrl">
+  <div class="page-header">
+    <h2>Memory Game <small class="pull-right">
+        <label>No. Tiles: 
+          <select ng-options="o[0] as o[1] for o in gridSizes" ng-model="gridSize"></select>
+        </label></small>
+    </h2>
+    <div class="small" ng-show="!showHowTo"><a href="#" ng-click="showHowTo=true">How to play?</a></div>
+  </div>
+  <div class="well small" ng-show="showHowTo">
+    <p>Click the tiles to match pairs by the image displayed. Clicking the "Give me a hint" button will show all tiles briefly to refresh your memory, but doing this will count against your score. </p>
+    <p>You are scored on how many successful pairs are made compared against failures and hints that have been used.</p>
+    <p>You can change the number of tiles displayed, by changing the value in the drop down above.</p><a href="#" ng-click="showHowTo=false">Hide this hint.</a>
+  </div>
+  <div class="text-center">
+    <memory-grid ng-model="grid" size="gridSize"></memory-grid>
+  </div>
+  <script type="text/ng-template" id="/memory-grid.tpl">
+    <div class="memory-grid" style="width: {{model.width}}px; height: {{model.height}}px;">
+      <div class="mg-container" ng-class="{'locked': model.changesLocked}">
+        <div class="symbol" ng-repeat="card in model.cells" ng-class="card.cssClass" ng-click="model.selectItem($event, card)" style="width: {{model.cellWidth}}px; height: {{model.cellHeight}}px;"><i class="icon fa" ng-class="card.symbol"></i></div>
+        <div class="clearfix"></div>
+      </div>
+      <hr/>
+      <div class="text-center">
+        <div class="pull-left text-left"><span>Completed: 
+            <label>{{(model.percentComplete*100)|number:2}}%</label></span></div>
+        <div class="pull-right">
+          <div class="text-right"><span>Score: 
+              <label class="label label-success" title="Successful">{{model.success|number}}</label> 
+              <label class="label label-danger" title="Failed">{{model.fails|number}}</label> 
+              <label class="label label-warning" title="Hints">{{model.hints|number}}</label> = 
+              <label title="Total Score">{{model.score|number:1}} / 100</label></span></div>
+          <div class="text-right small"><span>Duration: 
+              <label>{{model.duration|duration:true}}</label></span></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <hr/>
+      <div class="btn-group pull-left">
+        <button class="btn btn-lg btn-default" ng-if="!model.completed" ng-click="model.hint()" ng-disabled="model.changesLocked"><span class="fa fa-question-circle"></span> Give me a hint
+        </button>
+      </div>
+      <div class="btn-group pull-right">
+        <button class="btn btn-lg btn-danger" ng-click="model.reset()" ng-disabled="model.changesLocked"><span class="fa fa-refresh"></span> Restart
+        </button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </script>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

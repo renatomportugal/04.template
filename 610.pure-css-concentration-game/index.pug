@@ -1,0 +1,39 @@
+.container
+  #start
+  form#instruction-screen.overlay
+    div
+      h2 How to Play Concentration
+      p Click a card to turn it over. Turn over matching pairs of cards to remove them from the deck. The game is over once all the cards are removed.
+      .btn-container
+        input(type="checkbox" required="required")
+  .timer-container.top-corner Time: <span class="elapsed-time"></span>
+
+  - var list = [['a1','a2'],['b1','b2'],['c1','c2'],['d1','d2'],['e1','e2'],['f1','f2'],['g1','g2'],['h1','h2'],['i1','i2']];
+  each val in list
+    div(id=val[0] class="target")
+    div(id=val[1] class="target")
+    form(class="card-body "+val[0] id="form-"+val[0])
+      input(type="checkbox" required="required")
+    form(class="card-body "+val[1] id="form-"+val[1])
+      input(type="checkbox" required="required")
+  div(class="overlay game-over")
+    div
+      h2 Game over
+      p You finished in <span class="elapsed-time"></span> seconds.
+
+  article
+    each val in list
+      div(class="card-holder card-holder-"+val[0])
+        span(id=val[0]+"f" class="last-click")
+        a(href="#"+val[0]+"f" class="inactive-card card-body "+val[0])
+        a(href="#"+val[0] class="first-card card-body "+val[0])
+          .card-container
+            .front
+            .back
+      div(class="card-holder card-holder-"+val[1])
+        span(id=val[1]+"f" class="last-click")
+        a(href="#"+val[1]+"f" class="inactive-card card-body "+val[1])
+        a(href="#"+val[1] class="first-card card-body "+val[1])
+          .card-container
+            .front
+            .back

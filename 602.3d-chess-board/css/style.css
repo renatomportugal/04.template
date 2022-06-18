@@ -1,0 +1,154 @@
+@charset "utf8";
+
+/*                                            3D Chess Board Started Here ...
+=======================================================================================================================*/
+*,
+*:after,
+*:before,
+html
+	{box-sizing:border-box}
+
+body{
+	margin:0;
+	padding:0;
+	font-family:Tahoma,Geneva,sans-serif;
+	font-style:normal;
+	font-weight:400;
+	text-align:center;
+	overflow:hidden
+	}
+
+span
+	{display:block;position:absolute}
+
+.container{
+	width:300px;
+	height:300px;
+	top:50%;
+	left:50%;
+	display:block;
+	position:absolute;
+	perspective:100%;
+	transform:translate(-50%,-50%)
+	}
+
+.box{
+	width:100%;
+	height:100%;
+	display:block;
+	position:relative;
+	transition:all 5s ease;
+	transform-style:preserve-3d;
+	animation:rotation 5s ease infinite alternate
+	}
+
+@keyframes rotation{
+	from{transform:rotateX(60deg) rotateY(0deg) rotate(45deg)}
+	to{transform:rotateX(65deg) rotateY(0deg) rotate(50deg)}
+	}
+
+[class*="side-"]
+	{background:#111;display:block;position:absolute}
+
+.side-front
+	{width:100%;height:100%;transform:translate3d(0,0,5px)}
+
+table{
+	background:url('https://i.pinimg.com/236x/bc/3c/22/bc3c229618002aae255d151c15fece98.jpg')no-repeat center / cover;
+	width:100%;
+	height:100%;
+	display:block;
+	position:relative;
+	font-size:10px;
+	color:#999;
+	border-collapse:collapse;
+	box-shadow:inset 0 0 1px 2px #555,inset 0 0 1px 4px #000
+	}
+
+table:before{
+	content:"";
+	width:248px;
+	height:248px;
+	top:50%;
+	left:50%;
+	z-index:1;
+	display:block;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	box-shadow:inset 0 0 1px 2px #d8955b,inset 0 0 1px 4px #a16f44
+	}
+
+th,
+td
+	{width:30px;height:30px;position:relative}
+
+.rotate
+	{top:50%;left:50%;transform:translate(-50%,-50%) rotateX(180deg) rotateY(180deg)}
+
+.side-top{
+	width:100%;
+	height:10px;
+	top:0;
+	transform:rotateX(90deg) translate3d(0,0,5px)
+	}
+
+.side-bottom{
+	width:100%;
+	height:10px;
+	bottom:0;
+	transform:rotateX(-90deg) translate3d(0,0,5px)
+	}
+
+.side-left{
+	width:10px;
+	height:100%;
+	left:0;
+	transform:rotateY(-90deg) translate3d(0,0,5px)
+	}
+	
+.side-right{
+	width:10px;
+	height:100%;
+	right:0;
+	transform:rotateY(90deg) translate3d(0,0,5px)
+	}
+
+.side-back
+	{width:100%;height:100%;transform:rotateY(180deg) translate3d(0,0,5px)}
+
+.dark{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAAMFBMVEU7Ozs+Pj5BQUFEREQ4ODg1NTVISEhKSkoyMjIvLy9MTEwpKSlPT09WVlYsLCxSUlKTCIIVAAABq0lEQVQY0xXQsW7TQBzH8d/dxYHR/7Pbrr67kE6V7HNoWKrYiRO1C0qNWzULSnAUBQECpUSwtoqoulGJJ0BiKRKi6ht0AcHKA8Cb4Iwf/aTf8AW6hXNz3Kwzwr3M/gSTiXPzZFJvehCZfY8kQvYvD3tbcgjoDXyM4JzlYdeTDL6c43vINlb5RAqNSJrf+BuSv8pjKQxFvfgrPoXUPxIeF5s6/lC+QPGQaic9r8u3Yy2u58hcjpMBGUaBFe9aqCnuXg6UxxTriDIEiNdGqRKyFE26W1YWtcv0dNPEzNQ/fwFT/HCUnmqtadG7+4aEGA5SY60NFsw+x5A8HEjvmVZhwE0LIJaPpLFaNUK6biFhbPhUx3Jtd9bCkHE8bsZbStFCvVRYHVZ/g9gECrHeCaudoX9spJJQZucRCri1ymS0UoPd+dqJc+Gl2wv+ZtZ5gH0iOBemazUfzzoK9xHAObcyaujlr70A+wn8/nnYjKy73H01Rrb22ZSYTt+29xqVye1f+S5ZOW2/9pEV1HCupOKKpu2y6lX4vnMrdZK4f7zIB478rH8bcTeZjH+U7n8nulmp2yrGsgAAAABJRU5ErkJggg==')no-repeat center / contain}.light{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAsVBMVEXRmlXMlFDOllLGjkrXolrSnFbOmVLQnFXPmFTNlVHTnVfUoFjYolzUnVjWoFrCjEjVoVncqWPapF/ap2HZpl7SnlbKk07JkUzQmFTLlU+4g0PMmFHZol3VnlrPm1PcqGDLl1DHkEzAika/h0TfrGTeqmLYpFvUnlPJlU3muHHgsGrep2LUoFzirWjerWfPlk/Pl0zjsWnRm1LHk0y/ikPWoWDRnVrNmFfFj0/Vn1i+g0JChB0zAAAClUlEQVQozx3QV3IbQQxFUaBzmJ4cOZmZYk6ypf0vzE1/n7oo1IM/3/guCfm7+ENTm4hxcM4JAcl+yvLzE/6cvt8a9YeDXE6ZPbrUc/fhyxMQgl4hzr8ttYxg6jZF/GzbQYggDSuIIIAaMVp53hLszbaIW9m2pgnTpIJfEdYEVLSi1KZ8sC2z1pdCxkFyecEvhgSgph8OO1FMLE6NCcy0zfL1C1bVh8touURWB5q3jB9j1gXP8ZInL6DYUwCkyxVlgmlHbDFuGQuG7P6VUChLUOh0tfIspQvIIB+7a+D5fM5aaCop0dXVauFZiLeSP8MkurPIk3wU0KBnQ+ZoQaUUzUnZNJ5ie+TyztYTNK2Qusd5uaA6P0HqYsY0L3I1foWXEhrlpHZU+5pkgQuttBxgNCT1HMFMQOr6MzpVPAjdljNuRG4IzwL/OSU1kB7LaIEAXbrbOQNd48i1YNmxAe0Za6qWC3R9x/6z2wft43H+8lxqAntF9XIBJgjVqbcGzL5rpUiSXEBEStgD4ryA1HPWAwcFx77gyRezEJUzPJVGuvjbheHnAAdCUsbj7SEvYEYNjZhKuozejinOASxRPefp9pDtgZZkUk0ze+4MUyRmJjZ1yNUmX188V4QA0gqj5RZYJeIxMVc7DsdjcshvUC1rMDWi9mxYY1hsi2uRDJtzdmAxNBFRTiFi9OLhj/hJwWi+29zu980hK6B8PZHouqo8B1eedopZ+djcxvX6cCkAq0qpSZVltOJ5w7kqivfN19nX+pAL0FiRb+A4Ryv43kvCJTs9dskt8cwEED177ktNVyBPMegifgy78VNvUglAKHINJaGLmIenHq84WHkX8WbNwhpAzhXXiH5V1vH6ZDwnxcbez+uRmX/ybEFrigx3twAAAABJRU5ErkJggg==')no-repeat center / contain}
+/*                                            3D Chess Board Ended Here ...
+=======================================================================================================================*/
+
+/* This Is Not Part Of 3D Chess Board */
+.me{
+	background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1735448/profile/profile-80.jpg?1528976396")no-repeat center / contain;
+	width:40px;
+	height:40px;
+	bottom:16px;
+	right:16px;
+	display:block;
+	position:fixed;
+	border-radius:50%;
+	animation:me 2s linear infinite alternate
+	}
+
+@keyframes me{
+	from{transform:translateY(-4px)}
+	to{transform:translateY(4px)}
+	}
+
+.me:hover span
+	{right:50px;opacity:1;visibility:visible}
+
+.me span{
+	width:150px;
+	top:10px;
+	right:0;
+	color:#008080;
+	font-size:16px;
+	z-index:-1;
+	opacity:0;
+	visibility:hidden;
+	transition:all .5s ease
+	}

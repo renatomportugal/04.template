@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700")
+
+html
+  background-color: black
+  overflow: hidden
+  user-select: none
+  -webkit-user-select: none
+  body
+    margin: 0
+    
+.revert
+  transform: rotateY(0) rotateX(0) !important
+  transition: transform 1s
+
+#stars
+  position: absolute
+  z-index: 0
+.container
+  position: absolute
+  height: 100%
+  width: 100%
+  perspective: 500px
+  .wall
+    position: absolute
+    will-change: transform
+    //backface-visibility: hidden
+    outline: 1px solid #1a1a1a
+    transform-style: preserve-3d
+    background: #0d0d0d
+    transition: transform 1s
+    z-index: 2
+    &:nth-child(1)
+      transform-origin: center top
+      transform: rotateX(-90deg)
+      width: 100%
+      height: 80vh
+      top: 0
+      border-bottom: 3vh solid cyan
+      -webkit-animation-name: glow-front
+      -webkit-animation-duration: 4s
+      -webkit-animation-iteration-count: infinite
+      background-image: url(../images/cf.png)
+      .lights
+        height: 10vh
+        width: 10vh
+        border-radius: 10vh
+        position: absolute
+    &:nth-child(2)
+      transform-origin: center bottom
+      transform: rotateX(90deg)
+      width: 100%
+      height: 80vh
+      bottom: 0
+      border-top: 3vh solid cyan
+      -webkit-animation-name: glow-front
+      -webkit-animation-duration: 8s
+      -webkit-animation-iteration-count: infinite
+      background-image: url(../images/cf.png)
+      .machine
+        position: absolute
+        height: 16vh
+        padding: 5vh
+        background-color: rgba(0,255,255,0.05)
+        border: 2vh solid #0d0d0d
+        left: 50%
+        transform-origin: center bottom
+        transform: rotateX(-70deg) translateX(-50%)
+        top: 5vh
+        border-radius: 1vh
+        display: flex
+        align-items: center
+        -webkit-animation-name: glow
+        -webkit-animation-duration: 8s
+        -webkit-animation-iteration-count: infinite
+        .panel
+          height: 100%
+          border-radius: 1vh
+          padding: 2vh
+          box-shadow: inset 0 0 1vh cyan
+          background-color: rgba(0,255,255,0.1)
+          &:nth-child(odd)
+            margin-right: 2vh
+          p
+            color: white
+            text-align: center
+            font-family: 'roboto', arial
+            font-weight: 300
+            font-size: 3.4vh
+            margin: 1vh 0 1.5vh 0
+          #slider
+            display: block
+            width: 100%
+            height: 2vh
+            margin: 0 auto 1vh auto
+          #slider2
+            display: block
+            width: 100%
+            height: 2vh
+            margin: 0 auto 1vh auto
+          .set 
+            padding: 1.5vh 0 1.6vh 0
+            text-align: center
+            font-family: 'roboto', arial
+            font-weight: 300
+            font-size: 2.4vh
+            width: 20vh
+            margin: 0 auto 0 auto
+            color: white
+            border-radius: 1vh
+            box-shadow: inset 0 0 1vh cyan
+            background-color: rgba(0,255,255,0.1)
+    &:nth-child(3)
+      transform-origin: center left
+      transform: rotateY(90deg)
+      width: 80vh
+      height: 100%
+      left: 0
+      border-right: 3vh solid cyan
+      background-image: url(../images/dm.png)
+      .frame
+        width: 50vh
+        height: 40vh
+        background-color: #1a1a1a
+        position: absolute
+        border-top: 1vh solid #0d0d0d
+        border-left: 1vh solid #0d0d0d
+        border-right: 1vh solid #0d0d0d
+        border-bottom: 4vh solid #0d0d0d
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        &:before
+          content: ""
+          height: 0.5vh
+          width: 0.5vh
+          border-radius: 1vh
+          background-color: rgba(255,255,255,0.1)
+          position: absolute
+          bottom: -2vh
+          left: 0.5vh
+          -webkit-animation-name: glow-button
+          -webkit-animation-duration: 5s
+          -webkit-animation-iteration-count: infinite
+        #whiteboard
+          position: absolute
+          background-color: transparent
+          height: 100%
+          width: 100%
+          cursor: pointer
+        .pic
+          position: absolute
+          width: 7vh
+          height: 7vh
+          border-top: 0.2vh solid #ecf0f1
+          border-right: 0.2vh solid #ecf0f1
+          border-left: 0.2vh solid #ecf0f1
+          border-bottom: 2.3vh solid #ecf0f1
+          background-size: cover
+          background-color: #ecf0f1
+          background-position: center center
+          &:nth-child(1)
+            top: 3vh
+            left: -1vh
+            transform: rotateZ(-6deg)
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/VRChat_1920x1080_2018-05-15_02-44-11.217.png)
+          &:nth-child(2)
+            left: 6vh
+            top: 1vh
+            transform: rotateZ(2deg)
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/VRChat_1920x1080_2018-05-07_01-39-42.165.png)
+          &:nth-child(3)
+            left: 1.5vh
+            top: 16.5vh
+            width: 32vh
+            height: 22vh
+            border: none
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/solar_system_map.jpg)
+          &:nth-child(4)
+            left: 13vh
+            top: 4vh
+            transform: rotateZ(-4deg)
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/34324324234.png)
+    .notice
+      width: 4vh
+      height: 100%
+      position: absolute
+      right: 0
+      color: white
+      background-color: rgba(255,255,255,0.05)
+    .social
+      height: 3vh
+      position: absolute
+      bottom: -8vh
+      a
+        display: block-inline
+        height: 3vh
+        width: 3vh
+        text-decoration: none
+        margin-right: 0.5vh
+        img
+          height: 100%
+    &:nth-child(4)
+      transform-origin: center right
+      transform: rotateY(-90deg)
+      width: 80vh
+      height: 100%
+      right: 0
+      border-left: 3vh solid cyan
+      background-image: url(../images/dm.png)
+      .button
+        position: absolute
+        height: 10vh
+        width: 5vh
+        background-color: #0d0d0d
+        border-top: 2px solid cyan
+        border-bottom: 2px solid cyan
+        top: 60%
+        left: 4vh
+        .switch
+          position: absolute
+          height: 2vh
+          width: 2vh
+          border-radius: 1vh
+          background-color: cyan
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          cursor: pointer
+          &:active
+            height: 1vh
+            width: 1vh
+            transition: height 0.1s, width 0.1s
+    
+.door
+  position: absolute
+  z-index: -1
+  height: 100%
+  width: 100%
+  border-bottom: 1px solid rgba(255,255,255,0.1)
+  background: linear-gradient(-50deg, rgba(0,255,255, 0.1), transparent)
+  transition: height 2s
+  cursor: pointer
+  -webkit-animation-name: glow-door
+  -webkit-animation-duration: 10s
+  -webkit-animation-iteration-count: infinite
+  
+.stats
+  color: white
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+  width: 18vh
+  background-color: rgba(255,255,255,0.01)
+  padding: 1vh
+  font-size: 3vh
+  font-family: 'roboto', arial
+  font-weight: 300
+  text-align: center
+  
+.door-move
+  height: 0 !important
+  transition: height 2s

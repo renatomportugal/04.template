@@ -1,0 +1,115 @@
+/* The version of Bourbon used in this Pen was 4.* */
+@import "bourbon";
+
+$color-1: #FAFCDE;
+$color-1-alt: #8C6F3A;
+$color-2: #85B5D0;
+$color-2-alt: #3D799C;
+$color-3: #E38A7B;
+$color-3-alt: #AB4432;
+
+$color-icon: #000;
+
+$shadow-of: 1px;
+$ani-transition: 300ms;
+
+body {
+  background-color: $color-1;
+}
+
+hr,
+.page-header {
+  border-color: $color-1-alt;
+}
+
+.main-container {
+  perspective: 1000px;
+  margin-bottom: 25px;
+}
+
+.memory-grid {
+  display: inline-block;
+  margin-top: 20px;
+
+  .symbol {
+    float: left;
+  }
+}
+
+.symbol {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include transform(rotateX(-180deg));
+  background-color: $color-1;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #a00;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59627/square_card_back.jpg);
+    background-size: cover;
+  }
+
+  &,
+  &:after,
+  .icon {
+    @include transition(all $ani-transition linear);
+  }
+
+  .icon {
+    display: inline-block;
+    font-size: 50px;
+    text-shadow: 0 $shadow-of 0 $color-2-alt;
+    opacity: 0;
+    color: $color-icon;
+    @include transition-duration($ani-transition/2);
+    @include transition-delay($ani-transition/3);
+  }
+
+  &.revealed {
+    background-color: $color-2;
+    outline: 1px solid $color-2-alt;
+    cursor: default;
+    @include transform(rotateX(0deg));
+    
+    &:after {
+      opacity: 0;
+    }
+
+    .icon {
+      text-shadow: 0 $shadow-of 0 $color-2-alt;
+      opacity: 1;
+    }
+
+    &.flashing {
+      background-color: transparent;
+      outline: 1px dashed $color-1-alt;
+
+      .icon {
+        text-shadow: 0 $shadow-of 0 $color-1-alt;
+      }
+    }
+
+    &.failed {
+      background-color: $color-3;
+      outline: 1px dashed $color-3-alt;
+
+      .icon {
+        text-shadow: 0 $shadow-of 0 $color-3-alt;
+      }
+    }
+  }
+}
+
+.mg-container.locked {
+  .symbol {
+    cursor: default;
+  }
+}

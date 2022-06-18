@@ -1,0 +1,386 @@
+$pairs : (
+  ('a1', 'a2', 'a'),
+  ('b1', 'b2', 'b'),
+  ('c1', 'c2', 'c'),
+  ('d1', 'd2', 'd'),
+  ('e1', 'e2', 'e'),
+  ('f1', 'f2', 'f'),
+  ('g1', 'g2', 'g'),
+  ('h1', 'h2', 'h'),
+  ('i1', 'i2', 'i')
+);
+
+$all_coords: (
+  (13, 13), (45, 13), (77, 13), (109, 13), (141, 13), (173, 13), 
+  (13, 61), (45, 61), (77, 61), (109, 61), (141, 61), (173, 61),  
+  (13, 109), (45, 109), (77, 109), (109, 109), (141, 109), (173, 109)  
+);
+
+
+$coords_order : ();
+$used_indexes : () !global;
+
+@function contains($list,$var) {
+  $_out: false;
+  @each $item in $list { @if $item == $var { $_out: true; } }
+  @return $_out;
+}
+
+@function get_random_index($list){
+  $pos: random(length($list));
+  @if contains($used_indexes, $pos){
+    $pos:get_random_index($list);
+  } @else{
+    $used_indexes:join($used_indexes, $pos) !global;
+  }
+  @return $pos;
+}
+
+@function randomize_list($list){
+  $coords_order:();
+  @for $i from 0 to length($list){  
+    $index:get_random_index($list); 
+    $coords_order:join($index,$coords_order);
+  }
+  @return $coords_order; 
+}
+
+$coords_order:randomize_list($all_coords);
+// @warn $coords_order;
+
+// z-indexes
+$z_i_form: 100;
+$z_i_card_holder: 200;
+$z_i_first_card: 500;
+$z_a_form: 500;
+$z_a_inactive_card: 600;
+$z_a_first_card: 800;
+
+$pixel: var(--pixel);
+
+$max_time : 181; // counter
+
+@keyframes flip_front_back {
+  0%{
+    transform: rotateY(0deg);
+  }
+  33%, 67%{
+    transform: rotateY(180deg);
+  }
+  100%{
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flip_front {
+  0%, 33%{
+    opacity:1;
+  }
+  66%, 100%{
+    opacity:0;
+  }
+}
+
+@keyframes clock{
+  @for $i from 0 to $max_time {
+    #{($i/($max_time))*100}%{
+      content:'#{$i}';
+    }
+  }
+  100%{
+    content:'> #{($max_time - 1)}';
+  }
+}
+
+html, body{
+  padding:0;
+  margin:0;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background:#111;
+  --pixel:0.46vw;
+  line-height:1.33;
+  @media (min-aspect-ratio: 4/3) {
+    --pixel:0.6vh;
+  }
+}
+
+form{
+  position:relative;
+  z-index:$z_i_form;
+}
+.card-holder{
+  z-index:$z_i_card_holder;
+  position:relative;
+}
+
+h2{
+  margin:0;
+}
+
+p{
+  margin:0.5rem 0 1.25rem;
+}
+
+
+/* ************* */
+/*     timer     */
+/* ************* */
+
+.timer-container{
+  color:#fff;
+  position: absolute;
+  top:0;
+  right:0;
+  padding:0 calc(var(--pixel) * 12) 0 0;
+  .elapsed-time{
+    display:inline-block;
+    text-align:right;
+    min-width:20px;
+  }
+}
+
+.elapsed-time:before{
+  display:inline-block;
+  content:'0';
+  animation:clock #{$max_time}s forwards;
+}
+
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#111;
+  z-index:2;
+  text-align:center;
+  box-sizing: border-box;
+  padding:20px;
+  z-index:1000;
+  &:valid{
+    display:none;   
+  }
+  .btn-container{
+    width: 90px;
+    margin: 0 auto;
+    position:relative;
+  }
+  input[type="checkbox"]{
+    -webkit-appearance: none;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+    &:after{
+      content:'Play';
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      border: 3px solid #fff;
+      padding: 10px 12px;
+      font-size:16px;
+      width:100%;
+      transition: 0.25s all;
+      bottom:auto;
+      text-align:center;
+    }
+    &:hover:after{
+      color:#0095ff;
+      border-color:#0095ff;
+    }
+  }
+}
+
+#instruction-screen:invalid ~ .timer-container .elapsed-time:before, 
+#instruction-screen:invalid ~ .game-over .elapsed-time:before{
+  animation-play-state: paused;
+}
+
+@media not all and (min-resolution:.001dpcm) { 
+  // hack to hide the time from safari, which doesn't
+  // allow us to animate the content property
+  .timer-container, .game-over p{
+    display:none;
+  }
+}
+.overlay.game-over{
+  opacity:0;
+  pointer-events: none;
+  transition: 1s auto;
+}
+
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+form.card-body:valid ~ 
+.overlay.game-over{
+  opacity:1;
+  pointer-events: auto;
+  .elapsed-time:before{
+    animation-play-state: paused;    
+  }
+}
+
+/* ************* */
+/*     cards     */
+/* ************* */
+
+.card-body{
+  width:calc(#{$pixel}  * 22);
+  height:calc(#{$pixel} * 32);
+  display:inline-block;
+  position:absolute;
+  transition:0.5s;
+}
+
+.card-container, .front, .back{
+  position:absolute;
+  top:0;
+  left:0;
+  width:calc(#{$pixel}  * 22);
+  height:calc(#{$pixel} * 32);
+  image-rendering: pixelated;
+  background-size:cover;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-container{
+  transition: 1s all;
+  transition-delay: 1s;
+  transform:rotateY(0deg);
+  animation-timing-function: steps(10, end);
+}
+
+.back{
+  background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-back.gif');
+}
+
+.front{
+  background-color:#ffc4b7;
+  z-index:2;
+  transform: rotateY(180deg);
+}
+
+.first-card{
+  z-index:$z_i_first_card;
+}
+
+.container{
+  background-color:#111;
+  width:calc(#{$pixel} * 208);
+  height:calc(#{$pixel} * 154);
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+form.card-body{
+  z-index:$z_i_form;
+  input[type="checkbox"]{
+    -webkit-appearance:none;
+    &:after{
+      cursor: pointer;
+      content:'';
+      display:block;
+      width:100%;
+      height:100%;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+$pos:1;
+@each $pair in $pairs { 
+  // x,y positioning
+  .#{nth($pair, 1)}, .#{nth($pair, 2)}{
+    .front{
+      background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-#{nth($pair, 3)}.gif')
+    }
+  }
+  .#{nth($pair, 1)}{
+    $coords : nth($all_coords,nth($coords_order, $pos));
+    left:calc(#{$pixel} * #{nth($coords,1)});
+    top:calc(#{$pixel} * #{nth($coords,2)});
+    $pos:$pos+1;
+  }
+  
+  .#{nth($pair, 2)}{
+    $coords : nth($all_coords,nth($coords_order, $pos));
+    left:calc(#{$pixel} * #{nth($coords,1)});
+    top:calc(#{$pixel} * #{nth($coords,2)});
+    $pos:$pos+1;
+  }
+
+  ##{nth($pair, 1)}:target,
+  ##{nth($pair, 2)}:target{ 
+    // move all reset cards to the top
+    ~ article .card-holder .inactive-card{
+      z-index:$z_a_inactive_card;
+    }
+
+    // move the current cards reset to the bottom
+    ~ #form-#{nth($pair, 1)}:valid,
+    ~ #form-#{nth($pair, 2)}:valid{
+      ~ article .card-holder .inactive-card{
+        z-index:1;
+      }
+    }
+  }
+
+  // flip over the current card
+  ##{nth($pair, 1)}:target ~ article .card-holder-#{nth($pair, 1)},
+  ##{nth($pair, 2)}:target ~ article .card-holder-#{nth($pair, 2)}{
+    z-index:$z_a_form;
+    .card-body .card-container{
+      transition-delay: 0s;
+      transform:rotateY(180deg);
+    }
+  }
+
+  // move the selected cards input to the top
+  ##{nth($pair, 1)}:target ~ #form-#{nth($pair, 2)},
+  ##{nth($pair, 2)}:target ~ #form-#{nth($pair, 1)}{
+    z-index:$z_a_form;
+    input{
+      z-index:$z_a_form;
+    }
+  }
+  
+  // matched cards
+  #form-#{nth($pair, 1)}:valid,
+  #form-#{nth($pair, 2)}:valid{
+    ~ article .card-holder-#{nth($pair, 1)},
+    ~ article .card-holder-#{nth($pair, 2)}{
+      .card-body {
+        animation:flip_front 3s forwards;
+        pointer-events: none;
+        .card-container{
+          transform: rotateY(180deg);
+          animation:none;
+          transition-delay:0s;
+        }
+      }
+    }
+  }
+}
+
+.last-click:target ~ .card-body .card-container{
+  background-color:#ccc;
+  animation:flip_front_back 3s forwards;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Concentration game</title>
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="container">
+  <div id="start"></div>
+  <form class="overlay" id="instruction-screen">
+    <div>
+      <h2>How to Play Concentration</h2>
+      <p>Click a card to turn it over. Turn over matching pairs of cards to remove them from the deck. The game is over once all the cards are removed.</p>
+      <div class="btn-container">
+        <input type="checkbox" required="required"/>
+      </div>
+    </div>
+  </form>
+  <div class="timer-container top-corner">Time: <span class="elapsed-time"></span></div>
+  <div class="target" id="a1"></div>
+  <div class="target" id="a2"></div>
+  <form class="card-body a1" id="form-a1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body a2" id="form-a2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="b1"></div>
+  <div class="target" id="b2"></div>
+  <form class="card-body b1" id="form-b1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body b2" id="form-b2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="c1"></div>
+  <div class="target" id="c2"></div>
+  <form class="card-body c1" id="form-c1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body c2" id="form-c2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="d1"></div>
+  <div class="target" id="d2"></div>
+  <form class="card-body d1" id="form-d1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body d2" id="form-d2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="e1"></div>
+  <div class="target" id="e2"></div>
+  <form class="card-body e1" id="form-e1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body e2" id="form-e2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="f1"></div>
+  <div class="target" id="f2"></div>
+  <form class="card-body f1" id="form-f1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body f2" id="form-f2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="g1"></div>
+  <div class="target" id="g2"></div>
+  <form class="card-body g1" id="form-g1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body g2" id="form-g2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="h1"></div>
+  <div class="target" id="h2"></div>
+  <form class="card-body h1" id="form-h1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body h2" id="form-h2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="target" id="i1"></div>
+  <div class="target" id="i2"></div>
+  <form class="card-body i1" id="form-i1">
+    <input type="checkbox" required="required"/>
+  </form>
+  <form class="card-body i2" id="form-i2">
+    <input type="checkbox" required="required"/>
+  </form>
+  <div class="overlay game-over">
+    <div>
+      <h2>Game over</h2>
+      <p>You finished in <span class="elapsed-time"></span> seconds.</p>
+    </div>
+  </div>
+  <article>
+    <div class="card-holder card-holder-a1"><span class="last-click" id="a1f"></span><a class="inactive-card card-body a1" href="#a1f"></a><a class="first-card card-body a1" href="#a1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-a2"><span class="last-click" id="a2f"></span><a class="inactive-card card-body a2" href="#a2f"></a><a class="first-card card-body a2" href="#a2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-b1"><span class="last-click" id="b1f"></span><a class="inactive-card card-body b1" href="#b1f"></a><a class="first-card card-body b1" href="#b1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-b2"><span class="last-click" id="b2f"></span><a class="inactive-card card-body b2" href="#b2f"></a><a class="first-card card-body b2" href="#b2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-c1"><span class="last-click" id="c1f"></span><a class="inactive-card card-body c1" href="#c1f"></a><a class="first-card card-body c1" href="#c1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-c2"><span class="last-click" id="c2f"></span><a class="inactive-card card-body c2" href="#c2f"></a><a class="first-card card-body c2" href="#c2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-d1"><span class="last-click" id="d1f"></span><a class="inactive-card card-body d1" href="#d1f"></a><a class="first-card card-body d1" href="#d1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-d2"><span class="last-click" id="d2f"></span><a class="inactive-card card-body d2" href="#d2f"></a><a class="first-card card-body d2" href="#d2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-e1"><span class="last-click" id="e1f"></span><a class="inactive-card card-body e1" href="#e1f"></a><a class="first-card card-body e1" href="#e1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-e2"><span class="last-click" id="e2f"></span><a class="inactive-card card-body e2" href="#e2f"></a><a class="first-card card-body e2" href="#e2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-f1"><span class="last-click" id="f1f"></span><a class="inactive-card card-body f1" href="#f1f"></a><a class="first-card card-body f1" href="#f1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-f2"><span class="last-click" id="f2f"></span><a class="inactive-card card-body f2" href="#f2f"></a><a class="first-card card-body f2" href="#f2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-g1"><span class="last-click" id="g1f"></span><a class="inactive-card card-body g1" href="#g1f"></a><a class="first-card card-body g1" href="#g1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-g2"><span class="last-click" id="g2f"></span><a class="inactive-card card-body g2" href="#g2f"></a><a class="first-card card-body g2" href="#g2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-h1"><span class="last-click" id="h1f"></span><a class="inactive-card card-body h1" href="#h1f"></a><a class="first-card card-body h1" href="#h1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-h2"><span class="last-click" id="h2f"></span><a class="inactive-card card-body h2" href="#h2f"></a><a class="first-card card-body h2" href="#h2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-i1"><span class="last-click" id="i1f"></span><a class="inactive-card card-body i1" href="#i1f"></a><a class="first-card card-body i1" href="#i1">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+    <div class="card-holder card-holder-i2"><span class="last-click" id="i2f"></span><a class="inactive-card card-body i2" href="#i2f"></a><a class="first-card card-body i2" href="#i2">
+        <div class="card-container">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div></a></div>
+  </article>
+</div>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Pulse</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="trial">
+ <h3>Believe it or not, this is only the instance of an <i>ECG-esque</i> heartbeat-pulse anywhere on this place we call the wonderful world wide web.</h3>
+ <h4>Feel free to use in any project... Thank you Codepen.</h4> 
+  <!--PULSAR
+2 SVG Paths for a slight shadow effect-->
+  <h4>Start Pulsar</h4>
+  <svg version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
+    viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <path stroke="rgba(15,0,0,0.1)" fill="none" stroke-width="1" stroke-linejoin="round"
+          d="
+            M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210" />   
+    
+    
+    <path  id="pulsar"stroke="rgba(0,155,155,1)" fill="none" stroke-width="1"stroke-linejoin="round"
+          d="
+            M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210" /> 
+     
+</svg>
+<h4>End Pulsar</h4>  
+  <hr />
+<!--JUGULAR-->
+<h4>Start Jugular</h4>
+  <svg version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
+    viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <path  id="jugular"stroke="rgba(0,155,155,1)" fill="none"stroke-width="1"stroke-linejoin="round"
+          d="
+            M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210" /> 
+     
+                
+</svg>
+<h4>End Jugular</h4>
+ <hr /> 
+  <!--BLEED-->
+<h4>Start Bleed</h4>
+  <svg version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
+    viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <path  id="bleed" stroke="rgba(0,155,155,1)" fill="none"stroke-width="1"stroke-linejoin="round"
+          d="
+            M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210" /> 
+                     
+</svg>
+<h4>End Bleed</h4>
+ <hr />
+<h4>Start Flatline</h4>  
+  <svg version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
+    viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <path  stroke="rgba(55,55,55,0.4)" fill="none"stroke-width="3"stroke-linejoin="round"
+          d="M0,90 L500,90            
+            " 
+          /> 
+    <path  id="flat"style="stroke:#00AEAA; fill:none;stroke-width:1;stroke-linejoin:round"
+          d="M0,90 L500,90           
+            " 
+          />         
+</svg>
+<h4>End Flatline</h4>
+ <hr /> 
+ <h4>Pulse Concept</h4> 
+  <p>(Inline Styling Elements)</p>
+  <svg version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
+    viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <path  stroke="rgba(155,55,255,0.4)" fill="none"stroke-width="3"stroke-linejoin="round"
+          d="
+            M0,90L150,90M150,90Q158,60 162,87T167,95 170,88 173,92t6,35 7,-60T190,127 197,107s2,-11 10,-10 1,1 8,-10T219,95c6,4 8,-6 10,-17s2,10 9,11h110
+            " 
+          /> 
+    <path  id="longbeat"style="stroke:#00AEAA; fill:none;stroke-width:1;stroke-linejoin:round"
+          d="
+            M0,90L150,90M150,90Q158,60 162,87T167,95 170,88 173,92t6,35 7,-60T190,127 197,107s2,-11 10,-10 1,1 8,-10T219,95c6,4 8,-6 10,-17s2,10 9,11h110
+            " 
+          /> 
+      <rect x="-3" y="-4" height="8" width="6" rx="20" ry="20"fill="red">
+     <animateMotion dur="2s" repeatCount="indefinite">
+             <mpath xlink:href="#longbeat"/>
+          </animateMotion>
+    
+  </rect>               
+</svg>
+    <h4>End Pulse Concept</h4>
+ </div>
+  
+  
+
+</body>
+
+</html>

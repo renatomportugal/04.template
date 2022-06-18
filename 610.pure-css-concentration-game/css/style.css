@@ -1,0 +1,1331 @@
+@keyframes flip_front_back {
+  0% {
+    transform: rotateY(0deg);
+  }
+  33%, 67% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes flip_front {
+  0%, 33% {
+    opacity: 1;
+  }
+  66%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes clock {
+  0% {
+    content: "0";
+  }
+  0.5524861878% {
+    content: "1";
+  }
+  1.1049723757% {
+    content: "2";
+  }
+  1.6574585635% {
+    content: "3";
+  }
+  2.2099447514% {
+    content: "4";
+  }
+  2.7624309392% {
+    content: "5";
+  }
+  3.3149171271% {
+    content: "6";
+  }
+  3.8674033149% {
+    content: "7";
+  }
+  4.4198895028% {
+    content: "8";
+  }
+  4.9723756906% {
+    content: "9";
+  }
+  5.5248618785% {
+    content: "10";
+  }
+  6.0773480663% {
+    content: "11";
+  }
+  6.6298342541% {
+    content: "12";
+  }
+  7.182320442% {
+    content: "13";
+  }
+  7.7348066298% {
+    content: "14";
+  }
+  8.2872928177% {
+    content: "15";
+  }
+  8.8397790055% {
+    content: "16";
+  }
+  9.3922651934% {
+    content: "17";
+  }
+  9.9447513812% {
+    content: "18";
+  }
+  10.4972375691% {
+    content: "19";
+  }
+  11.0497237569% {
+    content: "20";
+  }
+  11.6022099448% {
+    content: "21";
+  }
+  12.1546961326% {
+    content: "22";
+  }
+  12.7071823204% {
+    content: "23";
+  }
+  13.2596685083% {
+    content: "24";
+  }
+  13.8121546961% {
+    content: "25";
+  }
+  14.364640884% {
+    content: "26";
+  }
+  14.9171270718% {
+    content: "27";
+  }
+  15.4696132597% {
+    content: "28";
+  }
+  16.0220994475% {
+    content: "29";
+  }
+  16.5745856354% {
+    content: "30";
+  }
+  17.1270718232% {
+    content: "31";
+  }
+  17.679558011% {
+    content: "32";
+  }
+  18.2320441989% {
+    content: "33";
+  }
+  18.7845303867% {
+    content: "34";
+  }
+  19.3370165746% {
+    content: "35";
+  }
+  19.8895027624% {
+    content: "36";
+  }
+  20.4419889503% {
+    content: "37";
+  }
+  20.9944751381% {
+    content: "38";
+  }
+  21.546961326% {
+    content: "39";
+  }
+  22.0994475138% {
+    content: "40";
+  }
+  22.6519337017% {
+    content: "41";
+  }
+  23.2044198895% {
+    content: "42";
+  }
+  23.7569060773% {
+    content: "43";
+  }
+  24.3093922652% {
+    content: "44";
+  }
+  24.861878453% {
+    content: "45";
+  }
+  25.4143646409% {
+    content: "46";
+  }
+  25.9668508287% {
+    content: "47";
+  }
+  26.5193370166% {
+    content: "48";
+  }
+  27.0718232044% {
+    content: "49";
+  }
+  27.6243093923% {
+    content: "50";
+  }
+  28.1767955801% {
+    content: "51";
+  }
+  28.729281768% {
+    content: "52";
+  }
+  29.2817679558% {
+    content: "53";
+  }
+  29.8342541436% {
+    content: "54";
+  }
+  30.3867403315% {
+    content: "55";
+  }
+  30.9392265193% {
+    content: "56";
+  }
+  31.4917127072% {
+    content: "57";
+  }
+  32.044198895% {
+    content: "58";
+  }
+  32.5966850829% {
+    content: "59";
+  }
+  33.1491712707% {
+    content: "60";
+  }
+  33.7016574586% {
+    content: "61";
+  }
+  34.2541436464% {
+    content: "62";
+  }
+  34.8066298343% {
+    content: "63";
+  }
+  35.3591160221% {
+    content: "64";
+  }
+  35.9116022099% {
+    content: "65";
+  }
+  36.4640883978% {
+    content: "66";
+  }
+  37.0165745856% {
+    content: "67";
+  }
+  37.5690607735% {
+    content: "68";
+  }
+  38.1215469613% {
+    content: "69";
+  }
+  38.6740331492% {
+    content: "70";
+  }
+  39.226519337% {
+    content: "71";
+  }
+  39.7790055249% {
+    content: "72";
+  }
+  40.3314917127% {
+    content: "73";
+  }
+  40.8839779006% {
+    content: "74";
+  }
+  41.4364640884% {
+    content: "75";
+  }
+  41.9889502762% {
+    content: "76";
+  }
+  42.5414364641% {
+    content: "77";
+  }
+  43.0939226519% {
+    content: "78";
+  }
+  43.6464088398% {
+    content: "79";
+  }
+  44.1988950276% {
+    content: "80";
+  }
+  44.7513812155% {
+    content: "81";
+  }
+  45.3038674033% {
+    content: "82";
+  }
+  45.8563535912% {
+    content: "83";
+  }
+  46.408839779% {
+    content: "84";
+  }
+  46.9613259669% {
+    content: "85";
+  }
+  47.5138121547% {
+    content: "86";
+  }
+  48.0662983425% {
+    content: "87";
+  }
+  48.6187845304% {
+    content: "88";
+  }
+  49.1712707182% {
+    content: "89";
+  }
+  49.7237569061% {
+    content: "90";
+  }
+  50.2762430939% {
+    content: "91";
+  }
+  50.8287292818% {
+    content: "92";
+  }
+  51.3812154696% {
+    content: "93";
+  }
+  51.9337016575% {
+    content: "94";
+  }
+  52.4861878453% {
+    content: "95";
+  }
+  53.0386740331% {
+    content: "96";
+  }
+  53.591160221% {
+    content: "97";
+  }
+  54.1436464088% {
+    content: "98";
+  }
+  54.6961325967% {
+    content: "99";
+  }
+  55.2486187845% {
+    content: "100";
+  }
+  55.8011049724% {
+    content: "101";
+  }
+  56.3535911602% {
+    content: "102";
+  }
+  56.9060773481% {
+    content: "103";
+  }
+  57.4585635359% {
+    content: "104";
+  }
+  58.0110497238% {
+    content: "105";
+  }
+  58.5635359116% {
+    content: "106";
+  }
+  59.1160220994% {
+    content: "107";
+  }
+  59.6685082873% {
+    content: "108";
+  }
+  60.2209944751% {
+    content: "109";
+  }
+  60.773480663% {
+    content: "110";
+  }
+  61.3259668508% {
+    content: "111";
+  }
+  61.8784530387% {
+    content: "112";
+  }
+  62.4309392265% {
+    content: "113";
+  }
+  62.9834254144% {
+    content: "114";
+  }
+  63.5359116022% {
+    content: "115";
+  }
+  64.0883977901% {
+    content: "116";
+  }
+  64.6408839779% {
+    content: "117";
+  }
+  65.1933701657% {
+    content: "118";
+  }
+  65.7458563536% {
+    content: "119";
+  }
+  66.2983425414% {
+    content: "120";
+  }
+  66.8508287293% {
+    content: "121";
+  }
+  67.4033149171% {
+    content: "122";
+  }
+  67.955801105% {
+    content: "123";
+  }
+  68.5082872928% {
+    content: "124";
+  }
+  69.0607734807% {
+    content: "125";
+  }
+  69.6132596685% {
+    content: "126";
+  }
+  70.1657458564% {
+    content: "127";
+  }
+  70.7182320442% {
+    content: "128";
+  }
+  71.270718232% {
+    content: "129";
+  }
+  71.8232044199% {
+    content: "130";
+  }
+  72.3756906077% {
+    content: "131";
+  }
+  72.9281767956% {
+    content: "132";
+  }
+  73.4806629834% {
+    content: "133";
+  }
+  74.0331491713% {
+    content: "134";
+  }
+  74.5856353591% {
+    content: "135";
+  }
+  75.138121547% {
+    content: "136";
+  }
+  75.6906077348% {
+    content: "137";
+  }
+  76.2430939227% {
+    content: "138";
+  }
+  76.7955801105% {
+    content: "139";
+  }
+  77.3480662983% {
+    content: "140";
+  }
+  77.9005524862% {
+    content: "141";
+  }
+  78.453038674% {
+    content: "142";
+  }
+  79.0055248619% {
+    content: "143";
+  }
+  79.5580110497% {
+    content: "144";
+  }
+  80.1104972376% {
+    content: "145";
+  }
+  80.6629834254% {
+    content: "146";
+  }
+  81.2154696133% {
+    content: "147";
+  }
+  81.7679558011% {
+    content: "148";
+  }
+  82.320441989% {
+    content: "149";
+  }
+  82.8729281768% {
+    content: "150";
+  }
+  83.4254143646% {
+    content: "151";
+  }
+  83.9779005525% {
+    content: "152";
+  }
+  84.5303867403% {
+    content: "153";
+  }
+  85.0828729282% {
+    content: "154";
+  }
+  85.635359116% {
+    content: "155";
+  }
+  86.1878453039% {
+    content: "156";
+  }
+  86.7403314917% {
+    content: "157";
+  }
+  87.2928176796% {
+    content: "158";
+  }
+  87.8453038674% {
+    content: "159";
+  }
+  88.3977900552% {
+    content: "160";
+  }
+  88.9502762431% {
+    content: "161";
+  }
+  89.5027624309% {
+    content: "162";
+  }
+  90.0552486188% {
+    content: "163";
+  }
+  90.6077348066% {
+    content: "164";
+  }
+  91.1602209945% {
+    content: "165";
+  }
+  91.7127071823% {
+    content: "166";
+  }
+  92.2651933702% {
+    content: "167";
+  }
+  92.817679558% {
+    content: "168";
+  }
+  93.3701657459% {
+    content: "169";
+  }
+  93.9226519337% {
+    content: "170";
+  }
+  94.4751381215% {
+    content: "171";
+  }
+  95.0276243094% {
+    content: "172";
+  }
+  95.5801104972% {
+    content: "173";
+  }
+  96.1325966851% {
+    content: "174";
+  }
+  96.6850828729% {
+    content: "175";
+  }
+  97.2375690608% {
+    content: "176";
+  }
+  97.7900552486% {
+    content: "177";
+  }
+  98.3425414365% {
+    content: "178";
+  }
+  98.8950276243% {
+    content: "179";
+  }
+  99.4475138122% {
+    content: "180";
+  }
+  100% {
+    content: "> 180";
+  }
+}
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #111;
+  --pixel:0.46vw;
+  line-height: 1.33;
+}
+@media (min-aspect-ratio: 4 / 3) {
+  body {
+    --pixel:0.6vh;
+  }
+}
+
+form {
+  position: relative;
+  z-index: 100;
+}
+
+.card-holder {
+  z-index: 200;
+  position: relative;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0.5rem 0 1.25rem;
+}
+
+/* ************* */
+/*     timer     */
+/* ************* */
+.timer-container {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 calc(var(--pixel) * 12) 0 0;
+}
+.timer-container .elapsed-time {
+  display: inline-block;
+  text-align: right;
+  min-width: 20px;
+}
+
+.elapsed-time:before {
+  display: inline-block;
+  content: '0';
+  animation: clock 181s forwards;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+  z-index: 2;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 1000;
+}
+.overlay:valid {
+  display: none;
+}
+.overlay .btn-container {
+  width: 90px;
+  margin: 0 auto;
+  position: relative;
+}
+.overlay input[type="checkbox"] {
+  -webkit-appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.overlay input[type="checkbox"]:after {
+  content: 'Play';
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 10px 12px;
+  font-size: 16px;
+  width: 100%;
+  transition: 0.25s all;
+  bottom: auto;
+  text-align: center;
+}
+.overlay input[type="checkbox"]:hover:after {
+  color: #0095ff;
+  border-color: #0095ff;
+}
+
+#instruction-screen:invalid ~ .timer-container .elapsed-time:before,
+#instruction-screen:invalid ~ .game-over .elapsed-time:before {
+  animation-play-state: paused;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  .timer-container, .game-over p {
+    display: none;
+  }
+}
+.overlay.game-over {
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s auto;
+}
+
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+.overlay.game-over {
+  opacity: 1;
+  pointer-events: auto;
+}
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+form.card-body:valid ~
+.overlay.game-over .elapsed-time:before {
+  animation-play-state: paused;
+}
+
+/* ************* */
+/*     cards     */
+/* ************* */
+.card-body {
+  width: calc(var(--pixel)  * 22);
+  height: calc(var(--pixel) * 32);
+  display: inline-block;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.card-container, .front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--pixel)  * 22);
+  height: calc(var(--pixel) * 32);
+  image-rendering: pixelated;
+  background-size: cover;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-container {
+  transition: 1s all;
+  transition-delay: 1s;
+  transform: rotateY(0deg);
+  animation-timing-function: steps(10, end);
+}
+
+.back {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-back.gif");
+}
+
+.front {
+  background-color: #ffc4b7;
+  z-index: 2;
+  transform: rotateY(180deg);
+}
+
+.first-card {
+  z-index: 500;
+}
+
+.container {
+  background-color: #111;
+  width: calc(var(--pixel) * 208);
+  height: calc(var(--pixel) * 154);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form.card-body {
+  z-index: 100;
+}
+form.card-body input[type="checkbox"] {
+  -webkit-appearance: none;
+}
+form.card-body input[type="checkbox"]:after {
+  cursor: pointer;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.a1 .front, .a2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-a.gif");
+}
+
+.a1 {
+  left: calc(var(--pixel) * 109);
+  top: calc(var(--pixel) * 109);
+}
+
+.a2 {
+  left: calc(var(--pixel) * 173);
+  top: calc(var(--pixel) * 13);
+}
+
+#a1:target ~ article .card-holder .inactive-card,
+#a2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#a1:target ~ #form-a1:valid ~ article .card-holder .inactive-card,
+#a1:target ~ #form-a2:valid ~ article .card-holder .inactive-card,
+#a2:target ~ #form-a1:valid ~ article .card-holder .inactive-card,
+#a2:target ~ #form-a2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#a1:target ~ article .card-holder-a1,
+#a2:target ~ article .card-holder-a2 {
+  z-index: 500;
+}
+#a1:target ~ article .card-holder-a1 .card-body .card-container,
+#a2:target ~ article .card-holder-a2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#a1:target ~ #form-a2,
+#a2:target ~ #form-a1 {
+  z-index: 500;
+}
+#a1:target ~ #form-a2 input,
+#a2:target ~ #form-a1 input {
+  z-index: 500;
+}
+
+#form-a1:valid ~ article .card-holder-a1 .card-body,
+#form-a1:valid ~ article .card-holder-a2 .card-body,
+#form-a2:valid ~ article .card-holder-a1 .card-body,
+#form-a2:valid ~ article .card-holder-a2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-a1:valid ~ article .card-holder-a1 .card-body .card-container,
+#form-a1:valid ~ article .card-holder-a2 .card-body .card-container,
+#form-a2:valid ~ article .card-holder-a1 .card-body .card-container,
+#form-a2:valid ~ article .card-holder-a2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.b1 .front, .b2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-b.gif");
+}
+
+.b1 {
+  left: calc(var(--pixel) * 141);
+  top: calc(var(--pixel) * 61);
+}
+
+.b2 {
+  left: calc(var(--pixel) * 45);
+  top: calc(var(--pixel) * 13);
+}
+
+#b1:target ~ article .card-holder .inactive-card,
+#b2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#b1:target ~ #form-b1:valid ~ article .card-holder .inactive-card,
+#b1:target ~ #form-b2:valid ~ article .card-holder .inactive-card,
+#b2:target ~ #form-b1:valid ~ article .card-holder .inactive-card,
+#b2:target ~ #form-b2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#b1:target ~ article .card-holder-b1,
+#b2:target ~ article .card-holder-b2 {
+  z-index: 500;
+}
+#b1:target ~ article .card-holder-b1 .card-body .card-container,
+#b2:target ~ article .card-holder-b2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#b1:target ~ #form-b2,
+#b2:target ~ #form-b1 {
+  z-index: 500;
+}
+#b1:target ~ #form-b2 input,
+#b2:target ~ #form-b1 input {
+  z-index: 500;
+}
+
+#form-b1:valid ~ article .card-holder-b1 .card-body,
+#form-b1:valid ~ article .card-holder-b2 .card-body,
+#form-b2:valid ~ article .card-holder-b1 .card-body,
+#form-b2:valid ~ article .card-holder-b2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-b1:valid ~ article .card-holder-b1 .card-body .card-container,
+#form-b1:valid ~ article .card-holder-b2 .card-body .card-container,
+#form-b2:valid ~ article .card-holder-b1 .card-body .card-container,
+#form-b2:valid ~ article .card-holder-b2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.c1 .front, .c2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-c.gif");
+}
+
+.c1 {
+  left: calc(var(--pixel) * 173);
+  top: calc(var(--pixel) * 61);
+}
+
+.c2 {
+  left: calc(var(--pixel) * 77);
+  top: calc(var(--pixel) * 61);
+}
+
+#c1:target ~ article .card-holder .inactive-card,
+#c2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#c1:target ~ #form-c1:valid ~ article .card-holder .inactive-card,
+#c1:target ~ #form-c2:valid ~ article .card-holder .inactive-card,
+#c2:target ~ #form-c1:valid ~ article .card-holder .inactive-card,
+#c2:target ~ #form-c2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#c1:target ~ article .card-holder-c1,
+#c2:target ~ article .card-holder-c2 {
+  z-index: 500;
+}
+#c1:target ~ article .card-holder-c1 .card-body .card-container,
+#c2:target ~ article .card-holder-c2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#c1:target ~ #form-c2,
+#c2:target ~ #form-c1 {
+  z-index: 500;
+}
+#c1:target ~ #form-c2 input,
+#c2:target ~ #form-c1 input {
+  z-index: 500;
+}
+
+#form-c1:valid ~ article .card-holder-c1 .card-body,
+#form-c1:valid ~ article .card-holder-c2 .card-body,
+#form-c2:valid ~ article .card-holder-c1 .card-body,
+#form-c2:valid ~ article .card-holder-c2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-c1:valid ~ article .card-holder-c1 .card-body .card-container,
+#form-c1:valid ~ article .card-holder-c2 .card-body .card-container,
+#form-c2:valid ~ article .card-holder-c1 .card-body .card-container,
+#form-c2:valid ~ article .card-holder-c2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.d1 .front, .d2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-d.gif");
+}
+
+.d1 {
+  left: calc(var(--pixel) * 173);
+  top: calc(var(--pixel) * 109);
+}
+
+.d2 {
+  left: calc(var(--pixel) * 13);
+  top: calc(var(--pixel) * 109);
+}
+
+#d1:target ~ article .card-holder .inactive-card,
+#d2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#d1:target ~ #form-d1:valid ~ article .card-holder .inactive-card,
+#d1:target ~ #form-d2:valid ~ article .card-holder .inactive-card,
+#d2:target ~ #form-d1:valid ~ article .card-holder .inactive-card,
+#d2:target ~ #form-d2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#d1:target ~ article .card-holder-d1,
+#d2:target ~ article .card-holder-d2 {
+  z-index: 500;
+}
+#d1:target ~ article .card-holder-d1 .card-body .card-container,
+#d2:target ~ article .card-holder-d2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#d1:target ~ #form-d2,
+#d2:target ~ #form-d1 {
+  z-index: 500;
+}
+#d1:target ~ #form-d2 input,
+#d2:target ~ #form-d1 input {
+  z-index: 500;
+}
+
+#form-d1:valid ~ article .card-holder-d1 .card-body,
+#form-d1:valid ~ article .card-holder-d2 .card-body,
+#form-d2:valid ~ article .card-holder-d1 .card-body,
+#form-d2:valid ~ article .card-holder-d2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-d1:valid ~ article .card-holder-d1 .card-body .card-container,
+#form-d1:valid ~ article .card-holder-d2 .card-body .card-container,
+#form-d2:valid ~ article .card-holder-d1 .card-body .card-container,
+#form-d2:valid ~ article .card-holder-d2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.e1 .front, .e2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-e.gif");
+}
+
+.e1 {
+  left: calc(var(--pixel) * 13);
+  top: calc(var(--pixel) * 61);
+}
+
+.e2 {
+  left: calc(var(--pixel) * 141);
+  top: calc(var(--pixel) * 109);
+}
+
+#e1:target ~ article .card-holder .inactive-card,
+#e2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#e1:target ~ #form-e1:valid ~ article .card-holder .inactive-card,
+#e1:target ~ #form-e2:valid ~ article .card-holder .inactive-card,
+#e2:target ~ #form-e1:valid ~ article .card-holder .inactive-card,
+#e2:target ~ #form-e2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#e1:target ~ article .card-holder-e1,
+#e2:target ~ article .card-holder-e2 {
+  z-index: 500;
+}
+#e1:target ~ article .card-holder-e1 .card-body .card-container,
+#e2:target ~ article .card-holder-e2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#e1:target ~ #form-e2,
+#e2:target ~ #form-e1 {
+  z-index: 500;
+}
+#e1:target ~ #form-e2 input,
+#e2:target ~ #form-e1 input {
+  z-index: 500;
+}
+
+#form-e1:valid ~ article .card-holder-e1 .card-body,
+#form-e1:valid ~ article .card-holder-e2 .card-body,
+#form-e2:valid ~ article .card-holder-e1 .card-body,
+#form-e2:valid ~ article .card-holder-e2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-e1:valid ~ article .card-holder-e1 .card-body .card-container,
+#form-e1:valid ~ article .card-holder-e2 .card-body .card-container,
+#form-e2:valid ~ article .card-holder-e1 .card-body .card-container,
+#form-e2:valid ~ article .card-holder-e2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.f1 .front, .f2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-f.gif");
+}
+
+.f1 {
+  left: calc(var(--pixel) * 109);
+  top: calc(var(--pixel) * 61);
+}
+
+.f2 {
+  left: calc(var(--pixel) * 77);
+  top: calc(var(--pixel) * 109);
+}
+
+#f1:target ~ article .card-holder .inactive-card,
+#f2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#f1:target ~ #form-f1:valid ~ article .card-holder .inactive-card,
+#f1:target ~ #form-f2:valid ~ article .card-holder .inactive-card,
+#f2:target ~ #form-f1:valid ~ article .card-holder .inactive-card,
+#f2:target ~ #form-f2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#f1:target ~ article .card-holder-f1,
+#f2:target ~ article .card-holder-f2 {
+  z-index: 500;
+}
+#f1:target ~ article .card-holder-f1 .card-body .card-container,
+#f2:target ~ article .card-holder-f2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#f1:target ~ #form-f2,
+#f2:target ~ #form-f1 {
+  z-index: 500;
+}
+#f1:target ~ #form-f2 input,
+#f2:target ~ #form-f1 input {
+  z-index: 500;
+}
+
+#form-f1:valid ~ article .card-holder-f1 .card-body,
+#form-f1:valid ~ article .card-holder-f2 .card-body,
+#form-f2:valid ~ article .card-holder-f1 .card-body,
+#form-f2:valid ~ article .card-holder-f2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-f1:valid ~ article .card-holder-f1 .card-body .card-container,
+#form-f1:valid ~ article .card-holder-f2 .card-body .card-container,
+#form-f2:valid ~ article .card-holder-f1 .card-body .card-container,
+#form-f2:valid ~ article .card-holder-f2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.g1 .front, .g2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-g.gif");
+}
+
+.g1 {
+  left: calc(var(--pixel) * 77);
+  top: calc(var(--pixel) * 13);
+}
+
+.g2 {
+  left: calc(var(--pixel) * 45);
+  top: calc(var(--pixel) * 61);
+}
+
+#g1:target ~ article .card-holder .inactive-card,
+#g2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#g1:target ~ #form-g1:valid ~ article .card-holder .inactive-card,
+#g1:target ~ #form-g2:valid ~ article .card-holder .inactive-card,
+#g2:target ~ #form-g1:valid ~ article .card-holder .inactive-card,
+#g2:target ~ #form-g2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#g1:target ~ article .card-holder-g1,
+#g2:target ~ article .card-holder-g2 {
+  z-index: 500;
+}
+#g1:target ~ article .card-holder-g1 .card-body .card-container,
+#g2:target ~ article .card-holder-g2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#g1:target ~ #form-g2,
+#g2:target ~ #form-g1 {
+  z-index: 500;
+}
+#g1:target ~ #form-g2 input,
+#g2:target ~ #form-g1 input {
+  z-index: 500;
+}
+
+#form-g1:valid ~ article .card-holder-g1 .card-body,
+#form-g1:valid ~ article .card-holder-g2 .card-body,
+#form-g2:valid ~ article .card-holder-g1 .card-body,
+#form-g2:valid ~ article .card-holder-g2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-g1:valid ~ article .card-holder-g1 .card-body .card-container,
+#form-g1:valid ~ article .card-holder-g2 .card-body .card-container,
+#form-g2:valid ~ article .card-holder-g1 .card-body .card-container,
+#form-g2:valid ~ article .card-holder-g2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.h1 .front, .h2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-h.gif");
+}
+
+.h1 {
+  left: calc(var(--pixel) * 45);
+  top: calc(var(--pixel) * 109);
+}
+
+.h2 {
+  left: calc(var(--pixel) * 141);
+  top: calc(var(--pixel) * 13);
+}
+
+#h1:target ~ article .card-holder .inactive-card,
+#h2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#h1:target ~ #form-h1:valid ~ article .card-holder .inactive-card,
+#h1:target ~ #form-h2:valid ~ article .card-holder .inactive-card,
+#h2:target ~ #form-h1:valid ~ article .card-holder .inactive-card,
+#h2:target ~ #form-h2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#h1:target ~ article .card-holder-h1,
+#h2:target ~ article .card-holder-h2 {
+  z-index: 500;
+}
+#h1:target ~ article .card-holder-h1 .card-body .card-container,
+#h2:target ~ article .card-holder-h2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#h1:target ~ #form-h2,
+#h2:target ~ #form-h1 {
+  z-index: 500;
+}
+#h1:target ~ #form-h2 input,
+#h2:target ~ #form-h1 input {
+  z-index: 500;
+}
+
+#form-h1:valid ~ article .card-holder-h1 .card-body,
+#form-h1:valid ~ article .card-holder-h2 .card-body,
+#form-h2:valid ~ article .card-holder-h1 .card-body,
+#form-h2:valid ~ article .card-holder-h2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-h1:valid ~ article .card-holder-h1 .card-body .card-container,
+#form-h1:valid ~ article .card-holder-h2 .card-body .card-container,
+#form-h2:valid ~ article .card-holder-h1 .card-body .card-container,
+#form-h2:valid ~ article .card-holder-h2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.i1 .front, .i2 .front {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/67732/card-i.gif");
+}
+
+.i1 {
+  left: calc(var(--pixel) * 109);
+  top: calc(var(--pixel) * 13);
+}
+
+.i2 {
+  left: calc(var(--pixel) * 13);
+  top: calc(var(--pixel) * 13);
+}
+
+#i1:target ~ article .card-holder .inactive-card,
+#i2:target ~ article .card-holder .inactive-card {
+  z-index: 600;
+}
+#i1:target ~ #form-i1:valid ~ article .card-holder .inactive-card,
+#i1:target ~ #form-i2:valid ~ article .card-holder .inactive-card,
+#i2:target ~ #form-i1:valid ~ article .card-holder .inactive-card,
+#i2:target ~ #form-i2:valid ~ article .card-holder .inactive-card {
+  z-index: 1;
+}
+
+#i1:target ~ article .card-holder-i1,
+#i2:target ~ article .card-holder-i2 {
+  z-index: 500;
+}
+#i1:target ~ article .card-holder-i1 .card-body .card-container,
+#i2:target ~ article .card-holder-i2 .card-body .card-container {
+  transition-delay: 0s;
+  transform: rotateY(180deg);
+}
+
+#i1:target ~ #form-i2,
+#i2:target ~ #form-i1 {
+  z-index: 500;
+}
+#i1:target ~ #form-i2 input,
+#i2:target ~ #form-i1 input {
+  z-index: 500;
+}
+
+#form-i1:valid ~ article .card-holder-i1 .card-body,
+#form-i1:valid ~ article .card-holder-i2 .card-body,
+#form-i2:valid ~ article .card-holder-i1 .card-body,
+#form-i2:valid ~ article .card-holder-i2 .card-body {
+  animation: flip_front 3s forwards;
+  pointer-events: none;
+}
+#form-i1:valid ~ article .card-holder-i1 .card-body .card-container,
+#form-i1:valid ~ article .card-holder-i2 .card-body .card-container,
+#form-i2:valid ~ article .card-holder-i1 .card-body .card-container,
+#form-i2:valid ~ article .card-holder-i2 .card-body .card-container {
+  transform: rotateY(180deg);
+  animation: none;
+  transition-delay: 0s;
+}
+
+.last-click:target ~ .card-body .card-container {
+  background-color: #ccc;
+  animation: flip_front_back 3s forwards;
+}

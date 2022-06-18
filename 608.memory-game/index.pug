@@ -1,0 +1,63 @@
+.container.main-container(ng-app="MemoryGame", ng-controller="GameCtrl")
+
+  .page-header
+    h2 Memory Game
+      =' '
+      small.pull-right
+        label No. Tiles:
+          =' '
+          select(ng-options="o[0] as o[1] for o in gridSizes", ng-model="gridSize")
+    .small(ng-show="!showHowTo")
+      a(href="#", ng-click="showHowTo=true") How to play?
+      
+  .well.small(ng-show="showHowTo")
+    p Click the tiles to match pairs by the image displayed. Clicking the "Give me a hint" button will show all tiles briefly to refresh your memory, but doing this will count against your score. 
+    p You are scored on how many successful pairs are made compared against failures and hints that have been used.
+    p You can change the number of tiles displayed, by changing the value in the drop down above.
+    a(href="#", ng-click="showHowTo=false") Hide this hint.
+    
+  .text-center
+    memory-grid(ng-model="grid", size="gridSize")
+  
+  script(type="text/ng-template", id="/memory-grid.tpl")
+    .memory-grid(style="width: {{model.width}}px; height: {{model.height}}px")
+      .mg-container(ng-class="{'locked': model.changesLocked}")
+        .symbol(ng-repeat="card in model.cells", ng-class="card.cssClass", ng-click="model.selectItem($event, card)", style="width: {{model.cellWidth}}px; height: {{model.cellHeight}}px")
+          i.icon.fa(ng-class="card.symbol")
+        .clearfix
+      hr
+      .text-center
+        .pull-left.text-left
+          span Completed:
+            =' '
+            label {{(model.percentComplete*100)|number:2}}%
+        div.pull-right
+          .text-right
+            span Score:
+              =' '
+              label.label.label-success(title="Successful") {{model.success|number}}
+              =' '
+              label.label.label-danger(title="Failed") {{model.fails|number}}
+              =' '
+              label.label.label-warning(title="Hints") {{model.hints|number}}
+              =' = '
+              label(title="Total Score") {{model.score|number:1}} / 100
+          .text-right.small
+            span Duration:
+              =' '
+              label {{model.duration|duration:true}}
+        .clearfix
+      hr
+      .btn-group.pull-left
+        button.btn.btn-lg.btn-default(ng-if="!model.completed", ng-click="model.hint()", ng-disabled="model.changesLocked")
+          span.fa.fa-question-circle
+          =' '
+          | Give me a hint
+      .btn-group.pull-right
+        button.btn.btn-lg.btn-danger(ng-click="model.reset()", ng-disabled="model.changesLocked")
+          span.fa.fa-refresh
+          =' '
+          | Restart
+      .clearfix
+      
+    

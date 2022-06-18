@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>How To Make A Maze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="container">
+  <div id="intro" class="card show">
+    <canvas id="title"></canvas>
+  </div>
+  <div id="step-1-text" class="card">
+    <h2>Step 1</h2>
+    <p>The area is divided into <span class="color3">blocks</span> of 4 <span class="color4">cells</span> in a 2 by 2 formation.</p>
+  </div>
+  <div id="step-2-text" class="card">
+    <h2>Step 2</h2>
+    <p>The algorithm chooses one <span class="color3">block</span> at <span class="color4">random</span>. This becomes the <span class="color4">"current block"</span>.</p>
+  </div>
+  <div id="step-3-text" class="card">
+    <h2>Step 3</h2>
+    <p>From the <span class="color4">"current block"</span>, the algorithm checks the adjacent <span class="color3">blocks</span> to see if they have been "visited" before and that they are within the edges of the maze. Then it chooses one neighbouring block at random.</p>
+  </div>
+  <div id="step-4-text" class="card">
+    <h2>Step 4</h2>
+    <p>Remember that each <span class="color3">block</span> is 4 cells (see step 1). By default these cells are set as walls which are the same colour as the background colour. The algorithm removes 2 of the walls to create <span class="color4">a path</span> between the <span class="color3">two blocks</span>. Moving always to the bottom-right cell of the chosen block. The algorithm marks this block as being "visited" and uses this new block as the "current block" before repeating steps 3 and 4 again.</p>
+  </div>
+  <div id="step-5-text" class="card">
+    <h2>Step 5</h2>
+    <p>If <span class="color3">the algorithm</span> ends up at a dead end, it retraces <span class="color4">the path</span> checking each step until it finds a block that hasn't been "visited" yet.</p>
+    <p>Ultimately, <span class="color3">the algorithm</span> will check each block until <span class="color4">the path</span> extends into ALL the blocks.</p>
+    <p>The result is a randomly generated maze!</p>
+  </div>
+  <div id="visual" class="card show-visual">
+    <canvas id="display"></canvas>
+  </div>
+  <nav id="control" class="nav-bottom">
+    <a id="button-start" class="active" href="#">Start</a>
+    <a id="button-step1" href="#">Step 1</a>
+    <a id="button-step2" href="#">Step 2</a>
+    <a id="button-step3" href="#">Step 3</a>
+    <a id="button-step4" href="#">Step 4</a>
+    <a id="button-step5" href="#">Step 5</a>
+    <a id="button-instant" href="#">Instant Maze</a>
+    <a id="button-draw" href="#">Draw Mode</a>
+  </nav>
+</div>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

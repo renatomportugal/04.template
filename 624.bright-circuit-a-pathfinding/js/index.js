@@ -1,0 +1,276 @@
+//-----------Classes--------------
+class PriorityQueue {
+  constructor() {
+    this.items = [];
+  }
+
+  enqueue(element, priority) {
+    var contain = false;
+    for (var i = 0; i < this.items.length; i++) {
+      if (this.items[i].priority > element.priority) {
+        this.items.splice(i, 0, element);
+        contain = true;
+        break;
+      }
+    }
+
+    if (!contain) this.items.push(element);
+  }
+
+  dequeue() {
+    if (this.items.length == 0) return;
+    return this.items.shift();
+  }}
+
+
+//-----------Var Inits--------------
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth * window.devicePixelRatio;
+canvas.height = window.innerHeight * window.devicePixelRatio;
+let cx = ctx.canvas.width / 2;
+let cy = ctx.canvas.height / 2;
+
+let grid = {};
+let frontier = new PriorityQueue();
+let path = [];
+let pathFound = false;
+let costSoFar = {};
+let startCell = null;
+let endCell = null;
+
+let cellSize = 20 * window.devicePixelRatio;
+let xScale = Math.floor(canvas.width / cellSize) - 1;
+let yScale = Math.floor(canvas.height / cellSize) - 1;
+let red = 0;
+let green = 150;
+let blue = 250;
+let j1 = 0.5;
+let j2 = 0.5;
+let j3 = 0.5;
+
+//-----------Functions--------------
+const resizeCanvas = () => {
+  canvas.width = window.innerWidth * window.devicePixelRatio;
+  canvas.height = window.innerHeight * window.devicePixelRatio;
+  cx = ctx.canvas.width / 2;
+  cy = ctx.canvas.height / 2;
+  cellSize = 20 * window.devicePixelRatio;
+  xScale = Math.floor(canvas.width / cellSize);
+  yScale = Math.floor(canvas.height / cellSize);
+};
+
+const randomRange = (min, max) => Math.random() * (max - min) + min;
+
+const incrementColor = () => {
+  red += j1;
+  if (red >= 255 || red <= 0) j1 = -j1;
+  green += j2;
+  if (green >= 255 || green <= 0) j2 = -j2;
+  blue += j3;
+  if (blue >= 255 || blue <= 0) j3 = -j3;
+};
+
+const init = (x = null, y = null) => {
+  resizeCanvas();
+
+  costSoFar = {};
+  path = [];
+  frontier = new PriorityQueue();
+  grid = {};
+  pathFound = false;
+
+  createGrid(x, y);
+};
+
+const createGrid = (x = null, y = null) => {
+  for (let y = 0; y <= yScale; y++) {
+    for (let x = 0; x <= xScale; x++) {
+      grid[`${x}_${y}`] = {
+        color: 'rgb(' + red + ',' + green + ',' + blue + ')',
+        cost: getInitialCost(),
+        costSoFar: 0,
+        id: `${x}_${y}`,
+        priority: 1,
+        x: x * cellSize,
+        y: y * cellSize,
+        width: cellSize,
+        height: cellSize,
+        isPassable: getIsPassable(x, y) };
+
+    }
+  }
+
+  Object.keys(grid).map(id => grid[id].neighbors = getNeighbors(grid[id]));
+
+  let start = grid[getIdFromPosition(cx / 2, cy / 2)];
+  const end = grid[getIdFromPosition(randomRange(0, cx), randomRange(0, cy))];
+  if (x && y) start = grid[getIdFromPosition(x, y)];
+
+  start.isStart = true;
+  start.cameFrom = true; // tricks start into being white
+  costSoFar[start.id] = start.cost;
+  startCell = start;
+
+  end.isEnd = true;
+  end.cameFrom = true;
+  end.isPassable = true; // edge case to make sure its in the path
+  endCell = end;
+
+  frontier.enqueue(start, 1);
+};
+
+const getIdFromPosition = (x, y) => {
+  const finalX = Math.min(
+  Math.floor(x * window.devicePixelRatio / cellSize),
+  xScale);
+
+  const finalY = Math.min(
+  Math.floor(y * window.devicePixelRatio / cellSize),
+  yScale);
+
+  return `${finalX}_${finalY}`;
+};
+
+const getCellById = id => grid.find(cell => cell.id === id);
+
+const getInitialCost = () => Math.floor(Math.random() * cellSize) + 1;
+
+const getIsPassable = (x, y) => {
+  return Math.random() > 0.3;
+};
+
+const pixelsToCell = pixels => Math.floor(pixels / cellSize);
+
+const getNeighbors = cell => [
+grid[`${pixelsToCell(cell.x) + 1}_${pixelsToCell(cell.y)}`],
+grid[`${pixelsToCell(cell.x) - 1}_${pixelsToCell(cell.y)}`],
+grid[`${pixelsToCell(cell.x)}_${pixelsToCell(cell.y) + 1}`],
+grid[`${pixelsToCell(cell.x)}_${pixelsToCell(cell.y) - 1}`]];
+
+
+const getHeuristic = (a, b) => Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
+
+const getFrontier = () => {
+  const cell = frontier.dequeue();
+
+  cell.neighbors.forEach(neighbor => {
+    if (!neighbor) return;
+    if (neighbor.isEnd) pathFound = true;
+
+    const newCost = costSoFar[cell.id] + neighbor.cost;
+    if (
+    neighbor.isPassable && (
+    !costSoFar[neighbor.id] || newCost < costSoFar[neighbor.id]))
+    {
+      const heuristic = getHeuristic(neighbor, endCell);
+
+      costSoFar[neighbor.id] = newCost;
+      neighbor.priority = heuristic + newCost;
+      neighbor.cameFrom = cell;
+      frontier.enqueue(neighbor, neighbor.priority);
+    }
+  });
+
+  incrementColor();
+  cell.color = 'rgb(' + red + ',' + green + ',' + blue + ')';
+};
+
+const buildPath = () => {
+  path.push(endCell);
+
+  let pathBuilt = false;
+  while (pathBuilt === false) {
+    const newestEntry = path[path.length - 1].cameFrom;
+
+    if (!newestEntry) break;
+    newestEntry.isInPath = true;
+    path.push(newestEntry);
+  }
+};
+
+const findPath = () => {
+  // Extend frontier until end is found
+  if (pathFound === false) {
+    for (let i = 0; i < frontier.items.length; i++) {
+      getFrontier();
+    }
+  }
+
+  // If end is found, build out path
+  if (pathFound === true && path.length === 0) {
+    buildPath();
+  }
+};
+
+const drawGrid = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  Object.keys(grid).forEach(cellId => {
+    const cell = grid[cellId];
+
+    ctx.strokeStyle = cell.color;
+    ctx.lineWidth = 3;
+
+
+    if (cell.isInPath || cell.isStart || cell.isEnd) {
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 4;
+    }
+
+    if (cell.cameFrom) {
+      ctx.beginPath();
+      ctx.moveTo(cell.x + cellSize / 2, cell.y + cellSize / 2);
+      ctx.lineTo(cell.cameFrom.x + cellSize / 2, cell.cameFrom.y + cellSize / 2);
+      ctx.stroke();
+    }
+  });
+
+  // Draw Circles
+  Object.keys(grid).forEach(cellId => {
+    const cell = grid[cellId];
+
+    ctx.fillStyle = cell.color;
+    ctx.strokeStyle = cell.color;
+
+    if (cell.isInPath || cell.isStart || cell.isEnd) {
+      ctx.strokeStyle = 'white';
+      ctx.fillStyle = 'white';
+    }
+
+    if (!cell.cameFrom) {
+      ctx.fillStyle = 'rgba(255,255,255,0.1)';
+      if (!cell.isPassable) ctx.fillStyle = 'transparent';
+    }
+
+    let circleSize = (cellSize - cell.cost) / 2;
+    if (cell.isStart || cell.isEnd) circleSize = cellSize / 2;
+
+    ctx.beginPath();
+    ctx.moveTo(cell.x + cellSize / 2, cell.y + cellSize / 2);
+    ctx.arc(cell.x + cellSize / 2, cell.y + cellSize / 2, circleSize, 0, 2 * Math.PI);
+    ctx.fill();
+  });
+};
+
+const render = () => {
+  findPath();
+  drawGrid();
+};
+
+//---------Execution--------
+window.onload = () => {
+  init();
+  render();
+
+  window.onclick = e => init(e.clientX, e.clientY);
+
+  window.addEventListener('touchstart', e => {
+    const touches = e.changedTouches;
+    init(touches[0].clientX, touches[0].clientY);
+  });
+
+  window.setInterval(() => {
+    if (pathFound === false) render();
+  }, 70);
+};

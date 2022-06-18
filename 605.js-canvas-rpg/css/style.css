@@ -1,0 +1,21 @@
+* {
+	margin:0; 
+	padding:0;
+	box-sizing:border-box;
+	list-style: none;
+}
+body {
+	background: hsl(178, 35%, 35%);
+	box-shadow: inset 0 0 8vh hsl(178, 15%, 15%);
+	min-height: 100vh;
+}
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+canvas {
+	border: 1px solid black;
+	box-shadow: 0 0 4vh hsl(178, 15%, 15%);
+}

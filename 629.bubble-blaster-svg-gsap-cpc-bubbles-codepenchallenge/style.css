@@ -1,0 +1,163 @@
+body {
+  overflow: hidden;
+  background: #e6e6fa;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+main .bubble {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  background-image: url("https://pngimg.com/uploads/soap_bubbles/soap_bubbles_PNG37.png");
+  background-size: cover;
+  width: 5vw;
+  max-width: 50px;
+  height: 5vw;
+  max-height: 50px;
+}
+main .bubble::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #e6e6fa;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.15s ease-out;
+}
+main .bubble.out::after {
+  transform: scale(1);
+}
+main .dashboard {
+  width: 100%;
+  max-width: 600px;
+  height: 30vw;
+  max-height: 240px;
+  position: relative;
+  display: flex;
+  padding-inline: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+main .dashboard .cannon-wr {
+  position: absolute;
+  width: 5%;
+  max-width: 40px;
+  height: 25%;
+  max-height: 200px;
+  top: calc(-15% - 1vw);
+  left: 50%;
+  transform: translate(-50%);
+}
+main .dashboard .cannon-wr .cannon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  clip-path: polygon(0 100%, 35% 0, 65% 0, 100% 100%, 0 100%);
+}
+main .dashboard .cannon-wr .sphere {
+  display: block;
+  position: absolute;
+  width: 3vw;
+  max-width: 30px;
+  height: 3vw;
+  max-height: 30px;
+  border-radius: 50%;
+  background: #06bc00;
+  top: -22.5%;
+  left: 50%;
+  transform: translate(-50%);
+}
+main .dashboard svg {
+  width: 100%;
+  max-width: 800px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+}
+main .dashboard .knob-wr {
+  width: 16vw;
+  max-width: 130px;
+  height: 16vw;
+  max-height: 130px;
+  background: #00928d;
+  position: relative;
+  top: 7%;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  overflow: visible;
+}
+main .dashboard .knob-wr svg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+main .dashboard .knob-wr .knob {
+  margin: auto;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  box-shadow: 0.7vw 0.7vw 0.8vw #006864, -0.7vw -0.7vw 0.8vw #00bcb6;
+}
+main .dashboard .knob-wr .knob .ctr {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+main .dashboard .knob-wr .knob .ctr::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 7.5%;
+  width: 12%;
+  height: 12%;
+  border-radius: 50%;
+  background: #b600bc;
+  border: 1px solid rgba(0,0,0,0.5);
+  cursor: grab;
+}
+main .dashboard .trigger-wr {
+  width: 17vw;
+  max-width: 155px;
+  height: 17vw;
+  max-height: 155px;
+  background: #bc0006;
+  position: relative;
+  top: -7.5%;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  overflow: visible;
+}
+main .dashboard .trigger-wr .trigger {
+  margin: auto;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  border: 0;
+  box-shadow: 0.6vw 0.6vw 0.8vw #4b0002, -0.6vw -0.6vw 0.8vw #ff000a;
+  background: linear-gradient(135deg, #ff000a 0%, #4b0002 100%);
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+main .dashboard .trigger-wr .trigger:active {
+  box-shadow: 0.3vw 0.3vw 0.6vw #4b0002, -0.3vw -0.3vw 0.6vw #ff000a;
+  background: linear-gradient(135deg, #4b0002 0%, #ff000a 100%);
+}

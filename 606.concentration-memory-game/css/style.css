@@ -1,0 +1,393 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+section.game-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* Mobile Breakpoints for Tablet */
+@media screen and (max-width:800px) {
+  .container {
+    width: 100%;
+  }
+  .deck {
+    max-width: 600px;
+    min-height: 580px !important;
+  }
+  .deck .card {
+    height: 110px !important;
+    width: 110px !important;
+  }
+}
+
+/* Mobile Breakpoints for Phone */
+@media screen and (max-width:600px) {
+  .container {
+    width: 100%;
+  }
+  .deck {
+    max-width: 410px;
+    min-height: 380px !important;
+  }
+  .deck .card {
+    height: 70px !important;
+    width: 70px !important;
+  }
+}
+
+/* Mobile Breakpoints for tiny Phone */
+@media screen and (max-width:400px) {
+  .container {
+    width: 100%;
+  }
+  .deck {
+    max-width: 270px;
+    min-height: 300px !important;
+    padding: 18px !important;
+  }
+  .deck .card {
+    height: 50px !important;
+    width: 50px !important;
+    font-size: 23px !important;
+  }
+  .score-panel {
+    width: 270px !important;
+  }
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+		transform-style: preserve-3d;
+  	transition: all .5s ease;
+		font-size: 33px;
+}
+
+.deck .card.open {
+    background: #02b3e4;
+    cursor: default;
+		width: 125px;
+		transform-origin: bottom center;
+		font-size: 33px;
+		animation: flip .5s ease;
+}
+
+.deck .card.close {
+    font-size: 33px;
+	  animation: unflip .5s ease;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+		animation: match 1.5s 1;
+		font-size: 33px;
+}
+
+.deck .card.bad {
+    cursor: default;
+    background: #f95b3c;
+	  animation: badMatch 1.2s 1;
+		font-size: 33px;
+}
+
+/* Card Keyframe animations */
+
+@keyframes unflip {
+	0% {
+		transform: rotateY(180deg);
+	}
+	30% {
+		font-size: 0px;
+	}
+	100% {
+		font-size: 0px;
+	}
+}
+
+@keyframes flip {
+	0% {
+		transform: rotateY(180deg);
+	}
+}
+
+@keyframes match {
+	0% {
+		transform: rotateY(180deg);
+	}
+	25% {
+		transform: scale(1.1);
+	}
+	50% {
+		transform: scale(1.2, .9);
+	}
+	75% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes badMatch {
+	0% {
+		transform: rotateY(180deg);
+	}
+	25% {
+		transform:translateX(0px);
+	}
+	50% {
+		transform:translateX(-20px) rotate(-20deg);
+	}
+	60% {
+		transform:translateX(20px) rotate(20deg);
+	}
+		70% {
+		transform:translateX(-20px) rotate(-20deg);
+	}
+	80% {
+		transform:translateX(20px) rotate(20deg);
+	}
+	100% {
+		transform:translateX(0px);
+	}
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 450px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+
+/* Winner Message */
+
+.winner-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 5%;
+  width: 660px;
+  min-height: 680px;
+  justify-content: center;
+}
+
+.winner-message .cheer {
+  padding: 0px 20px 20px;
+}
+
+.winner-message .stats-title {
+  font-weight: bold;
+}
+
+.winner-stats {
+    display: flex;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.stats-left {
+    border-left: 2px solid;
+    border-top: 2px solid;
+}
+
+.stats-left div {
+    border-bottom: 2px solid;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.stats-right {
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+
+.stats-right div {
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    padding: 10px;
+}
+
+.winner-message button {
+	background: #00b9a9;
+	padding: 16px;
+  margin-top: 25px;
+	color: #fff;
+	text-transform: uppercase;
+	border: 0px solid;
+	border-radius: 5px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	box-shadow: 6px 7px 20px 0 rgba(46, 61, 73, 0.5);
+  font-family: 'Coda', cursive;
+}
+
+.winner-message button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.checkmark.draw {
+    width: 280px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.checkmark.draw:after {
+	animation: drawCheck 1s ease;
+  transform: scaleX(-1) rotate(135deg);
+}
+
+.checkmark:after {
+  position: absolute;
+  height: 80px;
+  width: 35px;
+  opacity: 1;
+  transform-origin: left top;
+  border-right: 6px solid #00b9a9;
+  border-top: 6px solid #00b9a9;
+  content: '';
+  margin-left: -7px;
+}
+
+/* Winner Message Checkmark animation*/
+@keyframes drawCheck {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 35px;
+    opacity: 1;
+  }
+  40% {
+    height: 80px;
+    width: 35px;
+    opacity: 1;
+  }
+  100% {
+    height: 80px;
+    width: 35px;
+    opacity: 1;
+  }
+}
+
+/* Error Styles */
+a.close:hover {
+    cursor: pointer;
+}
+
+a.close {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.error-div {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #f95b3c;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
