@@ -1,0 +1,35 @@
+#settings(data-bind="with: crush")
+	p(data-bind="visible: playing")
+		a.btn.btn-danger( data-bind="click: startStop" )
+			i.fa.fa-remove
+			|  Stop game
+.container(data-bind="with:crush")
+	.row
+		.game-panel( data-bind="style:{ width: width()+'px' }")
+			.game-title(data-bind="css: playing() ? 'elusive':'prominent'") Font Crush				
+			.row
+				.col-md-6
+				.col-md-6.text-right
+					div( data-bind="visible: playing")
+						strong.score(data-bind="text: $root.scoreDisplay")
+					div(data-bind="visible: !playing()")
+						a.start-stop.btn.btn-success(data-bind="click: startStop") 
+							i.fa.fa-check
+							|  Start game
+				
+
+	.row
+		.col-md-12
+			.game-console(data-bind="style: {width: width()+'px', height: 30 + height()+'px'}")
+				.gravityBar(data-bind="css:gravity,visible: playing")
+					i.fa(data-bind="css: 'fa-chevron-circle-'+gravity()")
+				#font-crush.font-crush
+					.message( data-bind="visible:message, text:message")
+
+template#tplSettingsPanel
+	.settings-panel
+		.setting
+			.setting-title Rows
+			.setting-content
+				p 
+					

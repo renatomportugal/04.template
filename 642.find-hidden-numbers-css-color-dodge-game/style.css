@@ -1,0 +1,14 @@
+body {
+  overflow: hidden;
+}
+.light {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 100%;
+  mix-blend-mode: color-dodge;
+  box-shadow: 0 0 40px 40px white;
+  display: none;
+}

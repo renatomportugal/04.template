@@ -1,0 +1,356 @@
+/* styling */
+
+body {
+  background-color:#222;
+  font-family:sans-serif;
+}
+
+form {
+  text-align:center;
+}
+
+#restart {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-color:#444;
+  border:none;
+  border-radius:2vmin;
+  color:#fff;
+  font-size:4vmin;
+  margin:.5em 0;
+  padding:.75em;
+  transition:opacity .2s linear;
+  width:calc(80vmin + 2px);
+}
+
+.board {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height:80vmin;
+  margin:0 auto;
+  padding:2px;
+  width:80vmin;
+}
+
+.square {
+  background-color:#ccc;
+  border:solid 2px #444;
+  border-radius:2vmin;
+  position:relative;
+}
+
+.square > label {
+  bottom:0;
+  display:block;
+  left:0;
+  position:absolute;
+  right:0;
+  top:0;
+}
+
+.square > span {  
+  border-radius:2vmin;
+  bottom:0;
+  display:none;
+  font-size:20vmin;
+  font-weight:bold;
+  left:0;
+  line-height:25vmin;
+  position:absolute;
+  right:0;
+  text-align:center;
+  top:0;
+}
+
+.square > span.nought {
+  background-color:#efe;
+  color:#030;
+}
+
+.square > span.cross {
+  background-color:#fee;
+  color:#300;
+}
+
+@keyframes pulse {
+  100% {
+    background-color:#ff0;
+    color:#000;
+  }
+}
+
+/* display/visibility logic */
+
+input[type=radio] {
+  display:none;
+}
+
+/* restart button */
+button[type=reset] {
+  opacity:0;
+}
+:checked ~ button[type=reset] {
+  opacity:1;
+}
+
+/* turns */
+
+/* default, noughts start */
+label.cross {
+  display:none;
+}
+
+/* after 1st turn */
+.nought:checked ~ .board > .square > label.nought {
+  display:none;
+}
+.nought:checked ~ .board > .square > label.cross {
+  display:block;
+}
+
+/* after 2nd turn */
+.nought:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:none;
+}
+.nought:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:block;
+}
+
+/* after 3rd turn */
+.nought:checked ~ .nought:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:none;
+}
+.nought:checked ~ .nought:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:block;
+}
+
+/* after 4th turn */
+.nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:none;
+}
+.nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:block;
+}
+
+/* after 5th turn */
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:none;
+}
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:block;
+}
+
+/* after 6th turn */
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:none;
+}
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:block;
+}
+
+/* after 7th turn */
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:none;
+}
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:block;
+}
+
+/* after 8th turn */
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.cross {
+  display:none;
+}
+.nought:checked ~ .nought:checked ~ .nought:checked ~ .nought:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .cross:checked ~ .board > .square > label.nought {
+  display:block;
+}
+
+/* reveal nought or cross */
+
+#sq1-o:checked ~ .board > #sq1 > span.nought {
+  display:inline;
+}
+
+#sq1-x:checked ~ .board > #sq1 > span.cross {
+  display:inline;
+}
+
+#sq2-o:checked ~ .board > #sq2 > span.nought {
+  display:inline;
+}
+
+#sq2-x:checked ~ .board > #sq2 > span.cross {
+  display:inline;
+}
+
+#sq3-o:checked ~ .board > #sq3 > span.nought {
+  display:inline;
+}
+
+#sq3-x:checked ~ .board > #sq3 > span.cross {
+  display:inline;
+}
+
+#sq4-o:checked ~ .board > #sq4 > span.nought {
+  display:inline;
+}
+
+#sq4-x:checked ~ .board > #sq4 > span.cross {
+  display:inline;
+}
+
+#sq5-o:checked ~ .board > #sq5 > span.nought {
+  display:inline;
+}
+
+#sq5-x:checked ~ .board > #sq5 > span.cross {
+  display:inline;
+}
+
+#sq6-o:checked ~ .board > #sq6 > span.nought {
+  display:inline;
+}
+
+#sq6-x:checked ~ .board > #sq6 > span.cross {
+  display:inline;
+}
+
+#sq7-o:checked ~ .board > #sq7 > span.nought {
+  display:inline;
+}
+
+#sq7-x:checked ~ .board > #sq7 > span.cross {
+  display:inline;
+}
+
+#sq8-o:checked ~ .board > #sq8 > span.nought {
+  display:inline;
+}
+
+#sq8-x:checked ~ .board > #sq8 > span.cross {
+  display:inline;
+}
+
+#sq9-o:checked ~ .board > #sq9 > span.nought {
+  display:inline;
+}
+
+#sq9-x:checked ~ .board > #sq9 > span.cross {
+  display:inline;
+}
+
+/* winning combinations */
+/* hide all labels, highlight squares */
+
+/* 1, 2, 3 */
+#sq1-o:checked ~ #sq2-o:checked ~ #sq3-o:checked ~ .board > .square > label,
+#sq1-x:checked ~ #sq2-x:checked ~ #sq3-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq1-o:checked ~ #sq2-o:checked ~ #sq3-o:checked ~ .board > #sq1 > span,
+#sq1-o:checked ~ #sq2-o:checked ~ #sq3-o:checked ~ .board > #sq2 > span,
+#sq1-o:checked ~ #sq2-o:checked ~ #sq3-o:checked ~ .board > #sq3 > span,
+#sq1-x:checked ~ #sq2-x:checked ~ #sq3-x:checked ~ .board > #sq1 > span,
+#sq1-x:checked ~ #sq2-x:checked ~ #sq3-x:checked ~ .board > #sq2 > span,
+#sq1-x:checked ~ #sq2-x:checked ~ #sq3-x:checked ~ .board > #sq3 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 4, 5, 6 */
+#sq4-o:checked ~ #sq5-o:checked ~ #sq6-o:checked ~ .board > .square > label,
+#sq4-x:checked ~ #sq5-x:checked ~ #sq6-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq4-o:checked ~ #sq5-o:checked ~ #sq6-o:checked ~ .board > #sq4 > span,
+#sq4-o:checked ~ #sq5-o:checked ~ #sq6-o:checked ~ .board > #sq5 > span,
+#sq4-o:checked ~ #sq5-o:checked ~ #sq6-o:checked ~ .board > #sq6 > span,
+#sq4-x:checked ~ #sq5-x:checked ~ #sq6-x:checked ~ .board > #sq4 > span,
+#sq4-x:checked ~ #sq5-x:checked ~ #sq6-x:checked ~ .board > #sq5 > span,
+#sq4-x:checked ~ #sq5-x:checked ~ #sq6-x:checked ~ .board > #sq6 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 7, 8, 9 */
+#sq7-o:checked ~ #sq8-o:checked ~ #sq9-o:checked ~ .board > .square > label,
+#sq7-x:checked ~ #sq8-x:checked ~ #sq9-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq7-o:checked ~ #sq8-o:checked ~ #sq9-o:checked ~ .board > #sq7 > span,
+#sq7-o:checked ~ #sq8-o:checked ~ #sq9-o:checked ~ .board > #sq8 > span,
+#sq7-o:checked ~ #sq8-o:checked ~ #sq9-o:checked ~ .board > #sq9 > span,
+#sq7-x:checked ~ #sq8-x:checked ~ #sq9-x:checked ~ .board > #sq7 > span,
+#sq7-x:checked ~ #sq8-x:checked ~ #sq9-x:checked ~ .board > #sq8 > span,
+#sq7-x:checked ~ #sq8-x:checked ~ #sq9-x:checked ~ .board > #sq9 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 1, 4, 7 */
+#sq1-o:checked ~ #sq4-o:checked ~ #sq7-o:checked ~ .board > .square > label,
+#sq1-x:checked ~ #sq4-x:checked ~ #sq7-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq1-o:checked ~ #sq4-o:checked ~ #sq7-o:checked ~ .board > #sq1 > span,
+#sq1-o:checked ~ #sq4-o:checked ~ #sq7-o:checked ~ .board > #sq4 > span,
+#sq1-o:checked ~ #sq4-o:checked ~ #sq7-o:checked ~ .board > #sq7 > span,
+#sq1-x:checked ~ #sq4-x:checked ~ #sq7-x:checked ~ .board > #sq1 > span,
+#sq1-x:checked ~ #sq4-x:checked ~ #sq7-x:checked ~ .board > #sq4 > span,
+#sq1-x:checked ~ #sq4-x:checked ~ #sq7-x:checked ~ .board > #sq7 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 2, 5, 8 */
+#sq2-o:checked ~ #sq5-o:checked ~ #sq8-o:checked ~ .board > .square > label,
+#sq2-x:checked ~ #sq5-x:checked ~ #sq8-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq2-o:checked ~ #sq5-o:checked ~ #sq8-o:checked ~ .board > #sq2 > span,
+#sq2-o:checked ~ #sq5-o:checked ~ #sq8-o:checked ~ .board > #sq5 > span,
+#sq2-o:checked ~ #sq5-o:checked ~ #sq8-o:checked ~ .board > #sq8 > span,
+#sq2-x:checked ~ #sq5-x:checked ~ #sq8-x:checked ~ .board > #sq2 > span,
+#sq2-x:checked ~ #sq5-x:checked ~ #sq8-x:checked ~ .board > #sq5 > span,
+#sq2-x:checked ~ #sq5-x:checked ~ #sq8-x:checked ~ .board > #sq8 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 3, 6, 9 */
+#sq3-o:checked ~ #sq6-o:checked ~ #sq9-o:checked ~ .board > .square > label,
+#sq3-x:checked ~ #sq6-x:checked ~ #sq9-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq3-o:checked ~ #sq6-o:checked ~ #sq9-o:checked ~ .board > #sq3 > span,
+#sq3-o:checked ~ #sq6-o:checked ~ #sq9-o:checked ~ .board > #sq6 > span,
+#sq3-o:checked ~ #sq6-o:checked ~ #sq9-o:checked ~ .board > #sq9 > span,
+#sq3-x:checked ~ #sq6-x:checked ~ #sq9-x:checked ~ .board > #sq3 > span,
+#sq3-x:checked ~ #sq6-x:checked ~ #sq9-x:checked ~ .board > #sq6 > span,
+#sq3-x:checked ~ #sq6-x:checked ~ #sq9-x:checked ~ .board > #sq9 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 1, 5, 9 */
+#sq1-o:checked ~ #sq5-o:checked ~ #sq9-o:checked ~ .board > .square > label,
+#sq1-x:checked ~ #sq5-x:checked ~ #sq9-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq1-o:checked ~ #sq5-o:checked ~ #sq9-o:checked ~ .board > #sq1 > span,
+#sq1-o:checked ~ #sq5-o:checked ~ #sq9-o:checked ~ .board > #sq5 > span,
+#sq1-o:checked ~ #sq5-o:checked ~ #sq9-o:checked ~ .board > #sq9 > span,
+#sq1-x:checked ~ #sq5-x:checked ~ #sq9-x:checked ~ .board > #sq1 > span,
+#sq1-x:checked ~ #sq5-x:checked ~ #sq9-x:checked ~ .board > #sq5 > span,
+#sq1-x:checked ~ #sq5-x:checked ~ #sq9-x:checked ~ .board > #sq9 > span {
+  animation:pulse .5s alternate linear infinite;
+}
+
+/* 3, 5, 7 */
+#sq3-o:checked ~ #sq5-o:checked ~ #sq7-o:checked ~ .board > .square > label,
+#sq3-x:checked ~ #sq5-x:checked ~ #sq7-x:checked ~ .board > .square > label {
+  display:none;
+}
+#sq3-o:checked ~ #sq5-o:checked ~ #sq7-o:checked ~ .board > #sq3 > span,
+#sq3-o:checked ~ #sq5-o:checked ~ #sq7-o:checked ~ .board > #sq5 > span,
+#sq3-o:checked ~ #sq5-o:checked ~ #sq7-o:checked ~ .board > #sq7 > span,
+#sq3-x:checked ~ #sq5-x:checked ~ #sq7-x:checked ~ .board > #sq3 > span,
+#sq3-x:checked ~ #sq5-x:checked ~ #sq7-x:checked ~ .board > #sq5 > span,
+#sq3-x:checked ~ #sq5-x:checked ~ #sq7-x:checked ~ .board > #sq7 > span {
+  animation:pulse .5s alternate linear infinite;
+}

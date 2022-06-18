@@ -1,0 +1,13 @@
+body {
+  background: #ee9ca7; 
+  background: linear-gradient(to bottom, #ee9ca7, #ffdde1); 
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+h1 {
+  text-align: center;
+  background-image: linear-gradient(to right, #b01455, #5C2A79, #BC353E);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-top: 2rem;
+}

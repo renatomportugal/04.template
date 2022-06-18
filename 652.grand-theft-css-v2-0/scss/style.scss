@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+
+
+%pseudo-block {
+  position: absolute;
+  width:100px;
+  height:200px;
+  box-sizing: border-box;
+  
+  background: url(http://brain.wireos.com/wp-content/uploads/gta2tiles.jpg);
+  
+  background-size: 3199px 3199px;
+  backface-visibility: hidden;
+  image-rendering: pixelated;
+  
+  z-index: 10;
+  
+  // -- Uncomment the following line for a
+  // -- funky toon shader effect!
+  //border: 1px solid black;
+  
+  
+}
+
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  
+}
+
+
+
+ .bottom {
+    @extend %pseudo-block;
+    background:silver;
+    background-position: -400px -2900px;
+    width: 100px;
+    height: 100px;
+   
+     &.r {
+       background:dimgrey;
+       background-position: -1800px -3000px;
+     }
+   
+     &.g {
+       background:yellowgreen;
+       background-position: 0 -1600px;
+     }
+   
+     &.w {
+       background:skyblue;
+       background-position: -100px -1900px;
+     }
+  }
+  
+ .top {
+    @extend %pseudo-block;
+    background:orange;
+    background-position: -2900px -900px;
+    width: 100px;
+    height: 100px;
+  }
+  
+ .back {
+    @extend %pseudo-block;
+    background:white;
+    background-position: 0 -800px;
+  }
+  
+ .front {
+    @extend %pseudo-block;
+    background:darkgrey;
+    background-position: 0 -800px;
+  }
+  
+ .left {
+    @extend %pseudo-block;
+    background:lightgrey;
+    background-position: -200px -800px;
+  }
+  
+ .right {
+    @extend %pseudo-block;
+    background:grey;
+    background-position: -200px -800px;
+  }
+  
+
+
+
+
+footer {
+    position:absolute;
+    bottom:0;
+    padding: 10px;
+    color: white;
+    z-index: 99999999999;
+
+    & a {
+      color: lightgrey;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+car {
+  @extend %pseudo-block;
+  background:red;
+  width: 50px;
+  height: 25px;
+  box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+  z-index: 10;
+}
+
+wheel {
+    @extend %pseudo-block;
+    background:black;
+    width: 5px;
+    height: 10px;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+}
+
+collisionpoint {
+   @extend %pseudo-block;
+    background:green;
+    width: 5px;
+    height: 5px;
+}
+
+canvas {
+  backface-visibility: hidden;
+  z-index: 0;
+}

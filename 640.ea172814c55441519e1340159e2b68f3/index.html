@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tictactoeApp">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Invaders Tic Tac Toe</title>
+
+  <!--  Styles  -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://bootswatch.com/3/cyborg/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/game.css" rel="stylesheet">
+</head>
+
+<body ng-controller="GameCtrl">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Invaders Tic Tac Toe</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" ng-click="restartGame()">New Game</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Board -->
+  <div class="container">
+    <input type="text" id="gameStatus" ng-model="gameStatus" ng-show="false">
+    <div class="row">
+      <div class="board">
+        <div class="tile">
+          <button id="0" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="1" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="2" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="3" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="4" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="5" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="6" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="7" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="8" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Options Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="options-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Game Options</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-lg-4 control-label">Token</label>
+                <div class="col-lg-8">
+                  <div class="radio">
+                    <label>
+                                  <input type="radio" ng-model="options.token" value="X">
+                                  <img src="https://drive.google.com/uc?id=1RG1n6nV0b3IxhMjmFmFmipxqDAzYa4Lz" width="30px">
+                                </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                                <input type="radio" ng-model="options.token" value="O">
+                                <img src="https://drive.google.com/uc?id=1fZiDhu45VuJ6XK0YmpVB79OFK91OZ8a1" width="30px">
+                              </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-4 control-label">Difficulty</label>
+                <div class="col-lg-8">
+                  <div class="radio">
+                    <label>
+                                      <input type="radio" ng-model="options.level" value="blind">
+                                      Easy
+                                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                                      <input type="radio" ng-model="options.level" value="novice">
+                                      Novice
+                                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                                    <input type="radio" ng-model="options.level" value="master">
+                                      Master
+                                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" ng-click="closeModal()">Insert Coin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- finish modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="finish-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body finish">
+            <h4 ng-class="{'text-success':gameStatus === 'human-won', 'text-danger':gameStatus === 'ai-won', 'text-warning': gameStatus === 'draw'}">
+                  {{finish.message}}
+                </h4>
+            <h5>Score: {{finish.score}}</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" ng-click="restartGame()">New Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Scripts  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/9c81709da6.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script src="scripts/ai.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+body {
+  font: 1.4em 'Press Start 2P', cursive !important;
+}
+
+h4 {
+  font-family: 'Press Start 2P', cursive !important;
+}
+
+h5 {
+  font-family: 'Press Start 2P', cursive !important;
+}
+
+.board {
+  width: 400px;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tile {
+  float: left;
+  padding: 3px;
+}
+
+.tile-button {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  border : 1px solid gray;
+  border-radius: 5px;
+}
+
+.finish {
+  text-align: center;
+}

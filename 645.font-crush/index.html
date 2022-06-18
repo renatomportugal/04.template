@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Font Crush</title>
+  
+  
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div id="settings" data-bind="with: crush">
+  <p data-bind="visible: playing"><a class="btn btn-danger" data-bind="click: startStop"><i class="fa fa-remove"></i> Stop game</a></p>
+</div>
+<div class="container" data-bind="with:crush">
+  <div class="row">
+    <div class="game-panel" data-bind="style:{ width: width()+'px' }">
+      <div class="game-title" data-bind="css: playing() ? 'elusive':'prominent'">Font Crush				</div>
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 text-right">
+          <div data-bind="visible: playing"><strong class="score" data-bind="text: $root.scoreDisplay"></strong></div>
+          <div data-bind="visible: !playing()"><a class="start-stop btn btn-success" data-bind="click: startStop"> <i class="fa fa-check"></i> Start game</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="game-console" data-bind="style: {width: width()+'px', height: 30 + height()+'px'}">
+        <div class="gravityBar" data-bind="css:gravity,visible: playing"><i class="fa" data-bind="css: 'fa-chevron-circle-'+gravity()"></i></div>
+        <div class="font-crush" id="font-crush">
+          <div class="message" data-bind="visible:message, text:message"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<template id="tplSettingsPanel">
+  <div class="settings-panel">
+    <div class="setting">
+      <div class="setting-title">Rows</div>
+      <div class="setting-content">
+        <p> </p>
+      </div>
+    </div>
+  </div>
+</template>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

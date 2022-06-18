@@ -1,0 +1,380 @@
+.svg-map {
+  position: relative;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 100%;
+  /* override this inline for aspect ratio other than square */
+}
+
+#zone-info {
+  z-index: 1;
+  position: absolute;
+  top: 61%;
+  right: 0;
+  width: 32%;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+}
+
+#zone-info.show {
+  opacity: 1;
+  height: calc(39% - 59px);
+  overflow-y: hidden;
+}
+
+#zone-info.show .zone-content {
+  height: calc(100% - 6em);
+  overflow-y: scroll;
+  padding-top: 0.5em;
+}
+
+#zone-info h3 span {
+  font-size: 90%;
+}
+
+#zone-info h3 {
+  position: relative;
+  margin: 0 0 0.25em 0;
+  padding: 0.7em 0.7em 0.7em 3.5em;
+  background-color: #000;
+  color: #fff;
+  border: 3px solid #FFF;
+  border-right: none;
+}
+
+#zone-info h3:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+  width: 2.75em;
+  height: 100%;
+  border-right: 3px solid #FFF;
+  background-color: red;
+}
+
+#zone-info h6 {
+  border: none;
+  text-transform: none;
+  margin: 0.5em 1.5em 1em 1.5em;
+  padding: 0;
+}
+
+#zone-info ul {
+  margin: 0 1em 1em 2.5em;
+  list-style-type: square;
+}
+
+#zone-info ul li {
+  text-indent: -1em;
+}
+
+g#zone-1.active,
+g#zone-1.active:hover,
+g#zone-4.active,
+g#zone-4.active:hover,
+g#zone-5.active,
+g#zone-5.active:hover,
+g#zone-9.active,
+g#zone-9.active:hover {
+  fill: rgba(52, 133, 79, 0.5);
+}
+
+g#zone-2.active,
+g#zone-2.active:hover,
+g#zone-13.active,
+g#zone-13.active:hover,
+g#zone-14.active,
+g#zone-14.active:hover,
+g#zone-16.active,
+g#zone-16.active:hover {
+  fill: rgba(255, 196, 59, 0.5);
+}
+
+g#zone-3.active,
+g#zone-3.active:hover,
+g#zone-7.active,
+g#zone-7.active:hover,
+g#zone-15.active,
+g#zone-15.active:hover,
+g#zone-17.active,
+g#zone-17.active:hover {
+  fill: rgba(150, 33, 50, 0.5);
+}
+
+g#zone-6.active,
+g#zone-6.active:hover,
+g#zone-8.active,
+g#zone-8.active:hover,
+g#zone-10.active,
+g#zone-10.active:hover,
+g#zone-11.active,
+g#zone-11.active:hover,
+g#zone-12.active,
+g#zone-12.active:hover {
+  fill: rgba(42, 147, 191, 0.5);
+}
+
+
+/* Leaf */
+
+h3#zone-1,
+h3#zone-4,
+h3#zone-5,
+h3#zone-9 {
+  background-color: #1d4b2c;
+}
+
+h3#zone-1:before,
+h3#zone-4:before,
+h3#zone-5:before,
+h3#zone-9:before {
+  background-color: #34854F;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMCAzMS4yIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCAzMS4yIiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBpZD0idjlIWWtsLnRpZiI+PGc+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE4LjIsMTEuN2MtMC4xLDAtMC4xLDAtMC4yLDBjLTMuNSwyLTYuOSw0LjEtMTAuMSw2LjZjLTEuMywxLTIuNSwyLjEtMy41LDMuNGMtMC4xLDAuMi0wLjMsMC40LTAuNCwwLjZjLTAuMSwwLTAuMS0wLjEtMC4yLTAuMmMtMS4xLTItMS40LTQuMS0xLjItNi40YzAuNC0zLjcsMi02LjgsNC43LTkuM2MxLjMtMS4zLDIuOS0yLDQuNy0yLjZjMS44LTAuNiwzLjYtMC45LDUuNC0xLjFjMS42LTAuMiwzLjMtMC4zLDQuOS0wLjVjMi42LTAuNCw1LjEtMSw3LjUtMi4xQzI5LjgsMCwyOS45LDAsMzAsMGMwLjEsMCwwLDAuMSwwLDAuMmMtMC4yLDIuOC0wLjYsNS42LTEuMSw4LjRjLTAuNiwzLjMtMS40LDYuNi0yLjcsOS43Yy0wLjYsMS40LTEuMiwyLjctMi4yLDMuOWMtMS41LDEuOC0zLjMsMy4xLTUuNCw0Yy0yLDAuOS00LjIsMS4zLTYuNCwxLjJjLTEuOS0wLjEtMy43LTAuNy01LjMtMS44Yy0wLjItMC4xLTAuMi0wLjEtMC40LDBjLTEuMSwxLjEtMS45LDIuNC0yLjcsMy43Yy0wLjMsMC41LTAuNywxLjEtMSwxLjZjLTAuMSwwLjEtMC4xLDAuMi0wLjMsMC4xYy0wLjgtMC4yLTEuNi0wLjQtMi41LTAuN2MtMC4xLDAtMC4yLTAuMS0wLjEtMC4yYzMuMy00LjcsNi44LTkuMSwxMS4xLTEzYzIuMi0xLjksNC40LTMuNyw2LjgtNS40QzE4LDExLjgsMTguMSwxMS43LDE4LjIsMTEuN3oiLz48L2c+PC9nPjwvc3ZnPg==);
+  /* These are the icons that display in the heading of the info box. I originally had these as non-base64 but they didn't display in some browsers. */
+  background-size: 30px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+}
+
+.zone-content.zone-1 a,
+.zone-content.zone-7 a,
+.zone-content.zone-15 a,
+.zone-content.zone-17 a {
+  color: #34854F;
+}
+
+.zone-content.zone-1 a:hover,
+.zone-content.zone-7 a:hover,
+.zone-content.zone-15 a:hover,
+.zone-content.zone-17 a:hover {
+  color: #1d4b2c;
+}
+
+
+/* Grass */
+
+h3#zone-2,
+h3#zone-13,
+h3#zone-14,
+h3#zone-16 {
+  background-color: #bf9334;
+}
+
+h3#zone-2:before,
+h3#zone-13:before,
+h3#zone-14:before,
+h3#zone-16:before {
+  background-color: #ffc445;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMCAzMC4zIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCAzMC4zIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMy4yLDMwLjNoMjQuMkMyNy4zLDI1LDI2LjksMTcsMzAsNi41Yy00LjUsNy42LTcuMiwxNS03LjgsMTYuNGMwLDAsMC45LTE0LjEsNC4zLTIyLjljLTUuNyw2LjYtOC45LDIwLjgtOC45LDIwLjhzLTItMTAtNS43LTE2LjVjMi43LDEyLjYsMC4zLDIxLjQsMC4zLDIxLjRDMTEuNCwyMC44LDguNiw5LjQsMi40LDEuOGM0LjYsMTEuMSw0LjcsMjQuNCw0LjcsMjQuNFMyLjIsMTQuNywwLDExLjlDMS40LDE3LjIsMy4xLDI1LjgsMy4yLDMwLjN6Ii8+PC9nPjwvc3ZnPg==);
+  /* These are the icons that display in the heading of the info box. I originally had these as non-base64 but they didn't display in some browsers. */
+  background-size: 30px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+}
+
+.zone-content.zone-2 a,
+.zone-content.zone-13 a,
+.zone-content.zone-14 a,
+.zone-content.zone-16 a {
+  color: #bf9334;
+}
+
+.zone-content.zone-2 a:hover,
+.zone-content.zone-13 a:hover,
+.zone-content.zone-14 a:hover,
+.zone-content.zone-16 a:hover {
+  color: #ad8027;
+}
+
+
+/* Habitat */
+
+h3#zone-3,
+h3#zone-7,
+h3#zone-15,
+h3#zone-17 {
+  background-color: #4b1119;
+}
+
+h3#zone-3:before,
+h3#zone-7:before,
+h3#zone-15:before,
+h3#zone-17:before {
+  background-color: #962132;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMCAzNC40IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCAzNC40IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTUsMEwwLDE1bDIuOSwyLjlsMy40LTMuNGwyLjUsMTYuNEg2LjV2My41aDE3LjF2LTMuNWgtMi4zbDIuNS0xNi40bDMuNCwzLjRMMzAsMTVMMTUsMHogTTE1LDI4LjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRzMS40LDAuNiwxLjQsMS40UzE1LjgsMjguMiwxNSwyOC4yeiBNMTUsMjEuOGMtMiwwLTMuNy0xLjYtMy43LTMuN3MxLjYtMy43LDMuNy0zLjdzMy43LDEuNiwzLjcsMy43UzE3LDIxLjgsMTUsMjEuOHoiLz48L3N2Zz4=);
+  /* These are the icons that display in the heading of the info box. I originally had these as non-base64 but they didn't display in some browsers. */
+  background-size: 30px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+}
+
+.zone-content.zone-3 a,
+.zone-content.zone-7 a,
+.zone-content.zone-15 a,
+.zone-content.zone-17 a {
+  color: #962132;
+}
+
+.zone-content.zone-3 a:hover,
+.zone-content.zone-7 a:hover,
+.zone-content.zone-15 a:hover,
+.zone-content.zone-17 a:hover {
+  color: #4b1119;
+}
+
+
+/* Water */
+
+h3#zone-6,
+h3#zone-8,
+h3#zone-10,
+h3#zone-11,
+h3#zone-12 {
+  background-color: #154a60;
+}
+
+h3#zone-6:before,
+h3#zone-8:before,
+h3#zone-10:before,
+h3#zone-11:before,
+h3#zone-12:before {
+  background-color: #2a93bf;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMCA0OS4zIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCA0OS4zIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjguMiwyN2MtMS45LTMuOS00LjEtNy42LTYuMy0xMS4zYy0yLTMuNC0zLjgtNi44LTUuMi0xMC40QzE2LjEsMy41LDE1LjUsMS44LDE1LDBjMCwwLjEtMC4xLDAuMi0wLjEsMC4zYy0wLjQsMS40LTAuOCwyLjgtMS40LDQuMmMtMS40LDMuOS0zLjMsNy42LTUuNCwxMS4xYy0yLjIsMy44LTQuNCw3LjUtNi4zLDExLjVjLTEuNiwzLjMtMi4yLDYuOC0xLjQsMTAuNWMxLjMsNi4xLDYuNiwxMSwxMi44LDExLjZjMy44LDAuNCw3LjQtMC40LDEwLjUtMi42YzQuMS0zLDYuMy03LDYuNC0xMi4xQzMwLjEsMzEuOCwyOS4zLDI5LjQsMjguMiwyN3ogTTIxLjYsNDMuN2MtMC40LDAuMy0wLjgsMC40LTEuMiwwLjRjLTAuNywwLTEuMy0wLjMtMS43LTAuOWMtMC43LTAuOS0wLjUtMi4zLDAuNS0yLjljMi4yLTEuNiwzLjEtMy40LDMuMi02YzAtMS4xLDEtMi4xLDIuMS0yLjFjMCwwLDAsMCwwLDBjMS4yLDAsMi4xLDEsMi4xLDIuMUMyNi40LDM4LjQsMjQuOCw0MS40LDIxLjYsNDMuN3oiLz48L3N2Zz4=);
+  /* These are the icons that display in the heading of the info box. I originally had these as non-base64 but they didn't display in some browsers. */
+  background-size: 20px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+}
+
+.zone-content.zone-6 a,
+.zone-content.zone-8 a,
+.zone-content.zone-10 a,
+.zone-content.zone-11 a,
+.zone-content.zone-12 a {
+  color: #2a93bf;
+}
+
+.zone-content.zone-6 a:hover,
+.zone-content.zone-8 a:hover,
+.zone-content.zone-10 a:hover,
+.zone-content.zone-11 a:hover,
+.zone-content.zone-12 a:hover {
+  color: #154a60;
+}
+
+#zone-info p {
+  margin: 0 1.5em 1em 1.5em;
+}
+
+@media screen and (max-width: 860px) {
+  #zone-info.show {
+    width: 100%;
+    position: static;
+    background: none;
+    background-color: #f2f2f2;
+    height: 300px;
+  }
+  #zone-info.show h3 {
+    border-left: none;
+  }
+  #zone-info.show p {
+    color: #000 !important;
+  }
+}
+
+.farm-map-zone.active,
+.farm-map-zone.active:hover {
+  fill: rgba(255, 255, 255, 0.5);
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 10, 10;
+}
+
+.svg-map {
+  width: 100%;
+}
+
+svg#farm-map-svg {
+  z-index: 0;
+  fill: transparent;
+  background-color: none;
+  background: #fff url('https://blindpigdesign.com/_MISC/farm.png') no-repeat center center scroll;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  svg#farm-map-svg {
+    background: #fff url('http://www.ontariosoilcrop.org/wp-content/uploads/2016/03/farm-map-m.png') no-repeat center center scroll;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  svg#farm-map-svg {
+    background: #fff url('http://www.ontariosoilcrop.org/wp-content/uploads/2016/03/farm-map-l.png') no-repeat center center scroll;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+  }
+}
+
+.farm-map-icon {
+  pointer-events: none;
+}
+
+.farm-map-zone {
+  stroke: none;
+  stroke-width: 0;
+}
+
+.farm-map-zone:hover {
+  cursor: pointer;
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 10, 10;
+}
+
+.map-credit {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5em 1em;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 767px) {
+  .map-credit {
+    display: block;
+    position: absolute;
+    background-color: #f2f2f2;
+    padding: 0.5em 1em;
+    width: 100%;
+    top: 100%;
+    display: table;
+  }
+}

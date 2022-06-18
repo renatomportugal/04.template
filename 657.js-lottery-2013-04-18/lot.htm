@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>JS Lottery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+JSLottery = Function()
+{
+    this.records = Array();
+	var randomFromInterval = function (from,to)
+	{
+		var res=0;
+		if ((to-from)==records.length){
+			alert('All items has been selected !');
+			document.getElementById('calc').disabled =true;
+		}
+		while (res<1)
+		{
+			res = Math.floor(Math.random()*(to-from+1)+from);
+			if (records.indexOf(res)<0){
+				records.push(res);
+			}else{
+				res = 0;
+			}
+		}
+		return res;
+	}
+
+	
+
+	this.get_rand = function  (elm) {
+		var min=document.getElementById('min').value;
+		var max=document.getElementById('max').value;
+
+		if (min<1 || max<1){
+			alert('Please provide valid from-to numbers');
+		}else{
+			min=parseInt(min);
+			max=parseInt(max);
+			var res= randomFromInterval(min,max);
+			document.getElementById(elm).innerHTML=res;
+			document.getElementById('all-results').innerHTML=records;
+		}
+	}
+}
+
+</script>
+</head>
+<body dir="ltr">
+<input type="button" value="New Lottery" onClick="document.location.reload(true)" style="float:right;margin-right:3px;margin-top:3px;margin-left:40px">
+<div id="all-results" style="background:#dfc0c0;text-align:center;font-size:24px;color:green;">
+All results
+</div>
+<br>
+	From :
+	<input type="text" name="min" size="10" id="min">
+	<br>    <br>
+	To&nbsp;&nbsp; &nbsp;  :
+	<input type="text" name="min" size="10" id="max">
+	&nbsp;&nbsp;&nbsp;
+	<button onclick="get_rand('result')" id="calc"> Select Seed . . . </button>
+	
+	<br>    <br>
+<a href="http://www.rosependar.ir" style="color:#666666;text-decoration:none;float:right;font-size:14px;padding-right:4px">
+      mehdisafavy@yahoo.com
+</a>
+<div id="result" style="background:#dfc0c0;text-align:center;font-size:24px;">
+Result
+</div>  
+</body>
+</html>	 

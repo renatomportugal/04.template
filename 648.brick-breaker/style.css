@@ -1,0 +1,12 @@
+body {
+ background-color: #3a6073;
+}
+
+#gameCanvas {
+  display: inline;
+}
+
+#canvas-container {
+   width: 100%;
+   text-align:center;
+}

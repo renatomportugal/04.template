@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700,300|Cutive+Mono);
+
+$pieceWidth: 44px;
+
+body{
+	background: #333;
+	//font-family: 'Cutive Mono';
+	color: #fff;
+}
+#settings{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
+	.setting-title, .setting-content{
+		display: table-cell;
+		width: 50%;
+	}
+}
+.game-title{
+	position: absolute;
+	margin:0;
+	top: 0;
+	left: 0;
+	padding: 20px 0 0 0;
+	//background: #000;
+	font-family: 'Comfortaa';
+	font-weight: 700;
+	font-size: 22px;
+	&.prominent{
+		font-size: 66px;
+		top: 50px;
+		width: 100%;
+		text-align: center;
+		color: #333;
+		z-index: 29;
+		line-height: 5;
+		text-shadow: 2px 2px 7px #777,-1px -1px 2px blue;
+	}
+}
+.game-panel{
+	margin: auto;
+	padding: 20px 0;
+	position: relative;
+}
+.message, .starter{
+		position: absolute;
+		text-align: center;
+		z-index: 10;
+		width: 450px;
+		left: 50%;
+		top: 100px;
+		margin-left: -225px;
+		border-radius: 10px;
+	&.idle{
+		right: 0;
+		opacity: .3;
+		//left: auto;
+		top: 0
+	}
+}
+.starter{
+	background: #222;
+}
+.game-console{
+	//padding: 20px;
+	//display: inline-block;
+	position: relative;
+	//width: auto;
+	margin: auto;
+}
+.font-crush{
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+	cursor:default!important;
+	background: #F8FBFF;
+	border: 1px solid #aaa;
+	.message{
+		position: absolute;
+		font-size: 23px;
+		text-align: center;
+		font-weight: bold;
+		z-index: 10;
+		width: 350px;
+		height: 100px;
+		left: 50%;
+		top: 50%;
+		line-height: 75px;
+		margin-left: -175px;
+		margin-top: -50px;
+		border: 1px solid #555;
+		border-radius: 10px;
+		padding: 10px;
+		color: #fff;
+		text-shadow: 1px 1px 2px #000;
+		background: rgba( 90, 90, 90, .85 );
+	}
+}
+
+.font-crush-piece{
+	position: absolute;
+	z-index: 5;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	z-index: 2;
+	width: 44px;
+	height: 44px;
+	font-size: 32px;
+	line-height: 44px;
+	text-align: center;
+	&.font-crush-clone{
+		opacity: .5;
+	}
+	&.font-crush-active{
+		box-shadow: 0 0 2px 3px orange;
+	}
+	i{
+		text-shadow: 1px 1px 2px #222;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+		font-weight: bold;
+		font-size: 32px;
+	}
+}
+
+.gravityBar{
+	position: absolute;
+	z-index: 15;
+	width: $pieceWidth + 4px;
+	height: $pieceWidth + 4px;
+	text-align: center;
+	vertical-align:middle;
+	color: #fff;
+	//background: #fff;
+	//border: 1px solid blue;
+	border-radius: $pieceWidth/2;
+	i{
+		font-size:  $pieceWidth - 4px;
+		line-height: $pieceWidth + 4px;
+		vertical-align: top;
+	}
+	&.up, &.down{
+		left: 50%;
+		margin-left: -22px;
+	}
+	&.left, &.right{
+		top: 50%;
+		margin-top: -44px;
+	}
+	&.left{ left: -$pieceWidth - 5px }
+	&.right{ right: -$pieceWidth - 5px }
+	&.down{ bottom: -22px}
+	&.up{ top: -44px }
+}
+
+.score{
+	font-size: 26px;
+	line-height: 30px;
+	display: inline-block;
+	text-align: right;
+	padding: 5px;
+	background: #000;
+	color: lime;
+	min-width: 150px;
+	border-radius: 7px;
+	font-family: "Cutive Mono";
+	font-weight: 700;
+}
