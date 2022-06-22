@@ -552,6 +552,20 @@
 |Só PC        |Telas        |
 | [341.mindmap-draggable-exploration](https://renatomportugal.github.io/04.template/341.mindmap-draggable-exploration/) |<img src="images/341.mindmap-draggable-exploration.jpg"/> |
 
+## Duolingo
+|Com Som      |Telas        |
+|---          |---          |
+| [666.quizComSom](https://renatomportugal.github.io/04.template/666.quizComSom/) |<img src="images/666.quizComSom.jpg"/> |
+|Ferramentas  |Telas        |
+| [665.duolingo-streak](https://renatomportugal.github.io/04.template/665.duolingo-streak/) |<img src="images/665.duolingo-streak.jpg"/> |
+|Imagens      |Telas        |
+| [662.duolingo-learning-reason-onboarding](https://renatomportugal.github.io/04.template/662.duolingo-learning-reason-onboarding/) |<img src="images/662.duolingo-learning-reason-onboarding.jpg"/> |
+| [663.duolingo-listen-and-select-activity](https://renatomportugal.github.io/04.template/663.duolingo-listen-and-select-activity/) |<img src="images/663.duolingo-listen-and-select-activity.jpg"/> |
+|Texto        |Telas        |
+| [661.duolingo-inspired-f-l-i-p-animation](https://renatomportugal.github.io/04.template/661.duolingo-inspired-f-l-i-p-animation/) |<img src="images/661.duolingo-inspired-f-l-i-p-animation.jpg"/> |
+| [664.duolingo-mobile-lesson](https://renatomportugal.github.io/04.template/664.duolingo-mobile-lesson/) |<img src="images/664.duolingo-mobile-lesson.jpg"/> |
+
+
 ## E-Commerce
 
 |Links        |Telas        |
@@ -891,6 +905,8 @@
 |Links        |Telas        |
 |---          |---          |
 | [269.amcharts-4-sankey-diagram](https://renatomportugal.github.io/04.template/269.amcharts-4-sankey-diagram/) | <img src="images/269.amcharts-4-sankey-diagram.jpg"/> |
+|Pontos       |Telas        |
+| [667.scatterplots](https://renatomportugal.github.io/04.template/667.scatterplots/) | <img src="images/667.scatterplots.jpg"/> |
 
 ## Grafo
 
@@ -1064,6 +1080,7 @@
 | [446.infografico-json](https://renatomportugal.github.io/04.template/446.infografico-json) |<img src="images/446.infografico-json.jpg"/> |
 | [447.pure-css-circles-infographic-JSON](https://renatomportugal.github.io/04.template/447.pure-css-circles-infographic-JSON) |<img src="images/447.pure-css-circles-infographic-JSON.jpg"/> |
 | [448.responsive-infographic-css-variables-grid.JSON](https://renatomportugal.github.io/04.template/448.responsive-infographic-css-variables-grid.JSON) |<img src="images/448.responsive-infographic-css-variables-grid.JSON.jpg"/> |
+| [658.infographic-roadmap](https://renatomportugal.github.io/04.template/658.infographic-roadmap) |<img src="images/658.infographic-roadmap.jpg"/> |
 
 ## Inteligencia_Artificial
 
@@ -1372,6 +1389,12 @@
 |---          |---          |
 | [320.bookmarks-play](https://renatomportugal.github.io/04.template/320.bookmarks-play) |<img src="images/320.bookmarks-play.jpg"/> |
 
+## Teclado
+
+|Habilidade   |Telas        |
+|---          |---          |
+| [659.keyboard-hero](https://renatomportugal.github.io/04.template/659.keyboard-hero) |<img src="images/659.keyboard-hero.jpg"/> |
+
 ## Template
 
 |Bandas       |Telas        |
@@ -1442,6 +1465,7 @@
 | [311.vertical-timeline](https://renatomportugal.github.io/04.template/311.vertical-timeline) |<img src="images/311.vertical-timeline.jpg"/> |
 | [312.vertical-timeline-2](https://renatomportugal.github.io/04.template/312.vertical-timeline-2) |<img src="images/312.vertical-timeline-2.jpg"/> |
 | [313.ygc-v2-timeline](https://renatomportugal.github.io/04.template/313.ygc-v2-timeline) |<img src="images/313.ygc-v2-timeline.jpg"/> |
+| [660.timeline.roadmap](https://renatomportugal.github.io/04.template/660.timeline.roadmap) |<img src="images/660.timeline.roadmap.jpg"/> |
 
 ## UML
 

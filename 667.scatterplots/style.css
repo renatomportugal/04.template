@@ -1,0 +1,25 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #999999;
+  z-index: 10;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}

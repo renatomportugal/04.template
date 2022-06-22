@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v19/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFV0Uw.ttf) format('truetype');
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.numero {
+  transform-origin: 50% 50%;
+  transform: translate(39%, 52%);
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 4em;
+}
+.dias {
+  transform-origin: 50% 50%;
+  transform: translate(46%, 60%);
+  font-family: sans-serif !important;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.7em;
+  font-weight: 900;
+}
+.fire {
+  transform-origin: 50% 50%;
+  transform: scale(0.3) translate(100%, 42%);
+}
+.ready {
+  fill: none;
+  stroke: #FF9600;
+  stroke-width: 20px;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 550;
+  stroke-dashoffset: 470;
+  animation: ready 2s forwards;
+}
+@keyframes ready {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

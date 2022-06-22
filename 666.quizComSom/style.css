@@ -1,0 +1,88 @@
+.questContainer {
+    /*max-width: 700px;*/
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: 5px solid #1ABC9C;
+    border-radius:5px;
+    background: #EFF3F6;
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+label {
+    margin: 2px 0;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 8px 6px;
+    border-radius: 5px 8px 8px 5px;
+    line-height: 20px;
+    font-weight: 500;
+    vertical-align: middle;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+label span {
+    color: #FDFDFD;
+    font-size: 20px;
+    top: -1px !important;
+}
+
+.glyphicon {
+    margin: 0 10px;
+    vertical-align: middle;
+}
+.next .glyphicon{
+  margin: 0 0 0 10px;
+}
+label div {
+    margin-right: 5px !important;
+}
+
+.interact {
+    padding: 4px 14px;
+}
+.interact .alert{
+  margin-bottom: 0;
+  margin-top: 35px;
+}
+.interact .navbuttons, .interact .check {
+    margin-top: 60px;
+}
+
+.quest {
+    margin: 30px 0 10px;
+}
+
+.danger {
+    color: #a94442;
+    background: #f2838f;
+    border: 1px solid #ed5565;
+}
+
+.success {
+    color: #3c763d;
+    background: /*#66B82F/*#66B82F*/
+    #b9df90;
+    border: 1px solid #a0d468;
+}
+
+.warning {
+    color: #8a6d3b;
+    background: #ffdd87;
+    border: 1px solid #ffce54;
+}
+
+.feedback {
+  padding:15px 0 0 15px;
+}
+.feedback span{
+  font-style: italic;
+}
+
+.hideit {
+    display: none;
+}
