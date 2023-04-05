@@ -31,14 +31,14 @@
 
 |Links        |Telas        |
 |---          |---          |
-| [177.space-404](https://renatomportugal.github.io/04.template/177.space-404/) |<img src="images/177.space-404"/> |
-| [178.stranger-things-intro](https://renatomportugal.github.io/04.template/178.stranger-things-intro/) |<img src="images/178.stranger-things-intro"/> |
+| [177.space-404](https://renatomportugal.github.io/04.template/177.space-404/) |<img src="images/177.space-404.jpg"/> |
+| [178.stranger-things-intro](https://renatomportugal.github.io/04.template/178.stranger-things-intro/) |<img src="images/178.stranger-things-intro.jpg"/> |
 
 ## 8_bits
 
 |Links        |Telas        |
 |---          |---          |
-| [092.hello-worldcontenteditable-arcade-game-text-effect](https://renatomportugal.github.io/04.template/092.hello-worldcontenteditable-arcade-game-text-effect/) |<img src="images/092.hello-worldcontenteditable-arcade-game-text-effect"/> |
+| [092.hello-worldcontenteditable-arcade-game-text-effect](https://renatomportugal.github.io/04.template/092.hello-worldcontenteditable-arcade-game-text-effect/) |<img src="images/092.hello-worldcontenteditable-arcade-game-text-effect.jpg"/> |
 
 ## Abertura
 
@@ -112,6 +112,7 @@
 ## Animação
 
 |Cavalo       |Telas        |
+|---          |---          |
 | [234.clip-clop-clippity-clop](https://renatomportugal.github.io/04.template/234.clip-clop-clippity-clop/) |<img src="images/234.clip-clop-clippity-clop.jpg"/> |
 | [259.muybridge-galloping-horse](https://renatomportugal.github.io/04.template/259.muybridge-galloping-horse/) |<img src="images/259.muybridge-galloping-horse.jpg"/> |
 |Cachorro     |Telas        |
