@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - SVG Radar Graph  Playtime</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg viewBox="0 0 1000 1000">
+
+
+  <polygon id="" points="500, 150 833, 392 706, 783 294, 783 167, 392 " fill="rgba(0, 0, 0, 0)" stroke="orange" stroke-width="6px"></polygon> 
+  <polygon points="500, 220 766, 413 665, 727 335, 727 234, 413 " fill="rgba(0, 0, 0, 0)" stroke="#00BFFF" stroke-width="6px"></polygon> 
+  <polygon points="500, 290 700, 435 623, 670 377, 670 300, 435 " fill="rgba(0, 0, 0, 0)" stroke="blue" stroke-width="6px"></polygon> 
+  <polygon points="500, 360 633, 457 582, 613 418, 613 367, 457 " fill="rgba(0, 0, 0, 0)" stroke="green" stroke-width="6px"></polygon> 
+  <polygon points="500, 430 567, 478 541, 557 459, 557 433, 478 " fill="rgba(0, 0, 0, 0)" stroke="lime" stroke-width="6px"></polygon>
+  
+    <!-- overlay -->
+  <polygon id="overlay" points="500, 500 833, 392 706, 783 294, 783 167, 392" fill="rgba(255, 0, 0, 0.7)" stroke="red" stroke-width="4"></polygon> 
+  
+  <line x1="500" y1="500" x2="833" y2="392" stroke="pink" stroke-width="4px"></line>
+  <line x1="500" y1="500" x2="706" y2="783" stroke="pink" stroke-width="4px"></line>
+  <line x1="500" y1="500" x2="294" y2="783" stroke="orange" stroke-width="4px"></line>
+  <line x1="500" y1="500" x2="167" y2="392" stroke="red" stroke-width="4px"></line>
+  <line x1="500" y1="500" x2="500" y2="150" stroke="purple" stroke-width="4px"></line>
+  
+  <!-- top first : clockwise -->
+  <circle id="security-dot" cx="500" cy="150" r="10" class="points" fill="#FF0000"></circle>
+  <circle cx="830" cy="393" r="10" class="points" fill="#FF0000"></circle>
+  <circle cx="168" cy="393" r="10" class="points" fill="#FF0000"></circle>
+  <circle cx="704" cy="780" r="10" class="points" fill="#FF0000"></circle>
+  <circle cx="294" cy="780" r="10" class="points" fill="#FF0000"></circle>
+  
+</svg>
+
+<input type="range" value="-500" min="-500" max="-150" id="security-sld" class="sld">
+
+<div id="out"></div>
+
+<div id="datas"></div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

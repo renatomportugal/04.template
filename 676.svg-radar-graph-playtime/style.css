@@ -1,0 +1,11 @@
+svg {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+/*   background: #ccc; */
+}
+.sld {
+  bottom: 150px;
+  position: relative;
+  width: 500px;
+}

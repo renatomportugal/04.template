@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Test Radar Graph </title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Chart JS</title>
+  </head> -->
+  <body>
+    <div>
+      <div>
+        <h4>Wie stark fühlen Sie diese Emotionen im Zusammenhang mit der Klimakrise? </h4>
+        <div>
+          <label for="aufgeregt">Aufgeregt:</label>
+          <input id="aufgeregt" type="number" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="voller">voller Vorfreude:</label>
+          <input id="voller" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="hoffnungsvoll">Hoffnungsvoll</label>
+          <input id="hoffnungsvoll" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="gelangweilt">Gelangweilt</label>
+          <input id="gelangweilt" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="verwirrt">Verwirrt</label>
+          <input id="verwirrt" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+         <div>
+          <label for="apathisch">Apathisch</label>
+          <input id="apathisch" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="verzweifelnd">Verzweifelnd</label>
+          <input id="verzweifelnd" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="manchtlos">Manchtlos</label>
+          <input id="manchtlos" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="beschamt">Beschämt</label>
+          <input id="beschamt" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="schuldig">Schuldig</label>
+          <input id="schuldig" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="verangstigt">Verängstigt</label>
+          <input id="verangstigt" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+        <div>
+          <label for="verargert">Verärgert</label>
+          <input id="verargert" type="range" value="" min="0" max="5" step="1" onchange="updatechart()"/>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <canvas id="chart"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      var aufgeregt = document.getElementById('aufgeregt'); 
+      var voller = document.getElementById('voller'); 
+      var sales = document.getElementById('sales'); 
+      var gelangweilt = document.getElementById('gelangweilt');
+      var verwirrt = document.getElementById('verwirrt');
+      var apathisch = document.getElementById('apathisch');
+      var verzweifelnd = document.getElementById('verzweifelnd');
+      var manchtlos = document.getElementById('manchtlos');
+      var beschamt = document.getElementById('beschamt');
+      var schuldig = document.getElementById('schuldig');
+      var verangstigt = document.getElementById('verangstigt');
+      var verargert = document.getElementById('verargert'); 
+      
+      var ctx= new Chart(chart, {
+        type: 'radar', 
+        data: {
+          labels: ['aufgeregt', 'voller', 'hoffnungsvoll', 'gelangweilt', 'verwirrt','apathisch', 'verzweifelnd', 'manchtlos', 'beschamt', 'schuldig', 'verangstigt', 'verargert'], 
+          datasets: [{
+            label: 'Emotion', 
+            data: [aufgeregt.value,voller.value,hoffnungsvoll.value, gelangweilt.value, verwirrt.value, apathisch.value, verzweifelnd.value, manchtlos.value, beschamt.value, schuldig.value, verangstigt.value, verargert.value],
+            backgroundColor: "rgba(200,0,0,0.2)", 
+            borderColor:  "rgba(200,0,0,0.2)", 
+          }]
+        }, 
+        option : {}
+      });
+      
+      function updatechart(){
+        var updateValues = [aufgeregt.value,voller.value,hoffnungsvoll.value, gelangweilt.value, verwirrt.value, apathisch.value, verzweifelnd.value, manchtlos.value, beschamt.value, schuldig.value, verangstigt.value, verargert.value];
+        ctx.data.datasets[0].data = updateValues; 
+        ctx.update(); 
+      }
+      
+    </script>
+  </body>
+  
+ <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> --> 
+<!-- <canvas id="marksChart" width="600" height="400">
+</canvas>
+   -->
+<!-- partial -->
+  
+</body>
+</html>

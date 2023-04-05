@@ -1,0 +1,8 @@
+.container {
+  height: 500px;
+  overflow-y: auto;
+}
+
+#chartdiv {
+  height: 500px;
+}

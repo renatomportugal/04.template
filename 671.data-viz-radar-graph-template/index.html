@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Data Viz Radar Graph Template</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Inspo by https://material.uplabs.com/posts/radar-graph -->
+<svg width="500" height="500">
+	<g class="grid">
+		<path d="M250 0 v325 l-700 500" />
+		<path d="M250 0 v325 l700 500" />
+	</g>
+
+	<g>
+		<circle class="circle green" cx="400" cy="30" r="8"></circle>
+		<path class="green active" d="M250 50 l-150 380 h300 Z" />
+	</g>
+
+
+	<g>
+		<circle class="circle red" cx="400" cy="60" r="8"></circle>
+		<path class="red" d="M250 100 l-215 380 l300 -95 Z" />
+	</g>
+
+
+	<g>
+		<circle class="circle yellow" cx="400" cy="90" r="8"></circle>
+		<path class="yellow" d="M250 150 l-70 225 l250 80 Z" />
+	</g>
+</svg>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

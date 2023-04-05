@@ -1,0 +1,11 @@
+.progress {
+  --percent: 50;
+  stroke-dashoffset: calc(142 - (var(--percent) * 142 / 100));
+}
+svg{
+  width: 100%;
+  height: 300px;
+}
+canvas{
+   padding: 60px;
+}
