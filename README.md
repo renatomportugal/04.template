@@ -224,7 +224,7 @@
 
 |Links        |Telas        |
 |---          |---          |
-| [062.daylight-cycles-of-earth](https://renatomportugal.github.io/04.template/062.daylight-cycles-of-earth) |<img src="images/062.daylight-cycles-of-earth.png"/> |
+| [062.daylight-cycles-of-earth](https://renatomportugal.github.io/04.template/062.daylight-cycles-of-earth) |<img src="images/062-daylight-cycles-of-earth.png"/> |
 
 ## Audio
 
