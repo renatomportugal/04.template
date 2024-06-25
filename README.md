@@ -347,7 +347,7 @@
 
 |Links        |Telas        |
 |---          |---          |
-| [036.responsive-image-map-demo](https://renatomportugal.github.io/04.template/036.responsive-image-map-demo/) ||
+| [036.responsive-image-map-demo](https://renatomportugal.github.io/04.template/036.responsive-image-map-demo/) |
 
 ## Código_Morse
 
