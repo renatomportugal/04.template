@@ -231,9 +231,10 @@
 |Click        |Telas        |
 |---          |---          |
 | [098-air-horns](https://renatomportugal.github.io/04.template/098-air-horns) |<img src="images/098-air-horns.jpg"/> |
-| [120-sound-links-menu](https://renatomportugal.github.io/04.template/120-sound-links-menu) |<img src="images/120.sound-links-menu.jpg"/> |
+| [120-sound-links-menu](https://renatomportugal.github.io/04.template/120-sound-links-menu) |<img src="images/120-sound-links-menu.jpg"/> |
 
 ## Background
+
 |Arte         |Telas        |
 | [209.responsive-sine-cone-animation](https://renatomportugal.github.io/04.template/209.responsive-sine-cone-animation) |<img src="images/209.responsive-sine-cone-animation.jpg"/> |
 | [210.ro](https://renatomportugal.github.io/04.template/210.ro) |<img src="images/210.ro.jpg"/> |
@@ -295,6 +296,7 @@
 |Click        |Telas        |
 |---          |---          |
 | [552.moving-electric-field-lines](https://renatomportugal.github.io/04.template/552.moving-electric-field-lines) |<img src="images/552.moving-electric-field-lines.jpg"/> |
+
 ## Canvas
 
 |Links        |Telas        |
